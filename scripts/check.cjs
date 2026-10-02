@@ -19,6 +19,20 @@ async function geometry(page,label) {
   const rectangles = await page.locator('.stage,.character').evaluateAll(nodes => nodes.map(node => { const r=node.getBoundingClientRect(); return {x:r.x,y:r.y,right:r.right,bottom:r.bottom}; }));
   if (rectangles.length) for (const r of rectangles.slice(1)) { const s=rectangles[0]; assert.ok(r.x>=s.x && r.right<=s.right && r.y>=s.y && r.bottom<=s.bottom,label+' clipped figure'); }
   const stage=await page.locator('.stage').boundingBox();
+  if (stage) {
+    assert.equal(await page.locator('.room .character-art').evaluateAll(images => images.some(image => !image.getAttribute('src').includes('/scene/'))),false,label+' portrait in room');
+    const room=await page.locator('.room').boundingBox();
+    assert.ok(Math.abs(room.width / room.height - 1672 / 941) < .02,label+' room perspective distorted');
+    const figures=await page.locator('.character').evaluateAll(nodes => nodes.map(node => {const r=node.getBoundingClientRect();return {left:r.left,right:r.right};}));
+    for (let i=1;i<figures.length;i++) assert.ok(figures[i].left >= figures[i-1].right,label+' overlapping figures');
+  }
+  if (await page.locator('.dialogue-panel').count()) assert.ok((await page.locator('.dialogue-panel').boundingBox()).height <= (await page.evaluate(() => innerHeight))*.41,label+' oversized dialogue');
+  if (await page.evaluate(() => innerWidth===1024 && innerHeight===768) && await page.locator('.choices').count()) {
+    for (const card of await page.locator('.choices > button').all()) {
+      const rect=await card.boundingBox(), bank=await page.locator('.choices').evaluate(el=>{const r=el.parentElement.getBoundingClientRect();return {top:r.top,bottom:r.bottom};});
+      assert.ok(rect.y>=bank.top && rect.y+rect.height<=bank.bottom+.5,label+' clipped answer card');
+    }
+  }
   if (stage) assert.ok((await page.locator('#interaction').boundingBox()).y>=stage.y+stage.height,label+' panel overlaps scene');
   if (await page.locator('.task-panel').count()) assert.ok((await page.locator('.task-panel').boundingBox()).height <= (await page.evaluate(() => innerHeight))* (await page.locator('.axis-panel,.puzzle-panel').count() ? .59 : await page.evaluate(() => innerWidth) <=560 ? .51 : .46),label+' oversized task panel');
   if (await page.locator('.axis-panel').count()) {
@@ -74,16 +88,26 @@ async function drag(page,id,value,touch,context) {
     assert.ok(await page.locator('[data-action="flyer"]').isDisabled());
     await page.locator('[data-character="jakob"]').tap();
     assert.match(await page.locator('.spoken').innerText(),/Ich habe wieder etwas von Luther bekommen/);
-    assert.match(await page.locator('.speaking img').getAttribute('src'),/jakob_reading.png/);
+    assert.match(await page.locator('.speaking img').getAttribute('src'),/scene\/jakob_scene_reading.webp/);
+    assert.match(await page.locator('.portrait img').getAttribute('src'),/portrait\/jakob_reading.png/);
     await action(page,'dialogue-next');
     assert.equal(await page.locator('.speaking').getAttribute('data-character'),'peter');
-    assert.match(await page.locator('.speaking img').getAttribute('src'),/peter_skeptical.png/);
+    assert.match(await page.locator('.speaking img').getAttribute('src'),/scene\/peter_scene_talking.webp/);
+    assert.match(await page.locator('.portrait img').getAttribute('src'),/portrait\/peter_skeptical.png/);
     await page.waitForTimeout(260);
     assert.equal(await page.locator('[data-character="anna"]').evaluate(el => Number(getComputedStyle(el).opacity)),.75);
     await photograph(page,'ch1-speaker-1024');
     await page.reload(); await action(page,'resume');
     assert.match(await page.locator('.spoken').innerText(),/Schon wieder Luther/);
     await dialogue(page); assert.ok(await page.locator('[data-action="flyer"]').isEnabled());
+    assert.equal(await page.locator('.instruction-panel,.dialogue-panel').count(),0);
+    const beforeAtmosphere=await saved(page);
+    await page.locator('[data-action="prop-window"]').tap();
+    assert.match(await page.locator('#notice').innerText(),/Draußen liegt das Dorf bereits im Dunkeln/);
+    await page.locator('[data-action="prop-door"]').tap();
+    assert.match(await page.locator('#notice').innerText(),/Für heute bleibst du noch hier/);
+    await page.locator('[data-character="peter"]').tap();
+    assert.deepEqual(await saved(page),beforeAtmosphere);
     await photograph(page,'ch1-tavern-1024');
     await page.locator('[data-action="flyer"]').tap();
     assert.match(await page.locator('blockquote').innerText(),/Ein Christenmensch ist ein freier Herr/);
@@ -156,9 +180,16 @@ async function drag(page,id,value,touch,context) {
     const concluding=[];
     while(await page.locator('[data-action="dialogue-next"]').count()) { concluding.push(await page.locator('.spoken').innerText()); await action(page,'dialogue-next'); }
     assert.equal(concluding.length,6); assert.ok(concluding.some(text => text.includes('im Wald dürfen wir')));
+    assert.equal(await page.locator('body').getAttribute('data-mode'),'exploration');
+    assert.equal(await page.locator('.ending').count(),0);
+    await photograph(page,'ch1-exit-1024');
+    await page.locator('[data-action="prop-door"]').tap();
     assert.equal(await page.locator('body').getAttribute('data-mode'),'transition');
+    await page.locator('.ending').waitFor();
+    await page.waitForTimeout(4200);
     await photograph(page,'ch1-ending-1024');
-    await action(page,'home'); await action(page,'resume'); assert.equal(await page.locator('.ending').count(),1);
+    await action(page,'home'); await action(page,'resume'); assert.equal(await page.locator('.exit-ready').count(),1);
+    await page.locator('[data-action="prop-door"]').tap(); await page.locator('.ending').waitFor();
 
     // Every initial response and all of Peter's reactions remain ungraded and score-neutral.
     const firsts=['freedom_no_obedience','freedom_different_kind','freedom_life_tension','freedom_responsibility'];
@@ -208,7 +239,9 @@ async function drag(page,id,value,touch,context) {
     for(const viewport of [{width:1440,height:900},{width:1024,height:768},{width:820,height:620},{width:768,height:1024},{width:390,height:844}]) {
       await page.setViewportSize(viewport);
       await scene('ch1_s1_intro'); await dialogue(page); await geometry(page,viewport.width+' exploration');
+      await photograph(page,'ch1-exploration-'+viewport.width);
       await page.locator('[data-character="jakob"]').click(); await geometry(page,viewport.width+' dialogue');
+      await photograph(page,'ch1-dialogue-'+viewport.width);
       await scene('ch1_s3_interpretation'); await dialogue(page); await geometry(page,viewport.width+' first choice');
       await scene('ch1_s5_conversations'); await page.locator('[data-character="anna"]').click(); await dialogue(page); await geometry(page,viewport.width+' puzzle');
       await photograph(page,'ch1-puzzle-'+viewport.width);

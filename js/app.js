@@ -6,6 +6,7 @@ import { choices } from '../data/choices.js';
 import { puzzles, sortingGames } from '../data/minigames.js';
 import { preloadCharacters } from '../data/characters.js';
 import { sceneView, updateStage } from './scene-engine.js';
+import { endingRevealed, resetStaging, leaveTavern, highlightHotspot } from './staging.js';
 import { beginDialogue, advanceDialogue, dialogueView } from './dialogue-engine.js';
 import { choiceView, recordChoice } from './choice-engine.js';
 import { attempt, choiceFeedback, feedbackView } from './feedback.js';
@@ -24,6 +25,7 @@ function persist() {
 }
 document.addEventListener('storage-error', () => notify('Der Browser erlaubt gerade keine lokale Speicherung. Dein Fortschritt bleibt für diese Sitzung erhalten.'));
 function startScreen() {
+  resetStaging();
   playing = false;
   setMode('exploration');
   const saved = load();
@@ -32,6 +34,7 @@ function startScreen() {
 function enterScene(id, complete = true) {
   id = canonicalScene(id);
   if (!sceneById[id]) { notify('Diese Szene ist nicht verfügbar.'); return; }
+  resetStaging();
   if (complete) addUnique(state.progress.completedScenes,state.scene);
   state.scene = id; state.phase = 'active'; state.dialogue = null; state.interaction = null; selectedCard = null;
   const scene = sceneById[id];
@@ -60,10 +63,10 @@ function render() {
   const active = document.activeElement;
   const focusSelector = active?.closest('#app') && active.dataset.action ? ['action','character','choice','option','card'].filter(key => active.dataset[key]).map(key => `[data-${key}="${CSS.escape(active.dataset[key])}"]`).join('') : null;
   const feedbackMode = state.interaction?.kind === 'feedback' ? (puzzles[state.interaction.id] ? 'puzzle' : sortingGames[state.interaction.id] ? 'minigame' : 'choice') : null;
-  const mode = scene.kind === 'ending' ? 'transition' : state.dialogue ? 'dialogue' : feedbackMode || (state.interaction?.kind === 'choice' ? 'choice' : state.interaction?.kind === 'puzzle' ? 'puzzle' : scene.kind === 'sorting' ? 'minigame' : scene.kind === 'notebook' ? 'notebook' : 'exploration');
+  const mode = scene.kind === 'ending' && endingRevealed() ? 'transition' : state.dialogue ? 'dialogue' : feedbackMode || (state.interaction?.kind === 'choice' ? 'choice' : state.interaction?.kind === 'puzzle' ? 'puzzle' : scene.kind === 'sorting' ? 'minigame' : scene.kind === 'notebook' ? 'notebook' : 'exploration');
   state.uiMode = mode; setMode(mode);
-  if (scene.kind === 'ending') {
-    app.innerHTML = `<main class="ending"><span class="eyebrow">Kapitel 1 abgeschlossen</span><div class="ending-lines">${chapters[0].next.lines.map((line,i) => `<p class="ending-line line-${i}">${esc(line)}</p>`).join('')}</div><div class="next-chapter"><span class="eyebrow">Kapitel 2</span><h1>${chapters[0].next.title}</h1><p>Kapitel 2 ist noch nicht spielbar.</p>${button('Vertical Slice beendet','home','class="primary"')}<div class="ending-actions">${button('Kapitel 1 erneut spielen','confirm-new','class="quiet"')}${button('Zum Startbildschirm','home','class="quiet"')}${button('Notizbuch öffnen','notebook','class="quiet"')}</div></div></main>${debugView(debugWasOpen)}`;
+  if (scene.kind === 'ending' && endingRevealed()) {
+    app.innerHTML = `<main class="ending" tabindex="-1"><span class="eyebrow">Kapitel 1 abgeschlossen</span><div class="ending-lines">${chapters[0].next.lines.map((line,i) => `<p class="ending-line line-${i}">${esc(line)}</p>`).join('')}</div><div class="next-chapter"><span class="eyebrow">Kapitel 2</span><h1>${chapters[0].next.title}</h1><p>Kapitel 2 ist noch nicht spielbar.</p>${button('Vertical Slice beendet','home','class="primary"')}<div class="ending-actions">${button('Kapitel 1 erneut spielen','confirm-new','class="quiet"')}${button('Zum Startbildschirm','home','class="quiet"')}${button('Notizbuch öffnen','notebook','class="quiet"')}</div></div></main>${debugView(debugWasOpen)}`;
     return;
   }
   // Keep the same scene DOM so speaker focus can transition smoothly.
@@ -83,9 +86,12 @@ function render() {
   else if (scene.kind === 'notebook') panel.innerHTML = `<section class="instruction-panel"><p class="eyebrow">${esc(scene.title)}</p><p>${esc(scene.instruction)}</p><div class="panel-actions">${button('Notizbuch lesen','notebook','class="secondary"')}${button('Zurück zur Taverne →','next-scene','class="primary"')}</div></section>`;
   else if (['explore','conversations'].includes(scene.kind)) {
     const finished = chapters[0].cast.every(conversationDone);
-    panel.innerHTML = `<section class="instruction-panel"><p class="eyebrow">${scene.title}</p><h2>${esc(scene.kind === 'explore' && state.progress.flyerUnlocked ? scene.flyerInstruction : scene.instruction)}</h2>${scene.kind === 'conversations' ? `<div class="conversation-progress">${chapters[0].cast.map(id => `<span class="${conversationDone(id) ? 'done' : ''}">${conversationDone(id) ? '✓' : '○'} ${id[0].toUpperCase() + id.slice(1)}</span>`).join('')}</div>${finished ? button('Zur Freiheitsachse →','next-scene','class="primary"') : ''}` : ''}</section>`;
+    panel.innerHTML = `<nav class="exploration-tools" aria-label="Erkundung"><span>${esc(scene.kind === 'explore' && state.progress.flyerUnlocked ? scene.flyerInstruction : scene.instruction)}</span>${scene.kind === 'conversations' && finished ? button('Zur Freiheitsachse →','next-scene','class="primary"') : ''}</nav>`;
+  } else if (scene.kind === 'ending') {
+    panel.innerHTML = '';
   } else panel.innerHTML = `<section class="instruction-panel"><h2>${scene.title}</h2>${button('Flugblatt öffnen','scene-document','class="primary"')}</section>`;
   app.querySelector('.game-layout').classList.toggle('task-layout',Boolean(panel.querySelector('.task-panel')));
+  app.querySelector('.game-layout').classList.toggle('exploration-layout',mode === 'exploration' && ['explore','conversations','ending'].includes(scene.kind));
   if (previousView === panel.dataset.view && panel.querySelector('.task-scroll')) panel.querySelector('.task-scroll').scrollTop = previousScroll;
   if (focusSelector) {
     const same = document.querySelector(focusSelector);
@@ -156,6 +162,7 @@ document.addEventListener('click',event => {
   if (action === 'confirm-reset') return confirmReset(false);
   if (action === 'reset-new' || action === 'reset') { closeOverlay(); clearSave(); replaceState(freshState()); return action === 'reset-new' ? newGame() : startScreen(); }
   if (action === 'resume') {
+    resetStaging();
     const saved = load(); if (!saved) return startScreen();
     replaceState(saved); playing = true; preloadCharacters();
     if (state.resumeSetup) { delete state.resumeSetup; enterScene(state.scene,false); notify('Dein bisheriger Spielstand wurde übernommen. Die neuen Aufgaben stehen bereit.'); }
@@ -169,6 +176,13 @@ document.addEventListener('click',event => {
   if (action === 'notebook-tab') return openNotebook(target.dataset.tab);
   if (action === 'archive-document') return openDocument(target.dataset.document,null,() => openNotebook('documents'),true);
   if (action === 'scene-document') return openSceneDocument();
+  if (action === 'prop-window') return notify('Draußen liegt das Dorf bereits im Dunkeln. Morgen beginnt wieder die Arbeit.');
+  if (action === 'prop-door') {
+    if (scene.kind !== 'ending') return notify('Für heute bleibst du noch hier.');
+    setMode('transition');
+    return leaveTavern(render);
+  }
+  if (action === 'prop-mug' || action === 'prop-candle') { highlightHotspot(target); return; }
   if (action === 'next-scene') {
     if (scene.kind === 'conversations' && !chapters[0].cast.every(conversationDone)) return;
     return enterScene(scene.next);
@@ -176,6 +190,7 @@ document.addEventListener('click',event => {
   if (action === 'character') {
     if (state.dialogue || state.interaction) return;
     const id = target.dataset.character;
+    if ((scene.kind === 'explore' && !scene.hotspots[id]) || scene.kind === 'ending') { highlightHotspot(target); return; }
     addUnique(state.progress.visitedHotspots,`${scene.id}:${id}`);
     if (scene.kind === 'explore') {
       const hotspot = scene.hotspots[id]; if (!hotspot) return;
@@ -185,7 +200,7 @@ document.addEventListener('click',event => {
       beginDialogue(conversation.dialogue,conversation.puzzle ? 'conversation-puzzle' : 'conversation-choice',id);
     }
   }
-  if (action === 'flyer') return enterScene(scene.next);
+  if (action === 'flyer') return scene.kind === 'explore' ? enterScene(scene.next) : openDocument('freedom',null,() => {},true);
   if (action === 'dialogue-next' && afterDialogue(advanceDialogue())) return;
   if (action === 'choose') {
     const id = target.dataset.choice, context = state.interaction.context;
