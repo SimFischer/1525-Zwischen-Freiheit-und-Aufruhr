@@ -5,6 +5,10 @@ import { choiceView } from './choice-engine.js';
 import { feedbackView } from './feedback.js';
 import { chapterTwoBackgrounds, forestClues, dayTasks, stores, reflections, grievances, linkReasons, demandParts } from '../data/chapter-two.js';
 import { station, counts, demandSentence } from './chapter-two.js';
+// Transient presentation only; never included in the saved game.
+let forestArrival=false;
+let stagedScene=null;
+let stagedFigures=new Set();
 const act=(label,action,attrs='')=>button(label,'ch2-'+action,attrs);
 const card=(label,action,attrs='')=>act(label,action,'class="document-card" '+attrs);
 function task(title,content,footer='',context='') { return `<section class="task-panel ch2-task"><div class="task-heading"><p class="eyebrow">${esc(context||'Unser Dorf')}</p><h2>${esc(title)}</h2></div><div class="task-scroll">${content}</div><div class="panel-actions">${footer}</div></section>`; }
@@ -16,8 +20,8 @@ export function chapterTwoPanel() {
   if(kind==='intro') return task('Kapitel 2 – Wie frei ist dein Leben?','<p>Ein neuer Tag im Dorf. Du begleitest Anna, Peter und Margarethe.</p>',act('Der Morgen beginnt →','morning','class="primary"'));
   if(kind==='end') return task('Kapitel 3 – Aus Beschwerden werden Forderungen','<div class="chapter-closing"><p>Aus Erfahrungen werden Beschwerden.</p><p>Aus Beschwerden werden Forderungen.</p><p>Und aus gemeinsamen Forderungen kann eine Bewegung entstehen.</p></div><p>Kapitel 2 abgeschlossen. Kapitel 3 folgt.</p>',button('Notizbuch lesen','notebook')+button('Zum Titelbild','home'));
   if(stage==='complete') return task('Hier hast du deine Beobachtungen festgehalten.','<p>Die Frage bleibt Teil eurer gemeinsamen Beschwerden.</p>',act('Zurück ins Dorf →','hub'));
-  if(kind==='hub') return `<nav class="exploration-tools" aria-label="Wege im Dorf"><span>${c.assemblyUnlocked?'Am Abend versammelt sich das Dorf in der Taverne.':'Wald, Peters Hof oder Margarethes Hof – du bestimmst deinen Weg.'}</span></nav>`;
-  if(stage==='clues') return `<nav class="exploration-tools"><span>Sieh dir die Spuren am Waldrand an.</span>${Object.values(state.forestEvidence).filter(Boolean).length>=2?act('Den Verwalter anhören →','encounter'):''}${act('Zurück ins Dorf','hub')}</nav>`;
+  if(kind==='hub') return '';
+  if(stage==='clues') return '';
   if(stage==='plan') { const plan=state.choices.peterDayPlan||[]; return task('Wie plant ihr Peters Tag?','<p>Wähle alle drei Arbeiten in der gewünschten Reihenfolge. Tippe eine gewählte Arbeit erneut an, um sie umzuordnen. Es gibt keine einzig richtige Reihenfolge.</p><div class="ch2-papers">'+Object.entries(dayTasks).map(([id,label])=>card((plan.includes(id)?(plan.indexOf(id)+1)+'. ':'')+esc(label),'plan',`data-task="${id}" aria-pressed="${plan.includes(id)}"`)).join('')+'</div>',act('So beginnen wir →','plan-next',plan.length===3?'':'disabled')); }
   if(['allocation','sacrifice','extra'].includes(stage)) {
     const current=counts(), sacks=Array.from({length:10},(_,i)=>'sack-'+i);
@@ -35,10 +39,26 @@ export function chapterTwoPanel() {
 }
 export function chapterTwoScene(header) {
   const kind=station(), c=state.chapter2, bg=chapterTwoBackgrounds[kind==='end'?'assembly':kind]||chapterTwoBackgrounds.hub;
-  const person=(file,css)=>`<img class="ch2-person ${css}" src="assets/chapter2/characters/ch2_char_${file}.png" alt="">`;
-  let figures=kind==='forest'?person('anna_neutral','anna')+(Object.values(state.forestEvidence).filter(Boolean).length>=2?person('overseer_neutral','overseer'):''):kind==='corvee'?person('peter_neutral','peter')+(c.stage!=='plan'?person('overseer_pointing','overseer'):''):kind==='dues'?person('margarethe_thinking','margarethe')+(c.stage!=='allocation'?person('overseer_neutral','overseer'):''):['assembly','end'].includes(kind)?person('konrad_arguing','konrad')+person('margarethe_thinking','assembly-margarethe')+'<img class="assembly-papers" src="assets/chapter2/props/ch2_prop_grievance_cards.png" alt="Beschwerdezettel auf dem Tisch">':'';
-  const paths=kind==='hub' ? [['forest','Zum Wald',16,48],['corvee','Peters Hof',78,40],['dues','Margarethes Hof',54,57],...(c.assemblyUnlocked?[['assembly','Zur Taverne',79,65]]:[])].map(([id,label,x,y])=>act('<span>'+label+' ↗</span>','travel',`class="ch2-clue village-path" data-scene="ch2_${id}" style="left:${x}%;top:${y}%"`)).join('') : '';
+  const entering=stagedScene!==state.scene;
+  if(entering) { stagedScene=state.scene; stagedFigures.clear(); }
+  const person=(file,css)=>{
+    const role=css.split(' ')[0], arriving=!stagedFigures.has(role);
+    stagedFigures.add(role);
+    const classes=css+(arriving&&!css.includes('arriving')?' arriving':'');
+    return `<span class="ch2-ground-shadow ${classes}" aria-hidden="true"></span><img class="ch2-person ${classes} ${file==='overseer_pointing'?'pointing':''}" src="assets/chapter2/characters/ch2_char_${file}.png" alt="">`;
+  };
+  const enoughClues=Object.values(state.forestEvidence).filter(Boolean).length>=2;
+  if(kind!=='forest'||!enoughClues) forestArrival=false;
+  const showOverseer=kind==='forest'&&enoughClues&&(!state.dialogue||state.dialogue.context!=='clues'||forestArrival||c.stage!=='clues');
+  const arriving=showOverseer&&!forestArrival;
+  if(showOverseer) forestArrival=true;
+  let figures=kind==='forest'?person('anna_neutral','anna')+(showOverseer?person('overseer_neutral','overseer'+(arriving?' arriving':'')):''):kind==='corvee'?person('peter_neutral','peter')+(c.stage!=='plan'?person('overseer_pointing','overseer'):''):kind==='dues'?person('margarethe_thinking','margarethe')+(c.stage!=='allocation'?person('overseer_neutral','overseer'):''):['assembly','end'].includes(kind)?person('konrad_arguing','konrad')+person('margarethe_thinking','assembly-margarethe')+'<img class="assembly-papers" src="assets/chapter2/props/ch2_prop_grievance_cards.png" alt="Beschwerdezettel auf dem Tisch">':'';
+  const paths=kind==='hub' ? [['forest','Zum Wald',13,48],['corvee','Peters Hof',39,64],['dues','Margarethes Hof',68,56],...(c.assemblyUnlocked?[['assembly','Zur Taverne',88,67]]:[])].map(([id,label,x,y])=>act('<span>'+label+' '+(id==='forest'?'←':id==='corvee'?'↑':'→')+'</span>','travel',`class="ch2-clue village-path exit-sign" data-scene="ch2_${id}" style="left:${x}%;top:${y}%"`)).join('') : '';
   const traces=kind==='hub' ? (c.forestComplete?'<img class="village-prop wood-trace" src="assets/chapter2/props/ch2_prop_firewood_bundle.png" alt="Reisig liegt am Wegesrand">':'')+(c.duesComplete?'<img class="village-prop grain-trace" src="assets/chapter2/props/ch2_prop_grain_sacks_stack.png" alt="Säcke stehen zur Abholung bereit">':'')+(c.corveeComplete?person('overseer_neutral','village-overseer'):'') : '';
-  const clues=kind==='forest'&&c.stage==='clues'&&!state.dialogue?Object.entries(forestClues).map(([id,item])=>act(`<span>${item.label}</span>`,'clue',`class="ch2-clue" data-clue="${id}" style="left:${item.x}%;top:${item.y}%"`)).join(''):'';
-  return header+`<main class="game-layout chapter-two-layout ${state.dialogue?'':kind==='hub'||c.stage==='clues'?'exploration-layout':'task-layout'}"><section class="stage chapter-two" style="--world-image:url('${new URL(bg,location.href).href}')" aria-label="${esc(kind)}"><div class="room"><img class="room-image" src="${bg}" alt="${{hub:'Dorf am Morgen',forest:'Waldweg mit Sammelplatz und Grenzzeichen',corvee:'Bauernhof vor dem Herrenhof',dues:'Margarethes Hof',assembly:'Die bekannte Taverne am Abend'}[kind]||'Das Dorf'}"><div class="ch2-figures">${figures}</div>${clues}${paths}${traces}</div></section><div id="interaction" data-stage="${c.stage}" class="interaction">${chapterTwoPanel()}</div><footer class="game-footer"><span id="save-status">Fortschritt wird lokal gespeichert</span></footer></main>`;
+  const forestPositions={oldUse:[13,77],customaryRules:[88,43],newClaim:[39,27]};
+  const clues=kind==='forest'&&c.stage==='clues'&&!state.dialogue?Object.entries(forestClues).map(([id,item])=>act(`<span>${item.label}</span>`,'clue',`class="ch2-clue object-sign" data-clue="${id}" style="left:${forestPositions[id][0]}%;top:${forestPositions[id][1]}%"`)).join(''):'';
+  const exploringForest=kind==='forest'&&c.stage==='clues'&&!state.dialogue&&!state.interaction;
+  const forestControls=exploringForest?act('<span>← Zurück ins Dorf</span>','hub','class="ch2-clue exit-sign forest-exit"')+(showOverseer?act('<span>Mit dem Verwalter sprechen</span>','encounter','class="forest-conversation" aria-label="Mit dem Verwalter sprechen"'):''):'';
+  const caption=kind==='hub'?'<div class="stage-caption"><h1>'+(c.assemblyUnlocked?'Am Abend versammelt sich das Dorf in der Taverne.':'Wald, Peters Hof oder Margarethes Hof – du bestimmst deinen Weg.')+'</h1></div>':exploringForest?'<div class="stage-caption"><h1>'+(showOverseer?'Der Verwalter kommt hinzu.':'Untersuche die Spuren am Waldrand.')+'</h1></div>':'';
+  return header+`<main class="game-layout chapter-two-layout ${state.dialogue?'':kind==='hub'||c.stage==='clues'?'exploration-layout':'task-layout'}"><section class="stage chapter-two scene-${kind} ${entering?'scene-entering':''}" style="--world-image:url('${new URL(bg,location.href).href}')" aria-label="${esc(kind)}"><div class="room"><img class="room-image" src="${bg}" alt="${{hub:'Dorf am Morgen',forest:'Waldweg mit Sammelplatz und Grenzzeichen',corvee:'Bauernhof vor dem Herrenhof',dues:'Margarethes Hof',assembly:'Die bekannte Taverne am Abend'}[kind]||'Das Dorf'}"><div class="ch2-figures">${figures}</div>${clues}${paths}${traces}${forestControls}${caption}</div></section><div id="interaction" data-stage="${c.stage}" class="interaction">${chapterTwoPanel()}</div><footer class="game-footer"><span id="save-status">Fortschritt wird lokal gespeichert</span></footer></main>`;
 }

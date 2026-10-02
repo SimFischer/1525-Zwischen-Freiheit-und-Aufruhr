@@ -1,3 +1,25 @@
+/* Chapter 2 signs stay anchored to the illustrated paths and objects. */
+.chapter-two .exit-sign { background:var(--wood-surface); color:#ffedce; border-radius:2px; border-color:var(--line); clip-path:polygon(7% 0,92% 0,100% 50%,92% 100%,7% 100%,0 50%); padding:.4rem .9rem; box-shadow:inset 0 1px #e2bf7955,0 3px 5px #20100877; }
+.chapter-two .object-sign { background:var(--parchment-surface); color:var(--ink); border-color:var(--line); box-shadow:var(--paper-edge),0 2px 4px #20100866; }
+.chapter-two .ch2-clue { min-width:44px; max-width:24%; transition:filter 160ms ease; }
+.chapter-two .ch2-clue:hover,.chapter-two .ch2-clue:focus-visible { filter:brightness(1.12); }
+.chapter-two .forest-exit { left:46%; top:91%; }
+.chapter-two.scene-forest .anna { left:39%; height:53%; bottom:15%; transform:scaleX(-1); }
+.chapter-two.scene-forest .overseer { right:24%; height:57%; bottom:15%; transform:scaleX(-1); }
+.forest-conversation { position:absolute; z-index:4; left:59%; bottom:15%; width:17%; height:57%; border:0; background:none; box-shadow:none; padding:0; }
+.forest-conversation:hover,.forest-conversation:focus-visible { background:#dfb87509; }
+.forest-conversation span { position:absolute; left:50%; top:calc(100% + .3rem); transform:translateX(-50%); min-height:44px; display:flex; align-items:center; width:max-content; max-width:155%; padding:.35rem .65rem; background:var(--leather-surface); border:1px solid var(--line); color:#ffedce; font:.85rem Georgia,serif; box-shadow:0 2px 4px #20100877; }
+.chapter-two .ch2-clue:focus-visible span,.forest-conversation:focus-visible span { text-decoration:underline; text-underline-offset:.2em; }
+.chapter-two.scene-forest .overseer.arriving { animation:forest-arrival 900ms ease-out both; }
+@keyframes forest-arrival { from { opacity:0; translate:2% 0; } to { opacity:1; translate:0 0; } }
+@media(prefers-reduced-motion:reduce) { .chapter-two.scene-forest .overseer.arriving { animation:none; } }
+@media(max-width:600px) {
+  .forest-conversation span { font-size:.7rem; padding:.25rem; left:74%; width:24vw; max-width:170%; top:calc(100% + 2px); }
+  .chapter-two.scene-forest .anna,.chapter-two.scene-forest .overseer,.forest-conversation { bottom:24%; }
+  .chapter-two.scene-forest .stage-caption { top:-3.2rem; }
+  .chapter-two.scene-forest [data-clue="newClaim"] { top:10% !important; }
+  .village-path[data-scene="ch2_assembly"] { top:83% !important; }
+}
 /* Complete illustrations are the room; figure and object regions are transparent. */
 .chapter-two .ch2-figures { position:absolute; inset:0; pointer-events:none; }
 .ch2-person { position:absolute; bottom:6%; height:70%; width:auto; object-fit:contain; filter:drop-shadow(0 8px 5px #23180b55); }
@@ -14,8 +36,8 @@
 .village-path { background:var(--wood-surface); box-shadow:0 3px 6px #20100888; }
 .village-prop { position:absolute; z-index:3; width:12%; height:18%; object-fit:contain; pointer-events:none; }
 .wood-trace { left:6%; bottom:17%; }
-.grain-trace { right:12%; bottom:18%; }
-.ch2-person.village-overseer { height:26%; right:23%; bottom:37%; }
+.grain-trace { right:20%; bottom:9%; }
+.ch2-person.village-overseer { height:20%; right:18%; bottom:39%; }
 .assembly-papers { position:absolute; left:44%; top:54%; width:15%; height:15%; object-fit:contain; transform:rotate(-5deg); }
 .chapter-two { --world-image:var(--chapter-two-world); }
 .day-plan { display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:.45rem; padding:.5rem; background:var(--leather-surface); color:#f3dfb8; border:1px solid #a77a43; font:.75rem Georgia,serif; }
@@ -27,6 +49,33 @@
 .ch2-travel>span { flex-basis:100%; }
 .village-traces { position:absolute; bottom:17%; left:6%; display:flex; gap:1rem; color:#f5e4c9; font:.7rem Georgia,serif; text-shadow:0 2px 4px #211; }
 .chapter-two-layout .portrait img { object-fit:cover; object-position:50% 10%; }
+/* Grounded figures: scene-specific feet, warm light and clean sprite edges. */
+.ch2-person { z-index:1; filter:sepia(.08) saturate(.94) drop-shadow(2px 4px 3px #23180b44); }
+.ch2-ground-shadow { position:absolute; z-index:0; width:12%; height:2.8%; bottom:5%; border-radius:50%; background:radial-gradient(ellipse,#1b100cc9 0%,#21130b70 38%,transparent 73%); filter:blur(1.5px); pointer-events:none; }
+.ch2-ground-shadow.peter { left:20%; }
+.ch2-ground-shadow.margarethe { left:30%; }
+.ch2-ground-shadow.overseer { right:15%; }
+.chapter-two.scene-forest .ch2-ground-shadow.anna { height:2.8%; width:10%; left:41%; bottom:14%; transform:none; }
+.chapter-two.scene-forest .ch2-ground-shadow.overseer { height:2.8%; width:10%; right:24%; bottom:14%; transform:none; }
+.scene-corvee .ch2-person.overseer,.scene-dues .ch2-person.overseer { right:24%; transform:scaleX(-1); }
+.scene-corvee .ch2-ground-shadow.overseer,.scene-dues .ch2-ground-shadow.overseer { right:24%; }
+.scene-corvee .ch2-ground-shadow.overseer { width:15%; }
+.ch2-person.pointing { clip-path:polygon(0 0,100% 0,100% 26%,79% 26%,79% 100%,0 100%); }
+.ch2-person.margarethe,.ch2-person.assembly-margarethe { clip-path:polygon(0 0,92% 0,92% 49%,100% 49%,100% 100%,0 100%); }
+.ch2-person.konrad { left:1%; height:44%; bottom:28%; transform:scaleX(-1); clip-path:polygon(0 0,100% 0,100% 100%,0 100%,0 93%,6% 93%,6% 45%,0 45%); }
+.ch2-person.assembly-margarethe { right:8%; height:44%; bottom:18%; transform:scaleX(-1); }
+.ch2-ground-shadow.konrad { left:1.5%; width:10%; bottom:27%; }
+.ch2-ground-shadow.assembly-margarethe { right:8%; width:8%; bottom:17%; }
+.ch2-ground-shadow.village-overseer { right:18%; width:3.5%; bottom:38%; height:1%; }
+.scene-assembly .ch2-person,.scene-end .ch2-person { filter:sepia(.2) saturate(.9) brightness(.82) drop-shadow(2px 4px 3px #1c100b55); }
+.assembly-papers { left:57%; top:57%; width:9%; height:6%; transform:rotate(-4deg); filter:sepia(.12) brightness(.9) drop-shadow(0 2px 1px #20100888); }
+.chapter-two .ch2-person.arriving,.chapter-two .ch2-ground-shadow.arriving { animation:forest-arrival 900ms ease-out both; }
+.chapter-two.scene-entering .room-image { animation:chapter-two-room-in 650ms ease-out both; }
+@keyframes chapter-two-room-in { from { opacity:.35; } to { opacity:1; } }
+@media(prefers-reduced-motion:reduce) { .chapter-two .ch2-person.arriving,.chapter-two .ch2-ground-shadow.arriving,.chapter-two.scene-entering .room-image { animation:none; } }
+@media(max-width:600px) {
+  .chapter-two.scene-forest .ch2-ground-shadow.anna,.chapter-two.scene-forest .ch2-ground-shadow.overseer { bottom:23%; }
+}
 @media(max-width:600px) { .ch2-clue { font-size:.7rem; padding:.25rem; } .ch2-person { height:65%; } .village-traces { display:none; } }
 body { background: #21170f; }
 .start-screen {
