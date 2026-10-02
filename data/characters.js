@@ -8,6 +8,7 @@ export const characters = {
   anna: character('anna', 'Anna', [['neutral', 'Im Gespräch'], ['concerned', 'Besorgt'], ['sad', 'Traurig'], ['thoughtful', 'Nachdenklich'], ['engaged', 'Zugewandt']], ['neutral','talking']),
   jakob: character('jakob', 'Jakob', [['neutral', 'Im Gespräch'], ['reading', 'Liest das Flugblatt'], ['thoughtful', 'Nachdenklich'], ['skeptical', 'Zweifelnd'], ['explaining', 'Erläutert einen Gedanken']], ['neutral','reading','talking'])
 };
+for (const [id,name,file] of [['overseer','Der Verwalter','overseer_neutral'],['margarethe','Margarethe','margarethe_thinking'],['konrad','Konrad','konrad_arguing'],['traveler','Eine Reisende','older_peasant_woman_worried']]) characters[id]={name,states:{neutral:{asset:'assets/chapter2/characters/ch2_char_'+file+'.png'}},sceneStates:{}};
 export function characterState(id, emotion = 'neutral') { return characters[id].states[emotion] || characters[id].states.neutral; }
 export function sceneCharacterState(id, active, emotion = 'neutral') {
   const pose = id === 'jakob' && emotion === 'reading' ? 'reading' : active ? 'talking' : 'neutral';

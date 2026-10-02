@@ -1,3 +1,4 @@
+import { chapterTwoScenes } from './chapter-two.js';
 export const scenes = [
   { id: 'ch1_s1_intro', station: 1, title: 'Ein Blatt aus Wittenberg', kind: 'explore', intro: 'chapterIntro', instruction: 'Sprich mit Jakob.', flyerInstruction: 'Das Blatt lesen', hotspots: { jakob: { dialogue: 'introJakob', after: 'unlock-flyer' } }, next: 'ch1_s2_document', emotions: { jakob: 'reading', peter: 'neutral', anna: 'thoughtful' } },
   { id: 'ch1_s2_document', station: 2, title: 'Niemandem untertan', kind: 'document', document: 'freedom', passage: 0, next: 'ch1_s3_interpretation' },
@@ -12,7 +13,8 @@ export const scenes = [
   { id: 'ch1_s6c_political', station: 6, title: 'Abschlusssicherung', kind: 'task', choice: 'politicalConsolidation', next: 'ch1_s7_notebook' },
   { id: 'ch1_s7_notebook', station: 7, title: 'Dein Notizbuch', kind: 'notebook', entry: 'freedom', instruction: 'Im Notizbuch liegen das Blatt und die Gedanken, die du dir an diesem Abend notiert hast.', next: 'ch1_s8_conclusion' },
   { id: 'ch1_s8_conclusion', station: 8, title: 'Und morgen?', kind: 'dialogue', dialogue: 'conclusion', next: 'ch1_end' },
-  { id: 'ch1_end', station: 8, title: 'Wie frei ist dein Leben?', kind: 'ending' }
+  { id: 'ch1_end', station: 8, title: 'Wie frei ist dein Leben?', kind: 'ending' },
+  ...chapterTwoScenes
 ];
 export const sceneAliases = { ch1_s1_tavern_intro: 'ch1_s1_intro', ch1_s6_freedom_axis: 'ch1_s6_freedom_sorting' };
 export const sceneById = Object.fromEntries(scenes.map(scene => [scene.id, scene]));

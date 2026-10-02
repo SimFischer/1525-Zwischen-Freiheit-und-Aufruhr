@@ -2,7 +2,7 @@
 export function installDragDrop(root, onDrop, onSelect) {
   let drag = null, suppressUntil = 0;
   root.addEventListener('click',event => {
-    if (event.detail !== 0 && (event.target.closest('.sort-card') || performance.now()<suppressUntil)) { event.preventDefault(); event.stopImmediatePropagation(); }
+    if (event.detail !== 0 && (event.target.closest('.sort-card') || (performance.now()<suppressUntil && event.target.closest('[data-drop-zone]')))) { event.preventDefault(); event.stopImmediatePropagation(); }
   },true);
   const clean = () => { drag?.ghost?.remove(); root.querySelectorAll('.drop-hover').forEach(node=>node.classList.remove('drop-hover')); drag=null; };
   root.addEventListener('pointerdown',event => {

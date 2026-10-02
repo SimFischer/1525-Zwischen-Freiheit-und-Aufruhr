@@ -1,4 +1,33 @@
 /* Complete illustrations are the room; figure and object regions are transparent. */
+.chapter-two .ch2-figures { position:absolute; inset:0; pointer-events:none; }
+.ch2-person { position:absolute; bottom:6%; height:70%; width:auto; object-fit:contain; filter:drop-shadow(0 8px 5px #23180b55); }
+.ch2-person.anna { left:35%; clip-path:polygon(0 0,100% 0,100% 23%,88% 23%,88% 33%,100% 33%,100% 100%,0 100%,0 33%,24% 33%,24% 23%,0 23%); }
+.ch2-person.peter { left:18%; }
+.ch2-person.margarethe { left:28%; clip-path:polygon(0 0,92% 0,92% 45%,100% 45%,100% 100%,0 100%); }
+.ch2-person.overseer { right:15%; }
+.ch2-person.konrad { left:3%; height:61%; bottom:5%; }
+.ch2-person.assembly-margarethe { right:4%; height:61%; bottom:5%; clip-path:polygon(0 0,92% 0,92% 45%,100% 45%,100% 100%,0 100%); }
+.chapter-two-layout .room { filter:none; }
+.ch2-clue { position:absolute; z-index:5; transform:translate(-50%,-50%); background:#49311ce8; color:#ffedce; border:1px solid #af8854; font:.85rem Georgia,serif; min-height:44px; max-width:25%; }
+.chapter-two .ch2-figures { z-index:2; }
+.ch2-clue:hover,.ch2-clue:focus-visible { transform:translate(-50%,-50%); }
+.village-path { background:var(--wood-surface); box-shadow:0 3px 6px #20100888; }
+.village-prop { position:absolute; z-index:3; width:12%; height:18%; object-fit:contain; pointer-events:none; }
+.wood-trace { left:6%; bottom:17%; }
+.grain-trace { right:12%; bottom:18%; }
+.ch2-person.village-overseer { height:26%; right:23%; bottom:37%; }
+.assembly-papers { position:absolute; left:44%; top:54%; width:15%; height:15%; object-fit:contain; transform:rotate(-5deg); }
+.chapter-two { --world-image:var(--chapter-two-world); }
+.day-plan { display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:.45rem; padding:.5rem; background:var(--leather-surface); color:#f3dfb8; border:1px solid #a77a43; font:.75rem Georgia,serif; }
+.day-plan span { padding:.25rem .4rem; border:1px solid #d1ac7355; }
+.day-plan .postponed { text-decoration:line-through; opacity:.7; }
+.day-plan strong { padding:.25rem .5rem; background:#a7824b; color:#291a0e; }
+.chapter-two-layout:has(.day-plan) .task-panel { max-height:calc(100svh - 180px); }
+.ch2-travel { flex-wrap:wrap; }
+.ch2-travel>span { flex-basis:100%; }
+.village-traces { position:absolute; bottom:17%; left:6%; display:flex; gap:1rem; color:#f5e4c9; font:.7rem Georgia,serif; text-shadow:0 2px 4px #211; }
+.chapter-two-layout .portrait img { object-fit:cover; object-position:50% 10%; }
+@media(max-width:600px) { .ch2-clue { font-size:.7rem; padding:.25rem; } .ch2-person { height:65%; } .village-traces { display:none; } }
 body { background: #21170f; }
 .start-screen {
   min-height: 100svh; max-width: none; display: flex; align-items: center;

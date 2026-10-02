@@ -1,11 +1,13 @@
+import { dialogues } from './dialogues.js';
 export const puzzles = { justification: {
-  title: 'Rechtfertigungskette',
-  instruction: 'Bringe die Gedanken so in eine Reihenfolge, dass sie Luthers Verständnis möglichst genau wiedergeben.',
+  title: 'Warum noch Gutes tun?',
+  contextStatement: dialogues.anna[1].text,
+  instruction: 'Wähle vier passende Gedanken. Ordne sie von Gottes Annahme über den veränderten Beweggrund bis zum Dienst am Nächsten.',
   parts: [
-    { id: 'A', text: 'Der Mensch vertraut darauf, dass Gott ihn aus Gnade annimmt.' },
+    { id: 'A', text: 'Der Mensch vertraut darauf, dass Gott ihn in Christus aus Gnade annimmt.' },
     { id: 'B', text: 'Der Mensch versucht durch gute Werke, vor Gott gerecht zu werden.' },
     { id: 'C', text: 'Der Mensch ist nicht mehr darauf angewiesen, sich Gottes Anerkennung zu verdienen.' },
-    { id: 'D', text: 'Gute Werke können nun aus Freiheit und nicht aus Angst vor Gott geschehen.' },
+    { id: 'D', text: 'Gute Werke können nun aus Freiheit geschehen, statt Gottes Annahme verdienen zu müssen.' },
     { id: 'E', text: 'Der Mensch wendet sich dem Nächsten zu.' },
     { id: 'F', text: 'Gute Werke machen den Menschen vor Gott gerecht.' }
   ],
@@ -19,20 +21,20 @@ export const puzzles = { justification: {
 } };
 export const sortingGames = { freedomSorting: {
   title: 'Freiheit vor Gott und äußeres Leben',
-  instruction: 'Ordne die Karten den beiden Bereichen zu.',
+  instruction: 'Ordne die Karten nach ihrem Schwerpunkt. Prüfe auch die Situationen: Bei zwei Karten lässt sich die andere Seite begründen.',
   zones: [
     { id: 'god', title: 'Freiheit vor Gott', subtitle: 'Glaube, Gewissen und die Beziehung des Menschen zu Gott' },
     { id: 'world', title: 'Äußeres Leben', subtitle: 'Alltag, Herrschaft, Pflichten und gesellschaftliche Verhältnisse' }
   ],
   cards: [
-    { id: 'grace', text: 'Gnade Gottes', preferred: 'god' },
-    { id: 'faith', text: 'Glaube', preferred: 'god' },
-    { id: 'conscience', text: 'Gewissen', preferred: 'god' },
-    { id: 'labor', text: 'Frondienst', preferred: 'world' },
-    { id: 'dues', text: 'Abgaben', preferred: 'world' },
-    { id: 'rule', text: 'Herrschaft', preferred: 'world' },
-    { id: 'service', text: 'Dienst am Nächsten', preferred: 'god', boundary: true },
-    { id: 'obedience', text: 'Gehorsam', preferred: 'world', boundary: true }
+    { id: 'grace', text: 'Gnade Gottes', example: 'Angenommen sein, ohne es sich durch Leistung zu verdienen.', preferred: 'god' },
+    { id: 'faith', text: 'Glaube', example: 'Auf Gottes Zusage in Christus vertrauen.', preferred: 'god' },
+    { id: 'conscience', text: 'Gewissen', example: 'Vor Gott Halt in seiner Zusage finden statt im eigenen Verdienst.', preferred: 'god' },
+    { id: 'labor', text: 'Frondienst', example: 'Morgen auf dem Feld des Herrn arbeiten müssen.', preferred: 'world' },
+    { id: 'dues', text: 'Abgaben', example: 'Einen Teil der eigenen Ernte abgeben müssen.', preferred: 'world' },
+    { id: 'rule', text: 'Herrschaft', example: 'Der Herr bestimmt, wer im Wald Holz holen darf.', preferred: 'world' },
+    { id: 'service', text: 'Dienst am Nächsten', example: 'Einem Bedürftigen helfen, ohne damit Gottes Gnade zu verdienen.', preferred: 'god', boundary: true },
+    { id: 'obedience', text: 'Gehorsam', example: 'Eine Anordnung befolgen – auch wenn sie das Gewissen beunruhigt?', preferred: 'world', boundary: true }
   ],
   hints: [
     'Denkimpuls:\nFrage dich bei jeder Karte: Geht es hier zuerst darum, wie der Mensch vor Gott dasteht – oder um seine konkrete Stellung und seine Pflichten in der Welt?',

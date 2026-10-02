@@ -1,6 +1,8 @@
+import { chapterTwoChoices } from './chapter-two.js';
 import { documents } from './documents.js';
 import { dialogues } from './dialogues.js';
 export const choices = {
+  ...chapterTwoChoices,
   initialFreedomInterpretation: {
     contextLabel: 'Jakob zeigt ein Flugblatt, auf dem steht:',
     contextStatement: documents.freedom.passages[0],
@@ -35,6 +37,7 @@ export const choices = {
   },
   serviceBoundary: {
     prompt: 'Warum verbindet der ‚Dienst am Nächsten‘ beide Bereiche?', solution: 'B',
+    hints: ['Denkimpuls:\nWoher kommt die Freiheit zum Dienst, und wem kommt dieser Dienst zugute?', 'Hinweis:\nUnterscheide den Grund des Handelns von seinem Ziel: Muss Hilfe Gottes Annahme erst verdienen? Und bleibt sie ohne Folgen für den Mitmenschen?'],
     options: [
       { id: 'A', text: 'Weil der Dienst am Nächsten nur eine religiöse Pflicht gegenüber Gott ist.', hints: ['Denkimpuls:\nWem gilt dieser Dienst konkret – Gott allein oder einem anderen Menschen?'] },
       { id: 'B', text: 'Weil die Freiheit vor Gott den Menschen zu einem neuen Handeln gegenüber anderen freisetzt.', feedback: 'Genau:\nDie Freiheit entsteht im Verhältnis zu Gott. Sie bleibt aber nicht innerlich eingeschlossen, sondern verändert das Handeln gegenüber dem Mitmenschen. Deshalb verbindet der ‚Dienst am Nächsten‘ beide Ebenen.' },
@@ -44,6 +47,7 @@ export const choices = {
   },
   obedienceBoundary: {
     prompt: 'Warum ist ‚Gehorsam‘ schwieriger einzuordnen als ‚Frondienst‘ oder ‚Abgaben‘?', solution: 'B',
+    hints: ['Denkimpuls:\nWas wäre, wenn eine Anordnung deinem Gewissen widerspricht?', 'Hinweis:\nVergleiche eine Abgabe mit einer Anordnung, durch die ein anderer zu Schaden käme. Reicht bei beiden die Frage, wer etwas befohlen hat?'],
     options: [
       { id: 'A', text: 'Weil Gehorsam immer nur eine Frage des Glaubens ist.', hints: ['Denkimpuls:\nGehorsam zeigt sich in konkretem Verhalten. Kann er deshalb wirklich nur eine innere Glaubensfrage sein?'] },
       { id: 'B', text: 'Weil Gehorsam äußeres Verhalten betrifft, aber zugleich Gewissen und Verantwortung berühren kann.', feedback: 'Das trifft die Schwierigkeit:\nGehorsam gehört zur äußeren Ordnung, kann aber zugleich Fragen von Gewissen und Verantwortung aufwerfen. Gerade deshalb lässt sich das innere und äußere Leben nicht vollständig voneinander trennen.' },
@@ -54,21 +58,23 @@ export const choices = {
   freedomComparison: {
     statements: ['Christliche Freiheit betrifft nur das Innere des Menschen.', 'Christliche Freiheit führt automatisch zu politischer Freiheit.'],
     prompt: 'Welche Aussage trifft zu?', solution: 'D',
+    hints: ['Denkimpuls:\nPrüfe die Wörter „nur“ und „automatisch“. Welche Folgen hat Freiheit für den Nächsten, und folgt daraus schon eine bestimmte politische Ordnung?', 'Hinweis:\nPrüfe beide Behauptungen getrennt: Wo begegnet dir in den beiden Luther-Sätzen der Mitmensch? Und steht dort bereits ein politisches Programm?'],
     wrongFeedback: 'Denkimpuls:\nDie erste Aussage greift zu kurz, weil …\n… die Freiheit vor Gott auch das Handeln gegenüber dem Nächsten verändert.',
     options: [
       { id: 'A', text: 'Beide Aussagen treffen zu.' },
       { id: 'B', text: 'Nur die erste trifft zu.' },
       { id: 'C', text: 'Nur die zweite trifft zu.' },
-      { id: 'D', text: 'Beide Aussagen greifen zu kurz.', feedback: 'Beide Aussagen greifen zu kurz.' }
+      { id: 'D', text: 'Beide Aussagen greifen zu kurz.', feedback: 'Beide Aussagen greifen zu kurz:\nDie Freiheit im Glauben führt zum Dienst am Nächsten und bleibt deshalb nicht auf ein inneres Erleben beschränkt. Sie ist aber auch kein Versprechen automatischer politischer Befreiung. Welche gesellschaftlichen Folgen sie haben kann, müssen wir weiter fragen.' }
     ]
   },
   innerConsolidation: {
     contextLabel: 'Aussage 1:',
     contextStatement: 'Christliche Freiheit betrifft nur das Innere des Menschen.',
     prompt: 'Die erste Aussage greift zu kurz, weil …', solution: 'A',
+    hints: ['Denkimpuls:\nWarum nennt Luther den freien Menschen zugleich einen „dienstbaren Knecht“?', 'Hinweis:\nDenke an Annas Frage: Wer hilft, um Gottes Annahme zu verdienen, handelt aus einem anderen Grund als jemand, der sich bereits angenommen weiß. Betrifft dieser Unterschied nur sein Inneres?'],
     wrongFeedback: 'Denkimpuls:\nWarum verbindet der ‚Dienst am Nächsten‘ beide Bereiche?',
     options: [
-      { id: 'A', text: '… die Freiheit vor Gott auch das Handeln gegenüber dem Nächsten verändert.', feedback: 'Die erste Aussage greift zu kurz, weil …\n… die Freiheit vor Gott auch das Handeln gegenüber dem Nächsten verändert.' },
+      { id: 'A', text: '… die Freiheit vor Gott auch das Handeln gegenüber dem Nächsten verändert.', feedback: 'Die erste Aussage greift zu kurz, weil …\n… die Freiheit vor Gott auch das Handeln gegenüber dem Nächsten verändert. Gute Werke müssen Gottes Annahme nicht erst bewirken; sie können aus der geschenkten Freiheit dem anderen zugutekommen.' },
       { id: 'B', text: '… Luther jede politische Ordnung abschaffen will.' },
       { id: 'C', text: '… Religion für Luther nur gesellschaftliche Bedeutung hat.' }
     ]
@@ -77,6 +83,7 @@ export const choices = {
     contextLabel: 'Aussage 2:',
     contextStatement: 'Christliche Freiheit führt automatisch zu politischer Freiheit.',
     prompt: 'Warum greift diese Aussage zu kurz?', solution: 'A',
+    hints: ['Denkimpuls:\nUnterscheide Freiheit im Glauben von Freiheit gegenüber einem weltlichen Herrn. Sagen die beiden Luther-Sätze, dass beides automatisch dasselbe ist?', 'Hinweis:\nDer Dienst am Nächsten betrifft das Leben mit anderen. Welche konkrete politische Ordnung daraus folgen soll, legen die beiden Sätze aber nicht fest. Prüfe deshalb das Wort „automatisch“.'],
     wrongFeedback: 'Denkimpuls:\nGlaube, Gewissen und die Beziehung des Menschen zu Gott',
     securing: 'Welche gesellschaftlichen Folgen diese Freiheit haben kann, bleibt damit offen.',
     options: [

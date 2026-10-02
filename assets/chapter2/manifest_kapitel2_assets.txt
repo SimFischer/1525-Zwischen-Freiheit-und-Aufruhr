@@ -1,0 +1,21 @@
+Kapitel 2 Asset-Paket
+=====================
+
+Ordnerstruktur:
+- backgrounds/: Szene-Hintergründe für Kapitel 2
+- characters/: freigestellte Figuren (PNG mit Transparenz)
+- props/: freigestellte Requisiten / Interaktionsobjekte (PNG mit Transparenz)
+- ui/: freigestellte UI-Elemente im historischen Spielstil (PNG mit Transparenz)
+- sheets/: die ursprünglichen Sammelbögen
+
+Empfohlene Verwendung:
+- ch2_bg_village_hub_morning.png = Dorf-Hub / Navigationsszene
+- ch2_bg_forest_edge_path.png = Waldrand / Holz- und Nutzungsrechte
+- ch2_bg_manor_yard_forced_labor.png = Frondienst / Hofszene
+- ch2_bg_peasant_cottage_dues.png = Abgaben / Vorräte / Haushalt
+- ch2_bg_tavern_assembly_evening.png = Dorfversammlung am Abend
+
+Wiederkehrende Figuren:
+- Peter, Anna, Jakob aus Kapitel 1
+Neue Figuren:
+- Overseer (Verwalter), older_peasant_woman, Margarethe, Konrad

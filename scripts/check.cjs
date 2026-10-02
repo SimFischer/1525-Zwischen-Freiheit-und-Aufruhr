@@ -7,8 +7,8 @@ const server = require('./serve.cjs');
 const artifacts = path.resolve(__dirname,'..','artifacts');
 const KEY = '1525.freedom.save.v1';
 const errors = [];
-const action = (page,name) => page.locator(`[data-action="${name}"]`).first().click();
-const saved = page => page.evaluate(key => JSON.parse(localStorage.getItem(key)),KEY);
+const action = async (page,name) => { if(name==='home' && !await page.locator('[data-action="home"]').count()) { await page.locator('[data-action="menu"]').click(); name='menu-home'; } return page.locator(`[data-action="${name}"]`).first().click(); };
+const saved = page => page.evaluate(key => JSON.parse(sessionStorage.getItem('1525.freedom.test.active') ? sessionStorage.getItem('1525.freedom.test.v1') : localStorage.getItem(key)),KEY);
 async function dialogue(page) {
   await page.locator('[data-action="dialogue-next"]').waitFor({state:'visible'});
   for (let i=0; i<30 && await page.locator('[data-action="dialogue-next"]').count(); i++) await action(page,'dialogue-next');
@@ -102,6 +102,39 @@ async function noReplay(page,id) {
   assert.match(await page.locator('#notice').innerText(),id==='anna' ? /Anna wartet/ : new RegExp((id==='peter'?'Peter':'Jakob')+' hat mir dazu schon'));
   assert.deepEqual(await saved(page),before,'repeat contact changed the save');
 }
+async function printedSource(page,index,label) {
+  const image=page.locator('.source-image img');
+  await image.waitFor({state:'visible'});
+  await page.waitForFunction(()=>document.querySelector('.source-image img')?.naturalWidth>0);
+  assert.match(await image.getAttribute('src'),new RegExp('flugblatt_luther_seite_'+(index+1)+'.png$'));
+  assert.ok(await page.locator('.source-readable').isHidden(),'source text duplicated over image');
+  assert.equal(await page.locator('.printed-leaf,.print-ornament').count(),0);
+  const box=await image.boundingBox(), surface=await page.locator('.source-viewport').boundingBox();
+  assert.ok(Math.abs(box.width/box.height-2/3)<.01,label+' distorted printed asset');
+  assert.ok(box.x>=surface.x && box.x+box.width<=surface.x+surface.width+1 && box.y>=surface.y && box.y+box.height<=surface.y+surface.height+1,label+' cropped printed asset');
+  const before=await saved(page);
+  await page.locator('[data-source-action="zoom"]').tap();
+  const viewport=page.locator('.source-viewport');
+  await page.waitForFunction(()=>document.querySelector('.source-image img')?.naturalWidth>0);
+  const enlarged=await image.boundingBox();
+  assert.ok(enlarged.width>=box.width-1,label+' enlargement shrank image');
+  if(enlarged.height>surface.height+1) assert.ok(await viewport.evaluate(el=>el.scrollHeight>el.clientHeight),'enlargement not scrollable');
+  await viewport.evaluate(el=>{el.scrollTop=el.scrollHeight;});
+  await overlayGeometry(page,label+' enlarged');
+  for(const control of await page.locator('.document-controls button,.source-footer button').all()) {
+    const r=await control.boundingBox(), height=await page.evaluate(()=>innerHeight);
+    assert.ok(r.height>=44 && r.y>=0 && r.y+r.height<=height,label+' inaccessible document control');
+  }
+  assert.equal(await viewport.evaluate(el=>el.scrollWidth>el.clientWidth),false,label+' horizontal source scrolling');
+  await page.locator('[data-source-action="zoom"]').tap();
+  await page.locator('[data-source-action="read"]').tap();
+  assert.ok(await page.locator('.source-image').isHidden());
+  assert.ok(await page.locator('.source-readable').isVisible());
+  assert.equal(await page.locator('.source-readable blockquote').innerText(),index===0 ? '„Ein Christenmensch ist ein freier Herr über alle Dinge und niemandem untertan.“' : '„Ein Christenmensch ist ein dienstbarer Knecht aller Dinge und jedermann untertan.“');
+  await overlayGeometry(page,label+' readable text');
+  await page.locator('[data-source-action="read"]').tap();
+  assert.deepEqual(await saved(page),before,'source display controls changed save');
+}
 async function feedback(page) { await page.locator('[data-action="feedback-next"]').waitFor(); await action(page,'feedback-next'); }
 async function puzzleSequence(page,sequence) { await action(page,'puzzle-reset'); for(const id of sequence) await page.locator(`.puzzle-parts [data-part="${id}"]`).tap(); }
 async function sortingSet(page,id,zone) {
@@ -165,6 +198,7 @@ async function drag(page,id,zone,touch,context) {
     assert.equal(await page.locator('.spoken').innerText(),'Mir ist ein Blatt aus Wittenberg in die Hände gekommen. Darin steht, was Luther schreibt.');
     assert.match(await page.locator('.room-image').getAttribute('src'),/k1_taverne_dialog_group.png/);
     assert.match(await page.locator('.portrait img').getAttribute('src'),/portrait\/jakob_reading.png/);
+    assert.equal(await page.locator('.portrait span').count(),0,'technical emotion label in dialogue');
     await action(page,'dialogue-next');
     assert.equal(await page.locator('.speaking').getAttribute('data-character'),'peter');
     assert.equal(await page.locator('.stage').getAttribute('data-speaker'),'peter');
@@ -209,6 +243,8 @@ async function drag(page,id,zone,touch,context) {
     assert.ok(Object.values((await saved(page)).dimensions).every(value => value===0));
     await dialogue(page);
     assert.match(await page.locator('blockquote').innerText(),/dienstbarer Knecht/);
+    await printedSource(page,1,'second source in story');
+    await photograph(page,'ch1-document-second-1024');
     await page.keyboard.press('Escape'); await dialogue(page);
     assert.equal(await page.locator('[data-action="next-scene"]').count(),0);
 
@@ -218,6 +254,7 @@ async function drag(page,id,zone,touch,context) {
     await dialogue(page); assert.equal((await saved(page)).progress.peterConversation,true);
     await noReplay(page,'peter');
     await page.locator('[data-character="anna"]').tap(); await dialogue(page);
+    assert.match(await page.locator('.puzzle-context').innerText(),/Warum sollte ich dann überhaupt noch etwas für andere tun/);
     await puzzleSequence(page,['B','F','A','C']); await action(page,'puzzle-check');
     assert.match(await page.locator('.feedback-text').innerText(),/Denkimpuls/);
     await feedback(page); await action(page,'puzzle-check');
@@ -230,6 +267,13 @@ async function drag(page,id,zone,touch,context) {
     await feedback(page); assert.match(await page.locator('.spoken').innerText(),/Dann macht die Freiheit also nicht gleichgültig/);
     await dialogue(page); assert.equal((await saved(page)).progress.annaConversation,true);
     await noReplay(page,'anna');
+
+    const beforeFlyerReview=await saved(page);
+    await page.locator('[data-action="flyer"]').tap();
+    assert.equal(await page.locator('.source-footer [data-action="close-overlay"]').innerText(),'Zurück in die Taverne');
+    await page.locator('.source-footer [data-action="close-overlay"]').click();
+    assert.equal(await page.locator('.notebook').count(),0,'tavern source returned to locked notebook');
+    assert.deepEqual(await saved(page),beforeFlyerReview,'source review changed story progress');
 
     await page.locator('[data-character="jakob"]').tap(); await dialogue(page);
     await photograph(page,'ch1-jakob-1024'); await geometry(page,'Jakob choice');
@@ -244,6 +288,7 @@ async function drag(page,id,zone,touch,context) {
 
     await action(page,'next-scene'); await dialogue(page);
     assert.equal(await page.locator('.sort-card').count(),8);
+    assert.equal(await page.locator('.sort-card .sort-example').count(),8,'sorting lacks application situations');
     assert.equal(await page.locator('input[type="range"]').count(),0);
     await drag(page,'grace','god',true,context); await drag(page,'faith','god',false,context);
     const assignments={conscience:'god',service:'god',obedience:'world',rule:'world',labor:'god',dues:'world'};
@@ -285,7 +330,13 @@ async function drag(page,id,zone,touch,context) {
     await page.locator('[data-tab="path"]').click();
     assert.match(await page.locator('.notebook').innerText(),/Vielleicht kann man frei sein und trotzdem Verantwortung/);
     await page.locator('[data-tab="documents"]').click(); await action(page,'archive-document');
-    assert.equal(await page.locator('blockquote').count(),2);
+    await printedSource(page,0,'archive first page');
+    assert.ok(await page.locator('[data-source-action="previous"]').isDisabled());
+    await page.locator('[data-source-action="next"]').tap();
+    await printedSource(page,1,'archive second page');
+    assert.ok(await page.locator('[data-source-action="next"]').isDisabled());
+    await photograph(page,'ch1-document-second-archive-1024');
+    await page.locator('[data-source-action="previous"]').tap();
     assert.ok(await page.locator('.source-note').isHidden(),'editorial note exposed by default in archive');
     await page.locator('.editorial-info summary').tap();
     assert.match(await page.locator('.source-note').innerText(),/Schreibweise behutsam modernisiert/);
@@ -348,7 +399,20 @@ async function drag(page,id,zone,touch,context) {
       ['ch1_s6c_compare','D',['A','B','C','D']], ['ch1_s6c_inner','A',['A','B','C']], ['ch1_s6c_political','A',['A','B','C']]
     ]) for(const id of ids) {
       await scene(sceneId);
-      for(let n=0;n<(id===solution?1:3);n++) { await choose(page,id); await feedback(page); }
+      const solutionText=await page.locator(`[data-option="${solution}"] > span:nth-child(2)`).innerText();
+      let firstHint='';
+      for(let n=0;n<(id===solution?1:3);n++) {
+        await choose(page,id);
+        const response=await page.locator('.feedback-text').innerText();
+        if(id!==solution && n===0) firstHint=response;
+        if(id!==solution && n===1) {
+          assert.equal(await page.locator('.solution-text').count(),0,'second attempt disclosed solution');
+          assert.ok(!response.includes(solutionText),'second hint copied correct answer');
+          assert.notEqual(response,firstHint,'second hint did not advance reasoning');
+        }
+        if(id===solution || n===2) assert.ok(response.length>80,'success feedback lacks explanation');
+        await feedback(page);
+      }
       assert.notEqual((await saved(page)).scene,sceneId);
     }
     // Both boundary cards can bridge the fields; the six clear cards must fit.
@@ -385,13 +449,29 @@ async function drag(page,id,zone,touch,context) {
         const foot=await page.locator('.source-footer button').boundingBox(), modal=await page.locator('dialog[open]').boundingBox();
         assert.ok(foot.y+foot.height<=modal.y+modal.height,'clipped source return button');
       }
-      await photograph(page,'ch1-document-'+viewport.width); await page.keyboard.press('Escape');
+      await printedSource(page,0,viewport.width+' first source');
+      await photograph(page,'ch1-document-'+viewport.width);
+      await page.evaluate(async()=>{const {openDocument}=await import('./js/document-viewer.js');openDocument('freedom',null,()=>{},true);});
+      assert.equal(await page.locator('[data-source-action="next"]').count(),0,'archive revealed unread second page');
+      assert.equal(await page.locator('img[src$="flugblatt_luther_seite_2.png"]').count(),0,'unread asset in archive');
+      await page.keyboard.press('Escape');
+      await page.goto(url+'?start=ch1_s4_second_thesis'); await dialogue(page);
+      await printedSource(page,1,viewport.width+' second source');
+      await photograph(page,'ch1-document-second-'+viewport.width);
+      await page.evaluate(async()=>{const {openDocument}=await import('./js/document-viewer.js');openDocument('freedom',null,()=>{},true);});
+      await printedSource(page,0,viewport.width+' archive first source');
+      await page.locator('[data-source-action="next"]').tap();
+      await printedSource(page,1,viewport.width+' archive second source');
+      await page.keyboard.press('Escape');
       await scene('ch1_s3_interpretation'); await dialogue(page); await geometry(page,viewport.width+' first choice');
       await doorGeometry(page);
       assert.match(await page.locator('.choices > button').first().evaluate(el=>getComputedStyle(el).fontFamily),/Georgia/);
       await photograph(page,'ch1-choice-'+viewport.width);
       await scene('ch1_s5_conversations'); await page.locator('[data-character="anna"]').click(); await dialogue(page); await geometry(page,viewport.width+' puzzle');
       await photograph(page,'ch1-puzzle-'+viewport.width);
+      await puzzleSequence(page,['B','F','A','C']); await action(page,'puzzle-check');
+      await geometry(page,viewport.width+' feedback');
+      await photograph(page,'ch1-feedback-'+viewport.width);
       await scene('ch1_s6_freedom_sorting'); await dialogue(page); await geometry(page,viewport.width+' sorting');
       await photograph(page,'ch1-sort-layout-'+viewport.width);
       await scene('ch1_s6b_service'); await geometry(page,viewport.width+' boundary');
@@ -402,20 +482,26 @@ async function drag(page,id,zone,touch,context) {
       await photograph(page,'ch1-notebook-'+viewport.width);
       for(const tab of ['documents','path','freedom']) { await page.locator(`[data-tab="${tab}"]`).tap(); assert.equal(await page.locator(`[data-tab="${tab}"]`).getAttribute('aria-current'),'page'); }
       await action(page,'close-overlay');
+      await action(page,'menu'); await overlayGeometry(page,viewport.width+' menu');
+      await photograph(page,'ch1-menu-'+viewport.width); await action(page,'close-overlay');
       await scene('ch1_s2_document'); await overlayGeometry(page,viewport.width+' source'); await page.keyboard.press('Escape');
       await scene('ch1_end'); await doorGeometry(page,true); await page.locator('[data-action="prop-door"]').tap(); await page.locator('.ending').waitFor();
+      assert.equal(await page.locator('.ending [data-action="home"]').count(),1,'duplicate ending destination');
     }
     await page.setViewportSize({width:1024,height:768});
     await scene('ch1_s6_freedom_sorting'); await dialogue(page);
     await page.locator('[data-card="grace"]').focus(); await page.keyboard.press('Enter');
     assert.equal(await page.evaluate(()=>document.activeElement.id),'sort-target-god');
     await page.keyboard.press('Enter'); assert.equal((await saved(page)).minigames.sorting.grace,'god');
+    const beforeDebug=await page.evaluate(key=>localStorage.getItem(key),KEY);
     await page.goto(url+'?debug=true&start=ch1_s5_conversations');
     await page.locator('.debug summary').click(); await action(page,'debug-documents');
     await page.locator('#debug-scene').selectOption('ch1_s6b_service'); assert.equal(await page.locator('.choices').count(),1);
     await action(page,'debug-next'); assert.match(await page.locator('.stage-caption').innerText(),/Gehorsam/);
     await action(page,'debug-prev'); await action(page,'debug-clear');
-    assert.equal(await page.evaluate(key=>localStorage.getItem(key),KEY),null);
+    assert.equal(await page.evaluate(key=>localStorage.getItem(key),KEY),beforeDebug);
+    assert.equal(await page.evaluate(()=>sessionStorage.getItem('1525.freedom.test.v1')),null);
+    await action(page,'admin-exit');
     await scene('ch1_s1_intro'); await dialogue(page);
     await page.locator('[data-action="fullscreen"]').tap(); await page.waitForFunction(()=>Boolean(document.fullscreenElement));
     await action(page,'home');
@@ -448,7 +534,7 @@ async function drag(page,id,zone,touch,context) {
       if(oldScene==='ch1_s6c_inner') await dialogue(page); else if(oldScene==='ch1_end') { await page.locator('[data-action="prop-door"]').tap(); await page.locator('.ending').waitFor(); await action(page,'home'); }
       else { await action(page,'menu'); await action(page,'menu-home'); }
       const persisted=await saved(page);
-      assert.equal(persisted.version,3); assert.equal(persisted.choices.initialFreedomInterpretation,legacy.choices.initialFreedomInterpretation);
+      assert.equal(persisted.version,4); assert.equal(persisted.choices.initialFreedomInterpretation,legacy.choices.initialFreedomInterpretation);
       assert.equal(persisted.dimensions.solidarity,2); assert.deepEqual(persisted.notebook.documents,['freedom']);
       assert.equal(persisted.minigames.sorting.grace,'god'); assert.equal(persisted.minigames.sorting.labor,'world');
       assert.equal(persisted.minigames.axis,undefined); assert.equal(persisted.minigames.attempts.serviceBoundary,undefined);
@@ -459,11 +545,16 @@ async function drag(page,id,zone,touch,context) {
     // Legacy saves preserve the actual wording of earlier decisions; new tasks must still be completed.
     await page.evaluate(key => localStorage.setItem(key,JSON.stringify({version:1,scene:'ch1_end',choices:{initialFreedomInterpretation:'D'},notebook:{documents:['freedom'],passages:{freedom:[0,1]}},progress:{flyerUnlocked:true}})),KEY);
     await page.goto(url); await action(page,'resume');
-    assert.equal((await saved(page)).version,3); assert.equal((await saved(page)).scene,'ch1_s5_conversations');
+    assert.equal((await saved(page)).version,4); assert.equal((await saved(page)).scene,'ch1_s5_conversations');
     assert.equal((await saved(page)).progress.annaConversation,false);
     assert.equal((await saved(page)).choiceTexts.initialFreedomInterpretation,'Vielleicht bedeutet Freiheit nicht, keine Verantwortung mehr zu haben.');
     await page.evaluate(key=>localStorage.setItem(key,'{broken'),KEY); await page.goto(url);
     assert.equal(await page.locator('[data-action="resume"]').count(),0);
+    await page.emulateMedia({reducedMotion:'reduce'});
+    await scene('ch1_end'); await page.locator('[data-action="prop-door"]').tap();
+    await page.locator('.ending').waitFor();
+    assert.ok(await page.locator('.next-chapter').evaluate(el=>parseFloat(getComputedStyle(el).animationDuration)<=.01),'reduced-motion chapter transition');
+    await page.emulateMedia({reducedMotion:'no-preference'});
     assert.deepEqual(errors,[]);
     console.log('PASS: full chapter; every interpretation, reaction and assessed option; staged hints and assisted solutions; 4-card reorder; two-field sorting with mouse/touch drag and tap, boundary cases and three-part consolidation; boundaries; consolidation; speaker assets; notebook; source HTML; save/reload and migration; debug; keyboard; five responsive viewports; no missing assets or console errors.');
   } catch(error) {

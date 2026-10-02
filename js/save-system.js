@@ -1,10 +1,24 @@
+import { syncConsequences } from './consequences.js';
 import { freshState } from './state.js';
 import { canonicalScene, sceneById, scenes } from '../data/scenes.js';
 import { choices } from '../data/choices.js';
 import { sortingGames } from '../data/minigames.js';
+import { grievances, reflections, demandParts } from '../data/chapter-two.js';
 const KEY = '1525.freedom.save.v1';
+export const TEST_KEY = '1525.freedom.test.v1';
+const TEST_ACTIVE = '1525.freedom.test.active';
+let testMode = false, testMemory = null;
+try { testMode=sessionStorage.getItem(TEST_ACTIVE)==='true'; testMemory=sessionStorage.getItem(TEST_KEY); } catch {}
+export function isTestMode() { return testMode; }
+export function setTestMode(active) {
+  testMode=active;
+  try { if(active) sessionStorage.setItem(TEST_ACTIVE,'true'); else {sessionStorage.removeItem(TEST_ACTIVE);sessionStorage.removeItem(TEST_KEY);} } catch {}
+  if(!active) testMemory=null;
+}
 let storageFailed = false;
 export function save(state) {
+  syncConsequences(state);
+  if(testMode) { testMemory=JSON.stringify(state); try { sessionStorage.setItem(TEST_KEY,testMemory); } catch {} return true; }
   try { localStorage.setItem(KEY, JSON.stringify(state)); storageFailed = false; return true; }
   catch { if (!storageFailed) document.dispatchEvent(new CustomEvent('storage-error')); storageFailed = true; return false; }
 }
@@ -25,12 +39,12 @@ function migrate(value) {
   const id = canonicalScene(value.scene);
   base.scene = scenes.findIndex(s => s.id === id) >= scenes.findIndex(s => s.kind === 'conversations') ? 'ch1_s5_conversations' : id;
   base.resumeSetup = true;
-  return base;
+  return syncConsequences(base);
 }
-export function load() {
+export function load(normal = false) {
   try {
-    const value = JSON.parse(localStorage.getItem(KEY));
-    if (!value || ![1,2,3].includes(value.version) || !sceneById[canonicalScene(value.scene)]) return null;
+    const value = JSON.parse(testMode&&!normal ? testMemory : localStorage.getItem(KEY));
+    if (!value || ![1,2,3,4].includes(value.version) || !sceneById[canonicalScene(value.scene)]) return null;
     if (value.version === 1) return migrate(value);
     const base = freshState();
     for (const key of ['dimensions','relationships','world','notebook','progress','minigames','choices','choiceTexts']) {
@@ -52,7 +66,27 @@ export function load() {
       for (const id of ['serviceBoundary','obedienceBoundary','innerConsolidation','politicalConsolidation']) { delete base.choices[id]; delete base.choiceTexts[id]; }
     }
     if (Object.entries(base.minigames.sorting).some(([id,zone])=>!sortingGames.freedomSorting.cards.some(card=>card.id===id) || !['god','world'].includes(zone))) return null;
-    for (const [key, id] of Object.entries(base.choices)) if (id !== null && (!choices[key] || !choices[key].options.some(option => option.id === id))) delete base.choices[key];
+    for (const key of ['chapter2','forestEvidence','grievances']) if(value[key] && typeof value[key]==='object' && !Array.isArray(value[key])) base[key]={...base[key],...value[key]};
+    const isRecord = item => item && typeof item === 'object' && !Array.isArray(item);
+    const validList = (items, allowed, max) => Array.isArray(items) && items.length<=max && new Set(items).size===items.length && items.every(item=>allowed.includes(item));
+    const areas=['food','seed','reserve'];
+    const complaintIds=grievances.map(item=>item.id);
+    if (!validList(base.choices.peterDayPlan,['grain','fence','feed'],3) || !validList(base.choices.priorityGrievances,complaintIds,3)) return null;
+    if (!isRecord(base.choices.initialFarmPlan) || areas.some(key=>!Number.isInteger(base.choices.initialFarmPlan[key]) || base.choices.initialFarmPlan[key]<0 || base.choices.initialFarmPlan[key]>10)) return null;
+    if (!Array.isArray(base.choices.duesFirstSacrifice) || base.choices.duesFirstSacrifice.length>3 || base.choices.duesFirstSacrifice.some(key=>!areas.includes(key))) return null;
+    if (base.choices.duesSecondSacrifice!==null && ![...areas,'refuse'].includes(base.choices.duesSecondSacrifice)) return null;
+    if (base.choices.playerDemand!==null && (typeof base.choices.playerDemand!=='string' || base.choices.playerDemand.length>1000)) return null;
+    for (const id of ['forest','corvee','dues']) if(!validList(base.grievances[id],reflections[id].items.map(item=>item[0]),2)) return null;
+    for (const key of ['forestComplete','corveeComplete','duesComplete','assemblyUnlocked','assemblyComplete']) if(typeof base.chapter2[key]!=='boolean') return null;
+    if(Object.values(base.forestEvidence).some(value=>typeof value!=='boolean')) return null;
+    if (!isRecord(base.chapter2.grain) || Object.entries(base.chapter2.grain).some(([key,area])=>!/^sack-[0-9]$/.test(key)||![...areas,'dues'].includes(area))) return null;
+    if (!validList(base.chapter2.pair,complaintIds,2) || !Array.isArray(base.chapter2.links) || base.chapter2.links.length>28 || base.chapter2.links.some(link=>!isRecord(link)||!complaintIds.includes(link.a)||!complaintIds.includes(link.b)||link.a===link.b||!grievances.find(item=>item.id===link.a).tags.includes(link.reason)||!grievances.find(item=>item.id===link.b).tags.includes(link.reason))) return null;
+    if (!isRecord(base.chapter2.demand) || Object.entries(base.chapter2.demand).some(([key,index])=>!demandParts[key]||!Number.isInteger(index)||index<0||index>=demandParts[key].length)) return null;
+    if (!Array.isArray(base.chapter2.removed) || base.chapter2.removed.length>3 || base.chapter2.removed.some(item=>!isRecord(item)||!/^sack-[0-9]$/.test(item.id)||!areas.includes(item.from))) return null;
+    const extended=['peterDayPlan','initialFarmPlan','duesFirstSacrifice','duesSecondSacrifice','priorityGrievances','playerDemand'];
+    if(value.consequences && typeof value.consequences==='object') base.consequences=value.consequences;
+    base.chapter = sceneById[canonicalScene(value.scene)].chapter || 1;
+    for (const [key, id] of Object.entries(base.choices)) if (!extended.includes(key) && id !== null && (!choices[key] || !choices[key].options.some(option => option.id === id))) delete base.choices[key];
     base.scene = canonicalScene(value.scene); base.phase = value.phase || 'active';
     base.interaction = value.interaction || null;
     if (base.interaction && !['choice','puzzle','feedback'].includes(base.interaction.kind)) return null;
@@ -64,7 +98,10 @@ export function load() {
       base.progress.completedScenes = base.progress.completedScenes.filter(id=>!id.startsWith('ch1_s6'));
       base.minigames.completed = base.minigames.completed.filter(id=>id!=='freedomSorting');
     }
-    return base;
+    return syncConsequences(base);
   } catch { return null; }
 }
-export function clearSave() { try { localStorage.removeItem(KEY); return true; } catch { return false; } }
+export function clearSave() {
+  if(testMode) { testMemory=null; try {sessionStorage.removeItem(TEST_KEY);} catch {} return true; }
+  try { localStorage.removeItem(KEY); return true; } catch { return false; }
+}

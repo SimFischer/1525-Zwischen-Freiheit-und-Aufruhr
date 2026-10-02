@@ -1,5 +1,9 @@
+import { configureAdmin, installAdminHold, adminAction, testToolbar, ensureAdminSession, openAdmin } from './admin.js';
+import { prepareAdminStateForScene } from './admin-state.js';
+import { configureChapterTwo, prepareChapterTwo, chapterTwoAction, chapterTwoDrop, selectCard } from './chapter-two.js';
+import { forestClues, chapterTwoDialogues } from '../data/chapter-two.js';
 import { state, freshState, replaceState, addUnique, conversationDone } from './state.js';
-import { load, save, clearSave } from './save-system.js';
+import { load, save, clearSave, isTestMode } from './save-system.js';
 import { canonicalScene, sceneById, scenes } from '../data/scenes.js';
 import { chapters } from '../data/chapters.js';
 import { choices } from '../data/choices.js';
@@ -20,17 +24,22 @@ import { esc, button, openOverlay, closeOverlay, notify, setMode } from './ui.js
 
 const app = document.querySelector('#app');
 let playing = false, selectedCard = null;
+function showPreparedState(next,active=true) {
+  resetStaging(); replaceState(next); playing=active; selectedCard=null; preloadCharacters(); render(); if(isTestMode()) persist();
+}
 function persist() {
   const ok = save(state), label = document.querySelector('#save-status');
+  if (label && isTestMode()) { label.textContent='Testzustand · getrennt vom normalen Spielstand'; return; }
   if (label) label.textContent = ok ? '✓ Spielstand gespeichert · auf diesem Gerät' : 'Speicherung nicht verfügbar';
 }
 document.addEventListener('storage-error', () => notify('Der Browser erlaubt gerade keine lokale Speicherung. Dein Fortschritt bleibt für diese Sitzung erhalten.'));
 function startScreen() {
+  document.body.dataset.testMode=String(isTestMode());
   resetStaging();
   playing = false;
   setMode('exploration');
   const saved = load();
-  app.innerHTML = `<main class="start-screen">${fullscreenButton(true)}<div class="start-copy"><p class="start-year">1525<span class="year-dot">.</span></p><h1><span class="sr-only">1525 – </span>Zwischen Freiheit<br>und Aufruhr</h1><p class="start-description">Frühjahr 1525.<br>Ein Blatt aus Wittenberg erreicht das Dorf.<br>Am Abend wird darüber in der Taverne gesprochen.</p><div class="start-actions">${button('Neues Spiel',saved ? 'confirm-new' : 'new','class="primary"')}${saved ? button('Spiel fortsetzen','resume','class="secondary"') : ''}</div>${saved ? `<p class="resume-note">Zuletzt: ${esc(sceneById[saved.scene].title)}</p>${button('Spielstand zurücksetzen','confirm-reset','class="text-button"')}` : ''}</div></main>`;
+  app.innerHTML = `<main class="start-screen">${fullscreenButton(true)}<div class="start-copy"><p class="start-year" data-admin-hold>1525<span class="year-dot">.</span></p><h1 data-admin-hold><span class="sr-only">1525 – </span>Zwischen Freiheit<br>und Aufruhr</h1><p class="start-description">Frühjahr 1525.<br>Ein Blatt aus Wittenberg erreicht das Dorf.<br>Am Abend wird darüber in der Taverne gesprochen.</p><div class="start-actions">${button('Neues Spiel',saved ? 'confirm-new' : 'new','class="primary"')}${saved ? button('Spiel fortsetzen','resume','class="secondary"') : ''}</div>${saved ? `<p class="resume-note">Zuletzt: ${esc(sceneById[saved.scene].title)}</p>${button('Spielstand zurücksetzen','confirm-reset','class="text-button"')}` : ''}</div></main>${testToolbar()}${debugView()}`;
 }
 function enterScene(id, complete = true) {
   id = canonicalScene(id);
@@ -40,6 +49,8 @@ function enterScene(id, complete = true) {
   if (complete) addUnique(state.progress.completedScenes,state.scene);
   state.scene = id; state.phase = 'active'; state.dialogue = null; state.interaction = null; selectedCard = null;
   const scene = sceneById[id];
+  state.chapter=scene.chapter||1;
+  if (scene.chapter===2) { playing=true; prepareChapterTwo(scene); render(); persist(); return; }
   if (scene.intro) beginDialogue(scene.intro,'idle');
   if (scene.kind === 'dialogue') beginDialogue(scene.dialogue,scene.choice ? 'scene-choice' : 'next-scene');
   if (scene.kind === 'task') state.interaction = { kind:'choice',id:scene.choice };
@@ -60,22 +71,33 @@ function completeConversation(id) {
 }
 function showFeedback(data) { state.interaction = { kind:'feedback',...data }; }
 function render() {
+  document.body.dataset.testMode=String(isTestMode());
   if (!playing) return startScreen();
   const scene = sceneById[state.scene], debugWasOpen = app.querySelector('.debug')?.open || false;
+  if(scene.chapter===2) {
+    const previousPanel=app.querySelector('#interaction'), previousScroll=previousPanel?.querySelector('.task-scroll')?.scrollTop||0;
+    const focused=document.activeElement, selector=focused?.closest('#app')&&focused.dataset.action ? ['action','card','task','item','store','choice','option','reason'].filter(key=>focused.dataset[key]).map(key=>`[data-${key}="${CSS.escape(focused.dataset[key])}"]`).join('') : null;
+    const previousStage=previousPanel?.dataset.stage;
+    setMode(state.dialogue?'dialogue':state.interaction?'choice':scene.kind==='hub'?'exploration':'minigame'); app.innerHTML=sceneView()+debugView(debugWasOpen)+testToolbar();
+    const panel=app.querySelector('#interaction');
+    if(previousStage===state.chapter2.stage&&panel?.querySelector('.task-scroll')) panel.querySelector('.task-scroll').scrollTop=previousScroll;
+    if(selector) (app.querySelector(selector)||panel.querySelector('button:not(:disabled)'))?.focus({preventScroll:true});
+    return;
+  }
   const active = document.activeElement;
   const focusSelector = active?.closest('#app') && active.dataset.action ? ['action','character','choice','option','card'].filter(key => active.dataset[key]).map(key => `[data-${key}="${CSS.escape(active.dataset[key])}"]`).join('') : null;
   const feedbackMode = state.interaction?.kind === 'feedback' ? (puzzles[state.interaction.id] ? 'puzzle' : sortingGames[state.interaction.id] ? 'minigame' : 'choice') : null;
   const mode = scene.kind === 'ending' && endingRevealed() ? 'transition' : state.dialogue ? 'dialogue' : feedbackMode || (state.interaction?.kind === 'choice' ? 'choice' : state.interaction?.kind === 'puzzle' ? 'puzzle' : scene.kind === 'sorting' ? 'minigame' : scene.kind === 'notebook' ? 'notebook' : 'exploration');
   state.uiMode = mode; setMode(mode);
   if (scene.kind === 'ending' && endingRevealed()) {
-    app.innerHTML = `<main class="ending" tabindex="-1">${fullscreenButton(true)}<span class="eyebrow">Kapitel 1 abgeschlossen</span><div class="ending-lines">${chapters[0].next.lines.map((line,i) => `<p class="ending-line line-${i}">${esc(line)}</p>`).join('')}</div><div class="next-chapter"><h1>Kapitel 2 – ${chapters[0].next.title}</h1><p>Kapitel 2 ist noch nicht spielbar.</p>${button('Zurück zum Titelbild','home','class="primary"')}<div class="ending-actions">${button('Kapitel 1 erneut spielen','confirm-new','class="quiet"')}${button('Zum Startbildschirm','home','class="quiet"')}${button('Notizbuch öffnen','notebook','class="quiet"')}</div></div></main>${debugView(debugWasOpen)}`;
+    app.innerHTML = `<main class="ending" tabindex="-1">${fullscreenButton(true)}<span class="eyebrow">Kapitel 1 abgeschlossen</span><div class="ending-lines">${chapters[0].next.lines.map((line,i) => `<p class="ending-line line-${i}">${esc(line)}</p>`).join('')}</div><div class="next-chapter"><h1>Kapitel 2 – ${chapters[0].next.title}</h1>${button('Der Morgen beginnt →','ch2-start','class="primary"')}${button('Zurück zum Titelbild','home','class="primary"')}<div class="ending-actions">${button('Kapitel 1 erneut spielen','confirm-new','class="quiet"')}${button('Notizbuch öffnen','notebook','class="quiet"')}</div></div></main>${debugView(debugWasOpen)}${testToolbar()}`;
     return;
   }
   // Keep the same scene DOM so speaker focus can transition smoothly.
   const previousStage = app.querySelector('.stage');
   const previousView = app.querySelector('#interaction')?.dataset.view;
   const previousScroll = app.querySelector('.task-scroll')?.scrollTop || 0;
-  app.innerHTML = sceneView() + debugView(debugWasOpen);
+  app.innerHTML = sceneView() + debugView(debugWasOpen)+testToolbar();
   if (previousStage?.dataset.scene === scene.id) app.querySelector('.stage').replaceWith(previousStage);
   updateStage(app.querySelector('.stage'));
   const panel = app.querySelector('#interaction');
@@ -111,7 +133,7 @@ function openSceneDocument() {
 }
 function newGame() { replaceState(freshState()); enterScene(state.scene,false); }
 function confirmReset(newAfter = false) {
-  openOverlay(`<article class="confirmation"><p class="eyebrow">Neuanfang</p><h1 id="overlay-title">${newAfter ? 'Kapitel 1 neu beginnen?' : 'Spielstand zurücksetzen?'}</h1><p>Deine bisherigen Entscheidungen und dein Notizbuch auf diesem Gerät werden gelöscht.</p><div class="panel-actions">${button('Abbrechen','close-overlay','class="quiet"')}${button(newAfter ? 'Neues Spiel beginnen' : 'Spielstand löschen',newAfter ? 'reset-new' : 'reset','class="primary"')}</div></article>`,() => {},state.uiMode);
+  openOverlay(`<article class="confirmation"><p class="eyebrow">Neuanfang</p><h1 id="overlay-title">${newAfter ? 'Kapitel 1 neu beginnen?' : 'Spielstand zurücksetzen?'}</h1><p>${isTestMode()?'Nur die Entscheidungen und das Notizbuch im getrennten Testzustand werden gelöscht.':'Deine bisherigen Entscheidungen und dein Notizbuch auf diesem Gerät werden gelöscht.'}</p><div class="panel-actions">${button('Abbrechen','close-overlay','class="quiet"')}${button(newAfter ? 'Neues Spiel beginnen' : 'Spielstand löschen',newAfter ? 'reset-new' : 'reset','class="primary"')}</div></article>`,() => {},state.uiMode);
 }
 function afterDialogue(result) {
   if (!result) return false;
@@ -159,6 +181,9 @@ document.addEventListener('click',event => {
   const target = event.target.closest('[data-action]') || event.target.closest('[data-drop-zone]');
   if (!target || target.disabled) return;
   const action = target.dataset.action || (target.dataset.dropZone ? 'sort-target' : null), scene = sceneById[state.scene];
+  if(action==='title') return;
+  if(adminAction(action,target)) return;
+  if(action.startsWith('debug-') || target.closest('.debug')) ensureAdminSession();
   if (action === 'fullscreen') return void toggleFullscreen();
   if (action === 'close-overlay') return closeOverlay();
   if (action === 'new') return newGame();
@@ -174,12 +199,14 @@ document.addEventListener('click',event => {
     return;
   }
   if (action === 'home') { if (playing) persist(); return startScreen(); }
-  if (action === 'menu') return openOverlay(`<article class="confirmation"><p class="eyebrow">Kapitel 1</p><h1 id="overlay-title">Eine kurze Pause.</h1><p>Dein Fortschritt wird automatisch auf diesem Gerät gespeichert.</p><div class="menu-actions">${button('Weiterspielen →','close-overlay','class="primary"')}${button('Zum Startbildschirm','menu-home','class="secondary"')}${button('Spielstand zurücksetzen','confirm-reset','class="quiet"')}</div></article>`,() => {},state.uiMode);
+  if (action === 'menu') return openOverlay(`<article class="confirmation"><p class="eyebrow">Kapitel ${state.chapter}</p><h1 id="overlay-title">Eine kurze Pause.</h1><p>Dein Fortschritt wird automatisch auf diesem Gerät gespeichert.</p><div class="menu-actions">${button('Weiterspielen →','close-overlay','class="primary"')}${button('Zum Startbildschirm','menu-home','class="secondary"')}${button('Spielstand zurücksetzen','confirm-reset','class="quiet"')}</div></article>`,() => {},state.uiMode);
   if (action === 'menu-home') { closeOverlay(); persist(); return startScreen(); }
   if (action === 'notebook') { document.querySelector('#notice').classList.remove('visible'); return openNotebook(); }
   if (action === 'notebook-tab') return openNotebook(target.dataset.tab);
   if (action === 'archive-document') return openDocument(target.dataset.document,null,() => openNotebook('documents'),true);
   if (action === 'scene-document') return openSceneDocument();
+  if(action==='debug-ch2-complete' && new URLSearchParams(location.search).get('debug')==='true') { const next=prepareAdminStateForScene('ch2_assembly'); next.scene='ch2_hub'; next.dialogue=null; next.interaction=null; next.chapter2.stage='hub'; showPreparedState(next); return; }
+  if (chapterTwoAction(action,target)) { render(); persist(); return; }
   if (action === 'prop-window') return notify('Draußen liegt das Dorf bereits im Dunkeln. Morgen beginnt wieder die Arbeit.');
   if (action === 'prop-door') {
     if (scene.kind !== 'ending') return notify('Für heute bleibst du noch hier.');
@@ -216,7 +243,7 @@ document.addEventListener('click',event => {
       beginDialogue(conversation.dialogue,conversation.puzzle ? 'conversation-puzzle' : 'conversation-choice',id);
     }
   }
-  if (action === 'flyer') { document.querySelector('#notice').classList.remove('visible'); return scene.kind === 'explore' ? enterScene(scene.next) : openDocument('freedom',null,() => {},true); }
+  if (action === 'flyer') { document.querySelector('#notice').classList.remove('visible'); return scene.kind === 'explore' ? enterScene(scene.next) : openDocument('freedom',null,() => {},true,'Zurück in die Taverne'); }
   if (action === 'dialogue-next' && afterDialogue(advanceDialogue())) return;
   if (action === 'choose') {
     const id = target.dataset.choice, context = state.interaction.context;
@@ -253,15 +280,19 @@ document.addEventListener('click',event => {
   if (action === 'sort-target' && selectedCard && ['god','world'].includes(target.dataset.zone)) { state.minigames.sorting[selectedCard] = target.dataset.zone; selectedCard = null; }
   if (action === 'sort-reset') { state.minigames.sorting = {}; selectedCard = null; }
   if (action === 'sort-check') checkFreedomSorting();
-  if (action === 'debug-prev' || action === 'debug-next') return enterScene(scenes[Math.max(0,Math.min(scenes.length-1,scenes.indexOf(scene)+(action === 'debug-next' ? 1 : -1)))].id,false);
+  if (action === 'debug-prev' || action === 'debug-next') return showPreparedState(prepareAdminStateForScene(scenes[Math.max(0,Math.min(scenes.length-1,scenes.indexOf(scene)+(action === 'debug-next' ? 1 : -1)))].id));
   if (action === 'debug-clear') { clearSave(); notify('Gespeicherten Spielstand gelöscht.'); return; }
   if (action === 'debug-documents') { state.notebook.documents = ['freedom']; state.notebook.passages.freedom = [0,1]; state.notebook.unlocked = true; notify('Alle Dokumente freigeschaltet.'); }
   if (playing) { render(); persist(); }
 });
 document.addEventListener('change',event => {
-  if (event.target.id === 'debug-scene') enterScene(event.target.value,false);
+  if(event.target.dataset.demand) { state.chapter2.demand[event.target.dataset.demand]=Number(event.target.value); render(); persist(); }
+  if (event.target.id === 'debug-scene') { ensureAdminSession(); showPreparedState(prepareAdminStateForScene(event.target.value)); }
 });
-installDragDrop(app,(id,zone) => { state.minigames.sorting[id] = zone; selectedCard = null; render(); persist(); },id => { selectedCard = selectedCard === id ? null : id; render(); });
+configureChapterTwo({enterScene,render,persist,clues:forestClues,dialogues:chapterTwoDialogues});
+installDragDrop(app,(id,zone) => { if(state.chapter===2) { chapterTwoDrop(id,zone); render(); persist(); return; } state.minigames.sorting[id] = zone; selectedCard = null; render(); persist(); },id => { if(state.chapter===2) { if(state.scene==='ch2_dues') state.chapter2.selected=id; else selectCard(id); render(); persist(); return; } selectedCard = selectedCard === id ? null : id; render(); });
+configureAdmin({isPlaying:()=>playing,render,showState:showPreparedState});
+installAdminHold();
 const start = canonicalScene(new URLSearchParams(location.search).get('start'));
-if (start && sceneById[start]) { replaceState(load() || freshState()); enterScene(start,false); }
+if (start && sceneById[start]) { replaceState(load() || freshState()); if(new URLSearchParams(location.search).get('debug')==='true') { ensureAdminSession(); showPreparedState(prepareAdminStateForScene(start)); } else enterScene(start,false); }
 else { startScreen(); if (start) notify('Unbekannte Szenen-ID. Bitte starte mit Kapitel 1.'); }

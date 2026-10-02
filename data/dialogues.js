@@ -1,5 +1,7 @@
+import { chapterTwoDialogues } from './chapter-two.js';
 import { chapters } from './chapters.js';
 export const dialogues = {
+  ...chapterTwoDialogues,
   chapterIntro: [{ text: chapters[0].intro }],
   introJakob: [
     { speaker: 'jakob', emotion: 'reading', text: 'Mir ist ein Blatt aus Wittenberg in die Hände gekommen. Darin steht, was Luther schreibt.' },
@@ -13,7 +15,7 @@ export const dialogues = {
     { speaker: 'anna', emotion: 'thoughtful', text: 'Was ist daran klar?' },
     { speaker: 'peter', emotion: 'skeptical', text: 'Wenn ein Christ niemandem untertan ist – warum sollen wir dann unserem Herrn untertan sein?' }
   ],
-  beforeSecondThesis: [{ speaker: 'jakob', emotion: 'reading', text: 'Auf derselben Seite steht noch etwas.' }],
+  beforeSecondThesis: [{ speaker: 'jakob', emotion: 'reading', text: 'Auf dem Blatt steht noch ein zweiter Satz.' }],
   secondThesis: [
     { speaker: 'anna', emotion: 'concerned', text: 'Jetzt verstehe ich gar nichts mehr.' },
     { speaker: 'peter', emotion: 'skeptical', text: 'Erst niemandem untertan. Jetzt jedermann untertan.' },
@@ -26,7 +28,7 @@ export const dialogues = {
   ],
   afterAnna: [
     { speaker: 'anna', emotion: 'engaged', text: 'Dann macht die Freiheit also nicht gleichgültig.' },
-    { speaker: 'jakob', emotion: 'explaining', text: 'Im Gegenteil. Wer sich Gottes Anerkennung nicht verdienen muss, kann sich dem anderen zuwenden.' }
+    { speaker: 'jakob', emotion: 'explaining', text: 'Im Gegenteil. Wer auf Gottes Zusage in Christus vertraut, muss sich seine Annahme nicht verdienen. So wird er frei, sich dem anderen zuzuwenden.' }
   ],
   jakob: [
     { speaker: 'jakob', emotion: 'explaining', text: 'Luther unterscheidet zwischen dem Menschen vor Gott und seinem Leben in der Welt.' },

@@ -1,7 +1,7 @@
 export const notebookEntries = { freedom: {
   category: 'Freiheit', title: 'Christliche Freiheit bei Luther',
   paragraphs: [
-    'Luther versteht christliche Freiheit zunächst vom Verhältnis des Menschen zu Gott her.',
+    'Luther versteht christliche Freiheit zunächst vom Glauben an Gottes Zusage in Christus her.',
     'Der Mensch muss sich Gottes Gnade nicht durch gute Werke verdienen.',
     'Gute Werke sind nicht die Voraussetzung der Annahme durch Gott, sondern ihre Folge.',
     'Die geschenkte Freiheit macht den Menschen frei zum Dienst am Nächsten.'
