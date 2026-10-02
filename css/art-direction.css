@@ -125,21 +125,6 @@ dialog:not(:has(.notebook)) {
 .start-screen > .fullscreen-button,.ending > .fullscreen-button { position: absolute; top: 1rem; right: 1rem; z-index: 8; }
 .ending { position: relative; }
 
-/* The next reading action belongs to the physical sheet on the table. */
-.awaiting-flyer .prop.flyer::before {
-  content: ''; position: absolute; inset: -22% -30%; pointer-events: none;
-  background: radial-gradient(ellipse,#ffe3a53b,transparent 72%); border-radius: 50%;
-}
-.awaiting-flyer .prop.flyer > .flyer-plaque {
-  opacity: 1; top: calc(100% + .4rem); width: max-content; min-height: 44px;
-  padding: .45rem .7rem; z-index: 2; pointer-events: auto;
-  background: var(--leather-surface); border: 1px solid #b69258;
-  box-shadow: 0 3px 6px #21140b77,inset 0 1px #dfb56a30;
-  font: .9rem/1.35 Georgia,'Times New Roman',serif; color: #fff0ce;
-}
-.awaiting-flyer .prop.flyer:hover > .flyer-plaque,
-.awaiting-flyer .prop.flyer:focus-visible > .flyer-plaque { border-color: #dfbd80; background: var(--wood-surface); }
-
 /* A source is a loose leaf on a dark wooden reading surface. */
 dialog:has(.document-table) {
   width: min(900px,94vw); max-width: 94vw; padding: 5px;
@@ -241,22 +226,6 @@ dialog:has(.document-table) {
 .notebook-tabs button,.source-navigation button { background: var(--leather-surface); color: #f6e5c5; border-color: #aa8251; }
 .notebook-tabs [aria-current="page"] { background: var(--wood-surface); color: #fff0d0; }
 
-/* Every interaction marker is carved from the same warm wood. */
-.room-hotspot > span:not(.door-arrow):not(.door-copy),
-.awaiting-flyer .prop.flyer > .flyer-plaque {
-  background: var(--wood-surface); border-color: #b48c54; color: #ffedcc;
-  border-radius: 3px 6px 3px 5px; box-shadow: 0 2px 5px #24150d66,inset 0 1px #e5bd7540;
-}
-.door-hotspot {
-  background: var(--wood-surface); border: 1px solid #b48c54; border-radius: 3px 7px 3px 6px;
-  box-shadow: 0 4px 7px #24150d88,inset 0 0 0 2px #30201566; color: #ffedcc;
-}
-.door-hotspot:hover,.door-hotspot:focus-visible,.door-hotspot.touched {
-  background: var(--wood-surface); border-color: #e0bd81;
-  outline: 1px solid #e0bd81; outline-offset: 2px; filter: brightness(1.08);
-}
-.door-hotspot .door-arrow { color: #e6bc75; }
-.door-copy small { color: #e9d4ac; }
 @media(max-width:560px) {
   .task-heading p,.choice-heading p { font-size: .8rem; }
   .task-panel .choices > button,.puzzle-parts button { font-size: .9rem; }
@@ -360,3 +329,55 @@ body[data-mode="admin"] .admin-console { width:100%; height:min(850px,calc(94svh
 .admin-consequences textarea { min-height:100px; }
 .admin-consequences pre { white-space:pre-wrap; overflow-wrap:anywhere; font:12px/1.5 Consolas,monospace; }
 .admin-orientation { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:.5rem; }
+/* Shared world markers: original painted assets, HTML labels above them.
+   Nine-slice scaling keeps the handmade edges while the writing area adapts. */
+.room .scene-hotspot,.room .scene-hotspot:hover,.room .scene-hotspot:focus-visible,.room .scene-hotspot.touched {
+  background:transparent; border-color:transparent; box-shadow:none; outline:0; filter:none;
+}
+.room .scene-hotspot > .hotspot-label {
+  display:flex; align-items:center; justify-content:center; gap:.35rem;
+  min-width:44px; min-height:44px; padding:.5rem .9rem; margin:0;
+  opacity:1; pointer-events:auto; white-space:nowrap; isolation:isolate;
+  font:.85rem/1.3 Georgia,'Times New Roman',serif;
+  background:none; border:0; border-radius:0; box-shadow:none; clip-path:none;
+  transition:filter 140ms ease;
+}
+.room .scene-hotspot > .hotspot-label::before {
+  content:''; position:absolute; inset:0; z-index:-1; pointer-events:none;
+  border:12px solid transparent;
+  border-image:var(--hotspot-art) var(--hotspot-slice) fill / 12px 18px / 3px 3px stretch;
+}
+.room .hotspot-object {
+  --hotspot-art:url('../assets/ui/hotspots/v2/hotspot-object.png');
+  --hotspot-slice:270 300 230 300;
+}
+.room .hotspot-object > .hotspot-label { color:#392719; }
+.room .hotspot-action {
+  --hotspot-art:url('../assets/ui/hotspots/v2/hotspot-action.png');
+  --hotspot-slice:300 320 280 320;
+}
+.room .hotspot-action > .hotspot-label { color:#fff0d0; text-shadow:0 1px 2px #241108; }
+.room .hotspot-path {
+  --hotspot-art:url('../assets/ui/hotspots/v2/hotspot-path-right.png');
+  --hotspot-slice:260 490 230 300;
+}
+.room .hotspot-path > .hotspot-label { color:#fff0cf; padding:.5rem 1.4rem .5rem .9rem; text-shadow:0 1px 2px #241108; }
+.room .hotspot-path > .hotspot-label::before { border-image-width:12px 30px 12px 18px; }
+.room .hotspot-path-left > .hotspot-label { padding-left:1.4rem; padding-right:.9rem; }
+.room .hotspot-path-left > .hotspot-label::before { transform:scaleX(-1); }
+.room .scene-hotspot:hover > .hotspot-label,.room .scene-hotspot:focus-visible > .hotspot-label,
+.room .scene-hotspot:active > .hotspot-label,.room .scene-hotspot.touched > .hotspot-label { filter:brightness(1.12); }
+.room .scene-hotspot:focus-visible > .hotspot-label { text-decoration:underline; text-underline-offset:.22em; text-decoration-thickness:2px; }
+.room .scene-hotspot:disabled > .hotspot-label { opacity:0 !important; visibility:hidden; pointer-events:none; }
+.room .scene-hotspot.hotspot-sign { padding:0; border:0; }
+.room .hotspot-sign > .hotspot-label { position:static; transform:none; width:100%; white-space:normal; }
+.room .door-hotspot > .hotspot-label { position:relative; transform:none; width:100%; }
+.door-hotspot .door-copy { display:flex; flex-direction:column; }
+.door-hotspot .door-copy strong { font-size:.8rem; }
+.door-hotspot .door-copy small { color:#ead4ab; font-size:.65rem; }
+.door-hotspot .door-arrow { color:#e6bc75; font-size:1.2rem; }
+@media(max-width:600px) {
+  .room .scene-hotspot > .hotspot-label { font-size:.7rem; padding:.4rem .6rem; }
+  .room .hotspot-path > .hotspot-label { padding-right:1rem; }
+  .room .hotspot-path-left > .hotspot-label { padding-left:1rem; padding-right:.6rem; }
+}

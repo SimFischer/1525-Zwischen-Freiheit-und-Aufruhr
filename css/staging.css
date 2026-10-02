@@ -1,14 +1,11 @@
 /* Chapter 2 signs stay anchored to the illustrated paths and objects. */
-.chapter-two .exit-sign { background:var(--wood-surface); color:#ffedce; border-radius:2px; border-color:var(--line); clip-path:polygon(7% 0,92% 0,100% 50%,92% 100%,7% 100%,0 50%); padding:.4rem .9rem; box-shadow:inset 0 1px #e2bf7955,0 3px 5px #20100877; }
-.chapter-two .object-sign { background:var(--parchment-surface); color:var(--ink); border-color:var(--line); box-shadow:var(--paper-edge),0 2px 4px #20100866; }
 .chapter-two .ch2-clue { min-width:44px; max-width:24%; transition:filter 160ms ease; }
 .chapter-two .ch2-clue:hover,.chapter-two .ch2-clue:focus-visible { filter:brightness(1.12); }
 .chapter-two .forest-exit { left:46%; top:91%; }
 .chapter-two.scene-forest .anna { left:39%; height:53%; bottom:15%; transform:scaleX(-1); }
 .chapter-two.scene-forest .overseer { right:24%; height:57%; bottom:15%; transform:scaleX(-1); }
 .forest-conversation { position:absolute; z-index:4; left:59%; bottom:15%; width:17%; height:57%; border:0; background:none; box-shadow:none; padding:0; }
-.forest-conversation:hover,.forest-conversation:focus-visible { background:#dfb87509; }
-.forest-conversation span { position:absolute; left:50%; top:calc(100% + .3rem); transform:translateX(-50%); min-height:44px; display:flex; align-items:center; width:max-content; max-width:155%; padding:.35rem .65rem; background:var(--leather-surface); border:1px solid var(--line); color:#ffedce; font:.85rem Georgia,serif; box-shadow:0 2px 4px #20100877; }
+.forest-conversation span { position:absolute; left:50%; top:calc(100% + .3rem); transform:translateX(-50%); min-height:44px; display:flex; align-items:center; width:max-content; max-width:155%; padding:.35rem .65rem; font:.85rem Georgia,serif; }
 .chapter-two .ch2-clue:focus-visible span,.forest-conversation:focus-visible span { text-decoration:underline; text-underline-offset:.2em; }
 .chapter-two.scene-forest .overseer.arriving { animation:forest-arrival 900ms ease-out both; }
 @keyframes forest-arrival { from { opacity:0; translate:2% 0; } to { opacity:1; translate:0 0; } }
@@ -328,4 +325,23 @@ dialog:has(.notebook) {
   .notebook h1 { font-size: 1.85rem; margin-bottom: .75rem; }
   .notebook-tabs { gap: .25rem; }
   .notebook-tabs button { padding: .55rem .65rem; font-size: .85rem; }
+}
+/* Chapter 1 labels sit beside the baked scene, never over faces or table props. */
+.room .character.scene-hotspot > .hotspot-label { top:calc(-44px - .3rem); }
+.room .window-hotspot > .hotspot-label { top:calc(100% + .3rem); }
+.room .prop.scene-hotspot > .hotspot-label { top:calc(100% + .4rem); }
+.room .door-hotspot { top:12%; padding:0; min-height:44px; }
+@media(max-width:600px) {
+  .room .character.scene-hotspot > .hotspot-label { width:max-content; max-width:84px; white-space:normal; text-align:center; }
+  .room .character[data-character="anna"] > .hotspot-label { left:75%; }
+  .room .prop.candle > .hotspot-label { left:80%; top:calc(100% + 4px); }
+  .room .prop.flyer > .hotspot-label { left:90%; }
+  .chapter-two .forest-exit { top:calc(100% - 34px); }
+}
+@media(min-width:561px) and (max-width:900px) {
+  .room .door-hotspot { top:0; }
+}
+@media(max-width:560px) {
+  /* Use the letterbox above the doorway when the room is only phone-width. */
+  .room .door-hotspot { top:-70px; }
 }

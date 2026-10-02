@@ -47,6 +47,17 @@ glaubwürdig zur selben Spielwelt um 1525 gehören.
 
 ## Tür und Kapitelübergang
 
+Für alle Kapitel gilt das gemeinsame Hotspot-System aus `js/hotspots.js`:
+`object` (Pergament), `path` (Holzwegweiser), `action` (Leder-/Holzschild).
+Die originalen PNG-Materialien liegen unter `assets/ui/hotspots/v2/` und werden
+zentral als Rahmen mit anpassbarer Schreibfläche verwendet. Keine nachgebauten
+CSS-Karten als Ersatz. Für Rückwege nur das Holzbild spiegeln; HTML-Schrift
+und zugängliche Beschriftungen bleiben unverändert lesbar.
+Materialien und Bedienzustände liegen zentral in `css/art-direction.css`,
+räumliche Anker in `css/staging.css`. Verfügbare Marker sind ohne Hover sichtbar;
+Touchziele mindestens 44 Pixel. Platzierung am Bildinhalt prüfen, Gesichter,
+Hände und wichtige Objekte freihalten. Details: `docs/hotspot-system.md`.
+
 Die Tür in Kapitel 1 bleibt vor Abschluss aller verpflichtenden Stationen
 unmarkierter Teil des Hintergrundbilds. Kein sichtbarer Button, Label oder
 Rechteck; auch Fokus darf keinen frühen Exit anzeigen.
@@ -68,3 +79,10 @@ Feedback, Quellen, Notizbuch, Menüs und Kapitelübergang. Mindestens 1024×768
 und eine kleinere iPad-ähnliche Ansicht prüfen: keine horizontalen Scrollbars,
 überlappenden Touchziele oder abgeschnittenen Buttons. Kleine Screens nutzen
 internes Scrollen. Bestehende Kapitel-, Save- und Responsive-Tests verwenden.
+
+## Veröffentlichung
+
+Auf ausdrücklichen Wunsch des Nutzers vom 3. Oktober 2026: Fertige, geprüfte
+Änderungen anschließend direkt committen und auf den bestehenden Projektbranch
+pushen. Den vorhandenen GitHub-Pages-Deploymentweg beibehalten. Push und
+sichtbaren Remote-Commit überprüfen; etwaige Fehler ausdrücklich berichten.

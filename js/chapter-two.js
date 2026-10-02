@@ -95,9 +95,9 @@ export function chapterTwoAction(action,target) {
   if(action==='ch2-reason') {
     const [a,b]=c().pair.map(id=>grievances.find(item=>item.id===id)), reason=target.dataset.reason;
     if(!a || !b) return true;
-    if(!a.tags.includes(reason) || !b.tags.includes(reason)) { c().linkAttempts=(c().linkAttempts||0)+1; c().linkHint=c().linkAttempts>=3 ? 'Beide betreffen '+Object.entries(linkReasons).filter(([id])=>a.tags.includes(id)&&b.tags.includes(id)).map(([,label])=>label).join(' oder ')+'. Wähle eine passende Begründung.' : c().linkAttempts===2 ? linkPrompts[reason] : 'Prüfe die beiden Beschwerden: Welche Entscheidung, Belastung oder Abhängigkeit kommt in beiden vor?'; return true; }
+    if(!a.tags.includes(reason) || !b.tags.includes(reason)) { c().linkAttempts=(c().linkAttempts||0)+1; c().linkHint=c().linkAttempts>=3 ? 'Beide betreffen '+Object.entries(linkReasons).filter(([id])=>a.tags.includes(id)&&b.tags.includes(id)).map(([,label])=>label).join(' oder ')+'. Worauf beruft ihr euch?' : c().linkAttempts===2 ? linkPrompts[reason] : 'Prüfe die beiden Beschwerden: Welche Entscheidung, Belastung oder Abhängigkeit kommt in beiden vor?'; return true; }
     const key=[a.id,b.id].sort().join(':'); if(!c().links.some(link=>link.key===key)) c().links.push({key,a:a.id,b:b.id,reason});
-    c().pair=[]; c().linkHint='Diese Verbindung ist nachvollziehbar: '+linkReasons[reason]+'. Weitere Begründungen können ebenfalls passen.'; c().linkAttempts=0; return true;
+    c().pair=[]; c().linkHint='Beide Beschwerden betreffen '+linkReasons[reason]+'. Was verbindet die anderen Beschwerden?'; c().linkAttempts=0; return true;
   }
   if(action==='ch2-links-next') { stage('priorities'); return true; }
   if(action==='ch2-priorities-next') { talk('demandIntro','forestDemand'); return true; }

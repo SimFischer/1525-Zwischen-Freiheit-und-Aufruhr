@@ -30,7 +30,7 @@ function showPreparedState(next,active=true) {
 function persist() {
   const ok = save(state), label = document.querySelector('#save-status');
   if (label && isTestMode()) { label.textContent='Testzustand · getrennt vom normalen Spielstand'; return; }
-  if (label) label.textContent = ok ? '✓ Spielstand gespeichert · auf diesem Gerät' : 'Speicherung nicht verfügbar';
+  if (label) label.textContent = ok ? (state.chapter===2 ? '' : '✓ Spielstand gespeichert · auf diesem Gerät') : 'Speicherung nicht verfügbar';
 }
 document.addEventListener('storage-error', () => notify('Der Browser erlaubt gerade keine lokale Speicherung. Dein Fortschritt bleibt für diese Sitzung erhalten.'));
 function startScreen() {
@@ -199,7 +199,7 @@ document.addEventListener('click',event => {
     return;
   }
   if (action === 'home') { if (playing) persist(); return startScreen(); }
-  if (action === 'menu') return openOverlay(`<article class="confirmation"><p class="eyebrow">Kapitel ${state.chapter}</p><h1 id="overlay-title">Eine kurze Pause.</h1><p>Dein Fortschritt wird automatisch auf diesem Gerät gespeichert.</p><div class="menu-actions">${button('Weiterspielen →','close-overlay','class="primary"')}${button('Zum Startbildschirm','menu-home','class="secondary"')}${button('Spielstand zurücksetzen','confirm-reset','class="quiet"')}</div></article>`,() => {},state.uiMode);
+  if (action === 'menu') return openOverlay(`<article class="confirmation"><p class="eyebrow">Kapitel ${state.chapter}</p><h1 id="overlay-title">Eine kurze Pause.</h1>${state.chapter===2?'':'<p>Dein Fortschritt wird automatisch auf diesem Gerät gespeichert.</p>'}<div class="menu-actions">${button('Weiterspielen →','close-overlay','class="primary"')}${button('Zum Startbildschirm','menu-home','class="secondary"')}${button('Spielstand zurücksetzen','confirm-reset','class="quiet"')}</div></article>`,() => {},state.uiMode);
   if (action === 'menu-home') { closeOverlay(); persist(); return startScreen(); }
   if (action === 'notebook') { document.querySelector('#notice').classList.remove('visible'); return openNotebook(); }
   if (action === 'notebook-tab') return openNotebook(target.dataset.tab);
