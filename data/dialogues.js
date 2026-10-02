@@ -32,7 +32,7 @@ export const dialogues = {
     { speaker: 'jakob', emotion: 'explaining', text: 'Luther unterscheidet zwischen dem Menschen vor Gott und seinem Leben in der Welt.' },
     { speaker: 'jakob', emotion: 'thoughtful', text: 'Aber was folgt daraus eigentlich?' }
   ],
-  beforeAxis: [{ speaker: 'jakob', emotion: 'thoughtful', text: 'Vielleicht hilft es, die verschiedenen Ebenen erst einmal auseinanderzuhalten.' }],
+  beforeSorting: [{ speaker: 'jakob', emotion: 'thoughtful', text: 'Vielleicht hilft es, die verschiedenen Ebenen erst einmal auseinanderzuhalten.' }],
   conclusion: [
     { speaker: 'peter', emotion: 'neutral', text: 'Schön und gut.' },
     { speaker: 'peter', emotion: 'neutral', text: 'Vor Gott bin ich also frei.' },

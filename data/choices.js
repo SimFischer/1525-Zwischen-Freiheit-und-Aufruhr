@@ -26,43 +26,51 @@ export const choices = {
     ]
   },
   serviceBoundary: {
-    prompt: 'Warum lässt sich ‚Dienst am Nächsten‘ nicht einfach nur einer Seite zuordnen?', solution: 'C',
+    prompt: 'Warum verbindet der ‚Dienst am Nächsten‘ beide Bereiche?', solution: 'B',
     options: [
-      { id: 'A', text: 'Weil der Dienst am Nächsten nur das Verhältnis des Menschen zu Gott betrifft.', hints: ['Denkimpuls:\nWem gilt der ‚Dienst am Nächsten‘ konkret?'] },
-      { id: 'B', text: 'Weil der Dienst am Nächsten ausschließlich eine gesellschaftliche Pflicht ist.', hints: ['Denkimpuls:\nWoher gewinnt der Mensch nach Luther überhaupt die Freiheit zu diesem Dienst?'] },
-      { id: 'C', text: 'Weil die Freiheit vor Gott den Menschen zu einem neuen Handeln gegenüber anderen freisetzt.', feedback: 'Genau darin liegt die Verbindung:\nDie Freiheit entsteht im Verhältnis zu Gott, zeigt sich aber im Handeln gegenüber dem Mitmenschen. Der Dienst am Nächsten verbindet deshalb beide Ebenen.' },
-      { id: 'D', text: 'Weil gute Werke für Luther notwendig sind, damit Gott den Menschen annimmt.', hints: ['Denkimpuls:\nPrüfe noch einmal die Rechtfertigungskette: Stehen die Werke vor oder nach der Annahme durch Gott?'] }
+      { id: 'A', text: 'Weil der Dienst am Nächsten nur eine religiöse Pflicht gegenüber Gott ist.', hints: ['Denkimpuls:\nWem gilt dieser Dienst konkret – Gott allein oder einem anderen Menschen?'] },
+      { id: 'B', text: 'Weil die Freiheit vor Gott den Menschen zu einem neuen Handeln gegenüber anderen freisetzt.', feedback: 'Genau:\nDie Freiheit entsteht im Verhältnis zu Gott. Sie bleibt aber nicht innerlich eingeschlossen, sondern verändert das Handeln gegenüber dem Mitmenschen. Deshalb verbindet der ‚Dienst am Nächsten‘ beide Ebenen.' },
+      { id: 'C', text: 'Weil gute Werke notwendig sind, damit Gott den Menschen annimmt.', hints: ['Denkimpuls:\nErinnere dich an die Rechtfertigungskette: Sind gute Werke die Voraussetzung oder die Folge der Annahme durch Gott?'] },
+      { id: 'D', text: 'Weil Luther damit politische Gleichheit aller Menschen fordert.', hints: ['Denkimpuls:\nUnterscheide zwischen einer theologischen Aussage über Freiheit und einer konkreten politischen Forderung.'] }
     ]
   },
   obedienceBoundary: {
     prompt: 'Warum ist ‚Gehorsam‘ schwieriger einzuordnen als ‚Frondienst‘ oder ‚Abgaben‘?', solution: 'B',
     options: [
-      { id: 'A', text: 'Weil Gehorsam immer nur eine religiöse Frage ist.', hints: ['Denkimpuls:\nKann Gehorsam nur eine innere Haltung sein, wenn er sich gleichzeitig in konkretem Verhalten gegenüber anderen zeigt?'] },
-      { id: 'B', text: 'Weil Gehorsam sowohl als äußeres Verhalten als auch als Frage von Gewissen und Verantwortung verstanden werden kann.', feedback: 'Das ist die entscheidende Schwierigkeit:\nGehorsam gehört zur äußeren Ordnung, kann aber zugleich Fragen von Gewissen, Verantwortung und christlichem Handeln berühren. Gerade solche Grenzfälle werden im weiteren Spiel wichtig.' },
-      { id: 'C', text: 'Weil ein Christ nach Luther grundsätzlich keinem Menschen gehorchen muss.', hints: ['Denkimpuls:\nNimm beide Freiheitssätze gleichzeitig ernst. Was würde mit dem ‚dienstbaren Knecht‘ geschehen, wenn jede Form äußerer Bindung ausgeschlossen wäre?'] },
-      { id: 'D', text: 'Weil jeder Gehorsam automatisch christlicher Dienst am Nächsten ist.', hints: ['Denkimpuls:\nIst jede bestehende Forderung an einen Menschen automatisch mit Nächstenliebe gleichzusetzen?'] }
+      { id: 'A', text: 'Weil Gehorsam immer nur eine Frage des Glaubens ist.', hints: ['Denkimpuls:\nGehorsam zeigt sich in konkretem Verhalten. Kann er deshalb wirklich nur eine innere Glaubensfrage sein?'] },
+      { id: 'B', text: 'Weil Gehorsam äußeres Verhalten betrifft, aber zugleich Gewissen und Verantwortung berühren kann.', feedback: 'Das trifft die Schwierigkeit:\nGehorsam gehört zur äußeren Ordnung, kann aber zugleich Fragen von Gewissen und Verantwortung aufwerfen. Gerade deshalb lässt sich das innere und äußere Leben nicht vollständig voneinander trennen.' },
+      { id: 'C', text: 'Weil ein Christ nach Luther grundsätzlich keinem Menschen gehorchen muss.', hints: ['Denkimpuls:\nNimm beide Freiheitssätze gleichzeitig ernst: Wie könnte Luther vom ‚dienstbaren Knecht‘ sprechen, wenn jede äußere Bindung ausgeschlossen wäre?'] },
+      { id: 'D', text: 'Weil jede Form von Gehorsam automatisch christlicher Dienst ist.', hints: ['Denkimpuls:\nIst jede Forderung einer Obrigkeit automatisch identisch mit Nächstenliebe und christlichem Dienst?'] }
+    ]
+  },
+  freedomComparison: {
+    statements: ['Christliche Freiheit betrifft nur das Innere des Menschen.', 'Christliche Freiheit führt automatisch zu politischer Freiheit.'],
+    prompt: 'Welche Aussage trifft zu?', solution: 'D',
+    wrongFeedback: 'Denkimpuls:\nDie erste Aussage greift zu kurz, weil …\n… die Freiheit vor Gott auch das Handeln gegenüber dem Nächsten verändert.',
+    options: [
+      { id: 'A', text: 'Beide Aussagen treffen zu.' },
+      { id: 'B', text: 'Nur die erste trifft zu.' },
+      { id: 'C', text: 'Nur die zweite trifft zu.' },
+      { id: 'D', text: 'Beide Aussagen greifen zu kurz.', feedback: 'Beide Aussagen greifen zu kurz.' }
     ]
   },
   innerConsolidation: {
-    statement: 'Christliche Freiheit betrifft nur das Innere des Menschen.',
-    instruction: 'Beide Aussagen greifen zu kurz. Ergänze jeweils die passendste Begründung.',
-    prompt: 'Aussage 1', solution: 'A',
-    wrongFeedback: 'Denkimpuls:\nErinnere dich an die zweite These vom ‚dienstbaren Knecht‘. Was geschieht mit der Freiheit, sobald andere Menschen ins Spiel kommen?',
+    prompt: 'Die erste Aussage greift zu kurz, weil …', solution: 'A',
+    wrongFeedback: 'Denkimpuls:\nWarum verbindet der ‚Dienst am Nächsten‘ beide Bereiche?',
     options: [
-      { id: 'A', text: '… christliche Freiheit auch das Handeln gegenüber dem Nächsten verändert.', feedback: 'Luther versteht Freiheit zwar zunächst vom Verhältnis zu Gott her, aber sie bleibt nicht innerlich eingeschlossen. Sie verändert das Handeln gegenüber anderen.' },
-      { id: 'B', text: '… Luther jede gesellschaftliche Ordnung beseitigen will.' },
-      { id: 'C', text: '… Religion für Luther ausschließlich politisch ist.' }
+      { id: 'A', text: '… die Freiheit vor Gott auch das Handeln gegenüber dem Nächsten verändert.', feedback: 'Die erste Aussage greift zu kurz, weil …\n… die Freiheit vor Gott auch das Handeln gegenüber dem Nächsten verändert.' },
+      { id: 'B', text: '… Luther jede politische Ordnung abschaffen will.' },
+      { id: 'C', text: '… Religion für Luther nur gesellschaftliche Bedeutung hat.' }
     ]
   },
   politicalConsolidation: {
-    statement: 'Christliche Freiheit führt automatisch zu politischer Freiheit.',
-    instruction: 'Beide Aussagen greifen zu kurz. Ergänze jeweils die passendste Begründung.',
-    prompt: 'Aussage 2', solution: 'A',
-    wrongFeedback: 'Denkimpuls:\nWo setzt Luther mit seiner Freiheitsbestimmung zuerst an: bei politischen Verhältnissen oder bei der Beziehung des Menschen zu Gott?',
+    prompt: 'Die zweite Aussage greift zu kurz, weil …', solution: 'A',
+    wrongFeedback: 'Denkimpuls:\nGlaube, Gewissen und die Beziehung des Menschen zu Gott',
+    securing: 'Welche gesellschaftlichen Folgen diese Freiheit haben kann, bleibt damit offen.',
     options: [
-      { id: 'A', text: '… Luther Freiheit zunächst vom Verhältnis des Menschen zu Gott her bestimmt.', feedback: 'Luthers Freiheitsbegriff ist zunächst theologisch bestimmt. Daraus folgt nicht automatisch ein bestimmtes politisches Programm. Ob und welche gesellschaftlichen Konsequenzen daraus entstehen, bleibt damit aber gerade erst zu klären.' },
-      { id: 'B', text: '… Luther gesellschaftliche Fragen grundsätzlich für bedeutungslos hält.' },
-      { id: 'C', text: '… politische Freiheit grundsätzlich gegen das Christentum verstößt.' }
+      { id: 'A', text: '… Luther Freiheit zunächst vom Verhältnis des Menschen zu Gott her bestimmt.', feedback: 'Damit wird die Spannung deutlich:\nLuthers Freiheit beginnt im Verhältnis des Menschen zu Gott. Sie verändert aber auch sein Handeln gegenüber anderen. Daraus folgt noch nicht automatisch ein bestimmtes politisches Programm.' },
+      { id: 'B', text: '… gesellschaftliche Fragen für Luther grundsätzlich bedeutungslos sind.' },
+      { id: 'C', text: '… politische Freiheit grundsätzlich unchristlich ist.' }
     ]
   }
 };

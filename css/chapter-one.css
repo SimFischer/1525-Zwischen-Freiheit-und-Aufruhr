@@ -70,23 +70,6 @@
 .puzzle-parts { display: grid; grid-template-columns: 1fr; gap: .4rem; }
 .puzzle-parts button { display: flex; align-items: start; gap: .5rem; font: .875rem/1.5 system-ui,sans-serif; min-height: 56px; padding: .6rem; }
 .puzzle-parts button:disabled { opacity: .55; }
-.axis-workspace { flex-shrink: 0; }
-.axis-panel { gap: .4rem; }
-.axis-panel .axis-control { padding: .2rem 0; }
-.axis-panel .panel-actions { padding-top: .2rem; }
-.axis-labels { display: flex; justify-content: space-between; gap: 1rem; font-size: .75rem; margin: .1rem 0 .3rem; }
-.axis-rail { position: relative; width: 100%; min-height: 48px; padding: .5rem 1rem; background: linear-gradient(90deg,#dce7d6,#eee2c7,#e1d1b5); overflow: visible; border: 1px solid #a7aa93; }
-.axis-rail:disabled { opacity: 1; }
-.axis-guide { display: block; overflow: hidden; white-space: nowrap; text-align: center; color: #727a61; pointer-events: none; }
-.axis-marker { position: absolute; width: 10px; height: 10px; border: 2px solid white; border-radius: 50%; top: 50%; background: var(--green); transform: translate(-50%,-50%); pointer-events: none; }
-.axis-control { display: grid; grid-template-columns: minmax(160px,1fr) 2fr; align-items: center; gap: 1rem; padding: .5rem 0; }
-.axis-control label { font-size: .72rem; }
-.axis-control output { color: var(--green); font-weight: 600; margin-left: .5rem; }
-.axis-control input { width: 100%; min-height: 44px; accent-color: var(--green); }
-.card-bank { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: .4rem; margin: .3rem 0; }
-.axis-card { display: flex; flex-direction: column; align-items: start; justify-content: space-between; gap: .3rem; min-height: 62px; max-width: 100%; padding: .5rem; font: .8rem/1.4 system-ui,sans-serif; }
-.axis-card > span { display: block; color: var(--ink); }
-.axis-card small { color: var(--muted); font-size: .65rem; }
 .drop-hover { background: #dce8d2 !important; outline: 2px solid var(--green); }
 .source-art { width: 23%; max-height: 180px; float: right; object-fit: contain; margin: 0 0 1rem 1.5rem; }
 .document-rule { clear: both; }
@@ -100,7 +83,6 @@
   .choices > button { font-size: .875rem; }
   .task-panel h2 { font-size: 1rem; }
   .task-heading p, .choice-heading p { font-size: .72rem; }
-  .card-bank { grid-template-columns: repeat(4,minmax(0,1fr)); }
 }
 @media(max-width: 560px) {
   .stage { height: 285px; }
@@ -118,9 +100,6 @@
   .choices > button { font-size: .875rem; }
   .puzzle-grid { grid-template-columns: 1fr; }
   .puzzle-parts { grid-template-columns: 1fr; }
-  .axis-control { grid-template-columns: 1fr; gap: 0; }
-  .axis-labels { font-size: .65rem; }
-  .card-bank { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .source-art { width: 25%; margin-left: .8rem; }
   .dialogue-content { min-height: 65px; }
   .spoken { font-size: .94rem; }
@@ -131,4 +110,4 @@
   .task-panel { max-height: 45svh; min-height: 170px; }
 }
 @media(prefers-reduced-motion: reduce) { .character { transition: none; } }
-.puzzle-panel, .axis-panel { max-height: 58svh; }
+.puzzle-panel{ max-height: 58svh; }

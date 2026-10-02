@@ -12,7 +12,7 @@ import { choiceView, recordChoice } from './choice-engine.js';
 import { attempt, choiceFeedback, feedbackView } from './feedback.js';
 import { openDocument } from './document-viewer.js';
 import { openNotebook } from './notebook.js';
-import { axisView, puzzleView, checkAxis, axisPosition } from './minigames/sorting.js';
+import { sortingView, puzzleView, checkSorting } from './minigames/sorting.js';
 import { installDragDrop } from './minigames/dragdrop.js';
 import { debugView } from './debug.js';
 import { esc, button, openOverlay, closeOverlay, notify, setMode } from './ui.js';
@@ -83,11 +83,11 @@ function render() {
   else if (state.interaction?.kind === 'choice') panel.innerHTML = choiceView(state.interaction.id);
   else if (state.interaction?.kind === 'puzzle') panel.innerHTML = puzzleView(state.interaction.id);
   else if (state.interaction?.kind === 'feedback') panel.innerHTML = feedbackView(state.interaction);
-  else if (scene.kind === 'sorting') panel.innerHTML = axisView(scene.game,selectedCard);
+  else if (scene.kind === 'sorting') panel.innerHTML = sortingView(scene.game,selectedCard);
   else if (scene.kind === 'notebook') panel.innerHTML = `<section class="instruction-panel"><p class="eyebrow">${esc(scene.title)}</p><p>${esc(scene.instruction)}</p><div class="panel-actions">${button('Notizbuch lesen','notebook','class="secondary"')}${button('Zurück zur Taverne →','next-scene','class="primary"')}</div></section>`;
   else if (['explore','conversations'].includes(scene.kind)) {
     const finished = chapters[0].cast.every(conversationDone);
-    panel.innerHTML = `<nav class="exploration-tools" aria-label="Erkundung"><span>${esc(scene.kind === 'explore' && state.progress.flyerUnlocked ? scene.flyerInstruction : scene.instruction)}</span>${scene.kind === 'conversations' && finished ? button('Zur Freiheitsachse →','next-scene','class="primary"') : ''}</nav>`;
+    panel.innerHTML = `<nav class="exploration-tools" aria-label="Erkundung"><span>${esc(scene.kind === 'explore' && state.progress.flyerUnlocked ? scene.flyerInstruction : scene.instruction)}</span>${scene.kind === 'conversations' && finished ? button('Zur Sortierung →','next-scene','class="primary"') : ''}</nav>`;
   } else if (scene.kind === 'ending') {
     panel.innerHTML = '';
   } else panel.innerHTML = `<section class="instruction-panel"><h2>${scene.title}</h2>${button('Flugblatt öffnen','scene-document','class="primary"')}</section>`;
@@ -96,7 +96,7 @@ function render() {
   if (previousView === panel.dataset.view && panel.querySelector('.task-scroll')) panel.querySelector('.task-scroll').scrollTop = previousScroll;
   if (focusSelector) {
     const same = document.querySelector(focusSelector);
-    const next = selectedCard && active.dataset.action === 'axis-card' ? panel.querySelector('#axis-range') : same && !same.disabled ? same : panel.querySelector('button:not(:disabled)');
+    const next = selectedCard && active.dataset.action === 'sort-card' ? panel.querySelector('.sort-target:not(:disabled)') : same && !same.disabled ? same : panel.querySelector('button:not(:disabled)');
     next?.focus({preventScroll:true});
   }
   if (state.phase === 'document' && !state.dialogue && !document.querySelector('#overlay').open) openSceneDocument();
@@ -139,24 +139,25 @@ function checkPuzzle() {
     showFeedback({id,context,after:'after-puzzle',assisted,solution:assisted ? game.solution.join(' → ') : null,text:game.success,securing:assisted ? game.securing : null});
   } else showFeedback({id,context,after:'retry-puzzle',text:game.hints[Math.min(count-1,1)]});
 }
-function checkFreedomAxis() {
+function checkFreedomSorting() {
   const scene = sceneById[state.scene], game = sortingGames[scene.game];
-  const count = attempt(scene.game,{...state.minigames.axis});
-  const correct = checkAxis(scene.game), assisted = !correct && count >= 3;
+  const count = attempt(scene.game,{...state.minigames.sorting});
+  const correct = checkSorting(scene.game), assisted = !correct && count >= 3;
   if (correct || assisted) {
     if (assisted) {
       state.minigames.assisted[scene.game] = true;
-      for (const card of game.cards) state.minigames.axis[card.id] = Math.round((card.range[0]+card.range[1])/2);
+      for (const card of game.cards) state.minigames.sorting[card.id] = card.preferred;
     }
-    state.progress.freedomAxisComplete = true;
+    state.progress.freedomSortingComplete = true;
+    state.minigames.resolved[scene.game] = true;
     addUnique(state.minigames.completed,scene.game);
-    showFeedback({id:scene.game,after:'next-scene',assisted,text:game.success,solution:assisted ? game.cards.map(card => `${card.text}: ${card.range[0]}–${card.range[1]} %`).join('\n') : null});
-  } else showFeedback({id:scene.game,after:'retry-axis',text:(count === 1 ? 'Denkimpuls:\n' : 'Hinweis:\n')+(count === 1 ? game.success : game.instruction)});
+    showFeedback({id:scene.game,after:'next-scene',assisted,text:game.success,securing:game.securing,highlights:game.cards.filter(card=>card.boundary).map(card=>card.text),solution:assisted ? game.cards.map(card=>`${card.text} → ${game.zones.find(zone=>zone.id===card.preferred).title}`).join('\n') : null});
+  } else showFeedback({id:scene.game,after:'retry-sorting',text:game.hints[Math.min(count-1,1)]});
 }
 document.addEventListener('click',event => {
-  const target = event.target.closest('[data-action]');
+  const target = event.target.closest('[data-action]') || event.target.closest('[data-drop-zone]');
   if (!target || target.disabled) return;
-  const action = target.dataset.action, scene = sceneById[state.scene];
+  const action = target.dataset.action || (target.dataset.dropZone ? 'sort-target' : null), scene = sceneById[state.scene];
   if (action === 'close-overlay') return closeOverlay();
   if (action === 'new') return newGame();
   if (action === 'confirm-new') return confirmReset(true);
@@ -221,7 +222,7 @@ document.addEventListener('click',event => {
     switch (feedback.after) {
       case 'retry-choice': state.interaction = {kind:'choice',id:feedback.id,context:feedback.context}; break;
       case 'retry-puzzle': state.interaction = {kind:'puzzle',id:feedback.id,context:feedback.context}; break;
-      case 'retry-axis': break;
+      case 'retry-sorting': break;
       case 'complete-conversation': completeConversation(feedback.context); break;
       case 'after-puzzle': beginDialogue(scene.conversations[feedback.context].afterPuzzle,'conversation-done',feedback.context); break;
       case 'next-scene': return enterScene(scene.next);
@@ -238,33 +239,19 @@ document.addEventListener('click',event => {
   }
   if (action === 'puzzle-reset') state.minigames.puzzle = [];
   if (action === 'puzzle-check') checkPuzzle();
-  if (action === 'axis-card') selectedCard = selectedCard === target.dataset.card ? null : target.dataset.card;
-  if (action === 'axis-position' && selectedCard) state.minigames.axis[selectedCard] = event.detail ? axisPosition(target,event.clientX) : state.minigames.axis[selectedCard] ?? 50;
-  if (action === 'axis-reset') { state.minigames.axis = {}; selectedCard = null; }
-  if (action === 'axis-check') checkFreedomAxis();
+  if (action === 'sort-card') selectedCard = selectedCard === target.dataset.card ? null : target.dataset.card;
+  if (action === 'sort-target' && selectedCard && ['god','world'].includes(target.dataset.zone)) { state.minigames.sorting[selectedCard] = target.dataset.zone; selectedCard = null; }
+  if (action === 'sort-reset') { state.minigames.sorting = {}; selectedCard = null; }
+  if (action === 'sort-check') checkFreedomSorting();
   if (action === 'debug-prev' || action === 'debug-next') return enterScene(scenes[Math.max(0,Math.min(scenes.length-1,scenes.indexOf(scene)+(action === 'debug-next' ? 1 : -1)))].id,false);
   if (action === 'debug-clear') { clearSave(); notify('Gespeicherten Spielstand gelöscht.'); return; }
   if (action === 'debug-documents') { state.notebook.documents = ['freedom']; state.notebook.passages.freedom = [0,1]; state.notebook.unlocked = true; notify('Alle Dokumente freigeschaltet.'); }
   if (playing) { render(); persist(); }
 });
-document.addEventListener('input',event => {
-  if (event.target.id !== 'axis-range' || !selectedCard) return;
-  state.minigames.axis[selectedCard] = Number(event.target.value);
-  document.querySelector('#axis-value').textContent = event.target.value + ' %';
-  const card = document.querySelector(`[data-card="${selectedCard}"] small`);
-  if (card) card.textContent = event.target.value + ' %';
-  // Keep the native range input in place during a touch gesture.
-  const rail = app.querySelector('.axis-rail');
-  let marker = rail.querySelector('.axis-marker');
-  if (!marker) { marker = document.createElement('span'); marker.className = 'axis-marker'; marker.setAttribute('aria-hidden','true'); rail.append(marker); }
-  marker.style.left = event.target.value + '%';
-  persist();
-});
 document.addEventListener('change',event => {
   if (event.target.id === 'debug-scene') enterScene(event.target.value,false);
-  if (event.target.id === 'axis-range') { render(); persist(); }
 });
-installDragDrop(app,(id,position) => { state.minigames.axis[id] = position; selectedCard = id; render(); persist(); },id => { selectedCard = selectedCard === id ? null : id; render(); });
+installDragDrop(app,(id,zone) => { state.minigames.sorting[id] = zone; selectedCard = null; render(); persist(); },id => { selectedCard = selectedCard === id ? null : id; render(); });
 const start = canonicalScene(new URLSearchParams(location.search).get('start'));
 if (start && sceneById[start]) { replaceState(load() || freshState()); enterScene(start,false); }
 else { startScreen(); if (start) notify('Unbekannte Szenen-ID. Bitte starte mit Kapitel 1.'); }

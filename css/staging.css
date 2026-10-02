@@ -101,7 +101,7 @@ body { background: #21170f; }
 .task-layout .stage::before { filter: blur(8px) brightness(.4); }
 .task-layout .room { filter: brightness(.65); }
 .task-layout .stage-caption { display: none; }
-.task-panel,.puzzle-panel,.axis-panel {
+.task-panel,.puzzle-panel{
   max-height: calc(100svh - 104px); padding: 1.1rem 1.3rem; border: 2px solid #86633c;
   border-radius: 9px 13px 8px 12px;
   background: radial-gradient(ellipse at 15% 0,#fff2d7b3,transparent 70%),repeating-linear-gradient(5deg,#deb97c08 0 1px,transparent 1px 4px),#f3e4c8;
@@ -153,3 +153,32 @@ dialog::backdrop { background: #21150c99; backdrop-filter: blur(2px); }
   .exploration-tools { font-size: .75rem; flex-wrap: wrap; }
 }
 @media(prefers-reduced-motion:reduce) { .leaving::after,.leaving .room::after { animation: none; } }
+
+/* Two-field sorting uses the same parchment overlay and room backdrop. */
+.sorting-panel { gap: .65rem; }
+.sorting-workspace { display: flex; flex-direction: column; gap: .8rem; }
+.sort-zones { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+.sort-zone { min-height: 220px; padding: .65rem; border: 1px dashed #a9824d; border-radius: 10px; background: #d7b98522; }
+.sort-target { display: flex; flex-direction: column; gap: .4rem; align-items: center; justify-content: center; width: 100%; min-height: 88px; padding: .6rem; background: #e7d0a14d; border: 1px solid #b38b5366; }
+.sort-target:disabled { opacity: 1; }
+.sort-target strong { font: 600 1.05rem/1.35 Georgia,serif; }
+.sort-target span { font: .8rem/1.45 system-ui,sans-serif; }
+.sort-zone-cards { display: grid; grid-template-columns: 1fr 1fr; gap: .45rem; padding-top: .6rem; }
+.sort-bank { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: .55rem; }
+.sort-card { min-width: 0; min-height: 52px; padding: .65rem; background: linear-gradient(115deg,#fff1d3,#efdcaf); border: 1px solid #bb9256; border-radius: 4px 7px 5px 8px; color: #3e2c19; font: .9rem/1.4 Georgia,serif; text-align: center; box-shadow: 0 2px 3px #51351820; touch-action: none; user-select: none; -webkit-user-select: none; }
+.sort-card.selected { outline: 2px solid #8c5c2c; outline-offset: 1px; background: #f2dba9; }
+.sort-target:focus-visible,.sort-card:focus-visible { outline-color: #8c5c2c; }
+.sort-zone.drop-hover { background: #ead1a4 !important; border: 2px solid #98703d; }
+.boundary-cards { display: flex; flex-wrap: wrap; gap: .7rem; }
+.boundary-cards span { padding: .8rem 1rem; background: #f5dfb3; border: 2px solid #b28845; border-radius: 5px 9px 6px 8px; font: 1rem/1.4 Georgia,serif; box-shadow: 0 3px 8px #7f562333; }
+.drag-ghost { background: #fff0ce; color: #3e2c19; border-color: #98703d; font: .9rem/1.4 Georgia,serif; }
+@media(max-width:560px) {
+  .sort-zones { gap: .45rem; }
+  .sort-zone { padding: .4rem; min-height: 180px; }
+  .sort-target { padding: .45rem; min-height: 120px; }
+  .sort-target strong { font-size: .9rem; }
+  .sort-target span { font-size: .7rem; }
+  .sort-zone-cards { grid-template-columns: 1fr; }
+  .sort-bank { grid-template-columns: 1fr 1fr; }
+  .sort-card { font-size: .8rem; min-height: 48px; padding: .5rem; }
+}

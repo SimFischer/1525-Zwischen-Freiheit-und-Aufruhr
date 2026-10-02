@@ -17,21 +17,27 @@ export const puzzles = { justification: {
   success: 'Das entspricht Luthers Gedankengang:\nGottes Annahme steht am Anfang. Der Mensch muss sie nicht durch gute Werke verdienen. Gerade dadurch wird er frei, dem Nächsten zu dienen. Gute Werke sind also Folge der geschenkten Gnade, nicht deren Voraussetzung.',
   securing: 'Gnade → Freiheit vom Rechtfertigungsdruck → freies Handeln → Dienst am Nächsten.'
 } };
-export const sortingGames = { freedomAxis: {
-  title: 'Freiheitsachse',
-  instruction: 'Ordne die Begriffe danach ein, ob sie eher das Verhältnis zu Gott oder die äußeren Lebensverhältnisse betreffen.',
-  left: 'Beziehung zu Gott', right: 'äußere Lebensverhältnisse',
-  cards: [
-    { id: 'grace', text: 'Gnade Gottes', range: [0, 25] },
-    { id: 'faith', text: 'Glaube', range: [0, 30] },
-    { id: 'conscience', text: 'Gewissen', range: [15, 50] },
-    { id: 'service', text: 'Dienst am Nächsten', range: [35, 65] },
-    { id: 'obedience', text: 'Gehorsam', range: [40, 75] },
-    { id: 'help', text: 'Hilfe für Bedürftige', range: [40, 75] },
-    { id: 'order', text: 'gesellschaftliche Ordnung', range: [60, 100] },
-    { id: 'rule', text: 'Herrschaft', range: [65, 100] },
-    { id: 'labor', text: 'Frondienst', range: [75, 100] },
-    { id: 'dues', text: 'Abgaben', range: [75, 100] }
+export const sortingGames = { freedomSorting: {
+  title: 'Freiheit vor Gott und äußeres Leben',
+  instruction: 'Ordne die Karten den beiden Bereichen zu.',
+  zones: [
+    { id: 'god', title: 'Freiheit vor Gott', subtitle: 'Glaube, Gewissen und die Beziehung des Menschen zu Gott' },
+    { id: 'world', title: 'Äußeres Leben', subtitle: 'Alltag, Herrschaft, Pflichten und gesellschaftliche Verhältnisse' }
   ],
-  success: 'Einige Zuordnungen sind eindeutig. Andere verbinden beide Bereiche.'
+  cards: [
+    { id: 'grace', text: 'Gnade Gottes', preferred: 'god' },
+    { id: 'faith', text: 'Glaube', preferred: 'god' },
+    { id: 'conscience', text: 'Gewissen', preferred: 'god' },
+    { id: 'labor', text: 'Frondienst', preferred: 'world' },
+    { id: 'dues', text: 'Abgaben', preferred: 'world' },
+    { id: 'rule', text: 'Herrschaft', preferred: 'world' },
+    { id: 'service', text: 'Dienst am Nächsten', preferred: 'god', boundary: true },
+    { id: 'obedience', text: 'Gehorsam', preferred: 'world', boundary: true }
+  ],
+  hints: [
+    'Denkimpuls:\nFrage dich bei jeder Karte: Geht es hier zuerst darum, wie der Mensch vor Gott dasteht – oder um seine konkrete Stellung und seine Pflichten in der Welt?',
+    'Hinweis:\nBei Begriffen wie ‚Gnade‘ oder ‚Glaube‘ geht es um die Beziehung zu Gott. Bei ‚Frondienst‘ oder ‚Abgaben‘ geht es um konkrete äußere Lebensbedingungen. Nutze diese Beispiele als Orientierung.'
+  ],
+  success: 'Das ist eine tragfähige Unterscheidung:\nLuther bestimmt die Freiheit des Christen zunächst vom Verhältnis zu Gott her. Frondienst, Abgaben und Herrschaft beschreiben dagegen äußere Lebensverhältnisse.',
+  securing: 'Aber zwei Karten passen nicht ganz sauber in nur ein Feld.'
 } };
