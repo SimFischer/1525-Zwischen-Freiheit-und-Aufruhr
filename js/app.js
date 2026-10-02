@@ -6,6 +6,7 @@ import { choices } from '../data/choices.js';
 import { puzzles, sortingGames } from '../data/minigames.js';
 import { preloadCharacters } from '../data/characters.js';
 import { sceneView, updateStage } from './scene-engine.js';
+import { toggleFullscreen, fullscreenButton } from './fullscreen.js';
 import { endingRevealed, resetStaging, leaveTavern, highlightHotspot } from './staging.js';
 import { beginDialogue, advanceDialogue, dialogueView } from './dialogue-engine.js';
 import { choiceView, recordChoice } from './choice-engine.js';
@@ -29,7 +30,7 @@ function startScreen() {
   playing = false;
   setMode('exploration');
   const saved = load();
-  app.innerHTML = `<main class="start-screen"><div class="start-copy"><p class="start-year">1525<span class="year-dot">.</span></p><h1><span class="sr-only">1525 – </span>Zwischen Freiheit<br>und Aufruhr</h1><p class="start-description">Frühjahr 1525.<br>Ein Blatt aus Wittenberg erreicht das Dorf.<br>Am Abend wird darüber in der Taverne gesprochen.</p><div class="start-actions">${button('Neues Spiel',saved ? 'confirm-new' : 'new','class="primary"')}${saved ? button('Spiel fortsetzen','resume','class="secondary"') : ''}</div>${saved ? `<p class="resume-note">Zuletzt: ${esc(sceneById[saved.scene].title)}</p>${button('Spielstand zurücksetzen','confirm-reset','class="text-button"')}` : ''}</div></main>`;
+  app.innerHTML = `<main class="start-screen">${fullscreenButton(true)}<div class="start-copy"><p class="start-year">1525<span class="year-dot">.</span></p><h1><span class="sr-only">1525 – </span>Zwischen Freiheit<br>und Aufruhr</h1><p class="start-description">Frühjahr 1525.<br>Ein Blatt aus Wittenberg erreicht das Dorf.<br>Am Abend wird darüber in der Taverne gesprochen.</p><div class="start-actions">${button('Neues Spiel',saved ? 'confirm-new' : 'new','class="primary"')}${saved ? button('Spiel fortsetzen','resume','class="secondary"') : ''}</div>${saved ? `<p class="resume-note">Zuletzt: ${esc(sceneById[saved.scene].title)}</p>${button('Spielstand zurücksetzen','confirm-reset','class="text-button"')}` : ''}</div></main>`;
 }
 function enterScene(id, complete = true) {
   id = canonicalScene(id);
@@ -67,7 +68,7 @@ function render() {
   const mode = scene.kind === 'ending' && endingRevealed() ? 'transition' : state.dialogue ? 'dialogue' : feedbackMode || (state.interaction?.kind === 'choice' ? 'choice' : state.interaction?.kind === 'puzzle' ? 'puzzle' : scene.kind === 'sorting' ? 'minigame' : scene.kind === 'notebook' ? 'notebook' : 'exploration');
   state.uiMode = mode; setMode(mode);
   if (scene.kind === 'ending' && endingRevealed()) {
-    app.innerHTML = `<main class="ending" tabindex="-1"><span class="eyebrow">Kapitel 1 abgeschlossen</span><div class="ending-lines">${chapters[0].next.lines.map((line,i) => `<p class="ending-line line-${i}">${esc(line)}</p>`).join('')}</div><div class="next-chapter"><h1>Kapitel 2 – ${chapters[0].next.title}</h1><p>Kapitel 2 ist noch nicht spielbar.</p>${button('Zurück zum Titelbild','home','class="primary"')}<div class="ending-actions">${button('Kapitel 1 erneut spielen','confirm-new','class="quiet"')}${button('Zum Startbildschirm','home','class="quiet"')}${button('Notizbuch öffnen','notebook','class="quiet"')}</div></div></main>${debugView(debugWasOpen)}`;
+    app.innerHTML = `<main class="ending" tabindex="-1">${fullscreenButton(true)}<span class="eyebrow">Kapitel 1 abgeschlossen</span><div class="ending-lines">${chapters[0].next.lines.map((line,i) => `<p class="ending-line line-${i}">${esc(line)}</p>`).join('')}</div><div class="next-chapter"><h1>Kapitel 2 – ${chapters[0].next.title}</h1><p>Kapitel 2 ist noch nicht spielbar.</p>${button('Zurück zum Titelbild','home','class="primary"')}<div class="ending-actions">${button('Kapitel 1 erneut spielen','confirm-new','class="quiet"')}${button('Zum Startbildschirm','home','class="quiet"')}${button('Notizbuch öffnen','notebook','class="quiet"')}</div></div></main>${debugView(debugWasOpen)}`;
     return;
   }
   // Keep the same scene DOM so speaker focus can transition smoothly.
@@ -87,7 +88,7 @@ function render() {
   else if (scene.kind === 'notebook') panel.innerHTML = `<section class="instruction-panel"><p class="eyebrow">${esc(scene.title)}</p><p>${esc(scene.instruction)}</p><div class="panel-actions">${button('Notizbuch lesen','notebook','class="secondary"')}${button('Zurück zur Taverne →','next-scene','class="primary"')}</div></section>`;
   else if (['explore','conversations'].includes(scene.kind)) {
     const finished = chapters[0].cast.every(conversationDone);
-    panel.innerHTML = `<nav class="exploration-tools" aria-label="Erkundung"><span>${esc(scene.kind === 'explore' && state.progress.flyerUnlocked ? scene.flyerInstruction : scene.instruction)}</span>${scene.kind === 'conversations' && finished ? button('Zur Sortierung →','next-scene','class="primary"') : ''}</nav>`;
+    panel.innerHTML = scene.kind === 'explore' && state.progress.flyerUnlocked ? '' : `<nav class="exploration-tools" aria-label="Erkundung"><span>${esc(scene.kind === 'explore' && state.progress.flyerUnlocked ? scene.flyerInstruction : scene.instruction)}</span>${scene.kind === 'conversations' && finished ? button('Zur Sortierung →','next-scene','class="primary"') : ''}</nav>`;
   } else if (scene.kind === 'ending') {
     panel.innerHTML = '';
   } else panel.innerHTML = `<section class="instruction-panel"><h2>${scene.title}</h2>${button('Flugblatt öffnen','scene-document','class="primary"')}</section>`;
@@ -158,6 +159,7 @@ document.addEventListener('click',event => {
   const target = event.target.closest('[data-action]') || event.target.closest('[data-drop-zone]');
   if (!target || target.disabled) return;
   const action = target.dataset.action || (target.dataset.dropZone ? 'sort-target' : null), scene = sceneById[state.scene];
+  if (action === 'fullscreen') return void toggleFullscreen();
   if (action === 'close-overlay') return closeOverlay();
   if (action === 'new') return newGame();
   if (action === 'confirm-new') return confirmReset(true);

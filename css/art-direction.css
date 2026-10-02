@@ -117,6 +117,84 @@ dialog:not(:has(.notebook)) {
 }
 .ending .next-chapter h1 { font-size: clamp(1.6rem,3.6vw,2.7rem); }
 .ending .quiet { color: #f6e5bf; }
+
+/* Fullscreen is browser presentation only, independent of the saved game. */
+.fullscreen-button { display: grid; place-items: center; min-width: 44px; min-height: 44px; padding: .45rem; background: var(--wood-surface); color: #ffedcc; }
+.fullscreen-button svg { display: block; }
+.start-screen > .fullscreen-button,.ending > .fullscreen-button { position: absolute; top: 1rem; right: 1rem; z-index: 8; }
+.ending { position: relative; }
+
+/* The next reading action belongs to the physical sheet on the table. */
+.awaiting-flyer .prop.flyer::before {
+  content: ''; position: absolute; inset: -22% -30%; pointer-events: none;
+  background: radial-gradient(ellipse,#ffe3a53b,transparent 72%); border-radius: 50%;
+}
+.awaiting-flyer .prop.flyer > .flyer-plaque {
+  opacity: 1; top: calc(100% + .4rem); width: max-content; min-height: 44px;
+  padding: .45rem .7rem; z-index: 2; pointer-events: auto;
+  background: var(--leather-surface); border: 1px solid #b69258;
+  box-shadow: 0 3px 6px #21140b77,inset 0 1px #dfb56a30;
+  font: .9rem/1.35 Georgia,'Times New Roman',serif; color: #fff0ce;
+}
+.awaiting-flyer .prop.flyer:hover > .flyer-plaque,
+.awaiting-flyer .prop.flyer:focus-visible > .flyer-plaque { border-color: #dfbd80; background: var(--wood-surface); }
+
+/* A source is a loose leaf on a dark wooden reading surface. */
+dialog:has(.document-table) {
+  width: min(900px,94vw); max-width: 94vw; padding: 5px;
+  background: var(--wood-surface); border: 2px solid #8d653b; border-radius: 4px 7px 4px 6px;
+  box-shadow: 0 18px 65px #100a07bb,inset 0 0 0 2px #322012;
+}
+dialog:has(.document-table)::backdrop { background: #1d120aa6; backdrop-filter: blur(1px); }
+body[data-mode="document"] .interaction { visibility: hidden; }
+.document-table {
+  padding: clamp(.8rem,2vw,1.5rem);
+  background: repeating-linear-gradient(1deg,#1d100921 0 1px,transparent 1px 8px),var(--wood-surface);
+}
+.document-table .document-sheet {
+  position: relative; padding: clamp(1.2rem,3vw,2.3rem);
+  border: 1px solid #ba955b; border-radius: 2px 9px 3px 7px;
+  background: radial-gradient(ellipse at 95% 2%,#91623321,transparent 40%),var(--parchment-surface);
+  box-shadow: 0 5px 12px #1c10097d,inset 0 0 30px #9864292e,inset 4px 0 5px #fff0cb66;
+}
+.document-table .source-art {
+  width: 21%; max-height: 145px; margin: .6rem 0 .8rem 1.2rem;
+  transform: rotate(-4deg); filter: drop-shadow(2px 4px 3px #50321944);
+}
+.document-table .document-rule { margin: 1.4rem 0; }
+.document-table .source-note { font-size: .78rem; line-height: 1.6; }
+
+/* Spoken answers sit on wooden boards, with paper strips and stamped letters. */
+.choice-panel.task-panel {
+  padding: .8rem; background: var(--leather-surface); border: 2px solid #967047;
+  box-shadow: 0 8px 30px #100a0790,inset 0 0 0 2px #291a11;
+}
+.choice-panel .choice-heading { padding: .15rem .5rem .35rem; color: #f5e3c0; }
+.choice-panel .choice-heading .eyebrow { color: #d1ad71; }
+.choice-panel .task-statement { border-color: #b08a4c; color: #f5e3c0; }
+.choice-panel .context-statement { background: #ecd2a012; }
+.choice-panel .task-scroll { padding: 4px; }
+.choice-panel .choices { gap: .65rem; }
+.choice-panel .choices > button {
+  position: relative; display: grid; grid-template-columns: 28px minmax(0,1fr) 12px; gap: .5rem;
+  padding: .45rem; border: 1px solid #ad8752; border-radius: 5px 9px 4px 7px;
+  background: var(--wood-surface); color: #f6e7c8;
+  box-shadow: 0 3px 5px #180e0977,inset 0 1px #c69b5d55;
+}
+.choice-panel .choices > button > span:nth-child(2) {
+  padding: .5rem .6rem; border-radius: 2px 6px 2px 4px;
+  background: var(--parchment-surface); color: #422c1b;
+  box-shadow: inset 0 0 12px #95602c26,0 1px 2px #3c251644;
+}
+.choice-panel .choices > button > span:last-child { color: #e9c892; }
+.choice-panel .choice-letter {
+  width: 26px; height: 30px; border: 0; border-radius: 3px 5px 3px 4px;
+  background: #32231888; color: #e6c28c; font: .85rem Georgia,'Times New Roman',serif;
+  box-shadow: inset 0 1px 3px #160c0988;
+}
+.choice-panel .choices > button:hover,.choice-panel .choices > button:focus-visible {
+  border-color: #dbb578; box-shadow: 0 4px 7px #180e0977,inset 0 1px #ebc08266;
+}
 @media(max-width:560px) {
   .task-heading p,.choice-heading p { font-size: .8rem; }
   .task-panel .choices > button,.puzzle-parts button { font-size: .9rem; }
@@ -125,4 +203,14 @@ dialog:not(:has(.notebook)) {
   .door-hotspot { width: 170px; }
   .ending { justify-content: flex-start; overflow-y: auto; }
   .ending .ending-lines { margin: 1rem 0; }
+  .header-actions { gap: .35rem; }
+  .game-header { gap: .4rem; }
+  .document-table { padding: .7rem; }
+  .document-table .document-sheet { padding: 1rem; }
+  .document-table .source-art { width: 24%; margin-left: .6rem; }
+  .choice-panel.task-panel { padding: .6rem; }
+  .choice-panel .choices > button { grid-template-columns: 24px minmax(0,1fr) 10px; gap: .35rem; padding: .35rem; }
+  .choice-panel .choices > button > span:nth-child(2) { padding: .45rem; }
+  .choice-panel .choice-letter { width: 23px; }
+  .awaiting-flyer .prop.flyer > .flyer-plaque { font-size: .8rem; padding: .35rem .55rem; }
 }

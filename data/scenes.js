@@ -1,5 +1,5 @@
 export const scenes = [
-  { id: 'ch1_s1_intro', station: 1, title: 'Ein Blatt aus Wittenberg', kind: 'explore', intro: 'chapterIntro', instruction: 'Sprich mit Jakob.', flyerInstruction: 'Lies selbst.', hotspots: { jakob: { dialogue: 'introJakob', after: 'unlock-flyer' } }, next: 'ch1_s2_document', emotions: { jakob: 'reading', peter: 'neutral', anna: 'thoughtful' } },
+  { id: 'ch1_s1_intro', station: 1, title: 'Ein Blatt aus Wittenberg', kind: 'explore', intro: 'chapterIntro', instruction: 'Sprich mit Jakob.', flyerInstruction: 'Das Blatt lesen', hotspots: { jakob: { dialogue: 'introJakob', after: 'unlock-flyer' } }, next: 'ch1_s2_document', emotions: { jakob: 'reading', peter: 'neutral', anna: 'thoughtful' } },
   { id: 'ch1_s2_document', station: 2, title: 'Niemandem untertan', kind: 'document', document: 'freedom', passage: 0, next: 'ch1_s3_interpretation' },
   { id: 'ch1_s3_interpretation', station: 3, title: 'Eine erste Deutung', kind: 'dialogue', dialogue: 'interpretation', choice: 'initialFreedomInterpretation', next: 'ch1_s4_second_thesis', emotions: { peter: 'skeptical', anna: 'thoughtful', jakob: 'reading' } },
   { id: 'ch1_s4_second_thesis', station: 4, title: 'Jedermann untertan', kind: 'document-dialogue', beforeDocument: 'beforeSecondThesis', document: 'freedom', passage: 1, dialogue: 'secondThesis', next: 'ch1_s5_conversations' },

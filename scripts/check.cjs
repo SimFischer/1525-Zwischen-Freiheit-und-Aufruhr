@@ -20,6 +20,12 @@ async function geometry(page,label) {
   if (rectangles.length) for (const r of rectangles.slice(1)) { const s=rectangles[0]; assert.ok(r.x>=s.x && r.right<=s.right && r.y>=s.y && r.bottom<=s.bottom,label+' clipped figure'); }
   const stage=await page.locator('.stage').boundingBox();
   if (stage) {
+    const innerWidthForTest=await page.evaluate(()=>innerWidth);
+    const controls=await page.locator('.header-actions button').evaluateAll(nodes=>nodes.map(node=>{const r=node.getBoundingClientRect();return {left:r.left,right:r.right,height:r.height};}));
+    for(let i=0;i<controls.length;i++) {
+      assert.ok(controls[i].height>=44 && controls[i].right<=innerWidthForTest,label+' header control clipped');
+      if(i) assert.ok(controls[i].left>=controls[i-1].right,label+' overlapping header controls');
+    }
     assert.equal(await page.locator('.room .character-art,.room .table-art,.room .prop img').count(),0,label+' separate asset in room');
     assert.equal(await page.locator('.room-image').count(),1,label+' missing integrated scene');
     const room=await page.locator('.room').boundingBox();
@@ -131,10 +137,25 @@ async function drag(page,id,zone,touch,context) {
     assert.equal(await page.locator('[data-action="resume"]').count(),0);
     await action(page,'new');
     assert.match(await page.locator('.spoken').innerText(),/Seit einigen Jahren verbreiten sich/);
+    assert.equal((await page.locator('[data-action="dialogue-next"]').innerText()).replace(/\s+/g,' ').trim(),'Weiter →');
+    const beforeFullscreen=await saved(page);
+    await page.locator('[data-action="fullscreen"]').tap();
+    await page.waitForFunction(()=>Boolean(document.fullscreenElement));
+    assert.equal(await page.locator('[data-action="fullscreen"]').getAttribute('aria-label'),'Vollbild verlassen');
+    assert.deepEqual(await saved(page),beforeFullscreen);
+    await page.locator('[data-action="fullscreen"]').tap();
+    await page.waitForFunction(()=>!document.fullscreenElement);
+    assert.equal(await page.locator('[data-action="fullscreen"]').getAttribute('aria-label'),'Vollbild');
+    assert.deepEqual(await saved(page),beforeFullscreen);
     await dialogue(page); await geometry(page,'intro'); await doorGeometry(page);
     assert.ok(await page.locator('[data-action="flyer"]').isDisabled());
+    await page.locator('[data-action="fullscreen"]').tap();
+    await page.waitForFunction(()=>Boolean(document.fullscreenElement));
     await page.locator('[data-character="jakob"]').tap();
-    assert.match(await page.locator('.spoken').innerText(),/Ich habe wieder etwas von Luther bekommen/);
+    assert.equal(await page.locator('[data-action="fullscreen"]').getAttribute('aria-label'),'Vollbild verlassen');
+    await page.locator('[data-action="fullscreen"]').tap();
+    await page.waitForFunction(()=>!document.fullscreenElement);
+    assert.equal(await page.locator('.spoken').innerText(),'Mir ist ein Blatt aus Wittenberg in die Hände gekommen. Darin steht, was Luther schreibt.');
     assert.match(await page.locator('.room-image').getAttribute('src'),/k1_taverne_dialog_group.png/);
     assert.match(await page.locator('.portrait img').getAttribute('src'),/portrait\/jakob_reading.png/);
     await action(page,'dialogue-next');
@@ -147,6 +168,10 @@ async function drag(page,id,zone,touch,context) {
     await page.reload(); await action(page,'resume');
     assert.match(await page.locator('.spoken').innerText(),/Schon wieder Luther/);
     await dialogue(page); assert.ok(await page.locator('[data-action="flyer"]').isEnabled());
+    assert.equal(await page.locator('.exploration-tools').count(),0);
+    assert.equal(await page.locator('.awaiting-flyer').count(),1);
+    assert.match(await page.locator('.flyer-plaque').innerText(),/Das Blatt lesen/);
+    assert.equal(await page.locator('.flyer-plaque').evaluate(el=>getComputedStyle(el).opacity),'1');
     assert.equal(await page.locator('.instruction-panel,.dialogue-panel').count(),0);
     const beforeAtmosphere=await saved(page);
     assert.match(await page.locator('.room-image').getAttribute('src'),/k1_taverne_exploration.png/);
@@ -160,9 +185,10 @@ async function drag(page,id,zone,touch,context) {
     await page.locator('[data-character="peter"]').tap();
     assert.deepEqual(await saved(page),beforeAtmosphere);
     await photograph(page,'ch1-tavern-1024');
-    await page.locator('[data-action="flyer"]').tap();
+    await page.locator('.flyer-plaque').tap();
     assert.match(await page.locator('blockquote').innerText(),/Ein Christenmensch ist ein freier Herr/);
     assert.equal(await page.locator('body').getAttribute('data-mode'),'document');
+    assert.equal(await page.locator('#interaction').evaluate(el=>getComputedStyle(el).visibility),'hidden');
     await photograph(page,'ch1-document-1024');
     await page.locator('dialog [data-action="close-overlay"]').last().click(); await dialogue(page);
     await choose(page,'freedom_responsibility');
@@ -262,7 +288,11 @@ async function drag(page,id,zone,touch,context) {
     await page.waitForTimeout(4200);
     await photograph(page,'ch1-ending-1024');
     await action(page,'home'); await action(page,'resume'); assert.equal(await page.locator('.exit-ready').count(),1);
+    await page.locator('[data-action="fullscreen"]').tap(); await page.waitForFunction(()=>Boolean(document.fullscreenElement));
     await page.locator('[data-action="prop-door"]').tap(); await page.locator('.ending').waitFor();
+    assert.equal(await page.locator('[data-action="fullscreen"]').getAttribute('aria-label'),'Vollbild verlassen');
+    await page.locator('[data-action="fullscreen"]').tap(); await page.waitForFunction(()=>!document.fullscreenElement);
+    assert.ok(await page.locator('[data-action="fullscreen"]').isHidden());
 
     // Every initial response and all of Peter's reactions remain ungraded and score-neutral.
     const firsts=['freedom_no_obedience','freedom_different_kind','freedom_life_tension','freedom_responsibility'];
@@ -325,6 +355,17 @@ async function drag(page,id,zone,touch,context) {
       assert.deepEqual(await saved(page),atmosphereBefore);
       await page.locator('[data-character="jakob"]').click(); await geometry(page,viewport.width+' dialogue');
       await photograph(page,'ch1-dialogue-'+viewport.width);
+      await dialogue(page); await geometry(page,viewport.width+' flyer ready');
+      const plaque=await page.locator('.awaiting-flyer .flyer-plaque').boundingBox(), room=await page.locator('.room').boundingBox();
+      assert.ok(plaque.height>=44 && plaque.x>=room.x && plaque.x+plaque.width<=room.x+room.width && plaque.y+plaque.height<=room.y+room.height,'flyer label clipped');
+      assert.equal(await page.locator('.exploration-tools').count(),0);
+      await photograph(page,'ch1-flyer-'+viewport.width);
+      await page.locator('.flyer-plaque').tap(); await overlayGeometry(page,viewport.width+' table document');
+      if(viewport.width>=1024) {
+        const foot=await page.locator('.source-footer button').boundingBox(), modal=await page.locator('dialog[open]').boundingBox();
+        assert.ok(foot.y+foot.height<=modal.y+modal.height,'clipped source return button');
+      }
+      await photograph(page,'ch1-document-'+viewport.width); await page.keyboard.press('Escape');
       await scene('ch1_s3_interpretation'); await dialogue(page); await geometry(page,viewport.width+' first choice');
       await doorGeometry(page);
       assert.match(await page.locator('.choices > button').first().evaluate(el=>getComputedStyle(el).fontFamily),/Georgia/);
@@ -355,6 +396,12 @@ async function drag(page,id,zone,touch,context) {
     await action(page,'debug-next'); assert.match(await page.locator('.stage-caption').innerText(),/Gehorsam/);
     await action(page,'debug-prev'); await action(page,'debug-clear');
     assert.equal(await page.evaluate(key=>localStorage.getItem(key),KEY),null);
+    await scene('ch1_s1_intro'); await dialogue(page);
+    await page.locator('[data-action="fullscreen"]').tap(); await page.waitForFunction(()=>Boolean(document.fullscreenElement));
+    await action(page,'home');
+    assert.equal(await page.locator('[data-action="fullscreen"]').getAttribute('aria-label'),'Vollbild verlassen');
+    await page.locator('[data-action="fullscreen"]').tap(); await page.waitForFunction(()=>!document.fullscreenElement);
+    assert.ok(await page.locator('[data-action="fullscreen"]').isHidden());
     await page.goto(url+'?start=ch1_s1_tavern_intro'); await dialogue(page);
     assert.equal((await saved(page)).scene,'ch1_s1_intro');
     await action(page,'menu'); await overlayGeometry(page,'menu'); await photograph(page,'ch1-menu-1024'); await action(page,'close-overlay'); await action(page,'menu'); await action(page,'menu-home');

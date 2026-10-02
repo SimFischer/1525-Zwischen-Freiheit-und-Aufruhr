@@ -2,11 +2,11 @@ import { chapters } from './chapters.js';
 export const dialogues = {
   chapterIntro: [{ text: chapters[0].intro }],
   introJakob: [
-    { speaker: 'jakob', emotion: 'reading', text: 'Ich habe wieder etwas von Luther bekommen.' },
+    { speaker: 'jakob', emotion: 'reading', text: 'Mir ist ein Blatt aus Wittenberg in die Hände gekommen. Darin steht, was Luther schreibt.' },
     { speaker: 'peter', emotion: 'skeptical', text: 'Schon wieder Luther?' },
     { speaker: 'anna', emotion: 'engaged', text: 'Was schreibt er diesmal?' },
     { speaker: 'jakob', emotion: 'reading', text: 'Über die Freiheit eines Christenmenschen.' },
-    { speaker: 'jakob', emotion: 'neutral', text: 'Lies selbst.' }
+    { speaker: 'jakob', emotion: 'neutral', text: 'Seht euch das Blatt an.' }
   ],
   interpretation: [
     { speaker: 'peter', emotion: 'determined', text: 'Na also. Dann ist die Sache doch klar.' },
