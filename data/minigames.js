@@ -5,11 +5,11 @@ export const puzzles = { justification: {
   instruction: 'Wähle vier passende Gedanken. Ordne sie von Gottes Annahme über den veränderten Beweggrund bis zum Dienst am Nächsten.',
   parts: [
     { id: 'A', text: 'Der Mensch vertraut darauf, dass Gott ihn in Christus aus Gnade annimmt.' },
-    { id: 'B', text: 'Der Mensch versucht durch gute Werke, vor Gott gerecht zu werden.' },
+    { id: 'B', text: 'Der Mensch gewinnt durch den Dienst am Nächsten die Gewissheit, dass Gott ihn annehmen wird.' },
     { id: 'C', text: 'Der Mensch ist nicht mehr darauf angewiesen, sich Gottes Anerkennung zu verdienen.' },
     { id: 'D', text: 'Gute Werke können nun aus Freiheit geschehen, statt Gottes Annahme verdienen zu müssen.' },
     { id: 'E', text: 'Der Mensch wendet sich dem Nächsten zu.' },
-    { id: 'F', text: 'Gute Werke machen den Menschen vor Gott gerecht.' }
+    { id: 'F', text: 'Gottes Gnade eröffnet den Anfang; gute Werke vervollständigen die Rechtfertigung.' }
   ],
   solution: ['A', 'C', 'D', 'E'],
   hints: [

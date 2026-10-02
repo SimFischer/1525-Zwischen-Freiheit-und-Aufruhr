@@ -112,13 +112,13 @@ export const chapterTwoChoices = {
   ]
 },
   forestResponse:open('Der Verwalter verlangt: „Also? Das Holz bleibt hier.“','Wie antwortest du?',[
-    ['take','A','Wir nehmen das Holz trotzdem mit.',lines('overseer',['Ich werde das melden.'])],['leave','B','Wir lassen es hier.',lines('anna',['Für heute. Aber damit ist die Frage nicht beantwortet.'])],['legal_basis','C','Dann möchte ich wissen, worauf sich dieses Verbot stützt.',talk(['overseer','Ich setze die Anweisungen des Herrn durch.'],['player','Das war nicht meine Frage.'],['overseer','Dann müsst ihr sie dem Herrn stellen.'])],['community','D','Das sollte nicht hier zwischen uns entschieden werden. Das Dorf muss darüber sprechen.',lines('anna',['Das betrifft schließlich nicht nur uns.'])]
+    ['take','A','Wir nehmen das Holz trotzdem mit.',lines('overseer',['Ich werde das melden.'])],['leave','B','Wir lassen es für heute hier, um den Streit nicht weiter zu verschärfen.',lines('anna',['Dann nehmen wir heute kein Holz mit. Aber wir können das Verbot später noch ansprechen.'])],['legal_basis','C','Dann möchte ich wissen, worauf sich dieses Verbot stützt.',talk(['overseer','Ich setze die Anweisungen des Herrn durch.'],['player','Das war nicht meine Frage.'],['overseer','Dann müsst ihr sie dem Herrn stellen.'])],['community','D','Das sollte nicht hier zwischen uns entschieden werden. Das Dorf muss darüber sprechen.',lines('anna',['Das betrifft schließlich nicht nur uns.'])]
   ]),
   corveeSacrifice:open('Die Arbeit am Herrenhof unterbricht Peters geplanten Tag.','Welche eigene Arbeit verschiebst du?',[
     ['grain','A','Getreide / eigene Feldarbeit',lines('peter',['Wenn der Regen kommt, verlieren wir vielleicht einen Teil davon.'])],['fence','B','Den beschädigten Zaun',lines('peter',['Dann bleibt der Zaun offen. Hoffentlich geht nichts aufs Feld.'])],['feed','C','Futter / Versorgung der Tiere',lines('peter',['Dann mache ich das heute Abend noch. Irgendwann.'])]
   ]),
   corveeResponse:open('Der Bote sagt: „Ich brauche eine Antwort.“','Wie antwortest du?',[
-    ['go','A','Ich gehe selbst zum Herrenhof.',lines('peter',['Und meine Arbeit wartet.'])],['substitute','B','Ich versuche, jemanden an meiner Stelle zu schicken.',lines('peter',['Dann schulde ich ihm etwas.'])],['delay','C','Ich bitte um Aufschub.',lines('overseer',['Ob du Aufschub bekommst, entscheidet nicht du.'])],['refuse','D','Ich weigere mich.',lines('overseer',['Dann melde ich, dass du deine Pflicht verweigerst.'])]
+    ['go','A','Ich gehe selbst zum Herrenhof.',lines('peter',['Dann erfülle ich den verlangten Dienst. Meine eigene Arbeit muss warten.'])],['substitute','B','Ich versuche, jemanden an meiner Stelle zu schicken.',lines('peter',['Dann schulde ich ihm etwas.'])],['delay','C','Ich bitte um Aufschub.',lines('overseer',['Ob du Aufschub bekommst, entscheidet nicht du.'])],['refuse','D','Ich weigere mich.',lines('overseer',['Dann melde ich, dass du deine Pflicht verweigerst.'])]
   ]),
   corveeDefinition:{
   "contextLabel": "Am heutigen Tag:",
@@ -158,7 +158,7 @@ export const chapterTwoChoices = {
   ]
 },
   duesResponse:open('Margarethe fragt: „Und wenn ich sage, dass wir das selbst brauchen?“','Wie reagierst du auf die Forderung?',[
-    ['pay','A','Wir geben die geforderte Menge ab.',lines('margarethe',['Für ihn vielleicht. Für uns fehlt es nun.'])],['delay','B','Wir bitten darum, einen Teil später zu leisten.',lines('overseer',['Das kann ich nicht entscheiden.'])],['withhold','C','Wir behalten einen Sack zurück.',lines('overseer',['Wenn die Menge fehlt, wird man nachfragen.'])],['question_basis','D','Wir verlangen zu wissen, wie die Forderung begründet wird.',talk(['overseer','Ich überbringe sie nur.'],['margarethe','Das ist keine Antwort.'])]
+    ['pay','A','Wir geben die geforderte Menge ab.',lines('margarethe',['Dann ist diese Forderung erfüllt. Aber der Sack fehlt uns im eigenen Vorrat.'])],['delay','B','Wir bitten darum, einen Teil später zu leisten.',lines('overseer',['Das kann ich nicht entscheiden.'])],['withhold','C','Wir behalten einen Sack zurück.',lines('overseer',['Wenn die Menge fehlt, wird man nachfragen.'])],['question_basis','D','Wir verlangen zu wissen, wie die Forderung begründet wird.',talk(['overseer','Ich überbringe sie nur.'],['margarethe','Das ist keine Antwort.'])]
   ]),
   assemblyConnection:{
   "contextLabel": "Am heutigen Tag:",

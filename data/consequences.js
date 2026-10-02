@@ -49,15 +49,15 @@ export const recallLines={
   D:{speaker:'jakob',text:'Gestern hast du Freiheit vor Gott und äußere Ordnung unterschieden. Heute müssen wir fragen, was daraus für unser Handeln folgt.'}},
  forest:{
   take:{speaker:'anna',text:'Im Wald haben wir das Holz trotzdem genommen. Der Verwalter wollte den Vorfall melden.'},
-  leave:{speaker:'anna',text:'Damals im Wald haben wir nachgegeben. Gelöst war damit nichts.'},
+  leave:{speaker:'anna',text:'Im Wald haben wir das Holz liegen lassen, um den Streit nicht weiter zu verschärfen. Feuerholz brauchen wir trotzdem.'},
   legal_basis:{speaker:'anna',text:'Du wolltest damals wissen, auf welchem Recht das Verbot eigentlich beruht.'},
   community:{speaker:'anna',text:'Du wolltest schon im Wald, dass das Dorf gemeinsam darüber spricht.'}},
  corvee:{
-  go:'Ich bin gegangen. Meine Arbeit blieb trotzdem liegen.',
+  go:'Ich bin gegangen und habe den verlangten Dienst geleistet. Meine eigene Arbeit blieb liegen.',
   substitute:'Wir wollten jemanden an meiner Stelle schicken. Dafür brauchen wir Hilfe, die wir später auch zurückgeben können.',
   delay:'Wir haben um Aufschub gebeten. Ob wir ihn bekommen, entscheiden wir nicht allein.',
   refuse:'Wir haben den Dienst verweigert. Der Verwalter wollte die Weigerung melden.'},
  sacrifice:{grain:'Mein Getreide stand noch draußen.',fence:'Der Zaun blieb offen.',feed:'Die Tiere brauchten noch Futter. Ich musste die Arbeit am Abend nachholen.'},
- dues:{pay:'Wir haben gegeben, was verlangt wurde. Sicherer wurde dadurch trotzdem nichts.',delay:'Wir haben um Aufschub gebeten. Die zusätzliche Forderung kam trotzdem.',withhold:'Wir haben einen Sack zurückbehalten. Der Verwalter hat die fehlende Menge bemerkt.',question_basis:'Wir haben gefragt, wie die Forderung begründet wird. Der Verwalter hatte darauf keine Antwort.'},
+ dues:{pay:'Wir haben die erste Forderung erfüllt, statt über einen fehlenden Sack zu streiten. Dann wurde noch mehr verlangt.',delay:'Wir haben um Aufschub gebeten. Die zusätzliche Forderung kam trotzdem.',withhold:'Wir haben einen Sack zurückbehalten. Der Verwalter hat die fehlende Menge bemerkt.',question_basis:'Wir haben gefragt, wie die Forderung begründet wird. Der Verwalter hatte darauf keine Antwort.'},
  supply:{food:'Beim Vorrat mussten wir sparen.',seed:'Für die nächste Aussaat wird uns Saatgut fehlen.',reserve:'Jetzt darf nichts mehr schiefgehen.',refuse:'Den zusätzlichen Sack haben wir verweigert. Der Verwalter wollte auch das melden.'}
 };

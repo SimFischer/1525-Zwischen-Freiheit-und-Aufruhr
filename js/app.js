@@ -30,7 +30,7 @@ function showPreparedState(next,active=true) {
 function persist() {
   const ok = save(state), label = document.querySelector('#save-status');
   if (label && isTestMode()) { label.textContent='Testzustand · getrennt vom normalen Spielstand'; return; }
-  if (label) label.textContent = ok ? (state.chapter===2 ? '' : '✓ Spielstand gespeichert · auf diesem Gerät') : 'Speicherung nicht verfügbar';
+  if (label) label.textContent = ok ? '' : 'Speicherung nicht verfügbar';
 }
 document.addEventListener('storage-error', () => notify('Der Browser erlaubt gerade keine lokale Speicherung. Dein Fortschritt bleibt für diese Sitzung erhalten.'));
 function startScreen() {
@@ -90,7 +90,7 @@ function render() {
   const mode = scene.kind === 'ending' && endingRevealed() ? 'transition' : state.dialogue ? 'dialogue' : feedbackMode || (state.interaction?.kind === 'choice' ? 'choice' : state.interaction?.kind === 'puzzle' ? 'puzzle' : scene.kind === 'sorting' ? 'minigame' : scene.kind === 'notebook' ? 'notebook' : 'exploration');
   state.uiMode = mode; setMode(mode);
   if (scene.kind === 'ending' && endingRevealed()) {
-    app.innerHTML = `<main class="ending" tabindex="-1">${fullscreenButton(true)}<span class="eyebrow">Kapitel 1 abgeschlossen</span><div class="ending-lines">${chapters[0].next.lines.map((line,i) => `<p class="ending-line line-${i}">${esc(line)}</p>`).join('')}</div><div class="next-chapter"><h1>Kapitel 2 – ${chapters[0].next.title}</h1>${button('Der Morgen beginnt →','ch2-start','class="primary"')}${button('Zurück zum Titelbild','home','class="primary"')}<div class="ending-actions">${button('Kapitel 1 erneut spielen','confirm-new','class="quiet"')}${button('Notizbuch öffnen','notebook','class="quiet"')}</div></div></main>${debugView(debugWasOpen)}${testToolbar()}`;
+    app.innerHTML = `<main class="ending" tabindex="-1">${fullscreenButton(true)}<span class="eyebrow">Die Nacht geht zu Ende</span><div class="ending-lines">${chapters[0].next.lines.map((line,i) => `<p class="ending-line line-${i}">${esc(line)}</p>`).join('')}</div><div class="next-chapter"><h1>Kapitel 2 – ${chapters[0].next.title}</h1>${button('Der Morgen beginnt →','ch2-start','class="primary"')}${button('Zurück zum Titelbild','home','class="primary"')}<div class="ending-actions">${button('Kapitel 1 erneut spielen','confirm-new','class="quiet"')}${button('Notizbuch öffnen','notebook','class="quiet"')}</div></div></main>${debugView(debugWasOpen)}${testToolbar()}`;
     return;
   }
   // Keep the same scene DOM so speaker focus can transition smoothly.
@@ -199,7 +199,7 @@ document.addEventListener('click',event => {
     return;
   }
   if (action === 'home') { if (playing) persist(); return startScreen(); }
-  if (action === 'menu') return openOverlay(`<article class="confirmation"><p class="eyebrow">Kapitel ${state.chapter}</p><h1 id="overlay-title">Eine kurze Pause.</h1>${state.chapter===2?'':'<p>Dein Fortschritt wird automatisch auf diesem Gerät gespeichert.</p>'}<div class="menu-actions">${button('Weiterspielen →','close-overlay','class="primary"')}${button('Zum Startbildschirm','menu-home','class="secondary"')}${button('Spielstand zurücksetzen','confirm-reset','class="quiet"')}</div></article>`,() => {},state.uiMode);
+  if (action === 'menu') return openOverlay(`<article class="confirmation"><p class="eyebrow">Kapitel ${state.chapter}</p><h1 id="overlay-title">Eine kurze Pause.</h1><div class="menu-actions">${button('Weiterspielen →','close-overlay','class="primary"')}${button('Zum Startbildschirm','menu-home','class="secondary"')}${button('Spielstand zurücksetzen','confirm-reset','class="quiet"')}</div></article>`,() => {},state.uiMode);
   if (action === 'menu-home') { closeOverlay(); persist(); return startScreen(); }
   if (action === 'notebook') { document.querySelector('#notice').classList.remove('visible'); return openNotebook(); }
   if (action === 'notebook-tab') return openNotebook(target.dataset.tab);

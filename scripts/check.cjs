@@ -312,12 +312,12 @@ async function drag(page,id,zone,touch,context) {
     await choose(page,'D'); await feedback(page);
     await choose(page,'A'); await feedback(page);
     assert.equal(await page.locator('.context-statement strong').innerText(),'Aussage 2:');
-    assert.equal(await page.locator('.context-statement span').innerText(),'Christliche Freiheit führt automatisch zu politischer Freiheit.');
+    assert.equal(await page.locator('.context-statement span').innerText(),'Die gleiche Freiheit der Christen vor Gott begründet, dass weltliche Pflichten nur mit ihrer persönlichen Zustimmung verbindlich sind.');
     assert.equal(await page.locator('.choice-heading h2').innerText(),'Warum greift diese Aussage zu kurz?');
     assert.deepEqual(await page.locator('.choices > button > span:nth-child(2)').allTextContents(),[
       '… Luther Freiheit zunächst vom Verhältnis des Menschen zu Gott her bestimmt.',
-      '… gesellschaftliche Fragen für Luther grundsätzlich bedeutungslos sind.',
-      '… politische Freiheit grundsätzlich unchristlich ist.'
+      '… der Dienst am Nächsten die bestehenden gesellschaftlichen Pflichten bereits als gerecht bestätigt.',
+      '… äußere Freiheit erst durch gute Werke verdient werden muss, während der Glaube innere Freiheit schenkt.'
     ]);
     await geometry(page,'second statement'); await photograph(page,'ch1-political-1024');
     await choose(page,'A'); assert.match(await page.locator('.feedback-text').innerText(),/Daraus folgt noch nicht automatisch/);
