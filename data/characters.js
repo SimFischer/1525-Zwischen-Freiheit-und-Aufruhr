@@ -17,5 +17,6 @@ let preloaded = false;
 export function preloadCharacters() {
   if (preloaded) return;
   preloaded = true;
-  for (const person of Object.values(characters)) for (const asset of [...Object.values(person.states).map(mood => mood.asset), ...Object.values(person.sceneStates)]) { const image = new Image(); image.src = asset; }
+  for (const person of Object.values(characters)) for (const mood of Object.values(person.states)) { const image = new Image(); image.src = mood.asset; }
+  for (const asset of ['k1_taverne_exploration.png','k1_taverne_dialog_group.png']) { const image = new Image(); image.src = 'assets/chapter1/' + asset; }
 }

@@ -29,11 +29,12 @@ function startScreen() {
   playing = false;
   setMode('exploration');
   const saved = load();
-  app.innerHTML = `<main class="start-screen"><div class="start-copy"><div class="edition"><span class="tiny-rule"></span> Ein historisch-theologisches Adventure</div><p class="start-year">1525<span class="year-dot">.</span></p><h1>Zwischen Freiheit<br>und Aufruhr</h1><p class="start-description">Eine neue Idee erreicht das Dorf.<br>Ein Blatt Papier stellt alles infrage.<br>Und du sitzt mit am Tisch.</p><div class="start-actions">${button('Neues Spiel <span aria-hidden="true">→</span>',saved ? 'confirm-new' : 'new','class="primary"')}${saved ? button('Spiel fortsetzen <span aria-hidden="true">↗</span>','resume','class="secondary"') : ''}</div>${saved ? `<p class="resume-note">Zuletzt: ${esc(sceneById[saved.scene].title)}</p>${button('Spielstand zurücksetzen','confirm-reset','class="text-button"')}` : '<p class="resume-note">Kapitel 1 · Was heißt frei?</p>'}<div class="start-meta"><span>Q1 · Evangelische Religion</span><span>Lesen. Fragen. Entscheiden.</span></div></div><div class="start-art"><div class="art-border"></div><div class="art-label"><span class="eyebrow">Frühjahr 1525</span><p>${chapters[0].question}</p><span class="art-caption">Kapitel 01 — Was heißt frei?</span></div><span class="art-credit">Die Gesprächssituation und die Figuren sind erfunden.</span></div></main>`;
+  app.innerHTML = `<main class="start-screen"><div class="start-copy"><p class="start-year">1525<span class="year-dot">.</span></p><h1><span class="sr-only">1525 – </span>Zwischen Freiheit<br>und Aufruhr</h1><p class="start-description">Frühjahr 1525.<br>Ein Blatt aus Wittenberg erreicht das Dorf.<br>Am Abend wird darüber in der Taverne gesprochen.</p><div class="start-actions">${button('Neues Spiel',saved ? 'confirm-new' : 'new','class="primary"')}${saved ? button('Spiel fortsetzen','resume','class="secondary"') : ''}</div>${saved ? `<p class="resume-note">Zuletzt: ${esc(sceneById[saved.scene].title)}</p>${button('Spielstand zurücksetzen','confirm-reset','class="text-button"')}` : ''}</div></main>`;
 }
 function enterScene(id, complete = true) {
   id = canonicalScene(id);
   if (!sceneById[id]) { notify('Diese Szene ist nicht verfügbar.'); return; }
+  document.querySelector('#notice').classList.remove('visible');
   resetStaging();
   if (complete) addUnique(state.progress.completedScenes,state.scene);
   state.scene = id; state.phase = 'active'; state.dialogue = null; state.interaction = null; selectedCard = null;
@@ -172,7 +173,7 @@ document.addEventListener('click',event => {
   if (action === 'home') { if (playing) persist(); return startScreen(); }
   if (action === 'menu') return openOverlay(`<article class="confirmation"><p class="eyebrow">Kapitel 1</p><h1 id="overlay-title">Eine kurze Pause.</h1><p>Dein Fortschritt wird automatisch auf diesem Gerät gespeichert.</p><div class="menu-actions">${button('Weiterspielen →','close-overlay','class="primary"')}${button('Zum Startbildschirm','menu-home','class="secondary"')}${button('Spielstand zurücksetzen','confirm-reset','class="quiet"')}</div></article>`,() => {},state.uiMode);
   if (action === 'menu-home') { closeOverlay(); persist(); return startScreen(); }
-  if (action === 'notebook') return openNotebook();
+  if (action === 'notebook') { document.querySelector('#notice').classList.remove('visible'); return openNotebook(); }
   if (action === 'notebook-tab') return openNotebook(target.dataset.tab);
   if (action === 'archive-document') return openDocument(target.dataset.document,null,() => openNotebook('documents'),true);
   if (action === 'scene-document') return openSceneDocument();
@@ -182,7 +183,10 @@ document.addEventListener('click',event => {
     setMode('transition');
     return leaveTavern(render);
   }
-  if (action === 'prop-mug' || action === 'prop-candle') { highlightHotspot(target); return; }
+  if (action === 'prop-mug' || action === 'prop-candle') {
+    highlightHotspot(target);
+    return notify(action === 'prop-candle' ? 'Die Kerze ist fast heruntergebrannt.' : 'Ein schwerer Holzkrug steht auf dem Tisch.');
+  }
   if (action === 'next-scene') {
     if (scene.kind === 'conversations' && !chapters[0].cast.every(conversationDone)) return;
     return enterScene(scene.next);
@@ -191,6 +195,7 @@ document.addEventListener('click',event => {
     if (state.dialogue || state.interaction) return;
     const id = target.dataset.character;
     if ((scene.kind === 'explore' && !scene.hotspots[id]) || scene.kind === 'ending') { highlightHotspot(target); return; }
+    document.querySelector('#notice').classList.remove('visible');
     addUnique(state.progress.visitedHotspots,`${scene.id}:${id}`);
     if (scene.kind === 'explore') {
       const hotspot = scene.hotspots[id]; if (!hotspot) return;
@@ -200,7 +205,7 @@ document.addEventListener('click',event => {
       beginDialogue(conversation.dialogue,conversation.puzzle ? 'conversation-puzzle' : 'conversation-choice',id);
     }
   }
-  if (action === 'flyer') return scene.kind === 'explore' ? enterScene(scene.next) : openDocument('freedom',null,() => {},true);
+  if (action === 'flyer') { document.querySelector('#notice').classList.remove('visible'); return scene.kind === 'explore' ? enterScene(scene.next) : openDocument('freedom',null,() => {},true); }
   if (action === 'dialogue-next' && afterDialogue(advanceDialogue())) return;
   if (action === 'choose') {
     const id = target.dataset.choice, context = state.interaction.context;
