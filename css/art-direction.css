@@ -14,7 +14,7 @@
   --wood-surface: repeating-linear-gradient(2deg,#311d121c 0 1px,transparent 1px 6px),linear-gradient(#88613b,#5d3d25);
   --paper-edge: inset 0 0 24px #a7753230,inset 3px 0 7px #65412424;
 }
-button { font-family: Georgia,'Times New Roman',serif; border-radius: 4px 7px 4px 6px; background: var(--parchment-surface); }
+button { font-family: Georgia,'Times New Roman',serif; border-radius: 4px 7px 4px 6px; background: var(--parchment-surface); -webkit-tap-highlight-color: transparent; }
 .primary,.secondary,.quiet,
 .interaction .primary,.start-actions .primary,.start-actions .secondary,
 .notebook .overlay-top button {
@@ -195,6 +195,49 @@ body[data-mode="document"] .interaction { visibility: hidden; }
 .choice-panel .choices > button:hover,.choice-panel .choices > button:focus-visible {
   border-color: #dbb578; box-shadow: 0 4px 7px #180e0977,inset 0 1px #ebc08266;
 }
+
+/* A printed leaf, with the editorial apparatus confined to the archive. */
+.document-controls { min-height: 44px; margin-bottom: .7rem; }
+.document-controls img { width: 58px; height: 44px; object-fit: contain; transform: rotate(-6deg); filter: drop-shadow(0 2px 2px #1c100955); }
+.document-controls button { background: var(--leather-surface); color: #f6e4c0; min-height: 44px; font: .85rem Georgia,serif; }
+.document-table .printed-leaf {
+  color: #291c12; padding: clamp(1.4rem,3vw,2rem) clamp(1.3rem,4vw,3rem);
+  border: 1px solid #ba955b; border-radius: 3px 8px 2px 6px;
+  background: radial-gradient(ellipse at 4% 95%,#9c6b3526,transparent 55%),var(--parchment-surface);
+}
+.printed-leaf::before { content: ''; position: absolute; inset: 9px; border: 1px solid #45301966; pointer-events: none; }
+.printed-leaf h1 {
+  max-width: 650px; margin: 0 auto .8rem; text-align: center;
+  font: 600 clamp(1.7rem,3.4vw,2.5rem)/1.15 Georgia,'Times New Roman',serif;
+  color: #291c12;
+}
+.print-ornament { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: .8rem; font-size: 1.6rem; color: #38271b; }
+.print-ornament::before,.print-ornament::after { content: ''; height: 1px; width: 22%; background: #45301999; }
+.printed-passage + .printed-passage { margin-top: 1.2rem; border-top: 1px solid #45301966; padding-top: 1.2rem; }
+.printed-leaf .passage-label { text-align: center; color: #463120; font-size: .7rem; margin-bottom: .5rem; }
+.printed-leaf blockquote { margin: 0; padding: 0; border: 0; text-align: center; font-size: clamp(1.35rem,2.7vw,1.95rem); line-height: 1.5; color: #291c12; }
+.print-imprint { text-align: center; font-size: .9rem; margin: 1.4rem 0 0; color: #453019; }
+.document-table > .source-footer { justify-content: flex-end; border: 0; padding-top: .8rem; }
+.editorial-info { margin-top: .8rem; color: #e4cfaa; font: .75rem/1.5 Georgia,serif; }
+.editorial-info summary { cursor: pointer; width: max-content; min-height: 44px; display: flex; align-items: center; text-decoration: underline; text-underline-offset: 3px; }
+.editorial-info .source-note { font-size: .75rem; margin: .3rem 0 .7rem; color: #e4cfaa; }
+
+/* Every interaction marker is carved from the same warm wood. */
+.room-hotspot > span:not(.door-arrow):not(.door-copy),
+.awaiting-flyer .prop.flyer > .flyer-plaque {
+  background: var(--wood-surface); border-color: #b48c54; color: #ffedcc;
+  border-radius: 3px 6px 3px 5px; box-shadow: 0 2px 5px #24150d66,inset 0 1px #e5bd7540;
+}
+.door-hotspot {
+  background: var(--wood-surface); border: 1px solid #b48c54; border-radius: 3px 7px 3px 6px;
+  box-shadow: 0 4px 7px #24150d88,inset 0 0 0 2px #30201566; color: #ffedcc;
+}
+.door-hotspot:hover,.door-hotspot:focus-visible,.door-hotspot.touched {
+  background: var(--wood-surface); border-color: #e0bd81;
+  outline: 1px solid #e0bd81; outline-offset: 2px; filter: brightness(1.08);
+}
+.door-hotspot .door-arrow { color: #e6bc75; }
+.door-copy small { color: #e9d4ac; }
 @media(max-width:560px) {
   .task-heading p,.choice-heading p { font-size: .8rem; }
   .task-panel .choices > button,.puzzle-parts button { font-size: .9rem; }

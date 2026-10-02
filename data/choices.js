@@ -1,6 +1,10 @@
+import { documents } from './documents.js';
+import { dialogues } from './dialogues.js';
 export const choices = {
   initialFreedomInterpretation: {
-    prompt: 'Was meinst du?', reflective: true,
+    contextLabel: 'Jakob zeigt ein Flugblatt, auf dem steht:',
+    contextStatement: documents.freedom.passages[0],
+    prompt: 'Wie verstehst du diese Aussage?', reflective: true,
     options: [
       { id: 'freedom_no_obedience', label: 'A', text: 'Dann braucht ein Christ keinem Menschen mehr zu gehorchen.', reaction: [{ speaker: 'peter', emotion: 'determined', text: 'Genau. Dann müsste sich hier einiges ändern.' }, { speaker: 'jakob', emotion: 'thoughtful', text: 'Vielleicht. Aber lies erst weiter.' }] },
       { id: 'freedom_different_kind', label: 'B', text: 'Vielleicht spricht Luther von einer anderen Art von Freiheit.', reaction: [{ speaker: 'jakob', emotion: 'thoughtful', text: 'Das frage ich mich auch.' }, { speaker: 'peter', emotion: 'skeptical', text: 'Dann soll er gefälligst sagen, welche Freiheit er meint.' }] },
@@ -9,6 +13,8 @@ export const choices = {
     ]
   },
   freedomSocialFirstThought: {
+    contextLabel: 'Peter fragt:',
+    contextStatement: dialogues.peter[0].text,
     prompt: 'Was antwortest du Peter?', reflective: true,
     options: [
       { id: 'peter_god_first', label: '1', text: 'Vielleicht betrifft sie zuerst das Verhältnis des Menschen zu Gott.', reaction: [{ speaker: 'peter', emotion: 'concerned', text: 'Vor Gott frei. Aber vor dem Herrn weiter abhängig.' }, { speaker: 'peter', emotion: 'skeptical', text: 'Ich weiß noch nicht, ob mich das überzeugt.' }] },
@@ -17,6 +23,8 @@ export const choices = {
     ]
   },
   freedomAndOuterLife: {
+    contextLabel: 'Jakob sagt:',
+    contextStatement: dialogues.jakob.map(line => line.text).join(' '),
     prompt: 'Prüfe die Aussagen. Welche erfasst Luthers Freiheitsverständnis am genauesten?', solution: 'D',
     options: [
       { id: 'A', text: 'Weil christliche Freiheit das Verhältnis zu Gott betrifft, hat sie mit dem Verhalten gegenüber anderen Menschen nichts zu tun.', hints: ['Denkimpuls:\nNimm Luthers zweite Aussage ernst: Warum bezeichnet er den freien Christen zugleich als ‚dienstbaren Knecht‘?', 'Hinweis:\nPrüfe, ob Luther zwischen Freiheit vor Gott und Folgen für das Handeln wirklich eine vollständige Trennung zieht.'] },
@@ -55,6 +63,8 @@ export const choices = {
     ]
   },
   innerConsolidation: {
+    contextLabel: 'Aussage 1:',
+    contextStatement: 'Christliche Freiheit betrifft nur das Innere des Menschen.',
     prompt: 'Die erste Aussage greift zu kurz, weil …', solution: 'A',
     wrongFeedback: 'Denkimpuls:\nWarum verbindet der ‚Dienst am Nächsten‘ beide Bereiche?',
     options: [

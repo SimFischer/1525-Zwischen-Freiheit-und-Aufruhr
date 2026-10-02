@@ -10,7 +10,7 @@ export const scenes = [
   { id: 'ch1_s6c_compare', station: 6, title: 'Abschlusssicherung', kind: 'task', choice: 'freedomComparison', next: 'ch1_s6c_inner' },
   { id: 'ch1_s6c_inner', station: 6, title: 'Abschlusssicherung', kind: 'task', choice: 'innerConsolidation', next: 'ch1_s6c_political' },
   { id: 'ch1_s6c_political', station: 6, title: 'Abschlusssicherung', kind: 'task', choice: 'politicalConsolidation', next: 'ch1_s7_notebook' },
-  { id: 'ch1_s7_notebook', station: 7, title: 'Neu: Dein Notizbuch', kind: 'notebook', entry: 'freedom', instruction: 'Hier findest du wichtige Gedanken, Dokumente und später auch deine eigenen Entscheidungen wieder.', next: 'ch1_s8_conclusion' },
+  { id: 'ch1_s7_notebook', station: 7, title: 'Dein Notizbuch', kind: 'notebook', entry: 'freedom', instruction: 'Im Notizbuch liegen das Blatt und die Gedanken, die du dir an diesem Abend notiert hast.', next: 'ch1_s8_conclusion' },
   { id: 'ch1_s8_conclusion', station: 8, title: 'Und morgen?', kind: 'dialogue', dialogue: 'conclusion', next: 'ch1_end' },
   { id: 'ch1_end', station: 8, title: 'Wie frei ist dein Leben?', kind: 'ending' }
 ];

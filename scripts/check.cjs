@@ -95,6 +95,13 @@ async function doorGeometry(page,ending=false) {
   }
 }
 async function choose(page,id) { await page.locator(`[data-action="choose"][data-option="${id}"]`).click(); }
+async function noReplay(page,id) {
+  const before=await saved(page);
+  await page.locator(`[data-character="${id}"]`).tap();
+  assert.equal(await page.locator('.dialogue-panel,.choice-panel,.puzzle-panel').count(),0,'completed conversation restarted');
+  assert.match(await page.locator('#notice').innerText(),id==='anna' ? /Anna wartet/ : new RegExp((id==='peter'?'Peter':'Jakob')+' hat mir dazu schon'));
+  assert.deepEqual(await saved(page),before,'repeat contact changed the save');
+}
 async function feedback(page) { await page.locator('[data-action="feedback-next"]').waitFor(); await action(page,'feedback-next'); }
 async function puzzleSequence(page,sequence) { await action(page,'puzzle-reset'); for(const id of sequence) await page.locator(`.puzzle-parts [data-part="${id}"]`).tap(); }
 async function sortingSet(page,id,zone) {
@@ -168,6 +175,7 @@ async function drag(page,id,zone,touch,context) {
     await page.reload(); await action(page,'resume');
     assert.match(await page.locator('.spoken').innerText(),/Schon wieder Luther/);
     await dialogue(page); assert.ok(await page.locator('[data-action="flyer"]').isEnabled());
+    await noReplay(page,'jakob');
     assert.equal(await page.locator('.exploration-tools').count(),0);
     assert.equal(await page.locator('.awaiting-flyer').count(),1);
     assert.match(await page.locator('.flyer-plaque').innerText(),/Das Blatt lesen/);
@@ -188,9 +196,14 @@ async function drag(page,id,zone,touch,context) {
     await page.locator('.flyer-plaque').tap();
     assert.match(await page.locator('blockquote').innerText(),/Ein Christenmensch ist ein freier Herr/);
     assert.equal(await page.locator('body').getAttribute('data-mode'),'document');
+    assert.equal(await page.locator('.source-note,.editorial-info').count(),0,'editorial note in immersive document');
+    assert.doesNotMatch(await page.locator('.document-table').innerText(),/modernisiert|erfunden|Quellenauszug/);
     assert.equal(await page.locator('#interaction').evaluate(el=>getComputedStyle(el).visibility),'hidden');
     await photograph(page,'ch1-document-1024');
     await page.locator('dialog [data-action="close-overlay"]').last().click(); await dialogue(page);
+    assert.equal(await page.locator('.context-statement span').innerText(),'Ein Christenmensch ist ein freier Herr über alle Dinge und niemandem untertan.');
+    assert.equal(await page.locator('.choice-heading h2').innerText(),'Wie verstehst du diese Aussage?');
+    await geometry(page,'contextual first choice'); await photograph(page,'ch1-first-context-1024');
     await choose(page,'freedom_responsibility');
     assert.equal((await saved(page)).choices.initialFreedomInterpretation,'freedom_responsibility');
     assert.ok(Object.values((await saved(page)).dimensions).every(value => value===0));
@@ -203,6 +216,7 @@ async function drag(page,id,zone,touch,context) {
     await choose(page,'peter_god_first');
     assert.match(await page.locator('.spoken').innerText(),/Vor Gott frei. Aber vor dem Herrn/);
     await dialogue(page); assert.equal((await saved(page)).progress.peterConversation,true);
+    await noReplay(page,'peter');
     await page.locator('[data-character="anna"]').tap(); await dialogue(page);
     await puzzleSequence(page,['B','F','A','C']); await action(page,'puzzle-check');
     assert.match(await page.locator('.feedback-text').innerText(),/Denkimpuls/);
@@ -215,6 +229,7 @@ async function drag(page,id,zone,touch,context) {
     await action(page,'puzzle-check'); assert.match(await page.locator('.feedback-text').innerText(),/Folge der geschenkten Gnade/);
     await feedback(page); assert.match(await page.locator('.spoken').innerText(),/Dann macht die Freiheit also nicht gleichgültig/);
     await dialogue(page); assert.equal((await saved(page)).progress.annaConversation,true);
+    await noReplay(page,'anna');
 
     await page.locator('[data-character="jakob"]').tap(); await dialogue(page);
     await photograph(page,'ch1-jakob-1024'); await geometry(page,'Jakob choice');
@@ -225,6 +240,7 @@ async function drag(page,id,zone,touch,context) {
     assert.match(await page.locator('.feedback-text').innerText(),/Spannung besonders genau/);
     await page.reload(); await action(page,'resume'); await feedback(page);
     assert.equal((await saved(page)).progress.jakobConversation,true);
+    for(const id of ['peter','anna','jakob']) await noReplay(page,id);
 
     await action(page,'next-scene'); await dialogue(page);
     assert.equal(await page.locator('.sort-card').count(),8);
@@ -270,6 +286,10 @@ async function drag(page,id,zone,touch,context) {
     assert.match(await page.locator('.notebook').innerText(),/Vielleicht kann man frei sein und trotzdem Verantwortung/);
     await page.locator('[data-tab="documents"]').click(); await action(page,'archive-document');
     assert.equal(await page.locator('blockquote').count(),2);
+    assert.ok(await page.locator('.source-note').isHidden(),'editorial note exposed by default in archive');
+    await page.locator('.editorial-info summary').tap();
+    assert.match(await page.locator('.source-note').innerText(),/Schreibweise behutsam modernisiert/);
+    await page.locator('.editorial-info summary').tap();
     await page.locator('dialog [data-action="close-overlay"]').last().click();
     await page.locator('.notebook').waitFor(); await page.keyboard.press('Escape');
     await action(page,'next-scene');

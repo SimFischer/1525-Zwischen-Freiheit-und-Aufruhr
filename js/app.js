@@ -88,7 +88,7 @@ function render() {
   else if (scene.kind === 'notebook') panel.innerHTML = `<section class="instruction-panel"><p class="eyebrow">${esc(scene.title)}</p><p>${esc(scene.instruction)}</p><div class="panel-actions">${button('Notizbuch lesen','notebook','class="secondary"')}${button('Zurück zur Taverne →','next-scene','class="primary"')}</div></section>`;
   else if (['explore','conversations'].includes(scene.kind)) {
     const finished = chapters[0].cast.every(conversationDone);
-    panel.innerHTML = scene.kind === 'explore' && state.progress.flyerUnlocked ? '' : `<nav class="exploration-tools" aria-label="Erkundung"><span>${esc(scene.kind === 'explore' && state.progress.flyerUnlocked ? scene.flyerInstruction : scene.instruction)}</span>${scene.kind === 'conversations' && finished ? button('Zur Sortierung →','next-scene','class="primary"') : ''}</nav>`;
+    panel.innerHTML = scene.kind === 'explore' && state.progress.flyerUnlocked ? '' : `<nav class="exploration-tools" aria-label="Erkundung"><span>${esc(scene.kind === 'explore' && state.progress.flyerUnlocked ? scene.flyerInstruction : scene.instruction)}</span>${scene.kind === 'conversations' && finished ? button('Gedanken ordnen →','next-scene','class="primary"') : ''}</nav>`;
   } else if (scene.kind === 'ending') {
     panel.innerHTML = '';
   } else panel.innerHTML = `<section class="instruction-panel"><h2>${scene.title}</h2>${button('Flugblatt öffnen','scene-document','class="primary"')}</section>`;
@@ -197,6 +197,14 @@ document.addEventListener('click',event => {
   if (action === 'character') {
     if (state.dialogue || state.interaction) return;
     const id = target.dataset.character;
+    if ((scene.kind === 'conversations' && conversationDone(id)) || (scene.kind === 'explore' && id === 'jakob' && state.progress.flyerUnlocked)) {
+      const replies = {
+        peter: 'Peter hat mir dazu schon seine Gedanken gesagt.',
+        jakob: 'Jakob hat mir dazu schon seine Gedanken gesagt.',
+        anna: 'Anna wartet, was ich nun daraus mache.'
+      };
+      return notify(replies[id]);
+    }
     if ((scene.kind === 'explore' && !scene.hotspots[id]) || scene.kind === 'ending') { highlightHotspot(target); return; }
     document.querySelector('#notice').classList.remove('visible');
     addUnique(state.progress.visitedHotspots,`${scene.id}:${id}`);

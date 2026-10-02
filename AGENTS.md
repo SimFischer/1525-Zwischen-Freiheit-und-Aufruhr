@@ -35,6 +35,15 @@ glaubwürdig zur selben Spielwelt um 1525 gehören.
 - Hotspots: dezente Objekt-Hervorhebung oder kleine Schilder, Plaketten,
   Siegel, Metallmarker bzw. Pfeile. Orientierung an „Im Zeichen der Wende“:
   klar, spielerisch und atmosphärisch, niemals technische Rechtecke.
+  Flugblatt, Figuren und Exit nutzen dieselben Holz-/Pergamentmaterialien;
+  kein separates grünes Exit-Feld.
+- Der Lesemoment zeigt das historische Druckblatt und seinen Text. Editorische
+  Hinweise bleiben in einem geschlossenen, optionalen Infobereich des Archivs.
+- Entscheidungen zeigen vor den Antworten die konkrete Bezugsfrage oder
+  Aussage aus dem Gespräch. Keine kontextlosen „Was meinst du?“-Screens.
+- Bereits abgeschlossene Gespräche geben beim erneuten Anklicken nur eine
+  kurze Rückmeldung in der Spielwelt. Vorhandene Abschlussmerker nutzen;
+  weder Dialog noch Auswertung erneut starten oder den Spielstand verändern.
 
 ## Tür und Kapitelübergang
 
