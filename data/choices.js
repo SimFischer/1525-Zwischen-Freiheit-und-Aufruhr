@@ -64,7 +64,9 @@ export const choices = {
     ]
   },
   politicalConsolidation: {
-    prompt: 'Die zweite Aussage greift zu kurz, weil …', solution: 'A',
+    contextLabel: 'Aussage 2:',
+    contextStatement: 'Christliche Freiheit führt automatisch zu politischer Freiheit.',
+    prompt: 'Warum greift diese Aussage zu kurz?', solution: 'A',
     wrongFeedback: 'Denkimpuls:\nGlaube, Gewissen und die Beziehung des Menschen zu Gott',
     securing: 'Welche gesellschaftlichen Folgen diese Freiheit haben kann, bleibt damit offen.',
     options: [

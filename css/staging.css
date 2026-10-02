@@ -1,4 +1,4 @@
-/* Complete illustrations are the room. All interactive regions are transparent. */
+/* Complete illustrations are the room; figure and object regions are transparent. */
 body { background: #21170f; }
 .start-screen {
   min-height: 100svh; max-width: none; display: flex; align-items: center;
@@ -53,7 +53,7 @@ body { background: #21170f; }
 .character[data-character="jakob"] { left: 42%; top: 33%; width: 16%; height: 16%; bottom: auto; }
 .character[data-character="anna"] { left: 67%; top: 35%; width: 13%; height: 20%; bottom: auto; }
 .window-hotspot { left: 7%; top: 13%; width: 10%; height: 25%; z-index: 3; }
-.door-hotspot { left: 56%; top: 24%; width: 7%; height: 11%; z-index: 4; }
+
 .prop.mug { left: 25%; top: 51%; width: 7%; height: 10%; }
 .prop.candle { left: 34%; top: 53%; width: 5%; height: 9%; }
 .prop.flyer { left: 50%; top: 51%; width: 9%; height: 10%; border: 1px solid transparent; background: transparent; box-shadow: none; transform: none; }
@@ -70,8 +70,7 @@ body { background: #21170f; }
 .has-speaker .character-label { opacity: 0 !important; }
 .room-hotspot:focus-visible,.room-hotspot.touched { outline: 1px solid #f1d295b3; outline-offset: 1px; background: #e5b96812; }
 .room-hotspot:disabled { opacity: 1; pointer-events: none; }
-.exit-ready { border-color: #efd09d99; box-shadow: inset 0 0 12px #ffe1a944; }
-.exit-ready > span { opacity: 1; top: 8%; background: #e2c593ee; color: #452f1b; border-color: #937046; }
+
 .stage-bottom { position: absolute; left: 1rem; right: 1rem; bottom: .7rem; z-index: 2; color: #f1dec0; font-size: .6rem; text-shadow: 0 1px 4px #000; }
 .interaction { position: absolute; z-index: 6; left: 50%; bottom: 1.7rem; transform: translateX(-50%); width: min(940px,calc(100% - 2rem)); padding: 0; }
 .interaction:empty { display: none; }
@@ -181,4 +180,74 @@ dialog::backdrop { background: #21150c99; backdrop-filter: blur(2px); }
   .sort-zone-cards { grid-template-columns: 1fr; }
   .sort-bank { grid-template-columns: 1fr 1fr; }
   .sort-card { font-size: .8rem; min-height: 48px; padding: .5rem; }
+}
+
+/* A destination sign near the passage; the original exit action is unchanged. */
+.door-hotspot {
+  left: 56%; top: 19%; width: clamp(160px,18vw,200px); height: auto; min-height: 58px;
+  display: flex; align-items: center; gap: .6rem; padding: .55rem .7rem; z-index: 4;
+  border: 1px solid #ac8b59; border-radius: 5px 8px 5px 7px;
+  background: linear-gradient(115deg,#394232f5,#242e23f5); color: #f6e5bf;
+  box-shadow: 0 3px 7px #140d0966,inset 0 0 0 3px #d4ad6420;
+  text-align: left;
+}
+.door-hotspot > span {
+  position: static; top: auto; left: auto; transform: none; opacity: 1;
+  min-height: 0; padding: 0; border: 0; background: none; color: inherit;
+  white-space: normal; transition: none;
+}
+.door-hotspot .door-arrow { font-size: 1.3rem; flex-shrink: 0; }
+.door-hotspot .door-copy { display: flex; flex-direction: column; align-items: flex-start; gap: .2rem; }
+.door-copy strong { font: 600 .95rem/1.25 Georgia,serif; }
+.door-copy small { font: .7rem/1.35 Georgia,serif; color: #e0cfaa; }
+.door-hotspot:hover,.door-hotspot:focus-visible,.door-hotspot.touched {
+  background: linear-gradient(115deg,#46523cf5,#303b2bf5); border-color: #d6b97e;
+  outline: 1px solid #d6b97e; outline-offset: 2px;
+}
+.door-hotspot:disabled { visibility: hidden; }
+.context-statement { padding: .6rem .85rem; background: #e5cfa04d; border-left: 3px solid #9c7643; }
+.context-statement strong,.context-statement span { display: block; }
+.context-statement strong { font-size: .8rem; margin-bottom: .25rem; }
+
+/* Leather cover, paper leaves and permanent registers; only the page scrolls. */
+dialog:has(.notebook) {
+  overflow: hidden; padding: 9px; border: 2px solid #94714b; border-radius: 9px 13px 10px 8px;
+  background: repeating-linear-gradient(12deg,#ffffff04 0 1px,transparent 1px 5px),linear-gradient(110deg,#503522,#291b12 48%,#5a3c26);
+  box-shadow: 0 16px 65px #100a0790,inset 0 0 0 3px #1c100b,inset 0 0 0 5px #a37b4244;
+}
+.notebook {
+  display: flex; flex-direction: column; max-height: calc(88svh - 24px); min-height: 0;
+  padding: clamp(1rem,2.5vw,1.8rem); color: #3f2c1d; border-radius: 3px 6px 4px 3px;
+  background: radial-gradient(ellipse at 8% 2%,#fff4d9aa,transparent 65%),radial-gradient(ellipse at 95% 100%,#b98b3930,transparent 65%),repeating-linear-gradient(7deg,#93652d09 0 1px,transparent 1px 4px),#efddb7;
+  box-shadow: inset 4px 0 8px #6a432736,inset 0 0 25px #9c692a35;
+}
+.notebook .overlay-top,.notebook h1,.notebook-tabs { flex-shrink: 0; }
+.notebook .overlay-top { margin-bottom: .45rem; }
+.notebook .overlay-top .eyebrow { color: #71512f; }
+.notebook .overlay-top button {
+  min-height: 44px; padding: .5rem .8rem; border: 1px solid #967145; border-radius: 4px 7px 4px 6px;
+  color: #f5e6c6; background: linear-gradient(#735136,#50351f); font: .85rem Georgia,serif;
+}
+.notebook h1 { font: 2.3rem/1.2 Georgia,serif; margin: 0 0 1rem; }
+.notebook-tabs { gap: .45rem; padding: 0; border-bottom: 2px solid #a0804c; }
+.notebook-tabs button {
+  min-height: 44px; padding: .65rem 1.1rem; border: 1px solid #9d7c4a; border-bottom: 0;
+  border-radius: 7px 9px 0 0; background: linear-gradient(#ddc18f,#cfad74); color: #48311e;
+  font: .95rem Georgia,serif; box-shadow: inset 0 1px #fff2d078;
+}
+.notebook-tabs [aria-current="page"] { background: linear-gradient(#725036,#50351f); border-color: #705033; color: #fff0cf; }
+.notebook-content { overflow-y: auto; overscroll-behavior: contain; min-height: 0; padding: 1rem .5rem .3rem; scrollbar-color: #9d7849 #e9d5ac; font-size: 1rem; line-height: 1.65; }
+.notebook-content h2 { font-size: 1.65rem; }
+.notebook .personal-note,.notebook .securing,.notebook .document-card { background: #dfc39155; border-color: #a27b44; }
+.notebook button:focus-visible { outline: 2px solid #8d6131; outline-offset: 2px; }
+@media(max-width:900px) {
+  .door-hotspot { top: 12%; }
+}
+@media(max-width:560px) {
+  .door-hotspot { left: auto; right: 3%; top: 0; width: 160px; min-height: 54px; padding: .45rem .55rem; }
+  .door-copy strong { font-size: .85rem; }
+  .door-copy small { font-size: .65rem; }
+  .notebook h1 { font-size: 1.85rem; margin-bottom: .75rem; }
+  .notebook-tabs { gap: .25rem; }
+  .notebook-tabs button { padding: .55rem .65rem; font-size: .85rem; }
 }

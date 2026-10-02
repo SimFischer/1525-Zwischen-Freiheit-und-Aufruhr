@@ -58,6 +58,29 @@ async function overlayGeometry(page,label) {
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,label+' horizontal overlay overflow');
   const close=await page.locator('dialog [data-action="close-overlay"]').first().boundingBox();
   assert.ok(close.y>=rect.y && close.y+close.height<=viewport.height,label+' inaccessible close button');
+  if (await page.locator('.notebook').count()) {
+    assert.ok(close.height>=44,label+' small notebook close target');
+    for (const tab of await page.locator('.notebook-tabs button').all()) {
+      const box=await tab.boundingBox();
+      assert.ok(box.height>=44 && box.y>=rect.y && box.y+box.height<=rect.y+rect.height,label+' clipped notebook register');
+    }
+    assert.equal(await page.locator('.notebook-content').evaluate(el=>getComputedStyle(el).overflowY),'auto');
+    const content=page.locator('.notebook-content');
+    if(viewport.width===1024 && viewport.height===768) assert.ok(await content.evaluate(el=>el.scrollHeight<=el.clientHeight+1),label+' needless notebook scrolling');
+    await content.evaluate(el=>{el.scrollTop=el.scrollHeight;});
+    assert.ok(await content.evaluate(el=>Math.abs(el.scrollHeight-el.clientHeight-el.scrollTop)<=1),label+' inaccessible notebook content');
+    await content.evaluate(el=>{el.scrollTop=0;});
+  }
+}
+async function doorGeometry(page,ending=false) {
+  const door=page.locator('[data-action="prop-door"]'), box=await door.boundingBox();
+  assert.equal(await door.locator('strong').innerText(),ending?'Vor die Taverne':'Zur Tür');
+  assert.equal(await door.locator('small').innerText(),ending?'Kapitel 2 beginnen':'Für heute bleibst du noch hier.');
+  assert.ok(box.height>=44 && box.x>=0 && box.x+box.width<=await page.evaluate(()=>innerWidth),'door touch target');
+  for(const figure of await page.locator('.character').all()) {
+    const f=await figure.boundingBox();
+    assert.ok(box.x+box.width<=f.x || box.x>=f.x+f.width || box.y+box.height<=f.y || box.y>=f.y+f.height,'door covers character');
+  }
 }
 async function choose(page,id) { await page.locator(`[data-action="choose"][data-option="${id}"]`).click(); }
 async function feedback(page) { await page.locator('[data-action="feedback-next"]').waitFor(); await action(page,'feedback-next'); }
@@ -196,6 +219,15 @@ async function drag(page,id,zone,touch,context) {
     assert.equal(await page.locator('.task-statement').count(),2);
     await choose(page,'D'); await feedback(page);
     await choose(page,'A'); await feedback(page);
+    assert.equal(await page.locator('.context-statement strong').innerText(),'Aussage 2:');
+    assert.equal(await page.locator('.context-statement span').innerText(),'Christliche Freiheit führt automatisch zu politischer Freiheit.');
+    assert.equal(await page.locator('.choice-heading h2').innerText(),'Warum greift diese Aussage zu kurz?');
+    assert.deepEqual(await page.locator('.choices > button > span:nth-child(2)').allTextContents(),[
+      '… Luther Freiheit zunächst vom Verhältnis des Menschen zu Gott her bestimmt.',
+      '… gesellschaftliche Fragen für Luther grundsätzlich bedeutungslos sind.',
+      '… politische Freiheit grundsätzlich unchristlich ist.'
+    ]);
+    await geometry(page,'second statement'); await photograph(page,'ch1-political-1024');
     await choose(page,'A'); assert.match(await page.locator('.feedback-text').innerText(),/Daraus folgt noch nicht automatisch/);
     assert.equal(await page.locator('.securing').innerText(),'Welche gesellschaftlichen Folgen diese Freiheit haben kann, bleibt damit offen.');
     await feedback(page);
@@ -215,6 +247,7 @@ async function drag(page,id,zone,touch,context) {
     assert.equal(concluding.length,6); assert.ok(concluding.some(text => text.includes('im Wald dürfen wir')));
     assert.equal(await page.locator('body').getAttribute('data-mode'),'exploration');
     assert.equal(await page.locator('.ending').count(),0);
+    await doorGeometry(page,true);
     await photograph(page,'ch1-exit-1024');
     await page.locator('[data-action="prop-door"]').tap();
     assert.equal(await page.locator('body').getAttribute('data-mode'),'transition');
@@ -277,6 +310,7 @@ async function drag(page,id,zone,touch,context) {
     for(const viewport of [{width:1440,height:900},{width:1024,height:768},{width:820,height:620},{width:768,height:1024},{width:390,height:844}]) {
       await page.setViewportSize(viewport);
       await scene('ch1_s1_intro'); await dialogue(page); await geometry(page,viewport.width+' exploration');
+      await doorGeometry(page);
       await photograph(page,'ch1-exploration-'+viewport.width);
       const atmosphereBefore=await saved(page);
       for (const hotspot of ['prop-window','prop-door','prop-candle','prop-mug']) await page.locator(`[data-action="${hotspot}"]`).tap();
@@ -289,10 +323,15 @@ async function drag(page,id,zone,touch,context) {
       await photograph(page,'ch1-puzzle-'+viewport.width);
       await scene('ch1_s6_freedom_sorting'); await dialogue(page); await geometry(page,viewport.width+' sorting');
       await scene('ch1_s6b_service'); await geometry(page,viewport.width+' boundary');
+      await scene('ch1_s6c_political'); await geometry(page,viewport.width+' second statement');
+      await photograph(page,'ch1-political-'+viewport.width);
       await scene('ch1_s7_notebook'); await geometry(page,viewport.width+' notebook prompt'); await photograph(page,'ch1-layout-'+viewport.width);
-      await action(page,'notebook'); await overlayGeometry(page,viewport.width+' notebook'); await page.keyboard.press('Escape');
+      await action(page,'notebook'); await overlayGeometry(page,viewport.width+' notebook');
+      await photograph(page,'ch1-notebook-'+viewport.width);
+      for(const tab of ['documents','path','freedom']) { await page.locator(`[data-tab="${tab}"]`).tap(); assert.equal(await page.locator(`[data-tab="${tab}"]`).getAttribute('aria-current'),'page'); }
+      await action(page,'close-overlay');
       await scene('ch1_s2_document'); await overlayGeometry(page,viewport.width+' source'); await page.keyboard.press('Escape');
-      await scene('ch1_end'); await page.locator('[data-action="prop-door"]').tap(); await page.locator('.ending').waitFor();
+      await scene('ch1_end'); await doorGeometry(page,true); await page.locator('[data-action="prop-door"]').tap(); await page.locator('.ending').waitFor();
     }
     await page.setViewportSize({width:1024,height:768});
     await scene('ch1_s6_freedom_sorting'); await dialogue(page);
