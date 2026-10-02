@@ -1,4 +1,4 @@
-import { chapterTwoNotebook, reflections, dayTasks, stores } from '../data/chapter-two.js';
+import { chapterTwoNotebook, reflections, dayTasks, stores, villageDemandNote } from '../data/chapter-two.js';
 import { state } from './state.js';
 import { choices } from '../data/choices.js';
 import { documents } from '../data/documents.js';
@@ -10,7 +10,7 @@ function villageNotes() {
     const decisions=id==='forest' ? chosenText('forestResponse') : id==='corvee' ? 'Mein Tagesplan: '+state.choices.peterDayPlan.map(key=>dayTasks[key]).join(' → ')+'. Verschoben: '+dayTasks[state.choices.corveeSacrifice]+'. '+chosenText('corveeResponse') : 'Meine ursprüngliche Planung: '+Object.entries(state.choices.initialFarmPlan).map(([key,value])=>stores[key]+': '+value+' Säcke').join(', ')+'. '+chosenText('duesResponse')+' Zusätzliche Forderung: '+(state.choices.duesSecondSacrifice==='refuse'?'verweigert':stores[state.choices.duesSecondSacrifice])+'.';
     const observations=state.grievances[id].map(key=>reflections[id].items.find(item=>item[0]===key)?.[1]).join('; ');
     return '<h2>'+({forest:'Wald und Nutzungsrechte',corvee:'Frondienst',dues:'Abgaben'})[id]+'</h2>'+texts.map(text=>'<p>'+esc(text)+'</p>').join('')+'<div class="personal-note"><p>Meine Entscheidung: '+esc(decisions)+'</p><p>Meine Beobachtung: '+esc(observations)+'</p></div>'+(state.grievances[id].includes('absolute')?'<p>'+esc(reflections[id].warning)+'</p>':'');
-  }).join('')+(state.choices.playerDemand?'<h2>Unsere Forderung</h2><p>'+esc(state.choices.playerDemand)+'</p>':'');
+  }).join('')+(state.choices.playerDemand?'<h2>Unsere Forderung</h2><p>'+esc(state.choices.playerDemand)+'</p><details class="editorial-info"><summary>Zur historischen Einordnung</summary><p>'+esc(villageDemandNote)+'</p></details>':'');
 }
 export function openNotebook(tab = 'freedom') {
   let content = '';

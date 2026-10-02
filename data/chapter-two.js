@@ -1,4 +1,3 @@
-import { documents } from './documents.js';
 export const chapterTwoScenes = [
   {id:'ch2_intro',chapter:2,title:'Wie frei ist dein Leben?',kind:'chapter-card'},
   {id:'ch2_hub',chapter:2,title:'Unser Dorf',kind:'hub'},
@@ -36,15 +35,82 @@ export const chapterTwoDialogues = {
   assemblyPressure:talk(['konrad','Und was, wenn der Herr einfach Nein sagt?'],['peter','Dann müssen wir wissen, wie weit wir gehen wollen.'],['anna','Und ob andere dieselben Forderungen haben.'],['jakob','Allein bleiben es unsere Beschwerden. Gemeinsam kann daraus mehr werden.']),
   memmingenNews:talk(['traveler','Ihr seid nicht die Einzigen.'],['jakob','Was meinst du?'],['traveler','In Memmingen kommen Beschwerden aus verschiedenen Gegenden zusammen.'],['peter','Dieselben Beschwerden?'],['traveler','Nicht dieselben. Aber viele ähneln sich.'],['traveler','Ein Schreiber namens Sebastian Lotzer hilft dabei, daraus gemeinsame Forderungen zu machen.'],['konrad','Dann sollten wir sehen, was daraus wird.'])
 };
-const assessed = (context,prompt,solution,options,success,hints) => ({contextLabel:'Am heutigen Tag:',contextStatement:context,prompt,solution,hints,options:options.map(([id,text])=>({id,text,...(id===solution ? {feedback:success} : {})}))});
 const open = (context,prompt,options) => ({contextLabel:'Im Gespräch:',contextStatement:context,prompt,reflective:true,options:options.map(([id,label,text,reaction])=>({id,label,text,reaction}))});
 export const chapterTwoChoices = {
-  forestArgument:assessed('Anna: „Wir sammeln hier seit Jahren.“ Der Verwalter beruft sich auf die Herrschaft des Grundherrn.','Worauf würdest du Annas Einwand am stärksten stützen?','A',[
-    ['A','Die Gemeinde nutzt diesen Ort offenbar schon seit langer Zeit.'],['B','Im Wald sollte grundsätzlich jeder machen dürfen, was er möchte.'],['C','Der neue Grenzpfahl zeigt, dass der Grundherr über jedes Recht im Wald entscheiden darf.'],['D','Alte Regeln sind immer gerechter als neue.']
-  ],'Das ist ein tragfähiges Argument: Die lange Nutzung und ältere Regeln können darauf hindeuten, dass die Gemeinde gewachsene Nutzungsrechte beanspruchte. Genau solche Rechte konnten mit stärkeren herrschaftlichen Ansprüchen in Konflikt geraten.',['Denkimpuls:\nWelche deiner Beobachtungen spricht für bereits geregelte Nutzung – statt für einen regellosen Wald?','Prüfe noch einmal:\nEin neuer Pfahl zeigt einen Anspruch, aber beweist nicht, dass ältere Rechte erloschen sind. Lange Nutzung ist ein Argument, noch kein abschließender Rechtsbeweis.']),
-  forestConflict:assessed('Anna beruft sich auf ältere Nutzung; der Verwalter auf die Anweisungen des Grundherrn.','Worum geht es in diesem Streit vor allem?','B',[
-    ['A','darum, ob Menschen überhaupt Holz zum Heizen brauchen'],['B','darum, ob überlieferte Nutzungsrechte der Gemeinde durch den Herrschaftsanspruch des Grundherrn eingeschränkt werden dürfen'],['C','darum, ob der Wald vollständig der Dorfgemeinschaft gehören sollte'],['D','darum, ob Anna den Verwalter persönlich respektiert']
-  ],'Es geht nicht nur um Holz. Im Hintergrund steht die Frage, wer über die Nutzung des Waldes bestimmen darf und wie verbindlich ältere Rechte der Gemeinde sind.',['Denkimpuls:\nWelche Begründungen führen beide Seiten an? Geht es um Bedarf, um Eigentum am ganzen Wald oder um bestimmte Nutzungen?','Prüfe noch einmal:\nDie Gemeinde kann Nutzungsrechte beanspruchen, ohne damit das gesamte Eigentum am Wald zu beanspruchen.']),
+  forestArgument:{
+  "contextLabel": "Am heutigen Tag:",
+  "contextStatement": "Anna: „Wir sammeln hier seit Jahren.“ Der Verwalter beruft sich auf die Herrschaft des Grundherrn.",
+  "prompt": "Welche Beobachtung stützt Annas Anspruch auf geregelte Nutzung am stärksten?",
+  "solution": "A",
+  "options": [
+    {
+      "id": "A",
+      "text": "Die langjährige Nutzung lässt zusammen mit älteren Nutzungszeichen auf überlieferte Rechte schließen.",
+      "feedback": "Lange Nutzung und ältere Regeln stützen den Anspruch auf überlieferte Nutzungsrechte. Sie sind ein Argument für bereits geregelte Nutzung, aber noch kein abschließender Rechtsbeweis.\n\nDer Versorgungsbedarf ist ein wichtiges Argument für den Zugang. Er belegt aber noch nicht, auf welcher überlieferten Regelung Annas Anspruch beruht. Eine Abgabe könnte Teil einer neuen Vereinbarung sein. Eine mögliche künftige Regelung belegt jedoch nicht die bisherigen Nutzungsrechte. Ein Grenzpfahl zeigt einen Herrschaftsanspruch und kann Orientierung geben. Er beweist nicht, dass ältere Nutzungsrechte dadurch erloschen sind."
+    },
+    {
+      "id": "B",
+      "text": "Das Holz wird für die Versorgung der Haushalte gebraucht; dieser Bedarf spricht für den Zugang zum Wald.",
+      "hints": [
+        "Der Versorgungsbedarf ist ein wichtiges Argument für den Zugang. Er belegt aber noch nicht, auf welcher überlieferten Regelung Annas Anspruch beruht.",
+        "Der Versorgungsbedarf ist ein wichtiges Argument für den Zugang. Er belegt aber noch nicht, auf welcher überlieferten Regelung Annas Anspruch beruht.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Beobachtung stützt Annas Anspruch auf geregelte Nutzung am stärksten?"
+      ]
+    },
+    {
+      "id": "C",
+      "text": "Eine festgelegte Abgabe für das Sammeln könnte die Nutzung für Gemeinde und Herrschaft verlässlich machen.",
+      "hints": [
+        "Eine Abgabe könnte Teil einer neuen Vereinbarung sein. Eine mögliche künftige Regelung belegt jedoch nicht die bisherigen Nutzungsrechte.",
+        "Eine Abgabe könnte Teil einer neuen Vereinbarung sein. Eine mögliche künftige Regelung belegt jedoch nicht die bisherigen Nutzungsrechte.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Beobachtung stützt Annas Anspruch auf geregelte Nutzung am stärksten?"
+      ]
+    },
+    {
+      "id": "D",
+      "text": "Der neue Grenzpfahl macht erkennbar, wer die Nutzung ordnen und dafür Verantwortung übernehmen soll.",
+      "hints": [
+        "Ein Grenzpfahl zeigt einen Herrschaftsanspruch und kann Orientierung geben. Er beweist nicht, dass ältere Nutzungsrechte dadurch erloschen sind.",
+        "Ein Grenzpfahl zeigt einen Herrschaftsanspruch und kann Orientierung geben. Er beweist nicht, dass ältere Nutzungsrechte dadurch erloschen sind.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Beobachtung stützt Annas Anspruch auf geregelte Nutzung am stärksten?"
+      ]
+    }
+  ]
+},
+  forestConflict:{
+  "contextLabel": "Am heutigen Tag:",
+  "contextStatement": "Anna beruft sich auf ältere Nutzung; der Verwalter auf die Anweisungen des Grundherrn.",
+  "prompt": "Welche Deutung berücksichtigt die Begründungen beider Seiten am vollständigsten?",
+  "solution": "B",
+  "options": [
+    {
+      "id": "A",
+      "text": "Die Gemeinde braucht Holz; die Herrschaft muss zwischen Versorgung und Schonung des Waldes abwägen.",
+      "hints": [
+        "Versorgung und Schonung können bei Waldnutzung wichtig sein. In diesem Gespräch begründet der Verwalter das Verbot jedoch nicht mit Waldschäden, sondern mit Herrschaft.",
+        "Versorgung und Schonung können bei Waldnutzung wichtig sein. In diesem Gespräch begründet der Verwalter das Verbot jedoch nicht mit Waldschäden, sondern mit Herrschaft.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Deutung berücksichtigt die Begründungen beider Seiten am vollständigsten?"
+      ]
+    },
+    {
+      "id": "B",
+      "text": "Überlieferte Nutzungsrechte der Gemeinde geraten mit dem Anspruch der Herrschaft in Konflikt, die Nutzung festzulegen.",
+      "feedback": "Anna begründet ihre Nutzung mit älteren Rechten, der Verwalter mit dem Herrschaftsanspruch. Die Frage ist, ob und auf welcher Grundlage bestehende Nutzung eingeschränkt werden darf.\n\nVersorgung und Schonung können bei Waldnutzung wichtig sein. In diesem Gespräch begründet der Verwalter das Verbot jedoch nicht mit Waldschäden, sondern mit Herrschaft. Mitsprache wäre ein möglicher Weg zu einer neuen Regelung. Annas Einwand beansprucht aber zunächst bereits bestehende Rechte, nicht erst eine neue Beteiligung. Die Beschreibung trifft die unmittelbare Handlung. Sie lässt offen, warum Anna und der Verwalter ihre Position jeweils für berechtigt halten."
+    },
+    {
+      "id": "C",
+      "text": "Die Gemeinde möchte die künftige Waldnutzung mitbestimmen; die Herrschaft beansprucht die Verantwortung für neue Regeln.",
+      "hints": [
+        "Mitsprache wäre ein möglicher Weg zu einer neuen Regelung. Annas Einwand beansprucht aber zunächst bereits bestehende Rechte, nicht erst eine neue Beteiligung.",
+        "Mitsprache wäre ein möglicher Weg zu einer neuen Regelung. Annas Einwand beansprucht aber zunächst bereits bestehende Rechte, nicht erst eine neue Beteiligung.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Deutung berücksichtigt die Begründungen beider Seiten am vollständigsten?"
+      ]
+    },
+    {
+      "id": "D",
+      "text": "Anna will ihre gewohnte Arbeit fortsetzen; der Verwalter verlangt, dass seine Anweisung zunächst befolgt wird.",
+      "hints": [
+        "Die Beschreibung trifft die unmittelbare Handlung. Sie lässt offen, warum Anna und der Verwalter ihre Position jeweils für berechtigt halten.",
+        "Die Beschreibung trifft die unmittelbare Handlung. Sie lässt offen, warum Anna und der Verwalter ihre Position jeweils für berechtigt halten.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Deutung berücksichtigt die Begründungen beider Seiten am vollständigsten?"
+      ]
+    }
+  ]
+},
   forestResponse:open('Der Verwalter verlangt: „Also? Das Holz bleibt hier.“','Wie antwortest du?',[
     ['take','A','Wir nehmen das Holz trotzdem mit.',lines('overseer',['Ich werde das melden.'])],['leave','B','Wir lassen es hier.',lines('anna',['Für heute. Aber damit ist die Frage nicht beantwortet.'])],['legal_basis','C','Dann möchte ich wissen, worauf sich dieses Verbot stützt.',talk(['overseer','Ich setze die Anweisungen des Herrn durch.'],['player','Das war nicht meine Frage.'],['overseer','Dann müsst ihr sie dem Herrn stellen.'])],['community','D','Das sollte nicht hier zwischen uns entschieden werden. Das Dorf muss darüber sprechen.',lines('anna',['Das betrifft schließlich nicht nur uns.'])]
   ]),
@@ -54,35 +120,232 @@ export const chapterTwoChoices = {
   corveeResponse:open('Der Bote sagt: „Ich brauche eine Antwort.“','Wie antwortest du?',[
     ['go','A','Ich gehe selbst zum Herrenhof.',lines('peter',['Und meine Arbeit wartet.'])],['substitute','B','Ich versuche, jemanden an meiner Stelle zu schicken.',lines('peter',['Dann schulde ich ihm etwas.'])],['delay','C','Ich bitte um Aufschub.',lines('overseer',['Ob du Aufschub bekommst, entscheidet nicht du.'])],['refuse','D','Ich weigere mich.',lines('overseer',['Dann melde ich, dass du deine Pflicht verweigerst.'])]
   ]),
-  corveeDefinition:assessed('Peter hatte seinen Arbeitstag geplant. Dann wurde von ihm verlangt, am Herrenhof zu arbeiten.','Was unterscheidet diese Arbeit von Peters Arbeit auf dem eigenen Hof?','B',[
-    ['A','Die Arbeit am Herrenhof ist immer körperlich schwerer.'],['B','Peter muss sie aufgrund seines Herrschafts- bzw. Abhängigkeitsverhältnisses leisten.'],['C','Jede Arbeit außerhalb des eigenen Hofes ist Frondienst.'],['D','Peter erhält für Arbeit am Herrenhof grundsätzlich überhaupt nichts zurück.']
-  ],'Frondienst ist eine verpflichtende Arbeitsleistung, die aus einem Herrschafts- bzw. Abhängigkeitsverhältnis entsteht. Peter kann über diesen Teil seiner Arbeitszeit nicht frei verfügen.\n\nDas Problem ist also nicht nur zusätzliche Arbeit. Es geht auch darum, wer über Peters Zeit entscheidet.',['Denkimpuls:\nAuch Peters eigene Arbeit kann schwer sein. Und freiwillige Hilfe beim Nachbarn findet ebenfalls außerhalb des Hofes statt. Was unterscheidet die Forderung des Herrenhofs?','Prüfe noch einmal:\nAchte auf den Grund der Verpflichtung: Peter wird nicht gefragt, ob er heute helfen möchte.']),
+  corveeDefinition:{
+  "contextLabel": "Am heutigen Tag:",
+  "contextStatement": "Peter hatte seinen Arbeitstag geplant. Dann wurde von ihm verlangt, am Herrenhof zu arbeiten.",
+  "prompt": "Welche Erklärung trifft den Verpflichtungsgrund des Frondienstes am genauesten?",
+  "solution": "B",
+  "options": [
+    {
+      "id": "A",
+      "text": "Peter übernimmt eine Arbeit, mit der die Höfe gemeinsam Einrichtungen der Gemeinde erhalten.",
+      "hints": [
+        "Gemeinschaftliche Arbeiten können ebenfalls verbindlich sein. Hier fordert aber der Grundherr einen ihm geschuldeten Dienst, keine gemeinsam bestimmte Arbeit der Gemeinde.",
+        "Gemeinschaftliche Arbeiten können ebenfalls verbindlich sein. Hier fordert aber der Grundherr einen ihm geschuldeten Dienst, keine gemeinsam bestimmte Arbeit der Gemeinde.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Erklärung trifft den Verpflichtungsgrund des Frondienstes am genauesten?"
+      ]
+    },
+    {
+      "id": "B",
+      "text": "Peter schuldet dem Grundherrn Arbeitsdienste aufgrund seines Herrschafts- bzw. Abhängigkeitsverhältnisses.",
+      "feedback": "Frondienst bezeichnet verpflichtende Arbeitsleistungen aus einem Herrschafts- bzw. Abhängigkeitsverhältnis. Entscheidend ist nicht der Arbeitsort oder die Schwere, sondern der Grund der Verpflichtung.\n\nGemeinschaftliche Arbeiten können ebenfalls verbindlich sein. Hier fordert aber der Grundherr einen ihm geschuldeten Dienst, keine gemeinsam bestimmte Arbeit der Gemeinde. Ein vereinbarter Tausch von Arbeit und Gegenleistung wäre ein anderes Verpflichtungsverhältnis. Peter wird in der Szene nicht zu einer solchen Vereinbarung gefragt. Gegenseitige Hilfe erklärt ebenfalls Arbeit auf einem anderen Hof. Peters Dienst beruht hier jedoch auf seiner Bindung an den Grundherrn, nicht auf freiwilliger Nachbarschaftshilfe."
+    },
+    {
+      "id": "C",
+      "text": "Peter tauscht eigene Arbeitszeit gegen eine Gegenleistung, deren Umfang er mit dem Herrenhof vereinbart.",
+      "hints": [
+        "Ein vereinbarter Tausch von Arbeit und Gegenleistung wäre ein anderes Verpflichtungsverhältnis. Peter wird in der Szene nicht zu einer solchen Vereinbarung gefragt.",
+        "Ein vereinbarter Tausch von Arbeit und Gegenleistung wäre ein anderes Verpflichtungsverhältnis. Peter wird in der Szene nicht zu einer solchen Vereinbarung gefragt.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Erklärung trifft den Verpflichtungsgrund des Frondienstes am genauesten?"
+      ]
+    },
+    {
+      "id": "D",
+      "text": "Peter unterstützt einen anderen Hof und erwartet, dass ihm bei eigener Arbeitsnot ebenfalls geholfen wird.",
+      "hints": [
+        "Gegenseitige Hilfe erklärt ebenfalls Arbeit auf einem anderen Hof. Peters Dienst beruht hier jedoch auf seiner Bindung an den Grundherrn, nicht auf freiwilliger Nachbarschaftshilfe.",
+        "Gegenseitige Hilfe erklärt ebenfalls Arbeit auf einem anderen Hof. Peters Dienst beruht hier jedoch auf seiner Bindung an den Grundherrn, nicht auf freiwilliger Nachbarschaftshilfe.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Erklärung trifft den Verpflichtungsgrund des Frondienstes am genauesten?"
+      ]
+    }
+  ]
+},
   duesResponse:open('Margarethe fragt: „Und wenn ich sage, dass wir das selbst brauchen?“','Wie reagierst du auf die Forderung?',[
     ['pay','A','Wir geben die geforderte Menge ab.',lines('margarethe',['Für ihn vielleicht. Für uns fehlt es nun.'])],['delay','B','Wir bitten darum, einen Teil später zu leisten.',lines('overseer',['Das kann ich nicht entscheiden.'])],['withhold','C','Wir behalten einen Sack zurück.',lines('overseer',['Wenn die Menge fehlt, wird man nachfragen.'])],['question_basis','D','Wir verlangen zu wissen, wie die Forderung begründet wird.',talk(['overseer','Ich überbringe sie nur.'],['margarethe','Das ist keine Antwort.'])]
   ]),
-  assemblyConnection:assessed('Im Wald ging es um Nutzung, bei Peter um Arbeitszeit und bei Margarethe um die Ernte.','Was verbindet diese drei Situationen am stärksten?','B',[
-    ['A','Es geht überall nur darum, dass Menschen zu wenig besitzen.'],['B','In allen drei Situationen greifen andere in Entscheidungen über Nutzung, Zeit oder Ertrag ein.'],['C','Alle drei Situationen zeigen, dass die Dorfbewohner grundsätzlich keine Regeln akzeptieren wollen.'],['D','In allen drei Fällen ist ausschließlich Geld das Problem.']
-  ],'Die Konflikte unterscheiden sich – aber jedes Mal geht es auch darum, wer über Lebensbedingungen entscheiden darf. Die Entscheidungen anderer verändern Nutzung, Planung oder Versorgung.',['Denkimpuls:\nVergleiche, was Anna, Peter und Margarethe jeweils entscheiden wollten und wer eingriff.','Prüfe noch einmal:\nHolz, Zeit und Ernte sind verschiedene Dinge. Welche Frage nach Entscheidungsbefugnissen kehrt dennoch wieder?']),
-  forestDemand:assessed('Beschwerde: „Wir dürfen den Wald kaum noch nutzen.“','Welche Forderung macht die Beschwerde konkret?','B',[
-    ['A','Der Wald soll niemandem mehr gehören.'],['B','Die bisherigen Nutzungsrechte der Gemeinde sollen wieder gelten.'],['C','Jeder darf im Wald tun, was er möchte.']
-  ],'Die Forderung benennt, welche Rechte wieder anerkannt werden sollen. Sie verlangt geregelte Nutzung der Gemeinde statt regelloser Verfügung über den ganzen Wald.',['Denkimpuls:\nWelche Regelung würde Annas Einwand aufnehmen, ohne jede Ordnung abzuschaffen?','Prüfe noch einmal:\nDenke an die älteren Markierungen: Sie sprechen gerade für Regeln bestimmter Nutzungen.']),
-  corveeDemand:assessed('Beschwerde: „Unsere eigene Arbeit bleibt liegen.“','Welche Forderung setzt am erlebten Problem an?','A',[
-    ['A','Frondienste sollen begrenzt und nach klaren Regeln festgelegt werden.'],['B','Niemand darf mehr für jemand anderen arbeiten.'],['C','Jeder Grundherr soll selbst alle Arbeiten erledigen.']
-  ],'Begrenzte und klar geregelte Dienste machen die eigene Arbeit planbarer. Das ist präziser als die Ablehnung jeder Arbeit für andere, zu der auch freiwillige Hilfe gehören würde.',['Denkimpuls:\nPeter wollte seinen Hof versorgen. Welche Veränderung würde ihm dabei helfen?','Prüfe noch einmal:\nUnterscheide eine bindende Dienstpflicht von freiwilliger Zusammenarbeit.']),
-  duesDemand:assessed('Beschwerde: „Neue Forderungen machen unsere Versorgung unsicher.“','Welche Forderung beschreibt eine nachvollziehbare Veränderung?','A',[
-    ['A','Abgaben sollen verbindlich und nachvollziehbar geregelt und nicht beliebig ausgeweitet werden.'],['B','Alle Abgaben müssen sofort verschwinden.'],['C','Jeder entscheidet selbst, ob er überhaupt etwas abgibt.']
-  ],'Die Forderung benennt Regeln, an denen weitere Ansprüche gemessen werden können. Sie greift Unsicherheit und fehlende Mitsprache auf, statt jede gemeinsame Verpflichtung pauschal zu verwerfen.',['Denkimpuls:\nWas brachte Margarethes ursprüngliche Planung zusätzlich durcheinander?','Prüfe noch einmal:\nEine konkrete Forderung erklärt, wie Ansprüche festgelegt und Veränderungen begründet werden sollen.']),
-  lutherPoliticalInference:assessed(documents.freedom.passages[0]+' Konrad meint, damit seien auch die heutigen Abhängigkeiten eindeutig abgelehnt.','Lässt sich aus Luthers Freiheitsgedanken unmittelbar eine politische Forderung ableiten?','B',[
-    ['A','Ja, weil „niemandem untertan“ jede Form weltlicher Herrschaft ablehnt.'],['B','Nein, weil Luther zunächst die Freiheit des Menschen vor Gott meint; die politischen Folgen sind damit noch nicht entschieden.'],['C','Nein, weil christliche Freiheit grundsätzlich keinerlei Auswirkungen auf gesellschaftliches Handeln hat.'],['D','Ja, weil jeder Gehorsam mit christlicher Freiheit unvereinbar ist.']
-  ],'Luthers Freiheitsgedanke kann gesellschaftliche Fragen aufwerfen, ist aber noch kein fertiges politisches Programm. Der Dienst am Nächsten verhindert zugleich, Freiheit als folgenlose Innerlichkeit zu verstehen.',['Denkimpuls:\nPrüfe, ob Luther mit „niemandem untertan“ bereits eine konkrete politische Ordnung beschreibt. Nimm auch den zweiten Leitsatz ernst.','Prüfe noch einmal:\nFreiheit vor Gott und Dienst am Nächsten gehören zusammen. Damit ist das Handeln angesprochen, aber noch keine einzelne politische Forderung begründet.'])
+  assemblyConnection:{
+  "contextLabel": "Am heutigen Tag:",
+  "contextStatement": "Im Wald ging es um Nutzung, bei Peter um Arbeitszeit und bei Margarethe um die Ernte.",
+  "prompt": "Welche Aussage erklärt den gemeinsamen Zusammenhang am vollständigsten?",
+  "solution": "B",
+  "options": [
+    {
+      "id": "A",
+      "text": "Die Haushalte geraten unter Versorgungsdruck, weil ihnen Holz, Arbeitszeit oder Vorräte fehlen.",
+      "hints": [
+        "Versorgungsdruck verbindet wichtige Folgen der Konflikte. Die Aussage erklärt aber noch nicht, wer in die jeweiligen Entscheidungen eingreift und auf welcher Grundlage.",
+        "Versorgungsdruck verbindet wichtige Folgen der Konflikte. Die Aussage erklärt aber noch nicht, wer in die jeweiligen Entscheidungen eingreift und auf welcher Grundlage.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Aussage erklärt den gemeinsamen Zusammenhang am vollständigsten?"
+      ]
+    },
+    {
+      "id": "B",
+      "text": "Herrschaftliche Ansprüche greifen in Entscheidungen über Nutzung, Zeit und Ertrag ein und verändern die Versorgung.",
+      "feedback": "Der Zusammenhang umfasst Entscheidungsbefugnisse und materielle Folgen: Andere bestimmen über Waldnutzung, Arbeitszeit oder Ertrag und verändern damit die Lebensbedingungen.\n\nVersorgungsdruck verbindet wichtige Folgen der Konflikte. Die Aussage erklärt aber noch nicht, wer in die jeweiligen Entscheidungen eingreift und auf welcher Grundlage. Verlässliche Absprachen könnten die Planung verbessern. In den Szenen geht es jedoch auch um ein ungleiches Verhältnis zwischen Herrschaft und Betroffenen. Mitsprache wäre ein gemeinsamer Reformansatz. Die drei Situationen beruhen aber nicht einfach auf neu vereinbarten Verpflichtungen: ältere Rechte und bestehende Dienste sind ebenfalls betroffen."
+    },
+    {
+      "id": "C",
+      "text": "Die Gemeinde braucht verlässliche Absprachen, damit ihre Mitglieder den Alltag gemeinsam planen können.",
+      "hints": [
+        "Verlässliche Absprachen könnten die Planung verbessern. In den Szenen geht es jedoch auch um ein ungleiches Verhältnis zwischen Herrschaft und Betroffenen.",
+        "Verlässliche Absprachen könnten die Planung verbessern. In den Szenen geht es jedoch auch um ein ungleiches Verhältnis zwischen Herrschaft und Betroffenen.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Aussage erklärt den gemeinsamen Zusammenhang am vollständigsten?"
+      ]
+    },
+    {
+      "id": "D",
+      "text": "Anna, Peter und Margarethe verlangen mehr Beteiligung, bevor neue Verpflichtungen vereinbart werden.",
+      "hints": [
+        "Mitsprache wäre ein gemeinsamer Reformansatz. Die drei Situationen beruhen aber nicht einfach auf neu vereinbarten Verpflichtungen: ältere Rechte und bestehende Dienste sind ebenfalls betroffen.",
+        "Mitsprache wäre ein gemeinsamer Reformansatz. Die drei Situationen beruhen aber nicht einfach auf neu vereinbarten Verpflichtungen: ältere Rechte und bestehende Dienste sind ebenfalls betroffen.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Aussage erklärt den gemeinsamen Zusammenhang am vollständigsten?"
+      ]
+    }
+  ]
+},
+  forestDemand:{
+  "contextLabel": "Am heutigen Tag:",
+  "contextStatement": "Beschwerde: „Unsere bisherigen Nutzungsrechte werden eingeschränkt.“",
+  "prompt": "Welche Forderung folgt am unmittelbarsten aus dieser Beschwerde?",
+  "solution": "B",
+  "options": [
+    {
+      "id": "A",
+      "text": "Herrschaft und Gemeinde sollen die Nutzung des Waldes neu und verbindlich miteinander vereinbaren.",
+      "hints": [
+        "Eine neue Vereinbarung kann den Konflikt lösen. Sie öffnet aber auch die bisherigen Rechte für Neuverhandlungen, statt zuerst ihre Anerkennung zu verlangen.",
+        "Eine neue Vereinbarung kann den Konflikt lösen. Sie öffnet aber auch die bisherigen Rechte für Neuverhandlungen, statt zuerst ihre Anerkennung zu verlangen.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Forderung folgt am unmittelbarsten aus dieser Beschwerde?"
+      ]
+    },
+    {
+      "id": "B",
+      "text": "Die bisherigen geregelten Nutzungsrechte der Gemeinde sollen wieder anerkannt werden.",
+      "feedback": "Wer die Einschränkung bisheriger Nutzungsrechte beklagt, verlangt am unmittelbarsten deren Anerkennung. Damit ist weder Eigentum am ganzen Wald noch ungeregelte Nutzung gefordert.\n\nEine neue Vereinbarung kann den Konflikt lösen. Sie öffnet aber auch die bisherigen Rechte für Neuverhandlungen, statt zuerst ihre Anerkennung zu verlangen. Eine feste Abgabe könnte Nutzung planbar machen. Sie führt jedoch eine neue Bedingung ein und beantwortet nicht unmittelbar den Anspruch auf bisherige Rechte. Selbstregelung der Gemeinde ist eine weitergehende Forderung. Sie verändert die Zuständigkeit grundsätzlich, während die Beschwerde zunächst bestimmte bisherige Nutzungsrechte betrifft."
+    },
+    {
+      "id": "C",
+      "text": "Das Sammeln von Reisig soll gegen eine vorher festgelegte Abgabe verlässlich erlaubt werden.",
+      "hints": [
+        "Eine feste Abgabe könnte Nutzung planbar machen. Sie führt jedoch eine neue Bedingung ein und beantwortet nicht unmittelbar den Anspruch auf bisherige Rechte.",
+        "Eine feste Abgabe könnte Nutzung planbar machen. Sie führt jedoch eine neue Bedingung ein und beantwortet nicht unmittelbar den Anspruch auf bisherige Rechte.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Forderung folgt am unmittelbarsten aus dieser Beschwerde?"
+      ]
+    },
+    {
+      "id": "D",
+      "text": "Die Gemeinde soll die Waldnutzung selbst regeln; der Herrschaftsanspruch darauf soll entfallen.",
+      "hints": [
+        "Selbstregelung der Gemeinde ist eine weitergehende Forderung. Sie verändert die Zuständigkeit grundsätzlich, während die Beschwerde zunächst bestimmte bisherige Nutzungsrechte betrifft.",
+        "Selbstregelung der Gemeinde ist eine weitergehende Forderung. Sie verändert die Zuständigkeit grundsätzlich, während die Beschwerde zunächst bestimmte bisherige Nutzungsrechte betrifft.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Forderung folgt am unmittelbarsten aus dieser Beschwerde?"
+      ]
+    }
+  ]
+},
+  corveeDemand:{
+  "contextLabel": "Am heutigen Tag:",
+  "contextStatement": "Beschwerde: „Unsere eigene Arbeit bleibt liegen.“",
+  "prompt": "Welche Forderung greift das erlebte Problem am präzisesten auf?",
+  "solution": "A",
+  "options": [
+    {
+      "id": "A",
+      "text": "Frondienste sollen begrenzt und so geregelt werden, dass die Arbeit auf dem eigenen Hof nicht dauerhaft gefährdet wird.",
+      "feedback": "Begrenzung und verlässliche Regelung greifen Peters konkreten Zeitkonflikt auf, ohne bereits jede Dienstpflicht oder eine feste Rangordnung zwischen allen Arbeiten festzulegen.\n\nEntschädigung vermindert die wirtschaftliche Belastung. Sie löst aber nicht vollständig, dass Peter Arbeitszeit für seinen eigenen Hof verliert und darüber nicht selbst verfügt. Der Vorrang der eigenen Arbeit nimmt den Zeitkonflikt direkt auf. Er verlangt aber bereits eine feste Rangordnung für alle Dienste, die über eine Begrenzung im Hinblick auf die eigene Versorgung hinausgeht. Vollständige Abschaffung würde die Dienstpflicht beenden und kann als weitreichende Forderung diskutiert werden. Sie geht über die unmittelbar geschilderte Beschwerde zur liegen gebliebenen Hofarbeit hinaus."
+    },
+    {
+      "id": "B",
+      "text": "Wer Frondienst leisten muss, soll für die geleistete Arbeit angemessen entschädigt werden.",
+      "hints": [
+        "Entschädigung vermindert die wirtschaftliche Belastung. Sie löst aber nicht vollständig, dass Peter Arbeitszeit für seinen eigenen Hof verliert und darüber nicht selbst verfügt.",
+        "Entschädigung vermindert die wirtschaftliche Belastung. Sie löst aber nicht vollständig, dass Peter Arbeitszeit für seinen eigenen Hof verliert und darüber nicht selbst verfügt.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Forderung greift das erlebte Problem am präzisesten auf?"
+      ]
+    },
+    {
+      "id": "C",
+      "text": "Die Arbeit auf dem eigenen Hof soll Vorrang haben; erst danach sollen Dienste für den Grundherrn verlangt werden.",
+      "hints": [
+        "Der Vorrang der eigenen Arbeit nimmt den Zeitkonflikt direkt auf. Er verlangt aber bereits eine feste Rangordnung für alle Dienste, die über eine Begrenzung im Hinblick auf die eigene Versorgung hinausgeht.",
+        "Der Vorrang der eigenen Arbeit nimmt den Zeitkonflikt direkt auf. Er verlangt aber bereits eine feste Rangordnung für alle Dienste, die über eine Begrenzung im Hinblick auf die eigene Versorgung hinausgeht.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Forderung greift das erlebte Problem am präzisesten auf?"
+      ]
+    },
+    {
+      "id": "D",
+      "text": "Frondienste sollen vollständig abgeschafft werden.",
+      "hints": [
+        "Vollständige Abschaffung würde die Dienstpflicht beenden und kann als weitreichende Forderung diskutiert werden. Sie geht über die unmittelbar geschilderte Beschwerde zur liegen gebliebenen Hofarbeit hinaus.",
+        "Vollständige Abschaffung würde die Dienstpflicht beenden und kann als weitreichende Forderung diskutiert werden. Sie geht über die unmittelbar geschilderte Beschwerde zur liegen gebliebenen Hofarbeit hinaus.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Forderung greift das erlebte Problem am präzisesten auf?"
+      ]
+    }
+  ]
+},
+  duesDemand:{
+  "contextLabel": "Am heutigen Tag:",
+  "contextStatement": "Beschwerde: „Zusätzliche, vorher nicht absehbare Forderungen machen unsere Versorgung unsicher.“",
+  "prompt": "Welche Forderung setzt am unmittelbarsten an der fehlenden Vorhersehbarkeit an?",
+  "solution": "A",
+  "options": [
+    {
+      "id": "A",
+      "text": "Zusätzliche Abgaben sollen nur nach vorher bekannten Regeln verlangt und nachvollziehbar begründet werden.",
+      "feedback": "Vorher bekannte Regeln und begründete Änderungen treffen die fehlende Vorhersehbarkeit am direktesten. Die anderen Vorschläge sind ebenfalls nachvollziehbare Reformansätze, setzen aber an anderen Kriterien an.\n\nEine Begrenzung schützt Versorgung und Aussaat. Sie beantwortet zunächst die Höhe der Belastung, nicht die Frage, wann eine zusätzliche Forderung vorhersehbar und begründet ist. Mitsprache kann Änderungen kontrollieren und gehört zu einer plausiblen Reform. Beteiligung allein legt aber noch nicht fest, nach welchen vorher bekannten Regeln zusätzliche Ansprüche entstehen. Eine Anpassung an den Ertrag berücksichtigt die Leistungsfähigkeit. Sie klärt noch nicht, auf welcher bekannten Grundlage eine zusätzliche Forderung erhoben wird."
+    },
+    {
+      "id": "B",
+      "text": "Die Höhe der Abgaben soll begrenzt werden, damit genügend Nahrung und Saatgut auf dem Hof bleiben.",
+      "hints": [
+        "Eine Begrenzung schützt Versorgung und Aussaat. Sie beantwortet zunächst die Höhe der Belastung, nicht die Frage, wann eine zusätzliche Forderung vorhersehbar und begründet ist.",
+        "Eine Begrenzung schützt Versorgung und Aussaat. Sie beantwortet zunächst die Höhe der Belastung, nicht die Frage, wann eine zusätzliche Forderung vorhersehbar und begründet ist.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Forderung setzt am unmittelbarsten an der fehlenden Vorhersehbarkeit an?"
+      ]
+    },
+    {
+      "id": "C",
+      "text": "Die Gemeinde soll bei Änderungen der Abgaben mitentscheiden, bevor neue Forderungen gestellt werden.",
+      "hints": [
+        "Mitsprache kann Änderungen kontrollieren und gehört zu einer plausiblen Reform. Beteiligung allein legt aber noch nicht fest, nach welchen vorher bekannten Regeln zusätzliche Ansprüche entstehen.",
+        "Mitsprache kann Änderungen kontrollieren und gehört zu einer plausiblen Reform. Beteiligung allein legt aber noch nicht fest, nach welchen vorher bekannten Regeln zusätzliche Ansprüche entstehen.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Forderung setzt am unmittelbarsten an der fehlenden Vorhersehbarkeit an?"
+      ]
+    },
+    {
+      "id": "D",
+      "text": "Die Abgaben sollen an den tatsächlichen Ertrag und die Leistungsfähigkeit des jeweiligen Hofes angepasst werden.",
+      "hints": [
+        "Eine Anpassung an den Ertrag berücksichtigt die Leistungsfähigkeit. Sie klärt noch nicht, auf welcher bekannten Grundlage eine zusätzliche Forderung erhoben wird.",
+        "Eine Anpassung an den Ertrag berücksichtigt die Leistungsfähigkeit. Sie klärt noch nicht, auf welcher bekannten Grundlage eine zusätzliche Forderung erhoben wird.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Forderung setzt am unmittelbarsten an der fehlenden Vorhersehbarkeit an?"
+      ]
+    }
+  ]
+},
+  lutherPoliticalInference:{
+  "contextLabel": "Am heutigen Tag:",
+  "contextStatement": "Konrad beruft sich auf „niemandem untertan“ und meint, damit seien die heutigen Abhängigkeiten bereits eindeutig abgelehnt. Bedenke auch Luthers Leitsatz vom Dienst am Nächsten.",
+  "prompt": "Welche Deutung berücksichtigt beide Leitsätze und ihre politische Reichweite am genauesten?",
+  "solution": "B",
+  "options": [
+    {
+      "id": "A",
+      "text": "Freiheit vor Gott verändert das Handeln; deshalb lässt sich die Aufhebung der erlebten Abhängigkeiten aus den Leitsätzen begründen.",
+      "hints": [
+        "Du nimmst die Folgen der Freiheit für das Handeln ernst. Der Schritt zur Aufhebung bestimmter Abhängigkeiten verlangt aber eine weitere Begründung, die die Leitsätze noch nicht selbst liefern.",
+        "Du nimmst die Folgen der Freiheit für das Handeln ernst. Der Schritt zur Aufhebung bestimmter Abhängigkeiten verlangt aber eine weitere Begründung, die die Leitsätze noch nicht selbst liefern.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Deutung berücksichtigt beide Leitsätze und ihre politische Reichweite am genauesten?"
+      ]
+    },
+    {
+      "id": "B",
+      "text": "Freiheit vor Gott verändert den Dienst am Nächsten und kann gesellschaftliche Fragen auslösen, legt aber noch kein politisches Programm fest.",
+      "feedback": "Beide Leitsätze verbinden Freiheit vor Gott und Handeln für andere. Das kann gesellschaftliche Fragen aufwerfen; welche konkrete politische Ordnung daraus folgen soll, ist damit noch nicht entschieden.\n\nDu nimmst die Folgen der Freiheit für das Handeln ernst. Der Schritt zur Aufhebung bestimmter Abhängigkeiten verlangt aber eine weitere Begründung, die die Leitsätze noch nicht selbst liefern. Das Gewissen ist für die Frage nach Freiheit wichtig. Daraus folgt aber nicht unmittelbar, dass jede äußere Dienstpflicht nur durch individuelle Zustimmung bindet. Der Dienst am Nächsten ist ein wesentlicher Teil christlicher Freiheit. Er lässt sich jedoch nicht ohne weitere Prüfung mit bestehenden herrschaftlichen Dienstpflichten gleichsetzen."
+    },
+    {
+      "id": "C",
+      "text": "Freiheit betrifft das Gewissen; deshalb hängt jede äußere Dienstpflicht unmittelbar davon ab, ob der Einzelne ihr zustimmt.",
+      "hints": [
+        "Das Gewissen ist für die Frage nach Freiheit wichtig. Daraus folgt aber nicht unmittelbar, dass jede äußere Dienstpflicht nur durch individuelle Zustimmung bindet.",
+        "Das Gewissen ist für die Frage nach Freiheit wichtig. Daraus folgt aber nicht unmittelbar, dass jede äußere Dienstpflicht nur durch individuelle Zustimmung bindet.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Deutung berücksichtigt beide Leitsätze und ihre politische Reichweite am genauesten?"
+      ]
+    },
+    {
+      "id": "D",
+      "text": "Der Dienst am Nächsten gibt der Freiheit ihre Richtung; deshalb bestätigt er zunächst die bestehenden herrschaftlichen Dienstpflichten.",
+      "hints": [
+        "Der Dienst am Nächsten ist ein wesentlicher Teil christlicher Freiheit. Er lässt sich jedoch nicht ohne weitere Prüfung mit bestehenden herrschaftlichen Dienstpflichten gleichsetzen.",
+        "Der Dienst am Nächsten ist ein wesentlicher Teil christlicher Freiheit. Er lässt sich jedoch nicht ohne weitere Prüfung mit bestehenden herrschaftlichen Dienstpflichten gleichsetzen.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Deutung berücksichtigt beide Leitsätze und ihre politische Reichweite am genauesten?"
+      ]
+    }
+  ]
+}
 };
-chapterTwoChoices.forestArgument.options[1].hints=['Anna behauptet nicht, dass im Wald keinerlei Regeln gelten sollen. Welche Hinweise sprechen dafür, dass bereits vorher geregelte Nutzungsformen bestanden?',chapterTwoChoices.forestArgument.hints[1]];
-chapterTwoChoices.forestArgument.options[2].hints=['Ein Herrschaftszeichen zeigt einen Anspruch. Beweist es automatisch, dass ältere Rechte nicht mehr bestehen?',chapterTwoChoices.forestArgument.hints[1]];
-chapterTwoChoices.forestArgument.options[3].hints=['Dass etwas alt ist, macht es nicht automatisch gerecht. Entscheidend ist, ob eine bisher anerkannte Nutzung einfach eingeschränkt werden kann.',chapterTwoChoices.forestArgument.hints[1]];
-chapterTwoChoices.corveeDefinition.options[0].hints=['Auch die Arbeit auf Peters eigenem Feld kann sehr anstrengend sein. Entscheidend ist also nicht die körperliche Belastung.',chapterTwoChoices.corveeDefinition.hints[1]];
-chapterTwoChoices.corveeDefinition.options[2].hints=['Freiwillige Hilfe beim Nachbarn wäre ebenfalls Arbeit außerhalb des eigenen Hofes. Was unterscheidet sie von der Forderung des Herrenhofs?',chapterTwoChoices.corveeDefinition.hints[1]];
-chapterTwoChoices.corveeDefinition.options[3].hints=['Entscheidend ist nicht zuerst die Frage nach einer unmittelbaren Gegenleistung. Achte darauf, warum Peter überhaupt arbeiten muss.',chapterTwoChoices.corveeDefinition.hints[1]];
-chapterTwoChoices.lutherPoliticalInference.options[2].hints=['Erinnere dich an den Dienst am Nächsten: Luthers Freiheit bleibt nicht ohne Folgen für das Handeln. Offen ist aber, welche gesellschaftlichen Konsequenzen daraus folgen.',chapterTwoChoices.lutherPoliticalInference.hints[1]];
 export const forestClues = {
   oldUse:{label:'Alter Sammelplatz',x:17,y:56,text:'Hier sammeln die Leute aus dem Dorf offenbar schon lange Holz.',speech:'Hier sammeln die Leute aus dem Dorf schon lange.'},
   customaryRules:{label:'Älteres Nutzungszeichen',x:80,y:51,speech:'Mein Vater kannte solche Zeichen schon. Auch früher gab es Regeln dafür, wo gesammelt und wo nicht geschlagen wurde.'},
@@ -94,8 +357,8 @@ export const stores = {food:'Vorrat / Nahrung',seed:'Saatgut',reserve:'Reserve'}
 export const storeConsequences = {food:'Dann müssen wir beim Essen sparen.',seed:'Dann fehlt uns im Frühjahr Getreide für die Aussaat.',reserve:'Dann bleibt weniger, falls etwas Unvorhergesehenes passiert.'};
 export const reflections = {
   forest:{prompt:'Was erscheint dir an der Situation besonders problematisch?',items:[['rights','bisherige Nutzungsrechte werden eingeschränkt'],['voice','die Gemeinde kann kaum mitentscheiden'],['clarity','die Regeln sind nicht klar'],['power','der Grundherr beansprucht weitreichende Verfügung'],['wood','Anna bekommt heute kein Holz']]},
-  corvee:{prompt:'Was macht den Frondienst für Peter besonders belastend?',items:[['work','zusätzliche Arbeit'],['planning','schlechtere Planung der eigenen Arbeit'],['time','ein anderer verfügt über einen Teil seiner Zeit'],['absolute','jede Arbeit für andere ist grundsätzlich ungerecht'],['supply','die eigene Versorgung kann gefährdet werden']],warning:'Arbeit für andere kann auch freiwillige Hilfe sein. An Peters Lage belastet besonders, dass ihm die Entscheidung über seine Zeit genommen wird.'},
-  dues:{prompt:'Was macht die Situation besonders belastend?',items:[['amount','Höhe der Abgaben'],['voice','fehlende Mitsprache'],['uncertainty','Unsicherheit durch zusätzliche Forderungen'],['supply','Gefahr für Versorgung und Aussaat'],['absolute','grundsätzlich jede Abgabe ist ungerecht']],warning:'Eine Abgabe ist nicht allein deshalb ungerecht, weil es sie gibt. In Margarethes Lage stehen Versorgung, Mitsprache und die Begründung neuer Forderungen zur Frage.'}
+  corvee:{prompt:'Was macht den Frondienst für Peter besonders belastend?',items:[['work','zusätzliche Arbeit'],['planning','schlechtere Planung der eigenen Arbeit'],['time','ein anderer verfügt über einen Teil seiner Zeit'],['absolute','Arbeit für andere sollte nur auf freiwilliger Zustimmung beruhen'],['supply','die eigene Versorgung kann gefährdet werden']],warning:'Arbeit für andere kann freiwillige Hilfe oder eine bindende Dienstpflicht sein. Die Forderung nach freiwilliger Zustimmung verändert den Verpflichtungsgrund. Peters konkreter Zeitkonflikt lässt sich auch durch Begrenzung und verlässliche Planung angehen.'},
+  dues:{prompt:'Was macht die Situation besonders belastend?',items:[['amount','Höhe der Abgaben'],['voice','fehlende Mitsprache'],['uncertainty','Unsicherheit durch zusätzliche Forderungen'],['supply','Gefahr für Versorgung und Aussaat'],['absolute','Abgaben sollten nur mit Zustimmung der Betroffenen verlangt werden']],warning:'Zustimmung der Betroffenen wäre eine weitreichende Forderung nach Mitsprache. Davon zu unterscheiden sind verlässliche Regeln, eine Begrenzung der Höhe und die Berücksichtigung der Versorgung; diese Ansätze können auch miteinander verbunden werden.'}
 };
 export const grievances = [
   {id:'corvee',title:'Frondienst',text:'Pflichtdienste lassen die eigene Arbeit liegen.',tags:['economic','dependence','voice']},
@@ -111,8 +374,8 @@ export const linkReasons = {economic:'wirtschaftliche Belastung',dependence:'per
 export const linkPrompts = {economic:'Geht es in beiden Beschwerden um Versorgung, Arbeitsertrag oder finanzielle Belastungen?',dependence:'Wird in beiden Beschwerden die persönliche Bindung an eine Herrschaft erkennbar?',community:'Beansprucht die Gemeinde in beiden Fällen gemeinsame Rechte?',religion:'Geht es in beiden Fällen um Glauben, christliche Begründungen oder die Gestaltung des religiösen Lebens?',voice:'Wer darf in beiden Situationen entscheiden, und welche Mitsprache fehlt?'};
 export const prioritySubjects = {forest:0,corvee:1,dues:2,bondage:4,hunting:5,pastor:6,movement:7,penalties:8};
 export const demandParts = {
-  subject:['bisherige Rechte der Gemeinde','Frondienste','Abgaben','Entscheidungen über unser Dorf','persönliche Bindungen und Dienstpflichten','Jagd- und Fischereirechte','Entscheidungen über die Pfarrerwahl','Regeln über Wohnort und Fortzug','Strafen und Bußen'],
-  rule:['verbindlich und nachvollziehbar geregelt werden','begrenzt werden und die Versorgung sichern','nicht ohne nachvollziehbaren Grund verändert werden'],
+  subject:['die Regeln für bisherige Nutzungsrechte der Gemeinde','die Regeln für Umfang und Zeitpunkt der Frondienste','die Regeln für Höhe und Änderungen der Abgaben','die Regeln für Entscheidungen über unser Dorf','die Regeln für persönliche Bindungen und Dienstpflichten','die Regeln für Jagd- und Fischereirechte','die Regeln für die Pfarrerwahl','die Regeln für Wohnort und Fortzug','die Regeln für Strafen und Bußen'],
+  rule:['verbindlich festgelegt und vor Änderungen begründet werden','an den Bedürfnissen und Rechten der Betroffenen gemessen werden','nur nach einem nachvollziehbaren Verfahren verändert werden'],
   voice:['und die Gemeinde dabei mitentscheiden kann','und Änderungen vor der Gemeinde begründet werden müssen']
 };
 export const chapterTwoNotebook = {
@@ -120,3 +383,5 @@ export const chapterTwoNotebook = {
   corvee:['Frondienst bezeichnet verpflichtende Arbeitsleistungen, die aus einem Herrschafts- bzw. Abhängigkeitsverhältnis entstehen.','Für Peter bedeutet das: Ein anderer kann über einen Teil seiner Arbeitszeit verfügen – auch wenn dadurch die Arbeit auf seinem eigenen Hof liegen bleibt.'],
   dues:['Abgaben konnten bäuerliche Haushalte stark belasten. Entscheidend war nicht nur ihre Höhe, sondern auch, wie vorhersehbar sie waren und wie wenig Einfluss die Betroffenen auf ihre Festlegung hatten.','Art und Höhe von Abgaben unterschieden sich je nach Region, Herrschaft und Rechtsverhältnis. Aus der Planung mit zehn Säcken lässt sich weder eine allgemeine Erntemenge noch eine überall geltende Abgabenquote ableiten.']
 };
+
+export const villageDemandNote = 'Die Forderung dieses Dorfes ist ein fiktiver, für die Spielhandlung formulierter Entwurf. Sie veranschaulicht plausible Anliegen und Reformansätze, ist aber kein Zitat einer historisch belegten Dorfforderung. Historische Forderungstexte müssen anhand ihrer eigenen Quellen geprüft werden.';
