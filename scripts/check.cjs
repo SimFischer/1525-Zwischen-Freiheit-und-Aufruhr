@@ -14,6 +14,7 @@ async function dialogue(page) {
   for (let i=0; i<30 && await page.locator('[data-action="dialogue-next"]').count(); i++) await action(page,'dialogue-next');
 }
 async function geometry(page,label) {
+  await page.waitForFunction(() => [...document.images].every(image => image.complete));
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth),false,label+' horizontal overflow');
   const rectangles = await page.locator('.stage,.character').evaluateAll(nodes => nodes.map(node => { const r=node.getBoundingClientRect(); return {x:r.x,y:r.y,right:r.right,bottom:r.bottom}; }));
   if (rectangles.length) for (const r of rectangles.slice(1)) { const s=rectangles[0]; assert.ok(r.x>=s.x && r.right<=s.right && r.y>=s.y && r.bottom<=s.bottom,label+' clipped figure'); }
