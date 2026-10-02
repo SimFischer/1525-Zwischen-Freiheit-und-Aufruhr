@@ -73,9 +73,15 @@ async function overlayGeometry(page,label) {
   }
 }
 async function doorGeometry(page,ending=false) {
-  const door=page.locator('[data-action="prop-door"]'), box=await door.boundingBox();
-  assert.equal(await door.locator('strong').innerText(),ending?'Vor die Taverne':'Zur Tür');
-  assert.equal(await door.locator('small').innerText(),ending?'Kapitel 2 beginnen':'Für heute bleibst du noch hier.');
+  const door=page.locator('[data-action="prop-door"]');
+  if(!ending) {
+    assert.ok(await door.isHidden(),'exit visible before chapter completion');
+    assert.equal(await door.getAttribute('hidden'),'');
+    return;
+  }
+  const box=await door.boundingBox();
+  assert.equal(await door.locator('strong').innerText(),'Die Taverne verlassen');
+  assert.equal(await door.locator('small').innerText(),'Der Morgen beginnt.');
   assert.ok(box.height>=44 && box.x>=0 && box.x+box.width<=await page.evaluate(()=>innerWidth),'door touch target');
   for(const figure of await page.locator('.character').all()) {
     const f=await figure.boundingBox();
@@ -125,7 +131,7 @@ async function drag(page,id,zone,touch,context) {
     assert.equal(await page.locator('[data-action="resume"]').count(),0);
     await action(page,'new');
     assert.match(await page.locator('.spoken').innerText(),/Seit einigen Jahren verbreiten sich/);
-    await dialogue(page); await geometry(page,'intro');
+    await dialogue(page); await geometry(page,'intro'); await doorGeometry(page);
     assert.ok(await page.locator('[data-action="flyer"]').isDisabled());
     await page.locator('[data-character="jakob"]').tap();
     assert.match(await page.locator('.spoken').innerText(),/Ich habe wieder etwas von Luther bekommen/);
@@ -146,8 +152,7 @@ async function drag(page,id,zone,touch,context) {
     assert.match(await page.locator('.room-image').getAttribute('src'),/k1_taverne_exploration.png/);
     await page.locator('[data-action="prop-window"]').tap();
     assert.match(await page.locator('#notice').innerText(),/Draußen liegt das Dorf bereits im Dunkeln/);
-    await page.locator('[data-action="prop-door"]').tap();
-    assert.match(await page.locator('#notice').innerText(),/Für heute bleibst du noch hier/);
+    await doorGeometry(page);
     await page.locator('[data-action="prop-candle"]').tap();
     assert.equal(await page.locator('#notice').innerText(),'Die Kerze ist fast heruntergebrannt.');
     await page.locator('[data-action="prop-mug"]').tap();
@@ -252,6 +257,8 @@ async function drag(page,id,zone,touch,context) {
     await page.locator('[data-action="prop-door"]').tap();
     assert.equal(await page.locator('body').getAttribute('data-mode'),'transition');
     await page.locator('.ending').waitFor();
+    assert.equal(await page.locator('.next-chapter h1').innerText(),'Kapitel 2 – Wie frei ist dein Leben?');
+    assert.doesNotMatch(await page.locator('.ending').innerText(),/Vertical Slice/);
     await page.waitForTimeout(4200);
     await photograph(page,'ch1-ending-1024');
     await action(page,'home'); await action(page,'resume'); assert.equal(await page.locator('.exit-ready').count(),1);
@@ -313,15 +320,19 @@ async function drag(page,id,zone,touch,context) {
       await doorGeometry(page);
       await photograph(page,'ch1-exploration-'+viewport.width);
       const atmosphereBefore=await saved(page);
-      for (const hotspot of ['prop-window','prop-door','prop-candle','prop-mug']) await page.locator(`[data-action="${hotspot}"]`).tap();
+      for (const hotspot of ['prop-window','prop-candle','prop-mug']) await page.locator(`[data-action="${hotspot}"]`).tap();
       await page.locator('[data-character="peter"]').tap(); await page.locator('[data-character="anna"]').tap();
       assert.deepEqual(await saved(page),atmosphereBefore);
       await page.locator('[data-character="jakob"]').click(); await geometry(page,viewport.width+' dialogue');
       await photograph(page,'ch1-dialogue-'+viewport.width);
       await scene('ch1_s3_interpretation'); await dialogue(page); await geometry(page,viewport.width+' first choice');
+      await doorGeometry(page);
+      assert.match(await page.locator('.choices > button').first().evaluate(el=>getComputedStyle(el).fontFamily),/Georgia/);
+      await photograph(page,'ch1-choice-'+viewport.width);
       await scene('ch1_s5_conversations'); await page.locator('[data-character="anna"]').click(); await dialogue(page); await geometry(page,viewport.width+' puzzle');
       await photograph(page,'ch1-puzzle-'+viewport.width);
       await scene('ch1_s6_freedom_sorting'); await dialogue(page); await geometry(page,viewport.width+' sorting');
+      await photograph(page,'ch1-sort-layout-'+viewport.width);
       await scene('ch1_s6b_service'); await geometry(page,viewport.width+' boundary');
       await scene('ch1_s6c_political'); await geometry(page,viewport.width+' second statement');
       await photograph(page,'ch1-political-'+viewport.width);
@@ -346,7 +357,7 @@ async function drag(page,id,zone,touch,context) {
     assert.equal(await page.evaluate(key=>localStorage.getItem(key),KEY),null);
     await page.goto(url+'?start=ch1_s1_tavern_intro'); await dialogue(page);
     assert.equal((await saved(page)).scene,'ch1_s1_intro');
-    await action(page,'menu'); await action(page,'close-overlay'); await action(page,'menu'); await action(page,'menu-home');
+    await action(page,'menu'); await overlayGeometry(page,'menu'); await photograph(page,'ch1-menu-1024'); await action(page,'close-overlay'); await action(page,'menu'); await action(page,'menu-home');
     await action(page,'confirm-new'); await action(page,'close-overlay'); await action(page,'confirm-reset'); await action(page,'reset');
     assert.equal(await page.locator('[data-action="resume"]').count(),0);
 

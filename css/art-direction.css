@@ -1,0 +1,128 @@
+/* One shared material language for every screen in the adventure. */
+:root {
+  --paper: #ebd6ad;
+  --paper-light: #f5e6c7;
+  --ink: #3e2a1b;
+  --muted: #76583a;
+  --line: #b48a54;
+  --gold: #a77b40;
+  --green: #384330;
+  --green-light: #d8c79f;
+  --radius: 6px;
+  --parchment-surface: radial-gradient(ellipse at 8% 0,#fff6e0ad,transparent 65%),radial-gradient(ellipse at 98% 100%,#b3853530,transparent 65%),repeating-linear-gradient(7deg,#91632909 0 1px,transparent 1px 4px),#efddb7;
+  --leather-surface: repeating-linear-gradient(12deg,#ffffff04 0 1px,transparent 1px 5px),linear-gradient(110deg,#64472e,#392619 55%,#59402b);
+  --wood-surface: repeating-linear-gradient(2deg,#311d121c 0 1px,transparent 1px 6px),linear-gradient(#88613b,#5d3d25);
+  --paper-edge: inset 0 0 24px #a7753230,inset 3px 0 7px #65412424;
+}
+button { font-family: Georgia,'Times New Roman',serif; border-radius: 4px 7px 4px 6px; background: var(--parchment-surface); }
+.primary,.secondary,.quiet,
+.interaction .primary,.start-actions .primary,.start-actions .secondary,
+.notebook .overlay-top button {
+  background: var(--wood-surface); border: 1px solid #ad8957; color: #fff0d0;
+  box-shadow: inset 0 1px #e2bf7955,0 2px 3px #23130d36;
+  font-family: Georgia,'Times New Roman',serif;
+}
+.secondary,.quiet { background: var(--leather-surface); }
+button:not(.room-hotspot):not(.wordmark):not(:disabled):hover { filter: brightness(1.07); }
+button:focus-visible { outline: 2px solid #ba9255; outline-offset: 3px; }
+.text-button { color: #e5ceaa; font-family: Georgia,'Times New Roman',serif; }
+.eyebrow,.muted,.count,.portrait span,.resume-note,.source-note,.archive-note,
+.game-footer,.stage-bottom { font-family: Georgia,'Times New Roman',serif; }
+
+/* A narrow wooden lintel carries the game title and the leather controls. */
+.game-header {
+  background: var(--leather-surface); color: #f2dfb9; border-bottom: 2px solid #a67f4c;
+  box-shadow: inset 0 -2px #29190f,0 2px 7px #140b0980;
+}
+.game-header .wordmark { color: #f6e5c4; box-shadow: none; border-radius: 0; }
+.game-header .wordmark span { font-family: Georgia,'Times New Roman',serif; }
+.game-header .eyebrow { color: #d7bc8d; }
+.book-button,.menu-button { background: var(--wood-surface); color: #ffedcc; border-color: #a5804d; font-family: Georgia,'Times New Roman',serif; }
+.book-button:disabled { opacity: .55; }
+.start-screen .text-button { background: none; box-shadow: none; }
+
+/* Existing illustrated dialogue parchment retains its shape and speaker plaque. */
+.dialogue-panel { filter: drop-shadow(0 5px 3px #28170fbb) drop-shadow(0 10px 16px #100b0755); }
+.speaker-plaque { box-shadow: inset 0 0 6px #8b5b2b55,0 1px 2px #38201144; }
+.dialogue-footer .muted { color: #795a36; }
+
+/* Task sheets, document strips and the physical cards use the same paper. */
+.task-panel,.puzzle-panel,.instruction-panel {
+  background: var(--parchment-surface); border: 3px solid #66452b;
+  border-radius: 5px 9px 5px 8px;
+  box-shadow: 0 7px 25px #130c0970,inset 0 0 0 1px #b68b53,var(--paper-edge);
+  font-family: Georgia,'Times New Roman',serif;
+}
+.task-panel h2 { font-family: Georgia,'Times New Roman',serif; font-weight: normal; font-size: clamp(1.1rem,1.8vw,1.35rem); }
+.task-heading p,.choice-heading p { font-size: .85rem; }
+.task-panel .choices > button,.puzzle-parts button,.sort-card,.document-card {
+  background: var(--parchment-surface); border: 1px solid #ab8048;
+  border-radius: 3px 6px 3px 5px; color: #402b1c;
+  box-shadow: inset 0 0 10px #a7742824,0 2px 3px #52371e26;
+  font: .95rem/1.5 Georgia,'Times New Roman',serif;
+}
+.choice-letter,.step-number {
+  border-radius: 3px; border-color: #ac8351; color: #6e4826;
+  background: #cba76b26; font-family: Georgia,'Times New Roman',serif;
+}
+.feedback-text { font: 1rem/1.65 Georgia,'Times New Roman',serif; }
+.solution-text,.task-panel .solution-text,.task-panel .securing,.notebook .securing {
+  background: #d7b77b30; border-color: #a57a3e; font-family: Georgia,'Times New Roman',serif;
+}
+.sequence-slot { background: #cfad7130; border-color: #a58353; border-radius: 3px 6px 3px 5px; }
+.sequence-slot p { font: .9rem/1.5 Georgia,'Times New Roman',serif; }
+.sequence-controls button { background: var(--leather-surface); border-color: #a88350; color: #f6e4c0; }
+.puzzle-parts [aria-pressed="true"],.sort-card.selected { background: #e4ca95; border-color: #865c31; }
+.sort-zone { border: 1px solid #a17d49; border-radius: 4px 7px 4px 6px; background: #c39c5d20; box-shadow: inset 0 1px 4px #6c482322; }
+.sort-target { background: #d7b77b30; border-color: #b58e54; border-radius: 3px; color: #4b311f; }
+.sort-target span { font: .85rem/1.45 Georgia,'Times New Roman',serif; }
+.drop-hover,.sort-zone.drop-hover { background: #e1c493 !important; outline-color: #a67b3d; }
+.drag-ghost { background: var(--parchment-surface); border-color: #966b38; border-radius: 4px; font-family: Georgia,'Times New Roman',serif; }
+.boundary-cards span { background: var(--parchment-surface); border-color: #aa8047; }
+
+/* Source documents and menus are paper inside the same dark material frame. */
+dialog:not(:has(.notebook)) {
+  padding: 7px; border: 2px solid #a17b48; border-radius: 7px 10px 7px 9px;
+  background: var(--leather-surface); scrollbar-color: #a17b48 #4c321f;
+  box-shadow: 0 16px 65px #100a0790,inset 0 0 0 3px #28180f;
+}
+.document-sheet,.confirmation {
+  background: var(--parchment-surface); box-shadow: var(--paper-edge); border-radius: 3px 5px 3px 4px;
+}
+.document-sheet .overlay-top button { background: var(--leather-surface); color: #f7e5c1; min-height: 44px; font: .85rem Georgia,'Times New Roman',serif; }
+.document-sheet blockquote { border-color: #a17843; }
+.document-rule { background: #a17b48; }
+.passage-label { color: #8c6335; font-family: Georgia,'Times New Roman',serif; }
+.source-footer { border-color: #ac864c; }
+.archive-note { color: #5c6540; }
+.document-card span { font-family: Georgia,'Times New Roman',serif; color: #765534; }
+.notebook { background: var(--parchment-surface); box-shadow: var(--paper-edge); }
+
+/* Labels accompany an object, never draw a technical rectangle around it. */
+.room-hotspot:not(.door-hotspot):focus-visible,.room-hotspot:not(.door-hotspot).touched {
+  outline: 0; background: transparent; box-shadow: none;
+}
+.room-hotspot:not(.door-hotspot):focus-visible > span,
+.room-hotspot:not(.door-hotspot).touched > span { border-color: #d7b16d; box-shadow: 0 2px 4px #1d100b77; }
+.stage-caption h1,.exploration-tools { border: 1px solid #a8844b66; border-radius: 3px 5px 3px 4px; background: #35251de8; }
+.door-hotspot { width: clamp(180px,20vw,220px); }
+.door-hotspot[hidden] { display: none !important; }
+.door-copy strong { text-wrap: balance; }
+.notice { border-radius: 4px 6px 4px 5px; }
+
+/* The next chapter is an illustrated adventure title card. */
+.ending .next-chapter {
+  padding: clamp(1rem,3vw,2rem); border: 2px solid #997448; border-radius: 5px 8px 5px 7px;
+  background: var(--leather-surface); box-shadow: 0 7px 25px #140c0855,inset 0 0 0 2px #27190e;
+}
+.ending .next-chapter h1 { font-size: clamp(1.6rem,3.6vw,2.7rem); }
+.ending .quiet { color: #f6e5bf; }
+@media(max-width:560px) {
+  .task-heading p,.choice-heading p { font-size: .8rem; }
+  .task-panel .choices > button,.puzzle-parts button { font-size: .9rem; }
+  .sort-card { font-size: .8rem; }
+  .sort-target span { font-size: .75rem; }
+  .door-hotspot { width: 170px; }
+  .ending { justify-content: flex-start; overflow-y: auto; }
+  .ending .ending-lines { margin: 1rem 0; }
+}
