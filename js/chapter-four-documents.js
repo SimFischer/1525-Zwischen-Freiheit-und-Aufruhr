@@ -4,12 +4,25 @@ import { state,addUnique } from './state.js';
 import { save } from './save-system.js';
 import { esc,button,openOverlay } from './ui.js';
 const paragraph=text=>`<p>${esc(text)}</p>`;
+// Presentation roles only: source strings remain in the existing data module.
+function sourceLine(page,text,index){
+ if(index===0){
+  const datedTitle=text.match(/^(.*?)( · (?:April|Mai|\d{4}))$/);
+  return `<h2>${datedTitle?esc(datedTitle[1])+`<span class="ch4-title-date">${esc(datedTitle[2])}</span>`:esc(text)}</h2>`;
+ }
+ if(page==='luther_freedom_small')return `<blockquote class="ch4-source-quotation"><p>${esc(text)}</p></blockquote>`;
+ if(text==='In heutiger Sprache zusammengefasst'||text==='Historische Position in heutiger Sprache zusammengefasst')return `<p class="ch4-source-kind">${esc(text)}</p>`;
+ if(/^(Martin Luther ·|Thüringen ·)/.test(text))return `<p class="ch4-source-date">${esc(text)}</p>`;
+ if(text==='Thomas Müntzer')return `<p class="ch4-source-author">${esc(text)}</p>`;
+ if(page==='ermahnung_closed'&&index===1)return `<p class="ch4-source-subtitle">${esc(text)}</p>`;
+ return paragraph(text);
+}
 export function sourceCanvas(page,game=state){
  const meta=documentRegions[page]||{file:'props/ch4_prop_weingarten_report.png',size:[768,470],regions:[[12,13,89,86]],summaries:[]};
  const groups=chapterFourPageText[page];
  const parts=meta.regions.map(([l,t,r,b],i)=>{
   const content=page==='luther_comparison_frame'?[groups[i][0],'In heutiger Sprache zusammengefasst',...groups[i].slice(1)]:groups[i]||[];
-  return `<section class="ch4-source-text" tabindex="0" style="left:${l}%;top:${t}%;width:${r-l}%;height:${b-t}%" aria-label="Textbereich ${i+1}">${page==='luther_freedom_small'?'<p class="ch4-source-kind">Behutsam modernisierte Quellenworte</p>':''}${content.map((text,n)=>n===0?`<h2>${esc(text)}</h2>`:paragraph(text)).join('')}${page==='luther_freedom_small'?paragraph('Dein damaliger Gedanke: '+(game.choiceTexts.initialFreedomInterpretation||'Noch keine Notiz.')):''}</section>`;
+  return `<section class="ch4-source-text" tabindex="0" style="left:${l}%;top:${t}%;width:${r-l}%;height:${b-t}%" aria-label="Textbereich ${i+1}">${content.map((text,n)=>sourceLine(page,text,n)+(page==='luther_freedom_small'&&n===0?'<p class="ch4-source-kind">Behutsam modernisierte Quellenworte</p>':'')).join('')}${page==='luther_freedom_small'?`<p class="ch4-source-personal">${esc('Dein damaliger Gedanke: '+(game.choiceTexts.initialFreedomInterpretation||'Noch keine Notiz.'))}</p>`:''}</section>`;
  }).join('');
  const summaries=(meta.summaries||[]).map(([l,t,r,b],i)=>`<aside class="ch4-source-text ch4-summary" tabindex="0" style="left:${l}%;top:${t}%;width:${r-l}%;height:${b-t}%">${paragraph(page==='ermahnung_lords'?'Herrschaft bleibt kritisierbar.':page==='ermahnung_peasants'?'Eine Klage rechtfertigt nicht jedes Mittel.':i===0?'Forderung und Mittel unterscheiden.':'Begründung und Härte getrennt beurteilen.')}</aside>`).join('');
  return `<div class="ch4-source-canvas" data-page="${page}" style="aspect-ratio:${meta.size[0]}/${meta.size[1]}"><img src="assets/chapter4/${meta.file}" width="${meta.size[0]}" height="${meta.size[1]}" alt="${esc(groups[0][0])}" draggable="false">${parts}${summaries}</div>`;
