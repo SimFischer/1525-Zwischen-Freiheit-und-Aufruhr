@@ -108,6 +108,7 @@ export function load(normal = false) {
       base.progress.completedScenes = base.progress.completedScenes.filter(id=>!id.startsWith('ch1_s6'));
       base.minigames.completed = base.minigames.completed.filter(id=>id!=='freedomSorting');
     }
+    if(!Object.hasOwn(value.chapter4||{},'regimentsIndex'))delete base.chapter4.regimentsIndex;
     sanitizeChapterFour(base);
     return syncConsequences(base);
   } catch { return null; }

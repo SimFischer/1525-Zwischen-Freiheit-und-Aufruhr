@@ -1,5 +1,6 @@
+import { caseComplete,regimentsComplete,regimentsSummary } from '../data/chapter-four-regiments.js';
 import { state,addUnique } from './state.js';
-import { chapterFourChoices,chapterFourDialogues,multiselectTasks,preparationPairs,regimentsCases,regimentsZones,caseReasons,communityConditions,hermeneuticalCriteria } from '../data/chapter-four.js';
+import { chapterFourChoices,chapterFourDialogues,multiselectTasks,preparationPairs,regimentsCases,regimentsZones,communityConditions,hermeneuticalCriteria } from '../data/chapter-four.js';
 import { chapterFourFields,initializeOpening,determineEndWorldState,chapterFiveHandoff } from '../data/chapter-four-state.js';
 import { documentStagePages } from '../data/chapter-four-documents.js';
 import { beginDialogue,advanceDialogue } from './dialogue-engine.js';
@@ -61,8 +62,6 @@ function branchDialogue(game){const c=game.chapter4;
  return {luther_order:[l('peter','Der Verwalter hat unsere Bedingung aufgenommen: '+game.choiceTexts.ch4Condition),l('konrad','Eine Teilzusage. Andere Forderungen bleiben offen.')],gospel_critique:[l('anna','Diese Bedingungen vertreten wir gemeinsam: '+labels(c.communityConditions,communityConditions)+'.'),l('matthes','Die Briefe tragen dieses Mandat weiter. Der öffentliche Treffpunkt bleibt bestehen.')],prophetic_resistance:[l('band1','Du hast dich festgelegt: '+game.choiceTexts.ch4Band),l('band2',c.bandAction==='resistance_limit'?'Dann bleibst du außerhalb der bewaffneten Gruppe.':'Unser nächster Weg führt uns näher an eine offene Auseinandersetzung.')],hermeneutical_caution:[l('jakob','Du verlangst von unserer Auslegung: '+labels(c.hermeneuticalCriteria,hermeneuticalCriteria)+'.'),l('matthes','Währenddessen sind einige bereits fort. Du hast mehr Maßstäbe für die Prüfung, aber weniger Einfluss auf ihre erste Handlung.')]}[c.theologicalPath];
 }
 export function endingDialogue(game){return {negotiation_open:[l('peter','Eine Abordnung bleibt im Gespräch. Du hast diesen Weg zuletzt offengehalten; eine endgültige Einigung gibt es noch nicht.')],mobilized_community:[l('anna','Die Gemeinde bleibt zusammen. Unsere Bedingungen stehen in den Briefen; die Entscheidung fällt nicht mehr nur am Herrenhof.')],joining_peasant_band:[l('konrad','Du bist bei der Gruppe. Deine Grenze bleibt: '+(game.choiceTexts.ch4Band||'gemeinsam für die Forderungen einzustehen')+'. Ob alle sie tragen, zeigt sich erst bei der nächsten Handlung.')],religious_polarization:[l('jakob','Die Gruppen berufen sich auf verschiedene Auslegungen. Deine Vorsicht beseitigt den Streit um Gottes Willen nicht.')],events_moved_without_you:[l('matthes','Andere sind losgezogen, während du geprüft hast. Für die nächste Entscheidung musst du mit ihren Folgen umgehen.')]}[game.chapter4.endWorldState];}
-export function chapterFourSelect(id){if(!regimentsCases.some(x=>x.id===id))return;c().selected=c().selected===id?null:id;}
-export function chapterFourDrop(id,zone){if(c().stage!=='regiments'||!regimentsCases.some(x=>x.id===id)||!regimentsZones.some(x=>x[0]===zone))return; c().twoRegimentsCases[id]=zone;c().selected=id;c().caseFeedback='Begründe die Zuordnung, bevor du den nächsten Fall wählst.';delete c().caseReasons[id];}
 function nextAfterChoice(id){return {ch4Authority:'opening_effect',ch4Community:'opening_effect',ch4Resistance:'opening_effect',ch4Peasants:'peasants_complement',ch4Early:'regiments',ch4Boundary:'muentzer',ch4Theology:{luther_order:'negotiation',gospel_critique:'conditions',prophetic_resistance:'band',hermeneutical_caution:'hermeneutics'}[c().theologicalPath],ch4Condition:'branch_effect',ch4Band:'branch_effect',ch4Weingarten:'escalation',ch4Escalation:'escalation_effect',ch4Comparison:'structure',ch4Risk:'judgment',ch4HarshJudgment:'world_end'}[id];}
 export function chapterFourAction(action,target){
  if(action==='ch4-start'){go('opening');return true;}
@@ -85,8 +84,7 @@ export function chapterFourAction(action,target){
   }return true;
  }
  if(!action.startsWith('ch4-'))return false;
- if(action==='ch4-go'){go(target.dataset.scene);return true;}
- if(action==='ch4-case'){chapterFourSelect(target.dataset.card);return true;}
+ if(action==='ch4-go'){if(stage==='regiments'&&target.dataset.scene==='boundary'&&(!regimentsComplete(c())||!c().resolved.regiments))return true;go(target.dataset.scene);return true;}
  if(action==='ch4-route-go'){go({A:'authority',B:'community',C:'resistance',D:'preparation'}[c().openingRoute]);return true;}
  if(action==='ch4-choice'){const id=choiceFor[stage];if(id)state.interaction={kind:'choice',id};return true;}
  if(action==='ch4-read'){
@@ -98,7 +96,8 @@ export function chapterFourAction(action,target){
  if(action==='ch4-memory'){c().memoryRead=true;openNotebook('freedom');return true;}
  if(action==='ch4-feedback'){const f=c().feedback;c().feedback=null;if(f.resolved&&f.next)go(f.next);return true;}
  if(action==='ch4-multi'){
-  const id=target.dataset.item,list=c().selections[stage]||=[];
+  const id=target.dataset.item,key=stage==='regiments'?'regiments_synthesis':stage,list=c().selections[key]||=[];
+  if(stage==='regiments'&&(c().regimentsIndex!==5||c().resolved.regiments||!['A','B','C','D'].includes(id)))return true;
   if(list.includes(id))list.splice(list.indexOf(id),1);else list.push(id);return true;
  }
  if(action==='ch4-check'){
@@ -114,11 +113,28 @@ export function chapterFourAction(action,target){
   const list=c().selections.preparation||[];if(list.length!==2)return true;const key=[...list].sort().join(':');
   c().preparationPairs.push(preparationPairs[key]||'Wie hängen diese beiden Gedanken zusammen, und wo darf der eine nicht einfach zum Auftrag für den anderen werden?');c().selections.preparation=[];c().theologicalPreparation=true;c().unattendedMobilization=true;return true;
  }
- if(action==='ch4-place'){if(c().selected)chapterFourDrop(c().selected,target.dataset.zone);return true;}
+ if(action==='ch4-classify'){
+  const cas=regimentsCases[c().regimentsIndex],classification=target.dataset.zone;
+  if(stage!=='regiments'||!cas||!regimentsZones.some(([id])=>id===classification))return true;
+  if(c().twoRegimentsCases[cas.id]?.classification!==classification)c().twoRegimentsCases[cas.id]={classification,reasoning:null};return true;
+ }
  if(action==='ch4-case-reason'){
-  const id=c().selected,cas=regimentsCases.find(x=>x.id===id);if(!cas||!c().twoRegimentsCases[id]||!caseReasons.some(x=>x[0]===target.dataset.reason))return true;
-  c().caseReasons[id]=target.dataset.reason;
-  c().caseFeedback=(cas.preferred.includes(c().twoRegimentsCases[id])?'Diese Zuordnung lässt sich so begründen: ':'Prüfe deine Zuordnung noch einmal am konkreten Eingriff: ')+cas.reason+(target.dataset.reason==='limit'&&['tax','corvee'].includes(id)?' Eine Zuständigkeitsüberschreitung folgt hier nicht schon aus jeder Belastung; sie braucht eine genauere Begründung.':'');return true;
+  const cas=regimentsCases[c().regimentsIndex],entry=cas&&c().twoRegimentsCases[cas.id];
+  if(stage!=='regiments'||!entry?.classification||!cas.reasons.some(([id])=>id===target.dataset.reason))return true;
+  entry.reasoning=target.dataset.reason;return true;
+ }
+ if(action==='ch4-case-next'){
+  const cas=regimentsCases[c().regimentsIndex];
+  if(stage==='regiments'&&cas&&caseComplete(cas,c().twoRegimentsCases[cas.id]))c().regimentsIndex++;return true;
+ }
+ if(action==='ch4-synthesis'){
+  if(stage!=='regiments'||!regimentsComplete(c())||c().regimentsIndex!==5||c().resolved.regiments)return true;
+  const selected=[...(c().selections.regiments_synthesis||[])].sort();
+  const valid=JSON.stringify(selected)===JSON.stringify(['A','B','D']);
+  const attempt=(c().attempts.regiments_synthesis||0)+1;c().attempts.regiments_synthesis=attempt;
+  if(valid||attempt>=3){c().resolved.regiments=true;c().selections.regiments_synthesis=['A','B','D'];c().caseFeedback=regimentsSummary;}
+  else c().caseFeedback='Die Unterscheidung hilft bei der Prüfung, entscheidet aber nicht jeden Konflikt automatisch. Prüfe auch, wo beide Bereiche berührt sind und ihre Grenzen überschritten werden können.';
+  return true;
  }
  if(action==='ch4-criterion'){const i=Number(target.dataset.index);if(i>=0&&i<5)addUnique(c().comparisonCriteria,i);c().comparisonIndex=i;return true;}
  if(action==='ch4-conditions-next'){c().communityConditions=[...(c().selections.conditions||[])];if(c().communityConditions.length===2)go('branch_effect');return true;}

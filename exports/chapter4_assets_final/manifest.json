@@ -1456,7 +1456,7 @@
         51,
         29
       ],
-      "runtime_status": "active"
+      "runtime_status": "legacy"
     },
     {
       "filename": "ch4_case_cards_set.png",
@@ -1506,7 +1506,7 @@
           91
         ]
       ],
-      "runtime_status": "active"
+      "runtime_status": "legacy"
     },
     {
       "filename": "ch4_ui_three_interpretations_table.png",
@@ -2788,7 +2788,9 @@
     "overlays/ch4_overlay_withheld_dues.png",
     "props/ch4_prop_bible_open.png",
     "props/ch4_prop_letters_other_villages.png",
-    "props/ch4_prop_warning_notice.png"
+    "props/ch4_prop_warning_notice.png",
+    "ui/ch4_ui_two_regiments_table.png",
+    "ui/ch4_case_cards_set.png"
   ],
   "revision_baseline_commit": "42ab89a",
   "revision_qa": "docs/kapitel4-dorfrevision-qa.md",

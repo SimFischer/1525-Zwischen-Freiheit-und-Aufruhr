@@ -1,5 +1,5 @@
 import { fitChapterFourScene } from './chapter-four-view.js';
-import { configureChapterFour,prepareChapterFour,chapterFourAction,chapterFourDrop,chapterFourSelect } from './chapter-four.js';
+import { configureChapterFour,prepareChapterFour,chapterFourAction } from './chapter-four.js';
 import { fitChapterThreeDialogue } from './chapter-three-view.js';
 import { configureAdmin, installAdminHold, adminAction, testToolbar, ensureAdminSession, openAdmin } from './admin.js';
 import { prepareAdminStateForScene } from './admin-state.js';
@@ -81,10 +81,19 @@ function render() {
   if (!playing) return startScreen();
   const scene = sceneById[state.scene], debugWasOpen = app.querySelector('.debug')?.open || false;
   if(scene.chapter===4) {
+    const caseControl=document.activeElement?.closest('.ch4-regiments button');
+    const caseFocus=caseControl?['action','zone','reason','item'].filter(key=>caseControl.dataset[key]).map(key=>`[data-${key}="${CSS.escape(caseControl.dataset[key])}"]`).join(''):null;
     const scroll=app.querySelector('.task-scroll')?.scrollTop||0,previous=app.querySelector('#interaction')?.dataset.stage;
     setMode(state.dialogue?'dialogue':state.interaction?'choice':'exploration');
     app.innerHTML=sceneView()+debugView(debugWasOpen)+testToolbar();fitChapterFourScene();
     if(previous===state.chapter4.stage&&app.querySelector('.task-scroll'))app.querySelector('.task-scroll').scrollTop=scroll;
+    if(caseFocus){
+      const panel=app.querySelector('.ch4-regiments');
+      if(panel){
+        const focus=caseControl.dataset.action==='ch4-case-next'?panel.querySelector('h2'):panel.querySelector(caseFocus)||panel.querySelector('.panel-actions button');
+        if(focus){if(focus.tagName==='H2')focus.tabIndex=-1;focus.focus({preventScroll:true});}
+      }
+    }
     return;
   }
   if(scene.chapter===3) {
@@ -311,7 +320,7 @@ document.addEventListener('change',event => {
 configureChapterFour({enterScene,render,persist});
 configureChapterThree({enterScene,render,persist,active:()=>playing});
 configureChapterTwo({enterScene,render,persist,clues:forestClues,dialogues:chapterTwoDialogues});
-installDragDrop(app,(id,zone) => { if(state.chapter===4) {chapterFourDrop(id,zone);render();persist();return;} if(state.chapter===3) { chapterThreeDrop(id,zone); render(); persist(); return; } if(state.chapter===2) { chapterTwoDrop(id,zone); render(); persist(); return; } state.minigames.sorting[id] = zone; selectedCard = null; render(); persist(); },id => { if(state.chapter===4) {chapterFourSelect(id);render();persist();return;} if(state.chapter===3) { chapterThreeSelect(id); render(); persist(); return; } if(state.chapter===2) { if(state.scene==='ch2_dues') state.chapter2.selected=id; else selectCard(id); render(); persist(); return; } selectedCard = selectedCard === id ? null : id; render(); });
+installDragDrop(app,(id,zone) => { if(state.chapter===4)return; if(state.chapter===3) { chapterThreeDrop(id,zone); render(); persist(); return; } if(state.chapter===2) { chapterTwoDrop(id,zone); render(); persist(); return; } state.minigames.sorting[id] = zone; selectedCard = null; render(); persist(); },id => { if(state.chapter===4)return; if(state.chapter===3) { chapterThreeSelect(id); render(); persist(); return; } if(state.chapter===2) { if(state.scene==='ch2_dues') state.chapter2.selected=id; else selectCard(id); render(); persist(); return; } selectedCard = selectedCard === id ? null : id; render(); });
 configureAdmin({isPlaying:()=>playing,render,showState:showPreparedState});
 installAdminHold();
 const start = canonicalScene(new URLSearchParams(location.search).get('start'));

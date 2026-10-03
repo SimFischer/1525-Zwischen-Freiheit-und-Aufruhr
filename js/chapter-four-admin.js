@@ -13,7 +13,7 @@ export function prepareChapterFourAdmin(game,scene,complete=false){
  if(reached('peasants_complement')){c.resolved.peasants_complement=true;c.selections.peasants_complement=['B','D'];}
  if(reached('memory'))c.memoryRead=true;
  if(reached('early'))choose('ch4Early','tension');
- if(reached('regiments'))for(const item of regimentsCases){c.twoRegimentsCases[item.id]=item.preferred[0];c.caseReasons[item.id]='sphere';}
+ if(reached('regiments')){for(const item of regimentsCases)c.twoRegimentsCases[item.id]={classification:item.preferred[0],reasoning:'sphere'};c.regimentsIndex=5;c.resolved.regiments=true;c.selections.regiments_synthesis=['A','B','D'];}
  if(reached('boundary')){choose('ch4Boundary','A');c.resolved.ch4Boundary=true;}
  if(reached('interpretations'))c.comparisonCriteria=[0,1,2,3,4];
  if(reached('theology')){choose('ch4Theology','luther_order');c.branchOutcome='negotiation_partial';}

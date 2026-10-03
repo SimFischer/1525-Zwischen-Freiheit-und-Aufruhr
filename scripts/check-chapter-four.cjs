@@ -34,10 +34,10 @@ const routes=[
    }
    if(s==='memory'){if(!c.memoryRead){await act(p,'ch4-memory');assert.ok((await p.locator('.notebook-content').textContent()).includes(game.choiceTexts.initialFreedomInterpretation));await p.locator('#overlay [data-action="close-overlay"]').click();}await p.locator('[data-scene="early"]').click();continue;}
    if(s==='regiments'){
-    if(!c.docRead.c4_authority){await p.locator('[data-document="c4_authority"]').click();await read(p,route.name+'-authority');}
-    for(const [id,zone] of [['preacher','boundary'],['tax','worldly'],['corvee','both'],['command','boundary'],['arrest','both']]){
-     await p.locator(`[data-card="${id}"]`).click();await p.locator(`[data-zone="${zone}"]`).click();await p.locator('[data-action="ch4-case-reason"][data-reason="sphere"]').click();
-    }await p.locator('[data-scene="boundary"]').click();continue;
+    for(const zone of ['boundary','worldly','both','boundary','both']){
+     await p.locator(`[data-action="ch4-classify"][data-zone="${zone}"]`).click();await p.locator('[data-action="ch4-case-reason"][data-reason="sphere"]').click();await act(p,'ch4-case-next');
+    }
+    for(const id of ['A','B','D'])await p.locator(`[data-action="ch4-multi"][data-item="${id}"]`).click();await act(p,'ch4-synthesis');await p.locator('[data-scene="boundary"]').click();continue;
    }
    if(s==='interpretations'){for(let i=0;i<5;i++)await p.locator(`[data-action="ch4-criterion"][data-index="${i}"]`).click();await p.locator('[data-scene="theology"]').click();continue;}
    if(s==='conditions'){for(const id of ['services','voice'])await p.locator(`[data-action="ch4-multi"][data-item="${id}"]`).click();await act(p,'ch4-conditions-next');continue;}
