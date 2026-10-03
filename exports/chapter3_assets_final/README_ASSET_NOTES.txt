@@ -1,6 +1,6 @@
 1525 – Kapitel 3: Aus Beschwerden werden Forderungen
 
-41 neue Produktions-PNGs: 4 Hintergründe, 8 Figurenposen, 8 Sprecherportraits,
+45 neue Produktions-PNGs: 4 Hintergründe, 10 Figurenposen, 10 Sprecherportraits,
 6 Versammlungsrequisiten, 4 Dokumentuntergründe, 8 Druckerei-Layer, 3 Kartenassets.
 Verbindlich ist die warme, erwachsene, strukturierte Art Direction aus dem
 Canon-Archiv Kapitel 1/2: Holz, Leder, Papier, Stoff, Eisen; gedeckte Erdfarben.
@@ -10,8 +10,11 @@ Alpha-Rauschen; keine Neugestaltung bestehender Assets.
 
 Wiederverwenden: Peter, Anna, Jakob, Konrad, Dorf-Hub, Dialogbox, Portraitslot,
 Notizbuch, Buttons und globale Pergament-/Lederrahmen. Keine Kopien im Paket.
-Matthes: Original fehlt im gelieferten Archiv und Repository; kein Ersatz erzeugt.
-Vor einer Szene mit Matthes verbindliches Original bereitstellen.
+Matthes: erster verbindlicher Canon auf Nutzerwunsch vom 3. Oktober 2026.
+Die bisher generische Reisendenfigur und ihr Portrait wurden unverändert
+übernommen und in matthes_neutral umbenannt. Dazu sprechende und lesende
+Posen mit textfreien Papieren und passende Portraits. Kein früherer sichtbarer
+Matthes-Auftritt; Identität, Schultertasche, Gehstock und Kleidung verbindlich.
 Die globale UI und ihre Texte bleiben unverändert. overlays ist bewusst leer.
 Hotspots ausschließlich aus assets/ui/hotspots/v2/ und js/hotspots.js laden:
 object / path / action; Beschriftungen als HTML, Rückweg nur Holz spiegeln.
@@ -48,7 +51,9 @@ chapter3/characters/ch3_char_georg_neutral.png
 chapter3/characters/ch3_char_katharina_neutral.png
 chapter3/characters/ch3_char_hans_neutral.png
 chapter3/characters/ch3_char_printer_working.png
-chapter3/characters/ch3_char_traveler_neutral.png
+chapter3/characters/ch3_char_matthes_neutral.png
+chapter3/characters/ch3_char_matthes_talking.png
+chapter3/characters/ch3_char_matthes_reading.png
 chapter3/portraits/ch3_portrait_lotzer_neutral.png
 chapter3/portraits/ch3_portrait_lotzer_talking.png
 chapter3/portraits/ch3_portrait_lotzer_reading.png
@@ -56,7 +61,9 @@ chapter3/portraits/ch3_portrait_georg_neutral.png
 chapter3/portraits/ch3_portrait_katharina_neutral.png
 chapter3/portraits/ch3_portrait_hans_neutral.png
 chapter3/portraits/ch3_portrait_printer_working.png
-chapter3/portraits/ch3_portrait_traveler_neutral.png
+chapter3/portraits/ch3_portrait_matthes_neutral.png
+chapter3/portraits/ch3_portrait_matthes_talking.png
+chapter3/portraits/ch3_portrait_matthes_reading.png
 chapter3/props/ch3_prop_complaint_notes_set.png
 chapter3/props/ch3_prop_wooden_assembly_table.png
 chapter3/props/ch3_prop_ink_bottle.png

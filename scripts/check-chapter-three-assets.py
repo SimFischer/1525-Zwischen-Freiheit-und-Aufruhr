@@ -10,9 +10,9 @@ REPO = Path(__file__).resolve().parents[1]
 ROOT = REPO / 'exports/chapter3_assets_final'
 manifest = json.loads((ROOT / 'manifest.json').read_text(encoding='utf-8'))
 new = [a for a in manifest['assets'] if a['new_or_reused'] == 'new']
-assert len(new) == manifest['new_asset_count'] == 41
-assert len({a['relative_path'] for a in new}) == 41
-assert Counter(a['type'] for a in new) == Counter(background=4, character=8, portrait=8, prop=6, document=4, minigame=8, map=1, map_marker=2)
+assert len(new) == manifest['new_asset_count'] == 45
+assert len({a['relative_path'] for a in new}) == 45
+assert Counter(a['type'] for a in new) == Counter(background=4, character=10, portrait=10, prop=6, document=4, minigame=8, map=1, map_marker=2)
 required = {'filename','relative_path','type','scene','purpose','new_or_reused','expected_dimensions','transparency','safe_area_notes','implementation_notes'}
 for a in manifest['assets']:
     assert required <= a.keys(), a['filename']
@@ -43,7 +43,17 @@ assert all((ROOT / 'chapter3' / d).is_dir() for d in ['backgrounds','characters'
 if (ROOT/'chapter3/overlays').exists(): assert not list((ROOT/'chapter3/overlays').iterdir())
 reuse = {a['name']:a for a in manifest['reuse']}
 assert {'Peter','Anna','Jakob','Konrad','Matthes','Dorf-Hub','Hotspot base assets','Dialogue UI','Portrait frame','Notebook','Primary/secondary button system','Global parchment/leather UI frames'} <= reuse.keys()
-assert reuse['Matthes']['status']=='missing_in_supplied_canon_and_repository'
+assert reuse['Matthes']['status']=='newly_established_canon'
+canon = manifest['character_canons']['matthes']
+for group, folder, prefix in [('character_states','characters','ch3_char'), ('portrait_states','portraits','ch3_portrait')]:
+    assert set(canon[group]) == {'neutral','talking','reading'}
+    for state, path in canon[group].items():
+        assert path == f'chapter3/{folder}/{prefix}_matthes_{state}.png'
+        assert any(a['relative_path']==path for a in new), path
+for path, digest in canon['immutable_baseline_hashes'].items():
+    assert hashlib.sha256((ROOT/path).read_bytes()).hexdigest()==digest
+assert len(canon['immutable_baseline_hashes']) == 2
+assert not list(ROOT.rglob('*traveler*')), 'Generic traveler must not duplicate Matthes'
 for a in manifest['reuse']:
     for p in a['repository_paths']: assert (REPO/p).is_file(), p
 assert (ROOT/'README_ASSET_NOTES.txt').is_file()
@@ -55,5 +65,5 @@ if archive.exists():
         for p in ROOT.rglob('*'):
             if p.is_file(): assert z.read('chapter3_assets_final/'+p.relative_to(ROOT).as_posix())==p.read_bytes(), p
         files=[n for n in z.namelist() if not n.endswith('/')]
-        assert len(files)==43
-print('PASS: 41 PNGs, sizes, alpha, safe margins, compact object bounds, hashes, reuse paths, manifest and ZIP integrity. Matthes is explicitly missing; no replacement created.')
+        assert len(files)==47
+print('PASS: 45 PNGs, sizes, alpha, safe margins, compact object bounds, hashes, reuse paths, manifest and ZIP integrity. Six Matthes canon assets; neutral source images preserved.')

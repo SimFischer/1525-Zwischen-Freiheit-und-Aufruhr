@@ -7,7 +7,7 @@ Prompts in `chapter3-asset-prompts.json`.
 
 ## Lieferumfang
 
-`exports/chapter3_assets_final/` enthält 41 neue PNGs, `manifest.json` und
+`exports/chapter3_assets_final/` enthält 45 neue PNGs, `manifest.json` und
 `README_ASSET_NOTES.txt`. Das gleichnamige Wurzelverzeichnis ist vollständig
 in `exports/1525_kapitel3_assets_final.zip` verpackt, einschließlich des bewusst
 leeren `overlays/`-Ordners. Neue globale UI oder Hotspot-Bilder sind nicht nötig.
@@ -15,27 +15,32 @@ leeren `overlays/`-Ordners. Neue globale UI oder Hotspot-Bilder sind nicht nöti
 | Gruppe | Anzahl | Export |
 | --- | ---: | --- |
 | Hintergründe | 4 | exakt 1024 × 768, 4:3 |
-| Figuren | 8 | 512 × 896, transparent |
-| Sprecherportraits | 8 | 512 × 512, transparent |
+| Figuren | 10 | 512 × 896, transparent |
+| Sprecherportraits | 10 | 512 × 512, transparent |
 | Versammlungsobjekte | 6 | kompakte transparente PNGs |
 | Dokumentuntergründe | 4 | ruhige, textfreie Papierflächen |
 | Druckerei-Layer | 8 | transparente Einzelobjekte |
 | Karte und Marker | 3 | Karte 1024 × 768; zwei kompakte Marker |
 
 Lotzer: neutral, sprechend und lesend. Dazu Georg, Katharina, Hans, Drucker
-und Reisender. Die Sprecherportraits übernehmen ihre jeweiligen Identitäten.
+und Matthes (neutral, sprechend, lesend). Die Sprecherportraits übernehmen ihre jeweiligen Identitäten.
 Keine bestehenden Figuren oder Bilder wurden überschrieben.
 
-## Wiederverwendung und offene Canon-Lücke
+## Wiederverwendung und Matthes-Canon
 
 Peter, Anna, Jakob, Konrad, Dorf-Hub, Dialogbox, Portraitslot, Notizbuch,
 Buttons, Leder-/Pergamentmaterialien und die drei v2-Hotspots werden direkt
 aus dem Repository geladen. Das Manifest listet die Originalpfade und
 Prüfsummen; die ZIP enthält keine redundanten Canon-Kopien.
 
-Ein Original für Matthes fehlt sowohl im gelieferten Archiv als auch im
-Repository. Das Manifest kennzeichnet dies ausdrücklich. Vor einer Szene
-mit Matthes muss dessen Canon-Asset vorliegen; es wurde kein Ersatz erfunden.
+Der Nutzer bestätigt, dass Matthes bisher keinen sichtbaren Auftritt hatte.
+Auf seinen ausdrücklichen Wunsch wird die bisher generische Reisendenfigur
+zum ersten verbindlichen Matthes-Canon. Neutralfigur und Neutralportrait
+bleiben bytegleich und erhalten eindeutige Matthes-Dateinamen. Sprechende
+und lesende Figur mit textfreien Papieren sowie passende Portraits wurden
+mit Imagegen unter Erhalt von Gesicht, Kleidung, Tasche und Gehstock ergänzt.
+Das Manifest dokumentiert alle sechs Zustände, Ursprungsprüfsummen und
+Dateinamenmigration. Die frühere Canon-Lücke ist damit geschlossen.
 
 ## Visuelle und technische Prüfung
 
@@ -52,7 +57,7 @@ ersetzt. Transparenz wurde anhand des Alpha-Kanals geprüft, nicht allein
 anhand der Bildvorschau. Eine Vorschau zeigte beim Tisch unsichtbare RGB-
 Hintergrundfarben; die finalen PNGs sind tatsächlich freigestellt.
 
-`scripts/check-chapter-three-assets.py` besteht: 41 Dateien, vollständige
+`scripts/check-chapter-three-assets.py` besteht: 45 Dateien, vollständige
 Manifestfelder, Maße, Alpha, mindestens 4px Sicherheitsrand, kompakte
 Objektgrenzen, Prüfsummen, verfügbare Reuse-Pfade und ZIP-Integrität.
 
@@ -100,3 +105,13 @@ Assets noch keine spielbare Kapitel-3-Integration. Auf vorhandene Figuren,
 Notizbuchtexte, fachliche Inhalte, Save-System und Kapitelstruktur wurde
 nicht eingewirkt. Der bestehende GitHub-Pages-Veröffentlichungsweg bleibt
 unverändert.
+
+## Matthes-Ergänzung vom 3. Oktober 2026
+
+Alle sechs Matthes-Assets auf hellem Papierhintergrund geprüft: vollständige
+Köpfe, Kinn, Hände, Füße und Gehstock; genau zwei Arme/Hände in den Posen.
+Alle drei Zustände zusätzlich mit originaler Dialog- und Hotspot-UI bei
+1024 × 768 und 820 × 640 geprüft. Der Asset-Check kontrolliert die sechs
+Canon-Dateien und unveränderte neutrale Ursprungsbilder ausdrücklich.
+Die oben aufgeführten Spielregressionen stammen aus der Paket-Erstprüfung;
+für diese reine Asset-Ergänzung wurde keine Spiellogik verändert.

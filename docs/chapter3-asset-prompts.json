@@ -194,6 +194,32 @@
       "path": "props/ch3_prop_wooden_assembly_table.png",
       "prompt": "Draw one simple empty oak trestle table for a historical game in 1525. Warm earthy illustrated grain matching a hand-painted point and click adventure. Three-quarter front view. All edges and four feet visible. Isolated on PURE WHITE background with no shadow, no gradient, no brown scenery, no vignette. The white background must be removed to real alpha transparency for final PNG. Leave 10% empty margin. No other objects, no text.",
       "final_selected": true
+    },
+    {
+      "path": "characters/ch3_char_matthes_talking.png",
+      "prompt": "Use case: identity-preserve. Edit target: supplied full-body traveler is NOW the binding canon character MATTHES in the historical game 1525 – Zwischen Freiheit und Aufruhr. Preserve EXACT SAME recognizable face, gray mustache, gray hair, brown soft cap, ochre wool traveling cloak, brown practical tunic, beige hose, leather shoes and brown cross-body shoulder satchel. Keep body proportions, slight gaze to viewer LEFT, drawn warm earthy 1525 canon style and upper-left lighting. Make ONE full-body TALKING pose, mouth subtly open as a restrained credible messenger. Exactly TWO arms and TWO hands: viewer-left hand remains gripping walking staff; viewer-right hand (previously at satchel strap) now holds a small folded blank cream rag-paper message at chest height. No extra limbs, no gesture hand, no readable text, no new accessories or modern clothing. Entire head/cap, both hands, staff ends, both shoe soles fully within canvas with 8% clear margin. Real transparent alpha background, no floor or cast shadows. Vertical production sprite, intended export 512x896. Keep his unassuming practical appearance; he is not a hero, monk, scholar or noble."
+    },
+    {
+      "path": "characters/ch3_char_matthes_reading.png",
+      "prompt": "Use case: identity-preserve. The supplied neutral traveler is the newly established canon MATTHES for 1525 – Zwischen Freiheit und Aufruhr. Preserve EXACT face/gray mustache/hair, brown cap, ochre wool cloak, brown tunic, beige hose, leather shoes, cross-body shoulder satchel, proportions and warm drawn texture. Create ONE full-body READING pose. Same body turned slightly viewer LEFT. Lower gaze and head gently toward a small unfolded blank cream rag-paper message held at upper chest in his viewer-right hand; his viewer-left hand still naturally grips his walking staff. Exactly TWO arms and TWO hands; fingers attached naturally, no extra hand. Restrained focused expression, unassuming practical messenger of southern Germany in 1525, no fantasy/heroic styling. Paper fully blank with no words. Natural upper-left warm light. All head/hair/cap, hands, staff tip and both feet fully visible with 8% empty margins, transparent real alpha background, no floor, no shadow. Vertical sprite intended for 512x896 export. Keep identity unchanged."
+    },
+    {
+      "path": "portraits/ch3_portrait_matthes_talking.png",
+      "prompt": "Use case: identity-preserve. Create ONE transparent speaker portrait of MATTHES, the exact man in the supplied full-body talking pose. Preserve his face, gray mustache/hair, brown cap, ochre cloak, cream collar, brown tunic and shoulder satchel strap without redesign. Keep the SAME subtly open speaking mouth and left-directed attentive gaze as the supplied pose. Second supplied image is his canonical NEUTRAL portrait: match its framing and drawn warm earthy 1525 illustration precisely. Head and upper shoulders only; include entire cap/hair, full chin and neck with generous 8% empty margin above and around head. No tight facial crop, no additional headwear, no fantasy look. 512x512 square export, genuine alpha transparent background with no backdrop, no shadow, no frame, no text. Upper-left natural warm light. Ensure face fits same fixed portrait slot."
+    },
+    {
+      "path": "portraits/ch3_portrait_matthes_reading.png",
+      "prompt": "Use case: identity-preserve. Create ONE transparent speaker portrait of MATTHES, the exact man in the supplied full-body reading pose. Preserve his face, gray mustache/hair, brown cap, ochre cloak, cream collar, brown tunic and shoulder satchel strap without redesign. Keep the SAME downward concentrated gaze toward his message as the supplied pose. Second supplied image is his canonical NEUTRAL portrait: match its framing and drawn warm earthy 1525 illustration precisely. Head and upper shoulders only; include entire cap/hair, full chin and neck with generous 8% empty margin above and around head. No tight facial crop, no additional headwear, no fantasy look. 512x512 square export, genuine alpha transparent background with no backdrop, no shadow, no frame, no text. Upper-left natural warm light. Ensure face fits same fixed portrait slot."
     }
-  ]
+  ],
+  "matthes_canon_update": {
+    "date": "2026-10-03",
+    "basis": "Unveränderte neutrale Reisendenfigur und Portrait werden Matthes; Dateinamenmigration im Manifest.",
+    "new_generations": 4,
+    "states": [
+      "neutral",
+      "talking",
+      "reading"
+    ]
+  }
 }

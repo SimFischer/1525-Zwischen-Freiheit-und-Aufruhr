@@ -4,7 +4,7 @@
   "chapter": "3 – Aus Beschwerden werden Forderungen",
   "target_viewport": "1024x768",
   "smaller_review_viewport": "820x640",
-  "new_asset_count": 41,
+  "new_asset_count": 45,
   "generation_tool": "built-in image_gen",
   "reference_bundle": "1525_canon_assets_kapitel1_2_for_work.zip",
   "package_path_base": "chapter3_assets_final",
@@ -211,16 +211,16 @@
       "sha256": "a46d2fdccb3cbe1949cef6bf6d2a3ecde593b69931747d68d270a0e4993ea083"
     },
     {
-      "filename": "ch3_char_traveler_neutral.png",
-      "relative_path": "chapter3/characters/ch3_char_traveler_neutral.png",
+      "filename": "ch3_char_matthes_neutral.png",
+      "relative_path": "chapter3/characters/ch3_char_matthes_neutral.png",
       "type": "character",
       "scene": "road",
-      "purpose": "char traveler neutral",
+      "purpose": "char matthes neutral",
       "new_or_reused": "new",
       "expected_dimensions": "512x896",
       "transparency": true,
       "safe_area_notes": "Ganzer Körper mit Sicherheitsrand; Gesichter oberhalb der Dialogzone, Fußanker am sichtbaren Boden.",
-      "implementation_notes": "Neue Kapitel-3-Illustration; bestehende Canon-Figuren und globale UI unverändert verwenden. Nicht über eine im Hintergrund bereits vorhandene Person setzen. Sprecherportrait ist separat vorhanden.",
+      "implementation_notes": "Verbindlicher Matthes-Canon: zuvor generischer Reisender, auf Nutzerwunsch unverändert übernommen und umbenannt. Kein früherer Matthes-Auftritt; Schultertasche, Gehstock und praktische Kleidung bleiben verbindlich.",
       "alpha_bbox": [
         90,
         53,
@@ -371,16 +371,16 @@
       "sha256": "a032409625e2f552646af109b576f587c61ef9b8ea1e6c9befadd3209211d3b1"
     },
     {
-      "filename": "ch3_portrait_traveler_neutral.png",
-      "relative_path": "chapter3/portraits/ch3_portrait_traveler_neutral.png",
+      "filename": "ch3_portrait_matthes_neutral.png",
+      "relative_path": "chapter3/portraits/ch3_portrait_matthes_neutral.png",
       "type": "portrait",
       "scene": "road",
-      "purpose": "portrait traveler neutral",
+      "purpose": "portrait matthes neutral",
       "new_or_reused": "new",
       "expected_dimensions": "512x512",
       "transparency": true,
       "safe_area_notes": "Vollständiger Kopf, Haare/Kopfbedeckung und Kinn; object-fit:contain im vorhandenen Portraitslot, niemals cover.",
-      "implementation_notes": "Neue Kapitel-3-Illustration; bestehende Canon-Figuren und globale UI unverändert verwenden.",
+      "implementation_notes": "Verbindlicher Matthes-Canon: zuvor generischer Reisender, auf Nutzerwunsch unverändert übernommen und umbenannt. Kein früherer Matthes-Auftritt; Schultertasche, Gehstock und praktische Kleidung bleiben verbindlich.",
       "alpha_bbox": [
         15,
         47,
@@ -1425,6 +1425,86 @@
       "safe_area_notes": "Vorhandene Inszenierung und UI unverändert übernehmen.",
       "implementation_notes": "Nicht im ZIP dupliziert; direkt aus dem bestehenden Repository verwenden.",
       "sha256": "4158c25c26c5eb613e739db4ed0e1a0f83f65c8ae3e175c0f51e5049baa0f50a"
+    },
+    {
+      "filename": "ch3_char_matthes_talking.png",
+      "relative_path": "chapter3/characters/ch3_char_matthes_talking.png",
+      "type": "character",
+      "scene": "road / memmingen_hub / assembly",
+      "purpose": "Matthes talking",
+      "new_or_reused": "new",
+      "expected_dimensions": "512x896",
+      "transparency": true,
+      "safe_area_notes": "Ganzer Körper mit Sicherheitsrand; Gesichter oberhalb der Dialogzone, Fußanker am sichtbaren Boden.",
+      "implementation_notes": "Matthes-Canon aus neutraler Reisendenfigur abgeleitet. Identität, Kleidung, Tasche und Materialwirkung erhalten; Papiere textfrei. Sprecherportrait und Figur mit gleichem Zustand kombinieren.",
+      "alpha_bbox": [
+        92,
+        57,
+        454,
+        794
+      ],
+      "file_size_bytes": 405328,
+      "sha256": "276340c554f59b6d62d28959dc837a1c6d06dde38d66f789b4413cfdc2fd0604"
+    },
+    {
+      "filename": "ch3_char_matthes_reading.png",
+      "relative_path": "chapter3/characters/ch3_char_matthes_reading.png",
+      "type": "character",
+      "scene": "road / memmingen_hub / assembly",
+      "purpose": "Matthes reading",
+      "new_or_reused": "new",
+      "expected_dimensions": "512x896",
+      "transparency": true,
+      "safe_area_notes": "Ganzer Körper mit Sicherheitsrand; Gesichter oberhalb der Dialogzone, Fußanker am sichtbaren Boden.",
+      "implementation_notes": "Matthes-Canon aus neutraler Reisendenfigur abgeleitet. Identität, Kleidung, Tasche und Materialwirkung erhalten; Papiere textfrei. Sprecherportrait und Figur mit gleichem Zustand kombinieren.",
+      "alpha_bbox": [
+        92,
+        48,
+        456,
+        809
+      ],
+      "file_size_bytes": 424726,
+      "sha256": "edde339cc13f01f0d478f940bf211ebc1611f6af313da567f14312e702a6805f"
+    },
+    {
+      "filename": "ch3_portrait_matthes_talking.png",
+      "relative_path": "chapter3/portraits/ch3_portrait_matthes_talking.png",
+      "type": "portrait",
+      "scene": "road / memmingen_hub / assembly",
+      "purpose": "Matthes talking",
+      "new_or_reused": "new",
+      "expected_dimensions": "512x512",
+      "transparency": true,
+      "safe_area_notes": "Vollständiger Kopf, Haare/Kopfbedeckung und Kinn; object-fit:contain im vorhandenen Portraitslot, niemals cover.",
+      "implementation_notes": "Matthes-Canon aus neutraler Reisendenfigur abgeleitet. Identität, Kleidung, Tasche und Materialwirkung erhalten; Papiere textfrei. Sprecherportrait und Figur mit gleichem Zustand kombinieren.",
+      "alpha_bbox": [
+        25,
+        59,
+        487,
+        484
+      ],
+      "file_size_bytes": 301464,
+      "sha256": "13dfce4c3d1bf34009a89d474a136aa84d7fe3e827cd4f58c89190558e3f6310"
+    },
+    {
+      "filename": "ch3_portrait_matthes_reading.png",
+      "relative_path": "chapter3/portraits/ch3_portrait_matthes_reading.png",
+      "type": "portrait",
+      "scene": "road / memmingen_hub / assembly",
+      "purpose": "Matthes reading",
+      "new_or_reused": "new",
+      "expected_dimensions": "512x512",
+      "transparency": true,
+      "safe_area_notes": "Vollständiger Kopf, Haare/Kopfbedeckung und Kinn; object-fit:contain im vorhandenen Portraitslot, niemals cover.",
+      "implementation_notes": "Matthes-Canon aus neutraler Reisendenfigur abgeleitet. Identität, Kleidung, Tasche und Materialwirkung erhalten; Papiere textfrei. Sprecherportrait und Figur mit gleichem Zustand kombinieren.",
+      "alpha_bbox": [
+        25,
+        49,
+        486,
+        485
+      ],
+      "file_size_bytes": 341738,
+      "sha256": "dcf8c98a0911ee6147f8a431a5dfa58037d85808c2afeacfcffa19b88aef5c8e"
     }
   ],
   "reuse": [
@@ -1538,10 +1618,17 @@
     },
     {
       "name": "Matthes",
-      "status": "missing_in_supplied_canon_and_repository",
-      "repository_paths": [],
+      "status": "newly_established_canon",
+      "repository_paths": [
+        "exports/chapter3_assets_final/chapter3/characters/ch3_char_matthes_neutral.png",
+        "exports/chapter3_assets_final/chapter3/characters/ch3_char_matthes_talking.png",
+        "exports/chapter3_assets_final/chapter3/characters/ch3_char_matthes_reading.png",
+        "exports/chapter3_assets_final/chapter3/portraits/ch3_portrait_matthes_neutral.png",
+        "exports/chapter3_assets_final/chapter3/portraits/ch3_portrait_matthes_talking.png",
+        "exports/chapter3_assets_final/chapter3/portraits/ch3_portrait_matthes_reading.png"
+      ],
       "copy_into_package": false,
-      "notes": "Kein Matthes-Asset enthalten. Keinen Ersatz generieren. Vor einer Szene mit Matthes das verbindliche Original nachreichen."
+      "notes": "Erster verbindlicher Canon auf Nutzerwunsch. Im Paket enthalten; keine separate Kopie oder generische Reisenden-Dublette nötig."
     },
     {
       "name": "Portrait frame",
@@ -1609,14 +1696,42 @@
   "integration_status": "Asset-Paket; Kapitel-3-Spiel- und Aufgabenlogik nicht implementiert oder verändert. Keine neuen UI-/Hotspot-/Overlay-Raster nötig; overlays bleibt leer.",
   "quality_review": {
     "png_check": "passed",
-    "visual_contact_sheet_review": "passed_all_41_assets",
+    "visual_contact_sheet_review": "passed_all_45_assets",
     "composition_viewports": [
       "1024x768",
       "820x640"
     ],
     "composition_review": "passed_separate_fixture_not_gameplay",
-    "existing_regressions": "all_7_existing_check_scripts_passed",
+    "existing_regressions": "all_7_existing_check_scripts_passed_for_initial_package; asset-only Matthes update verified separately",
     "historical_plausibility": "reviewed_as_illustrations_not_documented_reconstructions",
-    "matthes_original": "missing"
+    "matthes_original": "new_canon_established_from_ch3_traveler",
+    "matthes_composition_review": "all_3_states_passed_at_1024x768_and_820x640"
+  },
+  "character_canons": {
+    "matthes": {
+      "name": "Matthes",
+      "established_on": "2026-10-03",
+      "role": "Reisender und Nachrichtenüberbringer",
+      "authorization": "Nutzer bestätigt: Matthes ist bisher nicht sichtbar aufgetaucht; vorhandener Reisender wird ausdrücklich zum ersten verbindlichen Matthes-Canon.",
+      "appearance": "Unauffälliger älterer Reisender mit grauem Haar und Schnurrbart, brauner Stoffkappe, ockerfarbenem Wollumhang, brauner Tunika, hellen Beinlingen, Lederschuhen, Schultertasche und Gehstock; praktische Kleidung um 1525.",
+      "character_states": {
+        "neutral": "chapter3/characters/ch3_char_matthes_neutral.png",
+        "talking": "chapter3/characters/ch3_char_matthes_talking.png",
+        "reading": "chapter3/characters/ch3_char_matthes_reading.png"
+      },
+      "portrait_states": {
+        "neutral": "chapter3/portraits/ch3_portrait_matthes_neutral.png",
+        "talking": "chapter3/portraits/ch3_portrait_matthes_talking.png",
+        "reading": "chapter3/portraits/ch3_portrait_matthes_reading.png"
+      },
+      "immutable_baseline_hashes": {
+        "chapter3/characters/ch3_char_matthes_neutral.png": "290185295f4e92c013b971fea255c75dda4ba728a2c6e718ca948cea6534905b",
+        "chapter3/portraits/ch3_portrait_matthes_neutral.png": "cf8883f1dbf6820b0deb5df6694204c74c3d100e4a47b84e7f9563616e01e24f"
+      },
+      "filename_migration": {
+        "ch3_char_traveler_neutral.png": "ch3_char_matthes_neutral.png",
+        "ch3_portrait_traveler_neutral.png": "ch3_portrait_matthes_neutral.png"
+      }
+    }
   }
 }
