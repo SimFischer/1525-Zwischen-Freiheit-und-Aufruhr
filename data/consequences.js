@@ -18,7 +18,7 @@ export const decisionRules={
   peter_god_first:effect({theological:1},{peter:['theologically_reflective']}),
   peter_social_consequence:effect({resistance:.5,theological:.5},{peter:['social_tension']}),
   peter_uncertain:effect({prudence:.5},{peter:['cautious']})}},
- freedomAndOuterLife:{chapter:1,immediate:'Existing differentiated feedback',later:'lutherRecall',options:{D:effect({theological:1,legal:.5},{jakob:['theologically_reflective']})}},
+ freedomAndOuterLife:{chapter:1,immediate:'Existing differentiated feedback',later:'lutherRecall',options:{D:effect()}},
  forestResponse:{chapter:2,immediate:'Existing Anna/administrator reactions',later:'assemblyIntro',options:{
   take:effect({resistance:1},{ulrich:['questioned_authority'],anna:['willing_to_resist']}),
   leave:effect({prudence:1},{anna:['cautious','avoids_conflict']}),
@@ -59,7 +59,7 @@ export const recallLines={
   substitute:'Wir wollten jemanden an meiner Stelle schicken. Dafür brauchen wir Hilfe, die wir später auch zurückgeben können.',
   delay:'Wir haben um Aufschub gebeten. Ob wir ihn bekommen, entscheiden wir nicht allein.',
   refuse:'Wir haben den Dienst verweigert. Der Verwalter wollte die Weigerung melden.'},
- sacrifice:{grain:'Mein Getreide stand noch draußen.',fence:'Der Zaun blieb offen.',feed:'Die Tiere brauchten noch Futter. Ich musste die Arbeit am Abend nachholen.'},
+ sacrifice:{grain:'Meine Aussaat musste warten.',fence:'Der Zaun blieb offen.',feed:'Die Tiere brauchten noch Futter. Ich musste die Arbeit am Abend nachholen.'},
  dues:{pay:'Wir haben die erste Forderung erfüllt, statt über einen fehlenden Sack zu streiten. Dann wurde noch mehr verlangt.',delay:'Wir haben um Aufschub gebeten. Die zusätzliche Forderung kam trotzdem.',withhold:'Wir haben einen Sack zurückbehalten. Der Verwalter hat die fehlende Menge bemerkt.',question_basis:'Wir haben gefragt, wie die Forderung begründet wird. Der Verwalter hatte darauf keine Antwort.'},
  supply:{food:'Beim Vorrat mussten wir sparen.',seed:'Für die nächste Aussaat wird uns Saatgut fehlen.',reserve:'Jetzt darf nichts mehr schiefgehen.',refuse:'Den zusätzlichen Sack haben wir verweigert. Der Verwalter wollte auch das melden.'}
 };

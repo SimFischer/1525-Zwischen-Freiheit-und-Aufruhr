@@ -105,7 +105,7 @@ export function chapterTwoAction(action,target) {
   if(action==='ch2-compose') { state.choices.playerDemand=demandSentence(); talk('assemblyPressure','news'); return true; }
   return false;
 }
-export function demandSentence() { return 'Wir fordern, dass '+Object.entries(demandParts).map(([key,options])=>options[c().demand[key]||0]).join(' ')+'.'; }
+export function demandSentence() { const parts=Object.entries(demandParts).map(([key,options])=>options[c().demand[key]||0]); if((c().demand.rule||0)===0&&c().demand.voice===1) parts[1]='verbindlich festgelegt werden'; return 'Wir fordern, dass '+parts.join(' ')+'.'; }
 export function selectCard(id) { const pair=c().pair; if(pair.includes(id)) pair.splice(pair.indexOf(id),1); else if(pair.length<2) pair.push(id); else c().pair=[id]; }
 export function chapterTwoDrop(id,zone) {
   if(station()==='dues') { if(Object.hasOwn(stores,zone)) { c().grain[id]=zone; c().selected=null; } }

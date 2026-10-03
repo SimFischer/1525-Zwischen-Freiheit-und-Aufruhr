@@ -89,9 +89,9 @@ export const choices = {
     wrongFeedback: 'Denkimpuls:\nGlaube, Gewissen und die Beziehung des Menschen zu Gott',
     securing: 'Welche gesellschaftlichen Folgen diese Freiheit haben kann, bleibt damit offen.',
     options: [
-      { id: 'A', text: '… Luther Freiheit zunächst vom Verhältnis des Menschen zu Gott her bestimmt.', feedback: 'Damit wird die Spannung deutlich:\nLuthers Freiheit beginnt im Verhältnis des Menschen zu Gott. Sie verändert aber auch sein Handeln gegenüber anderen. Daraus folgt noch nicht automatisch ein bestimmtes politisches Programm.' },
-      { id: 'B', text: '… der Dienst am Nächsten die bestehenden gesellschaftlichen Pflichten bereits als gerecht bestätigt.', hints: ['Ist jede bestehende Pflicht schon deshalb gerecht, weil Christen anderen dienen?', 'Der Dienst nennt eine Orientierung für das Handeln. Er begründet weder automatisch Befreiung noch die Gerechtigkeit jeder bestehenden Ordnung.'] },
-      { id: 'C', text: '… äußere Freiheit erst durch gute Werke verdient werden muss, während der Glaube innere Freiheit schenkt.', hints: ['Versprechen die beiden Leitsätze politische Freiheit als Lohn guter Werke?', 'Die Unterscheidung innerer und äußerer Freiheit ist keine Belohnungsordnung: Die Schrift legt kein solches politisches Verfahren fest.'] }
+      { id: 'A', text: '… die Leitsätze den Dienst aus Glauben begründen, aber persönliche Zustimmung nicht als politischen Geltungsgrund festlegen.', feedback: 'Damit wird die Spannung deutlich:\nLuthers Freiheit beginnt im Verhältnis des Menschen zu Gott. Sie verändert aber auch sein Handeln gegenüber anderen. Daraus folgt noch nicht automatisch ein bestimmtes politisches Programm.' },
+      { id: 'B', text: '… der Dienst am Nächsten an bestehende Pflichten bindet, deren Rechtmäßigkeit die Leitsätze bereits voraussetzen.', hints: ['Ist jede bestehende Pflicht schon deshalb gerecht, weil Christen anderen dienen?', 'Der Dienst nennt eine Orientierung für das Handeln. Er begründet weder automatisch Befreiung noch die Gerechtigkeit jeder bestehenden Ordnung.'] },
+      { id: 'C', text: '… freiwilliger Dienst am Nächsten die Zustimmung zu weltlichen Pflichten bereits einschließt.', hints: ['Ist freiwilliger Dienst dasselbe wie Zustimmung zu einer rechtlich auferlegten Pflicht?', 'Freiwilliger Dienst beschreibt die Haltung des Glaubenden; daraus folgt noch kein politisches Zustimmungsverfahren.'] }
     ]
   }
 };

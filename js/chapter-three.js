@@ -20,15 +20,28 @@ export function priorRecall(game=state){
  const second={legal:'Jetzt hast du ein ganzes Programm voller Begründungen vor dir.',community:'Jetzt versuchen ganze Gemeinden genau das.',resistance:'Die Frage ist nur, wie weit du diesmal gehen würdest.',prudence:'Vielleicht brauchen wir genau das jetzt.',theological:'Die Freiheit vor Gott ist damit nicht schon eine fertige politische Ordnung.'};
  return [first[top],{speaker:first[top].speaker,text:second[top]}];
 }
+// Compare the actual chosen proposal with the source, not a generic approval.
+export const demandComparisons={
+ labor:{
+  A:'Artikel 6 verlangt Dienste nach dem früher vereinbarten Maß. Deine Forderung setzt allgemeiner auf vorher bekannte Grenzen.',
+  B:'Artikel 7 schützt die Arbeit auf dem eigenen Hof: Zusätzliche Dienste sollen zur günstigen Zeit und ohne Nachteil verlangt werden. Dein Vorschlag gibt der eigenen Versorgung grundsätzlich Vorrang.',
+  C:'Artikel 7 verlangt angemessene Vergütung für zusätzliche Dienste. Dein Vorschlag verlangt Entschädigung für alle verpflichtenden Dienste, also auch die schon vereinbarten.',
+  D:'Artikel 6 will vereinbarte Dienste begrenzen; Artikel 7 regelt zusätzliche Arbeit. Du verlangst dagegen die vollständige Aufhebung der Frondienste.'},
+ rights:{
+  A:'Artikel 5 verlangt die Rückgabe angeeigneter Gemeindewälder, nimmt rechtmäßige Erwerbungen aber aus. Deine Forderung nach früheren Rechten lässt diese Prüfung noch offen.',
+  B:'Artikel 5 will Gemeindewälder unter die Verfügung der Gemeinde stellen. Du willst die Nutzung zwischen Herrschaft und Gemeinde neu vereinbaren.',
+  C:'Artikel 5 verlangt die Rückgabe angeeigneter Gemeindewälder. Deine Forderung macht den Zugang von einer festgelegten Abgabe abhängig; das ist eine zusätzliche Bedingung.',
+  D:'Artikel 4 und 5 behandeln Gewässer und Wälder; Artikel 10 fordert Gemeindeland zurück. Du bündelst diese Bereiche grundsätzlich. Die Artikel verlangen bei rechtmäßigen Erwerbungen eine besondere Prüfung.'},
+ church:{
+  A:'Artikel 1 verlangt ebenfalls Wahl und Absetzung durch die ganze Gemeinde. Dazu nennt er einen Maßstab: die unverfälschte Predigt des Evangeliums.',
+  B:'Artikel 1 überträgt Wahl und Absetzung der ganzen Gemeinde. Dein Vorschlag lässt der Herrschaft die Einsetzung, verlangt aber die Zustimmung der Gemeinde.',
+  C:'Artikel 1 verbindet die Predigt des Evangeliums mit dem konkreten Recht, den Pfarrer zu wählen und abzusetzen. Deine Kriterien lassen noch offen, wer die Auswahl verbindlich trifft.',
+  D:'Artikel 1 fordert die Wahl und Absetzung des Pfarrers durch die Gemeinde. Du schließt die Herrschaft dagegen von allen geistlichen Ämtern aus und gehst damit über diesen Artikel hinaus.'}
+};
 export function comparisonOptions(game=state){
  const f=game.chapter3.entryFocus,d=game.chapter3.demandChoice;
- const common=f==='labor'?['Belastung begrenzen','Verbindliche Regeln für Dienste schaffen',...(d==='D'?['Die bestehende Verpflichtung infrage stellen']:[])]:f==='rights'?['Rechte verbindlicher machen','Gemeindliche Nutzung stärken']:['Mitsprache bei der Predigt stärken','Geistliche Ämter an begründete Kriterien binden'];
- const differences=['Die Artikel begründen die Forderung ausdrücklich mit dem Evangelium.'];
- if(d==='D') differences.push('Meine Forderung greift weiter in die Verfügung der Herrschaft ein.');
- else if(f==='church'&&d==='B') differences.push('Die Artikel geben der Gemeinde mehr Entscheidungsgewalt als meine Forderung.');
- else differences.push('Meine Forderung setzt einen anderen Schwerpunkt innerhalb derselben Frage.');
- if(f==='labor'&&d==='C')differences.push('Die Artikel verbinden die Vergütung zusätzlicher Dienste ausdrücklich mit günstiger Zeit und ohne Nachteil für den Hof.');
- if(f==='rights'&&d==='D')differences.push('Die Artikel nehmen nachweislich rechtmäßige Erwerbungen von einer pauschalen Rückgabe aus.');
+ const common=f==='labor'?['Verfügung über die eigene Arbeitszeit begrenzen','Dienste an nachvollziehbare Bedingungen binden']:f==='rights'?['Zugang zu gemeinschaftlichen Nutzungen sichern','Über Ansprüche an Wald und Land entscheiden']:['Einfluss der Gemeinde auf die Predigt stärken','Geistliche Verantwortung begründen'];
+ const differences=['Die Artikel begründen ihr gemeinsames Programm ausdrücklich mit dem Evangelium.',demandComparisons[f]?.[d]||'Die Reichweite der Forderungen prüfen.'];
  return {common,differences};
 }
 export function prepareChapterThreeState(game,scene){
@@ -104,7 +117,7 @@ export function chapterThreeAction(action,target){
  }
  if(action==='ch3-comparison-next'){
   const d=c().demandChoice,f=c().entryFocus;
-  const text=d==='D'?'Du stellst die Verfügung der Herrschaft grundlegender infrage. Die Artikel unterscheiden zwischen begrenzten Ansprüchen und unrechtmäßiger Abhängigkeit.':f==='church'&&d==='B'?'Dein Vorschlag lässt der Herrschaft die Einsetzung; Artikel 1 überträgt Wahl und Absetzung der ganzen Gemeinde.':'Deine Forderung und die Artikel berühren dieselbe Erfahrung, setzen aber unterschiedliche Grenzen und Begründungen.';
+  const text=demandComparisons[f]?.[d]||'Welche Rechte und Grenzen nennt der Artikel genau?';
   talk([{speaker:'player',text:'Als Gemeinsamkeit sehe ich: '+c().articleComparison.common+' Als Unterschied: '+c().articleComparison.differences},{speaker:'lotzer',text},{speaker:'jakob',text:'Den Blick auf das Evangelium dürfen wir bei diesem Vergleich nicht übergehen.'}],'hinge');return true;
  }
  if(action==='ch3-interpret'){

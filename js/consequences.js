@@ -5,10 +5,10 @@ const blankOrientation=()=>Object.fromEntries(orientationKeys.map(key=>[key,0]))
 export function syncConsequences(game) {
  const previous=game.consequences||{}, adjustments=blankOrientation();
  for(const key of orientationKeys) { const value=previous.orientationAdjustments?.[key]; if(Number.isFinite(value)&&Math.abs(value)<=100) adjustments[key]=value; }
- const orientation=blankOrientation(), perceptions=Object.fromEntries(perceptionCharacters.map(id=>[id,[]]));
+ const orientation=blankOrientation(), priorOrientation=blankOrientation(), perceptions=Object.fromEntries(perceptionCharacters.map(id=>[id,[]]));
  for(const [id,rule] of Object.entries(decisionRules)) {
   const effect=rule.options?.[game.choices[id]]; if(!effect) continue;
-  for(const [key,value] of Object.entries(effect.orientation)) orientation[key]+=value;
+  for(const [key,value] of Object.entries(effect.orientation)) { orientation[key]+=value; if(rule.chapter<3) priorOrientation[key]+=value; }
   for(const [person,tags] of Object.entries(effect.perceptions)) perceptions[person].push(...tags);
  }
  const overrides={};
@@ -18,12 +18,18 @@ export function syncConsequences(game) {
  }
  for(const key of orientationKeys) orientation[key]=Math.max(0,orientation[key]+adjustments[key]);
  if(game.chapter3) {
+  // Old chapter-3 snapshots included a reward for the closed Luther task.
+  // Migrate once from canonical earlier decisions, retaining explicit test edits.
+  if((previous.version||0)<2&&Object.keys(game.chapter3.priorProfile||{}).length) {
+   for(const key of orientationKeys) priorOrientation[key]=Math.max(0,priorOrientation[key]+adjustments[key]);
+   game.chapter3.priorProfile=priorOrientation;
+  }
   for(const [field,id] of Object.entries({entryFocus:'ch3EntryFocus',religiousInterpretation:'ch3Religion',printStrategy:'ch3Print',resistanceStrategy:'ch3Resistance',mainReason:'ch3Reason'})) game.chapter3[field]=game.choices[id]??null;
   game.chapter3.demandChoice=game.choices['ch3Demand_'+game.chapter3.entryFocus]??null;
   game.chapter3.publicTone={full:'nuanced',summary:'simplified',religious:'religious',accusation:'confrontational'}[game.chapter3.printStrategy]??null;
  }
  game.orientation=orientation; game.perceptions=perceptions;
- game.consequences={adminScenario:previous.adminScenario||null,version:1,orientationAdjustments:adjustments,perceptionAdditions:overrides,flags:{forestReported:game.choices.forestResponse==='take',corveeRefused:game.choices.corveeResponse==='refuse',duesWithheld:game.choices.duesResponse==='withhold',additionalDuesRefused:game.choices.duesSecondSacrifice==='refuse'}};
+ game.consequences={adminScenario:previous.adminScenario||null,version:2,orientationAdjustments:adjustments,perceptionAdditions:overrides,flags:{forestReported:game.choices.forestResponse==='take',corveeRefused:game.choices.corveeResponse==='refuse',duesWithheld:game.choices.duesResponse==='withhold',additionalDuesRefused:game.choices.duesSecondSacrifice==='refuse'}};
  return game;
 }
 // Recomputing from canonical choices is idempotent: retries, reload and admin
@@ -78,6 +84,7 @@ export function getContextualDialogue(dialogueId,game,base=[]) {
   if(dues) extra.push({speaker:'margarethe',text:dues});
  }
  if(dialogueId==='assemblyPressure') {
+  if(game.choices.playerDemand) extra.push({speaker:'anna',text:'Auf unserem Blatt steht: '+game.choices.playerDemand+' Können auch andere Gemeinden dafür einstehen?' });
   if(game.choices.corveeResponse==='refuse') extra.push({speaker:'konrad',text:'Beim Frondienst hast du schon widersprochen. Du weißt also, dass wir auch Nein sagen können. Aber bleiben die anderen dann bei uns?'});
   else if(game.choices.corveeResponse==='delay'||game.choices.duesResponse==='delay') extra.push({speaker:'konrad',text:'Du hast schon um Aufschub gebeten. Was tun wir, wenn sie uns wieder warten lassen?'});
  }

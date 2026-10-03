@@ -374,17 +374,17 @@ export const chapterThreeDialogues = {
     },
     {
       "speaker": "matthes",
-      "text": "Aus Thüringen hört man von Predigern, die noch weiter gehen.",
+      "text": "Aus Thüringen hört man von Thomas Müntzer. In Allstedt predigte er im vergangenen Sommer vor Fürsten.",
       "emotion": "talking"
     },
     {
       "speaker": "matthes",
-      "text": "Sie sagen: Gottes Wille darf nicht nur im Inneren des Menschen bleiben.",
+      "text": "Er verlangt, Gottes lebendiges Wort durch Anfechtung und Umkehr zu erfahren – nicht bloß Schriftworte nachzusprechen.",
       "emotion": "talking"
     },
     {
       "speaker": "matthes",
-      "text": "Er muss auch sichtbar werden, wenn Unrecht geschieht.",
+      "text": "Von den Fürsten fordert er, gegen die Feinde Gottes vorzugehen. Seine Erwartung eines nahen Gottesgerichts drängt zum Handeln.",
       "emotion": "talking"
     },
     {
@@ -393,7 +393,7 @@ export const chapterThreeDialogues = {
     },
     {
       "speaker": "jakob",
-      "text": "Und wer entscheidet dann sicher, was Gottes Wille ist?"
+      "text": "Wer prüft diese Gewissheit? Wenn ein Gegner als Gottes Feind gilt, kann religiöse Auslegung auch Gewalt rechtfertigen."
     }
   ],
   "ch3News": [

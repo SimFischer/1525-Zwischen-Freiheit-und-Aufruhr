@@ -21,10 +21,10 @@ export const chapterTwoDialogues = {
   forestEncounter:talk(['overseer','Was macht ihr da?'],['anna','Reisig sammeln.'],['overseer','Dann legt es wieder hin.'],['anna','Warum?'],['overseer','Der Wald steht unter der Herrschaft des Grundherrn. Ohne Erlaubnis nehmt ihr hier nichts.'],['anna','Wir sammeln hier seit Jahren.'],['overseer','Das ändert nichts daran, wem der Wald untersteht.']),
   forestReply:talk(['overseer','Nur weil etwas lange gemacht wurde, ist es noch lange kein Recht.'],['anna','Und nur weil heute ein neuer Pfahl steht, ist unser altes Recht verschwunden?']),
   forestOrder:lines('overseer',['Also? Das Holz bleibt hier.']),
-  corveeIntro:lines('peter',['Gut, dass du da bist. Das Getreide muss herein, der Zaun ist beschädigt und die Tiere brauchen Futter. Wie fangen wir an?']),
+  corveeIntro:lines('peter',['Gut, dass du da bist. Die Aussaat wartet, der Zaun ist beschädigt und die Tiere brauchen Futter. Wie fangen wir an?']),
   corveeInterrupt:talk(['overseer','Peter. Am Herrenhof werden heute die Zäune ausgebessert. Von deinem Hof wird jemand erwartet.'],['peter','Heute?'],['overseer','Heute.'],['peter','Ich habe hier selbst genug zu tun.'],['overseer','Das ändert nichts an der Pflicht.']),
   corveeAnswer:lines('overseer',['Ich brauche eine Antwort.']),
-  duesIntro:lines('margarethe',['Gut, dass du kommst.','Das ist fast alles, was wir von dieser Ernte haben.','Davon müssen wir essen, wieder aussäen – und unsere Abgaben leisten.']),
+  duesIntro:lines('margarethe',['Gut, dass du kommst.','Das ist fast alles, was wir von der letzten Ernte haben.','Davon müssen wir essen, wieder aussäen – und unsere Abgaben leisten.']),
   duesFirst:talk(['overseer','Für den Herrenhof werden drei Säcke erwartet.'],['margarethe','Drei?'],['overseer','So ist es festgesetzt.']),
   duesQuestion:lines('margarethe',['Und wenn ich sage, dass wir das selbst brauchen?']),
   duesExtra:talk(['overseer','Außerdem gibt es in diesem Jahr eine zusätzliche Forderung.'],['margarethe','Zusätzlich?'],['overseer','Noch einen Sack.']),
@@ -115,7 +115,7 @@ export const chapterTwoChoices = {
     ['take','A','Wir nehmen das Holz trotzdem mit.',lines('overseer',['Ich werde das melden.'])],['leave','B','Wir lassen es für heute hier, um den Streit nicht weiter zu verschärfen.',lines('anna',['Dann nehmen wir heute kein Holz mit. Aber wir können das Verbot später noch ansprechen.'])],['legal_basis','C','Dann möchte ich wissen, worauf sich dieses Verbot stützt.',talk(['overseer','Ich setze die Anweisungen des Herrn durch.'],['player','Das war nicht meine Frage.'],['overseer','Dann müsst ihr sie dem Herrn stellen.'])],['community','D','Das sollte nicht hier zwischen uns entschieden werden. Das Dorf muss darüber sprechen.',lines('anna',['Das betrifft schließlich nicht nur uns.'])]
   ]),
   corveeSacrifice:open('Die Arbeit am Herrenhof unterbricht Peters geplanten Tag.','Welche eigene Arbeit verschiebst du?',[
-    ['grain','A','Getreide / eigene Feldarbeit',lines('peter',['Wenn der Regen kommt, verlieren wir vielleicht einen Teil davon.'])],['fence','B','Den beschädigten Zaun',lines('peter',['Dann bleibt der Zaun offen. Hoffentlich geht nichts aufs Feld.'])],['feed','C','Futter / Versorgung der Tiere',lines('peter',['Dann mache ich das heute Abend noch. Irgendwann.'])]
+    ['grain','A','Getreide / Aussaat',lines('peter',['Wenn wir die Aussaat verschieben, verpassen wir vielleicht das günstige Wetter.'])],['fence','B','Den beschädigten Zaun',lines('peter',['Dann bleibt der Zaun offen. Hoffentlich geht nichts aufs Feld.'])],['feed','C','Futter / Versorgung der Tiere',lines('peter',['Dann mache ich das heute Abend noch. Irgendwann.'])]
   ]),
   corveeResponse:open('Der Bote sagt: „Ich brauche eine Antwort.“','Wie antwortest du?',[
     ['go','A','Ich gehe selbst zum Herrenhof.',lines('peter',['Dann erfülle ich den verlangten Dienst. Meine eigene Arbeit muss warten.'])],['substitute','B','Ich versuche, jemanden an meiner Stelle zu schicken.',lines('peter',['Dann schulde ich ihm etwas.'])],['delay','C','Ich bitte um Aufschub.',lines('overseer',['Ob du Aufschub bekommst, entscheidet nicht du.'])],['refuse','D','Ich weigere mich.',lines('overseer',['Dann melde ich, dass du deine Pflicht verweigerst.'])]
@@ -351,10 +351,10 @@ export const forestClues = {
   customaryRules:{label:'Älteres Nutzungszeichen',x:80,y:51,speech:'Mein Vater kannte solche Zeichen schon. Auch früher gab es Regeln dafür, wo gesammelt und wo nicht geschlagen wurde.'},
   newClaim:{label:'Neuer Grenzpfahl',x:29,y:25,speech:'Die stehen noch nicht lange hier.'}
 };
-export const dayTasks = {grain:'Getreide / eigene Feldarbeit',fence:'Beschädigter Zaun',feed:'Futter / Versorgung der Tiere'};
-export const dayReactions = {grain:'Dann holen wir wenigstens das Getreide rein, bevor das Wetter kippt.',fence:'Wenn der Zaun hält, habe ich später weniger Ärger.',feed:'Die Tiere können schließlich nicht warten.'};
+export const dayTasks = {grain:'Getreide / Aussaat',fence:'Beschädigter Zaun',feed:'Futter / Versorgung der Tiere'};
+export const dayReactions = {grain:'Dann bringen wir das Saatgut aufs Feld, bevor das Wetter kippt.',fence:'Wenn der Zaun hält, habe ich später weniger Ärger.',feed:'Die Tiere können schließlich nicht warten.'};
 export const stores = {food:'Vorrat / Nahrung',seed:'Saatgut',reserve:'Reserve'};
-export const storeConsequences = {food:'Dann müssen wir beim Essen sparen.',seed:'Dann fehlt uns im Frühjahr Getreide für die Aussaat.',reserve:'Dann bleibt weniger, falls etwas Unvorhergesehenes passiert.'};
+export const storeConsequences = {food:'Dann müssen wir beim Essen sparen.',seed:'Dann fehlt uns Saatgut für die nächste Aussaat.',reserve:'Dann bleibt weniger, falls etwas Unvorhergesehenes passiert.'};
 export const reflections = {
   forest:{prompt:'Was erscheint dir an der Situation besonders problematisch?',items:[['rights','bisherige Nutzungsrechte werden eingeschränkt'],['voice','die Gemeinde kann kaum mitentscheiden'],['clarity','die Regeln sind nicht klar'],['power','der Grundherr beansprucht weitreichende Verfügung'],['wood','Anna bekommt heute kein Holz']]},
   corvee:{prompt:'Was macht den Frondienst für Peter besonders belastend?',items:[['work','zusätzliche Arbeit'],['planning','schlechtere Planung der eigenen Arbeit'],['time','ein anderer verfügt über einen Teil seiner Zeit'],['absolute','Arbeit für andere sollte nur auf freiwilliger Zustimmung beruhen'],['supply','die eigene Versorgung kann gefährdet werden']],warning:'Arbeit für andere kann freiwillige Hilfe oder eine bindende Dienstpflicht sein. Die Forderung nach freiwilliger Zustimmung verändert den Verpflichtungsgrund. Peters konkreter Zeitkonflikt lässt sich auch durch Begrenzung und verlässliche Planung angehen.'},

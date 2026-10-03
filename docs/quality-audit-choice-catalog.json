@@ -1,0 +1,1791 @@
+[
+  {
+    "id": "ch3EntryFocus",
+    "type": "open decision",
+    "prompt": "Mit welcher Gruppe willst du zuerst weiterreden?",
+    "solution": null,
+    "options": [
+      {
+        "id": "labor",
+        "text": "Frondienst",
+        "reaction": "ch3EntryFocus_labor",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "community": 1
+          },
+          "perceptions": {
+            "georg": [
+              "community_minded"
+            ]
+          }
+        }
+      },
+      {
+        "id": "rights",
+        "text": "Nutzungsrechte",
+        "reaction": "ch3EntryFocus_rights",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "legal": 1
+          },
+          "perceptions": {
+            "katharina": [
+              "legally_argumentative"
+            ]
+          }
+        }
+      },
+      {
+        "id": "church",
+        "text": "Gemeinde und Predigt",
+        "reaction": "ch3EntryFocus_church",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "theological": 1
+          },
+          "perceptions": {
+            "hans": [
+              "theologically_reflective"
+            ]
+          }
+        }
+      }
+    ],
+    "recall": "entry branch / print publicTone / resistance callback / notebook"
+  },
+  {
+    "id": "ch3Demand_labor",
+    "type": "open decision",
+    "prompt": "Welche Forderung würdest du vertreten?",
+    "solution": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Frondienste sollen begrenzt und nach vorher bekannten Regeln verlangt werden.",
+        "reaction": "ch3Demand_labor_A",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "legal": 1
+          },
+          "perceptions": {
+            "lotzer": [
+              "legally_argumentative"
+            ]
+          }
+        }
+      },
+      {
+        "id": "B",
+        "text": "Die Arbeit auf dem eigenen Hof soll Vorrang haben; zusätzliche Dienste dürfen die eigene Versorgung nicht gefährden.",
+        "reaction": "ch3Demand_labor_B",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "community": 1,
+            "prudence": 1
+          },
+          "perceptions": {
+            "anna": [
+              "community_minded"
+            ]
+          }
+        }
+      },
+      {
+        "id": "C",
+        "text": "Wer verpflichtende Dienste leisten muss, soll dafür angemessen entschädigt werden.",
+        "reaction": "ch3Demand_labor_C",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "legal": 1,
+            "prudence": 1
+          },
+          "perceptions": {
+            "lotzer": [
+              "cautious"
+            ]
+          }
+        }
+      },
+      {
+        "id": "D",
+        "text": "Verpflichtende Frondienste sollen vollständig aufgehoben werden.",
+        "reaction": "ch3Demand_labor_D",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "resistance": 1
+          },
+          "perceptions": {
+            "konrad": [
+              "willing_to_resist"
+            ]
+          }
+        }
+      }
+    ],
+    "recall": "articleComparison / village return"
+  },
+  {
+    "id": "ch3Demand_rights",
+    "type": "open decision",
+    "prompt": "Welche Forderung würdest du vertreten?",
+    "solution": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Frühere Nutzungsrechte der Gemeinden sollen wieder gelten.",
+        "reaction": "ch3Demand_rights_A",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "legal": 1
+          },
+          "perceptions": {
+            "lotzer": [
+              "legally_argumentative"
+            ]
+          }
+        }
+      },
+      {
+        "id": "B",
+        "text": "Herrschaft und Gemeinde sollen verbindlich festlegen, welche Nutzung beiden Seiten zusteht.",
+        "reaction": "ch3Demand_rights_B",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "community": 1,
+            "prudence": 1
+          },
+          "perceptions": {
+            "anna": [
+              "community_minded"
+            ]
+          }
+        }
+      },
+      {
+        "id": "C",
+        "text": "Bestimmte Nutzungen sollen gegen eine festgelegte Abgabe wieder möglich sein.",
+        "reaction": "ch3Demand_rights_C",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "legal": 1,
+            "prudence": 1
+          },
+          "perceptions": {
+            "lotzer": [
+              "cautious"
+            ]
+          }
+        }
+      },
+      {
+        "id": "D",
+        "text": "Wald, Gewässer und Weiden sollen grundsätzlich der Verfügung der Gemeinden unterstehen.",
+        "reaction": "ch3Demand_rights_D",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "resistance": 1
+          },
+          "perceptions": {
+            "konrad": [
+              "willing_to_resist"
+            ]
+          }
+        }
+      }
+    ],
+    "recall": "articleComparison / village return"
+  },
+  {
+    "id": "ch3Demand_church",
+    "type": "open decision",
+    "prompt": "Welche Forderung würdest du vertreten?",
+    "solution": null,
+    "options": [
+      {
+        "id": "A",
+        "text": "Die Gemeinde soll ihren Pfarrer selbst wählen und auch absetzen können.",
+        "reaction": "ch3Demand_church_A",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "legal": 1
+          },
+          "perceptions": {
+            "lotzer": [
+              "legally_argumentative"
+            ]
+          }
+        }
+      },
+      {
+        "id": "B",
+        "text": "Die Herrschaft soll weiterhin einsetzen dürfen, aber die Gemeinde muss zustimmen.",
+        "reaction": "ch3Demand_church_B",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "community": 1,
+            "prudence": 1
+          },
+          "perceptions": {
+            "anna": [
+              "community_minded"
+            ]
+          }
+        }
+      },
+      {
+        "id": "C",
+        "text": "Für die Auswahl sollen verbindliche Kriterien gelten: Predigt des Evangeliums und Akzeptanz der Gemeinde.",
+        "reaction": "ch3Demand_church_C",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "legal": 1,
+            "prudence": 1
+          },
+          "perceptions": {
+            "lotzer": [
+              "cautious"
+            ]
+          }
+        }
+      },
+      {
+        "id": "D",
+        "text": "Die Herrschaft soll über geistliche Ämter überhaupt nicht mehr entscheiden.",
+        "reaction": "ch3Demand_church_D",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "resistance": 1
+          },
+          "perceptions": {
+            "konrad": [
+              "willing_to_resist"
+            ]
+          }
+        }
+      }
+    ],
+    "recall": "articleComparison / village return"
+  },
+  {
+    "id": "ch3Religion",
+    "type": "open decision",
+    "prompt": "Welcher Gedanke überzeugt dich im Moment am meisten?",
+    "solution": null,
+    "options": [
+      {
+        "id": "distinction",
+        "text": "Christliche Freiheit muss zunächst von politischer Freiheit unterschieden werden.",
+        "reaction": "ch3Religion_distinction",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "theological": 1,
+            "prudence": 1
+          },
+          "perceptions": {
+            "jakob": [
+              "theologically_reflective"
+            ]
+          }
+        }
+      },
+      {
+        "id": "critical_gospel",
+        "text": "Gesellschaftliche Verhältnisse dürfen am Evangelium kritisch geprüft werden.",
+        "reaction": "ch3Religion_critical_gospel",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "theological": 1,
+            "community": 1
+          },
+          "perceptions": {
+            "anna": [
+              "community_minded"
+            ]
+          }
+        }
+      },
+      {
+        "id": "worldly_transformation",
+        "text": "Gottes Wille muss sich auch in konkreten gesellschaftlichen Veränderungen zeigen.",
+        "reaction": "ch3Religion_worldly_transformation",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "theological": 1,
+            "resistance": 1
+          },
+          "perceptions": {
+            "konrad": [
+              "willing_to_resist"
+            ]
+          }
+        }
+      },
+      {
+        "id": "hermeneutical_caution",
+        "text": "Entscheidend ist, wie religiöse Begründungen geprüft werden und wer sie auslegen darf.",
+        "reaction": "ch3Religion_hermeneutical_caution",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "theological": 1,
+            "legal": 1
+          },
+          "perceptions": {
+            "lotzer": [
+              "theologically_reflective"
+            ]
+          }
+        }
+      }
+    ],
+    "recall": "entry branch / print publicTone / resistance callback / notebook"
+  },
+  {
+    "id": "ch3Print",
+    "type": "open decision",
+    "prompt": "Was soll zuerst unter die Leute kommen?",
+    "solution": null,
+    "options": [
+      {
+        "id": "full",
+        "text": "Die vollständigen Artikel – Wer liest, soll selbst sehen, was wirklich gefordert wird.",
+        "reaction": "ch3Print_full",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "legal": 1
+          },
+          "perceptions": {
+            "lotzer": [
+              "reliable"
+            ]
+          }
+        }
+      },
+      {
+        "id": "summary",
+        "text": "Eine kurze Zusammenfassung – Die wichtigsten Forderungen müssen schnell verstanden werden.",
+        "reaction": "ch3Print_summary",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "community": 1
+          },
+          "perceptions": {
+            "matthes": [
+              "community_minded"
+            ]
+          }
+        }
+      },
+      {
+        "id": "religious",
+        "text": "Die religiöse Begründung – Die Menschen sollen zuerst sehen, warum wir uns auf das Evangelium berufen.",
+        "reaction": "ch3Print_religious",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "theological": 1
+          },
+          "perceptions": {
+            "jakob": [
+              "theologically_reflective"
+            ]
+          }
+        }
+      },
+      {
+        "id": "accusation",
+        "text": "Eine zugespitzte Anklage – Wenn niemand aufhorcht, ändert sich auch nichts.",
+        "reaction": "ch3Print_accusation",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "resistance": 1
+          },
+          "perceptions": {
+            "konrad": [
+              "willing_to_resist"
+            ]
+          }
+        }
+      }
+    ],
+    "recall": "entry branch / print publicTone / resistance callback / notebook"
+  },
+  {
+    "id": "ch3Resistance",
+    "type": "open decision",
+    "prompt": "Was würdest du jetzt tun?",
+    "solution": null,
+    "options": [
+      {
+        "id": "negotiate",
+        "text": "Weiter verhandeln und auf eine verbindliche Regelung drängen.",
+        "reaction": "ch3Resistance_negotiate",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "legal": 1,
+            "prudence": 1
+          },
+          "perceptions": {
+            "peter": [
+              "seeks_negotiation"
+            ]
+          }
+        }
+      },
+      {
+        "id": "collective_pressure",
+        "text": "Gemeinsam öffentlichen Druck aufbauen, aber Gewalt vermeiden.",
+        "reaction": "ch3Resistance_collective_pressure",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "community": 1,
+            "resistance": 1
+          },
+          "perceptions": {
+            "anna": [
+              "community_minded"
+            ]
+          }
+        }
+      },
+      {
+        "id": "open_resistance_possible",
+        "text": "Wenn Verhandlung und Druck scheitern, offenen Widerstand nicht ausschließen.",
+        "reaction": "ch3Resistance_open_resistance_possible",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "resistance": 2
+          },
+          "perceptions": {
+            "konrad": [
+              "willing_to_resist"
+            ]
+          }
+        }
+      },
+      {
+        "id": "theological_clarification",
+        "text": "Vor weiterem Handeln klären, was religiös überhaupt gerechtfertigt werden kann.",
+        "reaction": "ch3Resistance_theological_clarification",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "theological": 1,
+            "legal": 1
+          },
+          "perceptions": {
+            "jakob": [
+              "theologically_reflective"
+            ]
+          }
+        }
+      }
+    ],
+    "recall": "entry branch / print publicTone / resistance callback / notebook"
+  },
+  {
+    "id": "ch3Reason",
+    "type": "open decision",
+    "prompt": "Was macht die Forderungen für dich bisher besonders stark?",
+    "solution": null,
+    "options": [
+      {
+        "id": "burdens",
+        "text": "Sie greifen konkrete Belastungen auf.",
+        "reaction": "ch3Reason_burdens",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "prudence": 1
+          },
+          "perceptions": {
+            "peter": [
+              "cautious"
+            ]
+          }
+        }
+      },
+      {
+        "id": "communities",
+        "text": "Viele Gemeinden können sich gemeinsam auf sie beziehen.",
+        "reaction": "ch3Reason_communities",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "community": 1
+          },
+          "perceptions": {
+            "anna": [
+              "community_minded"
+            ]
+          }
+        }
+      },
+      {
+        "id": "religion",
+        "text": "Sie versuchen, gesellschaftliche Forderungen religiös zu begründen.",
+        "reaction": "ch3Reason_religion",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "theological": 1
+          },
+          "perceptions": {
+            "jakob": [
+              "theologically_reflective"
+            ]
+          }
+        }
+      },
+      {
+        "id": "limits",
+        "text": "Sie verlangen, dass Herrschaft begründet und begrenzt werden muss.",
+        "reaction": "ch3Reason_limits",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "legal": 1
+          },
+          "perceptions": {
+            "lotzer": [
+              "legally_argumentative"
+            ]
+          }
+        }
+      },
+      {
+        "id": "action",
+        "text": "Sie zeigen, dass aus Beschwerden gemeinsames Handeln entstehen kann.",
+        "reaction": "ch3Reason_action",
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "resistance": 1
+          },
+          "perceptions": {
+            "konrad": [
+              "willing_to_resist"
+            ]
+          }
+        }
+      }
+    ],
+    "recall": "entry branch / print publicTone / resistance callback / notebook"
+  },
+  {
+    "id": "forestArgument",
+    "type": "assessed source reasoning",
+    "prompt": "Welche Beobachtung stützt Annas Anspruch auf geregelte Nutzung am stärksten?",
+    "solution": "A",
+    "options": [
+      {
+        "id": "A",
+        "text": "Die langjährige Nutzung lässt zusammen mit älteren Nutzungszeichen auf überlieferte Rechte schließen.",
+        "reaction": null,
+        "feedback": "Lange Nutzung und ältere Regeln stützen den Anspruch auf überlieferte Nutzungsrechte. Sie sind ein Argument für bereits geregelte Nutzung, aber noch kein abschließender Rechtsbeweis.\n\nDer Versorgungsbedarf ist ein wichtiges Argument für den Zugang. Er belegt aber noch nicht, auf welcher überlieferten Regelung Annas Anspruch beruht. Eine Abgabe könnte Teil einer neuen Vereinbarung sein. Eine mögliche künftige Regelung belegt jedoch nicht die bisherigen Nutzungsrechte. Ein Grenzpfahl zeigt einen Herrschaftsanspruch und kann Orientierung geben. Er beweist nicht, dass ältere Nutzungsrechte dadurch erloschen sind.",
+        "effect": null
+      },
+      {
+        "id": "B",
+        "text": "Das Holz wird für die Versorgung der Haushalte gebraucht; dieser Bedarf spricht für den Zugang zum Wald.",
+        "reaction": null,
+        "feedback": [
+          "Der Versorgungsbedarf ist ein wichtiges Argument für den Zugang. Er belegt aber noch nicht, auf welcher überlieferten Regelung Annas Anspruch beruht.",
+          "Der Versorgungsbedarf ist ein wichtiges Argument für den Zugang. Er belegt aber noch nicht, auf welcher überlieferten Regelung Annas Anspruch beruht.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Beobachtung stützt Annas Anspruch auf geregelte Nutzung am stärksten?"
+        ],
+        "effect": null
+      },
+      {
+        "id": "C",
+        "text": "Eine festgelegte Abgabe für das Sammeln könnte die Nutzung für Gemeinde und Herrschaft verlässlich machen.",
+        "reaction": null,
+        "feedback": [
+          "Eine Abgabe könnte Teil einer neuen Vereinbarung sein. Eine mögliche künftige Regelung belegt jedoch nicht die bisherigen Nutzungsrechte.",
+          "Eine Abgabe könnte Teil einer neuen Vereinbarung sein. Eine mögliche künftige Regelung belegt jedoch nicht die bisherigen Nutzungsrechte.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Beobachtung stützt Annas Anspruch auf geregelte Nutzung am stärksten?"
+        ],
+        "effect": null
+      },
+      {
+        "id": "D",
+        "text": "Der neue Grenzpfahl macht erkennbar, wer die Nutzung ordnen und dafür Verantwortung übernehmen soll.",
+        "reaction": null,
+        "feedback": [
+          "Ein Grenzpfahl zeigt einen Herrschaftsanspruch und kann Orientierung geben. Er beweist nicht, dass ältere Nutzungsrechte dadurch erloschen sind.",
+          "Ein Grenzpfahl zeigt einen Herrschaftsanspruch und kann Orientierung geben. Er beweist nicht, dass ältere Nutzungsrechte dadurch erloschen sind.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Beobachtung stützt Annas Anspruch auf geregelte Nutzung am stärksten?"
+        ],
+        "effect": null
+      }
+    ],
+    "recall": null
+  },
+  {
+    "id": "forestConflict",
+    "type": "assessed source reasoning",
+    "prompt": "Welche Deutung berücksichtigt die Begründungen beider Seiten am vollständigsten?",
+    "solution": "B",
+    "options": [
+      {
+        "id": "A",
+        "text": "Die Gemeinde braucht Holz; die Herrschaft muss zwischen Versorgung und Schonung des Waldes abwägen.",
+        "reaction": null,
+        "feedback": [
+          "Versorgung und Schonung können bei Waldnutzung wichtig sein. In diesem Gespräch begründet der Verwalter das Verbot jedoch nicht mit Waldschäden, sondern mit Herrschaft.",
+          "Versorgung und Schonung können bei Waldnutzung wichtig sein. In diesem Gespräch begründet der Verwalter das Verbot jedoch nicht mit Waldschäden, sondern mit Herrschaft.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Deutung berücksichtigt die Begründungen beider Seiten am vollständigsten?"
+        ],
+        "effect": null
+      },
+      {
+        "id": "B",
+        "text": "Überlieferte Nutzungsrechte der Gemeinde geraten mit dem Anspruch der Herrschaft in Konflikt, die Nutzung festzulegen.",
+        "reaction": null,
+        "feedback": "Anna begründet ihre Nutzung mit älteren Rechten, der Verwalter mit dem Herrschaftsanspruch. Die Frage ist, ob und auf welcher Grundlage bestehende Nutzung eingeschränkt werden darf.\n\nVersorgung und Schonung können bei Waldnutzung wichtig sein. In diesem Gespräch begründet der Verwalter das Verbot jedoch nicht mit Waldschäden, sondern mit Herrschaft. Mitsprache wäre ein möglicher Weg zu einer neuen Regelung. Annas Einwand beansprucht aber zunächst bereits bestehende Rechte, nicht erst eine neue Beteiligung. Die Beschreibung trifft die unmittelbare Handlung. Sie lässt offen, warum Anna und der Verwalter ihre Position jeweils für berechtigt halten.",
+        "effect": null
+      },
+      {
+        "id": "C",
+        "text": "Die Gemeinde möchte die künftige Waldnutzung mitbestimmen; die Herrschaft beansprucht die Verantwortung für neue Regeln.",
+        "reaction": null,
+        "feedback": [
+          "Mitsprache wäre ein möglicher Weg zu einer neuen Regelung. Annas Einwand beansprucht aber zunächst bereits bestehende Rechte, nicht erst eine neue Beteiligung.",
+          "Mitsprache wäre ein möglicher Weg zu einer neuen Regelung. Annas Einwand beansprucht aber zunächst bereits bestehende Rechte, nicht erst eine neue Beteiligung.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Deutung berücksichtigt die Begründungen beider Seiten am vollständigsten?"
+        ],
+        "effect": null
+      },
+      {
+        "id": "D",
+        "text": "Anna will ihre gewohnte Arbeit fortsetzen; der Verwalter verlangt, dass seine Anweisung zunächst befolgt wird.",
+        "reaction": null,
+        "feedback": [
+          "Die Beschreibung trifft die unmittelbare Handlung. Sie lässt offen, warum Anna und der Verwalter ihre Position jeweils für berechtigt halten.",
+          "Die Beschreibung trifft die unmittelbare Handlung. Sie lässt offen, warum Anna und der Verwalter ihre Position jeweils für berechtigt halten.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Deutung berücksichtigt die Begründungen beider Seiten am vollständigsten?"
+        ],
+        "effect": null
+      }
+    ],
+    "recall": null
+  },
+  {
+    "id": "forestResponse",
+    "type": "open decision",
+    "prompt": "Wie antwortest du?",
+    "solution": null,
+    "options": [
+      {
+        "id": "take",
+        "text": "Wir nehmen das Holz trotzdem mit.",
+        "reaction": [
+          {
+            "speaker": "overseer",
+            "text": "Ich werde das melden."
+          }
+        ],
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "resistance": 1
+          },
+          "perceptions": {
+            "ulrich": [
+              "questioned_authority"
+            ],
+            "anna": [
+              "willing_to_resist"
+            ]
+          }
+        }
+      },
+      {
+        "id": "leave",
+        "text": "Wir lassen es für heute hier, um den Streit nicht weiter zu verschärfen.",
+        "reaction": [
+          {
+            "speaker": "anna",
+            "text": "Dann nehmen wir heute kein Holz mit. Aber wir können das Verbot später noch ansprechen."
+          }
+        ],
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "prudence": 1
+          },
+          "perceptions": {
+            "anna": [
+              "cautious",
+              "avoids_conflict"
+            ]
+          }
+        }
+      },
+      {
+        "id": "legal_basis",
+        "text": "Dann möchte ich wissen, worauf sich dieses Verbot stützt.",
+        "reaction": [
+          {
+            "speaker": "overseer",
+            "text": "Ich setze die Anweisungen des Herrn durch."
+          },
+          {
+            "speaker": "player",
+            "text": "Das war nicht meine Frage."
+          },
+          {
+            "speaker": "overseer",
+            "text": "Dann müsst ihr sie dem Herrn stellen."
+          }
+        ],
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "legal": 1
+          },
+          "perceptions": {
+            "ulrich": [
+              "legally_argumentative"
+            ]
+          }
+        }
+      },
+      {
+        "id": "community",
+        "text": "Das sollte nicht hier zwischen uns entschieden werden. Das Dorf muss darüber sprechen.",
+        "reaction": [
+          {
+            "speaker": "anna",
+            "text": "Das betrifft schließlich nicht nur uns."
+          }
+        ],
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "community": 1
+          },
+          "perceptions": {
+            "anna": [
+              "community_minded"
+            ]
+          }
+        }
+      }
+    ],
+    "recall": "assemblyIntro"
+  },
+  {
+    "id": "corveeSacrifice",
+    "type": "open decision",
+    "prompt": "Welche eigene Arbeit verschiebst du?",
+    "solution": null,
+    "options": [
+      {
+        "id": "grain",
+        "text": "Getreide / Aussaat",
+        "reaction": [
+          {
+            "speaker": "peter",
+            "text": "Wenn wir die Aussaat verschieben, verpassen wir vielleicht das günstige Wetter."
+          }
+        ],
+        "feedback": null,
+        "effect": {
+          "orientation": {},
+          "perceptions": {}
+        }
+      },
+      {
+        "id": "fence",
+        "text": "Den beschädigten Zaun",
+        "reaction": [
+          {
+            "speaker": "peter",
+            "text": "Dann bleibt der Zaun offen. Hoffentlich geht nichts aufs Feld."
+          }
+        ],
+        "feedback": null,
+        "effect": {
+          "orientation": {},
+          "perceptions": {}
+        }
+      },
+      {
+        "id": "feed",
+        "text": "Futter / Versorgung der Tiere",
+        "reaction": [
+          {
+            "speaker": "peter",
+            "text": "Dann mache ich das heute Abend noch. Irgendwann."
+          }
+        ],
+        "feedback": null,
+        "effect": {
+          "orientation": {},
+          "perceptions": {}
+        }
+      }
+    ],
+    "recall": "assemblyIntro"
+  },
+  {
+    "id": "corveeResponse",
+    "type": "open decision",
+    "prompt": "Wie antwortest du?",
+    "solution": null,
+    "options": [
+      {
+        "id": "go",
+        "text": "Ich gehe selbst zum Herrenhof.",
+        "reaction": [
+          {
+            "speaker": "peter",
+            "text": "Dann erfülle ich den verlangten Dienst. Meine eigene Arbeit muss warten."
+          }
+        ],
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "prudence": 1
+          },
+          "perceptions": {
+            "peter": [
+              "reliable"
+            ]
+          }
+        }
+      },
+      {
+        "id": "substitute",
+        "text": "Ich versuche, jemanden an meiner Stelle zu schicken.",
+        "reaction": [
+          {
+            "speaker": "peter",
+            "text": "Dann schulde ich ihm etwas."
+          }
+        ],
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "community": 0.5,
+            "prudence": 0.5
+          },
+          "perceptions": {
+            "peter": [
+              "community_minded"
+            ]
+          }
+        }
+      },
+      {
+        "id": "delay",
+        "text": "Ich bitte um Aufschub.",
+        "reaction": [
+          {
+            "speaker": "overseer",
+            "text": "Ob du Aufschub bekommst, entscheidet nicht du."
+          }
+        ],
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "legal": 0.5,
+            "prudence": 0.5
+          },
+          "perceptions": {
+            "peter": [
+              "seeks_negotiation"
+            ],
+            "ulrich": [
+              "seeks_negotiation"
+            ]
+          }
+        }
+      },
+      {
+        "id": "refuse",
+        "text": "Ich weigere mich.",
+        "reaction": [
+          {
+            "speaker": "overseer",
+            "text": "Dann melde ich, dass du deine Pflicht verweigerst."
+          }
+        ],
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "resistance": 1
+          },
+          "perceptions": {
+            "ulrich": [
+              "willing_to_resist"
+            ],
+            "konrad": [
+              "willing_to_resist"
+            ]
+          }
+        }
+      }
+    ],
+    "recall": "assemblyIntro / assemblyPressure"
+  },
+  {
+    "id": "corveeDefinition",
+    "type": "assessed source reasoning",
+    "prompt": "Welche Erklärung trifft den Verpflichtungsgrund des Frondienstes am genauesten?",
+    "solution": "B",
+    "options": [
+      {
+        "id": "A",
+        "text": "Peter übernimmt eine Arbeit, mit der die Höfe gemeinsam Einrichtungen der Gemeinde erhalten.",
+        "reaction": null,
+        "feedback": [
+          "Gemeinschaftliche Arbeiten können ebenfalls verbindlich sein. Hier fordert aber der Grundherr einen ihm geschuldeten Dienst, keine gemeinsam bestimmte Arbeit der Gemeinde.",
+          "Gemeinschaftliche Arbeiten können ebenfalls verbindlich sein. Hier fordert aber der Grundherr einen ihm geschuldeten Dienst, keine gemeinsam bestimmte Arbeit der Gemeinde.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Erklärung trifft den Verpflichtungsgrund des Frondienstes am genauesten?"
+        ],
+        "effect": null
+      },
+      {
+        "id": "B",
+        "text": "Peter schuldet dem Grundherrn Arbeitsdienste aufgrund seines Herrschafts- bzw. Abhängigkeitsverhältnisses.",
+        "reaction": null,
+        "feedback": "Frondienst bezeichnet verpflichtende Arbeitsleistungen aus einem Herrschafts- bzw. Abhängigkeitsverhältnis. Entscheidend ist nicht der Arbeitsort oder die Schwere, sondern der Grund der Verpflichtung.\n\nGemeinschaftliche Arbeiten können ebenfalls verbindlich sein. Hier fordert aber der Grundherr einen ihm geschuldeten Dienst, keine gemeinsam bestimmte Arbeit der Gemeinde. Ein vereinbarter Tausch von Arbeit und Gegenleistung wäre ein anderes Verpflichtungsverhältnis. Peter wird in der Szene nicht zu einer solchen Vereinbarung gefragt. Gegenseitige Hilfe erklärt ebenfalls Arbeit auf einem anderen Hof. Peters Dienst beruht hier jedoch auf seiner Bindung an den Grundherrn, nicht auf freiwilliger Nachbarschaftshilfe.",
+        "effect": null
+      },
+      {
+        "id": "C",
+        "text": "Peter tauscht eigene Arbeitszeit gegen eine Gegenleistung, deren Umfang er mit dem Herrenhof vereinbart.",
+        "reaction": null,
+        "feedback": [
+          "Ein vereinbarter Tausch von Arbeit und Gegenleistung wäre ein anderes Verpflichtungsverhältnis. Peter wird in der Szene nicht zu einer solchen Vereinbarung gefragt.",
+          "Ein vereinbarter Tausch von Arbeit und Gegenleistung wäre ein anderes Verpflichtungsverhältnis. Peter wird in der Szene nicht zu einer solchen Vereinbarung gefragt.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Erklärung trifft den Verpflichtungsgrund des Frondienstes am genauesten?"
+        ],
+        "effect": null
+      },
+      {
+        "id": "D",
+        "text": "Peter unterstützt einen anderen Hof und erwartet, dass ihm bei eigener Arbeitsnot ebenfalls geholfen wird.",
+        "reaction": null,
+        "feedback": [
+          "Gegenseitige Hilfe erklärt ebenfalls Arbeit auf einem anderen Hof. Peters Dienst beruht hier jedoch auf seiner Bindung an den Grundherrn, nicht auf freiwilliger Nachbarschaftshilfe.",
+          "Gegenseitige Hilfe erklärt ebenfalls Arbeit auf einem anderen Hof. Peters Dienst beruht hier jedoch auf seiner Bindung an den Grundherrn, nicht auf freiwilliger Nachbarschaftshilfe.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Erklärung trifft den Verpflichtungsgrund des Frondienstes am genauesten?"
+        ],
+        "effect": null
+      }
+    ],
+    "recall": null
+  },
+  {
+    "id": "duesResponse",
+    "type": "open decision",
+    "prompt": "Wie reagierst du auf die Forderung?",
+    "solution": null,
+    "options": [
+      {
+        "id": "pay",
+        "text": "Wir geben die geforderte Menge ab.",
+        "reaction": [
+          {
+            "speaker": "margarethe",
+            "text": "Dann ist diese Forderung erfüllt. Aber der Sack fehlt uns im eigenen Vorrat."
+          }
+        ],
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "prudence": 1
+          },
+          "perceptions": {
+            "margarethe": [
+              "cautious"
+            ]
+          }
+        }
+      },
+      {
+        "id": "delay",
+        "text": "Wir bitten darum, einen Teil später zu leisten.",
+        "reaction": [
+          {
+            "speaker": "overseer",
+            "text": "Das kann ich nicht entscheiden."
+          }
+        ],
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "legal": 0.5,
+            "prudence": 0.5
+          },
+          "perceptions": {
+            "margarethe": [
+              "seeks_negotiation"
+            ]
+          }
+        }
+      },
+      {
+        "id": "withhold",
+        "text": "Wir behalten einen Sack zurück.",
+        "reaction": [
+          {
+            "speaker": "overseer",
+            "text": "Wenn die Menge fehlt, wird man nachfragen."
+          }
+        ],
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "resistance": 1
+          },
+          "perceptions": {
+            "ulrich": [
+              "questioned_authority"
+            ]
+          }
+        }
+      },
+      {
+        "id": "question_basis",
+        "text": "Wir verlangen zu wissen, wie die Forderung begründet wird.",
+        "reaction": [
+          {
+            "speaker": "overseer",
+            "text": "Ich überbringe sie nur."
+          },
+          {
+            "speaker": "margarethe",
+            "text": "Das ist keine Antwort."
+          }
+        ],
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "legal": 1
+          },
+          "perceptions": {
+            "margarethe": [
+              "legally_argumentative"
+            ],
+            "ulrich": [
+              "legally_argumentative"
+            ]
+          }
+        }
+      }
+    ],
+    "recall": "assemblyIntro / assemblyPressure"
+  },
+  {
+    "id": "assemblyConnection",
+    "type": "assessed source reasoning",
+    "prompt": "Welche Aussage erklärt den gemeinsamen Zusammenhang am vollständigsten?",
+    "solution": "B",
+    "options": [
+      {
+        "id": "A",
+        "text": "Die Haushalte geraten unter Versorgungsdruck, weil ihnen Holz, Arbeitszeit oder Vorräte fehlen.",
+        "reaction": null,
+        "feedback": [
+          "Versorgungsdruck verbindet wichtige Folgen der Konflikte. Die Aussage erklärt aber noch nicht, wer in die jeweiligen Entscheidungen eingreift und auf welcher Grundlage.",
+          "Versorgungsdruck verbindet wichtige Folgen der Konflikte. Die Aussage erklärt aber noch nicht, wer in die jeweiligen Entscheidungen eingreift und auf welcher Grundlage.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Aussage erklärt den gemeinsamen Zusammenhang am vollständigsten?"
+        ],
+        "effect": null
+      },
+      {
+        "id": "B",
+        "text": "Herrschaftliche Ansprüche greifen in Entscheidungen über Nutzung, Zeit und Ertrag ein und verändern die Versorgung.",
+        "reaction": null,
+        "feedback": "Der Zusammenhang umfasst Entscheidungsbefugnisse und materielle Folgen: Andere bestimmen über Waldnutzung, Arbeitszeit oder Ertrag und verändern damit die Lebensbedingungen.\n\nVersorgungsdruck verbindet wichtige Folgen der Konflikte. Die Aussage erklärt aber noch nicht, wer in die jeweiligen Entscheidungen eingreift und auf welcher Grundlage. Verlässliche Absprachen könnten die Planung verbessern. In den Szenen geht es jedoch auch um ein ungleiches Verhältnis zwischen Herrschaft und Betroffenen. Mitsprache wäre ein gemeinsamer Reformansatz. Die drei Situationen beruhen aber nicht einfach auf neu vereinbarten Verpflichtungen: ältere Rechte und bestehende Dienste sind ebenfalls betroffen.",
+        "effect": null
+      },
+      {
+        "id": "C",
+        "text": "Die Gemeinde braucht verlässliche Absprachen, damit ihre Mitglieder den Alltag gemeinsam planen können.",
+        "reaction": null,
+        "feedback": [
+          "Verlässliche Absprachen könnten die Planung verbessern. In den Szenen geht es jedoch auch um ein ungleiches Verhältnis zwischen Herrschaft und Betroffenen.",
+          "Verlässliche Absprachen könnten die Planung verbessern. In den Szenen geht es jedoch auch um ein ungleiches Verhältnis zwischen Herrschaft und Betroffenen.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Aussage erklärt den gemeinsamen Zusammenhang am vollständigsten?"
+        ],
+        "effect": null
+      },
+      {
+        "id": "D",
+        "text": "Anna, Peter und Margarethe verlangen mehr Beteiligung, bevor neue Verpflichtungen vereinbart werden.",
+        "reaction": null,
+        "feedback": [
+          "Mitsprache wäre ein gemeinsamer Reformansatz. Die drei Situationen beruhen aber nicht einfach auf neu vereinbarten Verpflichtungen: ältere Rechte und bestehende Dienste sind ebenfalls betroffen.",
+          "Mitsprache wäre ein gemeinsamer Reformansatz. Die drei Situationen beruhen aber nicht einfach auf neu vereinbarten Verpflichtungen: ältere Rechte und bestehende Dienste sind ebenfalls betroffen.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Aussage erklärt den gemeinsamen Zusammenhang am vollständigsten?"
+        ],
+        "effect": null
+      }
+    ],
+    "recall": null
+  },
+  {
+    "id": "forestDemand",
+    "type": "assessed source reasoning",
+    "prompt": "Welche Forderung folgt am unmittelbarsten aus dieser Beschwerde?",
+    "solution": "B",
+    "options": [
+      {
+        "id": "A",
+        "text": "Herrschaft und Gemeinde sollen die Nutzung des Waldes neu und verbindlich miteinander vereinbaren.",
+        "reaction": null,
+        "feedback": [
+          "Eine neue Vereinbarung kann den Konflikt lösen. Sie öffnet aber auch die bisherigen Rechte für Neuverhandlungen, statt zuerst ihre Anerkennung zu verlangen.",
+          "Eine neue Vereinbarung kann den Konflikt lösen. Sie öffnet aber auch die bisherigen Rechte für Neuverhandlungen, statt zuerst ihre Anerkennung zu verlangen.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Forderung folgt am unmittelbarsten aus dieser Beschwerde?"
+        ],
+        "effect": null
+      },
+      {
+        "id": "B",
+        "text": "Die bisherigen geregelten Nutzungsrechte der Gemeinde sollen wieder anerkannt werden.",
+        "reaction": null,
+        "feedback": "Wer die Einschränkung bisheriger Nutzungsrechte beklagt, verlangt am unmittelbarsten deren Anerkennung. Damit ist weder Eigentum am ganzen Wald noch ungeregelte Nutzung gefordert.\n\nEine neue Vereinbarung kann den Konflikt lösen. Sie öffnet aber auch die bisherigen Rechte für Neuverhandlungen, statt zuerst ihre Anerkennung zu verlangen. Eine feste Abgabe könnte Nutzung planbar machen. Sie führt jedoch eine neue Bedingung ein und beantwortet nicht unmittelbar den Anspruch auf bisherige Rechte. Selbstregelung der Gemeinde ist eine weitergehende Forderung. Sie verändert die Zuständigkeit grundsätzlich, während die Beschwerde zunächst bestimmte bisherige Nutzungsrechte betrifft.",
+        "effect": null
+      },
+      {
+        "id": "C",
+        "text": "Das Sammeln von Reisig soll gegen eine vorher festgelegte Abgabe verlässlich erlaubt werden.",
+        "reaction": null,
+        "feedback": [
+          "Eine feste Abgabe könnte Nutzung planbar machen. Sie führt jedoch eine neue Bedingung ein und beantwortet nicht unmittelbar den Anspruch auf bisherige Rechte.",
+          "Eine feste Abgabe könnte Nutzung planbar machen. Sie führt jedoch eine neue Bedingung ein und beantwortet nicht unmittelbar den Anspruch auf bisherige Rechte.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Forderung folgt am unmittelbarsten aus dieser Beschwerde?"
+        ],
+        "effect": null
+      },
+      {
+        "id": "D",
+        "text": "Die Gemeinde soll die Waldnutzung selbst regeln; der Herrschaftsanspruch darauf soll entfallen.",
+        "reaction": null,
+        "feedback": [
+          "Selbstregelung der Gemeinde ist eine weitergehende Forderung. Sie verändert die Zuständigkeit grundsätzlich, während die Beschwerde zunächst bestimmte bisherige Nutzungsrechte betrifft.",
+          "Selbstregelung der Gemeinde ist eine weitergehende Forderung. Sie verändert die Zuständigkeit grundsätzlich, während die Beschwerde zunächst bestimmte bisherige Nutzungsrechte betrifft.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Forderung folgt am unmittelbarsten aus dieser Beschwerde?"
+        ],
+        "effect": null
+      }
+    ],
+    "recall": null
+  },
+  {
+    "id": "corveeDemand",
+    "type": "assessed source reasoning",
+    "prompt": "Welche Forderung greift das erlebte Problem am präzisesten auf?",
+    "solution": "A",
+    "options": [
+      {
+        "id": "A",
+        "text": "Frondienste sollen begrenzt und so geregelt werden, dass die Arbeit auf dem eigenen Hof nicht dauerhaft gefährdet wird.",
+        "reaction": null,
+        "feedback": "Begrenzung und verlässliche Regelung greifen Peters konkreten Zeitkonflikt auf, ohne bereits jede Dienstpflicht oder eine feste Rangordnung zwischen allen Arbeiten festzulegen.\n\nEntschädigung vermindert die wirtschaftliche Belastung. Sie löst aber nicht vollständig, dass Peter Arbeitszeit für seinen eigenen Hof verliert und darüber nicht selbst verfügt. Der Vorrang der eigenen Arbeit nimmt den Zeitkonflikt direkt auf. Er verlangt aber bereits eine feste Rangordnung für alle Dienste, die über eine Begrenzung im Hinblick auf die eigene Versorgung hinausgeht. Vollständige Abschaffung würde die Dienstpflicht beenden und kann als weitreichende Forderung diskutiert werden. Sie geht über die unmittelbar geschilderte Beschwerde zur liegen gebliebenen Hofarbeit hinaus.",
+        "effect": null
+      },
+      {
+        "id": "B",
+        "text": "Wer Frondienst leisten muss, soll für die geleistete Arbeit angemessen entschädigt werden.",
+        "reaction": null,
+        "feedback": [
+          "Entschädigung vermindert die wirtschaftliche Belastung. Sie löst aber nicht vollständig, dass Peter Arbeitszeit für seinen eigenen Hof verliert und darüber nicht selbst verfügt.",
+          "Entschädigung vermindert die wirtschaftliche Belastung. Sie löst aber nicht vollständig, dass Peter Arbeitszeit für seinen eigenen Hof verliert und darüber nicht selbst verfügt.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Forderung greift das erlebte Problem am präzisesten auf?"
+        ],
+        "effect": null
+      },
+      {
+        "id": "C",
+        "text": "Die Arbeit auf dem eigenen Hof soll Vorrang haben; erst danach sollen Dienste für den Grundherrn verlangt werden.",
+        "reaction": null,
+        "feedback": [
+          "Der Vorrang der eigenen Arbeit nimmt den Zeitkonflikt direkt auf. Er verlangt aber bereits eine feste Rangordnung für alle Dienste, die über eine Begrenzung im Hinblick auf die eigene Versorgung hinausgeht.",
+          "Der Vorrang der eigenen Arbeit nimmt den Zeitkonflikt direkt auf. Er verlangt aber bereits eine feste Rangordnung für alle Dienste, die über eine Begrenzung im Hinblick auf die eigene Versorgung hinausgeht.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Forderung greift das erlebte Problem am präzisesten auf?"
+        ],
+        "effect": null
+      },
+      {
+        "id": "D",
+        "text": "Frondienste sollen vollständig abgeschafft werden.",
+        "reaction": null,
+        "feedback": [
+          "Vollständige Abschaffung würde die Dienstpflicht beenden und kann als weitreichende Forderung diskutiert werden. Sie geht über die unmittelbar geschilderte Beschwerde zur liegen gebliebenen Hofarbeit hinaus.",
+          "Vollständige Abschaffung würde die Dienstpflicht beenden und kann als weitreichende Forderung diskutiert werden. Sie geht über die unmittelbar geschilderte Beschwerde zur liegen gebliebenen Hofarbeit hinaus.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Forderung greift das erlebte Problem am präzisesten auf?"
+        ],
+        "effect": null
+      }
+    ],
+    "recall": null
+  },
+  {
+    "id": "duesDemand",
+    "type": "assessed source reasoning",
+    "prompt": "Welche Forderung setzt am unmittelbarsten an der fehlenden Vorhersehbarkeit an?",
+    "solution": "A",
+    "options": [
+      {
+        "id": "A",
+        "text": "Zusätzliche Abgaben sollen nur nach vorher bekannten Regeln verlangt und nachvollziehbar begründet werden.",
+        "reaction": null,
+        "feedback": "Vorher bekannte Regeln und begründete Änderungen treffen die fehlende Vorhersehbarkeit am direktesten. Die anderen Vorschläge sind ebenfalls nachvollziehbare Reformansätze, setzen aber an anderen Kriterien an.\n\nEine Begrenzung schützt Versorgung und Aussaat. Sie beantwortet zunächst die Höhe der Belastung, nicht die Frage, wann eine zusätzliche Forderung vorhersehbar und begründet ist. Mitsprache kann Änderungen kontrollieren und gehört zu einer plausiblen Reform. Beteiligung allein legt aber noch nicht fest, nach welchen vorher bekannten Regeln zusätzliche Ansprüche entstehen. Eine Anpassung an den Ertrag berücksichtigt die Leistungsfähigkeit. Sie klärt noch nicht, auf welcher bekannten Grundlage eine zusätzliche Forderung erhoben wird.",
+        "effect": null
+      },
+      {
+        "id": "B",
+        "text": "Die Höhe der Abgaben soll begrenzt werden, damit genügend Nahrung und Saatgut auf dem Hof bleiben.",
+        "reaction": null,
+        "feedback": [
+          "Eine Begrenzung schützt Versorgung und Aussaat. Sie beantwortet zunächst die Höhe der Belastung, nicht die Frage, wann eine zusätzliche Forderung vorhersehbar und begründet ist.",
+          "Eine Begrenzung schützt Versorgung und Aussaat. Sie beantwortet zunächst die Höhe der Belastung, nicht die Frage, wann eine zusätzliche Forderung vorhersehbar und begründet ist.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Forderung setzt am unmittelbarsten an der fehlenden Vorhersehbarkeit an?"
+        ],
+        "effect": null
+      },
+      {
+        "id": "C",
+        "text": "Die Gemeinde soll bei Änderungen der Abgaben mitentscheiden, bevor neue Forderungen gestellt werden.",
+        "reaction": null,
+        "feedback": [
+          "Mitsprache kann Änderungen kontrollieren und gehört zu einer plausiblen Reform. Beteiligung allein legt aber noch nicht fest, nach welchen vorher bekannten Regeln zusätzliche Ansprüche entstehen.",
+          "Mitsprache kann Änderungen kontrollieren und gehört zu einer plausiblen Reform. Beteiligung allein legt aber noch nicht fest, nach welchen vorher bekannten Regeln zusätzliche Ansprüche entstehen.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Forderung setzt am unmittelbarsten an der fehlenden Vorhersehbarkeit an?"
+        ],
+        "effect": null
+      },
+      {
+        "id": "D",
+        "text": "Die Abgaben sollen an den tatsächlichen Ertrag und die Leistungsfähigkeit des jeweiligen Hofes angepasst werden.",
+        "reaction": null,
+        "feedback": [
+          "Eine Anpassung an den Ertrag berücksichtigt die Leistungsfähigkeit. Sie klärt noch nicht, auf welcher bekannten Grundlage eine zusätzliche Forderung erhoben wird.",
+          "Eine Anpassung an den Ertrag berücksichtigt die Leistungsfähigkeit. Sie klärt noch nicht, auf welcher bekannten Grundlage eine zusätzliche Forderung erhoben wird.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Forderung setzt am unmittelbarsten an der fehlenden Vorhersehbarkeit an?"
+        ],
+        "effect": null
+      }
+    ],
+    "recall": null
+  },
+  {
+    "id": "lutherPoliticalInference",
+    "type": "assessed source reasoning",
+    "prompt": "Welche Deutung berücksichtigt beide Leitsätze und ihre politische Reichweite am genauesten?",
+    "solution": "B",
+    "options": [
+      {
+        "id": "A",
+        "text": "Freiheit vor Gott verändert das Handeln; deshalb lässt sich die Aufhebung der erlebten Abhängigkeiten aus den Leitsätzen begründen.",
+        "reaction": null,
+        "feedback": [
+          "Du nimmst die Folgen der Freiheit für das Handeln ernst. Der Schritt zur Aufhebung bestimmter Abhängigkeiten verlangt aber eine weitere Begründung, die die Leitsätze noch nicht selbst liefern.",
+          "Du nimmst die Folgen der Freiheit für das Handeln ernst. Der Schritt zur Aufhebung bestimmter Abhängigkeiten verlangt aber eine weitere Begründung, die die Leitsätze noch nicht selbst liefern.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Deutung berücksichtigt beide Leitsätze und ihre politische Reichweite am genauesten?"
+        ],
+        "effect": null
+      },
+      {
+        "id": "B",
+        "text": "Freiheit vor Gott verändert den Dienst am Nächsten und kann gesellschaftliche Fragen auslösen, legt aber noch kein politisches Programm fest.",
+        "reaction": null,
+        "feedback": "Beide Leitsätze verbinden Freiheit vor Gott und Handeln für andere. Das kann gesellschaftliche Fragen aufwerfen; welche konkrete politische Ordnung daraus folgen soll, ist damit noch nicht entschieden.\n\nDu nimmst die Folgen der Freiheit für das Handeln ernst. Der Schritt zur Aufhebung bestimmter Abhängigkeiten verlangt aber eine weitere Begründung, die die Leitsätze noch nicht selbst liefern. Das Gewissen ist für die Frage nach Freiheit wichtig. Daraus folgt aber nicht unmittelbar, dass jede äußere Dienstpflicht nur durch individuelle Zustimmung bindet. Der Dienst am Nächsten ist ein wesentlicher Teil christlicher Freiheit. Er lässt sich jedoch nicht ohne weitere Prüfung mit bestehenden herrschaftlichen Dienstpflichten gleichsetzen.",
+        "effect": null
+      },
+      {
+        "id": "C",
+        "text": "Freiheit betrifft das Gewissen; deshalb hängt jede äußere Dienstpflicht unmittelbar davon ab, ob der Einzelne ihr zustimmt.",
+        "reaction": null,
+        "feedback": [
+          "Das Gewissen ist für die Frage nach Freiheit wichtig. Daraus folgt aber nicht unmittelbar, dass jede äußere Dienstpflicht nur durch individuelle Zustimmung bindet.",
+          "Das Gewissen ist für die Frage nach Freiheit wichtig. Daraus folgt aber nicht unmittelbar, dass jede äußere Dienstpflicht nur durch individuelle Zustimmung bindet.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Deutung berücksichtigt beide Leitsätze und ihre politische Reichweite am genauesten?"
+        ],
+        "effect": null
+      },
+      {
+        "id": "D",
+        "text": "Der Dienst am Nächsten gibt der Freiheit ihre Richtung; deshalb bestätigt er zunächst die bestehenden herrschaftlichen Dienstpflichten.",
+        "reaction": null,
+        "feedback": [
+          "Der Dienst am Nächsten ist ein wesentlicher Teil christlicher Freiheit. Er lässt sich jedoch nicht ohne weitere Prüfung mit bestehenden herrschaftlichen Dienstpflichten gleichsetzen.",
+          "Der Dienst am Nächsten ist ein wesentlicher Teil christlicher Freiheit. Er lässt sich jedoch nicht ohne weitere Prüfung mit bestehenden herrschaftlichen Dienstpflichten gleichsetzen.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Deutung berücksichtigt beide Leitsätze und ihre politische Reichweite am genauesten?"
+        ],
+        "effect": null
+      }
+    ],
+    "recall": null
+  },
+  {
+    "id": "initialFreedomInterpretation",
+    "type": "open decision",
+    "prompt": "Wie verstehst du diese Aussage?",
+    "solution": null,
+    "options": [
+      {
+        "id": "freedom_no_obedience",
+        "text": "Dann sollten wir prüfen, ob unsere Herren solche Pflichten noch von uns verlangen dürfen.",
+        "reaction": [
+          {
+            "speaker": "peter",
+            "emotion": "determined",
+            "text": "Genau. Dann müsste sich hier einiges ändern."
+          },
+          {
+            "speaker": "jakob",
+            "emotion": "thoughtful",
+            "text": "Vielleicht. Aber lies erst weiter."
+          }
+        ],
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "resistance": 1
+          },
+          "perceptions": {
+            "jakob": [
+              "willing_to_resist"
+            ]
+          }
+        }
+      },
+      {
+        "id": "freedom_different_kind",
+        "text": "Vielleicht spricht Luther von einer anderen Art von Freiheit.",
+        "reaction": [
+          {
+            "speaker": "jakob",
+            "emotion": "thoughtful",
+            "text": "Das frage ich mich auch."
+          },
+          {
+            "speaker": "peter",
+            "emotion": "skeptical",
+            "text": "Dann soll er gefälligst sagen, welche Freiheit er meint."
+          }
+        ],
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "theological": 1
+          },
+          "perceptions": {
+            "jakob": [
+              "theologically_reflective"
+            ]
+          }
+        }
+      },
+      {
+        "id": "freedom_life_tension",
+        "text": "So wie es dort steht, passt es nicht zu unserem Leben.",
+        "reaction": [
+          {
+            "speaker": "anna",
+            "emotion": "thoughtful",
+            "text": "Vielleicht liegt genau darin das Problem."
+          },
+          {
+            "speaker": "anna",
+            "emotion": "concerned",
+            "text": "Auf dem Papier frei – und morgen trotzdem Frondienst?"
+          }
+        ],
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "theological": 1,
+            "resistance": 0.5
+          },
+          "perceptions": {
+            "anna": [
+              "social_tension"
+            ]
+          }
+        }
+      },
+      {
+        "id": "freedom_responsibility",
+        "text": "Vielleicht kann man frei sein und trotzdem Verantwortung für andere übernehmen.",
+        "reaction": [
+          {
+            "speaker": "anna",
+            "emotion": "engaged",
+            "text": "Frei sein und sich trotzdem freiwillig an andere binden?"
+          },
+          {
+            "speaker": "jakob",
+            "emotion": "thoughtful",
+            "text": "Dann müssten wir fragen, welche Bindungen wir selbst eingehen und welche uns auferlegt werden."
+          }
+        ],
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "community": 1,
+            "theological": 1
+          },
+          "perceptions": {
+            "anna": [
+              "community_minded"
+            ]
+          }
+        }
+      }
+    ],
+    "recall": "ch2Morning"
+  },
+  {
+    "id": "freedomSocialFirstThought",
+    "type": "open decision",
+    "prompt": "Was antwortest du Peter?",
+    "solution": null,
+    "options": [
+      {
+        "id": "peter_god_first",
+        "text": "Vielleicht betrifft sie zuerst das Verhältnis des Menschen zu Gott.",
+        "reaction": [
+          {
+            "speaker": "peter",
+            "emotion": "concerned",
+            "text": "Vor Gott frei. Aber vor dem Herrn weiter abhängig."
+          },
+          {
+            "speaker": "peter",
+            "emotion": "skeptical",
+            "text": "Ich weiß noch nicht, ob mich das überzeugt."
+          }
+        ],
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "theological": 1
+          },
+          "perceptions": {
+            "peter": [
+              "theologically_reflective"
+            ]
+          }
+        }
+      },
+      {
+        "id": "peter_social_consequence",
+        "text": "Vielleicht muss diese Freiheit auch Folgen für das äußere Leben haben.",
+        "reaction": [
+          {
+            "speaker": "peter",
+            "emotion": "neutral",
+            "text": "Das würde ich verstehen."
+          },
+          {
+            "speaker": "peter",
+            "emotion": "neutral",
+            "text": "Die Frage ist nur: Welche Folgen?"
+          }
+        ],
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "resistance": 0.5,
+            "theological": 0.5
+          },
+          "perceptions": {
+            "peter": [
+              "social_tension"
+            ]
+          }
+        }
+      },
+      {
+        "id": "peter_uncertain",
+        "text": "Das weiß ich noch nicht.",
+        "reaction": [
+          {
+            "speaker": "peter",
+            "emotion": "neutral",
+            "text": "Wenigstens sind wir uns darin einig."
+          },
+          {
+            "speaker": "peter",
+            "emotion": "concerned",
+            "text": "Ich weiß es nämlich auch nicht."
+          }
+        ],
+        "feedback": null,
+        "effect": {
+          "orientation": {
+            "prudence": 0.5
+          },
+          "perceptions": {
+            "peter": [
+              "cautious"
+            ]
+          }
+        }
+      }
+    ],
+    "recall": "corveeIntro"
+  },
+  {
+    "id": "freedomAndOuterLife",
+    "type": "assessed source reasoning",
+    "prompt": "Welche Deutung erklärt sowohl die Freiheit vor Gott als auch ihr Verhältnis zur äußeren Ordnung am genauesten?",
+    "solution": "D",
+    "options": [
+      {
+        "id": "A",
+        "text": "Christliche Freiheit sichert die Annahme vor Gott; welche Pflichten gegenüber anderen bestehen, ergibt sich dagegen aus der geltenden Ordnung.",
+        "reaction": null,
+        "feedback": [
+          "Denkimpuls:\nNimm Luthers zweite Aussage ernst: Warum bezeichnet er den freien Christen zugleich als ‚dienstbaren Knecht‘?",
+          "Hinweis:\nPrüfe, ob Luther zwischen Freiheit vor Gott und Folgen für das Handeln wirklich eine vollständige Trennung zieht."
+        ],
+        "effect": null
+      },
+      {
+        "id": "B",
+        "text": "Christliche Freiheit beginnt im Verhältnis zu Gott. Weil der Mensch sich Gottes Anerkennung nicht mehr verdienen muss, verändert sie zugleich sein Handeln gegenüber anderen.",
+        "reaction": null,
+        "feedback": "Das erfasst einen wichtigen Zusammenhang:\nDie Freiheit vor Gott verändert das Verhältnis des Menschen zu seinen Werken und damit auch sein Handeln gegenüber anderen.",
+        "effect": null
+      },
+      {
+        "id": "C",
+        "text": "Weil alle Christen vor Gott gleichermaßen frei sind, müssen ihre äußeren Pflichten auf ihrer persönlichen Zustimmung beruhen.",
+        "reaction": null,
+        "feedback": [
+          "Denkimpuls:\nBegründet die gleiche Freiheit vor Gott bereits ein Verfahren, nach dem weltliche Pflichten nur durch Zustimmung gelten?",
+          "Die Leitsätze bestimmen Freiheit im Glauben und Dienst aus Liebe. Eine politische Zustimmungsordnung wird darin nicht festgelegt."
+        ],
+        "effect": null
+      },
+      {
+        "id": "D",
+        "text": "Christliche Freiheit und äußere Ordnung sind voneinander zu unterscheiden. Trotzdem kann gefragt werden, welche Folgen die Freiheit für das Handeln innerhalb dieser Ordnung hat.",
+        "reaction": null,
+        "feedback": "Das trifft die Spannung besonders genau:\nLuther unterscheidet die Freiheit des Menschen vor Gott von seiner Stellung in der äußeren Welt. Diese Freiheit bleibt dennoch nicht folgenlos, weil sie zum Dienst am Nächsten freisetzt. Noch offen ist damit allerdings, wie weit daraus gesellschaftliche Veränderungen folgen können. B beschreibt den veränderten Beweggrund zutreffend, klärt aber die äußere Ordnung nicht. A überlässt diese allein den geltenden Pflichten; C macht aus der Glaubensfreiheit bereits ein politisches Zustimmungsprinzip.",
+        "effect": {
+          "orientation": {},
+          "perceptions": {}
+        }
+      }
+    ],
+    "recall": "lutherRecall"
+  },
+  {
+    "id": "serviceBoundary",
+    "type": "assessed source reasoning",
+    "prompt": "Warum verbindet der ‚Dienst am Nächsten‘ beide Bereiche?",
+    "solution": "B",
+    "options": [
+      {
+        "id": "A",
+        "text": "Weil der Dienst am Nächsten durch sichtbare Werke bestätigt, dass der Mensch Gottes Annahme verdient.",
+        "reaction": null,
+        "feedback": [
+          "Denkimpuls:\nWem gilt der Dienst: dem Nächsten oder der eigenen Anerkennung vor Gott?",
+          "Hinweis:\nDie Hilfe wird nicht zum Beweis eigenen Verdienstes. Sie folgt aus der im Glauben angenommenen Gnade und gilt dem anderen."
+        ],
+        "effect": null
+      },
+      {
+        "id": "B",
+        "text": "Weil die Freiheit vor Gott den Menschen zu einem neuen Handeln gegenüber anderen freisetzt.",
+        "reaction": null,
+        "feedback": "Der Zusammenhang liegt im Beweggrund:\nDie Freiheit entsteht im Verhältnis zu Gott. Sie bleibt aber nicht innerlich eingeschlossen, sondern verändert das Handeln gegenüber dem Mitmenschen. Deshalb verbindet der ‚Dienst am Nächsten‘ beide Ebenen. A und C machen die Werke wieder zum Verdienst oder zur Ergänzung der Annahme. D leitet aus dieser theologischen Beziehung bereits gleiche politische Rechte ab; das geht über die beiden Leitsätze hinaus.",
+        "effect": null
+      },
+      {
+        "id": "C",
+        "text": "Weil die Annahme durch Gott den Anfang macht und der Mensch sie durch gute Werke vervollständigen muss.",
+        "reaction": null,
+        "feedback": [
+          "Denkimpuls:\nErinnere dich an die Rechtfertigungskette: Sind gute Werke die Voraussetzung oder die Folge der Annahme durch Gott?",
+          "Hinweis:\nAuch als Ergänzung würden Werke zur Bedingung vollständiger Annahme. Bei Luther sind sie deren Folge."
+        ],
+        "effect": null
+      },
+      {
+        "id": "D",
+        "text": "Weil die gleiche Freiheit vor Gott den Dienst an anderen zu einer Forderung nach gleichen politischen Rechten macht.",
+        "reaction": null,
+        "feedback": [
+          "Denkimpuls:\nGleiche Freiheit vor Gott ist nicht schon ein ausgearbeitetes Programm gleicher politischer Rechte. Was begründet der zweite Leitsatz unmittelbar?"
+        ],
+        "effect": null
+      }
+    ],
+    "recall": null
+  },
+  {
+    "id": "obedienceBoundary",
+    "type": "assessed source reasoning",
+    "prompt": "Warum ist ‚Gehorsam‘ schwieriger einzuordnen als ‚Frondienst‘ oder ‚Abgaben‘?",
+    "solution": "B",
+    "options": [
+      {
+        "id": "A",
+        "text": "Weil die innere Glaubenshaltung entscheidet, ob das Befolgen einer Anordnung christlicher Gehorsam ist.",
+        "reaction": null,
+        "feedback": [
+          "Denkimpuls:\nReicht die innere Haltung aus, wenn das befohlene Verhalten einen anderen Menschen schädigt?"
+        ],
+        "effect": null
+      },
+      {
+        "id": "B",
+        "text": "Weil Gehorsam äußeres Verhalten betrifft, aber zugleich Gewissen und Verantwortung berühren kann.",
+        "reaction": null,
+        "feedback": "Das trifft die Schwierigkeit:\nGehorsam gehört zur äußeren Ordnung, kann aber zugleich Fragen von Gewissen und Verantwortung aufwerfen. Gerade deshalb lässt sich das innere und äußere Leben nicht vollständig voneinander trennen. Die innere Haltung allein genügt nicht (A); persönliche Zustimmung ist hier kein allgemeiner Geltungsgrund weltlicher Pflichten (C). Auch eine rechtmäßige Anordnung enthebt den Menschen nicht der Verantwortung für ihre Folgen (D).",
+        "effect": null
+      },
+      {
+        "id": "C",
+        "text": "Weil Gehorsam erst durch die freiwillige Zustimmung des Christen zu einer weltlichen Anordnung verbindlich wird.",
+        "reaction": null,
+        "feedback": [
+          "Denkimpuls:\nUnterscheide freiwilligen Dienst aus Liebe von der Behauptung, jede weltliche Pflicht gelte nur nach persönlicher Zustimmung.",
+          "Hinweis:\nDie Frage verbindet äußeres Handeln mit Gewissen und Verantwortung. Ein allgemeines Zustimmungsprinzip folgt daraus noch nicht."
+        ],
+        "effect": null
+      },
+      {
+        "id": "D",
+        "text": "Weil das Befolgen einer rechtmäßigen Anordnung bereits ausreicht, um Gewissen und Verantwortung zu wahren.",
+        "reaction": null,
+        "feedback": [
+          "Denkimpuls:\nKann eine Anordnung rechtmäßig sein und dennoch Fragen nach ihren Folgen für andere aufwerfen?"
+        ],
+        "effect": null
+      }
+    ],
+    "recall": null
+  },
+  {
+    "id": "freedomComparison",
+    "type": "assessed source reasoning",
+    "prompt": "Wie sind diese beiden Folgerungen aus Luthers Leitsätzen zu beurteilen?",
+    "solution": "D",
+    "options": [
+      {
+        "id": "A",
+        "text": "Beide Aussagen treffen zu.",
+        "reaction": null,
+        "feedback": [
+          "Denkimpuls:\nWelche Bedeutung hat der Dienst am Nächsten für bestehende Pflichten? Und folgt aus gleicher Freiheit vor Gott schon ein politisches Zustimmungsprinzip?",
+          "Hinweis:\nPrüfe beide Ableitungen: Achte auf den Dienst aus Liebe und auf die Unterscheidung von Freiheit vor Gott und äußerer Rechtsordnung."
+        ],
+        "effect": null
+      },
+      {
+        "id": "B",
+        "text": "Nur die erste trifft zu.",
+        "reaction": null,
+        "feedback": [
+          "Denkimpuls:\nWelche Bedeutung hat der Dienst am Nächsten für bestehende Pflichten? Und folgt aus gleicher Freiheit vor Gott schon ein politisches Zustimmungsprinzip?",
+          "Hinweis:\nPrüfe beide Ableitungen: Achte auf den Dienst aus Liebe und auf die Unterscheidung von Freiheit vor Gott und äußerer Rechtsordnung."
+        ],
+        "effect": null
+      },
+      {
+        "id": "C",
+        "text": "Nur die zweite trifft zu.",
+        "reaction": null,
+        "feedback": [
+          "Denkimpuls:\nWelche Bedeutung hat der Dienst am Nächsten für bestehende Pflichten? Und folgt aus gleicher Freiheit vor Gott schon ein politisches Zustimmungsprinzip?",
+          "Hinweis:\nPrüfe beide Ableitungen: Achte auf den Dienst aus Liebe und auf die Unterscheidung von Freiheit vor Gott und äußerer Rechtsordnung."
+        ],
+        "effect": null
+      },
+      {
+        "id": "D",
+        "text": "Beide Aussagen greifen zu kurz.",
+        "reaction": null,
+        "feedback": "Beide Aussagen greifen zu kurz:\nDie Freiheit im Glauben führt zum Dienst am Nächsten und bleibt deshalb nicht auf ein inneres Erleben beschränkt. Sie ist aber auch kein Versprechen automatischer politischer Befreiung. Welche gesellschaftlichen Folgen sie haben kann, müssen wir weiter fragen.",
+        "effect": null
+      }
+    ],
+    "recall": null
+  },
+  {
+    "id": "innerConsolidation",
+    "type": "assessed source reasoning",
+    "prompt": "Die erste Aussage greift zu kurz, weil …",
+    "solution": "A",
+    "options": [
+      {
+        "id": "A",
+        "text": "… die Freiheit vor Gott auch das Handeln gegenüber dem Nächsten verändert.",
+        "reaction": null,
+        "feedback": "Die erste Aussage greift zu kurz, weil …\n… die Freiheit vor Gott auch das Handeln gegenüber dem Nächsten verändert. Gute Werke müssen Gottes Annahme nicht erst bewirken; sie können aus der geschenkten Freiheit dem anderen zugutekommen.",
+        "effect": null
+      },
+      {
+        "id": "B",
+        "text": "… der Dienst am Nächsten Gottes Annahme erst im äußeren Leben vollendet.",
+        "reaction": null,
+        "feedback": [
+          "Ist Gottes Annahme noch unvollständig, bevor der Mensch hilft?",
+          "Unterscheide Folge und Voraussetzung: Gute Werke dienen dem Nächsten; sie ergänzen nicht Gottes Annahme."
+        ],
+        "effect": null
+      },
+      {
+        "id": "C",
+        "text": "… die gemeinsamen Pflichten den Menschen erst dazu befähigen, auf Gottes Gnade zu vertrauen.",
+        "reaction": null,
+        "feedback": [
+          "Was steht in der Rechtfertigungskette am Anfang: Gnade oder Pflichterfüllung?",
+          "Die Aussage kehrt die Richtung um: Gottes Zusage wird im Glauben angenommen und setzt zum Handeln frei."
+        ],
+        "effect": null
+      }
+    ],
+    "recall": null
+  },
+  {
+    "id": "politicalConsolidation",
+    "type": "assessed source reasoning",
+    "prompt": "Warum greift diese Aussage zu kurz?",
+    "solution": "A",
+    "options": [
+      {
+        "id": "A",
+        "text": "… die Leitsätze den Dienst aus Glauben begründen, aber persönliche Zustimmung nicht als politischen Geltungsgrund festlegen.",
+        "reaction": null,
+        "feedback": "Damit wird die Spannung deutlich:\nLuthers Freiheit beginnt im Verhältnis des Menschen zu Gott. Sie verändert aber auch sein Handeln gegenüber anderen. Daraus folgt noch nicht automatisch ein bestimmtes politisches Programm.",
+        "effect": null
+      },
+      {
+        "id": "B",
+        "text": "… der Dienst am Nächsten an bestehende Pflichten bindet, deren Rechtmäßigkeit die Leitsätze bereits voraussetzen.",
+        "reaction": null,
+        "feedback": [
+          "Ist jede bestehende Pflicht schon deshalb gerecht, weil Christen anderen dienen?",
+          "Der Dienst nennt eine Orientierung für das Handeln. Er begründet weder automatisch Befreiung noch die Gerechtigkeit jeder bestehenden Ordnung."
+        ],
+        "effect": null
+      },
+      {
+        "id": "C",
+        "text": "… freiwilliger Dienst am Nächsten die Zustimmung zu weltlichen Pflichten bereits einschließt.",
+        "reaction": null,
+        "feedback": [
+          "Ist freiwilliger Dienst dasselbe wie Zustimmung zu einer rechtlich auferlegten Pflicht?",
+          "Freiwilliger Dienst beschreibt die Haltung des Glaubenden; daraus folgt noch kein politisches Zustimmungsverfahren."
+        ],
+        "effect": null
+      }
+    ],
+    "recall": null
+  }
+]
