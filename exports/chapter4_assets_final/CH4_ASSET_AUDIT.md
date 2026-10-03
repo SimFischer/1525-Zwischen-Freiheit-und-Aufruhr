@@ -1,6 +1,6 @@
 # Kapitel 4: Asset-Audit
 
-Stand: zweite Konsolidierungsrunde, Grundlage d6e4979. Vollständiger Katalog: 36 Szenen plus 37 Routen-/Konsequenzvarianten. Alle 73 Fälle bei1024×768,820×640,1440×900,768×1024 und390×844 geprüft.
+Stand: zweite Konsolidierungsrunde, Grundlage d6e4979. Vollständiger Katalog: 36 Szenen plus 37 Routen-/Konsequenzvarianten. Alle 73 Fälle bei1024×768,820×640,1440×900,768×1024 und1024×1366 geprüft.
 
 ## Ergebnis
 
@@ -8,7 +8,7 @@ Die fünf unmittelbar zuvor erzeugten Dorfdateien bleiben bytegleich erhalten. N
 
 Die Darstellung verwendet jetzt in allen Räumen vollständige stehende Canon-Posen mit gemessenen Körper-Bounds. Der Staging-Guide benennt verschiedene Raummaßstäbe; keine blinde Übertragung der Dorfwerte.
 
-Auf Bildschirmen bis600px Breite sitzt die historische Handlungsplakette bei x50%/y12% oberhalb der Köpfe; die größere Schreibfläche hält44px Touchhöhe ohne Gesichtsüberdeckung. Die Desktopanker unten gelten ab601px Breite.
+Zielgeräte sind iPads im Quer- und Hochformat sowie größere Bildschirme. Hotspots bleiben an den unten beschriebenen räumlichen Ankern; Touchflächen mindestens44px. Keine eigens für Handys eingeführten Layouts.
 
 ## Alle 36 Szenen
 

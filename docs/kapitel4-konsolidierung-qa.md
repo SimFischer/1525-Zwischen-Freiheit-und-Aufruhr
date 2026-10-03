@@ -1,5 +1,8 @@
 # Kapitel 4: zweite Qualitäts- und Konsolidierungsrunde
 
+Zielgeräte: iPads im Quer- und Hochformat sowie größere Bildschirme.
+Handys sind kein Zielgerät; die zusätzlich eingeführten Handy-Sonderlayouts wurden entfernt.
+
 Grundlage: Commit d6e4979. Der neue Dorf-Hub und seine vier reduzierten
 Zustands-Overlays bleiben bytegleich erhalten. Keine Canon-Figur wurde neu
 erzeugt oder verändert.
@@ -19,20 +22,19 @@ Bestandene Prüfungen:
 
 - 36 Szenen und 37 zusätzliche Varianten bei 1024×768, 820×640 und 1440×900:
   365 gerenderte Ansichten einschließlich der im Projekt genutzten
-  Zusatzgrößen 768×1024 und 390×844; Proportionen, gemeinsame Körperhöhe, Bodenkontakt,
+  iPad-Hochformate 768×1024 und 1024×1366; Proportionen, gemeinsame Körperhöhe, Bodenkontakt,
   getrennte Körper, freie Panelbereiche, Hotspots und mindestens 44px große
   Bedienflächen geprüft.
 - Zusätzlich 215 Explorationsansichten nach dem Schließen der Dialoge:
-  Fortsetzungsplaketten auf allen fünf Bildschirmgrößen ohne Körperkollision. Auf schmalen Bildschirmen sitzen
-  die historischen Schilder über der Gesprächsgruppe.
+  Fortsetzungsplaketten auf allen fünf Bildschirmgrößen ohne Körperkollision; die historischen Schilder bleiben räumlich an der Szene verankert.
 - 45 unveränderte Dorf-Canon-Testkompositionen A/B/C mit Master und vier Zuständen.
 - 15 vollständige Routen über alle fünf Endzustände, je elf Reload-Checkpoints.
 - Alle 56 Antwortoptionen, Quellen-/Archivansichten und fünf Endzustände.
 - Alle Quellen mit tatsächlichem HTML-Text: mindestens 18px, Vergrößerung,
   vollständiger Inhalt und Scrollbereiche. Zusätzlich 120 Quellen-/Zoomansichten
   mit geprüftem Scrollen jedes Textfelds bis zum Ende. Vergleich April/Mai nutzt größere
-  Hauptfelder. Auf schmalen Bildschirmen fließt der vollständige Text unter der
-  Dokumentabbildung auf hellem Pergament; Materialhintergrund und Textbreite sind geprüft. Modernisierte Quellenworte und Zusammenfassungen sind bezeichnet.
+  Hauptfelder. Auch auf iPads im Hochformat bleibt der Text innerhalb der historischen
+  Dokumentansicht lesbar und scrollbar. Modernisierte Quellenworte und Zusammenfassungen sind bezeichnet.
 - Mausziehen, Touch-Tippen und Touch-Ziehen, Tastatur, Abbruch, Speicherstände,
   ältere Saves und Schutz des normalen Schüler-Spielstands.
 - Asset-Hashes, Original-Canon-Hashes, unveränderte Dorfdateien, transparente

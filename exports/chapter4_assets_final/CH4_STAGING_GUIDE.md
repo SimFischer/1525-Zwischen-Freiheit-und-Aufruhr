@@ -19,7 +19,7 @@ Die Original-Prediger/Boten besitzen unveränderte Neutral-/Sprechzustände mit 
 
 Unterste26% jeder Platte sind Dialog-Safe-Area. Die gesamte Platte wird bei Dialogen UND Aufgaben proportional in den freien Bereich über dem Panel eingepasst; kein Abschneiden von Gesichtern/Beinen. Aufgaben scrollen intern (max.60svh).
 
-Auf Bildschirmen bis600px Breite sitzt die historische Handlungsplakette bei x50%/y12% oberhalb der Köpfe; die größere Schreibfläche hält44px Touchhöhe ohne Gesichtsüberdeckung. Die Desktopanker unten gelten ab601px Breite.
+Zielgeräte sind iPads im Quer- und Hochformat sowie größere Bildschirme. Hotspots bleiben an den unten beschriebenen räumlichen Ankern; Touchflächen mindestens44px. Keine eigens für Handys eingeführten Layouts.
 
 ## Alle 36 Szenen
 

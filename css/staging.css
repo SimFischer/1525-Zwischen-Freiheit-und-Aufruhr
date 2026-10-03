@@ -466,9 +466,6 @@ dialog:has(.notebook) {
 .chapter-four-layout.ch4-fade {background:#130e0b;}
 .chapter-four-layout.ch4-fade .interaction {top:50%;bottom:auto;transform:translate(-50%,-50%);}
 @media(max-width:600px) {.ch4-cases,.ch4-zones,.ch4-paper-options,.ch4-interpretations {grid-template-columns:1fr;}.ch4-hotspot {max-width:40%;}}
-@media(max-width:600px) {
-  .chapter-four .ch4-hotspot {left:50%!important;top:12%!important;max-width:65%;}
-}
 @media(prefers-reduced-motion:reduce) {.ch4-ending,.ch4-ending p:nth-child(2) {animation:none;}}
 
 .ch4-table-object {position:relative;width:min(100%,650px);margin:.5rem auto;color:#302012;}
