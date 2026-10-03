@@ -20,10 +20,10 @@ export function installDragDrop(root, onDrop, onSelect) {
     if (!drag.active) {
       drag.active=true; drag.ghost=drag.card.cloneNode(true);
       drag.ghost.className='drag-ghost'; drag.ghost.setAttribute('aria-hidden','true'); drag.ghost.tabIndex=-1;
-      if(drag.card.classList.contains('grain-sack')) {
+      if(drag.card.classList.contains('grain-sack')||drag.card.classList.contains('print-piece')) {
         const box=drag.card.getBoundingClientRect(), source=drag.card.querySelector('img');
         const imageBox=source.getBoundingClientRect(), image=drag.ghost.querySelector('img');
-        drag.ghost.classList.add('grain-drag-ghost');
+        drag.ghost.classList.add(drag.card.classList.contains('print-piece')?'print-drag-ghost':'grain-drag-ghost');
         drag.ghost.style.width=box.width+'px'; drag.ghost.style.height=box.height+'px';
         image.style.width=imageBox.width+'px'; image.style.height=imageBox.height+'px';
       }

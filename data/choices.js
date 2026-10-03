@@ -1,7 +1,9 @@
+import { chapterThreeChoices } from './chapter-three.js';
 import { chapterTwoChoices } from './chapter-two.js';
 import { documents } from './documents.js';
 import { dialogues } from './dialogues.js';
 export const choices = {
+  ...chapterThreeChoices,
   ...chapterTwoChoices,
   initialFreedomInterpretation: {
     contextLabel: 'Jakob zeigt ein Flugblatt, auf dem steht:',

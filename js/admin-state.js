@@ -6,6 +6,8 @@ import { chapters } from '../data/chapters.js';
 import { choices } from '../data/choices.js';
 import { dialogues } from '../data/dialogues.js';
 import { puzzles, sortingGames } from '../data/minigames.js';
+import { chapterThreeChoices, chapterThreeDialogues, chapterThreeScenes } from '../data/chapter-three.js';
+import { prepareChapterThreeState } from './chapter-three.js';
 import { chapterTwoChoices, demandParts } from '../data/chapter-two.js';
 import { adminChapterTargets } from '../data/admin-targets.js';
 
@@ -87,12 +89,31 @@ function chapterTwo(next,scene,target,complete=false) {
 }
 
 // One registry controls prerequisites, chapter completion and owned state fields.
+function chapterThree(next,scene,target={},complete=false) {
+ const index=complete?chapterThreeScenes.length:chapterThreeScenes.findIndex(s=>s.id===scene.id), reached=id=>index>chapterThreeScenes.findIndex(s=>s.id==='ch3_'+id);
+ next.notebook.unlocked=true;syncConsequences(next);next.chapter3.priorProfile={...next.orientation};
+ const fixture=(id,value)=>{next.choices[id]=value;next.choiceTexts[id]=chapterThreeChoices[id].options.find(o=>o.id===value).text;};
+ if(reached('entry'))fixture('ch3EntryFocus','labor');
+ if(reached('clusters'))next.chapter3.complaintClusters=[{cards:['0','6'],reason:'dependence'},{cards:['1','4','5'],reason:'rights'}];
+ if(reached('demand'))fixture('ch3Demand_labor','A');
+ if(reached('articles')){next.chapter3.seenArticles=[6,3,12];next.notebook.documents.push('articles');next.notebook.passages.articles=[6,3,12];}
+ if(reached('compare'))next.chapter3.articleComparison={common:'Belastung begrenzen',differences:'Die Artikel begründen die Forderung ausdrücklich mit dem Evangelium.'};
+ if(reached('workshop'))next.chapter3.interpretations=['A','C'];
+ if(reached('religion'))fixture('ch3Religion','distinction');
+ if(reached('print'))fixture('ch3Print','full');
+ if(reached('press')){next.chapter3.printPhase='done';next.chapter3.printed=4;next.minigames.completed.push('ch3Print');}
+ if(reached('resistance'))fixture('ch3Resistance','negotiate');
+ if(reached('reason'))fixture('ch3Reason','burdens');
+ if(reached('news')||complete)next.chapter3.completed=true;
+ next.progress.completedScenes.push(...chapterThreeScenes.slice(0,index).map(s=>s.id));syncConsequences(next);
+}
 export const adminChapterRegistry = {
+  3:{prepare:chapterThree,complete:next=>chapterThree(next,sceneById.ch3_end,{},true),reset:next=>{next.chapter3=freshState().chapter3;next.notebook.documents=next.notebook.documents.filter(id=>id!=='articles');delete next.notebook.passages.articles;},ownedChoices:()=>Object.keys(chapterThreeChoices),games:['ch3Print']},
   1:{prepare:chapterOne,complete:next=>chapterOne(next,sceneById.ch1_end,{},true),reset:next=>{
     for(const key of ['flyerUnlocked','peterConversation','annaConversation','jakobConversation','freedomSortingComplete']) next.progress[key]=false;
     next.progress.conversations=[]; next.minigames.sorting={}; next.minigames.puzzle=[];
     next.notebook.entries=next.notebook.entries.filter(id=>id!=='freedom'); next.notebook.documents=next.notebook.documents.filter(id=>id!=='freedom'); delete next.notebook.passages.freedom; next.notebook.unlocked=false;
-  },ownedChoices:()=>Object.keys(choices).filter(id=>!chapterTwoChoices[id]),games:['justification','freedomSorting']},
+  },ownedChoices:()=>Object.keys(choices).filter(id=>!chapterTwoChoices[id]&&!chapterThreeChoices[id]),games:['justification','freedomSorting']},
   2:{prepare:chapterTwo,complete:next=>chapterTwo(next,sceneById.ch2_end,{checkpoint:'end'},true),reset:next=>{
     const fresh=freshState(); for(const key of ['chapter2','forestEvidence','grievances']) next[key]=fresh[key];
   },ownedChoices:()=>[...Object.keys(chapterTwoChoices),'peterDayPlan','initialFarmPlan','duesFirstSacrifice','duesSecondSacrifice','priorityGrievances','playerDemand'],games:[]}
@@ -137,6 +158,7 @@ export function prepareAdminStateForScene(sceneId,scenario=null) {
     for(const [key,value] of Object.entries(scenario.orientation||{})) setAdminOrientation(key,value,next);
     next.consequences.adminScenario=structuredClone(scenario);
   }
+  if(chapter===3) { next.dialogue=null;next.interaction=null;prepareChapterThreeState(next,scene); }
   if(target.dialogue&&next.dialogue) next.dialogue.lines=getContextualDialogue(target.dialogue,next,next.dialogue.lines);
   return syncConsequences(next);
 }
@@ -153,5 +175,6 @@ export function resetAdminChapter(current,chapter) {
   const entry=prepareAdminStateForScene(adminTargets().find(group=>group.chapter.id===chapter).targets[0].id);
   next.scene=entry.scene; next.chapter=chapter; next.phase=entry.phase; next.dialogue=entry.dialogue; next.interaction=entry.interaction;
   if(chapter===2) next.chapter2.stage=entry.chapter2.stage;
+  if(chapter===3) next.chapter3.stage=entry.chapter3.stage;
   return syncConsequences(next);
 }

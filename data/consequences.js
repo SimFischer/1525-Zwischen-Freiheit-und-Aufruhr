@@ -1,12 +1,14 @@
+import { chapterThreeDecisionRules } from './chapter-three-consequences.js';
 // For every important decision from chapter 3 onward document: immediate response,
 // later callback, orientation/perception effect, and potential chapter 5/6 recall.
 // Open responses describe approaches, never moral quality. Incorrect task answers
 // have no negative character effects. IDs reuse the existing choices save fields.
 export const orientationKeys=['community','legal','resistance','prudence','theological'];
-export const perceptionCharacters=['peter','anna','jakob','margarethe','konrad','ulrich'];
+export const perceptionCharacters=['lotzer','matthes','georg','katharina','hans','printer','peter','anna','jakob','margarethe','konrad','ulrich'];
 export const perceptionTags=['community_minded','cautious','legally_argumentative','willing_to_resist','theologically_reflective','reliable','questioned_authority','avoids_conflict','seeks_negotiation','social_tension'];
 const effect=(orientation={},perceptions={})=>({orientation,perceptions});
 export const decisionRules={
+ ...chapterThreeDecisionRules,
  initialFreedomInterpretation:{chapter:1,immediate:'Existing interpretation reactions',later:'ch2Morning',options:{
   freedom_no_obedience:effect({resistance:1},{jakob:['willing_to_resist']}),
   freedom_different_kind:effect({theological:1},{jakob:['theologically_reflective']}),

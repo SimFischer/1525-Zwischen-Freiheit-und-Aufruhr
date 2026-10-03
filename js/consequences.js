@@ -17,6 +17,11 @@ export function syncConsequences(game) {
   perceptions[person]=[...new Set([...perceptions[person],...overrides[person]])];
  }
  for(const key of orientationKeys) orientation[key]=Math.max(0,orientation[key]+adjustments[key]);
+ if(game.chapter3) {
+  for(const [field,id] of Object.entries({entryFocus:'ch3EntryFocus',religiousInterpretation:'ch3Religion',printStrategy:'ch3Print',resistanceStrategy:'ch3Resistance',mainReason:'ch3Reason'})) game.chapter3[field]=game.choices[id]??null;
+  game.chapter3.demandChoice=game.choices['ch3Demand_'+game.chapter3.entryFocus]??null;
+  game.chapter3.publicTone={full:'nuanced',summary:'simplified',religious:'religious',accusation:'confrontational'}[game.chapter3.printStrategy]??null;
+ }
  game.orientation=orientation; game.perceptions=perceptions;
  game.consequences={adminScenario:previous.adminScenario||null,version:1,orientationAdjustments:adjustments,perceptionAdditions:overrides,flags:{forestReported:game.choices.forestResponse==='take',corveeRefused:game.choices.corveeResponse==='refuse',duesWithheld:game.choices.duesResponse==='withhold',additionalDuesRefused:game.choices.duesSecondSacrifice==='refuse'}};
  return game;
@@ -82,5 +87,5 @@ export function getContextualDialogue(dialogueId,game,base=[]) {
 }
 export function prepareConsequencesForEpilogue(game) {
  const orientation=getOrientationProfile(game), maximum=Math.max(...Object.values(orientation));
- return {orientation,dominantOrientations:maximum>0?orientationKeys.filter(key=>orientation[key]===maximum):[],decisions:getSavedDecisions(game),perceptions:structuredClone(game.perceptions),flags:structuredClone(game.consequences.flags),grievances:structuredClone(game.grievances),priorityGrievances:structuredClone(game.choices.priorityGrievances),playerDemand:game.choices.playerDemand};
+ return {chapter3:structuredClone(game.chapter3),orientation,dominantOrientations:maximum>0?orientationKeys.filter(key=>orientation[key]===maximum):[],decisions:getSavedDecisions(game),perceptions:structuredClone(game.perceptions),flags:structuredClone(game.consequences.flags),grievances:structuredClone(game.grievances),priorityGrievances:structuredClone(game.choices.priorityGrievances),playerDemand:game.choices.playerDemand};
 }

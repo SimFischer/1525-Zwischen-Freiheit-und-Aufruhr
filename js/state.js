@@ -7,6 +7,7 @@ export function freshState() {
     dimensions: { negotiation: 0, resistance: 0, violence: 0, solidarity: 0, theologicalPoliticization: 0 },
     choices: { initialFreedomInterpretation: null, freedomSocialFirstThought: null, freedomAndOuterLife: null, forestArgument:null,forestResponse:null,peterDayPlan:[],corveeSacrifice:null,corveeResponse:null,initialFarmPlan:{food:0,seed:0,reserve:0},duesFirstSacrifice:[],duesResponse:null,duesSecondSacrifice:null,priorityGrievances:[],lutherPoliticalInference:null,playerDemand:null },
     chapter2: { forestComplete:false, corveeComplete:false, duesComplete:false, assemblyUnlocked:false, assemblyComplete:false, stage:'', grain:{}, links:[], pair:[], selections:[], demand:{}, removed:[] },
+    chapter3: {"entryFocus": null, "complaintClusters": [], "demandChoice": null, "articleComparison": {}, "religiousInterpretation": null, "printStrategy": null, "publicTone": null, "resistanceStrategy": null, "mainReason": null, "completed": false, "pair": [], "interpretations": [], "printPhase": "form", "printed": 0, "selected": null, "seenArticles": [], "priorProfile": {}, "stage": ""},
     forestEvidence: { oldUse:false, customaryRules:false, newClaim:false },
     grievances: {forest:[],corvee:[],dues:[]},
     choiceTexts: {}, relationships: { peter: 0, anna: 0, jakob: 0, konrad: 0 },

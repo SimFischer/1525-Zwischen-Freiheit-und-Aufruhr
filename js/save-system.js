@@ -66,9 +66,12 @@ export function load(normal = false) {
       for (const id of ['serviceBoundary','obedienceBoundary','innerConsolidation','politicalConsolidation']) { delete base.choices[id]; delete base.choiceTexts[id]; }
     }
     if (Object.entries(base.minigames.sorting).some(([id,zone])=>!sortingGames.freedomSorting.cards.some(card=>card.id===id) || !['god','world'].includes(zone))) return null;
-    for (const key of ['chapter2','forestEvidence','grievances']) if(value[key] && typeof value[key]==='object' && !Array.isArray(value[key])) base[key]={...base[key],...value[key]};
+    for (const key of ['chapter2','chapter3','forestEvidence','grievances']) if(value[key] && typeof value[key]==='object' && !Array.isArray(value[key])) base[key]={...base[key],...value[key]};
     const isRecord = item => item && typeof item === 'object' && !Array.isArray(item);
     const validList = (items, allowed, max) => Array.isArray(items) && items.length<=max && new Set(items).size===items.length && items.every(item=>allowed.includes(item));
+    const c3=base.chapter3;
+    if(!isRecord(c3)||typeof c3.completed!=='boolean'||!Number.isInteger(c3.printed)||c3.printed<0||c3.printed>4||!['form','ink','paper','press','remove','stack','done'].includes(c3.printPhase)) return null;
+    if(!validList(c3.pair,Array.from({length:8},(_,i)=>String(i)),8)||!validList(c3.interpretations,['A','B','C','D'],4)||!validList(c3.seenArticles,Array.from({length:12},(_,i)=>i+1),12)||!isRecord(c3.articleComparison)||!isRecord(c3.priorProfile)||!Array.isArray(c3.complaintClusters)||c3.complaintClusters.length>28||c3.complaintClusters.some(x=>!isRecord(x)||!validList(x.cards,Array.from({length:8},(_,i)=>String(i)),8)||x.cards.length<2||!['rights','dependence','voice','basis'].includes(x.reason))) return null;
     const areas=['food','seed','reserve'];
     const complaintIds=grievances.map(item=>item.id);
     if (!validList(base.choices.peterDayPlan,['grain','fence','feed'],3) || !validList(base.choices.priorityGrievances,complaintIds,3)) return null;

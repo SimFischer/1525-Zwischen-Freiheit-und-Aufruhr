@@ -1,6 +1,8 @@
+import { chapterThreeDialogues } from './chapter-three.js';
 import { chapterTwoDialogues } from './chapter-two.js';
 import { chapters } from './chapters.js';
 export const dialogues = {
+  ...chapterThreeDialogues,
   ...chapterTwoDialogues,
   chapterIntro: [{ text: chapters[0].intro }],
   introJakob: [

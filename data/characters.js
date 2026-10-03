@@ -23,10 +23,14 @@ export function sceneCharacterState(id, active, emotion = 'neutral') {
   const pose = id === 'jakob' && emotion === 'reading' ? 'reading' : active ? 'talking' : 'neutral';
   return { pose, asset: characters[id].sceneStates[pose] };
 }
+for(const [id,name,poses] of [['lotzer','Sebastian Lotzer',['neutral','talking','reading']],['matthes','Matthes',['neutral','talking','reading']],['georg','Georg',['neutral']],['katharina','Katharina',['neutral']],['hans','Hans',['neutral']],['printer','Der Drucker',['working']]]) {
+ const states=Object.fromEntries(poses.map(p=>[p,{asset:`assets/chapter3/portraits/ch3_portrait_${id}_${p}.png`} ])); if(!states.neutral) states.neutral=states.working;
+ characters[id]={name,states,sceneStates:Object.fromEntries(poses.map(p=>[p,`assets/chapter3/characters/ch3_char_${id}_${p}.png`]))};
+}
 let preloaded = false;
 export function preloadCharacters() {
   if (preloaded) return;
   preloaded = true;
-  for (const person of Object.values(characters)) for (const mood of Object.values(person.states)) { const image = new Image(); image.src = mood.asset; }
+  for (const person of Object.values(characters).filter(person=>!person.states.neutral.asset.includes('/chapter3/'))) for (const mood of Object.values(person.states)) { const image = new Image(); image.src = mood.asset; }
   for (const asset of ['k1_taverne_exploration.png','k1_taverne_dialog_group.png']) { const image = new Image(); image.src = 'assets/chapter1/' + asset; }
 }

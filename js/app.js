@@ -1,5 +1,6 @@
 import { configureAdmin, installAdminHold, adminAction, testToolbar, ensureAdminSession, openAdmin } from './admin.js';
 import { prepareAdminStateForScene } from './admin-state.js';
+import { configureChapterThree, prepareChapterThree, chapterThreeAction, chapterThreeDrop, chapterThreeSelect } from './chapter-three.js';
 import { configureChapterTwo, prepareChapterTwo, chapterTwoAction, chapterTwoDrop, selectCard } from './chapter-two.js';
 import { forestClues, chapterTwoDialogues } from '../data/chapter-two.js';
 import { state, freshState, replaceState, addUnique, conversationDone } from './state.js';
@@ -50,6 +51,7 @@ function enterScene(id, complete = true) {
   state.scene = id; state.phase = 'active'; state.dialogue = null; state.interaction = null; selectedCard = null;
   const scene = sceneById[id];
   state.chapter=scene.chapter||1;
+  if (scene.chapter===3) { playing=true; prepareChapterThree(scene); render(); persist(); return; }
   if (scene.chapter===2) { playing=true; prepareChapterTwo(scene); render(); persist(); return; }
   if (scene.intro) beginDialogue(scene.intro,'idle');
   if (scene.kind === 'dialogue') beginDialogue(scene.dialogue,scene.choice ? 'scene-choice' : 'next-scene');
@@ -74,6 +76,13 @@ function render() {
   document.body.dataset.testMode=String(isTestMode());
   if (!playing) return startScreen();
   const scene = sceneById[state.scene], debugWasOpen = app.querySelector('.debug')?.open || false;
+  if(scene.chapter===3) {
+    const scroll=app.querySelector('.task-scroll')?.scrollTop||0, previous=app.querySelector('#interaction')?.dataset.stage;
+    setMode(state.dialogue?'dialogue':state.interaction?'choice':state.scene==='ch3_hub'?'exploration':'minigame'); state.uiMode=document.body.dataset.mode;
+    app.innerHTML=sceneView()+debugView(debugWasOpen)+testToolbar();
+    if(previous===state.scene && app.querySelector('.task-scroll')) app.querySelector('.task-scroll').scrollTop=scroll;
+    return;
+  }
   if(scene.chapter===2) {
     const previousPanel=app.querySelector('#interaction'), previousScroll=previousPanel?.querySelector('.task-scroll')?.scrollTop||0;
     const focused=document.activeElement, selector=focused?.closest('#app')&&focused.dataset.action ? ['action','card','task','item','store','choice','option','reason'].filter(key=>focused.dataset[key]).map(key=>`[data-${key}="${CSS.escape(focused.dataset[key])}"]`).join('') : null;
@@ -206,6 +215,7 @@ document.addEventListener('click',event => {
   if (action === 'archive-document') return openDocument(target.dataset.document,null,() => openNotebook('documents'),true);
   if (action === 'scene-document') return openSceneDocument();
   if(action==='debug-ch2-complete' && new URLSearchParams(location.search).get('debug')==='true') { const next=prepareAdminStateForScene('ch2_assembly'); next.scene='ch2_hub'; next.dialogue=null; next.interaction=null; next.chapter2.stage='hub'; showPreparedState(next); return; }
+  if (chapterThreeAction(action,target)) { render(); persist(); return; }
   if (chapterTwoAction(action,target)) { render(); persist(); return; }
   if (action === 'prop-door') {
     if (scene.kind !== 'ending') return notify('Für heute bleibst du noch hier.');
@@ -277,15 +287,16 @@ document.addEventListener('click',event => {
   if (action === 'sort-check') checkFreedomSorting();
   if (action === 'debug-prev' || action === 'debug-next') return showPreparedState(prepareAdminStateForScene(scenes[Math.max(0,Math.min(scenes.length-1,scenes.indexOf(scene)+(action === 'debug-next' ? 1 : -1)))].id));
   if (action === 'debug-clear') { clearSave(); notify('Gespeicherten Spielstand gelöscht.'); return; }
-  if (action === 'debug-documents') { state.notebook.documents = ['freedom']; state.notebook.passages.freedom = [0,1]; state.notebook.unlocked = true; notify('Alle Dokumente freigeschaltet.'); }
+  if (action === 'debug-documents') { state.notebook.documents = ['freedom','articles']; state.notebook.passages.freedom = [0,1]; state.chapter3.seenArticles=Array.from({length:12},(_,i)=>i+1);state.notebook.passages.articles=[...state.chapter3.seenArticles]; state.notebook.unlocked = true; notify('Alle Dokumente freigeschaltet.'); }
   if (playing) { render(); persist(); }
 });
 document.addEventListener('change',event => {
   if(event.target.dataset.demand) { state.chapter2.demand[event.target.dataset.demand]=Number(event.target.value); render(); persist(); }
   if (event.target.id === 'debug-scene') { ensureAdminSession(); showPreparedState(prepareAdminStateForScene(event.target.value)); }
 });
+configureChapterThree({enterScene,render,persist});
 configureChapterTwo({enterScene,render,persist,clues:forestClues,dialogues:chapterTwoDialogues});
-installDragDrop(app,(id,zone) => { if(state.chapter===2) { chapterTwoDrop(id,zone); render(); persist(); return; } state.minigames.sorting[id] = zone; selectedCard = null; render(); persist(); },id => { if(state.chapter===2) { if(state.scene==='ch2_dues') state.chapter2.selected=id; else selectCard(id); render(); persist(); return; } selectedCard = selectedCard === id ? null : id; render(); });
+installDragDrop(app,(id,zone) => { if(state.chapter===3) { chapterThreeDrop(id,zone); render(); persist(); return; } if(state.chapter===2) { chapterTwoDrop(id,zone); render(); persist(); return; } state.minigames.sorting[id] = zone; selectedCard = null; render(); persist(); },id => { if(state.chapter===3) { chapterThreeSelect(id); render(); persist(); return; } if(state.chapter===2) { if(state.scene==='ch2_dues') state.chapter2.selected=id; else selectCard(id); render(); persist(); return; } selectedCard = selectedCard === id ? null : id; render(); });
 configureAdmin({isPlaying:()=>playing,render,showState:showPreparedState});
 installAdminHold();
 const start = canonicalScene(new URLSearchParams(location.search).get('start'));
