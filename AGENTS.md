@@ -68,6 +68,11 @@ Kein „Kapitel 2 beginnen“ auf dem Hotspot. Den bestehenden Übergang mit
 Überblendung/Morgendämmerung beibehalten; danach die Kapitelkarte
 „Kapitel 2 – Wie frei ist dein Leben?“ zeigen.
 
+Für alle Kapitelübergänge gilt: genau eine dominante Fortsetzungsaktion mit
+`chapter-continue`; Nebenaktionen gemeinsam darunter in `ending-actions`.
+Die gemeinsame Gestaltung liegt in `css/art-direction.css`. Kein zweiter
+Primärbutton für Titelbild, Wiederholung oder Notizbuch.
+
 ## Grenzen und Prüfung
 
 Art-Direction-Arbeit ändert keine fachlichen Inhalte, Story, Aufgaben- oder
