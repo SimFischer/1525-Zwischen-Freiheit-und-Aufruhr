@@ -29,7 +29,7 @@ export const regimentsCases=[
 export const regimentsSynthesis=[
  ['A','Luthers Unterscheidung trennt Glaube und äußere Ordnung grundsätzlich voneinander.'],
  ['B','In konkreten Konflikten können beide Bereiche gleichzeitig berührt sein.'],
- ['C','Die Unterscheidung beantwortet automatisch, was in jedem politischen Konflikt richtig ist.'],
+ ['C','Bei einer weltlichen Streitfrage genügt es, den Schutzauftrag der Obrigkeit festzustellen.'],
  ['D','Besonders schwierig wird es, wenn Obrigkeit Glauben und Gewissen bestimmen will oder Religion unmittelbar politische Gewalt legitimiert.']
 ];
 export const regimentsSummary='Luthers Unterscheidung schafft keine einfache Schablone für jeden Konflikt. Sie fragt danach, mit welchen Mitteln geistliche und weltliche Ordnung wirken – und wo ihre Grenzen liegen.';

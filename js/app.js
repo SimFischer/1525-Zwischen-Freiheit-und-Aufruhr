@@ -185,18 +185,18 @@ function checkPuzzle() {
   const id = state.interaction.id, game = puzzles[id], context = state.interaction.context;
   const count = attempt(id,[...state.minigames.puzzle]);
   const correct = game.solution.every((item,index) => state.minigames.puzzle[index] === item);
-  const assisted = !correct && count >= 3;
+  const assisted = !correct && count >= 2;
   if (correct || assisted) {
     addUnique(state.minigames.completed,id);
     state.minigames.resolved[id] = true;
     if (assisted) { state.minigames.assisted[id] = true; state.minigames.puzzle = [...game.solution]; }
     showFeedback({id,context,after:'after-puzzle',assisted,solution:assisted ? game.solution.join(' → ') : null,text:game.success,securing:assisted ? game.securing : null});
-  } else showFeedback({id,context,after:'retry-puzzle',text:game.hints[Math.min(count-1,1)]});
+  } else showFeedback({id,context,after:'retry-puzzle',text:game.hints[0]+'\n\n'+(state.minigames.puzzle.includes('B')||state.minigames.puzzle.includes('F')?'In deiner Reihe wird Gottes Annahme noch durch menschliche Leistung gesichert. Prüfe, ob Werke bei Luther Ursache oder Folge der Annahme sind.':'Die passenden Gedanken können dennoch in einer anderen Reihenfolge stehen. Prüfe, was Freiheit ermöglicht und was erst aus ihr folgt.')});
 }
 function checkFreedomSorting() {
   const scene = sceneById[state.scene], game = sortingGames[scene.game];
   const count = attempt(scene.game,{...state.minigames.sorting});
-  const correct = checkSorting(scene.game), assisted = !correct && count >= 3;
+  const correct = checkSorting(scene.game), assisted = !correct && count >= 2;
   if (correct || assisted) {
     if (assisted) {
       state.minigames.assisted[scene.game] = true;
@@ -206,7 +206,7 @@ function checkFreedomSorting() {
     state.minigames.resolved[scene.game] = true;
     addUnique(state.minigames.completed,scene.game);
     showFeedback({id:scene.game,after:'next-scene',assisted,text:game.success,securing:game.securing,highlights:game.cards.filter(card=>card.boundary).map(card=>card.text),solution:assisted ? game.cards.map(card=>`${card.text} → ${game.zones.find(zone=>zone.id===card.preferred).title}`).join('\n') : null});
-  } else showFeedback({id:scene.game,after:'retry-sorting',text:game.hints[Math.min(count-1,1)]});
+  } else showFeedback({id:scene.game,after:'retry-sorting',text:game.hints[0]+'\n\nPrüfe besonders: '+game.cards.filter(card=>!card.boundary&&state.minigames.sorting[card.id]!==card.preferred).map(card=>card.text+' – '+card.example).join(' ')});
 }
 document.addEventListener('click',event => {
   const target = event.target.closest('[data-action]') || event.target.closest('[data-drop-zone]');

@@ -13,6 +13,7 @@
   --leather-surface: repeating-linear-gradient(12deg,#ffffff04 0 1px,transparent 1px 5px),linear-gradient(110deg,#64472e,#392619 55%,#59402b);
   --wood-surface: repeating-linear-gradient(2deg,#311d121c 0 1px,transparent 1px 6px),linear-gradient(#88613b,#5d3d25);
   --paper-edge: inset 0 0 24px #a7753230,inset 3px 0 7px #65412424;
+  --source-reading-paper: linear-gradient(100deg,#f3e4c9fa,#f8ecd5fc 48%,#f2e2c5fa);
 }
 button { font-family: Georgia,'Times New Roman',serif; border-radius: 4px 7px 4px 6px; background: var(--parchment-surface); -webkit-tap-highlight-color: transparent; }
 .primary,.secondary,.quiet,
@@ -432,7 +433,7 @@ body[data-mode="admin"] .admin-console { width:100%; height:min(850px,calc(94svh
 .ch3-article-view .panel-actions { flex-shrink:0; padding-top:.7rem; flex-wrap:wrap; }
 @media(max-width:600px) { .ch3-article-tabs { max-height:150px; overflow:auto; }.ch3-document-paper { padding:1rem 6%; } }
 .ch3-document-paper { display:grid; grid-template-columns:1fr 1fr; gap:10%; padding:2rem 7%; }
-.ch3-article-leaf { min-width:0; }
+.ch3-article-leaf { min-width:0; background:var(--source-reading-paper); box-shadow:0 0 12px 6px #f3e4c9e6; }
 .ch3-article-focus { padding:.7rem; }
 @media(max-width:600px) { .ch3-document-paper { grid-template-columns:1fr;background:var(--parchment-surface);padding:1rem; }.ch3-article-focus { padding:1rem; } }
 .ch3-article-view { color:#f1dfbc; }
@@ -446,7 +447,7 @@ dialog:has(.ch3-article-view) { width:92vw; max-width:1300px; height:90svh; max-
 .ch3-article-tabs { justify-content:center; gap:4px; padding:0 0 4px; }
 .ch3-article-tabs button { width:44px; height:44px; min-width:44px; padding:4px; font-size:1rem; }
 .ch3-article-scroll { display:flex; flex-direction:column; }
-.ch3-document-paper { flex:1; min-height:320px; padding:clamp(20px,3vh,32px) 7%; gap:9%; align-content:center; font-size:1.06rem; line-height:1.48; }
+.ch3-document-paper { flex:1; min-height:320px; padding:clamp(20px,3vh,32px) 7%; gap:9%; align-content:center; font-size:18px; line-height:1.48; }
 .ch3-document-paper h2 { font-size:clamp(1.45rem,2.8vw,2rem); line-height:1.15; margin:.35rem 0 .7rem; overflow-wrap:anywhere; }
 .ch3-document-paper p { margin:.6rem 0; }
 .ch3-document-paper .eyebrow { font-size:.8rem; }
@@ -504,7 +505,7 @@ dialog:has(.ch4-reader) {width:96vw;max-width:1400px;height:94svh;max-height:94s
 .ch4-source-canvas>img {display:block;width:100%;height:auto;pointer-events:none;}
 /* A quiet paper wash covers only the original text regions. The aged raster
    edges and binding stay visible; no speckles sit underneath the type. */
-.ch4-source-text {position:absolute;overflow:auto;overscroll-behavior:contain;min-width:0;padding:clamp(12px,1.8vw,24px);color:#2d2117;background:linear-gradient(100deg,#f3e4c9fa,#f8ecd5fc 48%,#f2e2c5fa);box-shadow:0 0 12px 6px #f3e4c9e6;font-family:'Palatino Linotype','Book Antiqua',Palatino,Georgia,serif;font-size:20px;line-height:1.6;overflow-wrap:break-word;hyphens:auto;text-align:left;scrollbar-color:#ac8757 #eddfc4;scrollbar-width:thin;}
+.ch4-source-text {position:absolute;overflow:auto;overscroll-behavior:contain;min-width:0;padding:clamp(12px,1.8vw,24px);color:#2d2117;background:var(--source-reading-paper);box-shadow:0 0 12px 6px #f3e4c9e6;font-family:'Palatino Linotype','Book Antiqua',Palatino,Georgia,serif;font-size:20px;line-height:1.6;overflow-wrap:break-word;hyphens:auto;text-align:left;scrollbar-color:#ac8757 #eddfc4;scrollbar-width:thin;}
 .ch4-source-text>h2,.ch4-source-text>p,.ch4-source-text>blockquote {max-width:36rem;margin-inline:auto;}
 .ch4-source-text h2 {font-family:Baskerville,'Palatino Linotype','Book Antiqua',Georgia,serif;font-size:clamp(25px,2.6vw,34px);font-weight:700;line-height:1.2;letter-spacing:.01em;margin-block:0 .65em;text-wrap:balance;}
 .ch4-source-text .ch4-title-date {display:block;font-size:18px;font-weight:400;line-height:1.5;letter-spacing:.035em;font-variant-caps:small-caps;margin-top:.25em;}
@@ -513,7 +514,7 @@ dialog:has(.ch4-reader) {width:96vw;max-width:1400px;height:94svh;max-height:94s
 .ch4-source-text .ch4-source-date,.ch4-source-text .ch4-source-author {font-size:18px;line-height:1.5;font-variant-caps:small-caps;letter-spacing:.035em;}
 .ch4-source-text .ch4-source-subtitle {font-size:22px;line-height:1.4;}
 .ch4-source-quotation {margin-block:1em;padding-inline-start:.8em;border-inline-start:1px solid #a68452;}
-.ch4-source-quotation p {font-style:italic;}
+.ch4-source-quotation {font-style:italic;}
 .ch4-source-text .ch4-source-personal {font-size:18px;margin-block-start:1.5em;padding-block-start:.8em;border-top:1px solid #b39a704d;}
 .ch4-source-text:focus-visible {outline:2px solid #886333;outline-offset:3px;}
 

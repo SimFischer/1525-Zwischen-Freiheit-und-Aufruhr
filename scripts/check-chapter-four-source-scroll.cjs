@@ -12,7 +12,7 @@ const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright'),assert=req
    const lum=rgb=>rgb.map(x=>{x/=255;return x<=.04045?x/12.92:((x+.055)/1.055)**2.4;}).reduce((v,x,i)=>v+x*[.2126,.7152,.0722][i],0);
    // Even a black blemish below the least-opaque paper wash remains light.
    const darkestPaper=[243,228,201].map(x=>x*(250/255));
-   return {unchanged,markers,quotes:[...document.querySelectorAll('.ch4-source-quotation p')].map(n=>getComputedStyle(n).fontStyle),fields:fields.map(n=>{const st=getComputedStyle(n);return {background:st.backgroundImage,contrast:(lum(darkestPaper)+.05)/(lum(rgb(st.color))+.05),size:parseFloat(st.fontSize),heading:parseFloat(getComputedStyle(n.querySelector('h2')).fontSize),padding:parseFloat(st.paddingLeft)};})};
+   return {unchanged,markers,quotes:[...document.querySelectorAll('.ch4-source-quotation')].map(n=>getComputedStyle(n).fontStyle),fields:fields.map(n=>{const st=getComputedStyle(n);return {background:st.backgroundImage,contrast:(lum(darkestPaper)+.05)/(lum(rgb(st.color))+.05),size:parseFloat(st.fontSize),heading:parseFloat(getComputedStyle(n.querySelector('h2')).fontSize),padding:parseFloat(st.paddingLeft)};})};
   },page);
   assert.ok(typography.unchanged,page+' source wording changed');
   for(const f of typography.fields){assert.ok(f.background.startsWith('linear-gradient')&&f.contrast>=10&&f.size>=(page==='luther_comparison_frame'?18:20)&&f.heading>=25&&f.padding>=12,page+' paper/type readability');}

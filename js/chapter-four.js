@@ -40,6 +40,16 @@ export function prepareChapterFourState(game,scene){
   if(game.choices.forestResponse==='legal_basis')recalls.push(l('peter','Schon im Wald wolltest du wissen, worauf ihr Anspruch beruht. Jetzt können wir verlangen, dass er die Grundlage verbindlich nennt.'));
   if(recalls.length)startTalk(recalls,'ready');
  }
+ if(stage==='route'){
+  // Relationships recall decisions, without rewarding assessed answers.
+  const relationship={
+   A:game.perceptions.peter.includes('seeks_negotiation')?l('peter','Beim Frondienst hast du nach Aufschub gesucht. Ich vertraue darauf, dass du auch jetzt unsere Versorgung mitbedenkst.'):l('peter','Ich gehe mit. Wenn du Druck machen willst, sage mir vorher, welches Risiko wir für die Höfe tragen sollen.'),
+   B:game.perceptions.anna.includes('community_minded')?l('anna','Schon im Dorf wolltest du gemeinsam handeln. Deshalb möchte ich, dass du unser Mandat mitformulierst.'):l('anna','Ich stehe für die Gemeinde ein. Sag mir, ob du diesmal auch ihre Grenzen mittragen willst.'),
+   C:game.perceptions.konrad.includes('willing_to_resist')?l('konrad','Beim Frondienst hast du widersprochen. Ich traue dir zu, hier dabeizubleiben; über unsere Mittel sind wir damit noch nicht einig.'):l('konrad','Du erwägst jetzt Widerstand. Ich will hören, welche Verpflichtung du wirklich mitträgst.'),
+   D:l('jakob','Du willst die religiöse Begründung prüfen. Dann lege auch deinen eigenen Freiheitsgedanken neben die Quelle; ich möchte dir dabei widersprechen dürfen.')
+  }[c.openingRoute];
+  game.dialogue.lines.push(relationship);
+ }
  if(stage==='ermahnung'&&game.choiceTexts.ch3Religion)game.dialogue.lines.push(l('jakob','Deine Deutung in Memmingen war: '+game.choiceTexts.ch3Religion+' Halte sie neben Luthers Antwort, statt sie jetzt einfach zu vergessen.'));
  if(stage==='opening_effect')startTalk(effectDialogue(game),'ready');
  if(stage==='branch_effect')startTalk(branchDialogue(game),'ready');
@@ -78,8 +88,8 @@ export function chapterFourAction(action,target){
    talk(option.reaction,nextAfterChoice(id));state.interaction=null;
   }else {
    const n=(c().attempts[id]||0)+1;c().attempts[id]=n;
-   const correct=option.id===def.solution,assisted=!correct&&n>=3;
-   c().feedback={text:correct?option.feedback:assisted?'Gemeinsam sichern wir den Kern: '+def.options.find(x=>x.id===def.solution).feedback:option.feedback,resolved:correct||assisted,next:nextAfterChoice(id)};
+   const correct=option.id===def.solution,assisted=!correct&&n>=2;
+   c().feedback={submitted:option.text,text:correct?option.feedback:assisted?option.feedback+' Gemeinsam sichern wir den Kern: '+def.options.find(x=>x.id===def.solution).feedback:option.feedback+' '+def.hints[0],resolved:correct||assisted,next:nextAfterChoice(id)};
    if(correct||assisted){c().resolved[id]=true;state.minigames.resolved[id]=true;if(assisted)state.minigames.assisted[id]=true;}
   }return true;
  }
@@ -102,9 +112,14 @@ export function chapterFourAction(action,target){
  }
  if(action==='ch4-check'){
   const task=multiselectTasks[stage],a=[...(c().selections[stage]||[])].sort(),valid=(task.alternatives||[task.solution]).some(s=>JSON.stringify([...s].sort())===JSON.stringify(a));
+  if(!a.length)return true;
   const n=(c().attempts[stage]||0)+1;c().attempts[stage]=n;
-  if(valid||n>=3){c().resolved[stage]=true;if(!valid)c().selections[stage]=[...(task.solution||task.alternatives[0])];if(stage==='lords')c().lutherLordsUnderstood=true;}
-  c().feedback={text:valid?task.feedback:n>=3?'Wir halten gemeinsam fest: '+task.feedback:'Prüfe die Reichweite: Die Kritik an Unrecht rechtfertigt nicht jedes Mittel; Sorge um Ordnung rechtfertigt ebenso wenig jede Herrschaftsgewalt.',resolved:valid||n>=3,next:{lords:'peasants',peasants_complement:'memory',structure:c().theologicalPreparation||c().branchOutcome==='interpretive_depth'||state.chapter3.religiousInterpretation==='hermeneutical_caution'?'analysis':'risk'}[stage]};return true;
+  const selected=task.items.filter(([id])=>a.includes(id)).map(([,text])=>text).join(' ');
+  const missing=(task.solution||task.alternatives[0]).filter(id=>!a.includes(id));
+  const excess=a.filter(id=>!(task.alternatives||[task.solution]).some(ids=>ids.includes(id)));
+  const guidance=[...excess.map(id=>task.review[id]),...(missing.length?[task.review.missing]:[])].filter(Boolean).join(' ');
+  if(valid||n>=2){c().resolved[stage]=true;if(!valid)c().selections[stage]=[...(task.solution||task.alternatives[0])];if(stage==='lords')c().lutherLordsUnderstood=true;}
+  c().feedback={submitted:selected||'Noch keine Aussage ausgewählt.',text:valid?task.feedback:guidance+(n>=2?' Gemeinsam halten wir fest: '+task.feedback:''),resolved:valid||n>=2,next:{lords:'peasants',peasants_complement:'memory',structure:c().theologicalPreparation||c().branchOutcome==='interpretive_depth'||state.chapter3.religiousInterpretation==='hermeneutical_caution'?'analysis':'risk'}[stage]};return true;
  }
  if(action==='ch4-thought'){
   const list=c().selections.preparation||=[],id=target.dataset.item;if(list.includes(id))list.splice(list.indexOf(id),1);else if(list.length<2)list.push(id);return true;
@@ -130,9 +145,10 @@ export function chapterFourAction(action,target){
  if(action==='ch4-synthesis'){
   if(stage!=='regiments'||!regimentsComplete(c())||c().regimentsIndex!==5||c().resolved.regiments)return true;
   const selected=[...(c().selections.regiments_synthesis||[])].sort();
+  if(!selected.length)return true;
   const valid=JSON.stringify(selected)===JSON.stringify(['A','B','D']);
   const attempt=(c().attempts.regiments_synthesis||0)+1;c().attempts.regiments_synthesis=attempt;
-  if(valid||attempt>=3){c().resolved.regiments=true;c().selections.regiments_synthesis=['A','B','D'];c().caseFeedback=regimentsSummary;}
+  if(valid||attempt>=2){c().resolved.regiments=true;c().selections.regiments_synthesis=['A','B','D'];c().caseFeedback=regimentsSummary;}
   else c().caseFeedback='Die Unterscheidung hilft bei der Prüfung, entscheidet aber nicht jeden Konflikt automatisch. Prüfe auch, wo beide Bereiche berührt sind und ihre Grenzen überschritten werden können.';
   return true;
  }

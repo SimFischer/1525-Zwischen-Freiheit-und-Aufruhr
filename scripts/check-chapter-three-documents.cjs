@@ -5,6 +5,7 @@ for(const [width,height] of [[1024,768],[820,640],[1440,900]]){
  for(let id=1;id<=12;id++){
  await p.locator(`[data-article="${id}"]`).click();const result=await p.locator('.ch3-article-view').evaluate(n=>{const paper=n.querySelector('.ch3-document-paper').getBoundingClientRect(),scroll=n.querySelector('.ch3-article-scroll');return {scroll:scroll.scrollHeight>scroll.clientHeight+1,clipped:[...n.querySelectorAll('.ch3-article-leaf>*')].some(c=>{const r=c.getBoundingClientRect();return r.top<paper.top+12||r.bottom>paper.bottom-12;}),horizontal:document.documentElement.scrollWidth>innerWidth,controls:[...n.querySelectorAll('button')].some(b=>{const r=b.getBoundingClientRect();return r.height<44||r.left<0||r.right>innerWidth||r.bottom>innerHeight;} )};});assert.deepEqual(result,{scroll:false,clipped:false,horizontal:false,controls:false},`${width} article ${id}`);await p.screenshot({path:`artifacts/ch3-article-${id}-${width}.png`});
  }
+ const paper=await p.locator('.ch3-article-leaf').evaluateAll(ns=>ns.map(n=>({size:parseFloat(getComputedStyle(n).fontSize),background:getComputedStyle(n).backgroundImage})));assert.ok(paper.every(n=>n.size>=18&&n.background.startsWith('linear-gradient')),'quiet readable text regions');
  assert.equal(await p.locator('[data-article-continue]').isEnabled(),true);await p.locator('[data-article-continue]').click();console.log('Every article text/control fully contained, readable type, comparison ready',width);
 }
 }finally{await b.close();server.close();}})().catch(e=>{console.error(e);process.exitCode=1;server.close();});

@@ -252,8 +252,6 @@ async function drag(page,id,zone,touch,context) {
     assert.match(await page.locator('.puzzle-context').innerText(),/Warum sollte ich dann überhaupt noch etwas für andere tun/);
     await puzzleSequence(page,['B','F','A','C']); await action(page,'puzzle-check');
     assert.match(await page.locator('.feedback-text').innerText(),/Denkimpuls/);
-    await feedback(page); await action(page,'puzzle-check');
-    assert.match(await page.locator('.feedback-text').innerText(),/Ursache und was Folge/);
     await feedback(page); await puzzleSequence(page,['A','D','C','E']);
     await page.locator('[data-action="puzzle-move"][data-index="2"][data-direction="-1"]').click();
     assert.deepEqual((await saved(page)).minigames.puzzle,['A','C','D','E']);
@@ -273,8 +271,6 @@ async function drag(page,id,zone,touch,context) {
     await page.locator('[data-character="jakob"]').tap(); await dialogue(page);
     await photograph(page,'ch1-jakob-1024'); await geometry(page,'Jakob choice');
     await choose(page,'B'); assert.match(await page.locator('.feedback-text').innerText(),/Prüfe noch einen Schritt weiter/);
-    await feedback(page); await choose(page,'A');
-    assert.match(await page.locator('.feedback-text').innerText(),/vollständige Trennung/);
     await feedback(page); await choose(page,'D');
     assert.match(await page.locator('.feedback-text').innerText(),/Spannung besonders genau/);
     await page.reload(); await action(page,'resume'); await feedback(page);
@@ -289,7 +285,6 @@ async function drag(page,id,zone,touch,context) {
     const assignments={conscience:'god',service:'god',obedience:'world',rule:'world',labor:'god',dues:'world'};
     for(const [id,zone] of Object.entries(assignments)) await sortingSet(page,id,zone);
     await action(page,'sort-check'); assert.match(await page.locator('.feedback-text').innerText(),/Denkimpuls/);
-    await feedback(page); await action(page,'sort-check'); assert.match(await page.locator('.feedback-text').innerText(),/Nutze diese Beispiele als Orientierung/);
     await feedback(page); await sortingSet(page,'labor','world');
     await photograph(page,'ch1-sorting-1024');
     await drag(page,'service','world',true,context); await drag(page,'obedience','god',false,context);
@@ -334,7 +329,7 @@ async function drag(page,id,zone,touch,context) {
     await page.locator('[data-source-action="previous"]').tap();
     assert.ok(await page.locator('.source-note').isHidden(),'editorial note exposed by default in archive');
     await page.locator('.editorial-info summary').tap();
-    assert.match(await page.locator('.source-note').innerText(),/Schreibweise behutsam modernisiert/);
+    assert.match(await page.locator('.source-note').innerText(),/in heutigem Deutsch/);
     await page.locator('.editorial-info summary').tap();
     await page.locator('dialog [data-action="close-overlay"]').last().click();
     await page.locator('.notebook').waitFor(); await page.keyboard.press('Escape');
@@ -375,17 +370,17 @@ async function drag(page,id,zone,touch,context) {
     }
     for(const id of ['A','B','C','D']) {
       await scene('ch1_s5_conversations'); await page.locator('[data-character="jakob"]').click(); await dialogue(page);
-      for(let n=0;n<(id==='D'?1:3);n++) { await choose(page,id); if(n===0 && id==='B') assert.match(await page.locator('.feedback-text').innerText(),/wichtigen Zusammenhang/); await feedback(page); }
+      for(let n=0;n<(id==='D'?1:2);n++) { await choose(page,id); if(n===0 && id==='B') assert.match(await page.locator('.feedback-text').innerText(),/wichtigen Zusammenhang/); await feedback(page); }
       assert.equal((await saved(page)).choices.freedomAndOuterLife,id);
       assert.equal((await saved(page)).progress.jakobConversation,true);
       assert.equal(Boolean((await saved(page)).minigames.assisted.freedomAndOuterLife),id!=='D');
     }
-    // Anna's assisted path secures the content and allows continuation after three attempts.
+    // Anna's assisted path secures the content and allows continuation after one guided second chance.
     await scene('ch1_s5_conversations'); await page.locator('[data-character="anna"]').click(); await dialogue(page);
-    for(let n=0;n<3;n++) {
+    for(let n=0;n<2;n++) {
       if(n===0) await puzzleSequence(page,['B','F','A','C']);
       await action(page,'puzzle-check');
-      if(n===2) { assert.match(await page.locator('.securing').innerText(),/Gnade → Freiheit vom Rechtfertigungsdruck/); assert.deepEqual((await saved(page)).minigames.puzzle,['A','C','D','E']); }
+      if(n===1) { assert.match(await page.locator('.securing').innerText(),/Gnade → Freiheit vom Rechtfertigungsdruck/); assert.deepEqual((await saved(page)).minigames.puzzle,['A','C','D','E']); }
       await feedback(page);
     }
     await dialogue(page); assert.equal((await saved(page)).progress.annaConversation,true);
@@ -396,16 +391,15 @@ async function drag(page,id,zone,touch,context) {
       await scene(sceneId);
       const solutionText=await page.locator(`[data-option="${solution}"] > span:nth-child(2)`).innerText();
       let firstHint='';
-      for(let n=0;n<(id===solution?1:3);n++) {
+      for(let n=0;n<(id===solution?1:2);n++) {
         await choose(page,id);
         const response=await page.locator('.feedback-text').innerText();
         if(id!==solution && n===0) firstHint=response;
         if(id!==solution && n===1) {
-          assert.equal(await page.locator('.solution-text').count(),0,'second attempt disclosed solution');
-          assert.ok(!response.includes(solutionText),'second hint copied correct answer');
+          assert.equal(await page.locator('.solution-text').innerText(),solutionText,'shared review must explain the solution after second attempt');
           assert.notEqual(response,firstHint,'second hint did not advance reasoning');
         }
-        if(id===solution || n===2) assert.ok(response.length>80,'success feedback lacks explanation');
+        if(id===solution || n===1) assert.ok(response.length>80,'success feedback lacks explanation');
         await feedback(page);
       }
       assert.notEqual((await saved(page)).scene,sceneId);
@@ -418,7 +412,7 @@ async function drag(page,id,zone,touch,context) {
     }
     await scene('ch1_s6_freedom_sorting'); await dialogue(page);
     for(const id of ['grace','faith','conscience','labor','dues','rule','service','obedience']) await sortingSet(page,id,'world');
-    for(let n=0;n<3;n++) { await action(page,'sort-check'); if(n===2) assert.doesNotMatch(await page.locator('.solution-text').innerText(),/%/); await feedback(page); }
+    for(let n=0;n<2;n++) { await action(page,'sort-check'); if(n===1) assert.doesNotMatch(await page.locator('.solution-text').innerText(),/%/); await feedback(page); }
     assert.equal((await saved(page)).progress.freedomSortingComplete,true);
     assert.equal((await saved(page)).minigames.assisted.freedomSorting,true);
 
@@ -551,7 +545,7 @@ async function drag(page,id,zone,touch,context) {
     assert.ok(await page.locator('.next-chapter').evaluate(el=>parseFloat(getComputedStyle(el).animationDuration)<=.01),'reduced-motion chapter transition');
     await page.emulateMedia({reducedMotion:'no-preference'});
     assert.deepEqual(errors,[]);
-    console.log('PASS: full chapter; every interpretation, reaction and assessed option; staged hints and assisted solutions; 4-card reorder; two-field sorting with mouse/touch drag and tap, boundary cases and three-part consolidation; boundaries; consolidation; speaker assets; notebook; source HTML; save/reload and migration; debug; keyboard; five responsive viewports; no missing assets or console errors.');
+    console.log('PASS: full chapter; every interpretation, reaction and assessed option; targeted second chance and shared explanation; 4-card reorder; two-field sorting with mouse/touch drag and tap, boundary cases and three-part consolidation; boundaries; consolidation; speaker assets; notebook; source HTML; save/reload and migration; debug; keyboard; five responsive viewports; no missing assets or console errors.');
   } catch(error) {
     if(page) { await photograph(page,'ch1-failure'); console.error(await page.locator('body').innerText()); }
     throw error;

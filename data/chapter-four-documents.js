@@ -1,7 +1,7 @@
 const peaceUrl='https://www.bavarikon.de/object/BSB-HSS-00000BSB00089333?lang=de';
 const harshUrl='https://www.luthermuseen.de/en/node/889';
 export const chapterFourDocuments={
- c4_memory:{author:'Martin Luther',title:'Christliche Freiheit · 1520',year:'1520',sourceUrl:'https://editions.mml.ox.ac.uk/editions/freiheit-1520/',pages:['luther_freedom_small'],exact:true},
+ c4_memory:{author:'Martin Luther',title:'Christliche Freiheit · 1520',year:'1520',sourceUrl:'https://editions.mml.ox.ac.uk/editions/freiheit-1520/',pages:['luther_freedom_small']},
  c4_authority:{author:'Martin Luther',title:'Von weltlicher Obrigkeit',year:'1523',sourceUrl:'https://www.deutsche-digitale-bibliothek.de/item/LVNOKZDWYU34MGVVQY3CA7T5EGCI46KO',pages:['worldly_authority_small']},
  c4_ermahnung:{author:'Martin Luther',title:'Ermahnung zum Frieden auf die zwölf Artikel der Bauernschaft in Schwaben',year:'April 1525',sourceUrl:peaceUrl,pages:['ermahnung_closed','ermahnung_open','ermahnung_lords','ermahnung_peasants']},
  c4_muentzer:{author:'Thomas Müntzer · historische Einordnung',title:'Glaube und gottwidrige Herrschaft',year:'1524 / 1525',sourceUrl:'https://germanhistorydocs.org/de/von-den-reformationen-bis-zum-dreissigjaehrigen-krieg-1500-1648/ghdi:document-4270',pages:['muentzer_context_closed','muentzer_context_open']},

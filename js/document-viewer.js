@@ -23,11 +23,11 @@ export function openDocument(id, passage = null, onClose = () => {}, archive = f
   const zoom = table.querySelector('[data-source-action="zoom"]');
   function renderPage() {
     const index = indices[position];
-    viewport.innerHTML = `<figure class="source-image${enlarged ? ' enlarged' : ''}" ${reading ? 'hidden' : ''}><img src="${doc.pageAssets[index]}" alt="Historisches Druckblatt: ${esc(doc.title)}, Seite ${index + 1}" width="1024" height="1536"></figure><article class="source-readable" ${reading ? '' : 'hidden'}><h2>${esc(doc.title)}</h2><blockquote>„${esc(doc.passages[index])}“</blockquote><p>${esc(doc.author)} · ${esc(doc.year)}</p></article>${archive ? `<details class="editorial-info"><summary>Zur Quelle</summary><p class="source-note">${esc(doc.note)} ${esc(doc.imageNote)}</p><a href="${esc(doc.sourceUrl)}" target="_blank" rel="noopener noreferrer">Historischer Druck und Text · Oxford</a></details>` : ''}`;
+    viewport.innerHTML = `<figure class="source-image${enlarged ? ' enlarged' : ''}" ${reading ? 'hidden' : ''}><img src="${doc.pageAssets[index]}" alt="Heutige Illustration eines Druckblatts: ${esc(doc.title)}, Seite ${index + 1}" width="1024" height="1536"></figure><article class="source-readable" ${reading ? '' : 'hidden'}><h2>${esc(doc.title)}</h2><p class="source-kind">${esc(doc.sourceKind)}</p><blockquote>„${esc(doc.passages[index])}“</blockquote><p>${esc(doc.author)} · ${esc(doc.year)}</p></article>${archive ? `<details class="editorial-info"><summary>Zur Quelle</summary><p class="source-note">${esc(doc.note)} ${esc(doc.imageNote)}</p><a href="${esc(doc.sourceUrl)}" target="_blank" rel="noopener noreferrer">Historischer Druck und Text · Oxford</a></details>` : ''}`;
     viewport.classList.toggle('reading', reading);
     viewport.classList.toggle('enlarged', enlarged && !reading);
     viewport.scrollTop = 0;
-    table.querySelector('.source-page-number').textContent = `Seite ${index + 1}`;
+    table.querySelector('.source-page-number').textContent = `Seite ${index + 1} · Heutige Wiedergabe`;
     read.textContent = reading ? 'Druckblatt ansehen' : 'Text lesen';
     read.setAttribute('aria-pressed', String(reading));
     zoom.textContent = enlarged ? 'Verkleinern' : 'Vergrößern';
