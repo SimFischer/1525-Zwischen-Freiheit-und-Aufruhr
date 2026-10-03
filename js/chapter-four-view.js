@@ -45,117 +45,68 @@ export function chapterFourPanel(){
  // These checkpoints deliberately leave the changed scene visible, not behind a task.
  return '';
 }
-const sceneProps=(...p)=>p;
+// Direct Work-approved compositions from CH4_STAGING_GUIDE.md.
+// No legacy plate or crowd layer is selected and then replaced afterwards.
 export function chapterFourWorld(game=state){
- const c=game.chapter4,s=c.stage;let background='jakob_study_table',overlay=null,figures=[['jakob',28],['matthes',72]],props=sceneProps(['bible_open',48,47,18]);
- const village=(o)=>{background='village';overlay=o;figures=[['jakob',43],['konrad',61]];props=[];};
- if(s==='opening'){village('village_'+(c.openingWorldState||'nuanced'));if(c.openingWorldState==='confrontational')props=[['warning_notice',78,28,12]];}
+ const c=game.chapter4,s=c.stage;
+ const world=(background,figures,height,feet,overlay=null,props=[])=>({background,overlay,figures:figures.map(([id,x])=>[id,x,height,feet]),props});
+ const village=(tone=c.openingWorldState||'nuanced',figures=[['jakob',28],['konrad',72]])=>world('village',figures,41,71,tone===null?null:'consequence_'+(['nuanced','simplified','religious','confrontational'].includes(tone)?tone:'nuanced'));
+ const manor=(delegation=false,props=[['articles_on_table',7,44,6],['seal_document',12,44,6]],envoy=false)=>world('manor_negotiation_rebuilt',delegation?[['peter',28],['konrad',48],[envoy?'envoy':'overseer',envoy?66:68]]:[['peter',28],['overseer',68]],41,71,null,props);
+ const assembly=(figures=[['anna',28],['peter',51],['jakob',72]])=>world('village_assembly_rebuilt',figures,33,72);
+ const camp=(figures=[['konrad',28],['band1',51],['band2',72]],overlay=null)=>world('peasant_band_camp_edge',figures,36,71,overlay);
+ const study=(figures=[['jakob',28],['matthes',72]],props=[])=>world('jakob_study_rebuilt',figures,37,71,null,props);
+ const delegation=()=>manor(true,[['seal_document',7,44,6]]);
+ const blockade=()=>world('storehouse',[],33,71,'blockade');
+ if(s==='opening')return village();
  if(['route','authority','community','resistance','preparation'].includes(s)){
   const route={authority:'A',community:'B',resistance:'C',preparation:'D'}[s]||c.openingRoute;
-  background={A:'manor_negotiation',B:'village_assembly_large',C:'village_edge_group',D:'jakob_study_table'}[route];
-  figures={A:[['peter',28],['overseer',72]],B:[['anna',28],['konrad',72]],C:[['band1',28],['band2',72]],D:[['jakob',28],['matthes',72]]}[route];
-  props={A:[['articles_on_table',49,49,15],['seal_document',61,49,11]],B:[['letters_other_villages',28,53,10]],C:[],D:[['bible_open',48,47,18]]}[route];
-  if(s==='route'&&route==='A')figures=[['peter',28],['envoy',72]];
+  if(route==='A')return manor(s==='route',undefined,s==='route');
+  if(route==='B')return assembly();
+  if(route==='C')return camp();
+  return study();
  }
  if(s==='opening_effect'){
-  if(c.openingRoute==='A'){if(c.authorityTone==='pressure'){village('village_confrontational');props=[['authority_warning',76,36,17]];}else if(c.authorityTone==='gospel')village('village_religious');else village('delegation');}
-  if(c.openingRoute==='B'){village({delegation:'delegation',withhold_dues:'withheld_dues',other_villages:'public_meeting',public_meeting:'public_meeting'}[c.communityAction]);if(c.communityAction==='other_villages')props=[['letters_other_villages',54,64,20]];if(c.communityAction==='withhold_dues')props=[['dues_cart',56,64,17]];}
-  if(c.openingRoute==='C'){if(c.resistanceAction==='block_storehouse'){background='storehouse';overlay='blockade';figures=[];props=[];}else if(c.resistanceAction==='return_to_negotiation'){background='manor_negotiation';overlay='delegation';figures=[['overseer',72]];props=[['seal_document',58,49,11]];}else village(c.resistanceAction==='refuse_dues'?'withheld_dues':'resistance_group');}
-  if(c.openingRoute==='D')village('events_moved_without_you');
+  if(c.openingRoute==='A')return c.authorityTone==='legal'?delegation():village({pressure:'confrontational',gospel:'religious'}[c.authorityTone]||'nuanced');
+  if(c.openingRoute==='B'){
+   if(c.communityAction==='delegation')return delegation();
+   if(c.communityAction==='withhold_dues')return world('storehouse',[['peter',28],['anna',72]],33,71,null,[['dues_cart',87,62,18]]);
+   return assembly();
+  }
+  if(c.openingRoute==='C'){
+   if(c.resistanceAction==='block_storehouse')return blockade();
+   if(c.resistanceAction==='return_to_negotiation')return delegation();
+   if(c.resistanceAction==='demonstrate')return camp([['konrad',28],['band1',72]]);
+   return village('confrontational');
+  }
+  if(c.openingRoute==='D')return village('simplified');
  }
- if(s==='negotiation'){background='manor_negotiation';figures=[['peter',28],['overseer',72]];props=[['seal_document',59,49,11],['articles_on_table',47,49,15]];}
- if(s==='conditions'){background='village_assembly_large';figures=[['anna',28],['peter',72]];props=[['letters_other_villages',28,53,10]];}
- if(s==='band'){background='peasant_band_camp_edge';figures=[['band1',28],['band2',72]];props=[];}
- if(s==='hermeneutics'){background='jakob_study_table';figures=[['jakob',28],['preacher',72]];props=[['bible_open',48,47,18]];}
+ if(s==='negotiation')return manor(false,[['seal_document',7,44,6],['articles_on_table',12,44,6]]);
+ if(s==='conditions')return assembly();
+ if(s==='band')return camp();
  if(s==='branch_effect'){
-  if(c.theologicalPath==='luther_order'){background='manor_negotiation';overlay='delegation';figures=[['overseer',72]];props=[['seal_document',57,49,11]];}
-  if(c.theologicalPath==='gospel_critique'){village('public_meeting');figures=[['anna',51]];props=[['letters_other_villages',51,53,9]];}
+  if(c.theologicalPath==='luther_order')return delegation();
+  if(c.theologicalPath==='gospel_critique')return assembly([['anna',28],['peter',72]]);
+  if(c.theologicalPath==='hermeneutical_caution')return village('simplified');
   if(c.theologicalPath==='prophetic_resistance'){
-   if(c.bandAction==='resistance_occupation'){background='storehouse';overlay='blockade';figures=[];props=[];}
-   else if(c.bandAction==='resistance_armed_defense'){village('armed_group');figures=[['band1',33]];props=[];}
-   else {background='peasant_band_camp_edge';overlay=null;figures=c.bandAction==='resistance_limit'?[['band1',28],['konrad',72]]:[['band1',28],['band2',72]];props=c.bandAction==='resistance_dues'?[['dues_cart',51,64,18]]:[];}
+   if(c.bandAction==='resistance_occupation')return blockade();
+   if(c.bandAction==='resistance_armed_defense')return village('confrontational',[['band1',51]]);
+   return camp([['band1',28],[c.bandAction==='resistance_limit'?'konrad':'band2',72]]);
   }
-  if(c.theologicalPath==='hermeneutical_caution')village('events_moved_without_you');
  }
- if(['muentzer','interpretations','theology'].includes(s)){figures=[['preacher',28],['jakob',72]];props=[['thuringia_report',61,47,12]];}
- if(['weingarten','weingarten_choice'].includes(s)){background='village';overlay='delegation';figures=[['matthes',61]];props=[['weingarten_report',49,58,18]];}
- if(s==='escalation'){background='village_escalation';overlay=null;figures=[['anna',28],['konrad',72]];props=[];}
- if(s==='escalation_effect'){
-  village({protect:'refugees_cart',warn:'smoke_distance',join:'armed_group',verify:'smoke_distance'}[c.escalationResponse]);figures=c.escalationResponse==='join'?[['band1',33]]:[['anna',39],['matthes',59]];
- }
- if(['harsh','comparison','structure','analysis','risk','judgment'].includes(s)){background='jakob_study_table';figures=[['jakob',28],['matthes',72]];props=[['authority_warning',62,47,12]];}
+ if(['muentzer','interpretations','theology'].includes(s))return study([['preacher',28],['konrad',51],['jakob',72]],[['thuringia_report',62,35,7]]);
+ if(['weingarten','weingarten_choice'].includes(s))return village('nuanced',[['matthes',51]]);
+ if(s==='escalation')return world('village_escalation_rebuilt',[['anna',38],['konrad',72]],41,71);
+ if(s==='escalation_effect')return world('village_escalation_rebuilt',c.escalationResponse==='join'?[['band1',72]]:[['anna',38],['matthes',72]],41,71,'consequence_confrontational');
+ if(['harsh','comparison','structure','analysis','risk','judgment'].includes(s))return study(undefined,[['authority_warning',62,35,7]]);
  if(['world_end','chapter5'].includes(s)){
-  village(null);
-  if(c.endWorldState==='negotiation_open'){background='manor_negotiation';overlay='delegation';figures=[['overseer',72]];props=[['seal_document',57,49,11]];}
-  if(c.endWorldState==='mobilized_community'){background='village_assembly_large';overlay=null;figures=[['anna',28],['peter',72]];props=[['letters_other_villages',28,53,10]];}
-  if(c.endWorldState==='joining_peasant_band'){background='village_edge_group';overlay='joining_peasant_band';figures=[['konrad',66]];}
-  if(c.endWorldState==='religious_polarization'){overlay='religious_polarization';figures=[];}
-  if(c.endWorldState==='events_moved_without_you'){overlay='events_moved_without_you';figures=[['jakob',57]];}
+  if(c.endWorldState==='negotiation_open')return delegation();
+  if(c.endWorldState==='mobilized_community')return assembly();
+  if(c.endWorldState==='joining_peasant_band')return camp([['konrad',72]],'joining_peasant_band');
+  if(c.endWorldState==='religious_polarization')return village('religious',[['preacher',28],['jakob',72]]);
+  if(c.endWorldState==='events_moved_without_you')return village(null,[['jakob',51]]);
+  return village();
  }
- // Consequences get distinct spaces and groups, not merely a different notice.
- if(s==='opening_effect'&&c.openingRoute==='A'&&c.authorityTone==='legal'){
-  background='manor_negotiation';overlay='delegation';props=[['seal_document']];
- }
- if(s==='opening_effect'&&c.openingRoute==='B'){
-  if(c.communityAction==='withhold_dues'){background='storehouse';overlay=null;figures=[['peter',28,33,71],['anna',72,33,71]];props=[['dues_cart',87,62,18]];}
-  else if(c.communityAction==='delegation'){background='manor_negotiation';overlay='delegation';props=[['seal_document']];}
-  else {background='village_assembly_large';overlay=null;}
- }
- if(s==='opening_effect'&&c.openingRoute==='C'&&c.resistanceAction==='demonstrate'){
-  background='peasant_band_camp_edge';overlay=null;figures=[['konrad',28],['band1',72]];props=[];
- }
- if(background==='storehouse'&&figures.length)figures=figures.map(([id,x])=>[id,x,33,71]);
- // The rebuilt assembly leaves its central square clear; rear listeners are on a deeper plane.
- if(background==='village_assembly_large'){
-  figures=[['anna',28,33,72],['peter',51,33,72],['jakob',72,33,72]];
-  props=[];
-  background='village_assembly_rebuilt';
- }
- if(background==='village'){
-  // Only sparse world features belong on the new master. Legacy crowd layers are retired here.
-  const reducedTone={religious_polarization:'religious',events_moved_without_you:'simplified',public_meeting:'nuanced',delegation:'nuanced',resistance_group:'confrontational',withheld_dues:'confrontational',armed_group:'confrontational',refugees_cart:'confrontational',smoke_distance:'confrontational'};
-  const tone=(overlay?.startsWith('village_')?overlay.slice(8):reducedTone[overlay]||c.openingWorldState)||'nuanced';
-  overlay='consequence_'+(['nuanced','simplified','religious','confrontational'].includes(tone)?tone:'nuanced');
-  figures=figures.map(([id],i)=>[id,figures.length===3?[28,51,72][i]:figures.length===1?51:i?72:28,41,71]);
-  props=[]; // Papers and books are anchored in the reduced edge overlays, never floating between speakers.
-  if(s==='opening_effect'&&c.openingRoute==='B'&&c.communityAction==='public_meeting'){
-   background='village_assembly_rebuilt';overlay=null;figures=[['anna',28,33,72],['peter',51,33,72],['jakob',72,33,72]];
-  }
-  if(s==='branch_effect'&&c.theologicalPath==='gospel_critique'){
-   background='village_assembly_rebuilt';overlay=null;figures=[['anna',28,33,72],['peter',72,33,72]];
-  }
-  if(s==='world_end'||s==='chapter5'){
-   if(c.endWorldState==='religious_polarization')figures=[['preacher',28,41,71],['jakob',72,41,71]];
-   if(c.endWorldState==='events_moved_without_you'){overlay=null;figures=[['jakob',51,41,71]];}
-  }
-  if(s==='escalation_effect'){background='village_escalation_rebuilt';figures=figures.map(([id],i)=>[id,figures.length===1?72:i?72:38,41,71]);}
- }
- if(background==='manor_negotiation'){
-  if(overlay==='delegation'){overlay=null;figures=[['peter',28],['konrad',48],['overseer',68]];}
-  else if(s==='route')figures=[['peter',28],['konrad',48],['envoy',68]];
-  else figures=[['peter',28],['overseer',68]];
-  figures=figures.map(([id,x])=>[id,id==='envoy'?66:x,41,71]);
-  props=props.map(([name],i)=>[name,7+i*5,44,6]);
-  background='manor_negotiation_rebuilt';
- }
- if(background==='jakob_study_table'){
-  if(s==='hermeneutics')figures=[['jakob',28],['matthes',72]];
-  if(s==='regiments')figures=[['jakob',28],['anna',72]];
-  if(['muentzer','interpretations','theology'].includes(s))figures=[['preacher',28],['konrad',51],['jakob',72]];
-  figures=figures.map(([id,x])=>[id,x,37,71]);
-  props=props.filter(([name])=>name!=='bible_open').map(([name])=>[name,62,35,7]);
-  background='jakob_study_rebuilt';
- }
- if(background==='village_edge_group')background='peasant_band_camp_edge';
- if(background==='peasant_band_camp_edge'){
-  if(['band','resistance'].includes(s)||s==='route'&&c.openingRoute==='C')figures=[['konrad',28],['band1',51],['band2',72]];
-  figures=figures.map(([id],i)=>[id,figures.length===3?[28,51,72][i]:figures.length===1?72:i?72:28,36,71]);
-  props=[];
- }
- if(background==='village_escalation'){
-  background='village_escalation_rebuilt';figures=[['anna',38,41,71],['konrad',72,41,71]];
- }
- return {background,overlay,figures,props};
+ return s==='regiments'?study([['jakob',28],['anna',72]]):study();
 }
 export function chapterFourFigure([id,x,height=43,feet=72],village=true){
  if(village&&villageCanonStaging[id]){
@@ -176,17 +127,25 @@ export function chapterFourFigure([id,x,height=43,feet=72],village=true){
  const modern=src.includes('/chapter4/')||id==='matthes',bottom=100-feet-(modern?height*15/896:0);
  return `<span class="ch4-ground" style="left:${x-5}%;top:${feet-1}%" aria-hidden="true"></span><img class="ch4-person" src="${src}" data-person="${id}" style="left:${x}%;height:${height}%;bottom:${bottom}%" alt="${esc(characters[id].name)}" draggable="false">`;
 }
+// One asset map for the renderer and the optional debug inspector.
+export function chapterFourWorldAssets(world=chapterFourWorld()){
+ return {
+  background:world.background==='village'?villageBackground:ch4Asset('backgrounds','bg_'+world.background),
+  overlay:world.overlay?ch4Asset('overlays','overlay_'+world.overlay):null,
+  props:world.props.map(([name])=>ch4Asset('props','prop_'+name))
+ };
+}
 export function chapterFourScene(header){
  const c=state.chapter4,w=chapterFourWorld(),s=c.stage;
  if(s==='chapter5')header=header.replace('Kapitel 04','Kapitel 05').replace('Ordnung oder Widerstand?','Du musst handeln');
- const bg=w.background==='village'?villageBackground:ch4Asset('backgrounds','bg_'+w.background);
+ const worldAssets=chapterFourWorldAssets(w),bg=worldAssets.background;
  const panel=chapterFourPanel();
  const links={opening:['Unseren Weg aufnehmen','route'],route:[{A:'Zum Verwalter',B:'Gemeinsam auftreten',C:'Zur Gruppe',D:'Mit Jakob prüfen'}[c.openingRoute],'route-go'],opening_effect:['Eine neue Nachricht lesen','ermahnung'],branch_effect:['Matthes anhören','weingarten'],escalation_effect:['Luthers neue Schrift lesen','harsh'],world_end:['Was nun auf dem Spiel steht','end']};
  const target=!panel&&links[s];
  const travel=s==='opening'||s==='route'&&c.openingRoute==='A';
  const signX=w.background.startsWith('manor_')?87:w.background==='storehouse'?61:w.background==='village'&&w.figures.length===1?78:51,signY=w.background.startsWith('manor_')?38:w.background==='storehouse'?29:w.background==='peasant_band_camp_edge'?(w.figures.length===3?25:67):w.background==='jakob_study_rebuilt'?41:w.background==='village_assembly_rebuilt'?30:w.background==='village'?60:23;
  const signs=target?hotspot(esc(target[0])+' →',target[1]==='route-go'?'ch4-route-go':'ch4-go',{kind:travel?'path':'action',classes:'ch4-hotspot',attrs:`${target[1]==='route-go'?'':`data-scene="${target[1]}"`} style="left:${signX}%;top:${signY}%"`}):'';
- return header+`<main class="game-layout chapter-four-layout ${panel?'task-layout':'exploration-layout'} ${s==='end'?'ch4-fade':''}"><section class="stage chapter-four" data-scene="${state.scene}" data-world="${w.background}" data-overlay="${w.overlay||''}" aria-label="${esc(sceneById[state.scene].title)}"><div class="room"><img class="room-image" src="${bg}" alt="${esc(sceneById[state.scene].title)}" draggable="false">${w.overlay?`<img class="ch4-world-overlay" style="${w.overlay==='blockade'?'transform:translateY(-11%)':w.overlay==='joining_peasant_band'?'transform:translateY(-8%)':''}" src="${ch4Asset('overlays','overlay_'+w.overlay)}" alt="Sichtbare Merkmale der Dorflage" draggable="false">`:''}<div class="ch4-figures">${w.figures.map(f=>chapterFourFigure(f,true)).join('')}</div>${w.props.map(([name,x,y,width])=>`<img class="ch4-prop" data-prop="${name}" src="${ch4Asset('props','prop_'+name)}" style="left:${x}%;top:${y}%;width:${width}%" alt="${esc({warning_notice:'Warnung des Herren',authority_warning:'Herrschaftlicher Warnbrief',letters_other_villages:'Briefe an andere Dörfer',bible_open:'Aufgeschlagene Bibel',seal_document:'Gesiegelte Vereinbarung',articles_on_table:'Die Artikel auf dem Tisch',dues_cart:'Zurückgehaltene Abgaben',thuringia_report:'Nachricht aus Thüringen',weingarten_report:'Nachricht aus Weingarten'}[name])}" draggable="false">`).join('')}${signs}<div class="stage-caption"><h1>${esc(sceneById[state.scene].title)}</h1></div></div></section><div id="interaction" class="interaction" data-stage="${s}">${panel}</div><footer class="game-footer"><span id="save-status"></span></footer></main>`;
+ return header+`<main class="game-layout chapter-four-layout ${panel?'task-layout':'exploration-layout'} ${s==='end'?'ch4-fade':''}"><section class="stage chapter-four" data-scene="${state.scene}" data-world="${w.background}" data-overlay="${w.overlay||''}" aria-label="${esc(sceneById[state.scene].title)}"><div class="room"><img class="room-image" src="${bg}" alt="${esc(sceneById[state.scene].title)}" draggable="false">${w.overlay?`<img class="ch4-world-overlay" style="${w.overlay==='blockade'?'transform:translateY(-11%)':w.overlay==='joining_peasant_band'?'transform:translateY(-8%)':''}" src="${worldAssets.overlay}" alt="Sichtbare Merkmale der Dorflage" draggable="false">`:''}<div class="ch4-figures">${w.figures.map(f=>chapterFourFigure(f,true)).join('')}</div>${w.props.map(([name,x,y,width],index)=>`<img class="ch4-prop" data-prop="${name}" src="${worldAssets.props[index]}" style="left:${x}%;top:${y}%;width:${width}%" alt="${esc({warning_notice:'Warnung des Herren',authority_warning:'Herrschaftlicher Warnbrief',letters_other_villages:'Briefe an andere Dörfer',bible_open:'Aufgeschlagene Bibel',seal_document:'Gesiegelte Vereinbarung',articles_on_table:'Die Artikel auf dem Tisch',dues_cart:'Zurückgehaltene Abgaben',thuringia_report:'Nachricht aus Thüringen',weingarten_report:'Nachricht aus Weingarten'}[name])}" draggable="false">`).join('')}${signs}<div class="stage-caption"><h1>${esc(sceneById[state.scene].title)}</h1></div></div></section><div id="interaction" class="interaction" data-stage="${s}">${panel}</div><footer class="game-footer"><span id="save-status"></span></footer></main>`;
 }
 export function fitChapterFourScene(){
  const room=document.querySelector('.chapter-four-layout .room'),stage=room?.parentElement,panel=document.querySelector('.chapter-four-layout .interaction>.dialogue-panel,.chapter-four-layout .interaction>.task-panel');if(!room||!stage)return;
