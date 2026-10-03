@@ -207,15 +207,10 @@ document.addEventListener('click',event => {
   if (action === 'scene-document') return openSceneDocument();
   if(action==='debug-ch2-complete' && new URLSearchParams(location.search).get('debug')==='true') { const next=prepareAdminStateForScene('ch2_assembly'); next.scene='ch2_hub'; next.dialogue=null; next.interaction=null; next.chapter2.stage='hub'; showPreparedState(next); return; }
   if (chapterTwoAction(action,target)) { render(); persist(); return; }
-  if (action === 'prop-window') return notify('Draußen liegt das Dorf bereits im Dunkeln. Morgen beginnt wieder die Arbeit.');
   if (action === 'prop-door') {
     if (scene.kind !== 'ending') return notify('Für heute bleibst du noch hier.');
     setMode('transition');
     return leaveTavern(render);
-  }
-  if (action === 'prop-mug' || action === 'prop-candle') {
-    highlightHotspot(target);
-    return notify(action === 'prop-candle' ? 'Die Kerze ist fast heruntergebrannt.' : 'Ein schwerer Holzkrug steht auf dem Tisch.');
   }
   if (action === 'next-scene') {
     if (scene.kind === 'conversations' && !chapters[0].cast.every(conversationDone)) return;

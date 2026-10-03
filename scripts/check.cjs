@@ -217,13 +217,8 @@ async function drag(page,id,zone,touch,context) {
     assert.equal(await page.locator('.instruction-panel,.dialogue-panel').count(),0);
     const beforeAtmosphere=await saved(page);
     assert.match(await page.locator('.room-image').getAttribute('src'),/k1_taverne_exploration.png/);
-    await page.locator('[data-action="prop-window"]').tap();
-    assert.match(await page.locator('#notice').innerText(),/Draußen liegt das Dorf bereits im Dunkeln/);
+    assert.equal(await page.locator('[data-action="prop-window"],[data-action="prop-candle"],[data-action="prop-mug"]').count(),0);
     await doorGeometry(page);
-    await page.locator('[data-action="prop-candle"]').tap();
-    assert.equal(await page.locator('#notice').innerText(),'Die Kerze ist fast heruntergebrannt.');
-    await page.locator('[data-action="prop-mug"]').tap();
-    assert.equal(await page.locator('#notice').innerText(),'Ein schwerer Holzkrug steht auf dem Tisch.');
     await page.locator('[data-character="peter"]').tap();
     assert.deepEqual(await saved(page),beforeAtmosphere);
     await photograph(page,'ch1-tavern-1024');
@@ -434,7 +429,7 @@ async function drag(page,id,zone,touch,context) {
       await doorGeometry(page);
       await photograph(page,'ch1-exploration-'+viewport.width);
       const atmosphereBefore=await saved(page);
-      for (const hotspot of ['prop-window','prop-candle','prop-mug']) await page.locator(`[data-action="${hotspot}"]`).tap();
+      assert.equal(await page.locator('[data-action="prop-window"],[data-action="prop-candle"],[data-action="prop-mug"]').count(),0);
       await page.locator('[data-character="peter"]').tap(); await page.locator('[data-character="anna"]').tap();
       assert.deepEqual(await saved(page),atmosphereBefore);
       await page.locator('[data-character="jakob"]').click(); await geometry(page,viewport.width+' dialogue');
