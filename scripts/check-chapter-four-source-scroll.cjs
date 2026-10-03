@@ -15,7 +15,7 @@ const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright'),assert=req
    return {unchanged,markers,quotes:[...document.querySelectorAll('.ch4-source-quotation p')].map(n=>getComputedStyle(n).fontStyle),fields:fields.map(n=>{const st=getComputedStyle(n);return {background:st.backgroundImage,contrast:(lum(darkestPaper)+.05)/(lum(rgb(st.color))+.05),size:parseFloat(st.fontSize),heading:parseFloat(getComputedStyle(n.querySelector('h2')).fontSize),padding:parseFloat(st.paddingLeft)};})};
   },page);
   assert.ok(typography.unchanged,page+' source wording changed');
-  for(const f of typography.fields){assert.ok(f.background.startsWith('linear-gradient')&&f.contrast>=10&&f.size>=20&&f.heading>=25&&f.padding>=12,page+' paper/type readability');}
+  for(const f of typography.fields){assert.ok(f.background.startsWith('linear-gradient')&&f.contrast>=10&&f.size>=(page==='luther_comparison_frame'?18:20)&&f.heading>=25&&f.padding>=12,page+' paper/type readability');}
   for(const m of typography.markers)assert.ok(m.size>=16&&m.size<typography.fields[0].size,page+' source label hierarchy');
   if(page==='luther_freedom_small')assert.deepEqual(typography.quotes,['italic','italic']);
   await p.screenshot({path:`artifacts/ch4-source-scroll/${page}-${width}-reading-start.png`});

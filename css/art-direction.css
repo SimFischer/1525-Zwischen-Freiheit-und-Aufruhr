@@ -496,4 +496,21 @@ dialog:has(.ch4-reader) {width:96vw;max-width:1400px;height:94svh;max-height:94s
 .ch4-reader .editorial-info a {color:#f0cd92;}
 .ch4-reader.enlarged .ch4-source-canvas {width:94%;}
 .ch4-reader.enlarged .ch4-source-text {font-size:22px;}
+/* The complete April/May comparison uses both leaves, including its key ideas.
+   The original spread keeps its native aspect ratio and binding. */
+dialog:has(.comparison-reading) {width:98vw;height:98svh;max-height:98svh;padding:6px;}
+.comparison-reading .overlay-top {min-height:44px;}
+.comparison-reading .overlay-top h1 {font-size:18px;}
+.comparison-reading .ch4-reader-scroll {padding:0;}
+.comparison-reading {position:relative;}
+.comparison-reading .editorial-info:not([open]) {position:absolute;left:3%;bottom:58px;margin:0;padding:0;}
+.ch4-comparison-spread {margin:0 auto;max-width:calc((98svh - 150px) * 1024 / 653);}
+.ch4-comparison-spread .ch4-comparison-leaf {top:6%;height:88%;width:39%;left:8%;padding:12px 12px 0;font-family:'Times New Roman',Times,serif;font-size:18px;overflow:auto;line-height:1.45;}
+.ch4-comparison-spread .ch4-comparison-leaf:last-child {left:53%;}
+.ch4-comparison-leaf h2 {font-size:25px;line-height:1.12;letter-spacing:0;margin-bottom:5px;}
+.ch4-comparison-leaf p {line-height:1.45;margin-bottom:7px;}
+.ch4-comparison-leaf .ch4-source-date {font-size:18px;line-height:1.2;margin-bottom:5px;}
+.ch4-comparison-leaf .ch4-source-kind {font-size:16px;line-height:1.25;margin-bottom:10px;}
+.ch4-comparison-leaf .ch4-comparison-key {border-top:1px solid #b39a70;padding-top:8px;margin:8px 0 0;font-size:18px;font-style:italic;}
+.ch4-reader.enlarged .ch4-comparison-spread .ch4-comparison-leaf {font-size:22px;}
 @media(max-width:600px) {dialog:has(.ch4-reader) {width:98vw;padding:6px;}.ch4-reader .panel-actions {gap:3px;}.ch4-reader .panel-actions button {font-size:.8rem;}.ch4-reader h1 {font-size:1rem;}}

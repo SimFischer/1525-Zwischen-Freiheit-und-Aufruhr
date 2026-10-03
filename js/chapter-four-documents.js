@@ -1,4 +1,4 @@
-import { chapterFourDocuments,chapterFourPageText } from '../data/chapter-four-documents.js';
+import { chapterFourDocuments,chapterFourPageText,chapterFourComparisonKey } from '../data/chapter-four-documents.js';
 import { documentRegions } from '../data/chapter-four-document-regions.js';
 import { state,addUnique } from './state.js';
 import { save } from './save-system.js';
@@ -12,7 +12,7 @@ function sourceLine(page,text,index){
  }
  if(page==='luther_freedom_small')return `<blockquote class="ch4-source-quotation"><p>${esc(text)}</p></blockquote>`;
  if(text==='In heutiger Sprache zusammengefasst'||text==='Historische Position in heutiger Sprache zusammengefasst')return `<p class="ch4-source-kind">${esc(text)}</p>`;
- if(/^(Martin Luther ·|Thüringen ·)/.test(text))return `<p class="ch4-source-date">${esc(text)}</p>`;
+ if(/^(Martin Luther ·|Thüringen ·|(?:April|Mai) 1525$)/.test(text))return `<p class="ch4-source-date">${esc(text)}</p>`;
  if(text==='Thomas Müntzer')return `<p class="ch4-source-author">${esc(text)}</p>`;
  if(page==='ermahnung_closed'&&index===1)return `<p class="ch4-source-subtitle">${esc(text)}</p>`;
  return paragraph(text);
@@ -20,8 +20,9 @@ function sourceLine(page,text,index){
 export function sourceCanvas(page,game=state){
  const meta=documentRegions[page]||{file:'props/ch4_prop_weingarten_report.png',size:[768,470],regions:[[12,13,89,86]],summaries:[]};
  const groups=chapterFourPageText[page];
+ if(page==='luther_comparison_frame')return `<div class="ch4-source-canvas ch4-comparison-spread" data-page="${page}" style="aspect-ratio:${meta.size[0]}/${meta.size[1]}"><img src="assets/chapter4/${meta.file}" width="${meta.size[0]}" height="${meta.size[1]}" alt="Vergleich der Friedensermahnung mit Luthers schärferer Schrift" draggable="false">${groups.map((content,i)=>`<section class="ch4-source-text ch4-comparison-leaf" tabindex="0" aria-label="${esc(content[0])}">${content.map((text,n)=>sourceLine(page,text,n)).join('')}<p class="ch4-comparison-key">${esc(chapterFourComparisonKey[i])}</p></section>`).join('')}</div>`;
  const parts=meta.regions.map(([l,t,r,b],i)=>{
-  const content=page==='luther_comparison_frame'?[groups[i][0],'In heutiger Sprache zusammengefasst',...groups[i].slice(1)]:groups[i]||[];
+  const content=groups[i]||[];
   return `<section class="ch4-source-text" tabindex="0" style="left:${l}%;top:${t}%;width:${r-l}%;height:${b-t}%" aria-label="Textbereich ${i+1}">${content.map((text,n)=>sourceLine(page,text,n)+(page==='luther_freedom_small'&&n===0?'<p class="ch4-source-kind">Behutsam modernisierte Quellenworte</p>':'')).join('')}${page==='luther_freedom_small'?`<p class="ch4-source-personal">${esc('Dein damaliger Gedanke: '+(game.choiceTexts.initialFreedomInterpretation||'Noch keine Notiz.'))}</p>`:''}</section>`;
  }).join('');
  const summaries=(meta.summaries||[]).map(([l,t,r,b],i)=>`<aside class="ch4-source-text ch4-summary" tabindex="0" style="left:${l}%;top:${t}%;width:${r-l}%;height:${b-t}%">${paragraph(page==='ermahnung_lords'?'Herrschaft bleibt kritisierbar.':page==='ermahnung_peasants'?'Eine Klage rechtfertigt nicht jedes Mittel.':i===0?'Forderung und Mittel unterscheiden.':'Begründung und Härte getrennt beurteilen.')}</aside>`).join('');
@@ -38,6 +39,8 @@ export function openChapterFourDocument(id,pages=null,onClose=()=>{},archive=fal
  const reader=document.querySelector('.ch4-reader');
  const draw=()=>{
   const page=available[position];
+  reader.classList.toggle('comparison-reading',page==='luther_comparison_frame');
+  reader.querySelector('#overlay-title').textContent=page==='luther_comparison_frame'?'Friedensermahnung – schärfere Schrift':doc.title;
   if(!archive){addUnique(state.notebook.documents,id);addUnique(state.notebook.passages[id]||=([]),page);addUnique(state.chapter4.seenDocuments,page);save(state);}
   reader.querySelector('.ch4-reader-scroll').innerHTML=sourceCanvas(page)+(archive?`<details class="editorial-info"><summary>Zur Quelle</summary><p>Die Materialien sind heutige Illustrationen. ${doc.exact?'Die beiden Leitsätze sind behutsam modernisierte Quellenworte.':'Die Texte sind gekennzeichnete Zusammenfassungen und Einordnungen, keine wörtlichen historischen Zitate.'} Die Dorfgespräche sind erfunden.</p><a href="${esc(doc.sourceUrl)}" target="_blank" rel="noopener noreferrer">Historischer Text / Nachweis</a></details>`:'');
   reader.querySelector('.ch4-reader-scroll').scrollTop=0;

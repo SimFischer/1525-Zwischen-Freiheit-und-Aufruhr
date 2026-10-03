@@ -19,7 +19,22 @@ export const chapterFourPageText={
  muentzer_context_open:[['Glaube und Veränderung','In heutiger Sprache zusammengefasst','Müntzer verbindet die Erneuerung des Glaubens und die Veränderung gottwidriger Verhältnisse enger. Herrschaft, die sich gegen Gottes Wirken stellt, kann ihren Anspruch auf Gehorsam verlieren.','Dazu gehört für ihn eine lebendige Erfahrung von Gottes Wirken; die bloße Berufung auf den Buchstaben genügt nicht.'],['Eine strittige Gewissheit','Prophetische biblische Aussagen werden auf die Gegenwart bezogen. Darin kann Widerstand als religiöse Pflicht erscheinen.','Diese Position verlangt die Frage, wie ein Anspruch, Gottes Willen zu erkennen, geprüft und von eigenen Interessen unterschieden werden kann.']],
  harsh_text_closed:[['Wider die mörderischen und räuberischen Rotten der Bauern','Martin Luther · Mai 1525','Die schärfere Schrift folgt auf die Eskalation.']],
  harsh_text_open:[['Eine verschärfte Reaktion','In heutiger Sprache zusammengefasst','Nach Berichten über gewaltsamen Aufruhr fordert Luther nun ein scharfes obrigkeitliches Eingreifen gegen die aufständischen Bauern.'],['Begründung und Folgen','Er sieht die äußere Ordnung bedroht und will einen größeren Zusammenbruch verhindern.','Seine Aufforderung kann ihrerseits schwere Gewalt gegen Menschen legitimieren. Ihre Begründung zu verstehen entscheidet noch nicht, ob die konkrete Härte gerechtfertigt ist.']],
- luther_comparison_frame:[['Friedensermahnung · April','Kritik an Herren und Bauern; Beschwerden ernst nehmen, Frieden suchen und Forderung von ihren Mitteln unterscheiden.'],['Schärfere Schrift · Mai','Gewaltsamen Aufruhr als Gefahr für äußere Ordnung einschätzen; erheblich härteres obrigkeitliches Eingreifen fordern.']],
+ luther_comparison_frame:[
+  ['Ermahnung zum Frieden','April 1525','In heutiger Sprache zusammengefasst',
+   'Luther kritisiert sowohl die Herren als auch die Bauern.',
+   'Den Herren wirft er vor, dass sie berechtigte Beschwerden zu lange ignoriert und damit selbst zur Eskalation beigetragen haben.',
+   'Gleichzeitig warnt er die Bauern davor, ihre Forderungen mit Gewalt durchzusetzen.',
+   'Sein Ziel ist zunächst eine friedliche Verständigung zwischen beiden Seiten.'],
+  ['Wider die mörderischen und räuberischen Rotten der Bauern','Mai 1525','In heutiger Sprache zusammengefasst',
+   'Nach der weiteren Eskalation beurteilt Luther die Situation deutlich anders.',
+   'Er sieht die gewaltsamen Bauernaufstände nun als Gefahr für die öffentliche Ordnung.',
+   'Deshalb fordert er die Obrigkeit auf, den Aufruhr mit Gewalt zu beenden.',
+   'Seine Sprache wird dabei wesentlich schärfer als noch in der Ermahnung zum Frieden.']],
  weingarten_report:[['Nachricht aus Oberschwaben','In heutiger Sprache zusammengefasst','Am 17. April wird ein Vertrag mündlich vereinbart, am 22. April ausgefertigt und ratifiziert. Einige Haufen sollen sich auflösen; Beschwerden sollen verbindlich vor Schiedsgerichte.','Der Vertrag eröffnet einen Verhandlungsweg und verlangt erhebliche Zugeständnisse. Andere Bauern lehnen ihn ab. Er ist weder ein allgemeiner Sieg noch überall übertragbar.']]
 };
 export const documentStagePages={ermahnung:['c4_ermahnung',['ermahnung_closed','ermahnung_open']],lords:['c4_ermahnung',['ermahnung_lords']],peasants:['c4_ermahnung',['ermahnung_peasants']],muentzer:['c4_muentzer',['muentzer_context_closed','muentzer_context_open']],harsh:['c4_harsh',['harsh_text_closed','harsh_text_open']],comparison:['c4_harsh',['luther_comparison_frame']],weingarten:['c4_weingarten',['weingarten_report']]};
+
+export const chapterFourComparisonKey=[
+ 'Berechtigte Forderungen machen nicht automatisch jedes Mittel zu ihrer Durchsetzung erlaubt.',
+ 'Aus Luthers Sicht ist aus einer Auseinandersetzung über berechtigte Beschwerden nun ein gewaltsamer Aufruhr geworden.'
+];
