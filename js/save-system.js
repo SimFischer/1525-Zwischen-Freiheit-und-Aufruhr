@@ -1,3 +1,4 @@
+import { sanitizeChapterFour } from '../data/chapter-four-save.js';
 import { syncConsequences } from './consequences.js';
 import { freshState } from './state.js';
 import { canonicalScene, sceneById, scenes } from '../data/scenes.js';
@@ -66,7 +67,7 @@ export function load(normal = false) {
       for (const id of ['serviceBoundary','obedienceBoundary','innerConsolidation','politicalConsolidation']) { delete base.choices[id]; delete base.choiceTexts[id]; }
     }
     if (Object.entries(base.minigames.sorting).some(([id,zone])=>!sortingGames.freedomSorting.cards.some(card=>card.id===id) || !['god','world'].includes(zone))) return null;
-    for (const key of ['chapter2','chapter3','forestEvidence','grievances']) if(value[key] && typeof value[key]==='object' && !Array.isArray(value[key])) base[key]={...base[key],...value[key]};
+    for (const key of ['chapter2','chapter3','chapter4','forestEvidence','grievances']) if(value[key] && typeof value[key]==='object' && !Array.isArray(value[key])) base[key]={...base[key],...value[key]};
     const isRecord = item => item && typeof item === 'object' && !Array.isArray(item);
     const validList = (items, allowed, max) => Array.isArray(items) && items.length<=max && new Set(items).size===items.length && items.every(item=>allowed.includes(item));
     const c3=base.chapter3;
@@ -107,6 +108,7 @@ export function load(normal = false) {
       base.progress.completedScenes = base.progress.completedScenes.filter(id=>!id.startsWith('ch1_s6'));
       base.minigames.completed = base.minigames.completed.filter(id=>id!=='freedomSorting');
     }
+    sanitizeChapterFour(base);
     return syncConsequences(base);
   } catch { return null; }
 }

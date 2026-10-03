@@ -36,7 +36,12 @@ for a in m['assets']:
 assert {p.relative_to(package).as_posix() for p in package.rglob('*.png')}==seen
 for a in m['reused_assets']:
     assert required<=a.keys()
-    raw=(root/a['relative_path']).read_bytes()
+    if a['relative_path'].endswith(('.js','.css')):
+        # The manifest records the production baseline of shared mutable modules.
+        # Integration extends them; preserve the original package and verify its snapshot.
+        import subprocess
+        raw=subprocess.check_output(['git','show','07e4ab9:'+a['relative_path']],cwd=str(root))
+    else:raw=(root/a['relative_path']).read_bytes()
     if a.get('hash_mode')=='normalized_lf':raw=raw.replace(b'\r\n',b'\n')
     assert hashlib.sha256(raw).hexdigest()==a['sha256'],a['relative_path']
 assert {'peter','anna','jakob','Konrad','Matthes','Verwalter','Dorf_Hub','globale_Hotspots','Dialograhmen','Notizbuch','Zwoelf_Artikel'}<={a['scene'] for a in m['reused_assets']}

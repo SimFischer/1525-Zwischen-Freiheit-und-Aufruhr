@@ -49,6 +49,7 @@ export const adminChapterTargets = {
 // Curated dramatic entry points for the regular admin overlay. Detailed targets
 // above remain the canonical fixtures; later chapters add 3-5 nodes here.
 export const adminMainTargets = {
+  4:[{id:'ch4_opening',label:'Dorf / vorbereiteter Weg'},{id:'ch4_ermahnung',label:'Luther / Ordnung und Auslegung'},{id:'ch4_escalation',label:'Eskalation / Urteil und Kapitelende'}],
   3:[{id:'ch3_hub',label:'Memmingen / Beschwerden'},{id:'ch3_articles',label:'Zwölf Artikel / Auslegung'},{id:'ch3_printshop',label:'Druckerei / Kapitelende'}],
   1: [
     {id:'ch1_s1_intro',label:'Kapitelstart / Taverne'},

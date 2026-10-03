@@ -1,8 +1,10 @@
+import { chapterFourChoices } from './chapter-four.js';
 import { chapterThreeChoices } from './chapter-three.js';
 import { chapterTwoChoices } from './chapter-two.js';
 import { documents } from './documents.js';
 import { dialogues } from './dialogues.js';
 export const choices = {
+  ...chapterFourChoices,
   ...chapterThreeChoices,
   ...chapterTwoChoices,
   initialFreedomInterpretation: {

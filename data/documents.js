@@ -1,4 +1,6 @@
+import { chapterFourDocuments } from './chapter-four-documents.js';
 export const documents = {
+  ...chapterFourDocuments,
   articles:{author:'Bauernschaft · Sebastian Lotzer',title:'Die Zwölf Artikel',year:'1525'},
   freedom: { author: 'Martin Luther', title: 'Von der Freiheit eines Christenmenschen', year: '1520', type: 'Flugschrift · Quellenauszug', asset: 'assets/documents/doc_luther_freedom_open.png', closedAsset: 'assets/documents/doc_luther_freedom_closed.png', note: 'Die beiden Leitsätze der Schrift; Schreibweise behutsam modernisiert. Die Gesprächssituation und die Figuren sind erfunden.', passages: [
     'Ein Christenmensch ist ein freier Herr über alle Dinge und niemandem untertan.',

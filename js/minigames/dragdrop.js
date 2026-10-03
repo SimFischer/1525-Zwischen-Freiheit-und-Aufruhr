@@ -20,6 +20,12 @@ export function installDragDrop(root, onDrop, onSelect) {
     if (!drag.active) {
       drag.active=true; drag.ghost=drag.card.cloneNode(true);
       drag.ghost.className='drag-ghost'; drag.ghost.setAttribute('aria-hidden','true'); drag.ghost.tabIndex=-1;
+      if(drag.card.classList.contains('ch4-case')) {
+        const box=drag.card.getBoundingClientRect();
+        drag.ghost.classList.add('ch4-drag-ghost');
+        drag.ghost.style.width=box.width+'px';drag.ghost.style.height=box.height+'px';
+        drag.ghost.style.background=getComputedStyle(drag.card).background;
+      }
       if(drag.card.classList.contains('grain-sack')||drag.card.classList.contains('print-piece')) {
         const box=drag.card.getBoundingClientRect(), source=drag.card.querySelector('img');
         const imageBox=source.getBoundingClientRect(), image=drag.ghost.querySelector('img');

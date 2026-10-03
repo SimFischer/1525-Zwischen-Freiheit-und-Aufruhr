@@ -1,3 +1,7 @@
+import { chapterFourChoices } from '../data/chapter-four.js';
+import { initializeOpening } from '../data/chapter-four-state.js';
+import { prepareChapterFourState } from './chapter-four.js';
+import { prepareChapterFourAdmin,resetChapterFour } from './chapter-four-admin.js';
 import { decisionRules } from '../data/consequences.js';
 import { syncConsequences, getContextualDialogue, setAdminOrientation } from './consequences.js';
 import { freshState } from './state.js';
@@ -108,12 +112,13 @@ function chapterThree(next,scene,target={},complete=false) {
  next.progress.completedScenes.push(...chapterThreeScenes.slice(0,index).map(s=>s.id));syncConsequences(next);
 }
 export const adminChapterRegistry = {
+  4:{prepare:(next,scene)=>prepareChapterFourAdmin(next,scene),complete:next=>prepareChapterFourAdmin(next,sceneById.ch4_world_end,true),reset:resetChapterFour,ownedChoices:()=>Object.keys(chapterFourChoices),games:[]},
   3:{prepare:chapterThree,complete:next=>chapterThree(next,sceneById.ch3_end,{},true),reset:next=>{next.chapter3=freshState().chapter3;next.notebook.documents=next.notebook.documents.filter(id=>id!=='articles');delete next.notebook.passages.articles;},ownedChoices:()=>Object.keys(chapterThreeChoices),games:['ch3Print']},
   1:{prepare:chapterOne,complete:next=>chapterOne(next,sceneById.ch1_end,{},true),reset:next=>{
     for(const key of ['flyerUnlocked','peterConversation','annaConversation','jakobConversation','freedomSortingComplete']) next.progress[key]=false;
     next.progress.conversations=[]; next.minigames.sorting={}; next.minigames.puzzle=[];
     next.notebook.entries=next.notebook.entries.filter(id=>id!=='freedom'); next.notebook.documents=next.notebook.documents.filter(id=>id!=='freedom'); delete next.notebook.passages.freedom; next.notebook.unlocked=false;
-  },ownedChoices:()=>Object.keys(choices).filter(id=>!chapterTwoChoices[id]&&!chapterThreeChoices[id]),games:['justification','freedomSorting']},
+  },ownedChoices:()=>Object.keys(choices).filter(id=>!chapterTwoChoices[id]&&!chapterThreeChoices[id]&&!chapterFourChoices[id]),games:['justification','freedomSorting']},
   2:{prepare:chapterTwo,complete:next=>chapterTwo(next,sceneById.ch2_end,{checkpoint:'end'},true),reset:next=>{
     const fresh=freshState(); for(const key of ['chapter2','forestEvidence','grievances']) next[key]=fresh[key];
   },ownedChoices:()=>[...Object.keys(chapterTwoChoices),'peterDayPlan','initialFarmPlan','duesFirstSacrifice','duesSecondSacrifice','priorityGrievances','playerDemand'],games:[]}
@@ -158,6 +163,7 @@ export function prepareAdminStateForScene(sceneId,scenario=null) {
     for(const [key,value] of Object.entries(scenario.orientation||{})) setAdminOrientation(key,value,next);
     next.consequences.adminScenario=structuredClone(scenario);
   }
+  if(chapter===4) {syncConsequences(next);initializeOpening(next);if(scenario?.chapter4)Object.assign(next.chapter4,structuredClone(scenario.chapter4));syncConsequences(next);prepareChapterFourState(next,scene);}
   if(chapter===3) { next.dialogue=null;next.interaction=null;prepareChapterThreeState(next,scene); }
   if(target.dialogue&&next.dialogue) next.dialogue.lines=getContextualDialogue(target.dialogue,next,next.dialogue.lines);
   return syncConsequences(next);
@@ -175,6 +181,7 @@ export function resetAdminChapter(current,chapter) {
   const entry=prepareAdminStateForScene(adminTargets().find(group=>group.chapter.id===chapter).targets[0].id);
   next.scene=entry.scene; next.chapter=chapter; next.phase=entry.phase; next.dialogue=entry.dialogue; next.interaction=entry.interaction;
   if(chapter===2) next.chapter2.stage=entry.chapter2.stage;
+  if(chapter===4) {next.dialogue=null;next.interaction=null;prepareChapterFourState(next,sceneById[next.scene]);}
   if(chapter===3) next.chapter3.stage=entry.chapter3.stage;
   return syncConsequences(next);
 }

@@ -1,9 +1,11 @@
+import { openChapterFourDocument } from './chapter-four-documents.js';
 import { openArticles } from './chapter-three-documents.js';
 import { documents } from '../data/documents.js';
 import { state, addUnique } from './state.js';
 import { save } from './save-system.js';
 import { openOverlay, esc, button } from './ui.js';
 export function openDocument(id, passage = null, onClose = () => {}, archive = false, returnLabel = archive ? 'Zurück zum Notizbuch' : 'Zurück zum Gespräch') {
+  if(id.startsWith('c4_'))return openChapterFourDocument(id,null,onClose,archive);
   if(id==='articles')return openArticles(archive,onClose);
   const doc = documents[id];
   addUnique(state.notebook.documents, id);

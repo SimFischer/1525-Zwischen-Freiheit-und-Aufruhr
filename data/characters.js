@@ -27,10 +27,14 @@ for(const [id,name,poses] of [['lotzer','Sebastian Lotzer',['neutral','talking',
  const states=Object.fromEntries(poses.map(p=>[p,{asset:`assets/chapter3/portraits/ch3_portrait_${id}_${p}.png`} ])); if(!states.neutral) states.neutral=states.working;
  characters[id]={name,states,sceneStates:Object.fromEntries(poses.map(p=>[p,`assets/chapter3/characters/ch3_char_${id}_${p}.png`]))};
 }
+for(const [id,name,file,poses] of [['preacher','Der Prediger','local_preacher',['neutral','talking']],['envoy','Der Bote','authority_envoy',['neutral','talking']],['band1','Ein Bauer am Lager','peasant_band_member_1',['neutral']],['band2','Ein anderer Bauer','peasant_band_member_2',['neutral']]]) {
+ const path=(type,pose)=>`assets/chapter4/${type}/ch4_${type==='portraits'?'portrait':'char'}_${file}${file.startsWith('peasant_band')?'':'_'+pose}.png`;
+ characters[id]={name,states:Object.fromEntries(poses.map(p=>[p,{asset:path('portraits',p)}])),sceneStates:Object.fromEntries(poses.map(p=>[p,path('characters',p)]))};
+}
 let preloaded = false;
 export function preloadCharacters() {
   if (preloaded) return;
   preloaded = true;
-  for (const person of Object.values(characters).filter(person=>!person.states.neutral.asset.includes('/chapter3/'))) for (const mood of Object.values(person.states)) { const image = new Image(); image.src = mood.asset; }
+  for (const person of Object.values(characters).filter(person=>! /\/chapter[34]\//.test(person.states.neutral.asset))) for (const mood of Object.values(person.states)) { const image = new Image(); image.src = mood.asset; }
   for (const asset of ['k1_taverne_exploration.png','k1_taverne_dialog_group.png']) { const image = new Image(); image.src = 'assets/chapter1/' + asset; }
 }

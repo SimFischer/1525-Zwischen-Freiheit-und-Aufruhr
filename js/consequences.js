@@ -1,3 +1,4 @@
+import { chapterFourFields } from '../data/chapter-four-state.js';
 import { decisionRules, orientationKeys, perceptionCharacters, perceptionTags, recallLines } from '../data/consequences.js';
 import { grievances } from '../data/chapter-two.js';
 import { choices } from '../data/choices.js';
@@ -28,6 +29,7 @@ export function syncConsequences(game) {
   game.chapter3.demandChoice=game.choices['ch3Demand_'+game.chapter3.entryFocus]??null;
   game.chapter3.publicTone={full:'nuanced',summary:'simplified',religious:'religious',accusation:'confrontational'}[game.chapter3.printStrategy]??null;
  }
+ if(game.chapter4)for(const [field,id] of Object.entries(chapterFourFields))game.chapter4[field]=game.choices[id]??null;
  game.orientation=orientation; game.perceptions=perceptions;
  game.consequences={adminScenario:previous.adminScenario||null,version:2,orientationAdjustments:adjustments,perceptionAdditions:overrides,flags:{forestReported:game.choices.forestResponse==='take',corveeRefused:game.choices.corveeResponse==='refuse',duesWithheld:game.choices.duesResponse==='withhold',additionalDuesRefused:game.choices.duesSecondSacrifice==='refuse'}};
  return game;
@@ -94,5 +96,5 @@ export function getContextualDialogue(dialogueId,game,base=[]) {
 }
 export function prepareConsequencesForEpilogue(game) {
  const orientation=getOrientationProfile(game), maximum=Math.max(...Object.values(orientation));
- return {chapter3:structuredClone(game.chapter3),orientation,dominantOrientations:maximum>0?orientationKeys.filter(key=>orientation[key]===maximum):[],decisions:getSavedDecisions(game),perceptions:structuredClone(game.perceptions),flags:structuredClone(game.consequences.flags),grievances:structuredClone(game.grievances),priorityGrievances:structuredClone(game.choices.priorityGrievances),playerDemand:game.choices.playerDemand};
+ return {chapter4:structuredClone(game.chapter4),chapter5Handoff:structuredClone(game.chapter4?.handoff),chapter3:structuredClone(game.chapter3),orientation,dominantOrientations:maximum>0?orientationKeys.filter(key=>orientation[key]===maximum):[],decisions:getSavedDecisions(game),perceptions:structuredClone(game.perceptions),flags:structuredClone(game.consequences.flags),grievances:structuredClone(game.grievances),priorityGrievances:structuredClone(game.choices.priorityGrievances),playerDemand:game.choices.playerDemand};
 }
