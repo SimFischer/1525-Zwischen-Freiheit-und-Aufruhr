@@ -8,7 +8,7 @@ export const articles = [
   {
     "id": 2,
     "title": "Zehnt",
-    "text": "Der Kornzehnt soll den Pfarrer, Bedürftige und nötige Landesausgaben tragen; die Gemeinde entscheidet über seine Verwendung. Der kleine Zehnt soll entfallen.",
+    "text": "Der Kornzehnt soll den Unterhalt des Pfarrers, die Versorgung Bedürftiger und nötige Landesausgaben finanzieren; die Gemeinde entscheidet über seine Verwendung. Der kleine Zehnt soll entfallen.",
     "excerpt": "Den klaynen zehat wo(e)llen wir gar nit geben."
   },
   {
@@ -26,7 +26,7 @@ export const articles = [
   {
     "id": 5,
     "title": "Wald und Holz",
-    "text": "Nicht rechtmäßig erworbene Wälder sollen der Gemeinde zurückfallen. Bau- und Brennholz für den Bedarf wird unter gemeindlicher Aufsicht genommen; echte Kaufrechte erfordern Einigung.",
+    "text": "Nicht rechtmäßig erworbene Wälder sollen an die Gemeinde zurückfallen. Bau- und Brennholz für den Bedarf wird unter gemeindlicher Aufsicht genommen; echte Kaufrechte erfordern Einigung.",
     "excerpt": "die es nit erkaufft haben, sollen ayner gantzen gemain wider anhaim fallen"
   },
   {
@@ -44,13 +44,13 @@ export const articles = [
   {
     "id": 8,
     "title": "Tragbare Gült",
-    "text": "Untragbare Pachtabgaben sollen von ehrbaren Leuten anhand des Gutes gerecht neu festgesetzt werden, damit die Arbeit ihren Ertrag behalten kann.",
+    "text": "Untragbare Pachtabgaben sollen von ehrbaren Leuten anhand des Gutes gerecht neu festgesetzt werden, damit den Bauern der Ertrag ihrer Arbeit bleibt.",
     "excerpt": "dann ain yetlicher tagwercker ist seyns lons wirdig."
   },
   {
     "id": 9,
     "title": "Gerichtsbußen",
-    "text": "Strafen sollen nach überlieferten schriftlichen Regeln und dem Fall bemessen werden, statt nach Gunst oder Feindschaft.",
+    "text": "Strafen sollen nach überlieferten schriftlichen Regeln und den Umständen des Falls bemessen werden, statt nach Gunst oder Feindschaft.",
     "excerpt": "vns bey alter geschribner straff straffen"
   },
   {

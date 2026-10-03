@@ -104,7 +104,7 @@ export const chapterThreeChoices = {
       {
         "id": "B",
         "label": "B",
-        "text": "Die Herrschaft soll weiterhin einsetzen dürfen, aber die Gemeinde muss zustimmen.",
+        "text": "Die Herrschaft soll weiterhin den Pfarrer einsetzen dürfen, aber die Gemeinde muss zustimmen.",
         "reaction": "ch3Demand_church_B"
       },
       {
@@ -607,7 +607,7 @@ export const chapterThreeDialogues = {
     },
     {
       "speaker": "jakob",
-      "text": "Dann wird umso wichtiger, wie sicher wir behaupten können, Gottes Willen zu kennen."
+      "text": "Dann wird es umso wichtiger zu prüfen, wie sicher wir sein können, Gottes Willen zu kennen."
     }
   ],
   "ch3Religion_hermeneutical_caution": [

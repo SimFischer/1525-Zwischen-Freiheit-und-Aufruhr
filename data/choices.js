@@ -68,7 +68,7 @@ export const choices = {
       { id: 'A', text: 'Beide Aussagen treffen zu.' },
       { id: 'B', text: 'Nur die erste trifft zu.' },
       { id: 'C', text: 'Nur die zweite trifft zu.' },
-      { id: 'D', text: 'Beide Aussagen greifen zu kurz.', feedback: 'Beide Aussagen greifen zu kurz:\nDie Freiheit im Glauben führt zum Dienst am Nächsten und bleibt deshalb nicht auf ein inneres Erleben beschränkt. Sie ist aber auch kein Versprechen automatischer politischer Befreiung. Welche gesellschaftlichen Folgen sie haben kann, müssen wir weiter fragen.' }
+      { id: 'D', text: 'Beide Aussagen greifen zu kurz.', feedback: 'Beide Aussagen greifen zu kurz:\nDie Freiheit im Glauben führt zum Dienst am Nächsten und bleibt deshalb nicht auf ein inneres Erleben beschränkt. Sie ist aber auch kein Versprechen automatischer politischer Befreiung. Wir müssen weiter fragen, welche gesellschaftlichen Folgen sie haben kann.' }
     ]
   },
   innerConsolidation: {
@@ -78,7 +78,7 @@ export const choices = {
     hints: ['Denkimpuls:\nWarum nennt Luther den freien Menschen zugleich einen „dienstbaren Knecht“?', 'Hinweis:\nDenke an Annas Frage: Wer hilft, um Gottes Annahme zu verdienen, handelt aus einem anderen Grund als jemand, der sich bereits angenommen weiß. Betrifft dieser Unterschied nur sein Inneres?'],
     wrongFeedback: 'Denkimpuls:\nWarum verbindet der ‚Dienst am Nächsten‘ beide Bereiche?',
     options: [
-      { id: 'A', text: '… die Freiheit vor Gott auch das Handeln gegenüber dem Nächsten verändert.', feedback: 'Die erste Aussage greift zu kurz, weil …\n… die Freiheit vor Gott auch das Handeln gegenüber dem Nächsten verändert. Gute Werke müssen Gottes Annahme nicht erst bewirken; sie können aus der geschenkten Freiheit dem anderen zugutekommen.' },
+      { id: 'A', text: '… die Freiheit vor Gott auch das Handeln gegenüber dem Nächsten verändert.', feedback: 'Die erste Aussage greift zu kurz, weil …\n… die Freiheit vor Gott auch das Handeln gegenüber dem Nächsten verändert. Gute Werke müssen Gottes Annahme nicht erst bewirken. Wer aus der geschenkten Freiheit handelt, kann damit dem anderen helfen.' },
       { id: 'B', text: '… der Dienst am Nächsten Gottes Annahme erst im äußeren Leben vollendet.', hints: ['Ist Gottes Annahme noch unvollständig, bevor der Mensch hilft?', 'Unterscheide Folge und Voraussetzung: Gute Werke dienen dem Nächsten; sie ergänzen nicht Gottes Annahme.'] },
       { id: 'C', text: '… die gemeinsamen Pflichten den Menschen erst dazu befähigen, auf Gottes Gnade zu vertrauen.', hints: ['Was steht in der Rechtfertigungskette am Anfang: Gnade oder Pflichterfüllung?', 'Die Aussage kehrt die Richtung um: Gottes Zusage wird im Glauben angenommen und setzt zum Handeln frei.'] }
     ]

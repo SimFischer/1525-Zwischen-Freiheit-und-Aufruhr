@@ -9,6 +9,6 @@ export const notebookEntries = { freedom: {
   motto: 'Frei vor Gott – frei zum Dienst.',
   additional: [
     'Die Freiheit vor Gott ist nicht einfach dasselbe wie politische oder gesellschaftliche Freiheit.',
-    'Welche Folgen sie dennoch für ein unfrei erlebtes Leben haben kann, ist damit noch nicht beantwortet.'
+    'Welche Folgen sie dennoch für ein Leben, das als unfrei erlebt wird haben kann, ist damit noch nicht beantwortet.'
   ]
 } };

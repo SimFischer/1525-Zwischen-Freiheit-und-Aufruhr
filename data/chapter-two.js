@@ -137,14 +137,14 @@ export const chapterTwoChoices = {
     {
       "id": "B",
       "text": "Peter schuldet dem Grundherrn Arbeitsdienste aufgrund seines Herrschafts- bzw. Abhängigkeitsverhältnisses.",
-      "feedback": "Frondienst bezeichnet verpflichtende Arbeitsleistungen aus einem Herrschafts- bzw. Abhängigkeitsverhältnis. Entscheidend ist nicht der Arbeitsort oder die Schwere, sondern der Grund der Verpflichtung.\n\nGemeinschaftliche Arbeiten können ebenfalls verbindlich sein. Hier fordert aber der Grundherr einen ihm geschuldeten Dienst, keine gemeinsam bestimmte Arbeit der Gemeinde. Ein vereinbarter Tausch von Arbeit und Gegenleistung wäre ein anderes Verpflichtungsverhältnis. Peter wird in der Szene nicht zu einer solchen Vereinbarung gefragt. Gegenseitige Hilfe erklärt ebenfalls Arbeit auf einem anderen Hof. Peters Dienst beruht hier jedoch auf seiner Bindung an den Grundherrn, nicht auf freiwilliger Nachbarschaftshilfe."
+      "feedback": "Frondienst bezeichnet verpflichtende Arbeitsleistungen aus einem Herrschafts- bzw. Abhängigkeitsverhältnis. Entscheidend ist nicht der Arbeitsort oder die Schwere, sondern der Grund der Verpflichtung.\n\nGemeinschaftliche Arbeiten können ebenfalls verbindlich sein. Hier fordert aber der Grundherr einen ihm geschuldeten Dienst, keine gemeinsam bestimmte Arbeit der Gemeinde. Ein vereinbarter Tausch von Arbeit und Gegenleistung wäre ein anderes Verpflichtungsverhältnis. In der Szene wird Peter nicht gefragt, ob er einer solchen Vereinbarung zustimmt. Gegenseitige Hilfe erklärt ebenfalls Arbeit auf einem anderen Hof. Peters Dienst beruht hier jedoch auf seiner Bindung an den Grundherrn, nicht auf freiwilliger Nachbarschaftshilfe."
     },
     {
       "id": "C",
       "text": "Peter tauscht eigene Arbeitszeit gegen eine Gegenleistung, deren Umfang er mit dem Herrenhof vereinbart.",
       "hints": [
-        "Ein vereinbarter Tausch von Arbeit und Gegenleistung wäre ein anderes Verpflichtungsverhältnis. Peter wird in der Szene nicht zu einer solchen Vereinbarung gefragt.",
-        "Ein vereinbarter Tausch von Arbeit und Gegenleistung wäre ein anderes Verpflichtungsverhältnis. Peter wird in der Szene nicht zu einer solchen Vereinbarung gefragt.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Erklärung trifft den Verpflichtungsgrund des Frondienstes am genauesten?"
+        "Ein vereinbarter Tausch von Arbeit und Gegenleistung wäre ein anderes Verpflichtungsverhältnis. In der Szene wird Peter nicht gefragt, ob er einer solchen Vereinbarung zustimmt.",
+        "Ein vereinbarter Tausch von Arbeit und Gegenleistung wäre ein anderes Verpflichtungsverhältnis. In der Szene wird Peter nicht gefragt, ob er einer solchen Vereinbarung zustimmt.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Erklärung trifft den Verpflichtungsgrund des Frondienstes am genauesten?"
       ]
     },
     {
@@ -243,14 +243,14 @@ export const chapterTwoChoices = {
     {
       "id": "A",
       "text": "Frondienste sollen begrenzt und so geregelt werden, dass die Arbeit auf dem eigenen Hof nicht dauerhaft gefährdet wird.",
-      "feedback": "Begrenzung und verlässliche Regelung greifen Peters konkreten Zeitkonflikt auf, ohne bereits jede Dienstpflicht oder eine feste Rangordnung zwischen allen Arbeiten festzulegen.\n\nEntschädigung vermindert die wirtschaftliche Belastung. Sie löst aber nicht vollständig, dass Peter Arbeitszeit für seinen eigenen Hof verliert und darüber nicht selbst verfügt. Der Vorrang der eigenen Arbeit nimmt den Zeitkonflikt direkt auf. Er verlangt aber bereits eine feste Rangordnung für alle Dienste, die über eine Begrenzung im Hinblick auf die eigene Versorgung hinausgeht. Vollständige Abschaffung würde die Dienstpflicht beenden und kann als weitreichende Forderung diskutiert werden. Sie geht über die unmittelbar geschilderte Beschwerde zur liegen gebliebenen Hofarbeit hinaus."
+      "feedback": "Begrenzung und verlässliche Regelung greifen Peters konkreten Zeitkonflikt auf, ohne bereits jede Dienstpflicht oder eine feste Rangordnung zwischen allen Arbeiten festzulegen.\n\nEntschädigung vermindert die wirtschaftliche Belastung. Sie löst aber nicht das gesamte Problem: Peter verliert Arbeitszeit für seinen eigenen Hof und kann darüber nicht selbst verfügen. Der Vorrang der eigenen Arbeit nimmt den Zeitkonflikt direkt auf. Er verlangt aber bereits eine feste Rangordnung für alle Dienste, die über eine Begrenzung im Hinblick auf die eigene Versorgung hinausgeht. Vollständige Abschaffung würde die Dienstpflicht beenden und kann als weitreichende Forderung diskutiert werden. Sie geht über die unmittelbar geschilderte Beschwerde zur liegen gebliebenen Hofarbeit hinaus."
     },
     {
       "id": "B",
       "text": "Wer Frondienst leisten muss, soll für die geleistete Arbeit angemessen entschädigt werden.",
       "hints": [
-        "Entschädigung vermindert die wirtschaftliche Belastung. Sie löst aber nicht vollständig, dass Peter Arbeitszeit für seinen eigenen Hof verliert und darüber nicht selbst verfügt.",
-        "Entschädigung vermindert die wirtschaftliche Belastung. Sie löst aber nicht vollständig, dass Peter Arbeitszeit für seinen eigenen Hof verliert und darüber nicht selbst verfügt.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Forderung greift das erlebte Problem am präzisesten auf?"
+        "Entschädigung vermindert die wirtschaftliche Belastung. Sie löst aber nicht das gesamte Problem: Peter verliert Arbeitszeit für seinen eigenen Hof und kann darüber nicht selbst verfügen.",
+        "Entschädigung vermindert die wirtschaftliche Belastung. Sie löst aber nicht das gesamte Problem: Peter verliert Arbeitszeit für seinen eigenen Hof und kann darüber nicht selbst verfügen.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Forderung greift das erlebte Problem am präzisesten auf?"
       ]
     },
     {
@@ -280,14 +280,14 @@ export const chapterTwoChoices = {
     {
       "id": "A",
       "text": "Zusätzliche Abgaben sollen nur nach vorher bekannten Regeln verlangt und nachvollziehbar begründet werden.",
-      "feedback": "Vorher bekannte Regeln und begründete Änderungen treffen die fehlende Vorhersehbarkeit am direktesten. Die anderen Vorschläge sind ebenfalls nachvollziehbare Reformansätze, setzen aber an anderen Kriterien an.\n\nEine Begrenzung schützt Versorgung und Aussaat. Sie beantwortet zunächst die Höhe der Belastung, nicht die Frage, wann eine zusätzliche Forderung vorhersehbar und begründet ist. Mitsprache kann Änderungen kontrollieren und gehört zu einer plausiblen Reform. Beteiligung allein legt aber noch nicht fest, nach welchen vorher bekannten Regeln zusätzliche Ansprüche entstehen. Eine Anpassung an den Ertrag berücksichtigt die Leistungsfähigkeit. Sie klärt noch nicht, auf welcher bekannten Grundlage eine zusätzliche Forderung erhoben wird."
+      "feedback": "Vorher bekannte Regeln und begründete Änderungen treffen die fehlende Vorhersehbarkeit am direktesten. Die anderen Vorschläge sind ebenfalls nachvollziehbare Reformansätze, setzen aber an anderen Kriterien an.\n\nEine Begrenzung schützt Versorgung und Aussaat. Sie begrenzt zunächst die Höhe der Belastung, klärt aber nicht, wann eine zusätzliche Forderung vorhersehbar und begründet ist. Mitsprache kann Änderungen kontrollieren und gehört zu einer plausiblen Reform. Beteiligung allein legt aber noch nicht fest, nach welchen vorher bekannten Regeln zusätzliche Ansprüche entstehen. Eine Anpassung an den Ertrag berücksichtigt die Leistungsfähigkeit. Sie klärt noch nicht, auf welcher bekannten Grundlage eine zusätzliche Forderung erhoben wird."
     },
     {
       "id": "B",
       "text": "Die Höhe der Abgaben soll begrenzt werden, damit genügend Nahrung und Saatgut auf dem Hof bleiben.",
       "hints": [
-        "Eine Begrenzung schützt Versorgung und Aussaat. Sie beantwortet zunächst die Höhe der Belastung, nicht die Frage, wann eine zusätzliche Forderung vorhersehbar und begründet ist.",
-        "Eine Begrenzung schützt Versorgung und Aussaat. Sie beantwortet zunächst die Höhe der Belastung, nicht die Frage, wann eine zusätzliche Forderung vorhersehbar und begründet ist.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Forderung setzt am unmittelbarsten an der fehlenden Vorhersehbarkeit an?"
+        "Eine Begrenzung schützt Versorgung und Aussaat. Sie begrenzt zunächst die Höhe der Belastung, klärt aber nicht, wann eine zusätzliche Forderung vorhersehbar und begründet ist.",
+        "Eine Begrenzung schützt Versorgung und Aussaat. Sie begrenzt zunächst die Höhe der Belastung, klärt aber nicht, wann eine zusätzliche Forderung vorhersehbar und begründet ist.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Forderung setzt am unmittelbarsten an der fehlenden Vorhersehbarkeit an?"
       ]
     },
     {
@@ -325,14 +325,14 @@ export const chapterTwoChoices = {
     {
       "id": "B",
       "text": "Freiheit vor Gott verändert den Dienst am Nächsten und kann gesellschaftliche Fragen auslösen, legt aber noch kein politisches Programm fest.",
-      "feedback": "Beide Leitsätze verbinden Freiheit vor Gott und Handeln für andere. Das kann gesellschaftliche Fragen aufwerfen; welche konkrete politische Ordnung daraus folgen soll, ist damit noch nicht entschieden.\n\nDu nimmst die Folgen der Freiheit für das Handeln ernst. Der Schritt zur Aufhebung bestimmter Abhängigkeiten verlangt aber eine weitere Begründung, die die Leitsätze noch nicht selbst liefern. Das Gewissen ist für die Frage nach Freiheit wichtig. Daraus folgt aber nicht unmittelbar, dass jede äußere Dienstpflicht nur durch individuelle Zustimmung bindet. Der Dienst am Nächsten ist ein wesentlicher Teil christlicher Freiheit. Er lässt sich jedoch nicht ohne weitere Prüfung mit bestehenden herrschaftlichen Dienstpflichten gleichsetzen."
+      "feedback": "Beide Leitsätze verbinden Freiheit vor Gott und Handeln für andere. Das kann gesellschaftliche Fragen aufwerfen; welche konkrete politische Ordnung daraus folgen soll, ist damit noch nicht entschieden.\n\nDu nimmst die Folgen der Freiheit für das Handeln ernst. Der Schritt zur Aufhebung bestimmter Abhängigkeiten verlangt aber eine weitere Begründung, die die Leitsätze noch nicht selbst liefern. Das Gewissen ist für die Frage nach Freiheit wichtig. Daraus folgt aber nicht unmittelbar, dass jede äußere Dienstpflicht nur mit individueller Zustimmung verbindlich wird. Der Dienst am Nächsten ist ein wesentlicher Teil christlicher Freiheit. Er lässt sich jedoch nicht ohne weitere Prüfung mit bestehenden herrschaftlichen Dienstpflichten gleichsetzen."
     },
     {
       "id": "C",
       "text": "Freiheit betrifft das Gewissen; deshalb hängt jede äußere Dienstpflicht unmittelbar davon ab, ob der Einzelne ihr zustimmt.",
       "hints": [
-        "Das Gewissen ist für die Frage nach Freiheit wichtig. Daraus folgt aber nicht unmittelbar, dass jede äußere Dienstpflicht nur durch individuelle Zustimmung bindet.",
-        "Das Gewissen ist für die Frage nach Freiheit wichtig. Daraus folgt aber nicht unmittelbar, dass jede äußere Dienstpflicht nur durch individuelle Zustimmung bindet.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Deutung berücksichtigt beide Leitsätze und ihre politische Reichweite am genauesten?"
+        "Das Gewissen ist für die Frage nach Freiheit wichtig. Daraus folgt aber nicht unmittelbar, dass jede äußere Dienstpflicht nur mit individueller Zustimmung verbindlich wird.",
+        "Das Gewissen ist für die Frage nach Freiheit wichtig. Daraus folgt aber nicht unmittelbar, dass jede äußere Dienstpflicht nur mit individueller Zustimmung verbindlich wird.\n\nPrüfe noch einmal das Kriterium der Frage: Welche Deutung berücksichtigt beide Leitsätze und ihre politische Reichweite am genauesten?"
       ]
     },
     {
@@ -356,12 +356,12 @@ export const dayReactions = {grain:'Dann bringen wir das Saatgut aufs Feld, bevo
 export const stores = {food:'Vorrat / Nahrung',seed:'Saatgut',reserve:'Reserve'};
 export const storeConsequences = {food:'Dann müssen wir beim Essen sparen.',seed:'Dann fehlt uns Saatgut für die nächste Aussaat.',reserve:'Dann bleibt weniger, falls etwas Unvorhergesehenes passiert.'};
 export const reflections = {
-  forest:{prompt:'Was erscheint dir an der Situation besonders problematisch?',items:[['rights','bisherige Nutzungsrechte werden eingeschränkt'],['voice','die Gemeinde kann kaum mitentscheiden'],['clarity','die Regeln sind nicht klar'],['power','der Grundherr beansprucht weitreichende Verfügung'],['wood','Anna bekommt heute kein Holz']]},
+  forest:{prompt:'Was erscheint dir an der Situation besonders problematisch?',items:[['rights','bisherige Nutzungsrechte werden eingeschränkt'],['voice','die Gemeinde kann kaum mitentscheiden'],['clarity','die Regeln sind nicht klar'],['power','der Grundherr beansprucht weitreichende Verfügungsrechte'],['wood','Anna bekommt heute kein Holz']]},
   corvee:{prompt:'Was macht den Frondienst für Peter besonders belastend?',items:[['work','zusätzliche Arbeit'],['planning','schlechtere Planung der eigenen Arbeit'],['time','ein anderer verfügt über einen Teil seiner Zeit'],['absolute','Arbeit für andere sollte nur auf freiwilliger Zustimmung beruhen'],['supply','die eigene Versorgung kann gefährdet werden']],warning:'Arbeit für andere kann freiwillige Hilfe oder eine bindende Dienstpflicht sein. Die Forderung nach freiwilliger Zustimmung verändert den Verpflichtungsgrund. Peters konkreter Zeitkonflikt lässt sich auch durch Begrenzung und verlässliche Planung angehen.'},
   dues:{prompt:'Was macht die Situation besonders belastend?',items:[['amount','Höhe der Abgaben'],['voice','fehlende Mitsprache'],['uncertainty','Unsicherheit durch zusätzliche Forderungen'],['supply','Gefahr für Versorgung und Aussaat'],['absolute','Abgaben sollten nur mit Zustimmung der Betroffenen verlangt werden']],warning:'Zustimmung der Betroffenen wäre eine weitreichende Forderung nach Mitsprache. Davon zu unterscheiden sind verlässliche Regeln, eine Begrenzung der Höhe und die Berücksichtigung der Versorgung; diese Ansätze können auch miteinander verbunden werden.'}
 };
 export const grievances = [
-  {id:'corvee',title:'Frondienst',text:'Pflichtdienste lassen die eigene Arbeit liegen.',tags:['economic','dependence','voice']},
+  {id:'corvee',title:'Frondienst',text:'Wegen der Pflichtdienste bleibt die eigene Arbeit liegen.',tags:['economic','dependence','voice']},
   {id:'dues',title:'Abgaben',text:'Forderungen gefährden Versorgung und Aussaat.',tags:['economic','voice']},
   {id:'forest',title:'Eingeschränkte Waldnutzung',text:'Ältere Nutzungsrechte werden bestritten.',tags:['community','economic','voice']},
   {id:'bondage',title:'Leibeigenschaft',text:'Persönliche Abhängigkeit schränkt den Lebensweg ein. Christliche Freiheit wird zur Begründung von Befreiung herangezogen.',tags:['dependence','religion','voice']},

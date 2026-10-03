@@ -24,11 +24,11 @@ export const chapterFourChoices={
  ['D','Religiöse Begründung und weltlicher Streit sind zu unterscheiden.','Eine sinnvolle Ergänzung. Zunächst ist nach der Tragfähigkeit der Forderung und ihrer Mittel zu fragen.']]),
  ch4Early:free('Wie beurteilst du Luther vorläufig?', 'Sein Freiheitsgedanke von 1520 steht nun neben seiner Friedensermahnung von 1525.',[
  ['consistent','Er folgt seinem Freiheitsverständnis, wenn er zwischen Freiheit vor Gott und äußerer Ordnung unterscheidet.','jakob','Dann müssen wir prüfen, ob diese Unterscheidung die Beschwerden ernst genug nimmt.'],
- ['tension','Zwischen beiden Schriften besteht eine Spannung, aber noch kein eindeutiger Widerspruch.','anna','An dieser Spannung hängt unser Leben. Wir brauchen beides: Freiheit und eine Antwort auf die Lasten.'],
+ ['tension','Zwischen beiden Schriften besteht eine Spannung, aber noch kein eindeutiger Widerspruch.','anna','Von dieser Spannung hängt unser Leben ab. Wir brauchen beides: Freiheit und eine Antwort auf die Lasten.'],
  ['contradiction','Er öffnet mit seiner Freiheitsidee eine Tür und zieht sich bei den gesellschaftlichen Folgen zurück.','konrad','So höre ich es auch. Aber wir sollten seine Gründe prüfen, bevor wir daraus einen Auftrag machen.'],
  ['needs_authority_limit','Entscheidend ist für mich, wo er der Obrigkeit Grenzen setzt.','jakob','Dann schauen wir genau hin: Was darf sie ordnen und worüber darf sie nicht verfügen?']]),
  ch4Boundary:closed('Wo überschreitet der Herr seine Zuständigkeit?', 'Der Herr verbietet eine evangelische Predigt und verlangt, dass alle Untertanen seinen Glauben übernehmen.','A',[
- ['A','Er greift über die äußere Ordnung hinaus auf Glauben und Gewissen zu.','Glauben lässt sich für Luther nicht mit äußerer Gewalt schaffen. Das begrenzt Obrigkeit, ohne jede äußere Ordnung abzuschaffen.'],
+ ['A','Er greift über die äußere Ordnung hinaus auf Glauben und Gewissen zu.','Glauben lässt sich für Luther nicht mit äußerer Gewalt schaffen. Das begrenzt die Macht der Obrigkeit, ohne jede äußere Ordnung abzuschaffen.'],
  ['B','Damit endet jede Pflicht zum Gehorsam in allen weltlichen Angelegenheiten.','Eine Grenze beim Glauben hebt nicht sämtliche weltlichen Pflichten auf. Prüfe, welche konkrete Anordnung betroffen ist.'],
  ['C','Wer glaubt, muss keine weltlichen Gesetze mehr beachten.','Christliche Freiheit ist kein allgemeiner Freibrief gegen weltliche Regeln.'],
  ['D','Darum müssen geistliche Amtsträger jede weltliche Entscheidung bestimmen.','Die Unterscheidung macht Geistliche nicht zur übergeordneten weltlichen Regierung.']]),
@@ -56,7 +56,7 @@ export const chapterFourChoices={
  ['protect','Den Menschen am Wagen helfen und sie aus dem Gefahrenbereich bringen.','anna','Der Wagen kommt ins Dorf. Für diese Familie zählt jetzt, dass wir sie nicht zum Mittel unseres Streits machen.'],
  ['warn','Das Dorf vor einem möglichen Truppeneinsatz warnen.','peter','Ich gehe von Haus zu Haus. Der Rauch betrifft uns, auch wenn er noch weit weg ist.'],
  ['join','Zur Gruppe gehen und darauf dringen, dass sie ihre nächsten Schritte begrenzt.','konrad','Dann trittst du zu denen, die bewaffnet weitergehen wollen. Eine Grenze auszusprechen ist leichter, als sie dort durchzusetzen.'],
- ['verify','Mit Matthes prüfen, was belegt ist und was nur als Gerücht umläuft.','matthes','Wir unterscheiden Berichte von Gewissheit. Der Wagen wartet trotzdem nicht darauf, bis jede Nachricht geklärt ist.']]),
+ ['verify','Mit Matthes prüfen, was belegt ist und was nur als Gerücht umläuft.','matthes','Wir unterscheiden Berichte von Gewissheit. Der Wagen wartet trotzdem nicht, bis jede Nachricht geklärt ist.']]),
  ch4Comparison:closed('Was hat sich zwischen den beiden Texten verändert?', 'Im April kritisiert Luther beide Seiten und sucht eine friedliche Verständigung. Im Mai sieht er in den gewaltsamen Bauernaufständen eine Gefahr für die öffentliche Ordnung.','B',[
  ['A','Luther hält die Beschwerden der Bauern plötzlich für völlig unbegründet.','Luther kritisiert den Aufruhr nun deutlich schärfer. Daraus folgt aber nicht, dass er alle Beschwerden der Bauern für unbegründet erklärt. Vergleiche, wie er die Lage und die Mittel beurteilt.'],
  ['B','Luther bewertet die Lage nun als gewaltsamen Aufruhr und fordert deshalb ein härteres Eingreifen der Obrigkeit.','Genau. Luther verändert nicht einfach seine gesamte Theologie. Entscheidend ist, dass er die Situation nun anders beurteilt: Aus seiner Sicht ist aus einem Konflikt über Beschwerden ein gewaltsamer Aufruhr geworden. Deshalb zieht er wesentlich härtere Konsequenzen.'],
@@ -68,8 +68,8 @@ export const chapterFourChoices={
  ['both','Aufruhr und ungerechte Herrschaft gefährden Menschen; beide müssen begrenzt werden.','peter','Dann genügt es nicht, eine Seite zu wählen. Wir müssen sagen, welche Mittel wir beiden verwehren.'],
  ['religious_certainty','Die Gewissheit, den eigenen Willen unmittelbar als Gottes Willen durchsetzen zu dürfen.','jakob','Das betrifft auch uns. Wer sich nicht mehr widersprechen lässt, kann Verantwortung hinter seiner Gewissheit verstecken.']]),
  ch4HarshJudgment:free('Wie beurteilst du Luthers schärfere Schrift vorläufig?', 'Seine Begründung und die Folgen seiner Aufforderung liegen nun nebeneinander.',[
- ['consistent','Sie folgt seiner Unterscheidung von christlicher Freiheit und äußerer Ordnung.','jakob','Dann halte auch fest, ob du die konkrete Härte für verhältnismäßig hältst. Eine nachvollziehbare Begründung entscheidet das noch nicht.'],
- ['excessive','Die Sorge um Ordnung ist nachvollziehbar, seine Aufforderung geht jedoch zu weit.','anna','Das trennt den Schutzgedanken von den Menschen, die unter der Gewalt leiden können.'],
+ ['consistent','Sie folgt seiner Unterscheidung von christlicher Freiheit und äußerer Ordnung.','jakob','Dann halte auch fest, ob du die konkrete Härte für verhältnismäßig hältst. Eine nachvollziehbare Begründung beantwortet diese Frage noch nicht.'],
+ ['excessive','Die Sorge um Ordnung ist nachvollziehbar, seine Aufforderung geht jedoch zu weit.','anna','Damit unterscheidest du das Ziel, Menschen zu schützen, von den möglichen Folgen der Gewalt.'],
  ['contradictory','Die Härte widerspricht für mich dem Anspruch christlicher Freiheit und Nächstenliebe.','konrad','Dieses Urteil wird uns begleiten. Wir müssen ebenso prüfen, ob unsere eigenen Mittel dem Anspruch standhalten.'],
  ['defer_judgment','Ich halte mein Urteil offen, bis die tatsächlichen Folgen deutlicher sind.','matthes','Dann bewahre die Gründe beider Schriften auf. Später kannst du dein Urteil daran prüfen, statt dich nur an den letzten Ton zu erinnern.']])
 };
