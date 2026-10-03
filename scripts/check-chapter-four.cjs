@@ -52,5 +52,5 @@ const routes=[
   assert.equal(done,true,'route incomplete '+route.name);console.log(`PASS route ${route.name}, ${width}×${height}, ${reloads.size} save checkpoints, ${route.end}`);await ctx.close();
  }
  assert.deepEqual(errors,[]);fs.writeFileSync('artifacts/chapter4/transcripts.json',JSON.stringify(transcripts,null,2));fs.writeFileSync('artifacts/chapter4/runtime-assets.json',JSON.stringify([...requests].sort(),null,2));
- const manifest=JSON.parse(fs.readFileSync('exports/chapter4_assets_final/manifest.json'));const missing=manifest.assets.filter(a=>!requests.has(a.relative_path)).map(a=>a.relative_path);assert.deepEqual(missing,[],'unused new assets');console.log('PASS: all 57 original runtime assets used by actual routes, no missing requests or browser errors');
+ require('./check-chapter-four-runtime-assets.cjs')(requests);
  }finally{await browser.close();server.close();}})().catch(e=>{console.error(e);process.exitCode=1;server.close();});

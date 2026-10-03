@@ -1,61 +1,44 @@
-# Kapitel 4 – Assetprüfung
+# Kapitel 4: neuer Dorf-Hub
 
-Geprüft am 3. Oktober 2026. Ergebnis: **57 neue Assets freigegeben**.
-Umfang ist das Asset-Paket; Kapitel 4 wird hier noch nicht implementiert.
+Neuer Master und vier reduzierte RGBA-Zustände erstellt. Die bisherige
+Vier-Gruppen-Komposition ist verworfen; ihre Dateien sind als Altstand archiviert.
 
-- Alle 57 PNGs einzeln auf Kontaktbögen angesehen: warme Canon-Farbwelt,
-  plausible Kleidung/Materialien um 1525, vollständige Köpfe, Kappen,
-  Hände, Schuhe und Werkzeugspitzen; keine modernen Elemente oder Bildtexte.
-- 7 Hintergründe exakt 1024×768; Figuren 512×896, Portraits 512×512.
-  Props und Lesematerial proportional exportiert, ohne Streckung.
-- Transparenz, Sicherheitsränder, Alpha-Bounds, Maße und SHA-256 geprüft.
-  Überlagerungen lassen den unteren Dialogbereich ab y568 vollständig frei;
-  die beiden geteilten Gruppen lassen auch x355–670 frei.
-- 82 Browseransichten bei **1024×768 und 820×640** bestanden: alle sieben
-  Hintergründe mit zwei einander zugewandten Figuren, Originaldialog,
-  Sprecherportrait und drei originalen Hotspots; zusätzlich alle 15 Overlays,
-  fünf Endzustände und 14 Dokument-/Arbeitsflächenansichten.
-- Gesprächsfiguren besitzen sichtbaren Bodenkontakt; Portraits werden
-  vollständig mit `contain` angezeigt. Hotspots und Weiter-Aktion mindestens
-  44 Pixel; keine fehlenden Bilder oder horizontalen Scrollbars.
-- Quellen-Prüftext mit 18px Schrift, 92% Lesebreite und internem Scrollen;
-  getrennte Quellen-, Titel- und Zusammenfassungsflächen ebenfalls geprüft.
-  Testtexte sind keine Kapiteltexte. Endgültiger Quellentext und seine
-  Umbrüche bleiben Aufgabe der späteren Kapitelimplementierung.
-- 46 vorhandene Bild-/Systemreferenzen im Manifest mit Prüfsummen erfasst.
-  Die sechs benannten Canon-Figuren, Dorf-Hub, globale Hotspots, Dialograhmen,
-  Notizbuch und Zwölf Artikel werden referenziert, nicht neu gezeichnet.
-- Historische Leitplanken überprüft: Ermahnung vor schärferem Mai-Text,
-  Weingarten als Verhandlungsalternative, Müntzer ohne dämonische Bildsprache.
-  Historisch plausible Illustrationen, keine exakten Rekonstruktionen.
+Der Canon-Ort bleibt an Kirche, Fachwerk und Tavernenschild erkennbar.
+Der neue feste Platz bietet drei freie Positionen auf einer gemeinsamen Ebene.
+Brunnen und Zustandsmerkmale liegen am Rand, ohne Gesprächsachsen zu blockieren.
+Der Hintergrund enthält keine Personen. Die Zustände zeigen höchstens zwei
+entfernte Personen; Prediger und Bote sind nicht in Overlays eingebaut.
 
-Bei der visuellen Prüfung korrigiert: vollständige Speerspitze, Außenränder
-zweier Gruppen, reiner transparenter Distanzrauch, gewöhnliche Laien in beiden
-religiösen Gruppen, Abgabenlager ohne Kücheninszenierung, wirklich geschlossene
-spätere Druckschrift und größere Zusammenfassungsfelder im Luthervergleich.
-Die Dorfrekonstruktion erhält die erkennbaren Landmarken; geringe malerische
-Geometrieabweichungen bleiben. Für deckungsgleiche Zustände die Overlays auf
-dem unveränderten Dorf-Hub verwenden.
+**45 Canon-Kompositionen bestanden:** A Peter/Anna/Jakob,
+B Konrad/Prediger/Jakob, C Matthes/Peter/Konrad; jeweils Master und vier
+Zustände bei **1024×768, 820×640, 1440×900**.
 
-Bestehende Prüfprogramme verwendet: `check.cjs`, `check-chapter-two.cjs`,
-`check-chapter-two-staging.cjs`, `check-chapter-three.cjs`,
-`check-chapter-three-staging.cjs`, `check-chapter-three-documents.cjs`,
-`check-chapter-three-drag.cjs`, `check-world-hotspots.cjs`,
-`check-ui-details.cjs`, `check-consequences.cjs`, `check-admin.cjs`.
-Die ersten zehn bestanden; der erste Admin-Lauf hatte einen Bild-Warte-Timeout.
-Die diagnostische Wiederholung des unveränderten Admin-Tests bestand alle
-registrierten Prüfstationen sowie Spielstandschutz, Reload und Tabletansichten.
-Während dieser Prüfungen kamen im gemeinsamen Arbeitsordner fremde Änderungen
-an Kapitel 2/3 hinzu; sie gehören nicht zu dieser Asset-Lieferung.
+Geprüft: gemeinsame Körperhöhe41% und Fußlinie71%, erhaltene Proportionen,
+Bodenkontakt, nach innen gerichtete Randfiguren, vollständige Körper,
+freie Gesichter und Hotspots, mindestens44px Bedienflächen und kein horizontaler
+Überlauf. Die entfernten Personen nutzen eine hintere Bodenlinie52% und Höhe20%;
+ihre Augen liegen annähernd auf derselben Horizontlinie.
+Blätter sitzen auf vorhandener Wandtafel bzw. Randbank.
+Untere26%-Dialogfläche und alle drei Canon-Zonen bleiben in Overlays leer.
 
-Wiederholbare Asset-Prüfungen im Repository:
-`scripts/check-chapter-four-assets.py` (Pillow) und
-`scripts/check-chapter-four-composition.cjs` (Playwright/Edge).
-Browser-Ergebnisse: `docs/chapter4-asset-qa-results.json`.
-Die finale ZIP-Prüfung vergleicht sämtliche Paketdateien byteweise mit dem Archiv.
-Kontrollansichten liegen lokal unter `artifacts/ch4-qa/`.
+Alle Canon-Dateien per SHA-256 geprüft: unverändert. Peter verwendet die
+vorhandene vollständige stehende Neutralpose; Anna/Jakob/Konrad die vorhandenen
+vollständigen Kapitel-3-Dateien. Kein Neuzeichnen. Sitzposen werden auf dem
+neuen Dorfplatz nicht eingesetzt.
 
-Historische Nachweise:
-[Weingartener Vertrag – LEO-BW](https://www.leo-bw.de/fr/web/guest/themenmodul/bauernkrieg/vertraege/weingartener-vertrag),
-[Ermahnung – bavarikon](https://www.bavarikon.de/object/BSB-HSS-00000BSB00089333?lang=de),
-[Chronologie des schärferen Textes – LutherMuseen](https://www.luthermuseen.de/en/node/889).
+Die aktive Dorfansicht nutzt den neuen Master und reduzierte Zustände.
+Figuren werden nach gemessenen Körper-Bounds skaliert und auf die gemeinsame
+Bodenlinie gesetzt. Spiegelung nur im Renderer. Änderungen betreffen
+Bildpfade und Darstellung; Fachtexte, Entscheidungen und Spielstandlogik bleiben.
+
+Nachweise: `scripts/check-chapter-four-village.cjs`,
+`scripts/check-chapter-four-assets.py`, lokale45 Screenshots unter
+`artifacts/ch4-village-qa/`; Beispiele unter `docs/chapter4-village-preview/`.
+Eingebautes ImageGen; Prompts: `docs/chapter4-consequence-prompts.json`.
+
+Bestehende Prüfungen: 15 vollständige Routen über fünf Endzustände in drei
+Auflösungen mit je11 Reload-Checkpoints bestanden. Zusätzlich alle56 Optionen,
+36 Szenen, Quellen-/Archivansichten, Maus/Touch und Spielstandschutz bestanden.
+Der Asset-Nutzungsnachweis prüft sämtliche aktiven Bilder und alle fünf neuen
+Dorfdateien; zehn bewusst aus dem Dorf entfernte Gruppen/Props sind ausdrücklich
+im Manifest gelistet. Alpha-/Maß-/Hashprüfung und ZIP-Bytevergleich bestanden.

@@ -8,6 +8,7 @@ import { choiceView } from './choice-engine.js';
 import { dialogueView } from './dialogue-engine.js';
 import { esc,button } from './ui.js';
 import { hotspot } from './hotspots.js';
+import { villageCanonStaging } from '../data/chapter-four-staging.js';
 const act=(text,id,attrs='')=>button(text,'ch4-'+id,attrs);
 const next=(text,id,disabled=false)=>act(text,'go',`data-scene="${id}" class="primary" ${disabled?'disabled':''}`);
 const list=(items,stage,action='multi')=>`<div class="ch4-paper-options">${items.map(([id,text])=>act(esc(text),action,`data-item="${id}" aria-pressed="${(state.chapter4.selections[stage]||[]).includes(id)}"`)).join('')}</div>`;
@@ -97,9 +98,24 @@ export function chapterFourWorld(game=state){
   figures=figures.map(([id],i)=>[id,i?62:44,34,83]);
   props=props.map(([name,x,y,width])=>name==='letters_other_villages'?[name,44,68,8]:[name,x,y,width]);
  }
+ if(background==='village'){
+  // Only sparse world features belong on the new master. Legacy crowd layers are retired here.
+  const reducedTone={religious_polarization:'religious',events_moved_without_you:'simplified',public_meeting:'nuanced',delegation:'nuanced',resistance_group:'confrontational',withheld_dues:'confrontational',armed_group:'confrontational',refugees_cart:'confrontational',smoke_distance:'confrontational'};
+  const tone=(overlay?.startsWith('village_')?overlay.slice(8):reducedTone[overlay]||c.openingWorldState)||'nuanced';
+  overlay='consequence_'+(['nuanced','simplified','religious','confrontational'].includes(tone)?tone:'nuanced');
+  figures=figures.map(([id],i)=>[id,figures.length===3?[28,51,72][i]:figures.length===1?51:i?72:28,41,71]);
+  props=[]; // Papers and books are anchored in the reduced edge overlays, never floating between speakers.
+ }
  return {background,overlay,figures,props};
 }
-function figure([id,x,height=43,feet=72]){
+export function chapterFourFigure([id,x,height=43,feet=72],village=false){
+ if(village&&villageCanonStaging[id]){
+  const g=villageCanonStaging[id],[l,t,r,b]=g.bounds,k=height/(b-t);
+  const flip=x<45&&g.facing==='left'||x>58&&g.facing==='right';
+  const centre=flip?g.width-(l+r)/2:(l+r)/2;
+  const left=x+(g.width/2-centre)*k*.75,bottom=100-feet-(g.height-b)*k;
+  return `<span class="ch4-ground" style="left:${x-4}%;top:${feet-.5}%" aria-hidden="true"></span><img class="ch4-person" src="${g.asset}" data-person="${id}" data-canon-facing="${flip?(g.facing==='left'?'right':'left'):g.facing}" style="left:${left}%;width:${g.width*k*.75}%;max-width:none;height:${g.height*k}%;bottom:${bottom}%;transform:translateX(-50%)${flip?' scaleX(-1)':''}" alt="${esc(characters[id].name)}" draggable="false">`;
+ }
  const current=state.dialogue?.lines[state.dialogue.index],active=current?.speaker===id;
  let src;
  if(['peter','anna','jakob'].includes(id))src=characters[id].sceneStates[active?'talking':'neutral'];
@@ -117,8 +133,9 @@ export function chapterFourScene(header){
  const links={opening:['Unseren Weg aufnehmen','route'],route:[{A:'Zum Verwalter',B:'Gemeinsam auftreten',C:'Zur Gruppe',D:'Mit Jakob prüfen'}[c.openingRoute],'route-go'],opening_effect:['Eine neue Nachricht lesen','ermahnung'],branch_effect:['Matthes anhören','weingarten'],escalation_effect:['Luthers neue Schrift lesen','harsh'],world_end:['Was nun auf dem Spiel steht','end']};
  const target=!panel&&links[s];
  const travel=s==='opening'||s==='route'&&c.openingRoute==='A';
- const signs=target?hotspot(esc(target[0])+' →',target[1]==='route-go'?'ch4-route-go':'ch4-go',{kind:travel?'path':'action',classes:'ch4-hotspot',attrs:`${target[1]==='route-go'?'':`data-scene="${target[1]}"`} style="left:${travel?84:51}%;top:${travel?48:92}%"`}):'';
- return header+`<main class="game-layout chapter-four-layout ${panel?'task-layout':'exploration-layout'} ${s==='end'?'ch4-fade':''}"><section class="stage chapter-four" data-scene="${state.scene}" data-world="${w.background}" data-overlay="${w.overlay||''}" aria-label="${esc(sceneById[state.scene].title)}"><div class="room"><img class="room-image" src="${bg}" alt="${esc(sceneById[state.scene].title)}" draggable="false">${w.overlay?`<img class="ch4-world-overlay" src="${ch4Asset('overlays','overlay_'+w.overlay)}" alt="Veränderte Figurengruppe im Dorf" draggable="false">`:''}<div class="ch4-figures">${w.figures.map(figure).join('')}</div>${w.props.map(([name,x,y,width])=>`<img class="ch4-prop" data-prop="${name}" src="${ch4Asset('props','prop_'+name)}" style="left:${x}%;top:${y}%;width:${width}%" alt="${esc({warning_notice:'Warnung des Herren',authority_warning:'Herrschaftlicher Warnbrief',letters_other_villages:'Briefe an andere Dörfer',bible_open:'Aufgeschlagene Bibel',seal_document:'Gesiegelte Vereinbarung',articles_on_table:'Die Artikel auf dem Tisch',dues_cart:'Zurückgehaltene Abgaben',thuringia_report:'Nachricht aus Thüringen',weingarten_report:'Nachricht aus Weingarten'}[name])}" draggable="false">`).join('')}${signs}<div class="stage-caption"><h1>${esc(sceneById[state.scene].title)}</h1></div></div></section><div id="interaction" class="interaction" data-stage="${s}">${panel}</div><footer class="game-footer"><span id="save-status"></span></footer></main>`;
+ const signX=w.background==='village'?51:travel?84:51,signY=w.background==='village'?13:travel?48:92;
+ const signs=target?hotspot(esc(target[0])+' →',target[1]==='route-go'?'ch4-route-go':'ch4-go',{kind:travel?'path':'action',classes:'ch4-hotspot',attrs:`${target[1]==='route-go'?'':`data-scene="${target[1]}"`} style="left:${signX}%;top:${signY}%"`}):'';
+ return header+`<main class="game-layout chapter-four-layout ${panel?'task-layout':'exploration-layout'} ${s==='end'?'ch4-fade':''}"><section class="stage chapter-four" data-scene="${state.scene}" data-world="${w.background}" data-overlay="${w.overlay||''}" aria-label="${esc(sceneById[state.scene].title)}"><div class="room"><img class="room-image" src="${bg}" alt="${esc(sceneById[state.scene].title)}" draggable="false">${w.overlay?`<img class="ch4-world-overlay" src="${ch4Asset('overlays','overlay_'+w.overlay)}" alt="Sichtbare Merkmale der Dorflage" draggable="false">`:''}<div class="ch4-figures">${w.figures.map(f=>chapterFourFigure(f,w.background==='village')).join('')}</div>${w.props.map(([name,x,y,width])=>`<img class="ch4-prop" data-prop="${name}" src="${ch4Asset('props','prop_'+name)}" style="left:${x}%;top:${y}%;width:${width}%" alt="${esc({warning_notice:'Warnung des Herren',authority_warning:'Herrschaftlicher Warnbrief',letters_other_villages:'Briefe an andere Dörfer',bible_open:'Aufgeschlagene Bibel',seal_document:'Gesiegelte Vereinbarung',articles_on_table:'Die Artikel auf dem Tisch',dues_cart:'Zurückgehaltene Abgaben',thuringia_report:'Nachricht aus Thüringen',weingarten_report:'Nachricht aus Weingarten'}[name])}" draggable="false">`).join('')}${signs}<div class="stage-caption"><h1>${esc(sceneById[state.scene].title)}</h1></div></div></section><div id="interaction" class="interaction" data-stage="${s}">${panel}</div><footer class="game-footer"><span id="save-status"></span></footer></main>`;
 }
 export function fitChapterFourScene(){
  const room=document.querySelector('.chapter-four-layout .room'),stage=room?.parentElement,panel=document.querySelector('.chapter-four-layout .dialogue-panel');if(!room||!stage)return;

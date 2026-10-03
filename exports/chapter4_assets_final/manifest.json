@@ -473,98 +473,6 @@
       "implementation_notes": "Use object-fit:contain; preserve full cap, chin and shoulders. Never cover-crop."
     },
     {
-      "filename": "ch4_overlay_village_nuanced.png",
-      "relative_path": "overlays/ch4_overlay_village_nuanced.png",
-      "type": "overlay",
-      "scene": "overlay_village_nuanced",
-      "purpose": "ONE small group of3ordinary adult villagers around a modest bench-table, reading several full-size unfolded blank articles attentively, calm concentrated conversation, one finger tracing blank paper. No main Canon people. Isolated wholegroup incltable/bench, completebodies/hands/shoes. Place group leftpath x6-32%, feet y70%, heads y35%, centre well stays fully alpha-transparent.",
-      "new_or_reused": "new",
-      "expected_dimensions": [
-        1024,
-        768
-      ],
-      "transparency": true,
-      "alpha_bbox": [
-        45,
-        342,
-        355,
-        550
-      ],
-      "sha256": "0116c70746e59729194c150ad4b3a60f18b7d2121a7f507be6bfe0d8258e02cb",
-      "file_size_bytes": 132430,
-      "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
-      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
-    },
-    {
-      "filename": "ch4_overlay_village_simplified.png",
-      "relative_path": "overlays/ch4_overlay_village_simplified.png",
-      "type": "overlay",
-      "scene": "overlay_village_simplified",
-      "purpose": "ONE small group of4ordinary adult villagers exchanging multiple SMALL folded blank shortleaflets, one quietly whispering to another, others uncertain with disagreeing handgestures. Visibly busier rumor than calm reading, no violence. Wholeisolatedgroup, no maincharacters, leftpath x5-33%, feet y70%. Entire rightside/centre background alpha0.",
-      "new_or_reused": "new",
-      "expected_dimensions": [
-        1024,
-        768
-      ],
-      "transparency": true,
-      "alpha_bbox": [
-        45,
-        303,
-        355,
-        550
-      ],
-      "sha256": "d3404a73b860b433e928b075d7dcdcf5199630518ee8defa4aa74754e37be4d0",
-      "file_size_bytes": 165286,
-      "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
-      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
-    },
-    {
-      "filename": "ch4_overlay_village_religious.png",
-      "relative_path": "overlays/ch4_overlay_village_religious.png",
-      "type": "overlay",
-      "scene": "overlay_village_religious",
-      "purpose": "ONE small group of3ordinary villagers with the SAME local preacher as second supplied reference, darkbrown gown and cap, recognisable identical clean-shavenface. Quiet but serious theologicaldebate, preacher holds OPEN blank Bible, villager holds blank pamphlet; respectful different opinions, no sermonhero aura. Wholeisolatedgroup leftpath x5-34%feet y70%, noarchitecture. Exactnewpreacheridentity preserved.",
-      "new_or_reused": "new",
-      "expected_dimensions": [
-        1024,
-        768
-      ],
-      "transparency": true,
-      "alpha_bbox": [
-        65,
-        250,
-        335,
-        550
-      ],
-      "sha256": "73d9903fa1f5bca5b2f0c8f9b854d7c58c953d0365011185642b6ab581ab9433",
-      "file_size_bytes": 160774,
-      "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
-      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
-    },
-    {
-      "filename": "ch4_overlay_village_confrontational.png",
-      "relative_path": "overlays/ch4_overlay_village_confrontational.png",
-      "type": "overlay",
-      "scene": "overlay_village_confrontational",
-      "purpose": "ONE tense but nonviolent group:3upsetadult villagers facing1minor darkgreen/rust-clad authority messenger near a standalone roughwood noticepost carrying a blank warning ragpaper, partially torn blank lowerleaflet. Preserve recognizable envoy secondreference. Disagreement/waryposture notbattle. Fullbodies, complete noticepost. No maincharacters, noarmor. Group rightmidground x68-94% feet y70%, noarchitecture.",
-      "new_or_reused": "new",
-      "expected_dimensions": [
-        1024,
-        768
-      ],
-      "transparency": true,
-      "alpha_bbox": [
-        680,
-        330,
-        970,
-        550
-      ],
-      "sha256": "ebac8cf04256ca1e94d046cdb634dff33537b6ecbfb6ce4a0a087ccf64671a2f",
-      "file_size_bytes": 124329,
-      "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
-      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
-    },
-    {
       "filename": "ch4_overlay_delegation.png",
       "relative_path": "overlays/ch4_overlay_delegation.png",
       "type": "overlay",
@@ -585,7 +493,8 @@
       "sha256": "962b7b73bdd7281beae28b09d154d8e23cfcb17ca6dc80f3f824d3833807b02a",
       "file_size_bytes": 178288,
       "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
-      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
+      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke.",
+      "compatibility": "legacy scene only; forbidden on new consequence hub"
     },
     {
       "filename": "ch4_overlay_withheld_dues.png",
@@ -608,7 +517,9 @@
       "sha256": "73f280107751e78dfa6f7cff972b8d09146d9e3b77357f9180b90046a2a1674c",
       "file_size_bytes": 144021,
       "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
-      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
+      "implementation_notes": "Retired from active village rendering. Do not combine this previous group/notice composition with consequence_hub_v2.",
+      "compatibility": "legacy scene only; forbidden on new consequence hub",
+      "runtime_status": "retired_from_village"
     },
     {
       "filename": "ch4_overlay_public_meeting.png",
@@ -631,7 +542,9 @@
       "sha256": "50f2b9a13b89e9c16762e3cad88c55537cdf979395387c04d1b579146691d7b0",
       "file_size_bytes": 342920,
       "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
-      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
+      "implementation_notes": "Retired from active village rendering. Do not combine this previous group/notice composition with consequence_hub_v2.",
+      "compatibility": "legacy scene only; forbidden on new consequence hub",
+      "runtime_status": "retired_from_village"
     },
     {
       "filename": "ch4_overlay_resistance_group.png",
@@ -654,7 +567,9 @@
       "sha256": "bb42614927bb0e4804a0e042182cda5eb98e69c6f7742fe45c51d2390f46f1c8",
       "file_size_bytes": 144011,
       "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
-      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
+      "implementation_notes": "Retired from active village rendering. Do not combine this previous group/notice composition with consequence_hub_v2.",
+      "compatibility": "legacy scene only; forbidden on new consequence hub",
+      "runtime_status": "retired_from_village"
     },
     {
       "filename": "ch4_overlay_blockade.png",
@@ -677,7 +592,8 @@
       "sha256": "edf87207e2889d9eef51d57d5b8bcb316682f59963d0962bd43e52b5480880fc",
       "file_size_bytes": 94892,
       "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
-      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
+      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke.",
+      "compatibility": "legacy scene only; forbidden on new consequence hub"
     },
     {
       "filename": "ch4_overlay_smoke_distance.png",
@@ -700,7 +616,9 @@
       "sha256": "cdf5e8c640b3af298168e5f51b5f0230979be5966e868ff592f1f62b50f8dd59",
       "file_size_bytes": 14444,
       "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
-      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
+      "implementation_notes": "Retired from active village rendering. Do not combine this previous group/notice composition with consequence_hub_v2.",
+      "compatibility": "legacy scene only; forbidden on new consequence hub",
+      "runtime_status": "retired_from_village"
     },
     {
       "filename": "ch4_overlay_refugees_cart.png",
@@ -723,7 +641,9 @@
       "sha256": "07932cdb1f9744a5aa1378c7b7d0dcbc93c556378d8e9d50026d0221f946b479",
       "file_size_bytes": 124321,
       "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
-      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
+      "implementation_notes": "Retired from active village rendering. Do not combine this previous group/notice composition with consequence_hub_v2.",
+      "compatibility": "legacy scene only; forbidden on new consequence hub",
+      "runtime_status": "retired_from_village"
     },
     {
       "filename": "ch4_overlay_armed_group.png",
@@ -746,7 +666,9 @@
       "sha256": "ddb8439d583cbca70f16f806d0ec47e71b1c913f15cc9396dcd743abb7cc8127",
       "file_size_bytes": 109925,
       "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
-      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
+      "implementation_notes": "Retired from active village rendering. Do not combine this previous group/notice composition with consequence_hub_v2.",
+      "compatibility": "legacy scene only; forbidden on new consequence hub",
+      "runtime_status": "retired_from_village"
     },
     {
       "filename": "ch4_overlay_joining_peasant_band.png",
@@ -769,7 +691,8 @@
       "sha256": "3063cdfc76c040bc62347c7f611f6ec07df4701756e6cf713ffeeceac08c6a60",
       "file_size_bytes": 126486,
       "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
-      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
+      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke.",
+      "compatibility": "legacy scene only; forbidden on new consequence hub"
     },
     {
       "filename": "ch4_overlay_religious_polarization.png",
@@ -792,7 +715,9 @@
       "sha256": "8df81efa2e04ba833aba43ac238084fb42e4c5825b7758cb7ea7c65b2fa4d9de",
       "file_size_bytes": 347531,
       "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
-      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
+      "implementation_notes": "Retired from active village rendering. Do not combine this previous group/notice composition with consequence_hub_v2.",
+      "compatibility": "legacy scene only; forbidden on new consequence hub",
+      "runtime_status": "retired_from_village"
     },
     {
       "filename": "ch4_overlay_events_moved_without_you.png",
@@ -815,7 +740,9 @@
       "sha256": "1095021d6ed8123f6636cf5ad5f73b27b25739dcae1024f2bfcb13ff498000e0",
       "file_size_bytes": 84442,
       "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
-      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
+      "implementation_notes": "Retired from active village rendering. Do not combine this previous group/notice composition with consequence_hub_v2.",
+      "compatibility": "legacy scene only; forbidden on new consequence hub",
+      "runtime_status": "retired_from_village"
     },
     {
       "filename": "ch4_prop_warning_notice.png",
@@ -838,7 +765,8 @@
       "sha256": "feb9f3959943896f71604ee865a717dfd3f323c965368a86a1c6f0b553e20291",
       "file_size_bytes": 1006022,
       "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
-      "implementation_notes": "Asset only. No chapter logic or raster text. Render labels and sources as accessible HTML."
+      "implementation_notes": "Retired from active village rendering. Do not combine this previous group/notice composition with consequence_hub_v2.",
+      "runtime_status": "retired_from_village"
     },
     {
       "filename": "ch4_prop_articles_on_table.png",
@@ -930,7 +858,8 @@
       "sha256": "5643a3133460f6942561b3068991fb5dfc8c0e31dde2034298b89f9fc32f5d95",
       "file_size_bytes": 476215,
       "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
-      "implementation_notes": "Asset only. No chapter logic or raster text. Render labels and sources as accessible HTML."
+      "implementation_notes": "Retired from active village rendering. Do not combine this previous group/notice composition with consequence_hub_v2.",
+      "runtime_status": "retired_from_village"
     },
     {
       "filename": "ch4_prop_bible_open.png",
@@ -1579,6 +1508,121 @@
           36
         ]
       ]
+    },
+    {
+      "filename": "ch4_bg_village_consequence_hub.png",
+      "relative_path": "backgrounds/ch4_bg_village_consequence_hub.png",
+      "type": "background",
+      "scene": "village_consequence_hub",
+      "purpose": "Authoritative dry village square with three same-depth actor zones.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": false,
+      "alpha_bbox": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "sha256": "7395f70913c6b47a09e736f507ee1836999c24a77ea4b44bd88e4541027d84e1",
+      "safe_area_notes": "Actor zones x22–35%,45–58%,66–78%; feet71%, height41%. Bottom26% clear. Overlay pixels outside all actor zones.",
+      "implementation_notes": "Use master consequence hub at full 4:3, proportional scaling only. Overlay has fixed full-frame coordinates; never trim. Canon adults use measured body bounds, common depth and inward gaze.",
+      "revision": "consequence_hub_v2"
+    },
+    {
+      "filename": "ch4_overlay_consequence_nuanced.png",
+      "relative_path": "overlays/ch4_overlay_consequence_nuanced.png",
+      "type": "overlay",
+      "scene": "village_consequence_hub",
+      "purpose": "Reduced peripheral nuanced world state.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        823,
+        245,
+        958,
+        400
+      ],
+      "sha256": "158c7255ab944eaff54f632b1747b21d8a5bfef8a6ccde43c210b375bca63417",
+      "safe_area_notes": "Actor zones x22–35%,45–58%,66–78%; feet71%, height41%. Bottom26% clear. Overlay pixels outside all actor zones.",
+      "implementation_notes": "Use master consequence hub at full 4:3, proportional scaling only. Overlay has fixed full-frame coordinates; never trim. Canon adults use measured body bounds, common depth and inward gaze.",
+      "revision": "consequence_hub_v2"
+    },
+    {
+      "filename": "ch4_overlay_consequence_simplified.png",
+      "relative_path": "overlays/ch4_overlay_consequence_simplified.png",
+      "type": "overlay",
+      "scene": "village_consequence_hub",
+      "purpose": "Reduced peripheral simplified world state.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        809,
+        244,
+        994,
+        400
+      ],
+      "sha256": "826a3a14012253353571a4e7be25ea3fdd5cb3b767d060983a6cfbf1e63eca75",
+      "safe_area_notes": "Actor zones x22–35%,45–58%,66–78%; feet71%, height41%. Bottom26% clear. Overlay pixels outside all actor zones.",
+      "implementation_notes": "Use master consequence hub at full 4:3, proportional scaling only. Overlay has fixed full-frame coordinates; never trim. Canon adults use measured body bounds, common depth and inward gaze.",
+      "revision": "consequence_hub_v2"
+    },
+    {
+      "filename": "ch4_overlay_consequence_religious.png",
+      "relative_path": "overlays/ch4_overlay_consequence_religious.png",
+      "type": "overlay",
+      "scene": "village_consequence_hub",
+      "purpose": "Reduced peripheral religious world state.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        944,
+        410,
+        1001,
+        437
+      ],
+      "sha256": "88d0c0cf07540ab4cd6e56f1feed6ea21115fdcb3509571551fbb790a795260b",
+      "safe_area_notes": "Actor zones x22–35%,45–58%,66–78%; feet71%, height41%. Bottom26% clear. Overlay pixels outside all actor zones.",
+      "implementation_notes": "Use master consequence hub at full 4:3, proportional scaling only. Overlay has fixed full-frame coordinates; never trim. Canon adults use measured body bounds, common depth and inward gaze.",
+      "revision": "consequence_hub_v2"
+    },
+    {
+      "filename": "ch4_overlay_consequence_confrontational.png",
+      "relative_path": "overlays/ch4_overlay_consequence_confrontational.png",
+      "type": "overlay",
+      "scene": "village_consequence_hub",
+      "purpose": "Reduced peripheral confrontational world state.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        941,
+        287,
+        978,
+        366
+      ],
+      "sha256": "98ac6121690572f71abf3b3747ca519fa11cfd578f39ab94375909b49804f046",
+      "safe_area_notes": "Actor zones x22–35%,45–58%,66–78%; feet71%, height41%. Bottom26% clear. Overlay pixels outside all actor zones.",
+      "implementation_notes": "Use master consequence hub at full 4:3, proportional scaling only. Overlay has fixed full-frame coordinates; never trim. Canon adults use measured body bounds, common depth and inward gaze.",
+      "revision": "consequence_hub_v2"
     }
   ],
   "reused_assets": [
@@ -2351,6 +2395,97 @@
     }
   ],
   "overlay_anchor": {
+    "source": "assets/chapter4/backgrounds/ch4_bg_village_consequence_hub.png",
+    "source_dimensions": [
+      1024,
+      768
+    ],
+    "viewport": [
+      1024,
+      768
+    ],
+    "fit": "contain",
+    "position": "center",
+    "dialog_safe_area": [
+      0,
+      568,
+      1024,
+      768
+    ],
+    "actor_centres_percent": [
+      28,
+      51,
+      72
+    ],
+    "actor_feet_percent": 71,
+    "actor_height_percent": 41,
+    "background_people_feet_percent": 52.083,
+    "background_people_height_percent": 20.3,
+    "horizon_eye_line_percent": 33.5
+  },
+  "publicTone": {
+    "nuanced": "overlays/ch4_overlay_consequence_nuanced.png",
+    "simplified": "overlays/ch4_overlay_consequence_simplified.png",
+    "religious": "overlays/ch4_overlay_consequence_religious.png",
+    "confrontational": "overlays/ch4_overlay_consequence_confrontational.png"
+  },
+  "end_states": {
+    "negotiation_open": [
+      "backgrounds/ch4_bg_manor_negotiation.png",
+      "overlays/ch4_overlay_delegation.png"
+    ],
+    "mobilized_community": [
+      "backgrounds/ch4_bg_village_assembly_large.png",
+      "props/ch4_prop_letters_other_villages.png"
+    ],
+    "joining_peasant_band": [
+      "backgrounds/ch4_bg_village_edge_group.png",
+      "overlays/ch4_overlay_joining_peasant_band.png"
+    ],
+    "religious_polarization": [
+      "backgrounds/ch4_bg_village_consequence_hub.png",
+      "overlays/ch4_overlay_consequence_religious.png"
+    ],
+    "events_moved_without_you": [
+      "backgrounds/ch4_bg_village_consequence_hub.png",
+      "overlays/ch4_overlay_consequence_simplified.png"
+    ]
+  },
+  "historical_notes": [
+    "Illustrative plausible South German setting around 1525, no exact reconstruction claimed.",
+    "Peace admonition after mid-April; harsher text follows escalation in May, never precedes admonition.",
+    "Weingarten: oral agreement 17 April 1525; charter ratified 22 April. Negotiation was real, not universal victory.",
+    "Muentzer treated as serious reformational alternative, no demonic caricature."
+  ],
+  "historical_sources": [
+    "https://www.leo-bw.de/fr/web/guest/themenmodul/bauernkrieg/vertraege/weingartener-vertrag",
+    "https://www.bavarikon.de/object/BSB-HSS-00000BSB00089333?lang=de",
+    "https://www.luthermuseen.de/en/node/889"
+  ],
+  "village_revision": "consequence_hub_v2",
+  "superseded_assets": [
+    {
+      "relative_path": "overlays/ch4_overlay_village_confrontational.png",
+      "status": "rejected_composition",
+      "archive_path": "exports/chapter4_retired_village/overlays/ch4_overlay_village_confrontational.png"
+    },
+    {
+      "relative_path": "overlays/ch4_overlay_village_nuanced.png",
+      "status": "rejected_composition",
+      "archive_path": "exports/chapter4_retired_village/overlays/ch4_overlay_village_nuanced.png"
+    },
+    {
+      "relative_path": "overlays/ch4_overlay_village_religious.png",
+      "status": "rejected_composition",
+      "archive_path": "exports/chapter4_retired_village/overlays/ch4_overlay_village_religious.png"
+    },
+    {
+      "relative_path": "overlays/ch4_overlay_village_simplified.png",
+      "status": "rejected_composition",
+      "archive_path": "exports/chapter4_retired_village/overlays/ch4_overlay_village_simplified.png"
+    }
+  ],
+  "previous_overlay_anchor": {
     "source": "assets/chapter2/backgrounds/ch2_bg_village_hub_morning.png",
     "source_dimensions": [
       1672,
@@ -2375,43 +2510,150 @@
       768
     ]
   },
-  "publicTone": {
-    "nuanced": "overlays/ch4_overlay_village_nuanced.png",
-    "simplified": "overlays/ch4_overlay_village_simplified.png",
-    "religious": "overlays/ch4_overlay_village_religious.png",
-    "confrontational": "overlays/ch4_overlay_village_confrontational.png"
+  "village_canon_staging": {
+    "peter": {
+      "asset": "assets/chapter2/characters/ch2_char_peter_neutral.png",
+      "width": 284,
+      "height": 783,
+      "bounds": [
+        0,
+        0,
+        284,
+        783
+      ],
+      "facing": "right",
+      "sha256": "ae216d280f7a23eaf3c41d802c43a288bed4c2729347047a735ac2cbe7ce1d95"
+    },
+    "anna": {
+      "asset": "assets/chapter3/characters/ch3_char_anna_repaired.png",
+      "width": 789,
+      "height": 1994,
+      "bounds": [
+        1,
+        0,
+        789,
+        1994
+      ],
+      "facing": "left",
+      "sha256": "ee4b759dd9763157bc4f1ab4613400dffc06f582f1f682ce3a44d5b158da24d4"
+    },
+    "jakob": {
+      "asset": "assets/chapter3/characters/ch3_char_jakob_repaired.png",
+      "width": 752,
+      "height": 2092,
+      "bounds": [
+        0,
+        0,
+        752,
+        2074
+      ],
+      "facing": "left",
+      "sha256": "dfa512a4975dc01e172d84c8b242f969dedd467e159b87f4613ffa1cd10e0d46"
+    },
+    "konrad": {
+      "asset": "assets/chapter3/characters/ch3_char_konrad_repaired.png",
+      "width": 820,
+      "height": 1918,
+      "bounds": [
+        0,
+        0,
+        803,
+        1892
+      ],
+      "facing": "left",
+      "sha256": "9c5f0993802e97234ee55a858cfa90ee2064b598ab1de56a84901767938bef55"
+    },
+    "matthes": {
+      "asset": "assets/chapter3/characters/ch3_char_matthes_talking.png",
+      "width": 512,
+      "height": 896,
+      "bounds": [
+        94,
+        59,
+        452,
+        792
+      ],
+      "facing": "left",
+      "sha256": "276340c554f59b6d62d28959dc837a1c6d06dde38d66f789b4413cfdc2fd0604"
+    },
+    "preacher": {
+      "asset": "assets/chapter4/characters/ch4_char_local_preacher_talking.png",
+      "width": 512,
+      "height": 896,
+      "bounds": [
+        43,
+        15,
+        469,
+        881
+      ],
+      "facing": "right",
+      "sha256": "8fc1510a141530e8adfb792c8a745f7608125a11a9f0e37725e75af069be4d91"
+    },
+    "envoy": {
+      "asset": "assets/chapter4/characters/ch4_char_authority_envoy_talking.png",
+      "width": 512,
+      "height": 896,
+      "bounds": [
+        53,
+        15,
+        458,
+        881
+      ],
+      "facing": "left",
+      "sha256": "8aa1327cbe3e3ec425ef970aa5948cd48792ca6d14c316261be196989db6d0aa"
+    },
+    "band1": {
+      "asset": "assets/chapter4/characters/ch4_char_peasant_band_member_1.png",
+      "width": 512,
+      "height": 896,
+      "bounds": [
+        27,
+        15,
+        485,
+        881
+      ],
+      "facing": "right",
+      "sha256": "c9c83364bff43919a42be96c34aaf24ef58dd0c80da54711dc51293460aa1353"
+    },
+    "band2": {
+      "asset": "assets/chapter4/characters/ch4_char_peasant_band_member_2.png",
+      "width": 512,
+      "height": 896,
+      "bounds": [
+        73,
+        15,
+        439,
+        881
+      ],
+      "facing": "left",
+      "sha256": "17a563f604d4e31c8c8b5123303d573653bf348460302516db87b689b1221d56"
+    },
+    "overseer": {
+      "asset": "assets/chapter2/characters/ch2_char_overseer_neutral.png",
+      "width": 311,
+      "height": 864,
+      "bounds": [
+        0,
+        0,
+        311,
+        864
+      ],
+      "facing": "left",
+      "sha256": "c3e7e03d5f2085c4d2f2b94e43260157aa1cad72aa201f7155c4f15bfbdf735a"
+    }
   },
-  "end_states": {
-    "negotiation_open": [
-      "backgrounds/ch4_bg_manor_negotiation.png",
-      "overlays/ch4_overlay_delegation.png"
-    ],
-    "mobilized_community": [
-      "backgrounds/ch4_bg_village_assembly_large.png",
-      "props/ch4_prop_letters_other_villages.png"
-    ],
-    "joining_peasant_band": [
-      "backgrounds/ch4_bg_village_edge_group.png",
-      "overlays/ch4_overlay_joining_peasant_band.png"
-    ],
-    "religious_polarization": [
-      "assets/chapter2/backgrounds/ch2_bg_village_hub_morning.png",
-      "overlays/ch4_overlay_religious_polarization.png"
-    ],
-    "events_moved_without_you": [
-      "assets/chapter2/backgrounds/ch2_bg_village_hub_morning.png",
-      "overlays/ch4_overlay_events_moved_without_you.png"
-    ]
-  },
-  "historical_notes": [
-    "Illustrative plausible South German setting around 1525, no exact reconstruction claimed.",
-    "Peace admonition after mid-April; harsher text follows escalation in May, never precedes admonition.",
-    "Weingarten: oral agreement 17 April 1525; charter ratified 22 April. Negotiation was real, not universal victory.",
-    "Muentzer treated as serious reformational alternative, no demonic caricature."
+  "retired_runtime_assets": [
+    "overlays/ch4_overlay_withheld_dues.png",
+    "overlays/ch4_overlay_public_meeting.png",
+    "overlays/ch4_overlay_resistance_group.png",
+    "overlays/ch4_overlay_smoke_distance.png",
+    "overlays/ch4_overlay_refugees_cart.png",
+    "overlays/ch4_overlay_armed_group.png",
+    "overlays/ch4_overlay_religious_polarization.png",
+    "overlays/ch4_overlay_events_moved_without_you.png",
+    "props/ch4_prop_warning_notice.png",
+    "props/ch4_prop_dues_cart.png"
   ],
-  "historical_sources": [
-    "https://www.leo-bw.de/fr/web/guest/themenmodul/bauernkrieg/vertraege/weingartener-vertrag",
-    "https://www.bavarikon.de/object/BSB-HSS-00000BSB00089333?lang=de",
-    "https://www.luthermuseen.de/en/node/889"
-  ]
+  "revision_baseline_commit": "42ab89a",
+  "revision_qa": "docs/kapitel4-dorfrevision-qa.md"
 }

@@ -16,7 +16,7 @@ await new Promise(r=>server.listen(4188,'127.0.0.1',r));const b=await chromium.l
 p.on('pageerror',e=>errors.push(e.message));p.on('response',r=>{if(r.status()>=400)errors.push(r.url());});
 await p.goto('http://127.0.0.1:4188/');
 const scenes=m.assets.filter(a=>a.relative_path.startsWith('backgrounds/')).map(a=>({id:a.filename,bg:prefix+a.relative_path}));
-for(const a of m.assets.filter(a=>a.relative_path.startsWith('overlays/')))scenes.push({id:a.filename,bg:m.overlay_anchor.source,overlay:prefix+a.relative_path});
+for(const a of m.assets.filter(a=>a.relative_path.startsWith('overlays/')))scenes.push({id:a.filename,bg:a.revision==='consequence_hub_v2'?m.overlay_anchor.source:m.previous_overlay_anchor.source,overlay:prefix+a.relative_path});
 for(const [id,paths] of Object.entries(m.end_states))scenes.push({id,bg:paths[0].startsWith('assets/')?paths[0]:prefix+paths[0],overlay:paths[1].startsWith('overlays/')?prefix+paths[1]:null});
 for(const viewport of [{width:1024,height:768},{width:820,height:640}]){
 await p.setViewportSize(viewport);

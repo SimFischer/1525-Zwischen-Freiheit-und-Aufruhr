@@ -1,6 +1,6 @@
 export { chapterFourChoices } from './chapter-four-choices.js';
 export const ch4Asset=(type,name)=>`assets/chapter4/${type}/ch4_${name}.png`;
-export const villageBackground='assets/chapter2/backgrounds/ch2_bg_village_hub_morning.png';
+export const villageBackground='assets/chapter4/backgrounds/ch4_bg_village_consequence_hub.png';
 export const chapterFourScenes=[
  ['opening','Ein Dorf liest deine Forderungen'],['route','Welchen Weg du vorbereitet hast'],['authority','Beim Verwalter'],['community','Gemeinsam auftreten'],['resistance','Am Rand des Dorfes'],['preparation','Am Tisch mit Jakob'],['opening_effect','Was unser Handeln verändert'],
  ['ermahnung','Eine Nachricht von Luther'],['lords','An die Herren'],['peasants','An die Bauern'],['peasants_complement','Begründung und Mittel'],['memory','Freiheit damals und jetzt'],['early','Ein erstes Urteil'],['regiments','Glaube, Gewissen und äußere Ordnung'],['boundary','Eine Grenze der Obrigkeit'],['muentzer','Eine andere reformatorische Stimme'],['interpretations','Drei Wege, die Schrift auszulegen'],['theology','Mit welcher Begründung handeln?'],

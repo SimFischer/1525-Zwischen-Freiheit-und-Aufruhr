@@ -7,8 +7,8 @@ root=Path(__file__).resolve().parent.parent
 if sys.platform=='win32':root=Path('\\\\?\\'+str(root))
 package=root/'exports/chapter4_assets_final'
 m=json.loads((package/'manifest.json').read_text(encoding='utf-8'))
-assert len(m['assets'])==57
-assert Counter(a['relative_path'].split('/')[0] for a in m['assets'])==dict(backgrounds=7,overlays=15,characters=6,portraits=6,props=9,documents=11,ui=3)
+assert len(m['assets'])==58
+assert Counter(a['relative_path'].split('/')[0] for a in m['assets'])==dict(backgrounds=8,overlays=15,characters=6,portraits=6,props=9,documents=11,ui=3)
 seen=set()
 required={'filename','relative_path','type','scene','purpose','new_or_reused','expected_dimensions','transparency','safe_area_notes','implementation_notes'}
 def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
@@ -46,6 +46,12 @@ for a in m['reused_assets']:
     assert hashlib.sha256(raw).hexdigest()==a['sha256'],a['relative_path']
 assert {'peter','anna','jakob','Konrad','Matthes','Verwalter','Dorf_Hub','globale_Hotspots','Dialograhmen','Notizbuch','Zwoelf_Artikel'}<={a['scene'] for a in m['reused_assets']}
 assert set(m['publicTone'])=={'nuanced','simplified','religious','confrontational'}
+assert m['village_revision']=='consequence_hub_v2'
+for tone,rel in m['publicTone'].items():
+    assert rel==f'overlays/ch4_overlay_consequence_{tone}.png'
+    im=Image.open(package/rel);alpha=im.getchannel('A')
+    assert alpha.crop((180,0,805,768)).getbbox() is None,rel
+for g in m['village_canon_staging'].values():assert digest(root/g['asset'])==g['sha256'],g['asset']
 assert set(m['end_states'])=={'negotiation_open','mobilized_community','joining_peasant_band','religious_polarization','events_moved_without_you'}
 for paths in m['end_states'].values():
     for rel in paths:assert (root/rel if rel.startswith('assets/') else package/rel).exists()
@@ -56,4 +62,4 @@ if archive.exists():
         assert not z.testzip()
         assert set(z.namelist())=={'chapter4_assets_final/'+name for name in files}
         for name,p in files.items():assert z.read('chapter4_assets_final/'+name)==p.read_bytes(),name
-print('PASS: 57 PNGs, dimensions, alpha margins, dialogue-safe overlays, paired-cluster center, manifest, canonical references'+(', ZIP byte equality.' if archive.exists() else '.'))
+print('PASS: 58 PNGs, dimensions, alpha margins, dialogue-safe overlays, reduced world states, unchanged Canon references'+(', ZIP byte equality.' if archive.exists() else '.'))
