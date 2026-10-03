@@ -1,0 +1,2417 @@
+{
+  "project": "1525 – Zwischen Freiheit und Aufruhr",
+  "chapter": "4 – Ordnung oder Widerstand?",
+  "scope": "Final asset package only; chapter implementation excluded",
+  "baseline_commit": "c6ab2397d0215643f4eee45c0797b281b697fbf5",
+  "tool": "Built-in image_gen.imagegen",
+  "assets": [
+    {
+      "filename": "ch4_bg_manor_negotiation.png",
+      "relative_path": "backgrounds/ch4_bg_manor_negotiation.png",
+      "type": "background",
+      "scene": "bg_manor_negotiation",
+      "purpose": "A modest manor administrative courtyard with a plain oak discussion table in middle distance at x50% y48%, stools and wax/ink, rough plaster/wood office frontage, NO castle grandeur. Empty left and right figure positions at x27 and73%, feet at y72%. Warm upper-left daylight. No main characters. Use manor reference for same estate material.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": false,
+      "alpha_bbox": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "sha256": "fd87766c64b4ddc1551f71cf8ca13e6978816fc0ec3b6706f39cc46b0fd5c1b3",
+      "file_size_bytes": 1735205,
+      "safe_area_notes": "Bottom 26% reserved for dialogue; actor foot line about 72%.",
+      "implementation_notes": "Render full 4:3 frame. Conversation actors face inward; choose floor anchors after composition review."
+    },
+    {
+      "filename": "ch4_bg_village_assembly_large.png",
+      "relative_path": "backgrounds/ch4_bg_village_assembly_large.png",
+      "type": "background",
+      "scene": "bg_village_assembly_large",
+      "purpose": "Same village context as reference: half-timber cottages, church tower, communal well, broad gathering space. Slightly closer meeting clearing on side of original square, modest benches and a larger group of about12 peripheral villagers at y28-58%, space centrally for Anna and Peter dynamic layers. People attentive varied subdued positions, not rally or battle. Keep two empty full-body positions at x27 and73 with feet y72%.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": false,
+      "alpha_bbox": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "sha256": "53e0d6cac828607aa39e28150b8ab2a4a8feed25492e9f901ae01e55df9eeaa6",
+      "file_size_bytes": 1781851,
+      "safe_area_notes": "Bottom 26% reserved for dialogue; actor foot line about 72%.",
+      "implementation_notes": "Render full 4:3 frame. Conversation actors face inward; choose floor anchors after composition review."
+    },
+    {
+      "filename": "ch4_bg_village_edge_group.png",
+      "relative_path": "backgrounds/ch4_bg_village_edge_group.png",
+      "type": "background",
+      "scene": "bg_village_edge_group",
+      "purpose": "Village edge on branching dirt road with same plaster/half-timber houses behind, low fence, early spring trees. Three uncertain peripheral farmers with hoe, wooden staff and one simple spear at far upper-right y30-56%; no army, no heroic revolt. Central road clear for dynamic actors x27/73 feet y72%; daylight upper-left, tension and uncertainty.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": false,
+      "alpha_bbox": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "sha256": "b0a43cb6cbe58c73e346cb76084e730e6ea2a76853eb0eb123ba1b2cb1f9b05f",
+      "file_size_bytes": 1813359,
+      "safe_area_notes": "Bottom 26% reserved for dialogue; actor foot line about 72%.",
+      "implementation_notes": "Render full 4:3 frame. Conversation actors face inward; choose floor anchors after composition review."
+    },
+    {
+      "filename": "ch4_bg_storehouse.png",
+      "relative_path": "backgrounds/ch4_bg_storehouse.png",
+      "type": "background",
+      "scene": "bg_storehouse",
+      "purpose": "Modest village dues storehouse interior, timber rafters, sacks, barrels, closed rough double-door at back, simple grain measure, hand cart at far back, NOT dungeon or treasure hall. Empty central space for 2-3 actors feet y72% and investigation hotspots around side sacks at y38-58%. Warm upper-left window daylight, controlled civic tension.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": false,
+      "alpha_bbox": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "sha256": "ce39419fdf0349722de1d3ede7d65f89bc22b42b39c64371e221b966f683e157",
+      "file_size_bytes": 1524616,
+      "safe_area_notes": "Bottom 26% reserved for dialogue; actor foot line about 72%.",
+      "implementation_notes": "Render full 4:3 frame. Conversation actors face inward; choose floor anchors after composition review."
+    },
+    {
+      "filename": "ch4_bg_jakob_study_table.png",
+      "relative_path": "backgrounds/ch4_bg_jakob_study_table.png",
+      "type": "background",
+      "scene": "bg_jakob_study_table",
+      "purpose": "A familiar modest peasant room in same cottage material/perspective as input, closer broad plain oak study table with small blank open rag-paper Bible and two thin unlettered pamphlets near back edge, daylight left window with small candle, bench and fireplace. Not university or library, no book walls. Broad quiet table centre for later large HTML reading view; two empty actor positions x27/73 feet y72%. Lower26% subdued foreground floor.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": false,
+      "alpha_bbox": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "sha256": "7b993291699ff05e976716f03dad87a0724a52f51eba446fd25444b8e0e7e63d",
+      "file_size_bytes": 1527770,
+      "safe_area_notes": "Bottom 26% reserved for dialogue; actor foot line about 72%.",
+      "implementation_notes": "Render full 4:3 frame. Conversation actors face inward; choose floor anchors after composition review."
+    },
+    {
+      "filename": "ch4_bg_peasant_band_camp_edge.png",
+      "relative_path": "backgrounds/ch4_bg_peasant_band_camp_edge.png",
+      "type": "background",
+      "scene": "bg_peasant_band_camp_edge",
+      "purpose": "Edge of small 1525 peasant gathering in southern German rural clearing: one plain muted cloth banner onpole, a wood cart, toolbundles, modest shelters, heterogenous peripheral8people in wool/linen with tools and single spears, uncertainty and discussion. No mass army, no heroic battle composition, no modern/fantasy uniforms. Empty foreground staging x27/73 feet y72%, upper-left natural daylight.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": false,
+      "alpha_bbox": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "sha256": "c9d8eadcb950ac56b61634994c0f171ac2db63ea4a2692ec03ada699649d84c5",
+      "file_size_bytes": 1698706,
+      "safe_area_notes": "Bottom 26% reserved for dialogue; actor foot line about 72%.",
+      "implementation_notes": "Render full 4:3 frame. Conversation actors face inward; choose floor anchors after composition review."
+    },
+    {
+      "filename": "ch4_bg_village_escalation.png",
+      "relative_path": "backgrounds/ch4_bg_village_escalation.png",
+      "type": "background",
+      "scene": "bg_village_escalation",
+      "purpose": "EDIT TARGET first village image: preserve EXACT village architecture, central roofed stone well, original half-timber house centre-left, church tower upper-right, tavern edge right, road perspective and camera. Change atmosphere to tense early May: closed store shutters, few tiny retreating messengers at uppermidground, distant faint grey smoke BEYOND village only; warm muted daylight. No burning village, no battle, no apocalypse. Keep architecture and original paths identifiable; leave two foreground actor slots and entire lower26% unobstructed. Produce full4:3 background.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": false,
+      "alpha_bbox": [
+        0,
+        0,
+        1024,
+        768
+      ],
+      "sha256": "10e3a3db9d9ccf2ec251ff45f757392d4bd777d95920447db840df4bc592fa70",
+      "file_size_bytes": 1722461,
+      "safe_area_notes": "Bottom 26% reserved for dialogue; actor foot line about 72%.",
+      "implementation_notes": "Render full 4:3 frame. Conversation actors face inward; choose floor anchors after composition review."
+    },
+    {
+      "filename": "ch4_char_local_preacher_neutral.png",
+      "relative_path": "characters/ch4_char_local_preacher_neutral.png",
+      "type": "character",
+      "scene": "char_local_preacher_neutral",
+      "purpose": "NEW local village preacher, not Luther/Muentzer/Jakob: thin45yearold man, short dark hair with grey temples, clean-shaven thoughtful face, simple darkbrown anklelength plain clerical gown over cream collar, modest brown softcap, holds a small CLOSED blank book in left hand near waist. Restrained kind scholarly appearance, no aura/cross decoration. Body and eyes turned viewer RIGHT toward person on right. Exactlytwo hands: other hand relaxed. Match linework and proportions of reference Matthes, distinct identity.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        512,
+        896
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        51,
+        15,
+        461,
+        881
+      ],
+      "sha256": "0af6a88af67a3c617597beef329b282ad9d95ac363380cd366c471d5d8f618e2",
+      "file_size_bytes": 445008,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Use measured alpha bounds and foot anchor. Place right-facing speaker left, left-facing partner right; ground shadow belongs to scene renderer.",
+      "facing": "right",
+      "foot_anchor": [
+        256.0,
+        881
+      ]
+    },
+    {
+      "filename": "ch4_char_authority_envoy_neutral.png",
+      "relative_path": "characters/ch4_char_authority_envoy_neutral.png",
+      "type": "character",
+      "scene": "char_authority_envoy_neutral",
+      "purpose": "NEW minor representative of local lord, distinct from canonical Verwalter: about35years, slender brown-haired clean-shaven man, muted darkgreen practical wool doublet with rust sleeves, cream undershirt, brown hose, soft brown cap no feather, simple leather boots, belt and small document pouch, holds folded blank paper down at waist. No royal heraldry, armor or modernuniform. Body AND gaze viewer LEFT to converse with preacher on left. Exactlytwo arms/twohands, calm reserved messenger. Reference Verwalter STYLE ONLY not sameface.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        512,
+        896
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        92,
+        15,
+        420,
+        881
+      ],
+      "sha256": "960acc3cf8a9f84b51ba9132c58f48afc4a48a7ba7316cc02761458e57ea5d70",
+      "file_size_bytes": 351817,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Use measured alpha bounds and foot anchor. Place right-facing speaker left, left-facing partner right; ground shadow belongs to scene renderer.",
+      "facing": "left",
+      "foot_anchor": [
+        256.0,
+        881
+      ]
+    },
+    {
+      "filename": "ch4_char_peasant_band_member_1.png",
+      "relative_path": "characters/ch4_char_peasant_band_member_1.png",
+      "type": "character",
+      "scene": "char_peasant_band_member_1",
+      "purpose": "NEW supplemental peasant gathering member, broad40yearold man short darkbeard roughbrown hair, humble brown cap, muted russet wool tunic with leatherbelt, coarse grey hose, scuffed leather shoes. Holds utilitarian woodhandled hoe upright ONE hand, other near belt. No armor/hero posing. Entire face/body turn viewer RIGHT; uneasy thoughtful rural man, not Konrad/Matthes.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        512,
+        896
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        27,
+        15,
+        485,
+        881
+      ],
+      "sha256": "c9c83364bff43919a42be96c34aaf24ef58dd0c80da54711dc51293460aa1353",
+      "file_size_bytes": 489204,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Use measured alpha bounds and foot anchor. Place right-facing speaker left, left-facing partner right; ground shadow belongs to scene renderer.",
+      "facing": "right",
+      "foot_anchor": [
+        256.0,
+        881
+      ]
+    },
+    {
+      "filename": "ch4_char_peasant_band_member_2.png",
+      "relative_path": "characters/ch4_char_peasant_band_member_2.png",
+      "type": "character",
+      "scene": "char_peasant_band_member_2",
+      "purpose": "NEW supplemental peasant gathering member, lean25yearold clean-shaven fair-haired man, plain darkgreen wool jacket over linen, ochre hose, brown bonnet and leather shoes. Both hands naturally on SIMPLE woodshaft iron-tipped spear held vertically, no axe blades or fantasy weapon. Uncertain reserved expression, body AND gaze viewer LEFT. Not uniform, not warriorhero; wholefeet/spear tip visible.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        512,
+        896
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        73,
+        15,
+        439,
+        881
+      ],
+      "sha256": "17a563f604d4e31c8c8b5123303d573653bf348460302516db87b689b1221d56",
+      "file_size_bytes": 383468,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Use measured alpha bounds and foot anchor. Place right-facing speaker left, left-facing partner right; ground shadow belongs to scene renderer.",
+      "facing": "left",
+      "foot_anchor": [
+        256.0,
+        881
+      ]
+    },
+    {
+      "filename": "ch4_char_local_preacher_talking.png",
+      "relative_path": "characters/ch4_char_local_preacher_talking.png",
+      "type": "character",
+      "scene": "char_local_preacher_talking",
+      "purpose": "Use case: identity-preserve. EDIT TARGET supplied preacher neutral. Preserve EXACT face, cap, greytemplehair, clerical gown, plain closedbook, height and proportions. Make subtly open speaking mouth and a restrained explanatory open right palm at chest height, other hand retains book. Exactlytwo hands/twoarms. Body and gaze stay viewerRIGHT. Fullbody, fullshoes and entirehead with8%margin. No other change.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        512,
+        896
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        43,
+        15,
+        469,
+        881
+      ],
+      "sha256": "8fc1510a141530e8adfb792c8a745f7608125a11a9f0e37725e75af069be4d91",
+      "file_size_bytes": 434637,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Use measured alpha bounds and foot anchor. Place right-facing speaker left, left-facing partner right; ground shadow belongs to scene renderer.",
+      "facing": "right",
+      "foot_anchor": [
+        256.0,
+        881
+      ]
+    },
+    {
+      "filename": "ch4_char_authority_envoy_talking.png",
+      "relative_path": "characters/ch4_char_authority_envoy_talking.png",
+      "type": "character",
+      "scene": "char_authority_envoy_talking",
+      "purpose": "Use case: identity-preserve. EDIT TARGET supplied envoy neutral. Preserve EXACT clean-shavenface, brownhair/cap, darkgreen vest andrustsleeves, boots, pouch, proportions. Speaking mouth subtly open, one hand holds same blank paper at chestheight, other hand gestures modestly open toward viewerLEFT. Exactlytwo hands/twoarms. Body AND gaze stay viewerLEFT. Fullbody with8%margin. No other changes.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        512,
+        896
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        53,
+        15,
+        458,
+        881
+      ],
+      "sha256": "8aa1327cbe3e3ec425ef970aa5948cd48792ca6d14c316261be196989db6d0aa",
+      "file_size_bytes": 362245,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Use measured alpha bounds and foot anchor. Place right-facing speaker left, left-facing partner right; ground shadow belongs to scene renderer.",
+      "facing": "left",
+      "foot_anchor": [
+        255.5,
+        881
+      ]
+    },
+    {
+      "filename": "ch4_portrait_local_preacher_neutral.png",
+      "relative_path": "portraits/ch4_portrait_local_preacher_neutral.png",
+      "type": "portrait",
+      "scene": "portrait_local_preacher_neutral",
+      "purpose": "Use case: identity-preserve. Supplied fullbody local_preacher_neutral is the EXACT identity. Create head-and-upper-shoulder speakerportrait, preserve EXACT face, hair/cap, outfit, gaze direction and restrained attentive expression. Same hand-drawn textured linework. No new person, no frame, no text. Entire cap/hair/chin must have8%margin; fullhead upper shoulders, transparent square. Leave papers/tool out of this headshot.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        512,
+        512
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        15,
+        22,
+        497,
+        497
+      ],
+      "sha256": "c05ff60cb85744885347cd08dded56de9c1ec866b8683ae257f1b5ed4828d9da",
+      "file_size_bytes": 362221,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Use object-fit:contain; preserve full cap, chin and shoulders. Never cover-crop."
+    },
+    {
+      "filename": "ch4_portrait_local_preacher_talking.png",
+      "relative_path": "portraits/ch4_portrait_local_preacher_talking.png",
+      "type": "portrait",
+      "scene": "portrait_local_preacher_talking",
+      "purpose": "Use case: identity-preserve. Supplied fullbody local_preacher_talking is the EXACT identity. Create head-and-upper-shoulder speakerportrait, preserve EXACT face, hair/cap, outfit, gaze direction and subtly open speaking expression. Same hand-drawn textured linework. No new person, no frame, no text. Entire cap/hair/chin must have8%margin; fullhead upper shoulders, transparent square. Leave papers/tool out of this headshot.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        512,
+        512
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        15,
+        20,
+        497,
+        497
+      ],
+      "sha256": "83bb71da35561228771a52df9bf7cf2ec5989a2123e994b460b6681419cfed2d",
+      "file_size_bytes": 344527,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Use object-fit:contain; preserve full cap, chin and shoulders. Never cover-crop."
+    },
+    {
+      "filename": "ch4_portrait_authority_envoy_neutral.png",
+      "relative_path": "portraits/ch4_portrait_authority_envoy_neutral.png",
+      "type": "portrait",
+      "scene": "portrait_authority_envoy_neutral",
+      "purpose": "Use case: identity-preserve. Supplied fullbody authority_envoy_neutral is the EXACT identity. Create head-and-upper-shoulder speakerportrait, preserve EXACT face, hair/cap, outfit, gaze direction and restrained attentive expression. Same hand-drawn textured linework. No new person, no frame, no text. Entire cap/hair/chin must have8%margin; fullhead upper shoulders, transparent square. Leave papers/tool out of this headshot.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        512,
+        512
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        15,
+        37,
+        497,
+        497
+      ],
+      "sha256": "995f91f6917c039a174f62e8e072428c56233c697480663ca0f9df99a4be7c52",
+      "file_size_bytes": 322963,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Use object-fit:contain; preserve full cap, chin and shoulders. Never cover-crop."
+    },
+    {
+      "filename": "ch4_portrait_authority_envoy_talking.png",
+      "relative_path": "portraits/ch4_portrait_authority_envoy_talking.png",
+      "type": "portrait",
+      "scene": "portrait_authority_envoy_talking",
+      "purpose": "Use case: identity-preserve. Supplied fullbody authority_envoy_talking is the EXACT identity. Create head-and-upper-shoulder speakerportrait, preserve EXACT face, hair/cap, outfit, gaze direction and subtly open speaking expression. Same hand-drawn textured linework. No new person, no frame, no text. Entire cap/hair/chin must have8%margin; fullhead upper shoulders, transparent square. Leave papers/tool out of this headshot.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        512,
+        512
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        15,
+        25,
+        497,
+        497
+      ],
+      "sha256": "13f15272f78be0f4d166533c012bd8242a9a8b5c6b9c78f14cea676dd045ba21",
+      "file_size_bytes": 359369,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Use object-fit:contain; preserve full cap, chin and shoulders. Never cover-crop."
+    },
+    {
+      "filename": "ch4_portrait_peasant_band_member_1.png",
+      "relative_path": "portraits/ch4_portrait_peasant_band_member_1.png",
+      "type": "portrait",
+      "scene": "portrait_peasant_band_member_1",
+      "purpose": "Use case: identity-preserve. Supplied fullbody peasant_band_member_1 is the EXACT identity. Create head-and-upper-shoulder speakerportrait, preserve EXACT face, hair/cap, outfit, gaze direction and restrained attentive expression. Same hand-drawn textured linework. No new person, no frame, no text. Entire cap/hair/chin must have8%margin; fullhead upper shoulders, transparent square. Leave papers/tool out of this headshot.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        512,
+        512
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        15,
+        38,
+        497,
+        497
+      ],
+      "sha256": "522a18be3e9d84b2c11e120aa5b5470b113083fa961642bf85693391e9d4af0c",
+      "file_size_bytes": 373014,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Use object-fit:contain; preserve full cap, chin and shoulders. Never cover-crop."
+    },
+    {
+      "filename": "ch4_portrait_peasant_band_member_2.png",
+      "relative_path": "portraits/ch4_portrait_peasant_band_member_2.png",
+      "type": "portrait",
+      "scene": "portrait_peasant_band_member_2",
+      "purpose": "Use case: identity-preserve. Supplied fullbody peasant_band_member_2 is the EXACT identity. Create head-and-upper-shoulder speakerportrait, preserve EXACT face, hair/cap, outfit, gaze direction and restrained attentive expression. Same hand-drawn textured linework. No new person, no frame, no text. Entire cap/hair/chin must have8%margin; fullhead upper shoulders, transparent square. Leave papers/tool out of this headshot.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        512,
+        512
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        21,
+        15,
+        491,
+        497
+      ],
+      "sha256": "6a69ba25b3fa8a9df47153013d5f91208a5c529d64a83112facd31b5212b1fba",
+      "file_size_bytes": 365161,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Use object-fit:contain; preserve full cap, chin and shoulders. Never cover-crop."
+    },
+    {
+      "filename": "ch4_overlay_village_nuanced.png",
+      "relative_path": "overlays/ch4_overlay_village_nuanced.png",
+      "type": "overlay",
+      "scene": "overlay_village_nuanced",
+      "purpose": "ONE small group of3ordinary adult villagers around a modest bench-table, reading several full-size unfolded blank articles attentively, calm concentrated conversation, one finger tracing blank paper. No main Canon people. Isolated wholegroup incltable/bench, completebodies/hands/shoes. Place group leftpath x6-32%, feet y70%, heads y35%, centre well stays fully alpha-transparent.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        45,
+        342,
+        355,
+        550
+      ],
+      "sha256": "0116c70746e59729194c150ad4b3a60f18b7d2121a7f507be6bfe0d8258e02cb",
+      "file_size_bytes": 132430,
+      "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
+      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
+    },
+    {
+      "filename": "ch4_overlay_village_simplified.png",
+      "relative_path": "overlays/ch4_overlay_village_simplified.png",
+      "type": "overlay",
+      "scene": "overlay_village_simplified",
+      "purpose": "ONE small group of4ordinary adult villagers exchanging multiple SMALL folded blank shortleaflets, one quietly whispering to another, others uncertain with disagreeing handgestures. Visibly busier rumor than calm reading, no violence. Wholeisolatedgroup, no maincharacters, leftpath x5-33%, feet y70%. Entire rightside/centre background alpha0.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        45,
+        303,
+        355,
+        550
+      ],
+      "sha256": "d3404a73b860b433e928b075d7dcdcf5199630518ee8defa4aa74754e37be4d0",
+      "file_size_bytes": 165286,
+      "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
+      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
+    },
+    {
+      "filename": "ch4_overlay_village_religious.png",
+      "relative_path": "overlays/ch4_overlay_village_religious.png",
+      "type": "overlay",
+      "scene": "overlay_village_religious",
+      "purpose": "ONE small group of3ordinary villagers with the SAME local preacher as second supplied reference, darkbrown gown and cap, recognisable identical clean-shavenface. Quiet but serious theologicaldebate, preacher holds OPEN blank Bible, villager holds blank pamphlet; respectful different opinions, no sermonhero aura. Wholeisolatedgroup leftpath x5-34%feet y70%, noarchitecture. Exactnewpreacheridentity preserved.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        65,
+        250,
+        335,
+        550
+      ],
+      "sha256": "73d9903fa1f5bca5b2f0c8f9b854d7c58c953d0365011185642b6ab581ab9433",
+      "file_size_bytes": 160774,
+      "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
+      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
+    },
+    {
+      "filename": "ch4_overlay_village_confrontational.png",
+      "relative_path": "overlays/ch4_overlay_village_confrontational.png",
+      "type": "overlay",
+      "scene": "overlay_village_confrontational",
+      "purpose": "ONE tense but nonviolent group:3upsetadult villagers facing1minor darkgreen/rust-clad authority messenger near a standalone roughwood noticepost carrying a blank warning ragpaper, partially torn blank lowerleaflet. Preserve recognizable envoy secondreference. Disagreement/waryposture notbattle. Fullbodies, complete noticepost. No maincharacters, noarmor. Group rightmidground x68-94% feet y70%, noarchitecture.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        680,
+        330,
+        970,
+        550
+      ],
+      "sha256": "ebac8cf04256ca1e94d046cdb634dff33537b6ecbfb6ce4a0a087ccf64671a2f",
+      "file_size_bytes": 124329,
+      "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
+      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
+    },
+    {
+      "filename": "ch4_overlay_delegation.png",
+      "relative_path": "overlays/ch4_overlay_delegation.png",
+      "type": "overlay",
+      "scene": "overlay_delegation",
+      "purpose": "THREE ordinary village delegates in practical wool/linen stand together presenting foldedblank petition to an unseen interlocutor toward viewerRIGHT; one holds rolled paper, others restrained hopefulfaces. No canonical characters. Wholegroup fullbodies ontransparent, leftmidground x5-33%feet70%. For negotiatedopenending too.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        45,
+        263,
+        355,
+        550
+      ],
+      "sha256": "962b7b73bdd7281beae28b09d154d8e23cfcb17ca6dc80f3f824d3833807b02a",
+      "file_size_bytes": 178288,
+      "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
+      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
+    },
+    {
+      "filename": "ch4_overlay_withheld_dues.png",
+      "relative_path": "overlays/ch4_overlay_withheld_dues.png",
+      "type": "overlay",
+      "scene": "overlay_withheld_dues",
+      "purpose": "Two cautious farming adults beside3tiedgrain sacks and coveredbasket, arms crossed or hand on sacks, keep their contributions back without force; no closed door/floor painted. Small isolated completegroup leftmidground feet70%. Readable difference from militant blockage.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        64,
+        280,
+        336,
+        550
+      ],
+      "sha256": "73f280107751e78dfa6f7cff972b8d09146d9e3b77357f9180b90046a2a1674c",
+      "file_size_bytes": 144021,
+      "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
+      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
+    },
+    {
+      "filename": "ch4_overlay_public_meeting.png",
+      "relative_path": "overlays/ch4_overlay_public_meeting.png",
+      "type": "overlay",
+      "scene": "overlay_public_meeting",
+      "purpose": "A modest broad peripheral village assembly:two separate clusters4people each at LEFT x5-33% and RIGHT x68-94%, discussing a small blank communal resolution paper, one preparing a messengerbundle. CENTRE x36-64% entirely alpha0 forwell and maincharacters. Noarchitecture, nofloor, nohero or violence. Heads32-45%, feet70%. Wholebodies andnaturalhands.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        62,
+        245,
+        953,
+        550
+      ],
+      "sha256": "50f2b9a13b89e9c16762e3cad88c55537cdf979395387c04d1b579146691d7b0",
+      "file_size_bytes": 342920,
+      "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
+      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
+    },
+    {
+      "filename": "ch4_overlay_resistance_group.png",
+      "relative_path": "overlays/ch4_overlay_resistance_group.png",
+      "type": "overlay",
+      "scene": "overlay_resistance_group",
+      "purpose": "THREE uneasy farmers with a hoe, woodstaff and singlesimple iron-tippedspear, gathered in questioning conversation, no hero pose, no army. Wool/linen, completeheads/hands/toolends/feet. One facesright twofacesleft towardeachother; leftmidground x5-33% feet70%, genuine transparency.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        45,
+        297,
+        355,
+        550
+      ],
+      "sha256": "bb42614927bb0e4804a0e042182cda5eb98e69c6f7742fe45c51d2390f46f1c8",
+      "file_size_bytes": 144011,
+      "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
+      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
+    },
+    {
+      "filename": "ch4_overlay_blockade.png",
+      "relative_path": "overlays/ch4_overlay_blockade.png",
+      "type": "overlay",
+      "scene": "overlay_blockade",
+      "purpose": "A small woodbeam across a low rustic trestle with two cautious farmers beside it and a few tiedsacks; improvised road obstruction, no aggressiveattack, modest scale notfortification. Everything isolated fromenvironment, no roadpainted. Rightmidground x68-94%feet70%. Entirebeam andfeet visible.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        670,
+        372,
+        970,
+        550
+      ],
+      "sha256": "edf87207e2889d9eef51d57d5b8bcb316682f59963d0962bd43e52b5480880fc",
+      "file_size_bytes": 94892,
+      "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
+      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
+    },
+    {
+      "filename": "ch4_overlay_smoke_distance.png",
+      "relative_path": "overlays/ch4_overlay_smoke_distance.png",
+      "type": "overlay",
+      "scene": "overlay_smoke_distance",
+      "purpose": "Only ONE faint muted grey-brown DISTANT smoke ribbon/plume, thin wispy varying alpha, nofire, no buildings, no opaque sky/backdrop. Position at x63-73% y13-29%, behind village skyline and far beyondtrees, subtle credible earlyMay tension. Keep entirecanvas elsewhere alpha0. Smoke still translucent.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        663,
+        105,
+        742,
+        225
+      ],
+      "sha256": "cdf5e8c640b3af298168e5f51b5f0230979be5966e868ff592f1f62b50f8dd59",
+      "file_size_bytes": 14444,
+      "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
+      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
+    },
+    {
+      "filename": "ch4_overlay_refugees_cart.png",
+      "relative_path": "overlays/ch4_overlay_refugees_cart.png",
+      "type": "overlay",
+      "scene": "overlay_refugees_cart",
+      "purpose": "Two worried ordinary adult displacedvillagers walking together near a modest TWOwheeled wooden handcart carrying clothbundles and basket, completewheel circles, hands natural, no injuredpeople orblood. Turn/facemovement viewerLEFT, wholegroup unheroic, isolated. Rightmidground x68-94%feet70%, nofloor/architecture.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        670,
+        334,
+        970,
+        550
+      ],
+      "sha256": "07932cdb1f9744a5aa1378c7b7d0dcbc93c556378d8e9d50026d0221f946b479",
+      "file_size_bytes": 124321,
+      "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
+      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
+    },
+    {
+      "filename": "ch4_overlay_armed_group.png",
+      "relative_path": "overlays/ch4_overlay_armed_group.png",
+      "type": "overlay",
+      "scene": "overlay_armed_group",
+      "purpose": "THREE small nonheroic armedtransients in credible1525 wooldoublets simpleclothcaps, oneplainironhelmet, simplelongspears and sheathedshortsword, no plate-army/uniform. Walking quietly viewerLEFT, waryenvironment, exactlynaturalattachedhands, nofighting. Rightmidground x68-94%feet70%, isolateentirepeople andtips.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        670,
+        333,
+        970,
+        550
+      ],
+      "sha256": "ddb8439d583cbca70f16f806d0ec47e71b1c913f15cc9396dcd743abb7cc8127",
+      "file_size_bytes": 109925,
+      "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
+      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
+    },
+    {
+      "filename": "ch4_overlay_joining_peasant_band.png",
+      "relative_path": "overlays/ch4_overlay_joining_peasant_band.png",
+      "type": "overlay",
+      "scene": "overlay_joining_peasant_band",
+      "purpose": "THREE villageadults walking away together toward viewerLEFT road, backs/threequarterprofiles, bundles, a hoe and plainstaff, uncertain purposefuldeparture, no celebration/battle. Completebodysoles/tools, no Canonpersons. Leftmidground x5-33%feet70% transparent; use ending joining_peasant_band.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        45,
+        332,
+        355,
+        550
+      ],
+      "sha256": "3063cdfc76c040bc62347c7f611f6ec07df4701756e6cf713ffeeceac08c6a60",
+      "file_size_bytes": 126486,
+      "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
+      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
+    },
+    {
+      "filename": "ch4_overlay_religious_polarization.png",
+      "relative_path": "overlays/ch4_overlay_religious_polarization.png",
+      "type": "overlay",
+      "scene": "overlay_religious_polarization",
+      "purpose": "TWO SEPARATE small groups of3respectfulreligious discussants each, LEFT x5-33% with an openblank Bible and RIGHT x68-94% with blankreformational pamphlets. Face inward within own groups but divided postures between them, no angercaricature/demon/violence. CENTRE x36-64% alpha0. NoLuther/Muentzerportraits. Entireheads hands feet, feet70%; religious_polarizationending.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        45,
+        266,
+        970,
+        550
+      ],
+      "sha256": "8df81efa2e04ba833aba43ac238084fb42e4c5825b7758cb7ea7c65b2fa4d9de",
+      "file_size_bytes": 347531,
+      "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
+      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
+    },
+    {
+      "filename": "ch4_overlay_events_moved_without_you.png",
+      "relative_path": "overlays/ch4_overlay_events_moved_without_you.png",
+      "type": "overlay",
+      "scene": "overlay_events_moved_without_you",
+      "purpose": "ONE little group of3villagers already receding away LEFT toward out-of-frame road, rearfacingpeople with foldedblank message and two travelbundles, small abandoned blank sheet on a simpleemptybench nearby. Quiet sense of departure alreadyhappened, no Canonpeople, noarchitecture/floor. Entirefeet/bench visible. Leftmidground x5-33%feet68%. endingevents_moved_without_you.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        45,
+        358,
+        355,
+        535
+      ],
+      "sha256": "1095021d6ed8123f6636cf5ad5f73b27b25739dcae1024f2bfcb13ff498000e0",
+      "file_size_bytes": 84442,
+      "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
+      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke."
+    },
+    {
+      "filename": "ch4_prop_warning_notice.png",
+      "relative_path": "props/ch4_prop_warning_notice.png",
+      "type": "prop",
+      "scene": "prop_warning_notice",
+      "purpose": "A single slightly curled blank rag-paper official warningleaflet pinned with small iron tack to a compact darkleather backing, subtle waxseal lowercorner, no words, no title; textface largelyblank and frontal.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        768,
+        759
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        23,
+        23,
+        745,
+        736
+      ],
+      "sha256": "feb9f3959943896f71604ee865a717dfd3f323c965368a86a1c6f0b553e20291",
+      "file_size_bytes": 1006022,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Asset only. No chapter logic or raster text. Render labels and sources as accessible HTML."
+    },
+    {
+      "filename": "ch4_prop_articles_on_table.png",
+      "relative_path": "props/ch4_prop_articles_on_table.png",
+      "type": "prop",
+      "scene": "prop_articles_on_table",
+      "purpose": "A low modest oak tabletop/tray with several fullsize blank articlepapers spread neatly and one closed thinpamphlet, readable paperareas, complete fourshortlegs or trayedges; no background, no ink lettering.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        768,
+        475
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        22,
+        14,
+        745,
+        461
+      ],
+      "sha256": "6c91314c9306ca901fb6992f3304336014a481fbf7f901d1b8b19aa64e798fc8",
+      "file_size_bytes": 484643,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Asset only. No chapter logic or raster text. Render labels and sources as accessible HTML."
+    },
+    {
+      "filename": "ch4_prop_seal_document.png",
+      "relative_path": "props/ch4_prop_seal_document.png",
+      "type": "prop",
+      "scene": "prop_seal_document",
+      "purpose": "An official folded creamrag-paper document with simple muted-red waxseal onshortparchmenttongue and linen tie, believable modest1525administration, no actualheraldry or title; mostpaper blank.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        768,
+        461
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        23,
+        14,
+        745,
+        447
+      ],
+      "sha256": "15cac89d0db50758821da36257d914bd1958877ee1249ccf8945cab2484296c0",
+      "file_size_bytes": 467767,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Asset only. No chapter logic or raster text. Render labels and sources as accessible HTML."
+    },
+    {
+      "filename": "ch4_prop_letters_other_villages.png",
+      "relative_path": "props/ch4_prop_letters_other_villages.png",
+      "type": "prop",
+      "scene": "prop_letters_other_villages",
+      "purpose": "Three simple folded creamragpaper villageletters tiedwithbrownlinenstring, one openedletter slightlybeneath, two smallmutedwaxseals, no stamps/envelopes withmodernflaps or writing.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        768,
+        473
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        22,
+        14,
+        746,
+        459
+      ],
+      "sha256": "ef24217b06b5a3e55c6aa31fe1f7c72ad535c105d7b5be51ceea47031504265c",
+      "file_size_bytes": 502567,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Asset only. No chapter logic or raster text. Render labels and sources as accessible HTML."
+    },
+    {
+      "filename": "ch4_prop_dues_cart.png",
+      "relative_path": "props/ch4_prop_dues_cart.png",
+      "type": "prop",
+      "scene": "prop_dues_cart",
+      "purpose": "A compact smalltwo-wheel roughoak handcart loaded with three tiedgrain sacks and onebasket, both completewoodspokedwheels and shortpullshafts fullyvisible, realistic rusticperspective, nofloor/shadow.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        768,
+        469
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        22,
+        14,
+        745,
+        455
+      ],
+      "sha256": "5643a3133460f6942561b3068991fb5dfc8c0e31dde2034298b89f9fc32f5d95",
+      "file_size_bytes": 476215,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Asset only. No chapter logic or raster text. Render labels and sources as accessible HTML."
+    },
+    {
+      "filename": "ch4_prop_bible_open.png",
+      "relative_path": "props/ch4_prop_bible_open.png",
+      "type": "prop",
+      "scene": "prop_bible_open",
+      "purpose": "A modest small early16thcentury boundBible open flat, wornbrownleathercover, ragpaperpages broadblank readingareas, simple narrowprinteddecorative border only, no readabletext, no giltfantasycover, no floatingmagic.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        768,
+        455
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        23,
+        14,
+        745,
+        441
+      ],
+      "sha256": "7b31d8c3884226df53d0e25658bc67512a107e10ab9ff3561044bbf8b9f518cb",
+      "file_size_bytes": 631723,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Asset only. No chapter logic or raster text. Render labels and sources as accessible HTML."
+    },
+    {
+      "filename": "ch4_prop_thuringia_report.png",
+      "relative_path": "props/ch4_prop_thuringia_report.png",
+      "type": "prop",
+      "scene": "prop_thuringia_report",
+      "purpose": "A thin simple blankfolded newsreport with one unfoldedleaf and littlelooselinen tie, cautious seriousreformationnews, NOmap/portrait/prophetsymbols; a soberpaperobject, largeblankface.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        768,
+        487
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        23,
+        15,
+        745,
+        472
+      ],
+      "sha256": "1aa9c656a0d66df7aa62f9f113d5409b7ad247c52fd9bc0aa7f78aba9fd45516",
+      "file_size_bytes": 530597,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Asset only. No chapter logic or raster text. Render labels and sources as accessible HTML."
+    },
+    {
+      "filename": "ch4_prop_weingarten_report.png",
+      "relative_path": "props/ch4_prop_weingarten_report.png",
+      "type": "prop",
+      "scene": "prop_weingarten_report",
+      "purpose": "A modest opencontract-news packet, blankragpaper mainleaf with several subduedwaxseals hangingfromshortparchmenttabs, one foldedcover, realnegotiationadministration but no exacthistoricsealclaim, no text.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        768,
+        470
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        22,
+        14,
+        745,
+        456
+      ],
+      "sha256": "2e598cc540e40d9ce78c8284c8471ce63cfe4b5a8ef94375fb84c6097748dbc8",
+      "file_size_bytes": 488617,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Asset only. No chapter logic or raster text. Render labels and sources as accessible HTML."
+    },
+    {
+      "filename": "ch4_prop_authority_warning.png",
+      "relative_path": "props/ch4_prop_authority_warning.png",
+      "type": "prop",
+      "scene": "prop_authority_warning",
+      "purpose": "A later official warning paper, stronger darkbrown foldededge and mutedrust-redwaxseal, smallpapertear atcorner; soberadministrative appearance, broadblankface, NO blood/weapons/flames/lettering.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        768,
+        545
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        22,
+        16,
+        746,
+        529
+      ],
+      "sha256": "ae23ecc01385a3c592eb11d92a8bf51cbc9cfb79c8f33cef8cdb02abc8e9112c",
+      "file_size_bytes": 631408,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Asset only. No chapter logic or raster text. Render labels and sources as accessible HTML."
+    },
+    {
+      "filename": "ch4_doc_luther_freedom_small.png",
+      "relative_path": "documents/ch4_doc_luther_freedom_small.png",
+      "type": "document",
+      "scene": "doc_luther_freedom_small",
+      "purpose": "One thin smallclosed reformational pamphlet inspired by freedomtract1520, warm blankcream ragpaper cover with a restrained narrow doublelineprinterborder, visible foldedspine, NO titleportraittext. Plausible game readingobject, not a facsimile. Exportreadingface: flatfrontal, broad4:3/landscape whereopen, square/portraitwhereclosed. All text remainsresponsiveHTML.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        839,
+        1024
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        25,
+        36,
+        814,
+        999
+      ],
+      "sha256": "b4755abfabde9e6143b384470f31ecc0c699f15d2bed6f7c55491bef8aa018eb",
+      "file_size_bytes": 1481511,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Use 88–94% of reading-modal width, suggested 92%; HTML source font >=18px and internal scrolling. Regions are [left,top,right,bottom] percentages of final canvas; verify line breaks with final source text. Illustrative material, not an exact facsimile.",
+      "html_text_regions_percent": [
+        [
+          20,
+          20,
+          85,
+          85
+        ]
+      ]
+    },
+    {
+      "filename": "ch4_doc_worldly_authority_small.png",
+      "relative_path": "documents/ch4_doc_worldly_authority_small.png",
+      "type": "document",
+      "scene": "doc_worldly_authority_small",
+      "purpose": "One thin smallclosed1523reformational authoritytract, blankcreamragpaper cover, narrowdarkbrown rectangular printerrule andsimple cornerdiamond, brownfoldedspine, no titletext/portrait, related to freedompamphlet butdistinct darkeredge. Exportreadingface: flatfrontal, broad4:3/landscape whereopen, square/portraitwhereclosed. All text remainsresponsiveHTML.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        844,
+        1024
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        25,
+        35,
+        819,
+        999
+      ],
+      "sha256": "d9d8fdde9143591044420f8ffde305ab5c21f3df108d0e00348fcd9a710de92b",
+      "file_size_bytes": 1605994,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Use 88–94% of reading-modal width, suggested 92%; HTML source font >=18px and internal scrolling. Regions are [left,top,right,bottom] percentages of final canvas; verify line breaks with final source text. Illustrative material, not an exact facsimile.",
+      "html_text_regions_percent": [
+        [
+          20,
+          20,
+          85,
+          85
+        ]
+      ]
+    },
+    {
+      "filename": "ch4_doc_ermahnung_closed.png",
+      "relative_path": "documents/ch4_doc_ermahnung_closed.png",
+      "type": "document",
+      "scene": "doc_ermahnung_closed",
+      "purpose": "Closed thin1525printedpeace-admonition pamphlet, warmcreamragpaper, simple delicate doublelineprinterborder around COMPLETELYBLANK broadcover, small foldedspine, restrained conciliatory publication look. No title, woodcutportrait or lettering. Samefamily as referenceTwleveArticles. Exportreadingface: flatfrontal, broad4:3/landscape whereopen, square/portraitwhereclosed. All text remainsresponsiveHTML.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        783,
+        1024
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        23,
+        37,
+        760,
+        1001
+      ],
+      "sha256": "bf34d04a52d2fabb46cdf296baedaa412232ffde2f651db827d3010b72fb3b80",
+      "file_size_bytes": 1549981,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Use 88–94% of reading-modal width, suggested 92%; HTML source font >=18px and internal scrolling. Regions are [left,top,right,bottom] percentages of final canvas; verify line breaks with final source text. Illustrative material, not an exact facsimile.",
+      "html_text_regions_percent": [
+        [
+          20,
+          20,
+          85,
+          85
+        ]
+      ]
+    },
+    {
+      "filename": "ch4_doc_ermahnung_open.png",
+      "relative_path": "documents/ch4_doc_ermahnung_open.png",
+      "type": "document",
+      "scene": "doc_ermahnung_open",
+      "purpose": "LargeflatOPEN ragpaper printedpamphlet spread, two broad BLANKcreamreadingpages, narrowdelicateprinterrule edge, slendercentral stitchedfold. Facealmoststraightontopdown, no tiltedperspective, largequietcontent. Eachpage80%usable, minimalornament. No text or portrait. Samepeaceadmonitionasclosed. Exportreadingface: flatfrontal, broad4:3/landscape whereopen, square/portraitwhereclosed. All text remainsresponsiveHTML.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        701
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        30,
+        21,
+        994,
+        680
+      ],
+      "sha256": "9eba0ffc43d1f940773dd13674460e096a99f28077c60482b36e2d94d588f402",
+      "file_size_bytes": 1261189,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Use 88–94% of reading-modal width, suggested 92%; HTML source font >=18px and internal scrolling. Regions are [left,top,right,bottom] percentages of final canvas; verify line breaks with final source text. Illustrative material, not an exact facsimile.",
+      "html_text_regions_percent": [
+        [
+          9,
+          12,
+          46,
+          84
+        ],
+        [
+          54,
+          12,
+          91,
+          84
+        ]
+      ]
+    },
+    {
+      "filename": "ch4_doc_ermahnung_lords.png",
+      "relative_path": "documents/ch4_doc_ermahnung_lords.png",
+      "type": "document",
+      "scene": "doc_ermahnung_lords",
+      "purpose": "One large flatFRONTAL broad ragpaper sourcepage of peaceadmonition, refinedwarmcream with narrowdoublelineborder, completelyblank vast sourcearea, a small quiet separated blank lowerquarter for laterHTMLsummary viaonlya thin horizontalprinterrule. No title, noblesorportraits, actualtextlaterHTML. Minimaledgesmax5%each. Exportreadingface: flatfrontal, broad4:3/landscape whereopen, square/portraitwhereclosed. All text remainsresponsiveHTML.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        751
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        31,
+        23,
+        992,
+        728
+      ],
+      "sha256": "c5a23da83f99638062dfb578508c14435e5dae3674d7ac88c00541fbea59ad76",
+      "file_size_bytes": 1347472,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Use 88–94% of reading-modal width, suggested 92%; HTML source font >=18px and internal scrolling. Regions are [left,top,right,bottom] percentages of final canvas; verify line breaks with final source text. Illustrative material, not an exact facsimile.",
+      "html_text_regions_percent": [
+        [
+          12,
+          10,
+          90,
+          69
+        ]
+      ],
+      "html_summary_regions_percent": [
+        [
+          12,
+          78,
+          90,
+          89
+        ]
+      ]
+    },
+    {
+      "filename": "ch4_doc_ermahnung_peasants.png",
+      "relative_path": "documents/ch4_doc_ermahnung_peasants.png",
+      "type": "document",
+      "scene": "doc_ermahnung_peasants",
+      "purpose": "One large flatFRONTAL broad ragpaper sourcepage matchingpeaceadmonitionlords, narrowdoublelineborder, BLANK vast sourcearea, separatedblanklowerquarter withthin horizontalprinterrule; subtle foldedupperleftcorner distinguishespage, NOT angry/bloodyvisual. Minimaledgesmax5%each. Exportreadingface: flatfrontal, broad4:3/landscape whereopen, square/portraitwhereclosed. All text remainsresponsiveHTML.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        765
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        30,
+        23,
+        993,
+        742
+      ],
+      "sha256": "8d0b8f54618d9b0bd7ea07ad47853f498104e4596e80456bb7b742ba266b55c2",
+      "file_size_bytes": 1490769,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Use 88–94% of reading-modal width, suggested 92%; HTML source font >=18px and internal scrolling. Regions are [left,top,right,bottom] percentages of final canvas; verify line breaks with final source text. Illustrative material, not an exact facsimile.",
+      "html_text_regions_percent": [
+        [
+          9,
+          12,
+          46,
+          70
+        ],
+        [
+          54,
+          12,
+          91,
+          70
+        ]
+      ],
+      "html_summary_regions_percent": [
+        [
+          9,
+          79,
+          46,
+          89
+        ],
+        [
+          54,
+          79,
+          91,
+          89
+        ]
+      ]
+    },
+    {
+      "filename": "ch4_doc_muentzer_context_closed.png",
+      "relative_path": "documents/ch4_doc_muentzer_context_closed.png",
+      "type": "document",
+      "scene": "doc_muentzer_context_closed",
+      "purpose": "Closed thinsoberreformation news/contextpamphlet, warmcreamragpaper, plainbrown foldedspine andrestrained singlelineprinterborder with tinycornerknots. Broadblankcover, no demon/caricature/halo/prophet orportrait. Serious religiousalternative. Exportreadingface: flatfrontal, broad4:3/landscape whereopen, square/portraitwhereclosed. All text remainsresponsiveHTML.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        845,
+        1024
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        25,
+        35,
+        820,
+        999
+      ],
+      "sha256": "a5c73af691a6b82501ae3d5ea64b3c5780f8a24bf087d6675d2c50f2f5111ff7",
+      "file_size_bytes": 1563465,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Use 88–94% of reading-modal width, suggested 92%; HTML source font >=18px and internal scrolling. Regions are [left,top,right,bottom] percentages of final canvas; verify line breaks with final source text. Illustrative material, not an exact facsimile.",
+      "html_text_regions_percent": [
+        [
+          20,
+          20,
+          85,
+          85
+        ]
+      ]
+    },
+    {
+      "filename": "ch4_doc_muentzer_context_open.png",
+      "relative_path": "documents/ch4_doc_muentzer_context_open.png",
+      "type": "document",
+      "scene": "doc_muentzer_context_open",
+      "purpose": "LargeflatOPEN two-page sobernews/contextpamphlet MATCHmatchingwarmcreampaper closedMuentzer, broadquietBLANK readingareas withvery narrow printedlinerules, finecentralfold. No portraits/demons/violenceorletters. Serious reformationaldebate, minimalornament, frontalon. Exportreadingface: flatfrontal, broad4:3/landscape whereopen, square/portraitwhereclosed. All text remainsresponsiveHTML.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        692
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        31,
+        21,
+        993,
+        671
+      ],
+      "sha256": "3549dc80412c1c96b9077625d77c1e799379ac9654639daabac6c32f88bcf6d9",
+      "file_size_bytes": 1238578,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Use 88–94% of reading-modal width, suggested 92%; HTML source font >=18px and internal scrolling. Regions are [left,top,right,bottom] percentages of final canvas; verify line breaks with final source text. Illustrative material, not an exact facsimile.",
+      "html_text_regions_percent": [
+        [
+          9,
+          12,
+          46,
+          84
+        ],
+        [
+          54,
+          12,
+          91,
+          84
+        ]
+      ]
+    },
+    {
+      "filename": "ch4_doc_harsh_text_closed.png",
+      "relative_path": "documents/ch4_doc_harsh_text_closed.png",
+      "type": "document",
+      "scene": "doc_harsh_text_closed",
+      "purpose": "LaterMay1525thinprintedtract related VISUALLY topeaceadmonition, slightlydarkerpaperedgeand modest heavierdoublelineprinterrule oncompletelyblankcover. Samepapermaterial, subduedrustsmallbindingthread. Distinguishonlyprintweight/edge, NO blood/violence/flames, no sensationalism or titleportrait. Exportreadingface: flatfrontal, broad4:3/landscape whereopen, square/portraitwhereclosed. All text remainsresponsiveHTML.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        779,
+        1024
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        23,
+        37,
+        756,
+        1001
+      ],
+      "sha256": "2e660b821b5bd5fa524c335240f7146ed203cbdfeb1f13d91dbd09a12249ea02",
+      "file_size_bytes": 1553613,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Use 88–94% of reading-modal width, suggested 92%; HTML source font >=18px and internal scrolling. Regions are [left,top,right,bottom] percentages of final canvas; verify line breaks with final source text. Illustrative material, not an exact facsimile.",
+      "html_text_regions_percent": [
+        [
+          20,
+          20,
+          85,
+          85
+        ]
+      ]
+    },
+    {
+      "filename": "ch4_doc_harsh_text_open.png",
+      "relative_path": "documents/ch4_doc_harsh_text_open.png",
+      "type": "document",
+      "scene": "doc_harsh_text_open",
+      "purpose": "LargeflatOPEN laterMayprintedtract two-page ragpaperspread, relatedtoermahnungopen, modestheavierdoublelinerule andslightlydarkerpaperedge butbroadBLANK quietreadingareas. No redbloodorweapons/portrait/text. Slendergutter, nearfrontal;eachpage80%usable. Exportreadingface: flatfrontal, broad4:3/landscape whereopen, square/portraitwhereclosed. All text remainsresponsiveHTML.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        686
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        30,
+        21,
+        993,
+        665
+      ],
+      "sha256": "f756d7ed830099cf2c36eabdf7319c5e37900176c57a24730022afbbe80fdc51",
+      "file_size_bytes": 1305560,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Use 88–94% of reading-modal width, suggested 92%; HTML source font >=18px and internal scrolling. Regions are [left,top,right,bottom] percentages of final canvas; verify line breaks with final source text. Illustrative material, not an exact facsimile.",
+      "html_text_regions_percent": [
+        [
+          9,
+          12,
+          46,
+          84
+        ],
+        [
+          54,
+          12,
+          91,
+          84
+        ]
+      ]
+    },
+    {
+      "filename": "ch4_doc_luther_comparison_frame.png",
+      "relative_path": "documents/ch4_doc_luther_comparison_frame.png",
+      "type": "document",
+      "scene": "doc_luther_comparison_frame",
+      "purpose": "Largewideflatfrontal rag-paper comparison spread with TWO equallylarge completelyBLANK sourceareas sidebyside, verythin centralbrownrule separatingpanels, subtlelight doublelinebordersonleft/slightlyheavierdoublelinebordersonright torelatepeaceadmonitionandlatertext. A blankheaderstrip andsmallblanksummaryfootstrip separatedbythinlines. No labels/numbers/letters/icons. Eachsourcepanel large, decorationmax5%edge. Exportreadingface: flatfrontal, broad4:3/landscape whereopen, square/portraitwhereclosed. All text remainsresponsiveHTML.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        653
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        31,
+        20,
+        993,
+        633
+      ],
+      "sha256": "8be16ece1d987811e0b81a20b68b099f3b113fca4136726a1f145ecb17b3387c",
+      "file_size_bytes": 1137549,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Use 88–94% of reading-modal width, suggested 92%; HTML source font >=18px and internal scrolling. Regions are [left,top,right,bottom] percentages of final canvas; verify line breaks with final source text. Illustrative material, not an exact facsimile.",
+      "html_text_regions_percent": [
+        [
+          9,
+          27,
+          45,
+          64
+        ],
+        [
+          55,
+          27,
+          91,
+          64
+        ]
+      ],
+      "html_summary_regions_percent": [
+        [
+          9,
+          72,
+          45,
+          88
+        ],
+        [
+          55,
+          72,
+          91,
+          88
+        ]
+      ],
+      "html_title_regions_percent": [
+        [
+          9,
+          12,
+          45,
+          20
+        ],
+        [
+          55,
+          12,
+          91,
+          20
+        ]
+      ]
+    },
+    {
+      "filename": "ch4_ui_two_regiments_table.png",
+      "relative_path": "ui/ch4_ui_two_regiments_table.png",
+      "type": "ui",
+      "scene": "ui_two_regiments_table",
+      "purpose": "A compact horizontalhistorical oak tabletop viewednear-topdown with TWO largeblank creamragpaper writingmats laid leftandright and a smaller neutralblank parchmentstrip BETWEEN them foruncertainboundarycases. No rigidboxwalls or locks. Minimalwornwoodedge, amplepaperarea, no words/numbers/icons. LaterHTMLlabels/cases; sameexisting UI materiallanguage, no newglobalframe or button.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        587
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        30,
+        18,
+        993,
+        569
+      ],
+      "sha256": "aaec52dd7cea48e2012d58b1038d98fb6b786d9655debb0075c5f9723a7303ff",
+      "file_size_bytes": 638249,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Chapter-specific object, not replacement global UI. HTML labels remain horizontal and accessible. Keep reading/drag cards large; use case-card crops as individual cards. No activity implementation included.",
+      "html_text_regions_percent": [
+        [
+          17,
+          20,
+          39,
+          37
+        ],
+        [
+          64,
+          15,
+          83,
+          31
+        ]
+      ],
+      "boundary_case_region_percent": [
+        45,
+        18,
+        51,
+        29
+      ]
+    },
+    {
+      "filename": "ch4_case_cards_set.png",
+      "relative_path": "ui/ch4_case_cards_set.png",
+      "type": "ui",
+      "scene": "case_cards_set",
+      "purpose": "ONE compact visualsetof4separateBLANK smallragpaper casecards, arranged tidy2x2withsmall gaps, straightfrontal view, matchingcream/brownletter strips, all wholecorners visible. Minimalpaperedge; no text/numbers/pictograms. LaterHTML renderscases and accessiblebuttons. Not moderncards, no shadows inflatingbounds.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        747
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        29,
+        22,
+        994,
+        725
+      ],
+      "sha256": "a4f922bbdc6641a8d394d9899ed28a5a95c4cc37c9ac50499b3a4e96901b3233",
+      "file_size_bytes": 1403252,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Chapter-specific object, not replacement global UI. HTML labels remain horizontal and accessible. Keep reading/drag cards large; use case-card crops as individual cards. No activity implementation included.",
+      "html_text_regions_percent": [
+        [
+          9,
+          10,
+          45,
+          43
+        ],
+        [
+          55,
+          10,
+          91,
+          43
+        ],
+        [
+          9,
+          58,
+          45,
+          91
+        ],
+        [
+          55,
+          58,
+          91,
+          91
+        ]
+      ]
+    },
+    {
+      "filename": "ch4_ui_three_interpretations_table.png",
+      "relative_path": "ui/ch4_ui_three_interpretations_table.png",
+      "type": "ui",
+      "scene": "ui_three_interpretations_table",
+      "purpose": "A compact near-topdown horizontaloak readingtable with THREE equallylargeblank creamrag-paper mats sidebyside. Centrebarriersonlynarrowlinenribbons, no icons/labels/words; no positioncondemned, allsamequality. Plentyquietspace percolumn for laterHTMLlabels: three serious reformationalinterpretations. Wornwarmwoodedge, minimalornament, reuse existing globalUI no newbuttons.",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        527
+      ],
+      "transparency": true,
+      "alpha_bbox": [
+        31,
+        16,
+        993,
+        511
+      ],
+      "sha256": "33027d3588d2d25567e4c39ae6768fa521b0d69b516a6622fd4d09c2bd749b77",
+      "file_size_bytes": 663595,
+      "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
+      "implementation_notes": "Chapter-specific object, not replacement global UI. HTML labels remain horizontal and accessible. Keep reading/drag cards large; use case-card crops as individual cards. No activity implementation included.",
+      "html_text_regions_percent": [
+        [
+          15,
+          15,
+          31,
+          36
+        ],
+        [
+          40,
+          15,
+          59,
+          36
+        ],
+        [
+          70,
+          15,
+          87,
+          36
+        ]
+      ]
+    }
+  ],
+  "reused_assets": [
+    {
+      "filename": "peter_scene_neutral.webp",
+      "relative_path": "assets/characters/peter/scene/peter_scene_neutral.webp",
+      "type": "canon_reference",
+      "scene": "peter",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        254,
+        406
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "209b9ded9143186af8553d956019613878b43b913d205919fe327ff95a04a1c1",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "peter_scene_talking.webp",
+      "relative_path": "assets/characters/peter/scene/peter_scene_talking.webp",
+      "type": "canon_reference",
+      "scene": "peter",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        281,
+        396
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "3e92aef091f161247f389d055f8bc0e42a03d064631fd008948e5e5ce311b7ad",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "peter_angry.png",
+      "relative_path": "assets/characters/peter/portrait/peter_angry.png",
+      "type": "canon_reference",
+      "scene": "peter",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        434,
+        724
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "bdb19d5a52a6f4c460753c9dfef08edd1d0b3efdcae6b31ea91f92453d4c5c7e",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "peter_concerned.png",
+      "relative_path": "assets/characters/peter/portrait/peter_concerned.png",
+      "type": "canon_reference",
+      "scene": "peter",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        434,
+        724
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "f55b375f694e808137e929d83eae59cd5a2240a9299c7ed623109e84fab3537c",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "peter_determined.png",
+      "relative_path": "assets/characters/peter/portrait/peter_determined.png",
+      "type": "canon_reference",
+      "scene": "peter",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        435,
+        724
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "c03a746141812246441de7dd427f2499a46f961fe3270996a66bcc1900ac8ae1",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "peter_neutral.png",
+      "relative_path": "assets/characters/peter/portrait/peter_neutral.png",
+      "type": "canon_reference",
+      "scene": "peter",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        434,
+        724
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "f6561e63bb8dbc5197fa01550ab80b12edc76dc42d135172a6ff55fd204a08d5",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "peter_skeptical.png",
+      "relative_path": "assets/characters/peter/portrait/peter_skeptical.png",
+      "type": "canon_reference",
+      "scene": "peter",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        435,
+        724
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "405e7970599d0cfb0970253e179d9628e3a616eb0ac28b20c4a18696bc4c37c7",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "anna_scene_neutral.webp",
+      "relative_path": "assets/characters/anna/scene/anna_scene_neutral.webp",
+      "type": "canon_reference",
+      "scene": "anna",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        226,
+        403
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "23fd5f9bf82e307b357f635f4d6f7d0e8d000a0dc00db203ef45f7feb7278220",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "anna_scene_talking.webp",
+      "relative_path": "assets/characters/anna/scene/anna_scene_talking.webp",
+      "type": "canon_reference",
+      "scene": "anna",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        258,
+        398
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "5ffa8d3f94bcccbec3dfcf03646e052d2e603dc3fa467a2fa5b156494bdd8e97",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "anna_concerned.png",
+      "relative_path": "assets/characters/anna/portrait/anna_concerned.png",
+      "type": "canon_reference",
+      "scene": "anna",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        434,
+        724
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "70792b9fed0bc5a7cf6d391d39192fe4099440e9dec276b7a91202c2d5a037d3",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "anna_engaged.png",
+      "relative_path": "assets/characters/anna/portrait/anna_engaged.png",
+      "type": "canon_reference",
+      "scene": "anna",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        435,
+        724
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "3a1869fee6362623694f993ba545c4cfba07d27593e2f8d9e5da3de83a5c2b05",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "anna_neutral.png",
+      "relative_path": "assets/characters/anna/portrait/anna_neutral.png",
+      "type": "canon_reference",
+      "scene": "anna",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        434,
+        724
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "9e941016a4445b156b7956e2064faaefa4e5cefd98477916f97515111456b163",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "anna_sad.png",
+      "relative_path": "assets/characters/anna/portrait/anna_sad.png",
+      "type": "canon_reference",
+      "scene": "anna",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        434,
+        724
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "de7dc29f00288990a221f96b90d364edf99f08445e35ec2c2064e002872668de",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "anna_thoughtful.png",
+      "relative_path": "assets/characters/anna/portrait/anna_thoughtful.png",
+      "type": "canon_reference",
+      "scene": "anna",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        435,
+        724
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "69a4ba0ad60680f2dfcf5ad569eb16b5b9ef28c4e4ade7160359b0f039fe6a5c",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "jakob_scene_neutral.webp",
+      "relative_path": "assets/characters/jakob/scene/jakob_scene_neutral.webp",
+      "type": "canon_reference",
+      "scene": "jakob",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        176,
+        383
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "86c6839ba051611887e1e05a81799b490a99e7ccaf2b7619ccc5b9517a194433",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "jakob_scene_reading.webp",
+      "relative_path": "assets/characters/jakob/scene/jakob_scene_reading.webp",
+      "type": "canon_reference",
+      "scene": "jakob",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        198,
+        218
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "d1ec94342303e6b1e213705667aa436433a71f81fda919f292c3864abf075553",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "jakob_scene_talking.webp",
+      "relative_path": "assets/characters/jakob/scene/jakob_scene_talking.webp",
+      "type": "canon_reference",
+      "scene": "jakob",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        226,
+        389
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "ceae496512611f76afd6f21e4cf22457ffe4611101a514a36dc0eb8dcc343dfe",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "jakob_explaining.png",
+      "relative_path": "assets/characters/jakob/portrait/jakob_explaining.png",
+      "type": "canon_reference",
+      "scene": "jakob",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        435,
+        724
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "04120810f4886633d56d88497cb019ef5342a15b71fd7762b42cfa09bea45020",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "jakob_neutral.png",
+      "relative_path": "assets/characters/jakob/portrait/jakob_neutral.png",
+      "type": "canon_reference",
+      "scene": "jakob",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        434,
+        724
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "5da4651c8877a886f07c44c8a561961328acc6e088333f3524e7999d33215933",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "jakob_reading.png",
+      "relative_path": "assets/characters/jakob/portrait/jakob_reading.png",
+      "type": "canon_reference",
+      "scene": "jakob",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        435,
+        724
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "1a8d1ab17ac10656fc755236e8b54f695fe3c8ef6da702661c83ca70e5a47399",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "jakob_skeptical.png",
+      "relative_path": "assets/characters/jakob/portrait/jakob_skeptical.png",
+      "type": "canon_reference",
+      "scene": "jakob",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        434,
+        724
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "8de6294333da3362fe59ad35ea6e72c7d2781b88a3208d521e4f4b19a09ddc6d",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "jakob_thoughtful.png",
+      "relative_path": "assets/characters/jakob/portrait/jakob_thoughtful.png",
+      "type": "canon_reference",
+      "scene": "jakob",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        434,
+        724
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "e26602fe02039db6308202a5af448f50778e0592755470673516155e8298b44f",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "ch3_char_konrad_repaired.png",
+      "relative_path": "assets/chapter3/characters/ch3_char_konrad_repaired.png",
+      "type": "canon_reference",
+      "scene": "Konrad",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        820,
+        1918
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "9c5f0993802e97234ee55a858cfa90ee2064b598ab1de56a84901767938bef55",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "ch3_char_matthes_neutral.png",
+      "relative_path": "assets/chapter3/characters/ch3_char_matthes_neutral.png",
+      "type": "canon_reference",
+      "scene": "Matthes",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        512,
+        896
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "290185295f4e92c013b971fea255c75dda4ba728a2c6e718ca948cea6534905b",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "ch3_char_matthes_reading.png",
+      "relative_path": "assets/chapter3/characters/ch3_char_matthes_reading.png",
+      "type": "canon_reference",
+      "scene": "Matthes",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        512,
+        896
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "edde339cc13f01f0d478f940bf211ebc1611f6af313da567f14312e702a6805f",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "ch3_char_matthes_talking.png",
+      "relative_path": "assets/chapter3/characters/ch3_char_matthes_talking.png",
+      "type": "canon_reference",
+      "scene": "Matthes",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        512,
+        896
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "276340c554f59b6d62d28959dc837a1c6d06dde38d66f789b4413cfdc2fd0604",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "ch3_portrait_matthes_neutral.png",
+      "relative_path": "assets/chapter3/portraits/ch3_portrait_matthes_neutral.png",
+      "type": "canon_reference",
+      "scene": "Matthes",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        512,
+        512
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "cf8883f1dbf6820b0deb5df6694204c74c3d100e4a47b84e7f9563616e01e24f",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "ch3_portrait_matthes_reading.png",
+      "relative_path": "assets/chapter3/portraits/ch3_portrait_matthes_reading.png",
+      "type": "canon_reference",
+      "scene": "Matthes",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        512,
+        512
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "dcf8c98a0911ee6147f8a431a5dfa58037d85808c2afeacfcffa19b88aef5c8e",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "ch3_portrait_matthes_talking.png",
+      "relative_path": "assets/chapter3/portraits/ch3_portrait_matthes_talking.png",
+      "type": "canon_reference",
+      "scene": "Matthes",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        512,
+        512
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "13dfce4c3d1bf34009a89d474a136aa84d7fe3e827cd4f58c89190558e3f6310",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "ch2_char_overseer_neutral.png",
+      "relative_path": "assets/chapter2/characters/ch2_char_overseer_neutral.png",
+      "type": "canon_reference",
+      "scene": "Verwalter",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        311,
+        864
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "c3e7e03d5f2085c4d2f2b94e43260157aa1cad72aa201f7155c4f15bfbdf735a",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "ch2_char_overseer_pointing.png",
+      "relative_path": "assets/chapter2/characters/ch2_char_overseer_pointing.png",
+      "type": "canon_reference",
+      "scene": "Verwalter",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        449,
+        801
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "aef120e358e95fb7f3cd776045d0d54765f9d595dee8de1c9fbea557cf581cba",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "ch2_bg_village_hub_morning.png",
+      "relative_path": "assets/chapter2/backgrounds/ch2_bg_village_hub_morning.png",
+      "type": "canon_reference",
+      "scene": "Dorf_Hub",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        1672,
+        941
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "a4d7ac958070764b1be07f872f32d738254b04492d2c4d53ec41d849451fb181",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "hotspot-action.png",
+      "relative_path": "assets/ui/hotspots/v2/hotspot-action.png",
+      "type": "canon_reference",
+      "scene": "globale_Hotspots",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        1927,
+        816
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "32e53521b68298d93236905e191289237bbe8d832ef43c936a4b5d23bffd3d02",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "hotspot-object.png",
+      "relative_path": "assets/ui/hotspots/v2/hotspot-object.png",
+      "type": "canon_reference",
+      "scene": "globale_Hotspots",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        1933,
+        813
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "2e106a945a73c1b88540988fb21363d8113cd54a3a43660d6bf10c5df5554ef2",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "hotspot-path-right.png",
+      "relative_path": "assets/ui/hotspots/v2/hotspot-path-right.png",
+      "type": "canon_reference",
+      "scene": "globale_Hotspots",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        1927,
+        816
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "a78ba471eb559d0c65640b3434a73b28db0350ede68850dd153b0903061653fa",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "hotspots.js",
+      "relative_path": "js/hotspots.js",
+      "type": "canon_reference",
+      "scene": "globale_Hotspots",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": null,
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "7d7065e990d6511398577e7d1bb89aca87bbafa7cae6243feb555976b5f4623c",
+      "hash_mode": "normalized_lf"
+    },
+    {
+      "filename": "dialog_box_parchment.webp",
+      "relative_path": "assets/ui/dialog_box_parchment.webp",
+      "type": "canon_reference",
+      "scene": "Dialograhmen",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        682,
+        256
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "91dc71aa857ee3933e12020488ed163ae47b29e3a1c436a49cc253a8cd2b8037",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "art-direction.css",
+      "relative_path": "css/art-direction.css",
+      "type": "canon_reference",
+      "scene": "Dialograhmen",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": null,
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "003f6003a8910b0e5942273886aac5e3b879a76be413e7501992ff172bacc4e3",
+      "hash_mode": "normalized_lf"
+    },
+    {
+      "filename": "dialogue.css",
+      "relative_path": "css/dialogue.css",
+      "type": "canon_reference",
+      "scene": "Dialograhmen",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": null,
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "3ec187974be27f81b33557332c05a369201f30627d351a81515a93de76e40971",
+      "hash_mode": "normalized_lf"
+    },
+    {
+      "filename": "ui_notebook_closed.png",
+      "relative_path": "assets/ui/ui_notebook_closed.png",
+      "type": "canon_reference",
+      "scene": "Notizbuch",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        1254,
+        1254
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "4158c25c26c5eb613e739db4ed0e1a0f83f65c8ae3e175c0f51e5049baa0f50a",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "notebook.css",
+      "relative_path": "css/notebook.css",
+      "type": "canon_reference",
+      "scene": "Notizbuch",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": null,
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "f790e96bf25f77ee5791da868345079a9938eb9773457b758026ca8d99b51a3f",
+      "hash_mode": "normalized_lf"
+    },
+    {
+      "filename": "notebook.js",
+      "relative_path": "js/notebook.js",
+      "type": "canon_reference",
+      "scene": "Notizbuch",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": null,
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "006ca4edb3307f70502f3ba575a3a444ebb007638a013078d181f2401185ca76",
+      "hash_mode": "normalized_lf"
+    },
+    {
+      "filename": "ch3_doc_article_focus_frame.png",
+      "relative_path": "assets/chapter3/documents/ch3_doc_article_focus_frame.png",
+      "type": "canon_reference",
+      "scene": "Zwoelf_Artikel",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        620,
+        768
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "301c0b23e91ec560e78f0a7242488dbc8e6e2f1beb63e3fa77301def84d25529",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "ch3_doc_gospel_argument_sheet.png",
+      "relative_path": "assets/chapter3/documents/ch3_doc_gospel_argument_sheet.png",
+      "type": "canon_reference",
+      "scene": "Zwoelf_Artikel",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        656,
+        768
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "a4acc12ab3607c9a311fb9884b870e790c78f02059bd0cc06b9f1d5892f2e1f7",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "ch3_doc_twelve_articles_closed.png",
+      "relative_path": "assets/chapter3/documents/ch3_doc_twelve_articles_closed.png",
+      "type": "canon_reference",
+      "scene": "Zwoelf_Artikel",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        658,
+        768
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "67134eadf011c80397ccbc14134f8bac92c4c4c4edc11cfd60ccf0b30aa9082d",
+      "hash_mode": "binary"
+    },
+    {
+      "filename": "ch3_doc_twelve_articles_open.png",
+      "relative_path": "assets/chapter3/documents/ch3_doc_twelve_articles_open.png",
+      "type": "canon_reference",
+      "scene": "Zwoelf_Artikel",
+      "purpose": "Reuse existing canonical asset unchanged.",
+      "new_or_reused": "reused",
+      "expected_dimensions": [
+        768,
+        475
+      ],
+      "transparency": "existing",
+      "safe_area_notes": "Use existing staging and portrait framing.",
+      "implementation_notes": "Repository-root path; referenced, not duplicated in ZIP.",
+      "sha256": "964c1e10eddfc308413cbba90d6d9a7d07fa5d1d5d32252abaa05f7f9f335c24",
+      "hash_mode": "binary"
+    }
+  ],
+  "overlay_anchor": {
+    "source": "assets/chapter2/backgrounds/ch2_bg_village_hub_morning.png",
+    "source_dimensions": [
+      1672,
+      941
+    ],
+    "viewport": [
+      1024,
+      768
+    ],
+    "fit": "cover",
+    "position": "center",
+    "source_crop": [
+      208.6667,
+      0,
+      1463.3333,
+      941
+    ],
+    "dialog_safe_area": [
+      0,
+      568,
+      1024,
+      768
+    ]
+  },
+  "publicTone": {
+    "nuanced": "overlays/ch4_overlay_village_nuanced.png",
+    "simplified": "overlays/ch4_overlay_village_simplified.png",
+    "religious": "overlays/ch4_overlay_village_religious.png",
+    "confrontational": "overlays/ch4_overlay_village_confrontational.png"
+  },
+  "end_states": {
+    "negotiation_open": [
+      "backgrounds/ch4_bg_manor_negotiation.png",
+      "overlays/ch4_overlay_delegation.png"
+    ],
+    "mobilized_community": [
+      "backgrounds/ch4_bg_village_assembly_large.png",
+      "props/ch4_prop_letters_other_villages.png"
+    ],
+    "joining_peasant_band": [
+      "backgrounds/ch4_bg_village_edge_group.png",
+      "overlays/ch4_overlay_joining_peasant_band.png"
+    ],
+    "religious_polarization": [
+      "assets/chapter2/backgrounds/ch2_bg_village_hub_morning.png",
+      "overlays/ch4_overlay_religious_polarization.png"
+    ],
+    "events_moved_without_you": [
+      "assets/chapter2/backgrounds/ch2_bg_village_hub_morning.png",
+      "overlays/ch4_overlay_events_moved_without_you.png"
+    ]
+  },
+  "historical_notes": [
+    "Illustrative plausible South German setting around 1525, no exact reconstruction claimed.",
+    "Peace admonition after mid-April; harsher text follows escalation in May, never precedes admonition.",
+    "Weingarten: oral agreement 17 April 1525; charter ratified 22 April. Negotiation was real, not universal victory.",
+    "Muentzer treated as serious reformational alternative, no demonic caricature."
+  ],
+  "historical_sources": [
+    "https://www.leo-bw.de/fr/web/guest/themenmodul/bauernkrieg/vertraege/weingartener-vertrag",
+    "https://www.bavarikon.de/object/BSB-HSS-00000BSB00089333?lang=de",
+    "https://www.luthermuseen.de/en/node/889"
+  ]
+}

@@ -1,0 +1,463 @@
+{
+  "tool": "image_gen.imagegen",
+  "accepted": [
+    {
+      "path": "backgrounds/ch4_bg_manor_negotiation.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. Full-bleed4:3 EXACT1024x768 composition. Entire lower26 percent (y568-767) quiet floor/road, NO indispensable faces/hands/objects there. Central80% important architecture/targets. A modest manor administrative courtyard with a plain oak discussion table in middle distance at x50% y48%, stools and wax/ink, rough plaster/wood office frontage, NO castle grandeur. Empty left and right figure positions at x27 and73%, feet at y72%. Warm upper-left daylight. No main characters. Use manor reference for same estate material.",
+      "references": [
+        "assets/chapter2/backgrounds/ch2_bg_manor_yard_forced_labor.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/backgrounds/ch4_bg_manor_negotiation.png"
+    },
+    {
+      "path": "backgrounds/ch4_bg_village_assembly_large.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. Full-bleed4:3 EXACT1024x768 composition. Entire lower26 percent (y568-767) quiet floor/road, NO indispensable faces/hands/objects there. Central80% important architecture/targets. Same village context as reference: half-timber cottages, church tower, communal well, broad gathering space. Slightly closer meeting clearing on side of original square, modest benches and a larger group of about12 peripheral villagers at y28-58%, space centrally for Anna and Peter dynamic layers. People attentive varied subdued positions, not rally or battle. Keep two empty full-body positions at x27 and73 with feet y72%.",
+      "references": [
+        "assets/chapter2/backgrounds/ch2_bg_village_hub_morning.png (centered 4:3 cover crop; see manifest)"
+      ],
+      "saved_output": "exports/chapter4_assets_final/backgrounds/ch4_bg_village_assembly_large.png"
+    },
+    {
+      "path": "backgrounds/ch4_bg_village_edge_group.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. Full-bleed4:3 EXACT1024x768 composition. Entire lower26 percent (y568-767) quiet floor/road, NO indispensable faces/hands/objects there. Central80% important architecture/targets. Village edge on branching dirt road with same plaster/half-timber houses behind, low fence, early spring trees. Three uncertain peripheral farmers with hoe, wooden staff and one simple spear at far upper-right y30-56%; no army, no heroic revolt. Central road clear for dynamic actors x27/73 feet y72%; daylight upper-left, tension and uncertainty.",
+      "references": [
+        "assets/chapter2/backgrounds/ch2_bg_village_hub_morning.png (centered 4:3 cover crop; see manifest)"
+      ],
+      "saved_output": "exports/chapter4_assets_final/backgrounds/ch4_bg_village_edge_group.png"
+    },
+    {
+      "path": "backgrounds/ch4_bg_storehouse.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. Full-bleed4:3 EXACT1024x768 composition. Entire lower26 percent (y568-767) quiet floor/road, NO indispensable faces/hands/objects there. Central80% important architecture/targets. Use case: precise-object-edit. EDIT TARGET supplied new storeroom. Preserve the same plaster/timber walls, leftwindow, heavybackdoubledoor, rafters, camera, light and clearfloor. Make the function unmistakably a DUES STOREHOUSE: REMOVE cookingfire and cookingpots from fireplace area; turn this back-wall alcove into shelves containing tiedgrain sacks and barrel. REMOVE bread/mealtabledressing, bowls andmug; leave plain workbench witha simplewoodgrainmeasure. REPLACE rightspinningwheel with2storagebarrels/sacks. No foodservice/kitchen/spinning. No text or characters. Broademptycentralfloor foractors, lower26%quiet. Modestgranary, no dungeon or grandeur.",
+      "references": [
+        "exports/chapter4_assets_final/backgrounds/ch4_bg_storehouse.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/backgrounds/ch4_bg_storehouse.png"
+    },
+    {
+      "path": "backgrounds/ch4_bg_jakob_study_table.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. Full-bleed4:3 EXACT1024x768 composition. Entire lower26 percent (y568-767) quiet floor/road, NO indispensable faces/hands/objects there. Central80% important architecture/targets. A familiar modest peasant room in same cottage material/perspective as input, closer broad plain oak study table with small blank open rag-paper Bible and two thin unlettered pamphlets near back edge, daylight left window with small candle, bench and fireplace. Not university or library, no book walls. Broad quiet table centre for later large HTML reading view; two empty actor positions x27/73 feet y72%. Lower26% subdued foreground floor.",
+      "references": [
+        "assets/chapter2/backgrounds/ch2_bg_peasant_cottage_dues.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/backgrounds/ch4_bg_jakob_study_table.png"
+    },
+    {
+      "path": "backgrounds/ch4_bg_peasant_band_camp_edge.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. Full-bleed4:3 EXACT1024x768 composition. Entire lower26 percent (y568-767) quiet floor/road, NO indispensable faces/hands/objects there. Central80% important architecture/targets. Edge of small 1525 peasant gathering in southern German rural clearing: one plain muted cloth banner onpole, a wood cart, toolbundles, modest shelters, heterogenous peripheral8people in wool/linen with tools and single spears, uncertainty and discussion. No mass army, no heroic battle composition, no modern/fantasy uniforms. Empty foreground staging x27/73 feet y72%, upper-left natural daylight.",
+      "references": [
+        "assets/chapter3/backgrounds/ch3_bg_road_to_memmingen.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/backgrounds/ch4_bg_peasant_band_camp_edge.png"
+    },
+    {
+      "path": "backgrounds/ch4_bg_village_escalation.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. Full-bleed4:3 EXACT1024x768 composition. Entire lower26 percent (y568-767) quiet floor/road, NO indispensable faces/hands/objects there. Central80% important architecture/targets. EDIT TARGET first village image: preserve EXACT village architecture, central roofed stone well, original half-timber house centre-left, church tower upper-right, tavern edge right, road perspective and camera. Change atmosphere to tense early May: closed store shutters, few tiny retreating messengers at uppermidground, distant faint grey smoke BEYOND village only; warm muted daylight. No burning village, no battle, no apocalypse. Keep architecture and original paths identifiable; leave two foreground actor slots and entire lower26% unobstructed. Produce full4:3 background.",
+      "references": [
+        "assets/chapter2/backgrounds/ch2_bg_village_hub_morning.png (centered 4:3 cover crop; see manifest)"
+      ],
+      "saved_output": "exports/chapter4_assets_final/backgrounds/ch4_bg_village_escalation.png"
+    },
+    {
+      "path": "characters/ch4_char_local_preacher_neutral.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE full-body production sprite512x896 with true alpha background, no floor or castshadow. Head, hair, cap, exactlytwo arms/twohands, full shoes and tool ends visible with8%margin. NEW local village preacher, not Luther/Muentzer/Jakob: thin45yearold man, short dark hair with grey temples, clean-shaven thoughtful face, simple darkbrown anklelength plain clerical gown over cream collar, modest brown softcap, holds a small CLOSED blank book in left hand near waist. Restrained kind scholarly appearance, no aura/cross decoration. Body and eyes turned viewer RIGHT toward person on right. Exactlytwo hands: other hand relaxed. Match linework and proportions of reference Matthes, distinct identity.",
+      "references": [
+        "assets/chapter3/characters/ch3_char_matthes_neutral.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/characters/ch4_char_local_preacher_neutral.png"
+    },
+    {
+      "path": "characters/ch4_char_authority_envoy_neutral.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE full-body production sprite512x896 with true alpha background, no floor or castshadow. Head, hair, cap, exactlytwo arms/twohands, full shoes and tool ends visible with8%margin. NEW minor representative of local lord, distinct from canonical Verwalter: about35years, slender brown-haired clean-shaven man, muted darkgreen practical wool doublet with rust sleeves, cream undershirt, brown hose, soft brown cap no feather, simple leather boots, belt and small document pouch, holds folded blank paper down at waist. No royal heraldry, armor or modernuniform. Body AND gaze viewer LEFT to converse with preacher on left. Exactlytwo arms/twohands, calm reserved messenger. Reference Verwalter STYLE ONLY not sameface.",
+      "references": [
+        "assets/chapter2/characters/ch2_char_overseer_neutral.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/characters/ch4_char_authority_envoy_neutral.png"
+    },
+    {
+      "path": "characters/ch4_char_peasant_band_member_1.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE full-body production sprite512x896 with true alpha background, no floor or castshadow. Head, hair, cap, exactlytwo arms/twohands, full shoes and tool ends visible with8%margin. NEW supplemental peasant gathering member, broad40yearold man short darkbeard roughbrown hair, humble brown cap, muted russet wool tunic with leatherbelt, coarse grey hose, scuffed leather shoes. Holds utilitarian woodhandled hoe upright ONE hand, other near belt. No armor/hero posing. Entire face/body turn viewer RIGHT; uneasy thoughtful rural man, not Konrad/Matthes.",
+      "references": [
+        "assets/chapter3/characters/ch3_char_matthes_neutral.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/characters/ch4_char_peasant_band_member_1.png"
+    },
+    {
+      "path": "characters/ch4_char_peasant_band_member_2.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE full-body production sprite512x896 with true alpha background, no floor or castshadow. Head, hair, cap, exactlytwo arms/twohands, full shoes and tool ends visible with8%margin. Use case: identity-preserve. REPAIR supplied new peasant member2: preserve EXACT identity, clothes, face/body left-facing, two hands and fullbody. Shorten the upright simple spear and lower its tip: ENTIRE iron spearpoint must end clearly BELOW top ofcanvas, with10% transparent space over tip and cap. Spear butt and both shoe soles with8%empty margin below. Do NOT crop any part or elongatecanvas disproportionately. All other details unchanged.",
+      "references": [
+        "exports/chapter4_assets_final/characters/ch4_char_peasant_band_member_2.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/characters/ch4_char_peasant_band_member_2.png"
+    },
+    {
+      "path": "characters/ch4_char_local_preacher_talking.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE full-body production sprite512x896 with true alpha background, no floor or castshadow. Head, hair, cap, exactlytwo arms/twohands, full shoes and tool ends visible with8%margin. Use case: identity-preserve. EDIT TARGET supplied preacher neutral. Preserve EXACT face, cap, greytemplehair, clerical gown, plain closedbook, height and proportions. Make subtly open speaking mouth and a restrained explanatory open right palm at chest height, other hand retains book. Exactlytwo hands/twoarms. Body and gaze stay viewerRIGHT. Fullbody, fullshoes and entirehead with8%margin. No other change.",
+      "references": [
+        "exports/chapter4_assets_final/characters/ch4_char_local_preacher_neutral.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/characters/ch4_char_local_preacher_talking.png"
+    },
+    {
+      "path": "characters/ch4_char_authority_envoy_talking.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE full-body production sprite512x896 with true alpha background, no floor or castshadow. Head, hair, cap, exactlytwo arms/twohands, full shoes and tool ends visible with8%margin. Use case: identity-preserve. EDIT TARGET supplied envoy neutral. Preserve EXACT clean-shavenface, brownhair/cap, darkgreen vest andrustsleeves, boots, pouch, proportions. Speaking mouth subtly open, one hand holds same blank paper at chestheight, other hand gestures modestly open toward viewerLEFT. Exactlytwo hands/twoarms. Body AND gaze stay viewerLEFT. Fullbody with8%margin. No other changes.",
+      "references": [
+        "exports/chapter4_assets_final/characters/ch4_char_authority_envoy_neutral.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/characters/ch4_char_authority_envoy_talking.png"
+    },
+    {
+      "path": "portraits/ch4_portrait_local_preacher_neutral.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE speakerportrait512x512 true alpha background, head/shoulders only, full head/cap/hair/chin/neck with8%empty margin. No floor/shadow/frame. Use case: identity-preserve. Supplied fullbody local_preacher_neutral is the EXACT identity. Create head-and-upper-shoulder speakerportrait, preserve EXACT face, hair/cap, outfit, gaze direction and restrained attentive expression. Same hand-drawn textured linework. No new person, no frame, no text. Entire cap/hair/chin must have8%margin; fullhead upper shoulders, transparent square. Leave papers/tool out of this headshot.",
+      "references": [
+        "exports/chapter4_assets_final/characters/ch4_char_local_preacher_neutral.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/portraits/ch4_portrait_local_preacher_neutral.png"
+    },
+    {
+      "path": "portraits/ch4_portrait_local_preacher_talking.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE speakerportrait512x512 true alpha background, head/shoulders only, full head/cap/hair/chin/neck with8%empty margin. No floor/shadow/frame. Use case: identity-preserve. Supplied fullbody local_preacher_talking is the EXACT identity. Create head-and-upper-shoulder speakerportrait, preserve EXACT face, hair/cap, outfit, gaze direction and subtly open speaking expression. Same hand-drawn textured linework. No new person, no frame, no text. Entire cap/hair/chin must have8%margin; fullhead upper shoulders, transparent square. Leave papers/tool out of this headshot.",
+      "references": [
+        "exports/chapter4_assets_final/characters/ch4_char_local_preacher_talking.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/portraits/ch4_portrait_local_preacher_talking.png"
+    },
+    {
+      "path": "portraits/ch4_portrait_authority_envoy_neutral.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE speakerportrait512x512 true alpha background, head/shoulders only, full head/cap/hair/chin/neck with8%empty margin. No floor/shadow/frame. Use case: identity-preserve. Supplied fullbody authority_envoy_neutral is the EXACT identity. Create head-and-upper-shoulder speakerportrait, preserve EXACT face, hair/cap, outfit, gaze direction and restrained attentive expression. Same hand-drawn textured linework. No new person, no frame, no text. Entire cap/hair/chin must have8%margin; fullhead upper shoulders, transparent square. Leave papers/tool out of this headshot.",
+      "references": [
+        "exports/chapter4_assets_final/characters/ch4_char_authority_envoy_neutral.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/portraits/ch4_portrait_authority_envoy_neutral.png"
+    },
+    {
+      "path": "portraits/ch4_portrait_authority_envoy_talking.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE speakerportrait512x512 true alpha background, head/shoulders only, full head/cap/hair/chin/neck with8%empty margin. No floor/shadow/frame. Use case: identity-preserve. Supplied fullbody authority_envoy_talking is the EXACT identity. Create head-and-upper-shoulder speakerportrait, preserve EXACT face, hair/cap, outfit, gaze direction and subtly open speaking expression. Same hand-drawn textured linework. No new person, no frame, no text. Entire cap/hair/chin must have8%margin; fullhead upper shoulders, transparent square. Leave papers/tool out of this headshot.",
+      "references": [
+        "exports/chapter4_assets_final/characters/ch4_char_authority_envoy_talking.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/portraits/ch4_portrait_authority_envoy_talking.png"
+    },
+    {
+      "path": "portraits/ch4_portrait_peasant_band_member_1.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE speakerportrait512x512 true alpha background, head/shoulders only, full head/cap/hair/chin/neck with8%empty margin. No floor/shadow/frame. Use case: identity-preserve. Supplied fullbody peasant_band_member_1 is the EXACT identity. Create head-and-upper-shoulder speakerportrait, preserve EXACT face, hair/cap, outfit, gaze direction and restrained attentive expression. Same hand-drawn textured linework. No new person, no frame, no text. Entire cap/hair/chin must have8%margin; fullhead upper shoulders, transparent square. Leave papers/tool out of this headshot.",
+      "references": [
+        "exports/chapter4_assets_final/characters/ch4_char_peasant_band_member_1.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/portraits/ch4_portrait_peasant_band_member_1.png"
+    },
+    {
+      "path": "portraits/ch4_portrait_peasant_band_member_2.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE speakerportrait512x512 true alpha background, head/shoulders only, full head/cap/hair/chin/neck with8%empty margin. No floor/shadow/frame. Use case: identity-preserve. Supplied fullbody peasant_band_member_2 is the EXACT identity. Create head-and-upper-shoulder speakerportrait, preserve EXACT face, hair/cap, outfit, gaze direction and restrained attentive expression. Same hand-drawn textured linework. No new person, no frame, no text. Entire cap/hair/chin must have8%margin; fullhead upper shoulders, transparent square. Leave papers/tool out of this headshot.",
+      "references": [
+        "exports/chapter4_assets_final/characters/ch4_char_peasant_band_member_2.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/portraits/ch4_portrait_peasant_band_member_2.png"
+    },
+    {
+      "path": "overlays/ch4_overlay_village_nuanced.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. TRANSPARENT OVERLAY1024x768 fixed4:3 canvas, upper-left light matched to reference. NO environment/background/floor painted; genuine alpha everywhere except specified people/objects. ALL content within x5..94%, y10..73%. Lower26% completely alpha0. Complete heads hands tools feet. Preserve generous clear regions for existing well at x50%y50%, actor slots x27/73% and hotspot positions x8/50/90%y8%. ONE small group of3ordinary adult villagers around a modest bench-table, reading several full-size unfolded blank articles attentively, calm concentrated conversation, one finger tracing blank paper. No main Canon people. Isolated wholegroup incltable/bench, completebodies/hands/shoes. Place group leftpath x6-32%, feet y70%, heads y35%, centre well stays fully alpha-transparent.",
+      "references": [
+        "assets/chapter2/backgrounds/ch2_bg_village_hub_morning.png (centered 4:3 cover crop; see manifest)"
+      ],
+      "saved_output": "exports/chapter4_assets_final/overlays/ch4_overlay_village_nuanced.png"
+    },
+    {
+      "path": "overlays/ch4_overlay_village_simplified.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. TRANSPARENT OVERLAY4:3 canvas, WHOLE group centered with12%clear margin EVERYside; final1024x768 spatialanchoring is done by export. Upper-left light matched to reference. NO environment/background/floor painted; genuine alpha everywhere except specified people/objects. ALL content within x5..94%, y10..73%. Lower26% completely alpha0. Complete heads hands tools feet. Preserve generous clear regions for existing well at x50%y50%, actor slots x27/73% and hotspot positions x8/50/90%y8%. Use case: identity-preserve / precise-object-edit. Supplied isolatedgroup is edit target. Keep EXACT people'sfaces clothes objects posture gesture andpaperblankness. REPAIR framing ONLY: complete the cut-off outermost bag/clothing at canvasedge, pull entiregroup inward and SCALE DOWN slightly so ENTIRE group, all heads/hands/shoes/noticepost and ALL clothing are FULLY within canvas with12%clear transparent margin on EVERY side. Centre thegroup; no spatialedgeposition. Do not addpeople/architecture/floor. Truealpha. Finaloverlayanchoring is done at export.",
+      "references": [
+        "exports/chapter4_assets_final/overlays/ch4_overlay_village_simplified.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/overlays/ch4_overlay_village_simplified.png"
+    },
+    {
+      "path": "overlays/ch4_overlay_village_religious.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. TRANSPARENT OVERLAY1024x768 fixed4:3 canvas, upper-left light matched to reference. NO environment/background/floor painted; genuine alpha everywhere except specified people/objects. ALL content within x5..94%, y10..73%. Lower26% completely alpha0. Complete heads hands tools feet. Preserve generous clear regions for existing well at x50%y50%, actor slots x27/73% and hotspot positions x8/50/90%y8%. ONE small group of3ordinary villagers with the SAME local preacher as second supplied reference, darkbrown gown and cap, recognisable identical clean-shavenface. Quiet but serious theologicaldebate, preacher holds OPEN blank Bible, villager holds blank pamphlet; respectful different opinions, no sermonhero aura. Wholeisolatedgroup leftpath x5-34%feet y70%, noarchitecture. Exactnewpreacheridentity preserved.",
+      "references": [
+        "assets/chapter2/backgrounds/ch2_bg_village_hub_morning.png (centered 4:3 cover crop; see manifest)",
+        "exports/chapter4_assets_final/characters/ch4_char_local_preacher_neutral.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/overlays/ch4_overlay_village_religious.png"
+    },
+    {
+      "path": "overlays/ch4_overlay_village_confrontational.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. TRANSPARENT OVERLAY4:3 canvas, WHOLE group centered with12%clear margin EVERYside; final1024x768 spatialanchoring is done by export. Upper-left light matched to reference. NO environment/background/floor painted; genuine alpha everywhere except specified people/objects. ALL content within x5..94%, y10..73%. Lower26% completely alpha0. Complete heads hands tools feet. Preserve generous clear regions for existing well at x50%y50%, actor slots x27/73% and hotspot positions x8/50/90%y8%. Use case: identity-preserve / precise-object-edit. Supplied isolatedgroup is edit target. Keep EXACT people'sfaces clothes objects posture gesture andpaperblankness. REPAIR framing ONLY: complete the cut-off outermost bag/clothing at canvasedge, pull entiregroup inward and SCALE DOWN slightly so ENTIRE group, all heads/hands/shoes/noticepost and ALL clothing are FULLY within canvas with12%clear transparent margin on EVERY side. Centre thegroup; no spatialedgeposition. Do not addpeople/architecture/floor. Truealpha. Finaloverlayanchoring is done at export.",
+      "references": [
+        "exports/chapter4_assets_final/overlays/ch4_overlay_village_confrontational.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/overlays/ch4_overlay_village_confrontational.png"
+    },
+    {
+      "path": "overlays/ch4_overlay_delegation.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. TRANSPARENT OVERLAY4:3 canvas, WHOLE group centered with12%clear margin EVERYside; final1024x768 spatialanchoring is done by export. Upper-left light matched to reference. NO environment/background/floor painted; genuine alpha everywhere except specified people/objects. ALL content within x5..94%, y10..73%. Lower26% completely alpha0. Complete heads hands tools feet. Preserve generous clear regions for existing well at x50%y50%, actor slots x27/73% and hotspot positions x8/50/90%y8%. THREE ordinary village delegates in practical wool/linen stand together presenting foldedblank petition to an unseen interlocutor toward viewerRIGHT; one holds rolled paper, others restrained hopefulfaces. No canonical characters. Wholegroup fullbodies ontransparent, leftmidground x5-33%feet70%. For negotiatedopenending too. FINAL FRAMING: ignore edgecoordinates above; centre ENTIREgroup with12%transparent margins, no clippedbags/clothes/feet/tools. Exporter does positioning.",
+      "references": [
+        "assets/chapter2/backgrounds/ch2_bg_village_hub_morning.png (centered 4:3 cover crop; see manifest)"
+      ],
+      "saved_output": "exports/chapter4_assets_final/overlays/ch4_overlay_delegation.png"
+    },
+    {
+      "path": "overlays/ch4_overlay_withheld_dues.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. TRANSPARENT OVERLAY4:3 canvas, WHOLE group centered with12%clear margin EVERYside; final1024x768 spatialanchoring is done by export. Upper-left light matched to reference. NO environment/background/floor painted; genuine alpha everywhere except specified people/objects. ALL content within x5..94%, y10..73%. Lower26% completely alpha0. Complete heads hands tools feet. Preserve generous clear regions for existing well at x50%y50%, actor slots x27/73% and hotspot positions x8/50/90%y8%. Two cautious farming adults beside3tiedgrain sacks and coveredbasket, arms crossed or hand on sacks, keep their contributions back without force; no closed door/floor painted. Small isolated completegroup leftmidground feet70%. Readable difference from militant blockage. FINAL FRAMING: ignore edgecoordinates above; centre ENTIREgroup with12%transparent margins, no clippedbags/clothes/feet/tools. Exporter does positioning.",
+      "references": [
+        "assets/chapter2/backgrounds/ch2_bg_village_hub_morning.png (centered 4:3 cover crop; see manifest)"
+      ],
+      "saved_output": "exports/chapter4_assets_final/overlays/ch4_overlay_withheld_dues.png"
+    },
+    {
+      "path": "overlays/ch4_overlay_public_meeting.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. TRANSPARENT OVERLAY4:3 canvas, WHOLE group centered with12%clear margin EVERYside; final1024x768 spatialanchoring is done by export. Upper-left light matched to reference. NO environment/background/floor painted; genuine alpha everywhere except specified people/objects. ALL content within x5..94%, y10..73%. Lower26% completely alpha0. Complete heads hands tools feet. Preserve generous clear regions for existing well at x50%y50%, actor slots x27/73% and hotspot positions x8/50/90%y8%. A modest broad peripheral village assembly:two separate clusters4people each at LEFT x5-33% and RIGHT x68-94%, discussing a small blank communal resolution paper, one preparing a messengerbundle. CENTRE x36-64% entirely alpha0 forwell and maincharacters. Noarchitecture, nofloor, nohero or violence. Heads32-45%, feet70%. Wholebodies andnaturalhands. FINAL FRAMING: ignore edgecoordinates above; centre ENTIREgroup with12%transparent margins, no clippedbags/clothes/feet/tools. Exporter does positioning.",
+      "references": [
+        "assets/chapter2/backgrounds/ch2_bg_village_hub_morning.png (centered 4:3 cover crop; see manifest)"
+      ],
+      "saved_output": "exports/chapter4_assets_final/overlays/ch4_overlay_public_meeting.png"
+    },
+    {
+      "path": "overlays/ch4_overlay_resistance_group.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. TRANSPARENT OVERLAY4:3 canvas, WHOLE group centered with12%clear margin EVERYside; final1024x768 spatialanchoring is done by export. Upper-left light matched to reference. NO environment/background/floor painted; genuine alpha everywhere except specified people/objects. ALL content within x5..94%, y10..73%. Lower26% completely alpha0. Complete heads hands tools feet. Preserve generous clear regions for existing well at x50%y50%, actor slots x27/73% and hotspot positions x8/50/90%y8%. THREE uneasy farmers with a hoe, woodstaff and singlesimple iron-tippedspear, gathered in questioning conversation, no hero pose, no army. Wool/linen, completeheads/hands/toolends/feet. One facesright twofacesleft towardeachother; leftmidground x5-33% feet70%, genuine transparency. FINAL FRAMING: ignore edgecoordinates above; centre ENTIREgroup with12%transparent margins, no clippedbags/clothes/feet/tools. Exporter does positioning.",
+      "references": [
+        "assets/chapter2/backgrounds/ch2_bg_village_hub_morning.png (centered 4:3 cover crop; see manifest)"
+      ],
+      "saved_output": "exports/chapter4_assets_final/overlays/ch4_overlay_resistance_group.png"
+    },
+    {
+      "path": "overlays/ch4_overlay_blockade.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. TRANSPARENT OVERLAY4:3 canvas, WHOLE group centered with12%clear margin EVERYside; final1024x768 spatialanchoring is done by export. Upper-left light matched to reference. NO environment/background/floor painted; genuine alpha everywhere except specified people/objects. ALL content within x5..94%, y10..73%. Lower26% completely alpha0. Complete heads hands tools feet. Preserve generous clear regions for existing well at x50%y50%, actor slots x27/73% and hotspot positions x8/50/90%y8%. A small woodbeam across a low rustic trestle with two cautious farmers beside it and a few tiedsacks; improvised road obstruction, no aggressiveattack, modest scale notfortification. Everything isolated fromenvironment, no roadpainted. Rightmidground x68-94%feet70%. Entirebeam andfeet visible. FINAL FRAMING: ignore edgecoordinates above; centre ENTIREgroup with12%transparent margins, no clippedbags/clothes/feet/tools. Exporter does positioning.",
+      "references": [
+        "assets/chapter2/backgrounds/ch2_bg_village_hub_morning.png (centered 4:3 cover crop; see manifest)"
+      ],
+      "saved_output": "exports/chapter4_assets_final/overlays/ch4_overlay_blockade.png"
+    },
+    {
+      "path": "overlays/ch4_overlay_smoke_distance.png",
+      "prompt": "Use case: stylized-concept. ONE distant smoke wisp ONLY, isolated genuinely transparent RGBA, no buildings, humans, objects, land, sky, fire, text, frame or silhouettes of any kind. Soft low-opacity warm grey/brown hand-painted smoke ribbon fading into alpha. Centre compact plume with12%transparent margins all sides. A thin irregular subtle smoke plume far away, semi-transparent painterly wisps drifting gently upperright. ONLYSMOKE, NO scenery NOpeople NOvillage NOwell NOroofs NOtools. It is an atmosphericalpha-layer, no objects atbase. Mostlytransparent, no heavyblack billow, no opaque background.",
+      "references": [],
+      "saved_output": "exports/chapter4_assets_final/overlays/ch4_overlay_smoke_distance.png"
+    },
+    {
+      "path": "overlays/ch4_overlay_refugees_cart.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. TRANSPARENT OVERLAY4:3 canvas, WHOLE group centered with12%clear margin EVERYside; final1024x768 spatialanchoring is done by export. Upper-left light matched to reference. NO environment/background/floor painted; genuine alpha everywhere except specified people/objects. ALL content within x5..94%, y10..73%. Lower26% completely alpha0. Complete heads hands tools feet. Preserve generous clear regions for existing well at x50%y50%, actor slots x27/73% and hotspot positions x8/50/90%y8%. Two worried ordinary adult displacedvillagers walking together near a modest TWOwheeled wooden handcart carrying clothbundles and basket, completewheel circles, hands natural, no injuredpeople orblood. Turn/facemovement viewerLEFT, wholegroup unheroic, isolated. Rightmidground x68-94%feet70%, nofloor/architecture. FINAL FRAMING: centre whole isolated content with12%clear margin EVERYside; all tools/feet/bags complete. For two groups keep a clear alpha gap between them. Ignore edgecoordinates; exporter handles anchors.",
+      "references": [
+        "assets/chapter2/backgrounds/ch2_bg_village_hub_morning.png (centered 4:3 cover crop; see manifest)"
+      ],
+      "saved_output": "exports/chapter4_assets_final/overlays/ch4_overlay_refugees_cart.png"
+    },
+    {
+      "path": "overlays/ch4_overlay_armed_group.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. TRANSPARENT OVERLAY4:3 canvas, WHOLE group centered with12%clear margin EVERYside; final1024x768 spatialanchoring is done by export. Upper-left light matched to reference. NO environment/background/floor painted; genuine alpha everywhere except specified people/objects. ALL content within x5..94%, y10..73%. Lower26% completely alpha0. Complete heads hands tools feet. Preserve generous clear regions for existing well at x50%y50%, actor slots x27/73% and hotspot positions x8/50/90%y8%. THREE small nonheroic armedtransients in credible1525 wooldoublets simpleclothcaps, oneplainironhelmet, simplelongspears and sheathedshortsword, no plate-army/uniform. Walking quietly viewerLEFT, waryenvironment, exactlynaturalattachedhands, nofighting. Rightmidground x68-94%feet70%, isolateentirepeople andtips. FINAL FRAMING: centre whole isolated content with12%clear margin EVERYside; all tools/feet/bags complete. For two groups keep a clear alpha gap between them. Ignore edgecoordinates; exporter handles anchors.",
+      "references": [
+        "assets/chapter2/backgrounds/ch2_bg_village_hub_morning.png (centered 4:3 cover crop; see manifest)"
+      ],
+      "saved_output": "exports/chapter4_assets_final/overlays/ch4_overlay_armed_group.png"
+    },
+    {
+      "path": "overlays/ch4_overlay_joining_peasant_band.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. TRANSPARENT OVERLAY4:3 canvas, WHOLE group centered with12%clear margin EVERYside; final1024x768 spatialanchoring is done by export. Upper-left light matched to reference. NO environment/background/floor painted; genuine alpha everywhere except specified people/objects. ALL content within x5..94%, y10..73%. Lower26% completely alpha0. Complete heads hands tools feet. Preserve generous clear regions for existing well at x50%y50%, actor slots x27/73% and hotspot positions x8/50/90%y8%. THREE villageadults walking away together toward viewerLEFT road, backs/threequarterprofiles, bundles, a hoe and plainstaff, uncertain purposefuldeparture, no celebration/battle. Completebodysoles/tools, no Canonpersons. Leftmidground x5-33%feet70% transparent; use ending joining_peasant_band. FINAL FRAMING: centre whole isolated content with12%clear margin EVERYside; all tools/feet/bags complete. For two groups keep a clear alpha gap between them. Ignore edgecoordinates; exporter handles anchors.",
+      "references": [
+        "assets/chapter2/backgrounds/ch2_bg_village_hub_morning.png (centered 4:3 cover crop; see manifest)"
+      ],
+      "saved_output": "exports/chapter4_assets_final/overlays/ch4_overlay_joining_peasant_band.png"
+    },
+    {
+      "path": "overlays/ch4_overlay_religious_polarization.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. TRANSPARENT OVERLAY4:3 canvas, WHOLE group centered with12%clear margin EVERYside; final1024x768 spatialanchoring is done by export. Upper-left light matched to reference. NO environment/background/floor painted; genuine alpha everywhere except specified people/objects. ALL content within x5..94%, y10..73%. Lower26% completely alpha0. Complete heads hands tools feet. Preserve generous clear regions for existing well at x50%y50%, actor slots x27/73% and hotspot positions x8/50/90%y8%. NEW compositingoverlay: TWO separate clustersof3ordinary1525 villageadults INCLUDINGwomen on BOTH sides, dressed in humblewool/linen russetbrown darkgreen, clothcaps/headcloths. LEFTcluster soberlydiscusses OPENBLANKBible, RIGHTcluster soberlydiscusses BLANKpamphlets. Thedivisionis betweenordinaryvillagers over interpretation, NOT CatholicsversusProtestants; ALL are laypeople. NO monkhoods, tonsures, robes/stoles, rosary/crosspendants, famous reformers, religiousuniforms. Respectful serious faces, eachclusterfacesinward, clearalpha GAP BETWEEN clusters, entirebodies/hands/shoes visible with10%canvasmargin EVERYside. Noarchitecture/floor. Reference only style of readingvillagers, no sameidentitiesrequired.",
+      "references": [
+        "exports/chapter4_assets_final/overlays/ch4_overlay_village_nuanced.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/overlays/ch4_overlay_religious_polarization.png"
+    },
+    {
+      "path": "overlays/ch4_overlay_events_moved_without_you.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. TRANSPARENT OVERLAY4:3 canvas, WHOLE group centered with12%clear margin EVERYside; final1024x768 spatialanchoring is done by export. Upper-left light matched to reference. NO environment/background/floor painted; genuine alpha everywhere except specified people/objects. ALL content within x5..94%, y10..73%. Lower26% completely alpha0. Complete heads hands tools feet. Preserve generous clear regions for existing well at x50%y50%, actor slots x27/73% and hotspot positions x8/50/90%y8%. ONE little group of3villagers already receding away LEFT toward out-of-frame road, rearfacingpeople with foldedblank message and two travelbundles, small abandoned blank sheet on a simpleemptybench nearby. Quiet sense of departure alreadyhappened, no Canonpeople, noarchitecture/floor. Entirefeet/bench visible. Leftmidground x5-33%feet68%. endingevents_moved_without_you. FINAL FRAMING: centre whole isolated content with12%clear margin EVERYside; all tools/feet/bags complete. For two groups keep a clear alpha gap between them. Ignore edgecoordinates; exporter handles anchors.",
+      "references": [
+        "assets/chapter2/backgrounds/ch2_bg_village_hub_morning.png (centered 4:3 cover crop; see manifest)"
+      ],
+      "saved_output": "exports/chapter4_assets_final/overlays/ch4_overlay_events_moved_without_you.png"
+    },
+    {
+      "path": "props/ch4_prop_warning_notice.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE compact transparent isolated production PNG. Whole object with4%clear margin, upper-left light. No backdrop, no floor, no castshadow. A single slightly curled blank rag-paper official warningleaflet pinned with small iron tack to a compact darkleather backing, subtle waxseal lowercorner, no words, no title; textface largelyblank and frontal.",
+      "references": [
+        "assets/chapter3/documents/ch3_doc_twelve_articles_open.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/props/ch4_prop_warning_notice.png"
+    },
+    {
+      "path": "props/ch4_prop_articles_on_table.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE compact transparent isolated production PNG. Whole object with4%clear margin, upper-left light. No backdrop, no floor, no castshadow. A low modest oak tabletop/tray with several fullsize blank articlepapers spread neatly and one closed thinpamphlet, readable paperareas, complete fourshortlegs or trayedges; no background, no ink lettering.",
+      "references": [
+        "assets/chapter3/documents/ch3_doc_twelve_articles_open.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/props/ch4_prop_articles_on_table.png"
+    },
+    {
+      "path": "props/ch4_prop_seal_document.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE compact transparent isolated production PNG. Whole object with4%clear margin, upper-left light. No backdrop, no floor, no castshadow. An official folded creamrag-paper document with simple muted-red waxseal onshortparchmenttongue and linen tie, believable modest1525administration, no actualheraldry or title; mostpaper blank.",
+      "references": [
+        "assets/chapter3/documents/ch3_doc_twelve_articles_open.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/props/ch4_prop_seal_document.png"
+    },
+    {
+      "path": "props/ch4_prop_letters_other_villages.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE compact transparent isolated production PNG. Whole object with4%clear margin, upper-left light. No backdrop, no floor, no castshadow. Three simple folded creamragpaper villageletters tiedwithbrownlinenstring, one openedletter slightlybeneath, two smallmutedwaxseals, no stamps/envelopes withmodernflaps or writing.",
+      "references": [
+        "assets/chapter3/documents/ch3_doc_twelve_articles_open.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/props/ch4_prop_letters_other_villages.png"
+    },
+    {
+      "path": "props/ch4_prop_dues_cart.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE compact transparent isolated production PNG. Whole object with4%clear margin, upper-left light. No backdrop, no floor, no castshadow. A compact smalltwo-wheel roughoak handcart loaded with three tiedgrain sacks and onebasket, both completewoodspokedwheels and shortpullshafts fullyvisible, realistic rusticperspective, nofloor/shadow.",
+      "references": [
+        "assets/chapter3/documents/ch3_doc_twelve_articles_open.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/props/ch4_prop_dues_cart.png"
+    },
+    {
+      "path": "props/ch4_prop_bible_open.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE compact transparent isolated production PNG. Whole object with4%clear margin, upper-left light. No backdrop, no floor, no castshadow. A modest small early16thcentury boundBible open flat, wornbrownleathercover, ragpaperpages broadblank readingareas, simple narrowprinteddecorative border only, no readabletext, no giltfantasycover, no floatingmagic.",
+      "references": [
+        "assets/chapter3/documents/ch3_doc_twelve_articles_open.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/props/ch4_prop_bible_open.png"
+    },
+    {
+      "path": "props/ch4_prop_thuringia_report.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE compact transparent isolated production PNG. Whole object with4%clear margin, upper-left light. No backdrop, no floor, no castshadow. A thin simple blankfolded newsreport with one unfoldedleaf and littlelooselinen tie, cautious seriousreformationnews, NOmap/portrait/prophetsymbols; a soberpaperobject, largeblankface.",
+      "references": [
+        "assets/chapter3/documents/ch3_doc_twelve_articles_open.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/props/ch4_prop_thuringia_report.png"
+    },
+    {
+      "path": "props/ch4_prop_weingarten_report.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE compact transparent isolated production PNG. Whole object with4%clear margin, upper-left light. No backdrop, no floor, no castshadow. A modest opencontract-news packet, blankragpaper mainleaf with several subduedwaxseals hangingfromshortparchmenttabs, one foldedcover, realnegotiationadministration but no exacthistoricsealclaim, no text.",
+      "references": [
+        "assets/chapter3/documents/ch3_doc_twelve_articles_open.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/props/ch4_prop_weingarten_report.png"
+    },
+    {
+      "path": "props/ch4_prop_authority_warning.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE compact transparent isolated production PNG. Whole object with4%clear margin, upper-left light. No backdrop, no floor, no castshadow. A later official warning paper, stronger darkbrown foldededge and mutedrust-redwaxseal, smallpapertear atcorner; soberadministrative appearance, broadblankface, NO blood/weapons/flames/lettering.",
+      "references": [
+        "assets/chapter3/documents/ch3_doc_twelve_articles_open.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/props/ch4_prop_authority_warning.png"
+    },
+    {
+      "path": "documents/ch4_doc_luther_freedom_small.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE compact transparent isolated production PNG. Whole object with4%clear margin, upper-left light. No backdrop, no floor, no castshadow. One thin smallclosed reformational pamphlet inspired by freedomtract1520, warm blankcream ragpaper cover with a restrained narrow doublelineprinterborder, visible foldedspine, NO titleportraittext. Plausible game readingobject, not a facsimile. Exportreadingface: flatfrontal, broad4:3/landscape whereopen, square/portraitwhereclosed. All text remainsresponsiveHTML.",
+      "references": [
+        "assets/chapter3/documents/ch3_doc_twelve_articles_open.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/documents/ch4_doc_luther_freedom_small.png"
+    },
+    {
+      "path": "documents/ch4_doc_worldly_authority_small.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE compact transparent isolated production PNG. Whole object with4%clear margin, upper-left light. No backdrop, no floor, no castshadow. One thin smallclosed1523reformational authoritytract, blankcreamragpaper cover, narrowdarkbrown rectangular printerrule andsimple cornerdiamond, brownfoldedspine, no titletext/portrait, related to freedompamphlet butdistinct darkeredge. Exportreadingface: flatfrontal, broad4:3/landscape whereopen, square/portraitwhereclosed. All text remainsresponsiveHTML.",
+      "references": [
+        "assets/chapter3/documents/ch3_doc_twelve_articles_open.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/documents/ch4_doc_worldly_authority_small.png"
+    },
+    {
+      "path": "documents/ch4_doc_ermahnung_closed.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE compact transparent isolated production PNG. Whole object with4%clear margin, upper-left light. No backdrop, no floor, no castshadow. Closed thin1525printedpeace-admonition pamphlet, warmcreamragpaper, simple delicate doublelineprinterborder around COMPLETELYBLANK broadcover, small foldedspine, restrained conciliatory publication look. No title, woodcutportrait or lettering. Samefamily as referenceTwleveArticles. Exportreadingface: flatfrontal, broad4:3/landscape whereopen, square/portraitwhereclosed. All text remainsresponsiveHTML.",
+      "references": [
+        "assets/chapter3/documents/ch3_doc_twelve_articles_open.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/documents/ch4_doc_ermahnung_closed.png"
+    },
+    {
+      "path": "documents/ch4_doc_ermahnung_open.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE compact transparent isolated production PNG. Whole object with4%clear margin, upper-left light. No backdrop, no floor, no castshadow. LargeflatOPEN ragpaper printedpamphlet spread, two broad BLANKcreamreadingpages, narrowdelicateprinterrule edge, slendercentral stitchedfold. Facealmoststraightontopdown, no tiltedperspective, largequietcontent. Eachpage80%usable, minimalornament. No text or portrait. Samepeaceadmonitionasclosed. Exportreadingface: flatfrontal, broad4:3/landscape whereopen, square/portraitwhereclosed. All text remainsresponsiveHTML.",
+      "references": [
+        "assets/chapter3/documents/ch3_doc_twelve_articles_open.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/documents/ch4_doc_ermahnung_open.png"
+    },
+    {
+      "path": "documents/ch4_doc_ermahnung_lords.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE compact transparent isolated production PNG. Whole object with4%clear margin, upper-left light. No backdrop, no floor, no castshadow. One large flatFRONTAL broad ragpaper sourcepage of peaceadmonition, refinedwarmcream with narrowdoublelineborder, completelyblank vast sourcearea, a small quiet separated blank lowerquarter for laterHTMLsummary viaonlya thin horizontalprinterrule. No title, noblesorportraits, actualtextlaterHTML. Minimaledgesmax5%each. Exportreadingface: flatfrontal, broad4:3/landscape whereopen, square/portraitwhereclosed. All text remainsresponsiveHTML.",
+      "references": [
+        "assets/chapter3/documents/ch3_doc_twelve_articles_open.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/documents/ch4_doc_ermahnung_lords.png"
+    },
+    {
+      "path": "documents/ch4_doc_ermahnung_peasants.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE compact transparent isolated production PNG. Whole object with4%clear margin, upper-left light. No backdrop, no floor, no castshadow. One large flatFRONTAL broad ragpaper sourcepage matchingpeaceadmonitionlords, narrowdoublelineborder, BLANK vast sourcearea, separatedblanklowerquarter withthin horizontalprinterrule; subtle foldedupperleftcorner distinguishespage, NOT angry/bloodyvisual. Minimaledgesmax5%each. Exportreadingface: flatfrontal, broad4:3/landscape whereopen, square/portraitwhereclosed. All text remainsresponsiveHTML.",
+      "references": [
+        "assets/chapter3/documents/ch3_doc_twelve_articles_open.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/documents/ch4_doc_ermahnung_peasants.png"
+    },
+    {
+      "path": "documents/ch4_doc_muentzer_context_closed.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE compact transparent isolated production PNG. Whole object with4%clear margin, upper-left light. No backdrop, no floor, no castshadow. Closed thinsoberreformation news/contextpamphlet, warmcreamragpaper, plainbrown foldedspine andrestrained singlelineprinterborder with tinycornerknots. Broadblankcover, no demon/caricature/halo/prophet orportrait. Serious religiousalternative. Exportreadingface: flatfrontal, broad4:3/landscape whereopen, square/portraitwhereclosed. All text remainsresponsiveHTML.",
+      "references": [
+        "assets/chapter3/documents/ch3_doc_twelve_articles_open.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/documents/ch4_doc_muentzer_context_closed.png"
+    },
+    {
+      "path": "documents/ch4_doc_muentzer_context_open.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE compact transparent isolated production PNG. Whole object with4%clear margin, upper-left light. No backdrop, no floor, no castshadow. LargeflatOPEN two-page sobernews/contextpamphlet MATCHmatchingwarmcreampaper closedMuentzer, broadquietBLANK readingareas withvery narrow printedlinerules, finecentralfold. No portraits/demons/violenceorletters. Serious reformationaldebate, minimalornament, frontalon. Exportreadingface: flatfrontal, broad4:3/landscape whereopen, square/portraitwhereclosed. All text remainsresponsiveHTML.",
+      "references": [
+        "assets/chapter3/documents/ch3_doc_twelve_articles_open.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/documents/ch4_doc_muentzer_context_open.png"
+    },
+    {
+      "path": "documents/ch4_doc_harsh_text_closed.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE compact transparent isolated production PNG. Whole object with4%clear margin, upper-left light. No backdrop, no floor, no castshadow. Corrected final CLOSED pamphlet. Use supplied closed Ermahnung as exact format reference: ONE single shut thin upright rag-paper pamphlet, ONLY one front cover visible, spine on LEFT edge, NO central binding, NO open spread, NO pair of pages. Narrow heavy dark double printer rule on a single plain cream blank cover; slightly darker worn paper than peace admonition. No legible letters, no blood/flames. Fully visible object and margin.",
+      "references": [
+        "exports/chapter4_assets_final/documents/ch4_doc_ermahnung_closed.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/documents/ch4_doc_harsh_text_closed.png"
+    },
+    {
+      "path": "documents/ch4_doc_harsh_text_open.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE compact transparent isolated production PNG. Whole object with4%clear margin, upper-left light. No backdrop, no floor, no castshadow. LargeflatOPEN laterMayprintedtract two-page ragpaperspread, relatedtoermahnungopen, modestheavierdoublelinerule andslightlydarkerpaperedge butbroadBLANK quietreadingareas. No redbloodorweapons/portrait/text. Slendergutter, nearfrontal;eachpage80%usable. Exportreadingface: flatfrontal, broad4:3/landscape whereopen, square/portraitwhereclosed. All text remainsresponsiveHTML.",
+      "references": [
+        "assets/chapter3/documents/ch3_doc_twelve_articles_open.png",
+        "exports/chapter4_assets_final/documents/ch4_doc_ermahnung_open.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/documents/ch4_doc_harsh_text_open.png"
+    },
+    {
+      "path": "documents/ch4_doc_luther_comparison_frame.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE compact transparent isolated production PNG. Whole object with4%clear margin, upper-left light. No backdrop, no floor, no castshadow. FINAL readable comparative source spread: two large equal blank cream rag-paper leaves joined centrally. EACH page has a generous blank header region y8..20%, large ORIGINAL-SOURCE region y23..66%, and a genuinely LARGE MODERN-SUMMARY region y70..91% (at least one fifth of page height). Thin restrained dark printer rules separate these three zones. NOT narrow footer bands. BOTH summary fields need enough space for multiple HTML sentences at18px. No printed words at all. No decorative scrollwork reducing paper area. Historical hand-painted paper related to Ermahnung source. True transparent outside whole open spread, full edges and margins.",
+      "references": [
+        "exports/chapter4_assets_final/documents/ch4_doc_ermahnung_lords.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/documents/ch4_doc_luther_comparison_frame.png"
+    },
+    {
+      "path": "ui/ch4_ui_two_regiments_table.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE compact transparent isolated production PNG. Whole object with4%clear margin, upper-left light. No backdrop, no floor, no castshadow. A compact horizontalhistorical oak tabletop viewednear-topdown with TWO largeblank creamragpaper writingmats laid leftandright and a smaller neutralblank parchmentstrip BETWEEN them foruncertainboundarycases. No rigidboxwalls or locks. Minimalwornwoodedge, amplepaperarea, no words/numbers/icons. LaterHTMLlabels/cases; sameexisting UI materiallanguage, no newglobalframe or button.",
+      "references": [
+        "assets/chapter3/props/ch3_prop_wooden_assembly_table.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/ui/ch4_ui_two_regiments_table.png"
+    },
+    {
+      "path": "ui/ch4_case_cards_set.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE compact transparent isolated production PNG. Whole object with4%clear margin, upper-left light. No backdrop, no floor, no castshadow. ONE compact visualsetof4separateBLANK smallragpaper casecards, arranged tidy2x2withsmall gaps, straightfrontal view, matchingcream/brownletter strips, all wholecorners visible. Minimalpaperedge; no text/numbers/pictograms. LaterHTML renderscases and accessiblebuttons. Not moderncards, no shadows inflatingbounds.",
+      "references": [
+        "assets/chapter3/documents/ch3_doc_twelve_articles_open.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/ui/ch4_case_cards_set.png"
+    },
+    {
+      "path": "ui/ch4_ui_three_interpretations_table.png",
+      "prompt": "Use case: historical-scene. Production asset for 1525 – Zwischen Freiheit und Aufruhr, Chapter4. Match supplied CANON style only: warm adult hand-drawn textured historical adventure illustration, restrained brown ochre darkgreen cream rust, wood leather rag-paper iron wool linen wax; natural upper-left light. Southern Germany/Reich1525. No photorealism, cartoon exaggeration, fantasy, neon, modern furniture/clothing/icons or UI. NO lettering, readable text, invented glyph rows, watermark or captions. ONE compact transparent isolated production PNG. Whole object with4%clear margin, upper-left light. No backdrop, no floor, no castshadow. A compact near-topdown horizontaloak readingtable with THREE equallylargeblank creamrag-paper mats sidebyside. Centrebarriersonlynarrowlinenribbons, no icons/labels/words; no positioncondemned, allsamequality. Plentyquietspace percolumn for laterHTMLlabels: three serious reformationalinterpretations. Wornwarmwoodedge, minimalornament, reuse existing globalUI no newbuttons.",
+      "references": [
+        "assets/chapter3/props/ch3_prop_wooden_assembly_table.png"
+      ],
+      "saved_output": "exports/chapter4_assets_final/ui/ch4_ui_three_interpretations_table.png"
+    }
+  ],
+  "revision_count": 8,
+  "export": "Alpha <=8 removed; mechanical trim, proportional Lanczos scale, safety padding and overlay positioning. No content drawn programmatically. References to newly generated images identify corresponding final exports; generation used their original tool outputs."
+}

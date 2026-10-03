@@ -1,0 +1,740 @@
+[
+  {
+    "type": "scene",
+    "id": "ch4_bg_manor_negotiation.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_bg_village_assembly_large.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_bg_village_edge_group.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_bg_storehouse.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_bg_jakob_study_table.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_bg_peasant_band_camp_edge.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_bg_village_escalation.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_village_nuanced.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_village_simplified.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_village_religious.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_village_confrontational.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_delegation.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_withheld_dues.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_public_meeting.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_resistance_group.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_blockade.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_smoke_distance.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_refugees_cart.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_armed_group.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_joining_peasant_band.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_religious_polarization.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_events_moved_without_you.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "negotiation_open",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "mobilized_community",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "joining_peasant_band",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "religious_polarization",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "events_moved_without_you",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "reading",
+    "id": "ch4_doc_luther_freedom_small.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "reading",
+    "id": "ch4_doc_worldly_authority_small.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "reading",
+    "id": "ch4_doc_ermahnung_closed.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "reading",
+    "id": "ch4_doc_ermahnung_open.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "reading",
+    "id": "ch4_doc_ermahnung_lords.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "reading",
+    "id": "ch4_doc_ermahnung_peasants.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "reading",
+    "id": "ch4_doc_muentzer_context_closed.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "reading",
+    "id": "ch4_doc_muentzer_context_open.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "reading",
+    "id": "ch4_doc_harsh_text_closed.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "reading",
+    "id": "ch4_doc_harsh_text_open.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "reading",
+    "id": "ch4_doc_luther_comparison_frame.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "reading",
+    "id": "ch4_ui_two_regiments_table.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "reading",
+    "id": "ch4_case_cards_set.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "reading",
+    "id": "ch4_ui_three_interpretations_table.png",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_bg_manor_negotiation.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_bg_village_assembly_large.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_bg_village_edge_group.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_bg_storehouse.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_bg_jakob_study_table.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_bg_peasant_band_camp_edge.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_bg_village_escalation.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_village_nuanced.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_village_simplified.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_village_religious.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_village_confrontational.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_delegation.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_withheld_dues.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_public_meeting.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_resistance_group.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_blockade.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_smoke_distance.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_refugees_cart.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_armed_group.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_joining_peasant_band.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_religious_polarization.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "ch4_overlay_events_moved_without_you.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "negotiation_open",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "mobilized_community",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "joining_peasant_band",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "religious_polarization",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "scene",
+    "id": "events_moved_without_you",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "reading",
+    "id": "ch4_doc_luther_freedom_small.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "reading",
+    "id": "ch4_doc_worldly_authority_small.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "reading",
+    "id": "ch4_doc_ermahnung_closed.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "reading",
+    "id": "ch4_doc_ermahnung_open.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "reading",
+    "id": "ch4_doc_ermahnung_lords.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "reading",
+    "id": "ch4_doc_ermahnung_peasants.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "reading",
+    "id": "ch4_doc_muentzer_context_closed.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "reading",
+    "id": "ch4_doc_muentzer_context_open.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "reading",
+    "id": "ch4_doc_harsh_text_closed.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "reading",
+    "id": "ch4_doc_harsh_text_open.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "reading",
+    "id": "ch4_doc_luther_comparison_frame.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "reading",
+    "id": "ch4_ui_two_regiments_table.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "reading",
+    "id": "ch4_case_cards_set.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  },
+  {
+    "type": "reading",
+    "id": "ch4_ui_three_interpretations_table.png",
+    "viewport": {
+      "width": 820,
+      "height": 640
+    },
+    "pass": true
+  }
+]
