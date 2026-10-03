@@ -423,3 +423,15 @@ dialog:has(.notebook) {
 .chapter-three-layout:has(.ch3-ending) .interaction { top:50%; bottom:auto; transform:translate(-50%,-50%); }
 .ch3-ending { animation:ch3-ending 700ms both; }
 .ch3-route-markers { inset:auto; width:5%; height:9%; opacity:.85; transform:translate(-50%,-50%); }
+
+/* A focused press table uses the workshop's right wall, away from its baked press. */
+.ch3-print-workbench { background:linear-gradient(#24160bbb,#24160bcc),url('../assets/chapter3/backgrounds/ch3_bg_memmingen_printshop.png') right center/230% auto; border:1px solid #936c40; box-shadow:inset 0 0 35px #110b08; }
+.print-layout .task-panel { background:var(--wood-surface); color:#f1dfbc; }
+.print-layout .task-heading { padding:.6rem 1rem; }
+.print-layout .task-heading h2 { margin:.2rem 0; }
+.print-layout .task-scroll { padding:.6rem; }
+.print-layout .task-scroll>p { margin:.3rem .5rem .6rem; }
+.print-layout .panel-actions { padding:.5rem; }
+.print-stack img { transition:height .4s,opacity .4s; }
+
+.print-layout .task-heading .eyebrow { color:#dbc398; }

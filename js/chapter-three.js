@@ -121,7 +121,7 @@ export function chapterThreeAction(action,target){
   if(c().printPhase==='press'){
    c().printPhase='remove';c().pressed=true;
    // Presentation-only motion; canonical phase is persisted immediately.
-   setTimeout(()=>{c().pressed=false;if(state.scene==='ch3_press')hooks.render();},750);
+   const game=c();setTimeout(()=>{game.pressed=false;if(c()===game&&state.scene==='ch3_press')hooks.render();},750);
   }return true;
  }
  if(action==='ch3-map-next'){go('return');return true;}
@@ -137,8 +137,24 @@ export function chapterThreeDrop(id,zone){
  if(state.scene==='ch3_clusters'){if(/^[0-7]$/.test(id)&&/^[0-7]$/.test(zone)&&id!==zone)c().pair=[...new Set([...c().pair,id,zone])];return;}
  if(state.scene!=='ch3_press')return;
  const phase=c().printPhase;
- const expected={form:['form','bed','ink'],ink:['ink','bed','paper'],paper:['paper','bed','press'],remove:['finished','take','stack'],stack:['finished','stack','ink']}[phase];
- if(!expected||id!==expected[0]||zone!==expected[1]){notify('An der Presse: '+{form:'Zuerst gehört die Druckform auf den Schlitten.',ink:'Die Druckform braucht Farbe.',paper:'Nun gehört ein unbedruckter Bogen auf die Form.',press:'Die Presse ist bereit. Betätige den Hebel.',remove:'Nimm den bedruckten Bogen heraus.',stack:'Lege den Bogen zum Stapel.'}[phase]);return;}
+ const expected={ink:['ink','bed','paper'],paper:['paper','bed','form'],form:['form','bed','press'],remove:['finished','take','copying']}[phase];
+ if(!expected||id!==expected[0]||zone!==expected[1]){notify('An der Presse: '+{ink:'Die Form braucht zuerst Farbe.',paper:'Lege Papier auf die eingefärbte Form.',form:'Bringe Form und Papier in die Presse.',press:'Betätige den Hebel.',remove:'Nimm den fertigen Bogen heraus.'}[phase]);return;}
  c().printPhase=expected[2];c().selected=null;
- if(phase==='stack'){c().printed++;if(c().printed===4){c().printPhase='done';addUnique(state.minigames.completed,'ch3Print');}}
+ if(phase==='remove'){c().printed=1;c().pressed=false;}
+}
+let copyTimer=null,copyOwner=null;
+export function resumeChapterThreePrinting(){
+ const game=c();
+ if(!hooks.active()||state.scene!=='ch3_press'||game.printPhase!=='copying')return;
+ if(copyTimer&&copyOwner===game)return;
+ if(copyTimer)clearTimeout(copyTimer);
+ copyOwner=game;
+ game.pressed=true;
+ copyTimer=setTimeout(()=>{
+  copyTimer=null;
+  if(!hooks.active()||c()!==game||state.scene!=='ch3_press'||game.printPhase!=='copying')return;
+  game.printed++;game.pressed=false;
+  if(game.printed>=4){game.printPhase='done';addUnique(state.minigames.completed,'ch3Print');}
+  hooks.persist();hooks.render();
+ },1700);
 }

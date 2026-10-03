@@ -1,0 +1,10 @@
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright'),assert=require('node:assert/strict'),server=require('./serve.cjs');
+(async()=>{server.listen(4187);const b=await chromium.launch({channel:'msedge',headless:true});try{const p=await b.newPage();await p.goto('http://127.0.0.1:4187/');
+for(const [width,height] of [[1024,768],[820,640],[1440,900]]){
+ await p.setViewportSize({width,height});await p.evaluate(async()=>{const {prepareAdminStateForScene}=await import('./js/admin-state.js');localStorage.setItem('1525.freedom.save.v1',JSON.stringify(prepareAdminStateForScene('ch3_articles')));});await p.goto('http://127.0.0.1:4187/');await p.locator('[data-action="resume"]').click();while(await p.locator('[data-action="dialogue-next"]').count())await p.locator('[data-action="dialogue-next"]').click();await p.locator('[data-action="ch3-document"]').click();
+ for(let id=1;id<=12;id++){
+ await p.locator(`[data-article="${id}"]`).click();const result=await p.locator('.ch3-article-view').evaluate(n=>{const paper=n.querySelector('.ch3-document-paper').getBoundingClientRect(),scroll=n.querySelector('.ch3-article-scroll');return {scroll:scroll.scrollHeight>scroll.clientHeight+1,clipped:[...n.querySelectorAll('.ch3-article-leaf>*')].some(c=>{const r=c.getBoundingClientRect();return r.top<paper.top+12||r.bottom>paper.bottom-12;}),horizontal:document.documentElement.scrollWidth>innerWidth,controls:[...n.querySelectorAll('button')].some(b=>{const r=b.getBoundingClientRect();return r.height<44||r.left<0||r.right>innerWidth||r.bottom>innerHeight;} )};});assert.deepEqual(result,{scroll:false,clipped:false,horizontal:false,controls:false},`${width} article ${id}`);await p.screenshot({path:`artifacts/ch3-article-${id}-${width}.png`});
+ }
+ assert.equal(await p.locator('[data-article-continue]').isEnabled(),true);await p.locator('[data-article-continue]').click();console.log('Every article text/control fully contained, readable type, comparison ready',width);
+}
+}finally{await b.close();server.close();}})().catch(e=>{console.error(e);process.exitCode=1;server.close();});

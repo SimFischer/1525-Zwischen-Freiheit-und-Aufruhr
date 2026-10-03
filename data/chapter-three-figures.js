@@ -1,4 +1,3 @@
-// Measured alpha bounds of unchanged originals; keep feet fixed across poses.
 export const figureFrames = {
   "assets/chapter3/characters/ch3_char_georg_neutral.png": {
     "width": 512,
@@ -168,6 +167,36 @@ export const figureFrames = {
       0,
       346,
       808
+    ]
+  },
+  "assets/chapter3/characters/ch3_char_anna_repaired.png": {
+    "width": 789,
+    "height": 1994,
+    "bounds": [
+      0,
+      0,
+      789,
+      1994
+    ]
+  },
+  "assets/chapter3/characters/ch3_char_jakob_repaired.png": {
+    "width": 752,
+    "height": 2092,
+    "bounds": [
+      0,
+      0,
+      752,
+      2078
+    ]
+  },
+  "assets/chapter3/characters/ch3_char_konrad_repaired.png": {
+    "width": 820,
+    "height": 1918,
+    "bounds": [
+      0,
+      0,
+      806,
+      1900
     ]
   }
 };

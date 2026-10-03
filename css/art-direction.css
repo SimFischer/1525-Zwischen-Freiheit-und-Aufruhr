@@ -439,3 +439,23 @@ body[data-mode="admin"] .admin-console { width:100%; height:min(850px,calc(94svh
 .ch3-document-paper { color:#302012; }
 .ch3-article-view .editorial-info { color:#ead5ad; }
 .ch3-article-view .editorial-info a { color:#f0cd92; }
+
+/* Large source desk, compact numbered parchment registers. */
+dialog:has(.ch3-article-view) { width:92vw; max-width:1300px; height:90svh; max-height:90svh; padding:10px; overflow:hidden; }
+.ch3-article-view { height:100%; max-height:100%; }
+.ch3-article-tabs { justify-content:center; gap:4px; padding:0 0 4px; }
+.ch3-article-tabs button { width:44px; height:44px; min-width:44px; padding:4px; font-size:1rem; }
+.ch3-article-scroll { display:flex; flex-direction:column; }
+.ch3-document-paper { flex:1; min-height:320px; padding:clamp(20px,3vh,32px) 7%; gap:9%; align-content:center; font-size:1.06rem; line-height:1.48; }
+.ch3-document-paper h2 { font-size:clamp(1.45rem,2.8vw,2rem); line-height:1.15; margin:.35rem 0 .7rem; overflow-wrap:anywhere; }
+.ch3-document-paper p { margin:.6rem 0; }
+.ch3-document-paper .eyebrow { font-size:.8rem; }
+.ch3-document-paper .ch3-summary-label,.ch3-document-paper .muted { font-size:.8rem; line-height:1.3; }
+.ch3-document-paper blockquote { margin:.4rem 0; padding:.5rem 0; font-size:1.15rem; line-height:1.5; }
+.ch3-article-view .panel-actions { gap:.4rem; padding:.5rem .4rem 0; justify-content:space-between; }
+.ch3-article-view .panel-actions span { font-size:.85rem; flex:1 1 260px; }
+@media(max-width:600px) { dialog:has(.ch3-article-view) { width:94vw; padding:6px; }.ch3-document-paper { display:block; min-height:0; padding:1rem; }.ch3-article-view .overlay-top h1 { font-size:1.1rem; }.ch3-article-tabs button { flex:0 0 44px; } }
+
+@media(min-width:601px) { .ch3-document-paper { padding-left:9%; padding-right:9%; gap:8%; }.ch3-document-paper .ch3-article-focus { padding:1.5rem; } }
+.ch3-article-view .overlay-top { margin-bottom:.4rem; flex-shrink:0; }
+.ch3-document-paper .ch3-article-leaf:not(.ch3-article-focus) { padding:0 .4rem; }

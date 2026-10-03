@@ -70,7 +70,13 @@ export function load(normal = false) {
     const isRecord = item => item && typeof item === 'object' && !Array.isArray(item);
     const validList = (items, allowed, max) => Array.isArray(items) && items.length<=max && new Set(items).size===items.length && items.every(item=>allowed.includes(item));
     const c3=base.chapter3;
-    if(!isRecord(c3)||typeof c3.completed!=='boolean'||!Number.isInteger(c3.printed)||c3.printed<0||c3.printed>4||!['form','ink','paper','press','remove','stack','done'].includes(c3.printPhase)) return null;
+    if(!isRecord(c3)||typeof c3.completed!=='boolean'||!Number.isInteger(c3.printed)||c3.printed<0||c3.printed>4||!['form','ink','paper','press','remove','stack','copying','done'].includes(c3.printPhase)) return null;
+    // Preserve old press saves while removing the remaining repeated cycles.
+    if(value.chapter3 && value.chapter3.printSequenceVersion!==2) {
+      if(c3.printed>0 || c3.printPhase==='stack') { c3.printed=Math.max(1,c3.printed); c3.printPhase=c3.printed>=4?'done':'copying'; }
+      else if(c3.printPhase==='form') c3.printPhase='ink';
+      c3.printSequenceVersion=2; c3.selected=null;
+    }
     if(!validList(c3.pair,Array.from({length:8},(_,i)=>String(i)),8)||!validList(c3.interpretations,['A','B','C','D'],4)||!validList(c3.seenArticles,Array.from({length:12},(_,i)=>i+1),12)||!isRecord(c3.articleComparison)||!isRecord(c3.priorProfile)||!Array.isArray(c3.complaintClusters)||c3.complaintClusters.length>28||c3.complaintClusters.some(x=>!isRecord(x)||!validList(x.cards,Array.from({length:8},(_,i)=>String(i)),8)||x.cards.length<2||!['rights','dependence','voice','basis'].includes(x.reason))) return null;
     const areas=['food','seed','reserve'];
     const complaintIds=grievances.map(item=>item.id);

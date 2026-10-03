@@ -18,9 +18,9 @@ export function memoryText(game=state){return '<h2>Was du aus deinem Dorf mitbri
 function printView(){
  const c=state.chapter3,phase=c.printPhase;
  const piece=(id,file,label)=>`<button class="sort-card print-piece ${c.selected===id?'selected':''}" data-action="ch3-print-piece" data-card="${id}" aria-pressed="${c.selected===id}" aria-label="${label}"><img src="${asset('minigames',file)}" alt="" draggable="false"><span>${label}</span></button>`;
- const ready={form:['form','print_type_form','Druckform'],ink:['ink','print_ink_tool','Farbe'],paper:['paper','print_blank_sheet','Papier'],remove:['finished','print_finished_sheet','Bedruckter Bogen'],stack:['finished','print_finished_sheet','Bedruckter Bogen']}[phase];
- const instructions={form:'Setze die Druckform auf den Schlitten.',ink:'Trage Farbe auf die Form auf.',paper:'Lege einen unbedruckten Bogen ein.',press:'Betätige den Hebel der Presse.',remove:'Nimm den fertigen Bogen heraus.',stack:'Lege ihn auf den Stapel.',done:'Vier Bögen liegen bereit. Wer trägt sie weiter?'};
- return task('An der Druckerpresse',`<p>${instructions[phase]} Du kannst die Dinge ziehen oder antippen und ihren Platz wählen.</p><div class="ch3-print-workbench"><div class="press-object ${c.pressed?'pressing':''}" aria-label="Druckpresse"><img class="press-base" src="${asset('minigames','print_press_base')}" alt="Hölzerne Druckpresse"><img class="press-platen" src="${asset('minigames','print_press_platen')}" alt=""><img class="press-handle" src="${asset('minigames','print_press_handle')}" alt="">${phase!=='form'?`<img class="press-form ${phase!=='ink'?'inked':''}" src="${asset('minigames','print_type_form')}" alt="Druckform">`:''}${['press','remove'].includes(phase)?`<img class="press-sheet" src="${asset('minigames',phase==='remove'?'print_finished_sheet':'print_blank_sheet')}" alt="Bogen auf der Form">`:''}${['form','ink','paper'].includes(phase)?`<button data-drop-zone="bed" data-action="ch3-print-place" data-zone="bed" class="press-bed" aria-label="Auf die Druckform legen" ${['form','ink','paper'].includes(phase)?'':'disabled'}>Auf den Schlitten</button>`:''}${phase==='press'?act('Den Hebel betätigen','press','class="primary press-lever"'):''}${phase==='remove'?act('Bogen herausnehmen','print-place','data-zone="take" data-card="finished" class="press-take"'):''}</div><div class="print-tools">${ready?piece(...ready):''}<div class="print-stack" data-drop-zone="stack"><img src="${asset('minigames','print_stack')}" alt="Papierstapel" style="opacity:${.3+c.printed*.175};height:${80+c.printed*9}px"><p>${c.printed?c.printed+' bedruckte Bögen':'Der Platz für die Bögen'}</p>${phase==='stack'?act('Zum Stapel legen','print-place','data-zone="stack" data-card="finished"'):''}</div>${['form','ink','paper'].includes(phase)?act('Auf die Form legen','print-place',`data-zone="bed" ${c.selected?'':'disabled'}`):''}</div></div>`,phase==='done'?next('Die Bögen weitertragen →','map'):'');
+ const ready={form:['form','print_type_form','Form und Papier'],ink:['ink','print_ink_tool','Farbe'],paper:['paper','print_blank_sheet','Papier'],remove:['finished','print_finished_sheet','Bedruckter Bogen'],stack:['finished','print_finished_sheet','Bedruckter Bogen']}[phase];
+ const instructions={form:'Bringe Form und Papier zusammen in die Presse.',ink:'Trage Farbe auf die Form auf.',paper:'Lege einen unbedruckten Bogen auf die eingefärbte Form.',press:'Betätige den Hebel der Presse.',remove:'Nimm den fertigen Bogen heraus.',copying:'Drucker: „Gut. Jetzt geht es schneller.“ Aus dem ersten Bogen entstehen weitere.',done:'Vier Bögen liegen bereit. Wer trägt sie weiter?'};
+ return task('An der Druckerpresse',`<p>${instructions[phase]} ${['copying','done'].includes(phase)?'':'Du kannst die Dinge ziehen oder antippen und ihren Platz wählen.'}</p><div class="ch3-print-workbench"><div class="press-object ${c.pressed?'pressing':''}" aria-label="Druckpresse"><img class="press-base" src="${asset('minigames','print_press_base')}" alt="Hölzerne Druckpresse"><img class="press-platen" src="${asset('minigames','print_press_platen')}" alt=""><img class="press-handle" src="${asset('minigames','print_press_handle')}" alt=""><img class="press-form ${phase==='ink'?'':'inked'}" src="${asset('minigames','print_type_form')}" alt="Druckform">${['form','press','remove','copying'].includes(phase)?`<img class="press-sheet" src="${asset('minigames',phase==='remove'?'print_finished_sheet':'print_blank_sheet')}" alt="Bogen auf der Form">`:''}${['form','ink','paper'].includes(phase)?`<button data-drop-zone="bed" data-action="ch3-print-place" data-zone="bed" class="press-bed" aria-label="Auf die Druckform legen" ${['form','ink','paper'].includes(phase)?'':'disabled'}>${phase==='form'?'In die Presse':'Auf die Druckform'}</button>`:''}${phase==='press'?act('Den Hebel betätigen','press','class="primary press-lever"'):''}${phase==='remove'?act('Bogen herausnehmen','print-place','data-zone="take" data-card="finished" class="press-take"'):''}</div><div class="print-tools">${ready?piece(...ready):''}<div class="print-stack" data-drop-zone="stack"><img src="${asset('minigames','print_stack')}" alt="Papierstapel" style="opacity:${.3+c.printed*.175};height:${80+c.printed*9}px"><p>${c.printed?c.printed+' bedruckte Bögen':'Der Platz für die Bögen'}</p>${phase==='stack'?act('Zum Stapel legen','print-place','data-zone="stack" data-card="finished"'):''}</div>${['form','ink','paper'].includes(phase)?act(phase==='form'?'In die Presse bringen':'Auf die Form legen','print-place',`data-zone="bed" ${c.selected?'':'disabled'}`):''}</div></div>`,phase==='done'?next('Die Bögen weitertragen →','map'):'');
 }
 export function chapterThreePanel(){
  const c=state.chapter3,stage=c.stage;
@@ -42,15 +42,16 @@ export function chapterThreePanel(){
  if(stage==='chapter4')return task('Kapitel 4 – Ordnung oder Widerstand?','<p>Die Forderungen sind unterwegs. Wie weit darf man für sie gehen?</p><p>Die Fortsetzung wird noch vorbereitet.</p>',button('Notizbuch öffnen','notebook','class="quiet"')+next('Zu den Forderungen zurück','end'));
  return '';
 }
-function figure(id,x,height,bottom,pose='neutral'){
+function figure(id,x,height,bottom,pose='neutral',mirror=false){
  const person=characters[id],active=state.dialogue?.lines[state.dialogue.index]?.speaker===id;
  const emotion=active?(state.dialogue.lines[state.dialogue.index].emotion||'talking'):pose;
- const old={peter:'peter_'+(active?'talking':'neutral'),anna:'anna_'+(active?'talking':'neutral'),jakob:'jakob_'+(active&&emotion!=='reading'?'talking':'reading'),konrad:'konrad_arguing'};
- const src=old[id]?'assets/chapter2/characters/ch2_char_'+old[id]+'.png':person.sceneStates[emotion]||person.sceneStates[pose]||person.sceneStates.neutral;
+ const old={peter:'peter_neutral',anna:'anna_neutral',jakob:'jakob_'+(active&&emotion!=='reading'?'talking':'reading'),konrad:'konrad_arguing'};
+ const src=['anna','jakob','konrad'].includes(id)?'assets/chapter3/characters/ch3_char_'+id+'_repaired.png':old[id]?'assets/chapter2/characters/ch2_char_'+old[id]+'.png':person.sceneStates[emotion]||person.sceneStates[pose]||person.sceneStates.neutral;
  const frame=figureFrames[src], ratio=sceneById[state.scene].background==='village'?9/16:3/4;
  const imageBottom=frame?bottom-height*(1-frame.bounds[3]/frame.height):bottom;
- const center=frame?x+height*ratio*(frame.bounds[0]+frame.bounds[2])/2/frame.height:x+10;
- return src?`<span class="ch3-ground" style="left:${center-5}%;bottom:${bottom}%" aria-hidden="true"></span><img class="ch3-person" data-person="${id}" src="${src}" style="left:${x}%;height:${height}%;bottom:${imageBottom}%" alt="${person.name}">`:'';
+ const alphaCenter=frame?(frame.bounds[0]+frame.bounds[2])/2:0;
+ const center=frame?x+height*ratio*(mirror?frame.width-alphaCenter:alphaCenter)/frame.height:x+10;
+ return src?`<span class="ch3-ground" style="left:${center-5}%;bottom:${bottom}%" aria-hidden="true"></span><img class="ch3-person" data-person="${id}" src="${src}" style="left:${x}%;height:${height}%;bottom:${imageBottom}%;${mirror?'transform:scaleX(-1);':''}" data-bottom="${imageBottom}" data-ground="${bottom}" data-facing="${mirror?'mirrored':'original'}" alt="${person.name}">`:'';
 }
 export function chapterThreeScene(header){
  const scene=sceneById[state.scene],c=state.chapter3,stage=c.stage;
@@ -61,11 +62,28 @@ export function chapterThreeScene(header){
  // are added during conversation, away from embedded faces and object hotspots.
  const speaker=state.dialogue?.lines[state.dialogue.index]?.speaker;
  let figures='';
- if(scene.background==='memmingen_assembly')figures=figure('lotzer',4,60,8)+figure('jakob',72,55,8,'reading');
- else if(scene.background==='road_to_memmingen')figures=figure('matthes',9,56,9)+figure('konrad',70,53,9);
- else if(scene.background==='memmingen_square'&&!quiet&&speaker&&['georg','katharina','hans'].includes(speaker))figures=figure(speaker,45,55,6);
- else if(scene.background==='memmingen_printshop'&&stage!=='press')figures=figure('printer',67,61,7,'working');
- else if(scene.background==='village')figures=figure('peter',14,57,12)+figure('anna',46,57,12)+figure('jakob',70,57,12,'reading');
+ if(scene.background==='memmingen_assembly'){
+  if(stage==='voices')figures=figure('georg',8,54,12)+figure('matthes',30,58,10,'neutral',true)+figure('konrad',55,55,12)+figure('jakob',77,56,9,'reading');
+  else {figures=figure('lotzer',17,60,12)+figure('jakob',69,55,10,'reading');if(speaker&&!['lotzer','jakob','player'].includes(speaker))figures+=figure(speaker,43,55,14);}
+ }
+ else if(scene.background==='road_to_memmingen')figures=figure('matthes',15,56,12,'neutral',true)+figure('jakob',45,53,14,'reading')+figure('konrad',70,54,10);
+ else if(scene.background==='memmingen_square'&&!quiet&&speaker&&['georg','katharina','hans'].includes(speaker))figures=figure(speaker,45,55,11);
+ else if(scene.background==='memmingen_printshop'&&stage!=='press')figures=figure('jakob',24,56,12,'reading',true)+figure('printer',67,61,11,'working');
+ else if(scene.background==='village'){
+  const visitor=state.dialogue?.lines.some(line=>line.speaker==='matthes')?'matthes':speaker==='lotzer'?'lotzer':'konrad';
+  figures=figure('peter',16,59,12)+figure('anna',37,55,14,'neutral',['jakob','konrad','matthes','lotzer'].includes(speaker))+figure('jakob',58,58,11,'reading')+figure(visitor,78,54,15,'neutral',visitor==='lotzer');
+ }
  const changed=scene.background==='village'?`<img class="ch3-village-bundle" src="${asset('maps','map_paper_bundle_marker')}" alt="Flugblätter sind im Dorf angekommen">`:'';
  return header+`<main class="game-layout chapter-three-layout ${quiet?'exploration-layout':'task-layout'} ${stage==='press'?'print-layout':''}"><section class="stage chapter-three ${scene.background==='village'?'ch3-village':''}" data-scene="${scene.id}" aria-label="${esc(scene.title)}" style="--world-image:url('${new URL(bg,location.href).href}')"><div class="room"><img class="room-image" src="${bg}" alt="${esc(scene.title)}"><div class="ch3-figures">${figures}</div>${changed}${signs}${quiet?'<div class="stage-caption"><h1>Gemeinden kommen zusammen.</h1></div>':''}</div></section><div id="interaction" class="interaction" data-stage="${state.scene}">${chapterThreePanel()}</div><footer class="game-footer"><span id="save-status"></span></footer></main>`;
 }
+
+// Reserve the dialogue's space without moving feet off the illustrated ground.
+export function fitChapterThreeDialogue(){
+ const room=document.querySelector('.chapter-three-layout .room'),panel=document.querySelector('.chapter-three-layout .dialogue-panel');
+ if(!room||!panel)return;
+ const stage=room.parentElement.getBoundingClientRect(),available=panel.getBoundingClientRect().top-stage.top-16;
+ const ratio=room.closest('.ch3-village')?16/9:4/3;
+ room.style.width=Math.min(stage.width,available*ratio)+'px';
+ room.style.top=(available/2)+'px';
+}
+window.addEventListener('resize',fitChapterThreeDialogue);

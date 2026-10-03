@@ -1,6 +1,7 @@
+import { fitChapterThreeDialogue } from './chapter-three-view.js';
 import { configureAdmin, installAdminHold, adminAction, testToolbar, ensureAdminSession, openAdmin } from './admin.js';
 import { prepareAdminStateForScene } from './admin-state.js';
-import { configureChapterThree, prepareChapterThree, chapterThreeAction, chapterThreeDrop, chapterThreeSelect } from './chapter-three.js';
+import { configureChapterThree, prepareChapterThree, chapterThreeAction, chapterThreeDrop, chapterThreeSelect, resumeChapterThreePrinting } from './chapter-three.js';
 import { configureChapterTwo, prepareChapterTwo, chapterTwoAction, chapterTwoDrop, selectCard } from './chapter-two.js';
 import { forestClues, chapterTwoDialogues } from '../data/chapter-two.js';
 import { state, freshState, replaceState, addUnique, conversationDone } from './state.js';
@@ -79,7 +80,9 @@ function render() {
   if(scene.chapter===3) {
     const scroll=app.querySelector('.task-scroll')?.scrollTop||0, previous=app.querySelector('#interaction')?.dataset.stage;
     setMode(state.dialogue?'dialogue':state.interaction?'choice':state.scene==='ch3_hub'?'exploration':'minigame'); state.uiMode=document.body.dataset.mode;
+    resumeChapterThreePrinting();
     app.innerHTML=sceneView()+debugView(debugWasOpen)+testToolbar();
+    fitChapterThreeDialogue();
     if(previous===state.scene && app.querySelector('.task-scroll')) app.querySelector('.task-scroll').scrollTop=scroll;
     return;
   }
@@ -294,7 +297,7 @@ document.addEventListener('change',event => {
   if(event.target.dataset.demand) { state.chapter2.demand[event.target.dataset.demand]=Number(event.target.value); render(); persist(); }
   if (event.target.id === 'debug-scene') { ensureAdminSession(); showPreparedState(prepareAdminStateForScene(event.target.value)); }
 });
-configureChapterThree({enterScene,render,persist});
+configureChapterThree({enterScene,render,persist,active:()=>playing});
 configureChapterTwo({enterScene,render,persist,clues:forestClues,dialogues:chapterTwoDialogues});
 installDragDrop(app,(id,zone) => { if(state.chapter===3) { chapterThreeDrop(id,zone); render(); persist(); return; } if(state.chapter===2) { chapterTwoDrop(id,zone); render(); persist(); return; } state.minigames.sorting[id] = zone; selectedCard = null; render(); persist(); },id => { if(state.chapter===3) { chapterThreeSelect(id); render(); persist(); return; } if(state.chapter===2) { if(state.scene==='ch2_dues') state.chapter2.selected=id; else selectCard(id); render(); persist(); return; } selectedCard = selectedCard === id ? null : id; render(); });
 configureAdmin({isPlaying:()=>playing,render,showState:showPreparedState});
