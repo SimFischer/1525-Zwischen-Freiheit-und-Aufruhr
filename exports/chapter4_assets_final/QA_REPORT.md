@@ -1,44 +1,60 @@
-# Kapitel 4: neuer Dorf-Hub
+# Kapitel 4: zweite Qualitäts- und Konsolidierungsrunde
 
-Neuer Master und vier reduzierte RGBA-Zustände erstellt. Die bisherige
-Vier-Gruppen-Komposition ist verworfen; ihre Dateien sind als Altstand archiviert.
+Grundlage: Commit d6e4979. Der neue Dorf-Hub und seine vier reduzierten
+Zustands-Overlays bleiben bytegleich erhalten. Keine Canon-Figur wurde neu
+erzeugt oder verändert.
 
-Der Canon-Ort bleibt an Kirche, Fachwerk und Tavernenschild erkennbar.
-Der neue feste Platz bietet drei freie Positionen auf einer gemeinsamen Ebene.
-Brunnen und Zustandsmerkmale liegen am Rand, ohne Gesprächsachsen zu blockieren.
-Der Hintergrund enthält keine Personen. Die Zustände zeigen höchstens zwei
-entfernte Personen; Prediger und Bote sind nicht in Overlays eingebaut.
+Gezielt neu gebaut: Herrenhof, Jakobs Studierraum, Gemeindeversammlung und
+Eskalationsplatte. Hintergrund und Vordergrund wurden vor der Platzierung
+der Figuren geplant. Tische stehen an Wänden, Hauptgesprächsflächen bleiben
+frei. Die Eskalation verwendet dieselbe Dorfarchitektur, einen entfernten
+Rauchzug und eine schutzsuchende Familie ohne Schlachtspektakel.
 
-**45 Canon-Kompositionen bestanden:** A Peter/Anna/Jakob,
-B Konrad/Prediger/Jakob, C Matthes/Peter/Konrad; jeweils Master und vier
-Zustände bei **1024×768, 820×640, 1440×900**.
+Alle Räume verwenden gemessene Körper-Bounds und unverzerrte Originalfiguren.
+Je nach Bühne gelten 33%, 36%, 37% oder 41% Körperhöhe. Blickrichtungen werden
+nur im Renderer gespiegelt. Dialoge und Aufgaben lassen die vollständige
+Raumplatte darüber sichtbar; Aufgaben scrollen intern.
 
-Geprüft: gemeinsame Körperhöhe41% und Fußlinie71%, erhaltene Proportionen,
-Bodenkontakt, nach innen gerichtete Randfiguren, vollständige Körper,
-freie Gesichter und Hotspots, mindestens44px Bedienflächen und kein horizontaler
-Überlauf. Die entfernten Personen nutzen eine hintere Bodenlinie52% und Höhe20%;
-ihre Augen liegen annähernd auf derselben Horizontlinie.
-Blätter sitzen auf vorhandener Wandtafel bzw. Randbank.
-Untere26%-Dialogfläche und alle drei Canon-Zonen bleiben in Overlays leer.
+Bestandene Prüfungen:
 
-Alle Canon-Dateien per SHA-256 geprüft: unverändert. Peter verwendet die
-vorhandene vollständige stehende Neutralpose; Anna/Jakob/Konrad die vorhandenen
-vollständigen Kapitel-3-Dateien. Kein Neuzeichnen. Sitzposen werden auf dem
-neuen Dorfplatz nicht eingesetzt.
+- 36 Szenen und 37 zusätzliche Varianten bei 1024×768, 820×640 und 1440×900:
+  365 gerenderte Ansichten einschließlich der im Projekt genutzten
+  Zusatzgrößen 768×1024 und 390×844; Proportionen, gemeinsame Körperhöhe, Bodenkontakt,
+  getrennte Körper, freie Panelbereiche, Hotspots und mindestens 44px große
+  Bedienflächen geprüft.
+- Zusätzlich 215 Explorationsansichten nach dem Schließen der Dialoge:
+  Fortsetzungsplaketten auf allen fünf Bildschirmgrößen ohne Körperkollision. Auf schmalen Bildschirmen sitzen
+  die historischen Schilder über der Gesprächsgruppe.
+- 45 unveränderte Dorf-Canon-Testkompositionen A/B/C mit Master und vier Zuständen.
+- 15 vollständige Routen über alle fünf Endzustände, je elf Reload-Checkpoints.
+- Alle 56 Antwortoptionen, Quellen-/Archivansichten und fünf Endzustände.
+- Alle Quellen mit tatsächlichem HTML-Text: mindestens 18px, Vergrößerung,
+  vollständiger Inhalt und Scrollbereiche. Zusätzlich 120 Quellen-/Zoomansichten
+  mit geprüftem Scrollen jedes Textfelds bis zum Ende. Vergleich April/Mai nutzt größere
+  Hauptfelder. Auf schmalen Bildschirmen fließt der vollständige Text unter der
+  Dokumentabbildung auf hellem Pergament; Materialhintergrund und Textbreite sind geprüft. Modernisierte Quellenworte und Zusammenfassungen sind bezeichnet.
+- Mausziehen, Touch-Tippen und Touch-Ziehen, Tastatur, Abbruch, Speicherstände,
+  ältere Saves und Schutz des normalen Schüler-Spielstands.
+- Asset-Hashes, Original-Canon-Hashes, unveränderte Dorfdateien, transparente
+  Overlay-Safe-Areas und bytegleiche Dateien im ZIP.
 
-Die aktive Dorfansicht nutzt den neuen Master und reduzierte Zustände.
-Figuren werden nach gemessenen Körper-Bounds skaliert und auf die gemeinsame
-Bodenlinie gesetzt. Spiegelung nur im Renderer. Änderungen betreffen
-Bildpfade und Darstellung; Fachtexte, Entscheidungen und Spielstandlogik bleiben.
+Erforderliche Gesprächsgruppen sind enthalten: Peter/Anna/Jakob auf dem
+Gemeindeplatz; Konrad/Peter im Herrenhof; Jakob/Prediger bei der Auslegung;
+Matthes/Jakob im Studierraum; Verwalter/Peter am Hof; Konrad und beide
+Bauernhaufen-Mitglieder am Lager.
 
-Nachweise: `scripts/check-chapter-four-village.cjs`,
-`scripts/check-chapter-four-assets.py`, lokale45 Screenshots unter
-`artifacts/ch4-village-qa/`; Beispiele unter `docs/chapter4-village-preview/`.
-Eingebautes ImageGen; Prompts: `docs/chapter4-consequence-prompts.json`.
+Die fünf Endzustände wurden einzeln gerendert: Abordnung am Herrenhof,
+öffentlich versammelte Gemeinde, Nähe zum Bauernhaufen mit Abmarsch,
+Prediger/Jakob mit religiöser Schrift und ein weitgehend leerer Platz mit Jakob.
 
-Bestehende Prüfungen: 15 vollständige Routen über fünf Endzustände in drei
-Auflösungen mit je11 Reload-Checkpoints bestanden. Zusätzlich alle56 Optionen,
-36 Szenen, Quellen-/Archivansichten, Maus/Touch und Spielstandschutz bestanden.
-Der Asset-Nutzungsnachweis prüft sämtliche aktiven Bilder und alle fünf neuen
-Dorfdateien; zehn bewusst aus dem Dorf entfernte Gruppen/Props sind ausdrücklich
-im Manifest gelistet. Alpha-/Maß-/Hashprüfung und ZIP-Bytevergleich bestanden.
+Fachtexte, Lösungen, Feedback, Notizbuch, Entscheidungs- und Speicherlogik
+bleiben unverändert. Historische Nachweise und Abgrenzung zwischen erfundenem
+Dorfgespräch und Quellenmaterial stehen im Audit. Der vorhandene
+Kapitel-5-Ausblick bleibt ein Ausblick.
+
+Vollständige Umsetzungsvorgaben: `CH4_ASSET_AUDIT.md`,
+`CH4_STAGING_GUIDE.md` und `exports/chapter4_assets_final/manifest.json`.
+Szenen-/Variantenprüfung: `scripts/check-chapter-four-consolidation.cjs`.
+Screenshots: `artifacts/ch4-consolidation/`; ausgewählte Endzustände und
+Gesprächsgruppen: `docs/chapter4-consolidation-preview/`.
+ImageGen-Prompts: `docs/chapter4-consolidation-prompts.json` (eingebautes Tool).

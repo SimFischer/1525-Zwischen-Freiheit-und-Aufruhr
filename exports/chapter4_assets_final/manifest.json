@@ -26,7 +26,8 @@
       "sha256": "fd87766c64b4ddc1551f71cf8ca13e6978816fc0ec3b6706f39cc46b0fd5c1b3",
       "file_size_bytes": 1735205,
       "safe_area_notes": "Bottom 26% reserved for dialogue; actor foot line about 72%.",
-      "implementation_notes": "Render full 4:3 frame. Conversation actors face inward; choose floor anchors after composition review."
+      "implementation_notes": "LEGACY: nicht mit den konsolidierten Szenen kombinieren. Nur zur Archivierung erhalten; konkrete Ablösung: CH4_ASSET_AUDIT.md.",
+      "runtime_status": "legacy"
     },
     {
       "filename": "ch4_bg_village_assembly_large.png",
@@ -49,7 +50,8 @@
       "sha256": "53e0d6cac828607aa39e28150b8ab2a4a8feed25492e9f901ae01e55df9eeaa6",
       "file_size_bytes": 1781851,
       "safe_area_notes": "Bottom 26% reserved for dialogue; actor foot line about 72%.",
-      "implementation_notes": "Render full 4:3 frame. Conversation actors face inward; choose floor anchors after composition review."
+      "implementation_notes": "LEGACY: nicht mit den konsolidierten Szenen kombinieren. Nur zur Archivierung erhalten; konkrete Ablösung: CH4_ASSET_AUDIT.md.",
+      "runtime_status": "legacy"
     },
     {
       "filename": "ch4_bg_village_edge_group.png",
@@ -72,7 +74,8 @@
       "sha256": "b0a43cb6cbe58c73e346cb76084e730e6ea2a76853eb0eb123ba1b2cb1f9b05f",
       "file_size_bytes": 1813359,
       "safe_area_notes": "Bottom 26% reserved for dialogue; actor foot line about 72%.",
-      "implementation_notes": "Render full 4:3 frame. Conversation actors face inward; choose floor anchors after composition review."
+      "implementation_notes": "LEGACY: nicht mit den konsolidierten Szenen kombinieren. Nur zur Archivierung erhalten; konkrete Ablösung: CH4_ASSET_AUDIT.md.",
+      "runtime_status": "legacy"
     },
     {
       "filename": "ch4_bg_storehouse.png",
@@ -95,7 +98,8 @@
       "sha256": "ce39419fdf0349722de1d3ede7d65f89bc22b42b39c64371e221b966f683e157",
       "file_size_bytes": 1524616,
       "safe_area_notes": "Bottom 26% reserved for dialogue; actor foot line about 72%.",
-      "implementation_notes": "Render full 4:3 frame. Conversation actors face inward; choose floor anchors after composition review."
+      "implementation_notes": "Render full 4:3 frame. Conversation actors face inward; choose floor anchors after composition review.",
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_bg_jakob_study_table.png",
@@ -118,7 +122,8 @@
       "sha256": "7b993291699ff05e976716f03dad87a0724a52f51eba446fd25444b8e0e7e63d",
       "file_size_bytes": 1527770,
       "safe_area_notes": "Bottom 26% reserved for dialogue; actor foot line about 72%.",
-      "implementation_notes": "Render full 4:3 frame. Conversation actors face inward; choose floor anchors after composition review."
+      "implementation_notes": "LEGACY: nicht mit den konsolidierten Szenen kombinieren. Nur zur Archivierung erhalten; konkrete Ablösung: CH4_ASSET_AUDIT.md.",
+      "runtime_status": "legacy"
     },
     {
       "filename": "ch4_bg_peasant_band_camp_edge.png",
@@ -141,7 +146,8 @@
       "sha256": "c9d8eadcb950ac56b61634994c0f171ac2db63ea4a2692ec03ada699649d84c5",
       "file_size_bytes": 1698706,
       "safe_area_notes": "Bottom 26% reserved for dialogue; actor foot line about 72%.",
-      "implementation_notes": "Render full 4:3 frame. Conversation actors face inward; choose floor anchors after composition review."
+      "implementation_notes": "Render full 4:3 frame. Conversation actors face inward; choose floor anchors after composition review.",
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_bg_village_escalation.png",
@@ -164,7 +170,8 @@
       "sha256": "10e3a3db9d9ccf2ec251ff45f757392d4bd777d95920447db840df4bc592fa70",
       "file_size_bytes": 1722461,
       "safe_area_notes": "Bottom 26% reserved for dialogue; actor foot line about 72%.",
-      "implementation_notes": "Render full 4:3 frame. Conversation actors face inward; choose floor anchors after composition review."
+      "implementation_notes": "LEGACY: nicht mit den konsolidierten Szenen kombinieren. Nur zur Archivierung erhalten; konkrete Ablösung: CH4_ASSET_AUDIT.md.",
+      "runtime_status": "legacy"
     },
     {
       "filename": "ch4_char_local_preacher_neutral.png",
@@ -192,7 +199,8 @@
       "foot_anchor": [
         256.0,
         881
-      ]
+      ],
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_char_authority_envoy_neutral.png",
@@ -220,7 +228,8 @@
       "foot_anchor": [
         256.0,
         881
-      ]
+      ],
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_char_peasant_band_member_1.png",
@@ -248,7 +257,8 @@
       "foot_anchor": [
         256.0,
         881
-      ]
+      ],
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_char_peasant_band_member_2.png",
@@ -276,7 +286,8 @@
       "foot_anchor": [
         256.0,
         881
-      ]
+      ],
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_char_local_preacher_talking.png",
@@ -304,7 +315,8 @@
       "foot_anchor": [
         256.0,
         881
-      ]
+      ],
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_char_authority_envoy_talking.png",
@@ -332,7 +344,8 @@
       "foot_anchor": [
         255.5,
         881
-      ]
+      ],
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_portrait_local_preacher_neutral.png",
@@ -355,7 +368,8 @@
       "sha256": "c05ff60cb85744885347cd08dded56de9c1ec866b8683ae257f1b5ed4828d9da",
       "file_size_bytes": 362221,
       "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
-      "implementation_notes": "Use object-fit:contain; preserve full cap, chin and shoulders. Never cover-crop."
+      "implementation_notes": "Use object-fit:contain; preserve full cap, chin and shoulders. Never cover-crop.",
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_portrait_local_preacher_talking.png",
@@ -378,7 +392,8 @@
       "sha256": "83bb71da35561228771a52df9bf7cf2ec5989a2123e994b460b6681419cfed2d",
       "file_size_bytes": 344527,
       "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
-      "implementation_notes": "Use object-fit:contain; preserve full cap, chin and shoulders. Never cover-crop."
+      "implementation_notes": "Use object-fit:contain; preserve full cap, chin and shoulders. Never cover-crop.",
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_portrait_authority_envoy_neutral.png",
@@ -401,7 +416,8 @@
       "sha256": "995f91f6917c039a174f62e8e072428c56233c697480663ca0f9df99a4be7c52",
       "file_size_bytes": 322963,
       "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
-      "implementation_notes": "Use object-fit:contain; preserve full cap, chin and shoulders. Never cover-crop."
+      "implementation_notes": "Use object-fit:contain; preserve full cap, chin and shoulders. Never cover-crop.",
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_portrait_authority_envoy_talking.png",
@@ -424,7 +440,8 @@
       "sha256": "13f15272f78be0f4d166533c012bd8242a9a8b5c6b9c78f14cea676dd045ba21",
       "file_size_bytes": 359369,
       "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
-      "implementation_notes": "Use object-fit:contain; preserve full cap, chin and shoulders. Never cover-crop."
+      "implementation_notes": "Use object-fit:contain; preserve full cap, chin and shoulders. Never cover-crop.",
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_portrait_peasant_band_member_1.png",
@@ -447,7 +464,8 @@
       "sha256": "522a18be3e9d84b2c11e120aa5b5470b113083fa961642bf85693391e9d4af0c",
       "file_size_bytes": 373014,
       "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
-      "implementation_notes": "Use object-fit:contain; preserve full cap, chin and shoulders. Never cover-crop."
+      "implementation_notes": "Use object-fit:contain; preserve full cap, chin and shoulders. Never cover-crop.",
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_portrait_peasant_band_member_2.png",
@@ -470,7 +488,8 @@
       "sha256": "6a69ba25b3fa8a9df47153013d5f91208a5c529d64a83112facd31b5212b1fba",
       "file_size_bytes": 365161,
       "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
-      "implementation_notes": "Use object-fit:contain; preserve full cap, chin and shoulders. Never cover-crop."
+      "implementation_notes": "Use object-fit:contain; preserve full cap, chin and shoulders. Never cover-crop.",
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_overlay_delegation.png",
@@ -493,8 +512,9 @@
       "sha256": "962b7b73bdd7281beae28b09d154d8e23cfcb17ca6dc80f3f824d3833807b02a",
       "file_size_bytes": 178288,
       "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
-      "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke.",
-      "compatibility": "legacy scene only; forbidden on new consequence hub"
+      "implementation_notes": "LEGACY: nicht mit den konsolidierten Szenen kombinieren. Nur zur Archivierung erhalten; konkrete Ablösung: CH4_ASSET_AUDIT.md.",
+      "compatibility": "legacy scene only; forbidden on new consequence hub",
+      "runtime_status": "legacy"
     },
     {
       "filename": "ch4_overlay_withheld_dues.png",
@@ -517,9 +537,9 @@
       "sha256": "73f280107751e78dfa6f7cff972b8d09146d9e3b77357f9180b90046a2a1674c",
       "file_size_bytes": 144021,
       "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
-      "implementation_notes": "Retired from active village rendering. Do not combine this previous group/notice composition with consequence_hub_v2.",
+      "implementation_notes": "LEGACY: nicht mit den konsolidierten Szenen kombinieren. Nur zur Archivierung erhalten; konkrete Ablösung: CH4_ASSET_AUDIT.md.",
       "compatibility": "legacy scene only; forbidden on new consequence hub",
-      "runtime_status": "retired_from_village"
+      "runtime_status": "legacy"
     },
     {
       "filename": "ch4_overlay_public_meeting.png",
@@ -542,9 +562,9 @@
       "sha256": "50f2b9a13b89e9c16762e3cad88c55537cdf979395387c04d1b579146691d7b0",
       "file_size_bytes": 342920,
       "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
-      "implementation_notes": "Retired from active village rendering. Do not combine this previous group/notice composition with consequence_hub_v2.",
+      "implementation_notes": "LEGACY: nicht mit den konsolidierten Szenen kombinieren. Nur zur Archivierung erhalten; konkrete Ablösung: CH4_ASSET_AUDIT.md.",
       "compatibility": "legacy scene only; forbidden on new consequence hub",
-      "runtime_status": "retired_from_village"
+      "runtime_status": "legacy"
     },
     {
       "filename": "ch4_overlay_resistance_group.png",
@@ -567,9 +587,9 @@
       "sha256": "bb42614927bb0e4804a0e042182cda5eb98e69c6f7742fe45c51d2390f46f1c8",
       "file_size_bytes": 144011,
       "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
-      "implementation_notes": "Retired from active village rendering. Do not combine this previous group/notice composition with consequence_hub_v2.",
+      "implementation_notes": "LEGACY: nicht mit den konsolidierten Szenen kombinieren. Nur zur Archivierung erhalten; konkrete Ablösung: CH4_ASSET_AUDIT.md.",
       "compatibility": "legacy scene only; forbidden on new consequence hub",
-      "runtime_status": "retired_from_village"
+      "runtime_status": "legacy"
     },
     {
       "filename": "ch4_overlay_blockade.png",
@@ -593,7 +613,8 @@
       "file_size_bytes": 94892,
       "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
       "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke.",
-      "compatibility": "legacy scene only; forbidden on new consequence hub"
+      "compatibility": "legacy scene only; forbidden on new consequence hub",
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_overlay_smoke_distance.png",
@@ -616,9 +637,9 @@
       "sha256": "cdf5e8c640b3af298168e5f51b5f0230979be5966e868ff592f1f62b50f8dd59",
       "file_size_bytes": 14444,
       "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
-      "implementation_notes": "Retired from active village rendering. Do not combine this previous group/notice composition with consequence_hub_v2.",
+      "implementation_notes": "LEGACY: nicht mit den konsolidierten Szenen kombinieren. Nur zur Archivierung erhalten; konkrete Ablösung: CH4_ASSET_AUDIT.md.",
       "compatibility": "legacy scene only; forbidden on new consequence hub",
-      "runtime_status": "retired_from_village"
+      "runtime_status": "legacy"
     },
     {
       "filename": "ch4_overlay_refugees_cart.png",
@@ -641,9 +662,9 @@
       "sha256": "07932cdb1f9744a5aa1378c7b7d0dcbc93c556378d8e9d50026d0221f946b479",
       "file_size_bytes": 124321,
       "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
-      "implementation_notes": "Retired from active village rendering. Do not combine this previous group/notice composition with consequence_hub_v2.",
+      "implementation_notes": "LEGACY: nicht mit den konsolidierten Szenen kombinieren. Nur zur Archivierung erhalten; konkrete Ablösung: CH4_ASSET_AUDIT.md.",
       "compatibility": "legacy scene only; forbidden on new consequence hub",
-      "runtime_status": "retired_from_village"
+      "runtime_status": "legacy"
     },
     {
       "filename": "ch4_overlay_armed_group.png",
@@ -666,9 +687,9 @@
       "sha256": "ddb8439d583cbca70f16f806d0ec47e71b1c913f15cc9396dcd743abb7cc8127",
       "file_size_bytes": 109925,
       "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
-      "implementation_notes": "Retired from active village rendering. Do not combine this previous group/notice composition with consequence_hub_v2.",
+      "implementation_notes": "LEGACY: nicht mit den konsolidierten Szenen kombinieren. Nur zur Archivierung erhalten; konkrete Ablösung: CH4_ASSET_AUDIT.md.",
       "compatibility": "legacy scene only; forbidden on new consequence hub",
-      "runtime_status": "retired_from_village"
+      "runtime_status": "legacy"
     },
     {
       "filename": "ch4_overlay_joining_peasant_band.png",
@@ -692,7 +713,8 @@
       "file_size_bytes": 126486,
       "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
       "implementation_notes": "Overlay canonical village at centered cover crop. Keep this canvas intact, do not trim or stretch. Use one state at a time; avoid duplicate baked-in crowds/smoke.",
-      "compatibility": "legacy scene only; forbidden on new consequence hub"
+      "compatibility": "legacy scene only; forbidden on new consequence hub",
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_overlay_religious_polarization.png",
@@ -715,9 +737,9 @@
       "sha256": "8df81efa2e04ba833aba43ac238084fb42e4c5825b7758cb7ea7c65b2fa4d9de",
       "file_size_bytes": 347531,
       "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
-      "implementation_notes": "Retired from active village rendering. Do not combine this previous group/notice composition with consequence_hub_v2.",
+      "implementation_notes": "LEGACY: nicht mit den konsolidierten Szenen kombinieren. Nur zur Archivierung erhalten; konkrete Ablösung: CH4_ASSET_AUDIT.md.",
       "compatibility": "legacy scene only; forbidden on new consequence hub",
-      "runtime_status": "retired_from_village"
+      "runtime_status": "legacy"
     },
     {
       "filename": "ch4_overlay_events_moved_without_you.png",
@@ -740,9 +762,9 @@
       "sha256": "1095021d6ed8123f6636cf5ad5f73b27b25739dcae1024f2bfcb13ff498000e0",
       "file_size_bytes": 84442,
       "safe_area_notes": "Full-frame 1024x768 placement; all alpha below y568 is zero. Center x355..670 free for paired clusters.",
-      "implementation_notes": "Retired from active village rendering. Do not combine this previous group/notice composition with consequence_hub_v2.",
+      "implementation_notes": "LEGACY: nicht mit den konsolidierten Szenen kombinieren. Nur zur Archivierung erhalten; konkrete Ablösung: CH4_ASSET_AUDIT.md.",
       "compatibility": "legacy scene only; forbidden on new consequence hub",
-      "runtime_status": "retired_from_village"
+      "runtime_status": "legacy"
     },
     {
       "filename": "ch4_prop_warning_notice.png",
@@ -765,8 +787,8 @@
       "sha256": "feb9f3959943896f71604ee865a717dfd3f323c965368a86a1c6f0b553e20291",
       "file_size_bytes": 1006022,
       "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
-      "implementation_notes": "Retired from active village rendering. Do not combine this previous group/notice composition with consequence_hub_v2.",
-      "runtime_status": "retired_from_village"
+      "implementation_notes": "LEGACY: nicht mit den konsolidierten Szenen kombinieren. Nur zur Archivierung erhalten; konkrete Ablösung: CH4_ASSET_AUDIT.md.",
+      "runtime_status": "legacy"
     },
     {
       "filename": "ch4_prop_articles_on_table.png",
@@ -789,7 +811,8 @@
       "sha256": "6c91314c9306ca901fb6992f3304336014a481fbf7f901d1b8b19aa64e798fc8",
       "file_size_bytes": 484643,
       "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
-      "implementation_notes": "Asset only. No chapter logic or raster text. Render labels and sources as accessible HTML."
+      "implementation_notes": "Asset only. No chapter logic or raster text. Render labels and sources as accessible HTML.",
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_prop_seal_document.png",
@@ -812,7 +835,8 @@
       "sha256": "15cac89d0db50758821da36257d914bd1958877ee1249ccf8945cab2484296c0",
       "file_size_bytes": 467767,
       "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
-      "implementation_notes": "Asset only. No chapter logic or raster text. Render labels and sources as accessible HTML."
+      "implementation_notes": "Asset only. No chapter logic or raster text. Render labels and sources as accessible HTML.",
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_prop_letters_other_villages.png",
@@ -835,7 +859,8 @@
       "sha256": "ef24217b06b5a3e55c6aa31fe1f7c72ad535c105d7b5be51ceea47031504265c",
       "file_size_bytes": 502567,
       "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
-      "implementation_notes": "Asset only. No chapter logic or raster text. Render labels and sources as accessible HTML."
+      "implementation_notes": "LEGACY: nicht mit den konsolidierten Szenen kombinieren. Nur zur Archivierung erhalten; konkrete Ablösung: CH4_ASSET_AUDIT.md.",
+      "runtime_status": "legacy"
     },
     {
       "filename": "ch4_prop_dues_cart.png",
@@ -858,8 +883,8 @@
       "sha256": "5643a3133460f6942561b3068991fb5dfc8c0e31dde2034298b89f9fc32f5d95",
       "file_size_bytes": 476215,
       "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
-      "implementation_notes": "Retired from active village rendering. Do not combine this previous group/notice composition with consequence_hub_v2.",
-      "runtime_status": "retired_from_village"
+      "implementation_notes": "Abgabenwagen am trockenen rechten Rand des Speichers: x87%, y62%, Breite18%; keine freistehende Gruppe im Fahrweg.",
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_prop_bible_open.png",
@@ -882,7 +907,8 @@
       "sha256": "7b31d8c3884226df53d0e25658bc67512a107e10ab9ff3561044bbf8b9f518cb",
       "file_size_bytes": 631723,
       "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
-      "implementation_notes": "Asset only. No chapter logic or raster text. Render labels and sources as accessible HTML."
+      "implementation_notes": "LEGACY: nicht mit den konsolidierten Szenen kombinieren. Nur zur Archivierung erhalten; konkrete Ablösung: CH4_ASSET_AUDIT.md.",
+      "runtime_status": "legacy"
     },
     {
       "filename": "ch4_prop_thuringia_report.png",
@@ -905,7 +931,8 @@
       "sha256": "1aa9c656a0d66df7aa62f9f113d5409b7ad247c52fd9bc0aa7f78aba9fd45516",
       "file_size_bytes": 530597,
       "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
-      "implementation_notes": "Asset only. No chapter logic or raster text. Render labels and sources as accessible HTML."
+      "implementation_notes": "Asset only. No chapter logic or raster text. Render labels and sources as accessible HTML.",
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_prop_weingarten_report.png",
@@ -928,7 +955,8 @@
       "sha256": "2e598cc540e40d9ce78c8284c8471ce63cfe4b5a8ef94375fb84c6097748dbc8",
       "file_size_bytes": 488617,
       "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
-      "implementation_notes": "Asset only. No chapter logic or raster text. Render labels and sources as accessible HTML."
+      "implementation_notes": "Asset only. No chapter logic or raster text. Render labels and sources as accessible HTML.",
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_prop_authority_warning.png",
@@ -951,7 +979,8 @@
       "sha256": "ae23ecc01385a3c592eb11d92a8bf51cbc9cfb79c8f33cef8cdb02abc8e9112c",
       "file_size_bytes": 631408,
       "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
-      "implementation_notes": "Asset only. No chapter logic or raster text. Render labels and sources as accessible HTML."
+      "implementation_notes": "Asset only. No chapter logic or raster text. Render labels and sources as accessible HTML.",
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_doc_luther_freedom_small.png",
@@ -982,7 +1011,8 @@
           85,
           85
         ]
-      ]
+      ],
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_doc_worldly_authority_small.png",
@@ -1013,7 +1043,8 @@
           85,
           85
         ]
-      ]
+      ],
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_doc_ermahnung_closed.png",
@@ -1044,7 +1075,8 @@
           85,
           85
         ]
-      ]
+      ],
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_doc_ermahnung_open.png",
@@ -1081,7 +1113,8 @@
           91,
           84
         ]
-      ]
+      ],
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_doc_ermahnung_lords.png",
@@ -1120,7 +1153,8 @@
           90,
           89
         ]
-      ]
+      ],
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_doc_ermahnung_peasants.png",
@@ -1171,7 +1205,8 @@
           91,
           89
         ]
-      ]
+      ],
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_doc_muentzer_context_closed.png",
@@ -1202,7 +1237,8 @@
           85,
           85
         ]
-      ]
+      ],
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_doc_muentzer_context_open.png",
@@ -1239,7 +1275,8 @@
           91,
           84
         ]
-      ]
+      ],
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_doc_harsh_text_closed.png",
@@ -1270,7 +1307,8 @@
           85,
           85
         ]
-      ]
+      ],
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_doc_harsh_text_open.png",
@@ -1307,7 +1345,8 @@
           91,
           84
         ]
-      ]
+      ],
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_doc_luther_comparison_frame.png",
@@ -1330,33 +1369,33 @@
       "sha256": "8be16ece1d987811e0b81a20b68b099f3b113fca4136726a1f145ecb17b3387c",
       "file_size_bytes": 1137549,
       "safe_area_notes": "Complete object with transparent safety margin; preserve aspect ratio.",
-      "implementation_notes": "Use 88–94% of reading-modal width, suggested 92%; HTML source font >=18px and internal scrolling. Regions are [left,top,right,bottom] percentages of final canvas; verify line breaks with final source text. Illustrative material, not an exact facsimile.",
+      "implementation_notes": "April-/Mai-Zusammenfassungen in den vergrößerten Hauptfeldern, untere Streifen nur für Vergleichsakzente. Mindestens18px; jedes Feld intern scrollbar.",
       "html_text_regions_percent": [
         [
           9,
-          27,
+          18,
           45,
-          64
+          70
         ],
         [
           55,
-          27,
+          18,
           91,
-          64
+          70
         ]
       ],
       "html_summary_regions_percent": [
         [
           9,
-          72,
+          76,
           45,
-          88
+          90
         ],
         [
           55,
-          72,
+          76,
           91,
-          88
+          90
         ]
       ],
       "html_title_regions_percent": [
@@ -1372,7 +1411,8 @@
           91,
           20
         ]
-      ]
+      ],
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_ui_two_regiments_table.png",
@@ -1415,7 +1455,8 @@
         18,
         51,
         29
-      ]
+      ],
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_case_cards_set.png",
@@ -1464,7 +1505,8 @@
           91,
           91
         ]
-      ]
+      ],
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_ui_three_interpretations_table.png",
@@ -1507,7 +1549,8 @@
           87,
           36
         ]
-      ]
+      ],
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_bg_village_consequence_hub.png",
@@ -1530,7 +1573,8 @@
       "sha256": "7395f70913c6b47a09e736f507ee1836999c24a77ea4b44bd88e4541027d84e1",
       "safe_area_notes": "Actor zones x22–35%,45–58%,66–78%; feet71%, height41%. Bottom26% clear. Overlay pixels outside all actor zones.",
       "implementation_notes": "Use master consequence hub at full 4:3, proportional scaling only. Overlay has fixed full-frame coordinates; never trim. Canon adults use measured body bounds, common depth and inward gaze.",
-      "revision": "consequence_hub_v2"
+      "revision": "consequence_hub_v2",
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_overlay_consequence_nuanced.png",
@@ -1553,7 +1597,8 @@
       "sha256": "158c7255ab944eaff54f632b1747b21d8a5bfef8a6ccde43c210b375bca63417",
       "safe_area_notes": "Actor zones x22–35%,45–58%,66–78%; feet71%, height41%. Bottom26% clear. Overlay pixels outside all actor zones.",
       "implementation_notes": "Use master consequence hub at full 4:3, proportional scaling only. Overlay has fixed full-frame coordinates; never trim. Canon adults use measured body bounds, common depth and inward gaze.",
-      "revision": "consequence_hub_v2"
+      "revision": "consequence_hub_v2",
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_overlay_consequence_simplified.png",
@@ -1576,7 +1621,8 @@
       "sha256": "826a3a14012253353571a4e7be25ea3fdd5cb3b767d060983a6cfbf1e63eca75",
       "safe_area_notes": "Actor zones x22–35%,45–58%,66–78%; feet71%, height41%. Bottom26% clear. Overlay pixels outside all actor zones.",
       "implementation_notes": "Use master consequence hub at full 4:3, proportional scaling only. Overlay has fixed full-frame coordinates; never trim. Canon adults use measured body bounds, common depth and inward gaze.",
-      "revision": "consequence_hub_v2"
+      "revision": "consequence_hub_v2",
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_overlay_consequence_religious.png",
@@ -1599,7 +1645,8 @@
       "sha256": "88d0c0cf07540ab4cd6e56f1feed6ea21115fdcb3509571551fbb790a795260b",
       "safe_area_notes": "Actor zones x22–35%,45–58%,66–78%; feet71%, height41%. Bottom26% clear. Overlay pixels outside all actor zones.",
       "implementation_notes": "Use master consequence hub at full 4:3, proportional scaling only. Overlay has fixed full-frame coordinates; never trim. Canon adults use measured body bounds, common depth and inward gaze.",
-      "revision": "consequence_hub_v2"
+      "revision": "consequence_hub_v2",
+      "runtime_status": "active"
     },
     {
       "filename": "ch4_overlay_consequence_confrontational.png",
@@ -1622,7 +1669,92 @@
       "sha256": "98ac6121690572f71abf3b3747ca519fa11cfd578f39ab94375909b49804f046",
       "safe_area_notes": "Actor zones x22–35%,45–58%,66–78%; feet71%, height41%. Bottom26% clear. Overlay pixels outside all actor zones.",
       "implementation_notes": "Use master consequence hub at full 4:3, proportional scaling only. Overlay has fixed full-frame coordinates; never trim. Canon adults use measured body bounds, common depth and inward gaze.",
-      "revision": "consequence_hub_v2"
+      "revision": "consequence_hub_v2",
+      "runtime_status": "active"
+    },
+    {
+      "filename": "ch4_bg_manor_negotiation_rebuilt.png",
+      "relative_path": "backgrounds/ch4_bg_manor_negotiation_rebuilt.png",
+      "path": "assets/chapter4/backgrounds/ch4_bg_manor_negotiation_rebuilt.png",
+      "type": "background",
+      "scene": "manor_negotiation_rebuilt",
+      "purpose": "Konsolidierte freie Raumbühne; perspektivisch geprüfte Canon-Gesprächsfläche",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": false,
+      "alpha_bbox": null,
+      "safe_area_notes": "Untere26% ohne wichtige Personen/Objekte; Canon-Fußlinie71–72%.",
+      "staging_notes": "Szenenspezifischer Maßstab, gemessene Körper-Bounds und Blickrichtungen: CH4_STAGING_GUIDE.md",
+      "branch_use": "Siehe vollständigen Szenen-/Variantenkatalog CH4_ASSET_AUDIT.md",
+      "implementation_notes": "Keinen alten Hintergrund oder Gruppenlayer zusätzlich kombinieren.",
+      "sha256": "53e0a9cb4e21e8d0ada45cb16e2581894f40c964243670928c7fb19a555bb345",
+      "runtime_status": "active"
+    },
+    {
+      "filename": "ch4_bg_jakob_study_rebuilt.png",
+      "relative_path": "backgrounds/ch4_bg_jakob_study_rebuilt.png",
+      "path": "assets/chapter4/backgrounds/ch4_bg_jakob_study_rebuilt.png",
+      "type": "background",
+      "scene": "jakob_study_rebuilt",
+      "purpose": "Konsolidierte freie Raumbühne; perspektivisch geprüfte Canon-Gesprächsfläche",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": false,
+      "alpha_bbox": null,
+      "safe_area_notes": "Untere26% ohne wichtige Personen/Objekte; Canon-Fußlinie71–72%.",
+      "staging_notes": "Szenenspezifischer Maßstab, gemessene Körper-Bounds und Blickrichtungen: CH4_STAGING_GUIDE.md",
+      "branch_use": "Siehe vollständigen Szenen-/Variantenkatalog CH4_ASSET_AUDIT.md",
+      "implementation_notes": "Keinen alten Hintergrund oder Gruppenlayer zusätzlich kombinieren.",
+      "sha256": "da40bbeeff1c44d05259e770cbff257476aa6ccfa4e14d8f84a00b561e55a62a",
+      "runtime_status": "active"
+    },
+    {
+      "filename": "ch4_bg_village_assembly_rebuilt.png",
+      "relative_path": "backgrounds/ch4_bg_village_assembly_rebuilt.png",
+      "path": "assets/chapter4/backgrounds/ch4_bg_village_assembly_rebuilt.png",
+      "type": "background",
+      "scene": "village_assembly_rebuilt",
+      "purpose": "Konsolidierte freie Raumbühne; perspektivisch geprüfte Canon-Gesprächsfläche",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": false,
+      "alpha_bbox": null,
+      "safe_area_notes": "Untere26% ohne wichtige Personen/Objekte; Canon-Fußlinie71–72%.",
+      "staging_notes": "Szenenspezifischer Maßstab, gemessene Körper-Bounds und Blickrichtungen: CH4_STAGING_GUIDE.md",
+      "branch_use": "Siehe vollständigen Szenen-/Variantenkatalog CH4_ASSET_AUDIT.md",
+      "implementation_notes": "Keinen alten Hintergrund oder Gruppenlayer zusätzlich kombinieren.",
+      "sha256": "0ddbe71e81622399abe945093bb75bcb41809f53cf087cf2482ddd9647e31dc5",
+      "runtime_status": "active"
+    },
+    {
+      "filename": "ch4_bg_village_escalation_rebuilt.png",
+      "relative_path": "backgrounds/ch4_bg_village_escalation_rebuilt.png",
+      "path": "assets/chapter4/backgrounds/ch4_bg_village_escalation_rebuilt.png",
+      "type": "background",
+      "scene": "village_escalation_rebuilt",
+      "purpose": "Konsolidierte freie Raumbühne; perspektivisch geprüfte Canon-Gesprächsfläche",
+      "new_or_reused": "new",
+      "expected_dimensions": [
+        1024,
+        768
+      ],
+      "transparency": false,
+      "alpha_bbox": null,
+      "safe_area_notes": "Untere26% ohne wichtige Personen/Objekte; Canon-Fußlinie71–72%.",
+      "staging_notes": "Szenenspezifischer Maßstab, gemessene Körper-Bounds und Blickrichtungen: CH4_STAGING_GUIDE.md",
+      "branch_use": "Siehe vollständigen Szenen-/Variantenkatalog CH4_ASSET_AUDIT.md",
+      "implementation_notes": "Keinen alten Hintergrund oder Gruppenlayer zusätzlich kombinieren.",
+      "sha256": "2bd6377e95b1e45dda2f098f17affba5abec586509665e70c499c3e3bf4b4ef2",
+      "runtime_status": "active"
     }
   ],
   "reused_assets": [
@@ -2431,15 +2563,13 @@
   },
   "end_states": {
     "negotiation_open": [
-      "backgrounds/ch4_bg_manor_negotiation.png",
-      "overlays/ch4_overlay_delegation.png"
+      "backgrounds/ch4_bg_manor_negotiation_rebuilt.png"
     ],
     "mobilized_community": [
-      "backgrounds/ch4_bg_village_assembly_large.png",
-      "props/ch4_prop_letters_other_villages.png"
+      "backgrounds/ch4_bg_village_assembly_rebuilt.png"
     ],
     "joining_peasant_band": [
-      "backgrounds/ch4_bg_village_edge_group.png",
+      "backgrounds/ch4_bg_peasant_band_camp_edge.png",
       "overlays/ch4_overlay_joining_peasant_band.png"
     ],
     "religious_polarization": [
@@ -2447,8 +2577,7 @@
       "overlays/ch4_overlay_consequence_religious.png"
     ],
     "events_moved_without_you": [
-      "backgrounds/ch4_bg_village_consequence_hub.png",
-      "overlays/ch4_overlay_consequence_simplified.png"
+      "backgrounds/ch4_bg_village_consequence_hub.png"
     ]
   },
   "historical_notes": [
@@ -2643,17 +2772,3690 @@
     }
   },
   "retired_runtime_assets": [
-    "overlays/ch4_overlay_withheld_dues.png",
+    "backgrounds/ch4_bg_jakob_study_table.png",
+    "backgrounds/ch4_bg_manor_negotiation.png",
+    "backgrounds/ch4_bg_village_assembly_large.png",
+    "backgrounds/ch4_bg_village_edge_group.png",
+    "backgrounds/ch4_bg_village_escalation.png",
+    "overlays/ch4_overlay_armed_group.png",
+    "overlays/ch4_overlay_delegation.png",
+    "overlays/ch4_overlay_events_moved_without_you.png",
     "overlays/ch4_overlay_public_meeting.png",
+    "overlays/ch4_overlay_refugees_cart.png",
+    "overlays/ch4_overlay_religious_polarization.png",
     "overlays/ch4_overlay_resistance_group.png",
     "overlays/ch4_overlay_smoke_distance.png",
-    "overlays/ch4_overlay_refugees_cart.png",
-    "overlays/ch4_overlay_armed_group.png",
-    "overlays/ch4_overlay_religious_polarization.png",
-    "overlays/ch4_overlay_events_moved_without_you.png",
-    "props/ch4_prop_warning_notice.png",
-    "props/ch4_prop_dues_cart.png"
+    "overlays/ch4_overlay_withheld_dues.png",
+    "props/ch4_prop_bible_open.png",
+    "props/ch4_prop_letters_other_villages.png",
+    "props/ch4_prop_warning_notice.png"
   ],
   "revision_baseline_commit": "42ab89a",
-  "revision_qa": "docs/kapitel4-dorfrevision-qa.md"
+  "revision_qa": "docs/kapitel4-dorfrevision-qa.md",
+  "consolidation_revision": "chapter4_scene_audit_v3",
+  "consolidation_baseline_commit": "d6e4979",
+  "staging_guide": "CH4_STAGING_GUIDE.md",
+  "asset_audit": "CH4_ASSET_AUDIT.md",
+  "scene_staging": [
+    {
+      "scene": "ch4_opening",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_consequence_hub.png",
+      "overlay": "assets/chapter4/overlays/ch4_overlay_consequence_nuanced.png",
+      "figures": [
+        [
+          "jakob",
+          28,
+          41,
+          71
+        ],
+        [
+          "konrad",
+          72,
+          41,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y60% im freien Durchgang",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_route",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_manor_negotiation_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "peter",
+          28,
+          41,
+          71
+        ],
+        [
+          "konrad",
+          48,
+          41,
+          71
+        ],
+        [
+          "envoy",
+          66,
+          41,
+          71
+        ]
+      ],
+      "props": [
+        [
+          "articles_on_table",
+          7,
+          44,
+          6
+        ],
+        [
+          "seal_document",
+          12,
+          44,
+          6
+        ]
+      ],
+      "hotspot": "x87%, y38% am Tor",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_authority",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_manor_negotiation_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "peter",
+          28,
+          41,
+          71
+        ],
+        [
+          "overseer",
+          68,
+          41,
+          71
+        ]
+      ],
+      "props": [
+        [
+          "articles_on_table",
+          7,
+          44,
+          6
+        ],
+        [
+          "seal_document",
+          12,
+          44,
+          6
+        ]
+      ],
+      "hotspot": "x87%, y38% am Tor",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_community",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_assembly_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "anna",
+          28,
+          33,
+          72
+        ],
+        [
+          "peter",
+          51,
+          33,
+          72
+        ],
+        [
+          "jakob",
+          72,
+          33,
+          72
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y30% nahe der Gemeinde",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_resistance",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_peasant_band_camp_edge.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "konrad",
+          28,
+          36,
+          71
+        ],
+        [
+          "band1",
+          51,
+          36,
+          71
+        ],
+        [
+          "band2",
+          72,
+          36,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y25% oberhalb der Gesprächsgruppe",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_preparation",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_jakob_study_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "jakob",
+          28,
+          37,
+          71
+        ],
+        [
+          "matthes",
+          72,
+          37,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y41% beim Studiertisch",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_opening_effect",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_manor_negotiation_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "peter",
+          28,
+          41,
+          71
+        ],
+        [
+          "konrad",
+          48,
+          41,
+          71
+        ],
+        [
+          "overseer",
+          68,
+          41,
+          71
+        ]
+      ],
+      "props": [
+        [
+          "seal_document",
+          7,
+          44,
+          6
+        ]
+      ],
+      "hotspot": "x87%, y38% am Tor",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_ermahnung",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_jakob_study_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "jakob",
+          28,
+          37,
+          71
+        ],
+        [
+          "matthes",
+          72,
+          37,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y41% beim Studiertisch",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_lords",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_jakob_study_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "jakob",
+          28,
+          37,
+          71
+        ],
+        [
+          "matthes",
+          72,
+          37,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y41% beim Studiertisch",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_peasants",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_jakob_study_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "jakob",
+          28,
+          37,
+          71
+        ],
+        [
+          "matthes",
+          72,
+          37,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y41% beim Studiertisch",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_peasants_complement",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_jakob_study_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "jakob",
+          28,
+          37,
+          71
+        ],
+        [
+          "matthes",
+          72,
+          37,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y41% beim Studiertisch",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_memory",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_jakob_study_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "jakob",
+          28,
+          37,
+          71
+        ],
+        [
+          "matthes",
+          72,
+          37,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y41% beim Studiertisch",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_early",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_jakob_study_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "jakob",
+          28,
+          37,
+          71
+        ],
+        [
+          "matthes",
+          72,
+          37,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y41% beim Studiertisch",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_regiments",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_jakob_study_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "jakob",
+          28,
+          37,
+          71
+        ],
+        [
+          "anna",
+          72,
+          37,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y41% beim Studiertisch",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_boundary",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_jakob_study_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "jakob",
+          28,
+          37,
+          71
+        ],
+        [
+          "matthes",
+          72,
+          37,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y41% beim Studiertisch",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_muentzer",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_jakob_study_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "preacher",
+          28,
+          37,
+          71
+        ],
+        [
+          "konrad",
+          51,
+          37,
+          71
+        ],
+        [
+          "jakob",
+          72,
+          37,
+          71
+        ]
+      ],
+      "props": [
+        [
+          "thuringia_report",
+          62,
+          35,
+          7
+        ]
+      ],
+      "hotspot": "x51%, y41% beim Studiertisch",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_interpretations",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_jakob_study_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "preacher",
+          28,
+          37,
+          71
+        ],
+        [
+          "konrad",
+          51,
+          37,
+          71
+        ],
+        [
+          "jakob",
+          72,
+          37,
+          71
+        ]
+      ],
+      "props": [
+        [
+          "thuringia_report",
+          62,
+          35,
+          7
+        ]
+      ],
+      "hotspot": "x51%, y41% beim Studiertisch",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_theology",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_jakob_study_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "preacher",
+          28,
+          37,
+          71
+        ],
+        [
+          "konrad",
+          51,
+          37,
+          71
+        ],
+        [
+          "jakob",
+          72,
+          37,
+          71
+        ]
+      ],
+      "props": [
+        [
+          "thuringia_report",
+          62,
+          35,
+          7
+        ]
+      ],
+      "hotspot": "x51%, y41% beim Studiertisch",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_negotiation",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_manor_negotiation_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "peter",
+          28,
+          41,
+          71
+        ],
+        [
+          "overseer",
+          68,
+          41,
+          71
+        ]
+      ],
+      "props": [
+        [
+          "seal_document",
+          7,
+          44,
+          6
+        ],
+        [
+          "articles_on_table",
+          12,
+          44,
+          6
+        ]
+      ],
+      "hotspot": "x87%, y38% am Tor",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_conditions",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_assembly_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "anna",
+          28,
+          33,
+          72
+        ],
+        [
+          "peter",
+          51,
+          33,
+          72
+        ],
+        [
+          "jakob",
+          72,
+          33,
+          72
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y30% nahe der Gemeinde",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_band",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_peasant_band_camp_edge.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "konrad",
+          28,
+          36,
+          71
+        ],
+        [
+          "band1",
+          51,
+          36,
+          71
+        ],
+        [
+          "band2",
+          72,
+          36,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y25% oberhalb der Gesprächsgruppe",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_hermeneutics",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_jakob_study_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "jakob",
+          28,
+          37,
+          71
+        ],
+        [
+          "matthes",
+          72,
+          37,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y41% beim Studiertisch",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_branch_effect",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_manor_negotiation_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "peter",
+          28,
+          41,
+          71
+        ],
+        [
+          "konrad",
+          48,
+          41,
+          71
+        ],
+        [
+          "overseer",
+          68,
+          41,
+          71
+        ]
+      ],
+      "props": [
+        [
+          "seal_document",
+          7,
+          44,
+          6
+        ]
+      ],
+      "hotspot": "x87%, y38% am Tor",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_weingarten",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_consequence_hub.png",
+      "overlay": "assets/chapter4/overlays/ch4_overlay_consequence_nuanced.png",
+      "figures": [
+        [
+          "matthes",
+          51,
+          41,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x78%, y60% am freien Randweg",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_weingarten_choice",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_consequence_hub.png",
+      "overlay": "assets/chapter4/overlays/ch4_overlay_consequence_nuanced.png",
+      "figures": [
+        [
+          "matthes",
+          51,
+          41,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x78%, y60% am freien Randweg",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_escalation",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_escalation_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "anna",
+          38,
+          41,
+          71
+        ],
+        [
+          "konrad",
+          72,
+          41,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y23% nahe der Gesprächszone",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_escalation_effect",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_escalation_rebuilt.png",
+      "overlay": "assets/chapter4/overlays/ch4_overlay_consequence_confrontational.png",
+      "figures": [
+        [
+          "anna",
+          38,
+          41,
+          71
+        ],
+        [
+          "matthes",
+          72,
+          41,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y23% nahe der Gesprächszone",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_harsh",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_jakob_study_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "jakob",
+          28,
+          37,
+          71
+        ],
+        [
+          "matthes",
+          72,
+          37,
+          71
+        ]
+      ],
+      "props": [
+        [
+          "authority_warning",
+          62,
+          35,
+          7
+        ]
+      ],
+      "hotspot": "x51%, y41% beim Studiertisch",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_comparison",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_jakob_study_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "jakob",
+          28,
+          37,
+          71
+        ],
+        [
+          "matthes",
+          72,
+          37,
+          71
+        ]
+      ],
+      "props": [
+        [
+          "authority_warning",
+          62,
+          35,
+          7
+        ]
+      ],
+      "hotspot": "x51%, y41% beim Studiertisch",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_structure",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_jakob_study_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "jakob",
+          28,
+          37,
+          71
+        ],
+        [
+          "matthes",
+          72,
+          37,
+          71
+        ]
+      ],
+      "props": [
+        [
+          "authority_warning",
+          62,
+          35,
+          7
+        ]
+      ],
+      "hotspot": "x51%, y41% beim Studiertisch",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_analysis",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_jakob_study_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "jakob",
+          28,
+          37,
+          71
+        ],
+        [
+          "matthes",
+          72,
+          37,
+          71
+        ]
+      ],
+      "props": [
+        [
+          "authority_warning",
+          62,
+          35,
+          7
+        ]
+      ],
+      "hotspot": "x51%, y41% beim Studiertisch",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_risk",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_jakob_study_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "jakob",
+          28,
+          37,
+          71
+        ],
+        [
+          "matthes",
+          72,
+          37,
+          71
+        ]
+      ],
+      "props": [
+        [
+          "authority_warning",
+          62,
+          35,
+          7
+        ]
+      ],
+      "hotspot": "x51%, y41% beim Studiertisch",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_judgment",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_jakob_study_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "jakob",
+          28,
+          37,
+          71
+        ],
+        [
+          "matthes",
+          72,
+          37,
+          71
+        ]
+      ],
+      "props": [
+        [
+          "authority_warning",
+          62,
+          35,
+          7
+        ]
+      ],
+      "hotspot": "x51%, y41% beim Studiertisch",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_world_end",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_manor_negotiation_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "peter",
+          28,
+          41,
+          71
+        ],
+        [
+          "konrad",
+          48,
+          41,
+          71
+        ],
+        [
+          "overseer",
+          68,
+          41,
+          71
+        ]
+      ],
+      "props": [
+        [
+          "seal_document",
+          7,
+          44,
+          6
+        ]
+      ],
+      "hotspot": "x87%, y38% am Tor",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_end",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_jakob_study_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "jakob",
+          28,
+          37,
+          71
+        ],
+        [
+          "matthes",
+          72,
+          37,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y41% beim Studiertisch",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_chapter5",
+      "trigger": {},
+      "background": "assets/chapter4/backgrounds/ch4_bg_manor_negotiation_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "peter",
+          28,
+          41,
+          71
+        ],
+        [
+          "konrad",
+          48,
+          41,
+          71
+        ],
+        [
+          "overseer",
+          68,
+          41,
+          71
+        ]
+      ],
+      "props": [
+        [
+          "seal_document",
+          7,
+          44,
+          6
+        ]
+      ],
+      "hotspot": "x87%, y38% am Tor",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_route",
+      "trigger": {
+        "openingRoute": "A"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_manor_negotiation_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "peter",
+          28,
+          41,
+          71
+        ],
+        [
+          "konrad",
+          48,
+          41,
+          71
+        ],
+        [
+          "envoy",
+          66,
+          41,
+          71
+        ]
+      ],
+      "props": [
+        [
+          "articles_on_table",
+          7,
+          44,
+          6
+        ],
+        [
+          "seal_document",
+          12,
+          44,
+          6
+        ]
+      ],
+      "hotspot": "x87%, y38% am Tor",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_route",
+      "trigger": {
+        "openingRoute": "B"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_assembly_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "anna",
+          28,
+          33,
+          72
+        ],
+        [
+          "peter",
+          51,
+          33,
+          72
+        ],
+        [
+          "jakob",
+          72,
+          33,
+          72
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y30% nahe der Gemeinde",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_route",
+      "trigger": {
+        "openingRoute": "C"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_peasant_band_camp_edge.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "konrad",
+          28,
+          36,
+          71
+        ],
+        [
+          "band1",
+          51,
+          36,
+          71
+        ],
+        [
+          "band2",
+          72,
+          36,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y25% oberhalb der Gesprächsgruppe",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_route",
+      "trigger": {
+        "openingRoute": "D"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_jakob_study_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "jakob",
+          28,
+          37,
+          71
+        ],
+        [
+          "matthes",
+          72,
+          37,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y41% beim Studiertisch",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_opening_effect",
+      "trigger": {
+        "openingRoute": "A",
+        "authorityTone": "legal"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_manor_negotiation_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "peter",
+          28,
+          41,
+          71
+        ],
+        [
+          "konrad",
+          48,
+          41,
+          71
+        ],
+        [
+          "overseer",
+          68,
+          41,
+          71
+        ]
+      ],
+      "props": [
+        [
+          "seal_document",
+          7,
+          44,
+          6
+        ]
+      ],
+      "hotspot": "x87%, y38% am Tor",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_opening_effect",
+      "trigger": {
+        "openingRoute": "A",
+        "authorityTone": "articles"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_consequence_hub.png",
+      "overlay": "assets/chapter4/overlays/ch4_overlay_consequence_nuanced.png",
+      "figures": [
+        [
+          "jakob",
+          28,
+          41,
+          71
+        ],
+        [
+          "konrad",
+          72,
+          41,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y60% im freien Durchgang",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_opening_effect",
+      "trigger": {
+        "openingRoute": "A",
+        "authorityTone": "gospel"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_consequence_hub.png",
+      "overlay": "assets/chapter4/overlays/ch4_overlay_consequence_religious.png",
+      "figures": [
+        [
+          "jakob",
+          28,
+          41,
+          71
+        ],
+        [
+          "konrad",
+          72,
+          41,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y60% im freien Durchgang",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_opening_effect",
+      "trigger": {
+        "openingRoute": "A",
+        "authorityTone": "pressure"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_consequence_hub.png",
+      "overlay": "assets/chapter4/overlays/ch4_overlay_consequence_confrontational.png",
+      "figures": [
+        [
+          "jakob",
+          28,
+          41,
+          71
+        ],
+        [
+          "konrad",
+          72,
+          41,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y60% im freien Durchgang",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_opening_effect",
+      "trigger": {
+        "openingRoute": "B",
+        "communityAction": "delegation"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_manor_negotiation_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "peter",
+          28,
+          41,
+          71
+        ],
+        [
+          "konrad",
+          48,
+          41,
+          71
+        ],
+        [
+          "overseer",
+          68,
+          41,
+          71
+        ]
+      ],
+      "props": [
+        [
+          "seal_document",
+          7,
+          44,
+          6
+        ]
+      ],
+      "hotspot": "x87%, y38% am Tor",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_opening_effect",
+      "trigger": {
+        "openingRoute": "B",
+        "communityAction": "withhold_dues"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_storehouse.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "peter",
+          28,
+          33,
+          71
+        ],
+        [
+          "anna",
+          72,
+          33,
+          71
+        ]
+      ],
+      "props": [
+        [
+          "dues_cart",
+          87,
+          62,
+          18
+        ]
+      ],
+      "hotspot": "x61%, y29% am Speicherzugang",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_opening_effect",
+      "trigger": {
+        "openingRoute": "B",
+        "communityAction": "other_villages"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_assembly_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "anna",
+          28,
+          33,
+          72
+        ],
+        [
+          "peter",
+          51,
+          33,
+          72
+        ],
+        [
+          "jakob",
+          72,
+          33,
+          72
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y30% nahe der Gemeinde",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_opening_effect",
+      "trigger": {
+        "openingRoute": "B",
+        "communityAction": "public_meeting"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_assembly_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "anna",
+          28,
+          33,
+          72
+        ],
+        [
+          "peter",
+          51,
+          33,
+          72
+        ],
+        [
+          "jakob",
+          72,
+          33,
+          72
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y30% nahe der Gemeinde",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_opening_effect",
+      "trigger": {
+        "openingRoute": "C",
+        "resistanceAction": "refuse_dues"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_consequence_hub.png",
+      "overlay": "assets/chapter4/overlays/ch4_overlay_consequence_confrontational.png",
+      "figures": [
+        [
+          "jakob",
+          28,
+          41,
+          71
+        ],
+        [
+          "konrad",
+          72,
+          41,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y60% im freien Durchgang",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_opening_effect",
+      "trigger": {
+        "openingRoute": "C",
+        "resistanceAction": "block_storehouse"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_storehouse.png",
+      "overlay": "assets/chapter4/overlays/ch4_overlay_blockade.png",
+      "figures": [],
+      "props": [],
+      "hotspot": "x61%, y29% am Speicherzugang",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_opening_effect",
+      "trigger": {
+        "openingRoute": "C",
+        "resistanceAction": "demonstrate"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_peasant_band_camp_edge.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "konrad",
+          28,
+          36,
+          71
+        ],
+        [
+          "band1",
+          72,
+          36,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y67% am freien Lagerweg",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_opening_effect",
+      "trigger": {
+        "openingRoute": "C",
+        "resistanceAction": "return_to_negotiation"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_manor_negotiation_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "peter",
+          28,
+          41,
+          71
+        ],
+        [
+          "konrad",
+          48,
+          41,
+          71
+        ],
+        [
+          "overseer",
+          68,
+          41,
+          71
+        ]
+      ],
+      "props": [
+        [
+          "seal_document",
+          7,
+          44,
+          6
+        ]
+      ],
+      "hotspot": "x87%, y38% am Tor",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_opening_effect",
+      "trigger": {
+        "openingRoute": "D"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_consequence_hub.png",
+      "overlay": "assets/chapter4/overlays/ch4_overlay_consequence_simplified.png",
+      "figures": [
+        [
+          "jakob",
+          28,
+          41,
+          71
+        ],
+        [
+          "konrad",
+          72,
+          41,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y60% im freien Durchgang",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_branch_effect",
+      "trigger": {
+        "theologicalPath": "luther_order"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_manor_negotiation_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "peter",
+          28,
+          41,
+          71
+        ],
+        [
+          "konrad",
+          48,
+          41,
+          71
+        ],
+        [
+          "overseer",
+          68,
+          41,
+          71
+        ]
+      ],
+      "props": [
+        [
+          "seal_document",
+          7,
+          44,
+          6
+        ]
+      ],
+      "hotspot": "x87%, y38% am Tor",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_branch_effect",
+      "trigger": {
+        "theologicalPath": "gospel_critique"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_assembly_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "anna",
+          28,
+          33,
+          72
+        ],
+        [
+          "peter",
+          72,
+          33,
+          72
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y30% nahe der Gemeinde",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_branch_effect",
+      "trigger": {
+        "theologicalPath": "hermeneutical_caution"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_consequence_hub.png",
+      "overlay": "assets/chapter4/overlays/ch4_overlay_consequence_simplified.png",
+      "figures": [
+        [
+          "jakob",
+          28,
+          41,
+          71
+        ],
+        [
+          "konrad",
+          72,
+          41,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y60% im freien Durchgang",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_branch_effect",
+      "trigger": {
+        "theologicalPath": "prophetic_resistance",
+        "bandAction": "resistance_occupation"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_storehouse.png",
+      "overlay": "assets/chapter4/overlays/ch4_overlay_blockade.png",
+      "figures": [],
+      "props": [],
+      "hotspot": "x61%, y29% am Speicherzugang",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_branch_effect",
+      "trigger": {
+        "theologicalPath": "prophetic_resistance",
+        "bandAction": "resistance_armed_defense"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_consequence_hub.png",
+      "overlay": "assets/chapter4/overlays/ch4_overlay_consequence_confrontational.png",
+      "figures": [
+        [
+          "band1",
+          51,
+          41,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x78%, y60% am freien Randweg",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_branch_effect",
+      "trigger": {
+        "theologicalPath": "prophetic_resistance",
+        "bandAction": "resistance_limit"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_peasant_band_camp_edge.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "band1",
+          28,
+          36,
+          71
+        ],
+        [
+          "konrad",
+          72,
+          36,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y67% am freien Lagerweg",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_branch_effect",
+      "trigger": {
+        "theologicalPath": "prophetic_resistance",
+        "bandAction": "resistance_dues"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_peasant_band_camp_edge.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "band1",
+          28,
+          36,
+          71
+        ],
+        [
+          "band2",
+          72,
+          36,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y67% am freien Lagerweg",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_escalation_effect",
+      "trigger": {
+        "escalationResponse": "protect"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_escalation_rebuilt.png",
+      "overlay": "assets/chapter4/overlays/ch4_overlay_consequence_confrontational.png",
+      "figures": [
+        [
+          "anna",
+          38,
+          41,
+          71
+        ],
+        [
+          "matthes",
+          72,
+          41,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y23% nahe der Gesprächszone",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_escalation_effect",
+      "trigger": {
+        "escalationResponse": "warn"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_escalation_rebuilt.png",
+      "overlay": "assets/chapter4/overlays/ch4_overlay_consequence_confrontational.png",
+      "figures": [
+        [
+          "anna",
+          38,
+          41,
+          71
+        ],
+        [
+          "matthes",
+          72,
+          41,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y23% nahe der Gesprächszone",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_escalation_effect",
+      "trigger": {
+        "escalationResponse": "join"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_escalation_rebuilt.png",
+      "overlay": "assets/chapter4/overlays/ch4_overlay_consequence_confrontational.png",
+      "figures": [
+        [
+          "band1",
+          72,
+          41,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y23% nahe der Gesprächszone",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_escalation_effect",
+      "trigger": {
+        "escalationResponse": "verify"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_escalation_rebuilt.png",
+      "overlay": "assets/chapter4/overlays/ch4_overlay_consequence_confrontational.png",
+      "figures": [
+        [
+          "anna",
+          38,
+          41,
+          71
+        ],
+        [
+          "matthes",
+          72,
+          41,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y23% nahe der Gesprächszone",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_world_end",
+      "trigger": {
+        "endWorldState": "negotiation_open"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_manor_negotiation_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "peter",
+          28,
+          41,
+          71
+        ],
+        [
+          "konrad",
+          48,
+          41,
+          71
+        ],
+        [
+          "overseer",
+          68,
+          41,
+          71
+        ]
+      ],
+      "props": [
+        [
+          "seal_document",
+          7,
+          44,
+          6
+        ]
+      ],
+      "hotspot": "x87%, y38% am Tor",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_world_end",
+      "trigger": {
+        "endWorldState": "mobilized_community"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_assembly_rebuilt.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "anna",
+          28,
+          33,
+          72
+        ],
+        [
+          "peter",
+          51,
+          33,
+          72
+        ],
+        [
+          "jakob",
+          72,
+          33,
+          72
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y30% nahe der Gemeinde",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_world_end",
+      "trigger": {
+        "endWorldState": "joining_peasant_band"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_peasant_band_camp_edge.png",
+      "overlay": "assets/chapter4/overlays/ch4_overlay_joining_peasant_band.png",
+      "figures": [
+        [
+          "konrad",
+          72,
+          36,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y67% am freien Lagerweg",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_world_end",
+      "trigger": {
+        "endWorldState": "religious_polarization"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_consequence_hub.png",
+      "overlay": "assets/chapter4/overlays/ch4_overlay_consequence_religious.png",
+      "figures": [
+        [
+          "preacher",
+          28,
+          41,
+          71
+        ],
+        [
+          "jakob",
+          72,
+          41,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y60% im freien Durchgang",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_world_end",
+      "trigger": {
+        "endWorldState": "events_moved_without_you"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_consequence_hub.png",
+      "overlay": "—",
+      "figures": [
+        [
+          "jakob",
+          51,
+          41,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x78%, y60% am freien Randweg",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_opening",
+      "trigger": {
+        "openingWorldState": "nuanced"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_consequence_hub.png",
+      "overlay": "assets/chapter4/overlays/ch4_overlay_consequence_nuanced.png",
+      "figures": [
+        [
+          "jakob",
+          28,
+          41,
+          71
+        ],
+        [
+          "konrad",
+          72,
+          41,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y60% im freien Durchgang",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_opening",
+      "trigger": {
+        "openingWorldState": "simplified"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_consequence_hub.png",
+      "overlay": "assets/chapter4/overlays/ch4_overlay_consequence_simplified.png",
+      "figures": [
+        [
+          "jakob",
+          28,
+          41,
+          71
+        ],
+        [
+          "konrad",
+          72,
+          41,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y60% im freien Durchgang",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_opening",
+      "trigger": {
+        "openingWorldState": "religious"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_consequence_hub.png",
+      "overlay": "assets/chapter4/overlays/ch4_overlay_consequence_religious.png",
+      "figures": [
+        [
+          "jakob",
+          28,
+          41,
+          71
+        ],
+        [
+          "konrad",
+          72,
+          41,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y60% im freien Durchgang",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    },
+    {
+      "scene": "ch4_opening",
+      "trigger": {
+        "openingWorldState": "confrontational"
+      },
+      "background": "assets/chapter4/backgrounds/ch4_bg_village_consequence_hub.png",
+      "overlay": "assets/chapter4/overlays/ch4_overlay_consequence_confrontational.png",
+      "figures": [
+        [
+          "jakob",
+          28,
+          41,
+          71
+        ],
+        [
+          "konrad",
+          72,
+          41,
+          71
+        ]
+      ],
+      "props": [],
+      "hotspot": "x51%, y60% im freien Durchgang",
+      "safe_area": "lower26%",
+      "qa_viewports": [
+        [
+          1024,
+          768
+        ],
+        [
+          820,
+          640
+        ],
+        [
+          1440,
+          900
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          390,
+          844
+        ]
+      ]
+    }
+  ],
+  "legacy_asset_notice": "assets/chapter4/LEGACY_ASSETS.md",
+  "legacy_runtime_files": [
+    "assets/chapter4/backgrounds/ch4_bg_jakob_study_table.png",
+    "assets/chapter4/backgrounds/ch4_bg_manor_negotiation.png",
+    "assets/chapter4/backgrounds/ch4_bg_village_assembly_large.png",
+    "assets/chapter4/backgrounds/ch4_bg_village_edge_group.png",
+    "assets/chapter4/backgrounds/ch4_bg_village_escalation.png",
+    "assets/chapter4/overlays/ch4_overlay_armed_group.png",
+    "assets/chapter4/overlays/ch4_overlay_delegation.png",
+    "assets/chapter4/overlays/ch4_overlay_events_moved_without_you.png",
+    "assets/chapter4/overlays/ch4_overlay_public_meeting.png",
+    "assets/chapter4/overlays/ch4_overlay_refugees_cart.png",
+    "assets/chapter4/overlays/ch4_overlay_religious_polarization.png",
+    "assets/chapter4/overlays/ch4_overlay_resistance_group.png",
+    "assets/chapter4/overlays/ch4_overlay_smoke_distance.png",
+    "assets/chapter4/overlays/ch4_overlay_withheld_dues.png",
+    "assets/chapter4/props/ch4_prop_bible_open.png",
+    "assets/chapter4/props/ch4_prop_letters_other_villages.png",
+    "assets/chapter4/props/ch4_prop_warning_notice.png",
+    "assets/chapter4/overlays/ch4_overlay_village_nuanced.png",
+    "assets/chapter4/overlays/ch4_overlay_village_simplified.png",
+    "assets/chapter4/overlays/ch4_overlay_village_religious.png",
+    "assets/chapter4/overlays/ch4_overlay_village_confrontational.png"
+  ]
 }

@@ -1,0 +1,21 @@
+{
+  "tool": "built-in ImageGen",
+  "prompts": [
+    {
+      "name": "manor_negotiation_rebuilt",
+      "prompt": "Historical-scene game background, 4:3 landscape. Use reference ONLY for exact warm hand-painted south German 1525 art style, manor architecture and light. Completely rebuild the staging of this same manor courtyard: EMPTY, no people. Move the clerk's SMALL table to the FAR LEFT HOUSE WALL UNDER ITS ROOF, x5–20%, tabletop at46% image height, with paper and seal. No furniture in central square. Open dry level ground with three equal-depth standing zones at x28%,51%,72%, adult heights41% image, feet71%, eye horizon33%. Original manor gate remains clearly visible upper right, dignified orderly administration not villain fortress. Slight raised threshold at right rear only. Foreground and middle fully usable no obstacles; bottom26% only ground for dialogue. No writing, UI, logos, fantasy. High quality painterly historical point-and-click adventure, not photoreal. Output1024x768 composition."
+    },
+    {
+      "name": "jakob_study_rebuilt",
+      "prompt": "Historical-scene 4:3 painted adventure background. REBUILD the reference Jakob room, preserve exact warm painterly style, window left, hearth backleft, timbered household study and doorway right. NO PEOPLE. Remove the massive foreground table and benches completely. Put ONE modest narrow writing table against the BACK WALL, centred x50%, width25% image, tabletop at43% image height, top of book roughly40%, legs grounded rear at58%. On it a small open Bible, blank paper, earthenware inkpot. Foreground is a continuous clear earthen floor for 2–3 standing adults at x28%,51%,72%, adultheight37% image, feet71%, eyeline37%. No objects between the left and right talking adults. Room is intimate and credible1525, not a classroom or kitchen worksheet. Bottom26% plain floor, no important objects. Books, conscience and interpretation made visible through quiet material objects. No readable letters, no UI, no fantasy. Output1024x768."
+    },
+    {
+      "name": "village_assembly_rebuilt",
+      "prompt": "Historical-scene 4:3 hand painted game background. Use image1 NEW village master as STRICT same-place architecture reference and image2 old assembly only for communal atmosphere, NOT its crowded staging or giant foreground people. Create a village assembly at this EXACT NEW village, same church/farmhouse/tavern/material/light. Main plaza unchanged open dry ground. A modest heterogeneous gathering of eight ordinary villagers, women and men, plain 1525 clothes, at REAR PERIPHERY ONLY. Four people left x5–20% and four people right x83–97%; all adult bodyheight20% image, heads approx34% and feet approx53% to share horizon with future main adults H41%feet71%. Some seated on EXISTING wall benches, others reading/conversing standing, naturally irregular, no group photo, no uniformly armed army. Central x22–80% COMPLETELY EMPTY of people and furniture so Anna Peter Jakob Konrad Canon figures can stand there later. No central well or table. No foreground baked people. Lower26% ground only. Warm thoughtful communal tension, no celebration/fantasy. No UI or lettering. Output1024x768."
+    },
+    {
+      "name": "village_escalation_rebuilt",
+      "prompt": "Historical-scene LIGHTING/CONSEQUENCE EDIT of exact reference village master. Maintain EXACT camera, all buildings/ground/well/tavern/bench location, perspective and three empty staging zones. Same church and farmhouse. Early May1525 tense aftermath, muted overcast amber light, ONE thin distant smoke plume BEHIND village roofs, no second smoke. Add only at far LEFT periphery x3–19% a small plain wooden handcart with belongings, a mother, child and elderly relative resting beside it seeking shelter. Adultheight~20% image, adult eye33%, feet52%, no tiny giants; stay LEFT of22%. Ordinary worn clothes, no gore, no battle, no heroic rebels, no fantasy. Allcentral x22–80% MUST REMAIN EMPTY for Canon Anna/Konrad/Matthes atheight41%,feet71%. Remove distracting people at right if any. No main characters embedded. Same warm painterly1525historicaladventure style; consequencesforpeople quiet and serious. Lower26% only ground fordialogue, allpeople/propsabove74%. No lettering, no UI. Output1024x7684:3."
+    }
+  ]
+}

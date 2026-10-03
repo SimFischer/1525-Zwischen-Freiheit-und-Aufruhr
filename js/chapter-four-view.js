@@ -92,11 +92,24 @@ export function chapterFourWorld(game=state){
   if(c.endWorldState==='religious_polarization'){overlay='religious_polarization';figures=[];}
   if(c.endWorldState==='events_moved_without_you'){overlay='events_moved_without_you';figures=[['jakob',57]];}
  }
- // The assembly already contains listeners: place speakers in its open foreground,
- // below the baked faces, rather than covering another villager's head.
+ // Consequences get distinct spaces and groups, not merely a different notice.
+ if(s==='opening_effect'&&c.openingRoute==='A'&&c.authorityTone==='legal'){
+  background='manor_negotiation';overlay='delegation';props=[['seal_document']];
+ }
+ if(s==='opening_effect'&&c.openingRoute==='B'){
+  if(c.communityAction==='withhold_dues'){background='storehouse';overlay=null;figures=[['peter',28,33,71],['anna',72,33,71]];props=[['dues_cart',87,62,18]];}
+  else if(c.communityAction==='delegation'){background='manor_negotiation';overlay='delegation';props=[['seal_document']];}
+  else {background='village_assembly_large';overlay=null;}
+ }
+ if(s==='opening_effect'&&c.openingRoute==='C'&&c.resistanceAction==='demonstrate'){
+  background='peasant_band_camp_edge';overlay=null;figures=[['konrad',28],['band1',72]];props=[];
+ }
+ if(background==='storehouse'&&figures.length)figures=figures.map(([id,x])=>[id,x,33,71]);
+ // The rebuilt assembly leaves its central square clear; rear listeners are on a deeper plane.
  if(background==='village_assembly_large'){
-  figures=figures.map(([id],i)=>[id,i?62:44,34,83]);
-  props=props.map(([name,x,y,width])=>name==='letters_other_villages'?[name,44,68,8]:[name,x,y,width]);
+  figures=[['anna',28,33,72],['peter',51,33,72],['jakob',72,33,72]];
+  props=[];
+  background='village_assembly_rebuilt';
  }
  if(background==='village'){
   // Only sparse world features belong on the new master. Legacy crowd layers are retired here.
@@ -105,12 +118,50 @@ export function chapterFourWorld(game=state){
   overlay='consequence_'+(['nuanced','simplified','religious','confrontational'].includes(tone)?tone:'nuanced');
   figures=figures.map(([id],i)=>[id,figures.length===3?[28,51,72][i]:figures.length===1?51:i?72:28,41,71]);
   props=[]; // Papers and books are anchored in the reduced edge overlays, never floating between speakers.
+  if(s==='opening_effect'&&c.openingRoute==='B'&&c.communityAction==='public_meeting'){
+   background='village_assembly_rebuilt';overlay=null;figures=[['anna',28,33,72],['peter',51,33,72],['jakob',72,33,72]];
+  }
+  if(s==='branch_effect'&&c.theologicalPath==='gospel_critique'){
+   background='village_assembly_rebuilt';overlay=null;figures=[['anna',28,33,72],['peter',72,33,72]];
+  }
+  if(s==='world_end'||s==='chapter5'){
+   if(c.endWorldState==='religious_polarization')figures=[['preacher',28,41,71],['jakob',72,41,71]];
+   if(c.endWorldState==='events_moved_without_you'){overlay=null;figures=[['jakob',51,41,71]];}
+  }
+  if(s==='escalation_effect'){background='village_escalation_rebuilt';figures=figures.map(([id],i)=>[id,figures.length===1?72:i?72:38,41,71]);}
+ }
+ if(background==='manor_negotiation'){
+  if(overlay==='delegation'){overlay=null;figures=[['peter',28],['konrad',48],['overseer',68]];}
+  else if(s==='route')figures=[['peter',28],['konrad',48],['envoy',68]];
+  else figures=[['peter',28],['overseer',68]];
+  figures=figures.map(([id,x])=>[id,id==='envoy'?66:x,41,71]);
+  props=props.map(([name],i)=>[name,7+i*5,44,6]);
+  background='manor_negotiation_rebuilt';
+ }
+ if(background==='jakob_study_table'){
+  if(s==='hermeneutics')figures=[['jakob',28],['matthes',72]];
+  if(s==='regiments')figures=[['jakob',28],['anna',72]];
+  if(['muentzer','interpretations','theology'].includes(s))figures=[['preacher',28],['konrad',51],['jakob',72]];
+  figures=figures.map(([id,x])=>[id,x,37,71]);
+  props=props.filter(([name])=>name!=='bible_open').map(([name])=>[name,62,35,7]);
+  background='jakob_study_rebuilt';
+ }
+ if(background==='village_edge_group')background='peasant_band_camp_edge';
+ if(background==='peasant_band_camp_edge'){
+  if(['band','resistance'].includes(s)||s==='route'&&c.openingRoute==='C')figures=[['konrad',28],['band1',51],['band2',72]];
+  figures=figures.map(([id],i)=>[id,figures.length===3?[28,51,72][i]:figures.length===1?72:i?72:28,36,71]);
+  props=[];
+ }
+ if(background==='village_escalation'){
+  background='village_escalation_rebuilt';figures=[['anna',38,41,71],['konrad',72,41,71]];
  }
  return {background,overlay,figures,props};
 }
-export function chapterFourFigure([id,x,height=43,feet=72],village=false){
+export function chapterFourFigure([id,x,height=43,feet=72],village=true){
  if(village&&villageCanonStaging[id]){
-  const g=villageCanonStaging[id],[l,t,r,b]=g.bounds,k=height/(b-t);
+  const original=villageCanonStaging[id],active=state.dialogue?.lines[state.dialogue.index]?.speaker===id;
+  const g=['preacher','envoy'].includes(id)&&!active?{...original,asset:original.asset.replace('_talking.png','_neutral.png')}:original;
+  const [l,t,r,b]=g.bounds,k=height/(b-t);
   const flip=x<45&&g.facing==='left'||x>58&&g.facing==='right';
   const centre=flip?g.width-(l+r)/2:(l+r)/2;
   const left=x+(g.width/2-centre)*k*.75,bottom=100-feet-(g.height-b)*k;
@@ -133,12 +184,12 @@ export function chapterFourScene(header){
  const links={opening:['Unseren Weg aufnehmen','route'],route:[{A:'Zum Verwalter',B:'Gemeinsam auftreten',C:'Zur Gruppe',D:'Mit Jakob prüfen'}[c.openingRoute],'route-go'],opening_effect:['Eine neue Nachricht lesen','ermahnung'],branch_effect:['Matthes anhören','weingarten'],escalation_effect:['Luthers neue Schrift lesen','harsh'],world_end:['Was nun auf dem Spiel steht','end']};
  const target=!panel&&links[s];
  const travel=s==='opening'||s==='route'&&c.openingRoute==='A';
- const signX=w.background==='village'?51:travel?84:51,signY=w.background==='village'?13:travel?48:92;
+ const signX=w.background.startsWith('manor_')?87:w.background==='storehouse'?61:w.background==='village'&&w.figures.length===1?78:51,signY=w.background.startsWith('manor_')?38:w.background==='storehouse'?29:w.background==='peasant_band_camp_edge'?(w.figures.length===3?25:67):w.background==='jakob_study_rebuilt'?41:w.background==='village_assembly_rebuilt'?30:w.background==='village'?60:23;
  const signs=target?hotspot(esc(target[0])+' →',target[1]==='route-go'?'ch4-route-go':'ch4-go',{kind:travel?'path':'action',classes:'ch4-hotspot',attrs:`${target[1]==='route-go'?'':`data-scene="${target[1]}"`} style="left:${signX}%;top:${signY}%"`}):'';
- return header+`<main class="game-layout chapter-four-layout ${panel?'task-layout':'exploration-layout'} ${s==='end'?'ch4-fade':''}"><section class="stage chapter-four" data-scene="${state.scene}" data-world="${w.background}" data-overlay="${w.overlay||''}" aria-label="${esc(sceneById[state.scene].title)}"><div class="room"><img class="room-image" src="${bg}" alt="${esc(sceneById[state.scene].title)}" draggable="false">${w.overlay?`<img class="ch4-world-overlay" src="${ch4Asset('overlays','overlay_'+w.overlay)}" alt="Sichtbare Merkmale der Dorflage" draggable="false">`:''}<div class="ch4-figures">${w.figures.map(f=>chapterFourFigure(f,w.background==='village')).join('')}</div>${w.props.map(([name,x,y,width])=>`<img class="ch4-prop" data-prop="${name}" src="${ch4Asset('props','prop_'+name)}" style="left:${x}%;top:${y}%;width:${width}%" alt="${esc({warning_notice:'Warnung des Herren',authority_warning:'Herrschaftlicher Warnbrief',letters_other_villages:'Briefe an andere Dörfer',bible_open:'Aufgeschlagene Bibel',seal_document:'Gesiegelte Vereinbarung',articles_on_table:'Die Artikel auf dem Tisch',dues_cart:'Zurückgehaltene Abgaben',thuringia_report:'Nachricht aus Thüringen',weingarten_report:'Nachricht aus Weingarten'}[name])}" draggable="false">`).join('')}${signs}<div class="stage-caption"><h1>${esc(sceneById[state.scene].title)}</h1></div></div></section><div id="interaction" class="interaction" data-stage="${s}">${panel}</div><footer class="game-footer"><span id="save-status"></span></footer></main>`;
+ return header+`<main class="game-layout chapter-four-layout ${panel?'task-layout':'exploration-layout'} ${s==='end'?'ch4-fade':''}"><section class="stage chapter-four" data-scene="${state.scene}" data-world="${w.background}" data-overlay="${w.overlay||''}" aria-label="${esc(sceneById[state.scene].title)}"><div class="room"><img class="room-image" src="${bg}" alt="${esc(sceneById[state.scene].title)}" draggable="false">${w.overlay?`<img class="ch4-world-overlay" style="${w.overlay==='blockade'?'transform:translateY(-11%)':w.overlay==='joining_peasant_band'?'transform:translateY(-8%)':''}" src="${ch4Asset('overlays','overlay_'+w.overlay)}" alt="Sichtbare Merkmale der Dorflage" draggable="false">`:''}<div class="ch4-figures">${w.figures.map(f=>chapterFourFigure(f,true)).join('')}</div>${w.props.map(([name,x,y,width])=>`<img class="ch4-prop" data-prop="${name}" src="${ch4Asset('props','prop_'+name)}" style="left:${x}%;top:${y}%;width:${width}%" alt="${esc({warning_notice:'Warnung des Herren',authority_warning:'Herrschaftlicher Warnbrief',letters_other_villages:'Briefe an andere Dörfer',bible_open:'Aufgeschlagene Bibel',seal_document:'Gesiegelte Vereinbarung',articles_on_table:'Die Artikel auf dem Tisch',dues_cart:'Zurückgehaltene Abgaben',thuringia_report:'Nachricht aus Thüringen',weingarten_report:'Nachricht aus Weingarten'}[name])}" draggable="false">`).join('')}${signs}<div class="stage-caption"><h1>${esc(sceneById[state.scene].title)}</h1></div></div></section><div id="interaction" class="interaction" data-stage="${s}">${panel}</div><footer class="game-footer"><span id="save-status"></span></footer></main>`;
 }
 export function fitChapterFourScene(){
- const room=document.querySelector('.chapter-four-layout .room'),stage=room?.parentElement,panel=document.querySelector('.chapter-four-layout .dialogue-panel');if(!room||!stage)return;
+ const room=document.querySelector('.chapter-four-layout .room'),stage=room?.parentElement,panel=document.querySelector('.chapter-four-layout .interaction>.dialogue-panel,.chapter-four-layout .interaction>.task-panel');if(!room||!stage)return;
  const box=stage.getBoundingClientRect(),available=panel?Math.max(100,panel.getBoundingClientRect().top-box.top-10):box.height;
  room.style.width=Math.min(box.width,available*4/3)+'px';room.style.top=available/2+'px';
 }

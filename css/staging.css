@@ -445,10 +445,10 @@ dialog:has(.notebook) {
 .ch4-person {position:absolute;width:auto;max-width:29%;object-fit:contain;transform:translateX(-50%);filter:drop-shadow(2px 3px 3px #21130755);}
 .ch4-ground {position:absolute;width:10%;height:1.6%;border-radius:50%;background:#21130755;filter:blur(3px);}
 .ch4-prop {position:absolute;max-height:20%;object-fit:contain;transform:translate(-50%,-50%);pointer-events:none;}
-.ch4-hotspot {position:absolute;z-index:5;transform:translate(-50%,-50%);max-width:29%;}
+.ch4-hotspot {position:absolute;z-index:5;transform:translate(-50%,-50%);max-width:25%;}
 .chapter-four .ch4-hotspot:hover,.chapter-four .ch4-hotspot:focus-visible,.chapter-four .ch4-hotspot:active {transform:translate(-50%,-50%);}
 .chapter-four-layout .interaction {z-index:6;}
-.chapter-four-layout .task-panel {max-height:calc(100svh - 115px);}
+.chapter-four-layout .task-panel {max-height:min(60svh,calc(100svh - 115px));}
 .chapter-four-layout .stage-caption h1 {font-size:clamp(.85rem,1.8vw,1.1rem);}
 .ch4-work-table {display:block;width:min(100%,650px);height:auto;margin:.5rem auto;}
 .ch4-cases {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;}
@@ -456,9 +456,9 @@ dialog:has(.notebook) {
 .ch4-case small {font-size:.85rem;}
 .ch4-zones,.ch4-paper-options {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem;margin:1rem 0;}
 .ch4-interpretations {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;}
-.ch4-interpretations>section {padding:.8rem;background:var(--paper-surface);border:1px solid #97724488;}
+.ch4-interpretations>section {padding:.8rem;background:var(--parchment-surface);border:1px solid #97724488;}
 .ch4-interpretations h3 {font-size:1.05rem;}
-.ch4-task .task-scroll {overscroll-behavior:contain;font-size:1.05rem;}
+.ch4-task .task-scroll {overscroll-behavior:contain;font-size:18px;}
 .ch4-ending {background:#130e0b;color:#f1dfbc;padding:2rem;text-align:center;width:min(800px,96vw);animation:ch3-ending 700ms both;}
 .ch4-ending p {font-size:clamp(1.4rem,3vw,2.2rem);}
 .ch4-ending p:nth-child(2) {animation:ch3-ending 1s 1s both;}
@@ -466,6 +466,9 @@ dialog:has(.notebook) {
 .chapter-four-layout.ch4-fade {background:#130e0b;}
 .chapter-four-layout.ch4-fade .interaction {top:50%;bottom:auto;transform:translate(-50%,-50%);}
 @media(max-width:600px) {.ch4-cases,.ch4-zones,.ch4-paper-options,.ch4-interpretations {grid-template-columns:1fr;}.ch4-hotspot {max-width:40%;}}
+@media(max-width:600px) {
+  .chapter-four .ch4-hotspot {left:50%!important;top:12%!important;max-width:65%;}
+}
 @media(prefers-reduced-motion:reduce) {.ch4-ending,.ch4-ending p:nth-child(2) {animation:none;}}
 
 .ch4-table-object {position:relative;width:min(100%,650px);margin:.5rem auto;color:#302012;}

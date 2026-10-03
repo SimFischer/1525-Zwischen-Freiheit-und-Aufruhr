@@ -1,0 +1,3737 @@
+[
+  {
+    "scene": "opening",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "route",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "authority",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "community",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "resistance",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "preparation",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ermahnung",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "lords",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "peasants",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "peasants_complement",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "memory",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "early",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "regiments",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "boundary",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "muentzer",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "interpretations",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "theology",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "negotiation",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "conditions",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "band",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "hermeneutics",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "weingarten",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "weingarten_choice",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation_effect",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "harsh",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "comparison",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "structure",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "analysis",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "risk",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "judgment",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "end",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "chapter5",
+    "variant": {},
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "route",
+    "variant": {
+      "openingRoute": "A"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "route",
+    "variant": {
+      "openingRoute": "B"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "route",
+    "variant": {
+      "openingRoute": "C"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "route",
+    "variant": {
+      "openingRoute": "D"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "A",
+      "authorityTone": "legal"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "A",
+      "authorityTone": "articles"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "A",
+      "authorityTone": "gospel"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "A",
+      "authorityTone": "pressure"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "B",
+      "communityAction": "delegation"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "B",
+      "communityAction": "withhold_dues"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "B",
+      "communityAction": "other_villages"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "B",
+      "communityAction": "public_meeting"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "C",
+      "resistanceAction": "refuse_dues"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "C",
+      "resistanceAction": "block_storehouse"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "C",
+      "resistanceAction": "demonstrate"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "C",
+      "resistanceAction": "return_to_negotiation"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "D"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "luther_order"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "gospel_critique"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "hermeneutical_caution"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "prophetic_resistance",
+      "bandAction": "resistance_occupation"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "prophetic_resistance",
+      "bandAction": "resistance_armed_defense"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "prophetic_resistance",
+      "bandAction": "resistance_limit"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "prophetic_resistance",
+      "bandAction": "resistance_dues"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation_effect",
+    "variant": {
+      "escalationResponse": "protect"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation_effect",
+    "variant": {
+      "escalationResponse": "warn"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation_effect",
+    "variant": {
+      "escalationResponse": "join"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation_effect",
+    "variant": {
+      "escalationResponse": "verify"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {
+      "endWorldState": "negotiation_open"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {
+      "endWorldState": "mobilized_community"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {
+      "endWorldState": "joining_peasant_band"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {
+      "endWorldState": "religious_polarization"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {
+      "endWorldState": "events_moved_without_you"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening",
+    "variant": {
+      "openingWorldState": "nuanced"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening",
+    "variant": {
+      "openingWorldState": "simplified"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening",
+    "variant": {
+      "openingWorldState": "religious"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening",
+    "variant": {
+      "openingWorldState": "confrontational"
+    },
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "route",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "authority",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "community",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "resistance",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "preparation",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ermahnung",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "lords",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "peasants",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "peasants_complement",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "memory",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "early",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "regiments",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "boundary",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "muentzer",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "interpretations",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "theology",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "negotiation",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "conditions",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "band",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "hermeneutics",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "weingarten",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "weingarten_choice",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation_effect",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "harsh",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "comparison",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "structure",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "analysis",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "risk",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "judgment",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "end",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "chapter5",
+    "variant": {},
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "route",
+    "variant": {
+      "openingRoute": "A"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "route",
+    "variant": {
+      "openingRoute": "B"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "route",
+    "variant": {
+      "openingRoute": "C"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "route",
+    "variant": {
+      "openingRoute": "D"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "A",
+      "authorityTone": "legal"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "A",
+      "authorityTone": "articles"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "A",
+      "authorityTone": "gospel"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "A",
+      "authorityTone": "pressure"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "B",
+      "communityAction": "delegation"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "B",
+      "communityAction": "withhold_dues"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "B",
+      "communityAction": "other_villages"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "B",
+      "communityAction": "public_meeting"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "C",
+      "resistanceAction": "refuse_dues"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "C",
+      "resistanceAction": "block_storehouse"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "C",
+      "resistanceAction": "demonstrate"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "C",
+      "resistanceAction": "return_to_negotiation"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "D"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "luther_order"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "gospel_critique"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "hermeneutical_caution"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "prophetic_resistance",
+      "bandAction": "resistance_occupation"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "prophetic_resistance",
+      "bandAction": "resistance_armed_defense"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "prophetic_resistance",
+      "bandAction": "resistance_limit"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "prophetic_resistance",
+      "bandAction": "resistance_dues"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation_effect",
+    "variant": {
+      "escalationResponse": "protect"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation_effect",
+    "variant": {
+      "escalationResponse": "warn"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation_effect",
+    "variant": {
+      "escalationResponse": "join"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation_effect",
+    "variant": {
+      "escalationResponse": "verify"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {
+      "endWorldState": "negotiation_open"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {
+      "endWorldState": "mobilized_community"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {
+      "endWorldState": "joining_peasant_band"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {
+      "endWorldState": "religious_polarization"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {
+      "endWorldState": "events_moved_without_you"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening",
+    "variant": {
+      "openingWorldState": "nuanced"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening",
+    "variant": {
+      "openingWorldState": "simplified"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening",
+    "variant": {
+      "openingWorldState": "religious"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening",
+    "variant": {
+      "openingWorldState": "confrontational"
+    },
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "route",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "authority",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "community",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "resistance",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "preparation",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ermahnung",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "lords",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "peasants",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "peasants_complement",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "memory",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "early",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "regiments",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "boundary",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "muentzer",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "interpretations",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "theology",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "negotiation",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "conditions",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "band",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "hermeneutics",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "weingarten",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "weingarten_choice",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation_effect",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "harsh",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "comparison",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "structure",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "analysis",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "risk",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "judgment",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "end",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "chapter5",
+    "variant": {},
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "route",
+    "variant": {
+      "openingRoute": "A"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "route",
+    "variant": {
+      "openingRoute": "B"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "route",
+    "variant": {
+      "openingRoute": "C"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "route",
+    "variant": {
+      "openingRoute": "D"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "A",
+      "authorityTone": "legal"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "A",
+      "authorityTone": "articles"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "A",
+      "authorityTone": "gospel"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "A",
+      "authorityTone": "pressure"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "B",
+      "communityAction": "delegation"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "B",
+      "communityAction": "withhold_dues"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "B",
+      "communityAction": "other_villages"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "B",
+      "communityAction": "public_meeting"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "C",
+      "resistanceAction": "refuse_dues"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "C",
+      "resistanceAction": "block_storehouse"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "C",
+      "resistanceAction": "demonstrate"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "C",
+      "resistanceAction": "return_to_negotiation"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "D"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "luther_order"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "gospel_critique"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "hermeneutical_caution"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "prophetic_resistance",
+      "bandAction": "resistance_occupation"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "prophetic_resistance",
+      "bandAction": "resistance_armed_defense"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "prophetic_resistance",
+      "bandAction": "resistance_limit"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "prophetic_resistance",
+      "bandAction": "resistance_dues"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation_effect",
+    "variant": {
+      "escalationResponse": "protect"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation_effect",
+    "variant": {
+      "escalationResponse": "warn"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation_effect",
+    "variant": {
+      "escalationResponse": "join"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation_effect",
+    "variant": {
+      "escalationResponse": "verify"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {
+      "endWorldState": "negotiation_open"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {
+      "endWorldState": "mobilized_community"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {
+      "endWorldState": "joining_peasant_band"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {
+      "endWorldState": "religious_polarization"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {
+      "endWorldState": "events_moved_without_you"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening",
+    "variant": {
+      "openingWorldState": "nuanced"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening",
+    "variant": {
+      "openingWorldState": "simplified"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening",
+    "variant": {
+      "openingWorldState": "religious"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening",
+    "variant": {
+      "openingWorldState": "confrontational"
+    },
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "route",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "authority",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "community",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "resistance",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "preparation",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ermahnung",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "lords",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "peasants",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "peasants_complement",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "memory",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "early",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "regiments",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "boundary",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "muentzer",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "interpretations",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "theology",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "negotiation",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "conditions",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "band",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "hermeneutics",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "weingarten",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "weingarten_choice",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation_effect",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "harsh",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "comparison",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "structure",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "analysis",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "risk",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "judgment",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "end",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "chapter5",
+    "variant": {},
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "route",
+    "variant": {
+      "openingRoute": "A"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "route",
+    "variant": {
+      "openingRoute": "B"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "route",
+    "variant": {
+      "openingRoute": "C"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "route",
+    "variant": {
+      "openingRoute": "D"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "A",
+      "authorityTone": "legal"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "A",
+      "authorityTone": "articles"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "A",
+      "authorityTone": "gospel"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "A",
+      "authorityTone": "pressure"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "B",
+      "communityAction": "delegation"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "B",
+      "communityAction": "withhold_dues"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "B",
+      "communityAction": "other_villages"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "B",
+      "communityAction": "public_meeting"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "C",
+      "resistanceAction": "refuse_dues"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "C",
+      "resistanceAction": "block_storehouse"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "C",
+      "resistanceAction": "demonstrate"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "C",
+      "resistanceAction": "return_to_negotiation"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "D"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "luther_order"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "gospel_critique"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "hermeneutical_caution"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "prophetic_resistance",
+      "bandAction": "resistance_occupation"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "prophetic_resistance",
+      "bandAction": "resistance_armed_defense"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "prophetic_resistance",
+      "bandAction": "resistance_limit"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "prophetic_resistance",
+      "bandAction": "resistance_dues"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation_effect",
+    "variant": {
+      "escalationResponse": "protect"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation_effect",
+    "variant": {
+      "escalationResponse": "warn"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation_effect",
+    "variant": {
+      "escalationResponse": "join"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation_effect",
+    "variant": {
+      "escalationResponse": "verify"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {
+      "endWorldState": "negotiation_open"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {
+      "endWorldState": "mobilized_community"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {
+      "endWorldState": "joining_peasant_band"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {
+      "endWorldState": "religious_polarization"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {
+      "endWorldState": "events_moved_without_you"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening",
+    "variant": {
+      "openingWorldState": "nuanced"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening",
+    "variant": {
+      "openingWorldState": "simplified"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening",
+    "variant": {
+      "openingWorldState": "religious"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening",
+    "variant": {
+      "openingWorldState": "confrontational"
+    },
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "route",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "authority",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "community",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "resistance",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "preparation",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ermahnung",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "lords",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "peasants",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "peasants_complement",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "memory",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "early",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "regiments",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "boundary",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "muentzer",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "interpretations",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "theology",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "negotiation",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "conditions",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "band",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "hermeneutics",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "weingarten",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "weingarten_choice",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation_effect",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "harsh",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "comparison",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "structure",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "analysis",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "risk",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "judgment",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "end",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "chapter5",
+    "variant": {},
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "route",
+    "variant": {
+      "openingRoute": "A"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "route",
+    "variant": {
+      "openingRoute": "B"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "route",
+    "variant": {
+      "openingRoute": "C"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "route",
+    "variant": {
+      "openingRoute": "D"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "A",
+      "authorityTone": "legal"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "A",
+      "authorityTone": "articles"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "A",
+      "authorityTone": "gospel"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "A",
+      "authorityTone": "pressure"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "B",
+      "communityAction": "delegation"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "B",
+      "communityAction": "withhold_dues"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "B",
+      "communityAction": "other_villages"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "B",
+      "communityAction": "public_meeting"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "C",
+      "resistanceAction": "refuse_dues"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "C",
+      "resistanceAction": "block_storehouse"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "C",
+      "resistanceAction": "demonstrate"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "C",
+      "resistanceAction": "return_to_negotiation"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening_effect",
+    "variant": {
+      "openingRoute": "D"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "luther_order"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "gospel_critique"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "hermeneutical_caution"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "prophetic_resistance",
+      "bandAction": "resistance_occupation"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "prophetic_resistance",
+      "bandAction": "resistance_armed_defense"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "prophetic_resistance",
+      "bandAction": "resistance_limit"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "branch_effect",
+    "variant": {
+      "theologicalPath": "prophetic_resistance",
+      "bandAction": "resistance_dues"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation_effect",
+    "variant": {
+      "escalationResponse": "protect"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation_effect",
+    "variant": {
+      "escalationResponse": "warn"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation_effect",
+    "variant": {
+      "escalationResponse": "join"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "escalation_effect",
+    "variant": {
+      "escalationResponse": "verify"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {
+      "endWorldState": "negotiation_open"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {
+      "endWorldState": "mobilized_community"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {
+      "endWorldState": "joining_peasant_band"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {
+      "endWorldState": "religious_polarization"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "world_end",
+    "variant": {
+      "endWorldState": "events_moved_without_you"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening",
+    "variant": {
+      "openingWorldState": "nuanced"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening",
+    "variant": {
+      "openingWorldState": "simplified"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening",
+    "variant": {
+      "openingWorldState": "religious"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  },
+  {
+    "scene": "opening",
+    "variant": {
+      "openingWorldState": "confrontational"
+    },
+    "viewport": [
+      390,
+      844
+    ],
+    "pass": true
+  }
+]
