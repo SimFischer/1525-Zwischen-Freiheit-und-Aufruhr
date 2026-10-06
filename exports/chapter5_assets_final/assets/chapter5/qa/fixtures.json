@@ -1,0 +1,1486 @@
+{
+  "scenes": [
+    {
+      "id": "ch5_peasant_camp_morning",
+      "background": "assets/chapter5/backgrounds/ch5_bg_peasant_camp_morning.png",
+      "branch": "A",
+      "purpose": "Konrad, Matthes und Bauernmitglied organisieren Versorgung",
+      "figures": [
+        {
+          "id": "konrad",
+          "x": 29,
+          "bodyHeight": 48,
+          "footline": 71,
+          "facing": "right",
+          "mirror": true
+        },
+        {
+          "id": "matthes",
+          "x": 52,
+          "bodyHeight": 48,
+          "footline": 71,
+          "facing": "left",
+          "mirror": false
+        },
+        {
+          "id": "band1",
+          "x": 75,
+          "bodyHeight": 48,
+          "footline": 71,
+          "facing": "left",
+          "mirror": true
+        }
+      ],
+      "overlays": [
+        "camp_supply",
+        "armed_tension"
+      ],
+      "overlayRegistration": {
+        "camp_supply": {
+          "scale": 0.401569,
+          "left": 3.6863,
+          "top": 26.0131,
+          "units": "percent of entire scene; transform-origin top-left",
+          "visibleAlphaBounds": [
+            8,
+            319,
+            365,
+            497
+          ],
+          "required": true
+        },
+        "armed_tension": {
+          "scale": 0.510111,
+          "left": 1.8127,
+          "top": 19.9594,
+          "units": "percent of entire scene; transform-origin top-left",
+          "visibleAlphaBounds": [
+            47,
+            106,
+            362,
+            377
+          ],
+          "required": true
+        }
+      },
+      "props": [
+        "food_supplies",
+        "tools_weapons_bundle"
+      ],
+      "hotspot": {
+        "x": 52,
+        "y": 16,
+        "kind": "object",
+        "label": "Vorräte ansehen"
+      },
+      "footline": 71,
+      "bodyHeight": 48,
+      "horizon": 27,
+      "vanishingPoint": {
+        "x": 53,
+        "y": 27
+      },
+      "depthZones": {
+        "front": {
+          "footline": 71,
+          "bodyHeight": 48
+        },
+        "middle": {
+          "footline": 58,
+          "bodyHeight": 27
+        },
+        "back": {
+          "footline": 48,
+          "bodyHeight": 16
+        }
+      },
+      "maxForeground": 3,
+      "dialogSafeArea": {
+        "x": 0,
+        "y": 74,
+        "width": 100,
+        "height": 26
+      }
+    },
+    {
+      "id": "ch5_road_with_peasant_band",
+      "background": "assets/chapter5/backgrounds/ch5_bg_road_with_peasant_band.png",
+      "branch": "A",
+      "purpose": "Abordnung oder Aufbruch auf der Straße",
+      "figures": [
+        {
+          "id": "konrad",
+          "x": 30,
+          "bodyHeight": 42,
+          "footline": 71,
+          "facing": "right",
+          "mirror": true
+        },
+        {
+          "id": "matthes",
+          "x": 65,
+          "bodyHeight": 42,
+          "footline": 71,
+          "facing": "left",
+          "mirror": false
+        }
+      ],
+      "overlays": [
+        "camp_departure",
+        "group_retreat",
+        "distant_troops"
+      ],
+      "overlayRegistration": {
+        "camp_departure": {
+          "scale": 0.601043,
+          "left": 34.3391,
+          "top": 16.2609,
+          "units": "percent of entire scene; transform-origin top-left",
+          "visibleAlphaBounds": [
+            672,
+            265,
+            952,
+            380
+          ],
+          "required": true
+        },
+        "group_retreat": {
+          "scale": 0.379929,
+          "left": 58.4717,
+          "top": 23.2261,
+          "units": "percent of entire scene; transform-origin top-left",
+          "visibleAlphaBounds": [
+            485,
+            238,
+            945,
+            521
+          ],
+          "required": true
+        },
+        "distant_troops": {
+          "scale": 0.363243,
+          "left": 50.5752,
+          "top": 20.3311,
+          "units": "percent of entire scene; transform-origin top-left",
+          "visibleAlphaBounds": [
+            701,
+            289,
+            958,
+            437
+          ],
+          "required": true
+        }
+      },
+      "props": [],
+      "hotspot": {
+        "x": 51,
+        "y": 23,
+        "kind": "path",
+        "label": "Der Straße folgen"
+      },
+      "footline": 71,
+      "bodyHeight": 42,
+      "horizon": 34,
+      "vanishingPoint": {
+        "x": 53,
+        "y": 34
+      },
+      "depthZones": {
+        "front": {
+          "footline": 71,
+          "bodyHeight": 42
+        },
+        "middle": {
+          "footline": 58,
+          "bodyHeight": 27
+        },
+        "back": {
+          "footline": 48,
+          "bodyHeight": 16
+        }
+      },
+      "maxForeground": 2,
+      "dialogSafeArea": {
+        "x": 0,
+        "y": 74,
+        "width": 100,
+        "height": 26
+      }
+    },
+    {
+      "id": "ch5_road_stopped_dues_cart",
+      "background": "assets/chapter5/backgrounds/ch5_bg_road_stopped_dues_cart.png",
+      "branch": "A",
+      "purpose": "Der Abgabenwagen wird aufgehalten",
+      "figures": [
+        {
+          "id": "peter",
+          "x": 25,
+          "bodyHeight": 36,
+          "footline": 71,
+          "facing": "right",
+          "mirror": false
+        },
+        {
+          "id": "konrad",
+          "x": 48,
+          "bodyHeight": 36,
+          "footline": 71,
+          "facing": "left",
+          "mirror": false
+        },
+        {
+          "id": "matthes",
+          "x": 68,
+          "bodyHeight": 36,
+          "footline": 71,
+          "facing": "left",
+          "mirror": false
+        }
+      ],
+      "overlays": [],
+      "overlayRegistration": {},
+      "props": [],
+      "hotspot": {
+        "x": 86,
+        "y": 47,
+        "kind": "object",
+        "label": "Abgaben prüfen"
+      },
+      "footline": 71,
+      "bodyHeight": 36,
+      "horizon": 38,
+      "vanishingPoint": {
+        "x": 53,
+        "y": 38
+      },
+      "depthZones": {
+        "front": {
+          "footline": 71,
+          "bodyHeight": 36
+        },
+        "middle": {
+          "footline": 58,
+          "bodyHeight": 27
+        },
+        "back": {
+          "footline": 48,
+          "bodyHeight": 16
+        }
+      },
+      "maxForeground": 3,
+      "dialogSafeArea": {
+        "x": 0,
+        "y": 74,
+        "width": 100,
+        "height": 26
+      }
+    },
+    {
+      "id": "ch5_camp_prisoner",
+      "background": "assets/chapter5/backgrounds/ch5_bg_camp_prisoner.png",
+      "branch": "A/E",
+      "purpose": "Gefangenenentscheidung im Bauernlager",
+      "figures": [
+        {
+          "id": "konrad",
+          "x": 15,
+          "bodyHeight": 41,
+          "footline": 71,
+          "facing": "right",
+          "mirror": true
+        },
+        {
+          "id": "envoy",
+          "x": 38,
+          "bodyHeight": 41,
+          "footline": 71,
+          "facing": "left",
+          "mirror": false
+        },
+        {
+          "id": "anna",
+          "x": 62,
+          "bodyHeight": 41,
+          "footline": 71,
+          "facing": "left",
+          "mirror": false
+        },
+        {
+          "id": "jakob",
+          "x": 85,
+          "bodyHeight": 41,
+          "footline": 71,
+          "facing": "left",
+          "mirror": false
+        }
+      ],
+      "overlays": [],
+      "overlayRegistration": {},
+      "props": [],
+      "hotspot": {
+        "x": 51,
+        "y": 23,
+        "kind": "action",
+        "label": "Zum Gefangenen sprechen"
+      },
+      "footline": 71,
+      "bodyHeight": 41,
+      "horizon": 34,
+      "vanishingPoint": {
+        "x": 53,
+        "y": 34
+      },
+      "depthZones": {
+        "front": {
+          "footline": 71,
+          "bodyHeight": 41
+        },
+        "middle": {
+          "footline": 58,
+          "bodyHeight": 27
+        },
+        "back": {
+          "footline": 48,
+          "bodyHeight": 16
+        }
+      },
+      "maxForeground": 4,
+      "dialogSafeArea": {
+        "x": 0,
+        "y": 74,
+        "width": 100,
+        "height": 26
+      }
+    },
+    {
+      "id": "ch5_negotiation_chamber",
+      "background": "assets/chapter5/backgrounds/ch5_bg_negotiation_chamber.png",
+      "branch": "B",
+      "purpose": "Verhandlung mit ungleichen Handlungsmöglichkeiten",
+      "figures": [
+        {
+          "id": "peter",
+          "x": 22,
+          "bodyHeight": 41,
+          "footline": 71,
+          "facing": "right",
+          "mirror": false
+        },
+        {
+          "id": "anna",
+          "x": 39,
+          "bodyHeight": 41,
+          "footline": 71,
+          "facing": "left",
+          "mirror": false
+        },
+        {
+          "id": "overseer",
+          "x": 77,
+          "bodyHeight": 41,
+          "footline": 71,
+          "facing": "left",
+          "mirror": false
+        }
+      ],
+      "overlays": [
+        "delegation_inside",
+        "negotiation_broken"
+      ],
+      "overlayRegistration": {
+        "delegation_inside": {
+          "scale": 0.192948,
+          "left": 44.9852,
+          "top": 29.9659,
+          "units": "percent of entire scene; transform-origin top-left",
+          "visibleAlphaBounds": [
+            160,
+            312,
+            903,
+            479
+          ],
+          "required": true
+        },
+        "negotiation_broken": {
+          "scale": 0.30797,
+          "left": 39.5865,
+          "top": 24.2356,
+          "units": "percent of entire scene; transform-origin top-left",
+          "visibleAlphaBounds": [
+            313,
+            287,
+            712,
+            443
+          ],
+          "required": true
+        }
+      },
+      "props": [
+        "negotiation_terms",
+        "village_petition",
+        "seal_and_wax"
+      ],
+      "hotspot": {
+        "x": 58,
+        "y": 42,
+        "kind": "object",
+        "label": "Bedingungen"
+      },
+      "footline": 71,
+      "bodyHeight": 41,
+      "horizon": 34,
+      "vanishingPoint": {
+        "x": 53,
+        "y": 34
+      },
+      "depthZones": {
+        "front": {
+          "footline": 71,
+          "bodyHeight": 41
+        },
+        "middle": {
+          "footline": 58,
+          "bodyHeight": 27
+        },
+        "back": {
+          "footline": 48,
+          "bodyHeight": 16
+        }
+      },
+      "maxForeground": 3,
+      "dialogSafeArea": {
+        "x": 0,
+        "y": 74,
+        "width": 100,
+        "height": 26
+      }
+    },
+    {
+      "id": "ch5_theological_council_evening",
+      "background": "assets/chapter5/backgrounds/ch5_bg_theological_council_evening.png",
+      "branch": "C",
+      "purpose": "Unter Zeitdruck theologisch beraten",
+      "figures": [
+        {
+          "id": "jakob",
+          "x": 25,
+          "bodyHeight": 41,
+          "footline": 71,
+          "facing": "right",
+          "mirror": true
+        },
+        {
+          "id": "anna",
+          "x": 48,
+          "bodyHeight": 41,
+          "footline": 71,
+          "facing": "left",
+          "mirror": false
+        },
+        {
+          "id": "preacher",
+          "x": 74,
+          "bodyHeight": 41,
+          "footline": 71,
+          "facing": "left",
+          "mirror": true
+        }
+      ],
+      "overlays": [
+        "wounded_return"
+      ],
+      "overlayRegistration": {
+        "wounded_return": {
+          "scale": 0.554513,
+          "left": 1.796,
+          "top": 24.3971,
+          "units": "percent of entire scene; transform-origin top-left",
+          "visibleAlphaBounds": [
+            49,
+            133,
+            254,
+            410
+          ],
+          "required": true
+        }
+      },
+      "props": [
+        "bible_council",
+        "luther_text_stack",
+        "emergency_report"
+      ],
+      "hotspot": {
+        "x": 51,
+        "y": 24,
+        "kind": "object",
+        "label": "Berichte und Schrift prüfen"
+      },
+      "footline": 71,
+      "bodyHeight": 41,
+      "horizon": 34,
+      "vanishingPoint": {
+        "x": 53,
+        "y": 34
+      },
+      "depthZones": {
+        "front": {
+          "footline": 71,
+          "bodyHeight": 41
+        },
+        "middle": {
+          "footline": 58,
+          "bodyHeight": 27
+        },
+        "back": {
+          "footline": 48,
+          "bodyHeight": 16
+        }
+      },
+      "maxForeground": 3,
+      "dialogSafeArea": {
+        "x": 0,
+        "y": 74,
+        "width": 100,
+        "height": 26
+      }
+    },
+    {
+      "id": "ch5_churchyard_dispute",
+      "background": "assets/chapter5/backgrounds/ch5_bg_churchyard_dispute.png",
+      "branch": "D",
+      "purpose": "Zwei ernsthafte religiöse Deutungen im selben Kirchhof",
+      "figures": [
+        {
+          "id": "jakob",
+          "x": 38,
+          "bodyHeight": 41,
+          "footline": 71,
+          "facing": "right",
+          "mirror": true
+        },
+        {
+          "id": "preacher",
+          "x": 62,
+          "bodyHeight": 41,
+          "footline": 71,
+          "facing": "left",
+          "mirror": true
+        }
+      ],
+      "overlays": [
+        "order_group",
+        "justice_group"
+      ],
+      "overlayRegistration": {
+        "order_group": {
+          "scale": 0.406588,
+          "left": 8.461,
+          "top": 27.2824,
+          "units": "percent of entire scene; transform-origin top-left",
+          "visibleAlphaBounds": [
+            0,
+            108,
+            279,
+            448
+          ],
+          "required": true
+        },
+        "justice_group": {
+          "scale": 0.445935,
+          "left": 50.3105,
+          "top": 21.0387,
+          "units": "percent of entire scene; transform-origin top-left",
+          "visibleAlphaBounds": [
+            674,
+            206,
+            1011,
+            516
+          ],
+          "required": true
+        }
+      },
+      "props": [
+        "competing_flyers",
+        "public_bible"
+      ],
+      "hotspot": {
+        "x": 51,
+        "y": 25,
+        "kind": "object",
+        "label": "Die Deutungen vergleichen"
+      },
+      "footline": 71,
+      "bodyHeight": 41,
+      "horizon": 34,
+      "vanishingPoint": {
+        "x": 53,
+        "y": 34
+      },
+      "depthZones": {
+        "front": {
+          "footline": 71,
+          "bodyHeight": 41
+        },
+        "middle": {
+          "footline": 58,
+          "bodyHeight": 27
+        },
+        "back": {
+          "footline": 48,
+          "bodyHeight": 16
+        }
+      },
+      "maxForeground": 2,
+      "dialogSafeArea": {
+        "x": 0,
+        "y": 74,
+        "width": 100,
+        "height": 26
+      }
+    },
+    {
+      "id": "ch5_village_prisoner_courtyard",
+      "background": "assets/chapter5/backgrounds/ch5_bg_village_prisoner_courtyard.png",
+      "branch": "B/C/D/E",
+      "purpose": "Gemeinsame Gefangenenentscheidung im Hof",
+      "figures": [
+        {
+          "id": "konrad",
+          "x": 15,
+          "bodyHeight": 41,
+          "footline": 71,
+          "facing": "right",
+          "mirror": true
+        },
+        {
+          "id": "envoy",
+          "x": 38,
+          "bodyHeight": 41,
+          "footline": 71,
+          "facing": "left",
+          "mirror": false
+        },
+        {
+          "id": "anna",
+          "x": 62,
+          "bodyHeight": 41,
+          "footline": 71,
+          "facing": "left",
+          "mirror": false
+        },
+        {
+          "id": "jakob",
+          "x": 85,
+          "bodyHeight": 41,
+          "footline": 71,
+          "facing": "left",
+          "mirror": false
+        }
+      ],
+      "overlays": [],
+      "overlayRegistration": {},
+      "props": [],
+      "hotspot": {
+        "x": 51,
+        "y": 23,
+        "kind": "action",
+        "label": "Den Bericht anhören"
+      },
+      "footline": 71,
+      "bodyHeight": 41,
+      "horizon": 34,
+      "vanishingPoint": {
+        "x": 53,
+        "y": 34
+      },
+      "depthZones": {
+        "front": {
+          "footline": 71,
+          "bodyHeight": 41
+        },
+        "middle": {
+          "footline": 58,
+          "bodyHeight": 27
+        },
+        "back": {
+          "footline": 48,
+          "bodyHeight": 16
+        }
+      },
+      "maxForeground": 4,
+      "dialogSafeArea": {
+        "x": 0,
+        "y": 74,
+        "width": 100,
+        "height": 26
+      }
+    },
+    {
+      "id": "ch5_road_troops_approaching",
+      "background": "assets/chapter5/backgrounds/ch5_bg_road_troops_approaching.png",
+      "branch": "F",
+      "purpose": "Matthes bringt Nachricht angesichts nähernder Truppen",
+      "figures": [
+        {
+          "id": "matthes",
+          "x": 29,
+          "bodyHeight": 42,
+          "footline": 71,
+          "facing": "right",
+          "mirror": true
+        },
+        {
+          "id": "peter",
+          "x": 65,
+          "bodyHeight": 42,
+          "footline": 71,
+          "facing": "left",
+          "mirror": true
+        }
+      ],
+      "overlays": [
+        "people_evacuating",
+        "group_retreat"
+      ],
+      "overlayRegistration": {
+        "people_evacuating": {
+          "scale": 0.527634,
+          "left": 1.9781,
+          "top": 20.916,
+          "units": "percent of entire scene; transform-origin top-left",
+          "visibleAlphaBounds": [
+            35,
+            205,
+            354,
+            467
+          ],
+          "required": true
+        },
+        "group_retreat": {
+          "scale": 0.379929,
+          "left": 58.4717,
+          "top": 23.2261,
+          "units": "percent of entire scene; transform-origin top-left",
+          "visibleAlphaBounds": [
+            485,
+            238,
+            945,
+            521
+          ],
+          "required": true
+        }
+      },
+      "props": [
+        "emergency_report"
+      ],
+      "hotspot": {
+        "x": 51,
+        "y": 23,
+        "kind": "path",
+        "label": "Den Rückweg prüfen"
+      },
+      "footline": 71,
+      "bodyHeight": 42,
+      "horizon": 34,
+      "vanishingPoint": {
+        "x": 53,
+        "y": 34
+      },
+      "depthZones": {
+        "front": {
+          "footline": 71,
+          "bodyHeight": 42
+        },
+        "middle": {
+          "footline": 58,
+          "bodyHeight": 27
+        },
+        "back": {
+          "footline": 48,
+          "bodyHeight": 16
+        }
+      },
+      "maxForeground": 2,
+      "dialogSafeArea": {
+        "x": 0,
+        "y": 74,
+        "width": 100,
+        "height": 26
+      }
+    },
+    {
+      "id": "ch5_village_after_crisis",
+      "background": "assets/chapter5/backgrounds/ch5_bg_village_after_crisis.png",
+      "branch": "G",
+      "purpose": "Das vertraute Dorf trägt die Folgen",
+      "figures": [
+        {
+          "id": "anna",
+          "x": 28,
+          "bodyHeight": 41,
+          "footline": 71,
+          "facing": "right",
+          "mirror": true
+        },
+        {
+          "id": "peter",
+          "x": 51,
+          "bodyHeight": 41,
+          "footline": 71,
+          "facing": "left",
+          "mirror": true
+        },
+        {
+          "id": "jakob",
+          "x": 74,
+          "bodyHeight": 41,
+          "footline": 71,
+          "facing": "left",
+          "mirror": false
+        }
+      ],
+      "overlays": [
+        "after_defeat",
+        "after_negotiation_collapse",
+        "after_protection",
+        "after_fragmentation",
+        "after_deescalation"
+      ],
+      "overlayRegistration": {
+        "after_defeat": {
+          "scale": 1,
+          "left": 0,
+          "top": -10,
+          "units": "percent of entire scene; transform-origin top-left",
+          "visibleAlphaBounds": [
+            37,
+            330,
+            964,
+            501
+          ],
+          "required": true
+        },
+        "after_negotiation_collapse": {
+          "scale": 1,
+          "left": 0,
+          "top": -3,
+          "units": "percent of entire scene; transform-origin top-left",
+          "visibleAlphaBounds": [
+            30,
+            199,
+            1009,
+            493
+          ],
+          "required": true
+        },
+        "after_protection": {
+          "scale": 1,
+          "left": 0,
+          "top": 0,
+          "units": "percent of entire scene; transform-origin top-left",
+          "visibleAlphaBounds": [
+            16,
+            239,
+            259,
+            439
+          ],
+          "required": true
+        },
+        "after_fragmentation": {
+          "scale": 1,
+          "left": 0,
+          "top": -6,
+          "units": "percent of entire scene; transform-origin top-left",
+          "visibleAlphaBounds": [
+            46,
+            288,
+            1018,
+            438
+          ],
+          "required": true
+        },
+        "after_deescalation": {
+          "scale": 1,
+          "left": 0,
+          "top": -9,
+          "units": "percent of entire scene; transform-origin top-left",
+          "visibleAlphaBounds": [
+            19,
+            401,
+            1024,
+            541
+          ],
+          "required": true
+        }
+      },
+      "props": [],
+      "hotspot": {
+        "x": 51,
+        "y": 24,
+        "kind": "action",
+        "label": "Was bleibt zu tun?"
+      },
+      "footline": 71,
+      "bodyHeight": 41,
+      "horizon": 33,
+      "vanishingPoint": {
+        "x": 53,
+        "y": 33
+      },
+      "depthZones": {
+        "front": {
+          "footline": 71,
+          "bodyHeight": 41
+        },
+        "middle": {
+          "footline": 58,
+          "bodyHeight": 27
+        },
+        "back": {
+          "footline": 48,
+          "bodyHeight": 16
+        }
+      },
+      "maxForeground": 3,
+      "dialogSafeArea": {
+        "x": 0,
+        "y": 74,
+        "width": 100,
+        "height": 26
+      }
+    }
+  ],
+  "regions": {
+    "theological_arguments_table": [
+      [
+        15,
+        9,
+        31,
+        34
+      ],
+      [
+        54,
+        9,
+        33,
+        34
+      ],
+      [
+        15,
+        53,
+        31,
+        35
+      ],
+      [
+        54,
+        53,
+        33,
+        35
+      ]
+    ],
+    "luther_four_thoughts": [
+      [
+        11,
+        16,
+        34,
+        29
+      ],
+      [
+        55,
+        16,
+        35,
+        29
+      ],
+      [
+        11,
+        55,
+        34,
+        29
+      ],
+      [
+        55,
+        55,
+        35,
+        29
+      ]
+    ],
+    "three_reports": [
+      [
+        7,
+        20,
+        26,
+        63
+      ],
+      [
+        37,
+        20,
+        26,
+        63
+      ],
+      [
+        69,
+        20,
+        26,
+        63
+      ]
+    ],
+    "religion_functions": [
+      [
+        10,
+        15,
+        23,
+        31
+      ],
+      [
+        40,
+        15,
+        20,
+        31
+      ],
+      [
+        67,
+        15,
+        23,
+        31
+      ],
+      [
+        10,
+        54,
+        23,
+        30
+      ],
+      [
+        40,
+        54,
+        20,
+        30
+      ],
+      [
+        67,
+        54,
+        23,
+        30
+      ]
+    ]
+  },
+  "texts": {
+    "theological_arguments_table": [
+      [
+        "Obrigkeit gehorchen",
+        "Ordnung schützt Menschen. Prüfe, ob Gehorsam hier andere schützt oder Unrecht fortsetzt."
+      ],
+      [
+        "Gott mehr gehorchen",
+        "Das Gewissen bindet. Begründe, wann ein Befehl verletzt, was du vor Gott verantwortest."
+      ],
+      [
+        "Nächstenliebe und Widerstand",
+        "Wem hilft dein Handeln? Denke auch an Menschen, die deine Überzeugung nicht teilen."
+      ],
+      [
+        "Gottes Wille und eigener Wille",
+        "Prüfe deine Auslegung: Was spricht dagegen, deinen politischen Wunsch heilig zu nennen?"
+      ]
+    ],
+    "luther_four_thoughts": [
+      [
+        "Freiheit vor Gott",
+        "Glaube befreit vom Zwang, sich durch Werke vor Gott rechtfertigen zu müssen."
+      ],
+      [
+        "Dienst am Nächsten",
+        "Freiheit wird im Dienst konkret. Auch Gegner bleiben Menschen, denen du verpflichtet bist."
+      ],
+      [
+        "Weltliche Ordnung",
+        "Äußere Ordnung soll schützen. Prüfe, wo Herrschaft selbst Unrecht hervorbringt."
+      ],
+      [
+        "Kritik des Aufruhrs",
+        "Eine berechtigte Forderung heiligt nicht jedes Mittel. Wer trägt die Folgen der Gewalt?"
+      ]
+    ],
+    "three_reports": [
+      [
+        "Ein Bauer berichtet",
+        "Wir wollten den Wagen aufhalten. Dann standen Bewaffnete vor uns. Ich sah einen Mann stürzen, aber nicht, wer den ersten Schlag führte. Manche sagen, wir hätten angegriffen; andere sprechen von einer Drohung. Ich weiß nur, dass jemand Hilfe braucht."
+      ],
+      [
+        "Ein Amtsbote berichtet",
+        "Ich sollte Abgaben und eine Nachricht überbringen. Am Weg standen Bauern. Sie wollten nicht weitergehen lassen. Als andere hinzukamen, wurde es unübersichtlich. Ob sie alle dieselbe Absicht hatten, kann ich nicht sagen. Meine Nachricht ist noch nicht zugestellt."
+      ],
+      [
+        "Eine Zeugin berichtet",
+        "Ich hörte Rufe und sah Menschen auseinanderlaufen. Später wurde ein Verletzter gestützt zurückgebracht. Über den Anfang des Zusammenstoßes erzählen die Leute Verschiedenes. Bevor ihr jemanden verurteilt, fragt, was er selbst gesehen hat und was er nur gehört hat."
+      ]
+    ],
+    "religion_functions": [
+      [
+        "Hoffnung",
+        "Glaube kann tragen, wenn Ausgänge ungewiss bleiben."
+      ],
+      [
+        "Unrecht kritisieren",
+        "Religiöse Maßstäbe können Herrschaft in Frage stellen."
+      ],
+      [
+        "Gemeinschaft",
+        "Gemeinsame Überzeugung verbindet Menschen und verpflichtet."
+      ],
+      [
+        "Widerstand begründen",
+        "Glaube kann zum Widerspruch gegen einen Befehl führen."
+      ],
+      [
+        "Gewalt begrenzen",
+        "Nächstenliebe verlangt, auch den Gegner zu schützen."
+      ],
+      [
+        "Gewalt legitimieren",
+        "Das Risiko: Der eigene Kampf erscheint als Gottes Wille."
+      ]
+    ]
+  },
+  "canon": {
+    "peter": {
+      "asset": "assets/chapter2/characters/ch2_char_peter_neutral.png",
+      "width": 284,
+      "height": 783,
+      "bounds": [
+        0,
+        0,
+        284,
+        783
+      ],
+      "facing": "right",
+      "sha256": "ae216d280f7a23eaf3c41d802c43a288bed4c2729347047a735ac2cbe7ce1d95"
+    },
+    "anna": {
+      "asset": "assets/chapter3/characters/ch3_char_anna_repaired.png",
+      "width": 789,
+      "height": 1994,
+      "bounds": [
+        1,
+        0,
+        789,
+        1994
+      ],
+      "facing": "left",
+      "sha256": "ee4b759dd9763157bc4f1ab4613400dffc06f582f1f682ce3a44d5b158da24d4"
+    },
+    "jakob": {
+      "asset": "assets/chapter3/characters/ch3_char_jakob_repaired.png",
+      "width": 752,
+      "height": 2092,
+      "bounds": [
+        0,
+        0,
+        752,
+        2074
+      ],
+      "facing": "left",
+      "sha256": "dfa512a4975dc01e172d84c8b242f969dedd467e159b87f4613ffa1cd10e0d46"
+    },
+    "konrad": {
+      "asset": "assets/chapter3/characters/ch3_char_konrad_repaired.png",
+      "width": 820,
+      "height": 1918,
+      "bounds": [
+        0,
+        0,
+        803,
+        1892
+      ],
+      "facing": "left",
+      "sha256": "9c5f0993802e97234ee55a858cfa90ee2064b598ab1de56a84901767938bef55"
+    },
+    "matthes": {
+      "asset": "assets/chapter3/characters/ch3_char_matthes_talking.png",
+      "width": 512,
+      "height": 896,
+      "bounds": [
+        94,
+        59,
+        452,
+        792
+      ],
+      "facing": "left",
+      "sha256": "276340c554f59b6d62d28959dc837a1c6d06dde38d66f789b4413cfdc2fd0604"
+    },
+    "preacher": {
+      "asset": "assets/chapter4/characters/ch4_char_local_preacher_talking.png",
+      "width": 512,
+      "height": 896,
+      "bounds": [
+        43,
+        15,
+        469,
+        881
+      ],
+      "facing": "right",
+      "sha256": "8fc1510a141530e8adfb792c8a745f7608125a11a9f0e37725e75af069be4d91"
+    },
+    "envoy": {
+      "asset": "assets/chapter4/characters/ch4_char_authority_envoy_talking.png",
+      "width": 512,
+      "height": 896,
+      "bounds": [
+        53,
+        15,
+        458,
+        881
+      ],
+      "facing": "left",
+      "sha256": "8aa1327cbe3e3ec425ef970aa5948cd48792ca6d14c316261be196989db6d0aa"
+    },
+    "band1": {
+      "asset": "assets/chapter4/characters/ch4_char_peasant_band_member_1.png",
+      "width": 512,
+      "height": 896,
+      "bounds": [
+        27,
+        15,
+        485,
+        881
+      ],
+      "facing": "right",
+      "sha256": "c9c83364bff43919a42be96c34aaf24ef58dd0c80da54711dc51293460aa1353"
+    },
+    "band2": {
+      "asset": "assets/chapter4/characters/ch4_char_peasant_band_member_2.png",
+      "width": 512,
+      "height": 896,
+      "bounds": [
+        73,
+        15,
+        439,
+        881
+      ],
+      "facing": "left",
+      "sha256": "17a563f604d4e31c8c8b5123303d573653bf348460302516db87b689b1221d56"
+    },
+    "overseer": {
+      "asset": "assets/chapter2/characters/ch2_char_overseer_neutral.png",
+      "width": 311,
+      "height": 864,
+      "bounds": [
+        0,
+        0,
+        311,
+        864
+      ],
+      "facing": "left",
+      "sha256": "c3e7e03d5f2085c4d2f2b94e43260157aa1cad72aa201f7155c4f15bfbdf735a"
+    }
+  },
+  "registrations": {
+    "after_deescalation": {
+      "scale": 1,
+      "left": 0,
+      "top": -9,
+      "units": "percent of entire scene; transform-origin top-left",
+      "visibleAlphaBounds": [
+        19,
+        401,
+        1024,
+        541
+      ],
+      "required": true
+    },
+    "after_defeat": {
+      "scale": 1,
+      "left": 0,
+      "top": -10,
+      "units": "percent of entire scene; transform-origin top-left",
+      "visibleAlphaBounds": [
+        37,
+        330,
+        964,
+        501
+      ],
+      "required": true
+    },
+    "after_fragmentation": {
+      "scale": 1,
+      "left": 0,
+      "top": -6,
+      "units": "percent of entire scene; transform-origin top-left",
+      "visibleAlphaBounds": [
+        46,
+        288,
+        1018,
+        438
+      ],
+      "required": true
+    },
+    "after_negotiation_collapse": {
+      "scale": 1,
+      "left": 0,
+      "top": -3,
+      "units": "percent of entire scene; transform-origin top-left",
+      "visibleAlphaBounds": [
+        30,
+        199,
+        1009,
+        493
+      ],
+      "required": true
+    },
+    "after_protection": {
+      "scale": 1,
+      "left": 0,
+      "top": 0,
+      "units": "percent of entire scene; transform-origin top-left",
+      "visibleAlphaBounds": [
+        16,
+        239,
+        259,
+        439
+      ],
+      "required": true
+    },
+    "armed_tension": {
+      "scale": 0.510111,
+      "left": 1.8127,
+      "top": 19.9594,
+      "units": "percent of entire scene; transform-origin top-left",
+      "visibleAlphaBounds": [
+        47,
+        106,
+        362,
+        377
+      ],
+      "required": true
+    },
+    "camp_departure": {
+      "scale": 0.601043,
+      "left": 34.3391,
+      "top": 16.2609,
+      "units": "percent of entire scene; transform-origin top-left",
+      "visibleAlphaBounds": [
+        672,
+        265,
+        952,
+        380
+      ],
+      "required": true
+    },
+    "camp_supply": {
+      "scale": 0.401569,
+      "left": 3.6863,
+      "top": 26.0131,
+      "units": "percent of entire scene; transform-origin top-left",
+      "visibleAlphaBounds": [
+        8,
+        319,
+        365,
+        497
+      ],
+      "required": true
+    },
+    "delegation_inside": {
+      "scale": 0.192948,
+      "left": 44.9852,
+      "top": 29.9659,
+      "units": "percent of entire scene; transform-origin top-left",
+      "visibleAlphaBounds": [
+        160,
+        312,
+        903,
+        479
+      ],
+      "required": true
+    },
+    "distant_troops": {
+      "scale": 0.363243,
+      "left": 50.5752,
+      "top": 20.3311,
+      "units": "percent of entire scene; transform-origin top-left",
+      "visibleAlphaBounds": [
+        701,
+        289,
+        958,
+        437
+      ],
+      "required": true
+    },
+    "group_retreat": {
+      "scale": 0.379929,
+      "left": 58.4717,
+      "top": 23.2261,
+      "units": "percent of entire scene; transform-origin top-left",
+      "visibleAlphaBounds": [
+        485,
+        238,
+        945,
+        521
+      ],
+      "required": true
+    },
+    "justice_group": {
+      "scale": 0.445935,
+      "left": 50.3105,
+      "top": 21.0387,
+      "units": "percent of entire scene; transform-origin top-left",
+      "visibleAlphaBounds": [
+        674,
+        206,
+        1011,
+        516
+      ],
+      "required": true
+    },
+    "negotiation_broken": {
+      "scale": 0.30797,
+      "left": 39.5865,
+      "top": 24.2356,
+      "units": "percent of entire scene; transform-origin top-left",
+      "visibleAlphaBounds": [
+        313,
+        287,
+        712,
+        443
+      ],
+      "required": true
+    },
+    "order_group": {
+      "scale": 0.406588,
+      "left": 8.461,
+      "top": 27.2824,
+      "units": "percent of entire scene; transform-origin top-left",
+      "visibleAlphaBounds": [
+        0,
+        108,
+        279,
+        448
+      ],
+      "required": true
+    },
+    "people_evacuating": {
+      "scale": 0.527634,
+      "left": 1.9781,
+      "top": 20.916,
+      "units": "percent of entire scene; transform-origin top-left",
+      "visibleAlphaBounds": [
+        35,
+        205,
+        354,
+        467
+      ],
+      "required": true
+    },
+    "wounded_return": {
+      "scale": 0.554513,
+      "left": 1.796,
+      "top": 24.3971,
+      "units": "percent of entire scene; transform-origin top-left",
+      "visibleAlphaBounds": [
+        49,
+        133,
+        254,
+        410
+      ],
+      "required": true
+    }
+  }
+}

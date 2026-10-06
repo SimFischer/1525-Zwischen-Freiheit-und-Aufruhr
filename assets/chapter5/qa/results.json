@@ -1,0 +1,1372 @@
+[
+  {
+    "scene": "ch5_peasant_camp_morning",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_with_peasant_band",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_stopped_dues_cart",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_camp_prisoner",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_negotiation_chamber",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_theological_council_evening",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_churchyard_dispute",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_prisoner_courtyard",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_troops_approaching",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_peasant_camp_morning",
+    "overlay": "camp_supply",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_peasant_camp_morning",
+    "overlay": "armed_tension",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_with_peasant_band",
+    "overlay": "camp_departure",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_with_peasant_band",
+    "overlay": "group_retreat",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_with_peasant_band",
+    "overlay": "distant_troops",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_negotiation_chamber",
+    "overlay": "delegation_inside",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_negotiation_chamber",
+    "overlay": "negotiation_broken",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_theological_council_evening",
+    "overlay": "wounded_return",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_churchyard_dispute",
+    "overlay": "order_group",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_churchyard_dispute",
+    "overlay": "justice_group",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_troops_approaching",
+    "overlay": "people_evacuating",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_troops_approaching",
+    "overlay": "group_retreat",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "overlay": "after_defeat",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "overlay": "after_negotiation_collapse",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "overlay": "after_protection",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "overlay": "after_fragmentation",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "overlay": "after_deescalation",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_churchyard_dispute",
+    "overlay": "order_group,justice_group",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "ui": "theological_arguments_table",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "ui": "luther_four_thoughts",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "ui": "three_reports",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "ui": "religion_functions",
+    "viewport": [
+      1024,
+      768
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_peasant_camp_morning",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_with_peasant_band",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_stopped_dues_cart",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_camp_prisoner",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_negotiation_chamber",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_theological_council_evening",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_churchyard_dispute",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_prisoner_courtyard",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_troops_approaching",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_peasant_camp_morning",
+    "overlay": "camp_supply",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_peasant_camp_morning",
+    "overlay": "armed_tension",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_with_peasant_band",
+    "overlay": "camp_departure",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_with_peasant_band",
+    "overlay": "group_retreat",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_with_peasant_band",
+    "overlay": "distant_troops",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_negotiation_chamber",
+    "overlay": "delegation_inside",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_negotiation_chamber",
+    "overlay": "negotiation_broken",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_theological_council_evening",
+    "overlay": "wounded_return",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_churchyard_dispute",
+    "overlay": "order_group",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_churchyard_dispute",
+    "overlay": "justice_group",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_troops_approaching",
+    "overlay": "people_evacuating",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_troops_approaching",
+    "overlay": "group_retreat",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "overlay": "after_defeat",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "overlay": "after_negotiation_collapse",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "overlay": "after_protection",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "overlay": "after_fragmentation",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "overlay": "after_deescalation",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_churchyard_dispute",
+    "overlay": "order_group,justice_group",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "ui": "theological_arguments_table",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "ui": "luther_four_thoughts",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "ui": "three_reports",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "ui": "religion_functions",
+    "viewport": [
+      820,
+      640
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_peasant_camp_morning",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_with_peasant_band",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_stopped_dues_cart",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_camp_prisoner",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_negotiation_chamber",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_theological_council_evening",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_churchyard_dispute",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_prisoner_courtyard",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_troops_approaching",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_peasant_camp_morning",
+    "overlay": "camp_supply",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_peasant_camp_morning",
+    "overlay": "armed_tension",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_with_peasant_band",
+    "overlay": "camp_departure",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_with_peasant_band",
+    "overlay": "group_retreat",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_with_peasant_band",
+    "overlay": "distant_troops",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_negotiation_chamber",
+    "overlay": "delegation_inside",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_negotiation_chamber",
+    "overlay": "negotiation_broken",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_theological_council_evening",
+    "overlay": "wounded_return",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_churchyard_dispute",
+    "overlay": "order_group",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_churchyard_dispute",
+    "overlay": "justice_group",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_troops_approaching",
+    "overlay": "people_evacuating",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_troops_approaching",
+    "overlay": "group_retreat",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "overlay": "after_defeat",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "overlay": "after_negotiation_collapse",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "overlay": "after_protection",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "overlay": "after_fragmentation",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "overlay": "after_deescalation",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_churchyard_dispute",
+    "overlay": "order_group,justice_group",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "ui": "theological_arguments_table",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "ui": "luther_four_thoughts",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "ui": "three_reports",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "ui": "religion_functions",
+    "viewport": [
+      1440,
+      900
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_peasant_camp_morning",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_with_peasant_band",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_stopped_dues_cart",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_camp_prisoner",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_negotiation_chamber",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_theological_council_evening",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_churchyard_dispute",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_prisoner_courtyard",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_troops_approaching",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_peasant_camp_morning",
+    "overlay": "camp_supply",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_peasant_camp_morning",
+    "overlay": "armed_tension",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_with_peasant_band",
+    "overlay": "camp_departure",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_with_peasant_band",
+    "overlay": "group_retreat",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_with_peasant_band",
+    "overlay": "distant_troops",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_negotiation_chamber",
+    "overlay": "delegation_inside",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_negotiation_chamber",
+    "overlay": "negotiation_broken",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_theological_council_evening",
+    "overlay": "wounded_return",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_churchyard_dispute",
+    "overlay": "order_group",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_churchyard_dispute",
+    "overlay": "justice_group",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_troops_approaching",
+    "overlay": "people_evacuating",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_troops_approaching",
+    "overlay": "group_retreat",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "overlay": "after_defeat",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "overlay": "after_negotiation_collapse",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "overlay": "after_protection",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "overlay": "after_fragmentation",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "overlay": "after_deescalation",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_churchyard_dispute",
+    "overlay": "order_group,justice_group",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "ui": "theological_arguments_table",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "ui": "luther_four_thoughts",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "ui": "three_reports",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "ui": "religion_functions",
+    "viewport": [
+      768,
+      1024
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_peasant_camp_morning",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_with_peasant_band",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_stopped_dues_cart",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_camp_prisoner",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_negotiation_chamber",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_theological_council_evening",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_churchyard_dispute",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_prisoner_courtyard",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_troops_approaching",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_peasant_camp_morning",
+    "overlay": "camp_supply",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_peasant_camp_morning",
+    "overlay": "armed_tension",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_with_peasant_band",
+    "overlay": "camp_departure",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_with_peasant_band",
+    "overlay": "group_retreat",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_with_peasant_band",
+    "overlay": "distant_troops",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_negotiation_chamber",
+    "overlay": "delegation_inside",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_negotiation_chamber",
+    "overlay": "negotiation_broken",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_theological_council_evening",
+    "overlay": "wounded_return",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_churchyard_dispute",
+    "overlay": "order_group",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_churchyard_dispute",
+    "overlay": "justice_group",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_troops_approaching",
+    "overlay": "people_evacuating",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_road_troops_approaching",
+    "overlay": "group_retreat",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "overlay": "after_defeat",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "overlay": "after_negotiation_collapse",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "overlay": "after_protection",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "overlay": "after_fragmentation",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_village_after_crisis",
+    "overlay": "after_deescalation",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "scene": "ch5_churchyard_dispute",
+    "overlay": "order_group,justice_group",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "ui": "theological_arguments_table",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "ui": "luther_four_thoughts",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "ui": "three_reports",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  },
+  {
+    "ui": "religion_functions",
+    "viewport": [
+      1024,
+      1366
+    ],
+    "pass": true
+  }
+]

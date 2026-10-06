@@ -1,0 +1,263 @@
+{
+  "mode": "built-in image_gen",
+  "assets": [
+    {
+      "filename": "ch5_bg_peasant_camp_morning.png",
+      "type": "backgrounds",
+      "prompt": "Use case: historical-scene. Asset: ch5_bg_peasant_camp_morning.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. Improvised peasants camp in a meadow by a village, morning. Carts and linen shelters at far left and right, a SMALL extinguishing hearth rear right, food sacks, farm tools and only a few pikes. Six tiny tired people at back edges. Not a professional army. Broad empty grounded conversation area centre. SINGLE landscape 4:3 image 1024x768, full room plate. Camera horizontal adult eye-level, horizon y40%, main vanishing point x55 y40%. Broad EMPTY primary foreground floor for standing adult Canon sprites with visible body height 34% and feet y71%; dialogue-safe lower26% plain floor. No foreground people, no random outdoor table, no objects across staging x16,38,62,84 y42–71. Real furniture/wheels contact ground. Important background props behind y58.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-35e88a3d-e007-468b-841f-f91941243489.png"
+    },
+    {
+      "filename": "ch5_bg_road_with_peasant_band.png",
+      "type": "backgrounds",
+      "prompt": "Use case: historical-scene. Asset: ch5_bg_road_with_peasant_band.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. Wide earthen road leading away between meadows toward distant modest roofs. Small heterogeneous group and cart departing in background x70 y43, not an army formation. Empty foreground road and verge. SINGLE landscape 4:3 image 1024x768, full room plate. Camera horizontal adult eye-level, horizon y40%, main vanishing point x55 y40%. Broad EMPTY primary foreground floor for standing adult Canon sprites with visible body height 34% and feet y71%; dialogue-safe lower26% plain floor. No foreground people, no random outdoor table, no objects across staging x16,38,62,84 y42–71. Real furniture/wheels contact ground. Important background props behind y58.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-2bb20779-3f4b-4162-a672-f3decaa27a90.png"
+    },
+    {
+      "filename": "ch5_bg_road_stopped_dues_cart.png",
+      "type": "backgrounds",
+      "prompt": "Use case: historical-scene. Asset: ch5_bg_road_stopped_dues_cart.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. Broad dry country road widening into a roadside passing bay. One realistic stationary wooden dues cart, wheels on ground, in REAR RIGHT bay x78 y48, no horse across foreground. Centre and both foreground verges empty for conversation, abundant room to pass. SINGLE landscape 4:3 image 1024x768, full room plate. Camera horizontal adult eye-level, horizon y40%, main vanishing point x55 y40%. Broad EMPTY primary foreground floor for standing adult Canon sprites with visible body height 34% and feet y71%; dialogue-safe lower26% plain floor. No foreground people, no random outdoor table, no objects across staging x16,38,62,84 y42–71. Real furniture/wheels contact ground. Important background props behind y58.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-482b6a1a-28da-443c-a1f4-a207ac0f8c5d.png"
+    },
+    {
+      "filename": "ch5_bg_camp_prisoner.png",
+      "type": "backgrounds",
+      "prompt": "Use case historical-scene. Single production background, landscape 4:3 1024x768. Warm hand-painted credible German 1525 adventure for older pupils, adult quiet illustration, muted ochre/brown/olive/cream, oak plaster linen leather, no photorealism or fantasy. Quiet side of improvised peasant camp, a modest bench along rear left shelter wall for a detained adult to rest; no person baked into bench. Rear supply cart and linen shelter. Broad empty dry foreground for four standing people. No cage, stocks, chains or torture. Clear level camera horizon y40%, perspective vanishing point x55% y40%. ALL foreground x12–88% below y45% EMPTY for original Canon people. Feet of foreground people will stand at y71%, height34%, adult eyes y40%. Furniture entirely behind y58%, firmly grounded. Lower26% quiet empty floor for dialogue. No close people, props on paths, text, labels or watermarks.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-55b7ac4b-cbe3-48f0-acb6-7b28d8fa0474.png"
+    },
+    {
+      "filename": "ch5_bg_negotiation_chamber.png",
+      "type": "backgrounds",
+      "prompt": "Use case historical-scene. Single production background, landscape 4:3 1024x768. Warm hand-painted credible German 1525 adventure for older pupils, adult quiet illustration, muted ochre/brown/olive/cream, oak plaster linen leather, no photorealism or fantasy. Small 1525 administrative council chamber, plaster walls, plain timber beams, side window, modest chest, unadorned rear door right. Wooden negotiating table located BACK CENTRE x40–62 y42–55, legs firmly on floor, empty cream papers and wax seal on table, no chairs across foreground. Empty foreground standing zones left and right; neither palace nor dungeon. Clear level camera horizon y40%, perspective vanishing point x55% y40%. ALL foreground x12–88% below y45% EMPTY for original Canon people. Feet of foreground people will stand at y71%, height34%, adult eyes y40%. Furniture entirely behind y58%, firmly grounded. Lower26% quiet empty floor for dialogue. No close people, props on paths, text, labels or watermarks.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-11395ea9-ede4-48b6-9d29-029725fd0f06.png"
+    },
+    {
+      "filename": "ch5_bg_theological_council_evening.png",
+      "type": "backgrounds",
+      "prompt": "Use case historical-scene. Single production background, landscape 4:3 1024x768. Warm hand-painted credible German 1525 adventure for older pupils, adult quiet illustration, muted ochre/brown/olive/cream, oak plaster linen leather, no photorealism or fantasy. Small parish communal room at evening, warm candles balanced with blue dusk window, few distant unsettled silhouettes outside a small rear doorway. A modest table BACK CENTRE x41–62 y44–56 carrying open modest Bible, only two folded loose sheets, candle. Clearly active urgent consultation, not book library. Empty foreground standing areas left/right. Clear level camera horizon y40%, perspective vanishing point x55% y40%. ALL foreground x12–88% below y45% EMPTY for original Canon people. Feet of foreground people will stand at y71%, height34%, adult eyes y40%. Furniture entirely behind y58%, firmly grounded. Lower26% quiet empty floor for dialogue. No close people, props on paths, text, labels or watermarks.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-c227c0f1-52f6-464b-8b6c-5d65eb7cbf3b.png"
+    },
+    {
+      "filename": "ch5_bg_churchyard_dispute.png",
+      "type": "backgrounds",
+      "prompt": "Use case historical-scene. Single production background, landscape 4:3 1024x768. Warm hand-painted credible German 1525 adventure for older pupils, adult quiet illustration, muted ochre/brown/olive/cream, oak plaster linen leather, no photorealism or fantasy. Modest village churchyard forecourt, recognisable plain small stone church with tiled roof, cottage wall, two quiet separate gathering zones at FAR rear left and right, leave these zones empty for transparent group layers. Empty central conversation area. No monumental cathedral, no moral light/dark split. Clear level camera horizon y40%, perspective vanishing point x55% y40%. ALL foreground x12–88% below y45% EMPTY for original Canon people. Feet of foreground people will stand at y71%, height34%, adult eyes y40%. Furniture entirely behind y58%, firmly grounded. Lower26% quiet empty floor for dialogue. No close people, props on paths, text, labels or watermarks.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-78938f78-6e9b-40d6-9dc7-db3de8fc59bf.png"
+    },
+    {
+      "filename": "ch5_bg_village_prisoner_courtyard.png",
+      "type": "backgrounds",
+      "prompt": "Use case: historical-scene. Asset: ch5_bg_village_prisoner_courtyard.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. Small calm timber and plaster village courtyard, plain wall and rear gate, modest empty bench against rear wall left, no stocks, torture or jail. Ground and broad central standing area free for four adults including detained messenger. Rear shade makes power asymmetry plausible without brutality. SINGLE landscape 4:3 image 1024x768, full room plate. Camera horizontal adult eye-level, horizon y40%, main vanishing point x55 y40%. Broad EMPTY primary foreground floor for standing adult Canon sprites with visible body height 34% and feet y71%; dialogue-safe lower26% plain floor. No foreground people, no random outdoor table, no objects across staging x16,38,62,84 y42–71. Real furniture/wheels contact ground. Important background props behind y58.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-c34531fe-6d1e-48c8-b72d-e1ba19030b06.png"
+    },
+    {
+      "filename": "ch5_bg_road_troops_approaching.png",
+      "type": "backgrounds",
+      "prompt": "Use case: historical-scene. Asset: ch5_bg_road_troops_approaching.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. Rural road curving toward distant hillside. SMALL organised troops only on distant road x73–91 y36–45, restrained pikes and simple banner; no close soldiers, battle, guns or heroic action. Empty wide road foreground for two people. Threat through distant orderly presence, muted daylight. SINGLE landscape 4:3 image 1024x768, full room plate. Camera horizontal adult eye-level, horizon y40%, main vanishing point x55 y40%. Broad EMPTY primary foreground floor for standing adult Canon sprites with visible body height 34% and feet y71%; dialogue-safe lower26% plain floor. No foreground people, no random outdoor table, no objects across staging x16,38,62,84 y42–71. Real furniture/wheels contact ground. Important background props behind y58.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-0a1f81d1-6253-49f0-8704-ace52a5c3d18.png"
+    },
+    {
+      "filename": "ch5_bg_village_after_crisis.png",
+      "type": "backgrounds",
+      "prompt": "Use case: historical-scene. Asset: ch5_bg_village_after_crisis.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. EDIT reference village: preserve EXACT church at rear right, crooked tiled half timber farm central left, left well, tavern with hanging mug sign right, camera, horizon and street architecture. Quieter cloudy morning, doors closed, one small damaged handcart against left farmhouse wall, a blank flyer in roadside mud near rear right and modest supply blanket under far right eaves. No people, ruins, fire or total destruction. Central foreground remains empty. SINGLE landscape 4:3 image 1024x768, full room plate. Camera horizontal adult eye-level, horizon y33%, main vanishing point x55 y33%. Broad EMPTY primary foreground floor for standing adult Canon sprites with visible body height 41% and feet y71%; dialogue-safe lower26% plain floor. No foreground people, no random outdoor table, no objects across staging x16,38,62,84 y42–71. Real furniture/wheels contact ground. Important background props behind y58.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-4bc8be85-8615-4398-bd7c-0e9ebf1da719.png"
+    },
+    {
+      "filename": "ch5_ui_theological_arguments_table.png",
+      "type": "ui",
+      "prompt": "Use case: historical-scene. Asset: ch5_ui_theological_arguments_table.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. Four large EMPTY clean light parchment sheets resting on a plain historical wooden tabletop viewed directly from above, 2x2 arrangement. Sheets interiors exactly (x6–47,y8–44),(x53–94,y8–44),(x6–47,y53–89),(x53–94,y53–89) percent. Straight flat rectangular areas, restrained rough edges, narrow wood gutters. No text, tabs, icons, controls or card shadows. Single LANDSCAPE4:3 1024x768 opaque production illustration, straight top-down, full layout. Every writing area EMPTY unmarked light cream, low texture, no writing. Space for 18px+ HTML headings and full sentences, no scroll UI baked in.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-2a7386a0-2b71-4f8d-a6c3-433ed5c6ddd7.png"
+    },
+    {
+      "filename": "ch5_ui_luther_four_thoughts.png",
+      "type": "ui",
+      "prompt": "Use case: historical-scene. Asset: ch5_ui_luther_four_thoughts.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. Large historical open manuscript spread, two broad pages each with TWO blank writing fields (top and bottom), visually divided only by subtle ruled divider, no separate cards. Writing interiors exactly (x8–47,y10–43),(x53–92,y10–43),(x8–47,y53–87),(x53–92,y53–87) percent. Clean very light warm parchment, narrow book gutter, dark brown leather edge. No text, title, symbols or controls. Single LANDSCAPE4:3 1024x768 opaque production illustration, straight top-down, full layout. Every writing area EMPTY unmarked light cream, low texture, no writing. Space for 18px+ HTML headings and full sentences, no scroll UI baked in.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-7a35b740-b76e-4a82-baae-7c04ed38e158.png"
+    },
+    {
+      "filename": "ch5_ui_three_reports.png",
+      "type": "ui",
+      "prompt": "Use case: historical-scene. Asset: ch5_ui_three_reports.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. Three LARGE different-shaped but matching blank folded letters lying flat next to each other on calm plain oak tabletop, nearly top-down. Interior writing areas (x5–31,y10–88),(x37–63,y10–88),(x69–95,y10–88) percent. Narrow wood gaps, broad light clean paper, no ornamental stains, text, seals across text areas or modern panels. Single LANDSCAPE4:3 1024x768 opaque production illustration, straight top-down, full layout. Every writing area EMPTY unmarked light cream, low texture, no writing. Space for 18px+ HTML headings and full sentences, no scroll UI baked in.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-f53a5e31-c89f-4e9c-9226-1c7f21d61d8f.png"
+    },
+    {
+      "filename": "ch5_ui_religion_functions.png",
+      "type": "ui",
+      "prompt": "Use case: historical-scene. Asset: ch5_ui_religion_functions.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. Six LARGE blank light parchment writing regions in a bound communal ledger arrangement on wooden tabletop, 3columns by2rows, simple flat ink-rule division, not separate modern cards. Interior writing areas columns x5–31,x37–63,x69–95, rows y9–43 and y54–88 percent. Quiet light warm cream, restrained dark leather edges and wood, no text, icons, buttons, ornaments or tabs. Single LANDSCAPE4:3 1024x768 opaque production illustration, straight top-down, full layout. Every writing area EMPTY unmarked light cream, low texture, no writing. Space for 18px+ HTML headings and full sentences, no scroll UI baked in.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-d5b0d2f4-887c-4156-805b-deec10ffcff1.png"
+    },
+    {
+      "filename": "ch5_prop_tools_weapons_bundle.png",
+      "type": "props",
+      "prompt": "Use case: historical-scene. Asset: ch5_prop_tools_weapons_bundle.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. Small coherent bundle of ordinary 1525 wooden hoe, flail, pitchfork and one plain pike, no fantasy sword; isolated three-quarter view. Genuinely transparent background, single isolated complete object with transparent margin, no floor, no backdrop, no label. Warm soft daylight, restrained contact shadow only immediately under object. Square 768x768 production sprite.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-33b58127-8e7b-47f9-8533-b674bdbaee75.png"
+    },
+    {
+      "filename": "ch5_prop_food_supplies.png",
+      "type": "props",
+      "prompt": "Use case: historical-scene. Asset: ch5_prop_food_supplies.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. Modest wicker basket with rye bread, turnips, one tied linen flour sack and wooden water flask; isolated coherent still life. Genuinely transparent background, single isolated complete object with transparent margin, no floor, no backdrop, no label. Warm soft daylight, restrained contact shadow only immediately under object. Square 768x768 production sprite.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-3f19dadd-9381-46de-bc56-728f42ff8ce2.png"
+    },
+    {
+      "filename": "ch5_prop_simple_banner.png",
+      "type": "props",
+      "prompt": "Use case: historical-scene. Asset: ch5_prop_simple_banner.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. Plain off-white coarse linen small banner hanging from wooden staff, no emblem, slogan or text; isolated full object. Genuinely transparent background, single isolated complete object with transparent margin, no floor, no backdrop, no label. Warm soft daylight, restrained contact shadow only immediately under object. Square 768x768 production sprite.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-5181835f-7554-437d-80b6-0a75cf5839bd.png"
+    },
+    {
+      "filename": "ch5_prop_dues_cart_stopped.png",
+      "type": "props",
+      "prompt": "Use case: historical-scene. Asset: ch5_prop_dues_cart_stopped.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. Ordinary small wooden two-wheel handcart with tied sacks and one barrel, stationary, three-quarter view from front left, NO horse/person; entire cart wheels visible. Genuinely transparent background, single isolated complete object with transparent margin, no floor, no backdrop, no label. Warm soft daylight, restrained contact shadow only immediately under object. Square 768x768 production sprite.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-392ea0ff-d4b1-4083-9c57-aa8154669f9e.png"
+    },
+    {
+      "filename": "ch5_overlay_camp_supply.png",
+      "type": "overlays",
+      "prompt": "Use case: historical-scene. Asset: ch5_overlay_camp_supply.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. Three modest food sacks, wicker basket and rolled linen at rear LEFT x7–20%, y46–59%, canvas otherwise transparent. No people. Exactly 1024x768 LANDSCAPE 4:3 full-scene registration canvas, GENUINELY transparent background. Keep described objects SMALL at specified percent coordinates, do not enlarge or centre them. Everything else transparent including bottom26%. Horizontally level eye-line at y40%, no backdrop floor/sky/buildings, no shadow platform, no labels, no Canon characters. Reference image is ONLY camera, size, light and rendering style. Draw ONLY described addition on transparent full-frame canvas; omit the reference background completely.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-25a2dbf6-51c3-486a-bc43-12886a427407.png"
+    },
+    {
+      "filename": "ch5_overlay_camp_departure.png",
+      "type": "overlays",
+      "prompt": "Use case: historical-scene. Asset: ch5_overlay_camp_departure.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. One small departing cart and three SMALL back-view villagers in rear RIGHT x72–91%, feet y54%, body heights12%, facing away right; canvas otherwise transparent. Exactly 1024x768 LANDSCAPE 4:3 full-scene registration canvas, GENUINELY transparent background. Keep described objects SMALL at specified percent coordinates, do not enlarge or centre them. Everything else transparent including bottom26%. Horizontally level eye-line at y40%, no backdrop floor/sky/buildings, no shadow platform, no labels, no Canon characters. Reference image is ONLY camera, size, light and rendering style. Draw ONLY described addition on transparent full-frame canvas; omit the reference background completely.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-2a7ef766-5f89-4d89-93c6-348a481faafa.png"
+    },
+    {
+      "filename": "ch5_overlay_armed_tension.png",
+      "type": "overlays",
+      "prompt": "Use case: historical-scene. Asset: ch5_overlay_armed_tension.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. Three SMALL ordinary peasants with restrained pike and farm tool at back LEFT x5–22%, feet57%, body height17%; tired tense but not attacking. Exactly 1024x768 LANDSCAPE 4:3 full-scene registration canvas, GENUINELY transparent background. Keep described objects SMALL at specified percent coordinates, do not enlarge or centre them. Everything else transparent including bottom26%. Horizontally level eye-line at y40%, no backdrop floor/sky/buildings, no shadow platform, no labels, no Canon characters. Reference image is ONLY camera, size, light and rendering style. Draw ONLY described addition on transparent full-frame canvas; omit the reference background completely.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-e96e2826-a13d-4f41-9a43-5d172c58330e.png"
+    },
+    {
+      "filename": "ch5_overlay_negotiation_broken.png",
+      "type": "overlays",
+      "prompt": "Use case: historical-scene. Asset: ch5_overlay_negotiation_broken.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. Closed leather folio and folded letter with small wax seal on tabletop at x45–55%, y46–50%; NO furniture, person or door. Exactly 1024x768 LANDSCAPE 4:3 full-scene registration canvas, GENUINELY transparent background. Keep described objects SMALL at specified percent coordinates, do not enlarge or centre them. Everything else transparent including bottom26%. Horizontally level eye-line at y40%, no backdrop floor/sky/buildings, no shadow platform, no labels, no Canon characters. Reference image is ONLY camera, size, light and rendering style. Draw ONLY described addition on transparent full-frame canvas; omit the reference background completely.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-5b162600-7ef2-418a-902f-df10c4efa15f.png"
+    },
+    {
+      "filename": "ch5_overlay_delegation_inside.png",
+      "type": "overlays",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-324dc081-e5c3-4a13-bff8-423ae70559a0.png",
+      "prompt": "Remove entire wooden board/tabletop; keep ONLY two linen caps and tied blank petition roll on transparent canvas."
+    },
+    {
+      "filename": "ch5_overlay_order_group.png",
+      "type": "overlays",
+      "prompt": "Use case: historical-scene. Asset: ch5_overlay_order_group.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. Three SMALL ordinary villagers (mixed ages and gender) quietly listening at rear LEFT x5–22%, feet58%, body heights18%. Restrained attentive hands. Warm ochre/green linen, serious and humane. Exactly 1024x768 LANDSCAPE 4:3 full-scene registration canvas, GENUINELY transparent background. Keep described objects SMALL at specified percent coordinates, do not enlarge or centre them. Everything else transparent including bottom26%. Horizontally level eye-line at y40%, no backdrop floor/sky/buildings, no shadow platform, no labels, no Canon characters. Reference is ONLY camera/light/style and placement guidance, do NOT retain its background: output only addition on genuine transparent full scene canvas.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-3aa959fb-23b5-419c-af22-6bcc768d67d6.png"
+    },
+    {
+      "filename": "ch5_overlay_justice_group.png",
+      "type": "overlays",
+      "prompt": "Use case: historical-scene. Asset: ch5_overlay_justice_group.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. Three SMALL ordinary villagers (mixed ages and gender) discussing earnestly at rear RIGHT x78–95%, feet58%, body heights18%. One open hand, no fist/raised weapons. Same warm ochre/green palette, light and dignity as order group. Exactly 1024x768 LANDSCAPE 4:3 full-scene registration canvas, GENUINELY transparent background. Keep described objects SMALL at specified percent coordinates, do not enlarge or centre them. Everything else transparent including bottom26%. Horizontally level eye-line at y40%, no backdrop floor/sky/buildings, no shadow platform, no labels, no Canon characters. Reference is ONLY camera/light/style and placement guidance, do NOT retain its background: output only addition on genuine transparent full scene canvas.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-084376c8-809a-4dfb-94f1-253f977822c2.png"
+    },
+    {
+      "filename": "ch5_overlay_wounded_return.png",
+      "type": "overlays",
+      "prompt": "Use case: historical-scene. Asset: ch5_overlay_wounded_return.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. TWO small full-body ordinary villagers at rear LEFT x5–23%, feet60%, height22%: exhausted man with unobtrusive linen wrapped forearm supported gently by companion. No blood, graphic wound, hero pose. Exactly 1024x768 LANDSCAPE 4:3 full-scene registration canvas, GENUINELY transparent background. Keep described objects SMALL at specified percent coordinates, do not enlarge or centre them. Everything else transparent including bottom26%. Horizontally level eye-line at y40%, no backdrop floor/sky/buildings, no shadow platform, no labels, no Canon characters. Reference is ONLY camera/light/style and placement guidance, do NOT retain its background: output only addition on genuine transparent full scene canvas.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-c8667ebe-9762-49e6-9804-2061cabd5cdd.png"
+    },
+    {
+      "filename": "ch5_prop_negotiation_terms.png",
+      "type": "props",
+      "prompt": "Use case: historical-scene. Asset: ch5_prop_negotiation_terms.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. One open folded cream parchment sheet with discreet corner fold and small wax seal, entirely blank centre for HTML; three-quarter overhead view. Genuinely transparent background, single isolated complete object with transparent margin, no floor, no backdrop, no label. Warm soft daylight, restrained contact shadow only immediately under object. Square 768x768 production sprite.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-a56e77ba-ec69-46d1-9dd6-5588c6549c05.png"
+    },
+    {
+      "filename": "ch5_prop_village_petition.png",
+      "type": "props",
+      "prompt": "Use case: historical-scene. Asset: ch5_prop_village_petition.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. Coarse off-white petition sheet folded at bottom, two small linen ties, blank broad writing space, no letters or signatures. Genuinely transparent background, single isolated complete object with transparent margin, no floor, no backdrop, no label. Warm soft daylight, restrained contact shadow only immediately under object. Square 768x768 production sprite.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-eec40f08-89c8-4556-b08e-41a4c3762f2f.png"
+    },
+    {
+      "filename": "ch5_prop_seal_and_wax.png",
+      "type": "props",
+      "prompt": "Use case: historical-scene. Asset: ch5_prop_seal_and_wax.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. Modest small brass seal stamp, dull red wax lump and one plain round wax impression, 1525 plausible, no readable heraldic writing. Genuinely transparent background, single isolated complete object with transparent margin, no floor, no backdrop, no label. Warm soft daylight, restrained contact shadow only immediately under object. Square 768x768 production sprite.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-59d44254-2df0-4ea0-9d8d-d00b37d6d5ea.png"
+    },
+    {
+      "filename": "ch5_prop_bible_council.png",
+      "type": "props",
+      "prompt": "Use case: historical-scene. Asset: ch5_prop_bible_council.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. Modest thick leather-bound open Bible, two clear EMPTY cream pages and subtle red cloth marker, no text, no title, no luminous holy aura; three-quarter overhead view. Genuinely transparent background, single isolated complete object with transparent margin, no floor, no backdrop, no label. Warm soft daylight, restrained contact shadow only immediately under object. Square 768x768 production sprite.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-694a6a32-b92f-42c5-ae0e-1bb8da6d408b.png"
+    },
+    {
+      "filename": "ch5_prop_luther_text_stack.png",
+      "type": "props",
+      "prompt": "Use case: historical-scene. Asset: ch5_prop_luther_text_stack.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. Three thin early printed pamphlets with blank cream cover leaves and dark simple woodcut-like border without lettering, visibly loose stitched paper distinct from bound Bible. Genuinely transparent background, single isolated complete object with transparent margin, no floor, no backdrop, no label. Warm soft daylight, restrained contact shadow only immediately under object. Square 768x768 production sprite.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-f5effbbe-eb79-4763-81b4-eceb69f24a5f.png"
+    },
+    {
+      "filename": "ch5_prop_emergency_report.png",
+      "type": "props",
+      "prompt": "Use case: historical-scene. Asset: ch5_prop_emergency_report.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. One urgently folded blank letter held by simple loose flax thread, gently weathered but clean central text area, no text. Genuinely transparent background, single isolated complete object with transparent margin, no floor, no backdrop, no label. Warm soft daylight, restrained contact shadow only immediately under object. Square 768x768 production sprite.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-02e46e38-4cb2-412e-b70f-13ad9a1d394a.png"
+    },
+    {
+      "filename": "ch5_prop_competing_flyers.png",
+      "type": "props",
+      "prompt": "Use case: historical-scene. Asset: ch5_prop_competing_flyers.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. Two equally sized blank contemporary pamphlets, one modest line border and one simple cross-line border, SAME neutral light cream paper, no moral contrasting colour or titles. Genuinely transparent background, single isolated complete object with transparent margin, no floor, no backdrop, no label. Warm soft daylight, restrained contact shadow only immediately under object. Square 768x768 production sprite.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-42767325-d432-409e-a984-d49eaf361fcb.png"
+    },
+    {
+      "filename": "ch5_prop_public_bible.png",
+      "type": "props",
+      "prompt": "Use case: historical-scene. Asset: ch5_prop_public_bible.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. Modest CLOSED brown leather Bible on small plain wooden lectern, no title, no dramatic halo, stable feet; entire object isolated. Genuinely transparent background, single isolated complete object with transparent margin, no floor, no backdrop, no label. Warm soft daylight, restrained contact shadow only immediately under object. Square 768x768 production sprite.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-45e7b07f-4591-4f91-8774-20500cb90b91.png"
+    },
+    {
+      "filename": "ch5_prop_prisoner_rope_loose.png",
+      "type": "props",
+      "prompt": "Use case: historical-scene. Asset: ch5_prop_prisoner_rope_loose.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. Short loose coil of coarse flax rope lying flat, ends unknotted, no binding hands or person; tiny unobtrusive object. Optional narrative object only, not automatic prisoner restraint. Genuinely transparent background, single isolated complete object with transparent margin, no floor, no backdrop, no label. Warm soft daylight, restrained contact shadow only immediately under object. Square 768x768 production sprite.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-20a5c6b0-ee37-4bbd-a3a4-55da834749ca.png"
+    },
+    {
+      "filename": "ch5_overlay_people_evacuating.png",
+      "type": "overlays",
+      "prompt": "Use case: historical-scene. Asset: ch5_overlay_people_evacuating.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. Three SMALL back-view villagers at rear LEFT x4–24%, feet59%, heights18%; adult with modest bundle, child, older adult walking calmly together toward left side alley. Exactly 1024x768 LANDSCAPE 4:3 full-scene registration canvas, GENUINELY transparent background. Keep described objects SMALL at specified percent coordinates, do not enlarge or centre them. Everything else transparent including bottom26%. Horizontally level eye-line at y40%, no backdrop floor/sky/buildings, no shadow platform, no labels, no Canon characters. Reference is ONLY camera/light/style and registration. Output ONLY the additional people/material, remove reference backdrop completely to transparent alpha.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-9ca2adb4-754f-47c4-8d95-143193261101.png"
+    },
+    {
+      "filename": "ch5_overlay_group_retreat.png",
+      "type": "overlays",
+      "prompt": "Use case: historical-scene. Asset: ch5_overlay_group_retreat.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. Four SMALL farmers walking away in middle/rear RIGHT x73–94%, feet56%, heights15%; one blanket roll, lowered farm tool, tired orderly retreat; no panic or action. Exactly 1024x768 LANDSCAPE 4:3 full-scene registration canvas, GENUINELY transparent background. Keep described objects SMALL at specified percent coordinates, do not enlarge or centre them. Everything else transparent including bottom26%. Horizontally level eye-line at y40%, no backdrop floor/sky/buildings, no shadow platform, no labels, no Canon characters. Reference is ONLY camera/light/style and registration. Output ONLY the additional people/material, remove reference backdrop completely to transparent alpha.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-ea8c7fb6-ee8c-4d5e-85df-524835b1e0e1.png"
+    },
+    {
+      "filename": "ch5_overlay_distant_troops.png",
+      "type": "overlays",
+      "prompt": "Use case: historical-scene. Asset: ch5_overlay_distant_troops.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. Six TINY organised guards with simple pikes on distant road at x73–94%, feet43%, height6%; neutral authority, no heroic pose. Transparent everywhere else. Exactly 1024x768 LANDSCAPE 4:3 full-scene registration canvas, GENUINELY transparent background. Keep described objects SMALL at specified percent coordinates, do not enlarge or centre them. Everything else transparent including bottom26%. Horizontally level eye-line at y40%, no backdrop floor/sky/buildings, no shadow platform, no labels, no Canon characters. Reference is ONLY camera/light/style and registration. Output ONLY the additional people/material, remove reference backdrop completely to transparent alpha.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-7324e7c7-7514-4862-94d8-1b2742678240.png"
+    },
+    {
+      "filename": "ch5_overlay_after_defeat.png",
+      "type": "overlays",
+      "prompt": "Use case: historical-scene. Asset: ch5_overlay_after_defeat.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. On SAME reference after-crisis village: sparse abandoned farm tool and rolled torn blanket at x8–19 y51–58%; two SMALL exhausted villagers helping one another under far-right eaves x82–94%, feet58%, height17%. No corpses, blood or centre group. Exactly 1024x768 LANDSCAPE 4:3 full-scene registration canvas, GENUINELY transparent background. Keep described objects SMALL at specified percent coordinates, do not enlarge or centre them. Everything else transparent including bottom26%. Horizontally level eye-line at y40%, no backdrop floor/sky/buildings, no shadow platform, no labels, no Canon characters. Reference is ONLY camera/light/style and registration. Output ONLY the additional people/material, remove reference backdrop completely to transparent alpha.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-56823b7a-ab1a-46a5-b961-fa8d5bf91465.png"
+    },
+    {
+      "filename": "ch5_overlay_after_negotiation_collapse.png",
+      "type": "overlays",
+      "prompt": "Correct this transparent overlay. REMOVE ALL drawn doors, planks, benches and extra soldiers. Preserve ONLY one small ordinary unarmoured authority guard in the FAR RIGHT portion, one SMALL blank sealed notice next to him and one modest rolled petition in FAR LEFT portion. No new architecture or furniture, no crowd. Quiet warm 1525 hand painted adventure style, humane guard no villain pose. Entire background truly transparent. Full4:3 1024x768 scene layer, lower26% empty. Do not add a replacement door or table.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-9a40a73a-fa22-463a-bcb8-d565d034735a.png"
+    },
+    {
+      "filename": "ch5_overlay_after_protection.png",
+      "type": "overlays",
+      "prompt": "Use case: historical-scene. Asset: ch5_overlay_after_protection.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. On SAME reference after-crisis village: three SMALL sheltered villagers far LEFT x5–21%, feet57%, heights16%, distributing bread and folded blanket quietly. No celebration, victory or main Canon people. Exactly 1024x768 LANDSCAPE 4:3 full-scene registration canvas, GENUINELY transparent background. Keep described objects SMALL at specified percent coordinates, do not enlarge or centre them. Everything else transparent including bottom26%. Horizontally level eye-line at y40%, no backdrop floor/sky/buildings, no shadow platform, no labels, no Canon characters. Reference is registration plate ONLY: preserve camera/light, draw sparse additions at positions, OMIT ALL reference buildings, floor, sky and objects. Genuine alpha full scene overlay, no foreground Canon cast.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-00b406e5-4d54-4398-bc59-7c3e74ed17da.png"
+    },
+    {
+      "filename": "ch5_overlay_after_fragmentation.png",
+      "type": "overlays",
+      "prompt": "Use case: historical-scene. Asset: ch5_overlay_after_fragmentation.png. Warm hand-painted historical adventure illustration for older pupils, credible rural German lands in 1525. Adult calm drawing, muted ochre brown olive green cream and restrained rust, worn oak, linen, plaster, leather. No photorealism, fantasy, gothic darkness, neon, modern objects, slogans, readable letters or watermark. On SAME reference after-crisis village: separate tiny departing pairs rear-left x6–20 and rear-right x80–94, feet56%, heights15%; two blank differing pamphlets beside rear path. No moral colour coding or aggression; broad centre empty. Exactly 1024x768 LANDSCAPE 4:3 full-scene registration canvas, GENUINELY transparent background. Keep described objects SMALL at specified percent coordinates, do not enlarge or centre them. Everything else transparent including bottom26%. Horizontally level eye-line at y40%, no backdrop floor/sky/buildings, no shadow platform, no labels, no Canon characters. Reference is registration plate ONLY: preserve camera/light, draw sparse additions at positions, OMIT ALL reference buildings, floor, sky and objects. Genuine alpha full scene overlay, no foreground Canon cast.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-3582739b-372d-48b7-b04d-97bcdc568249.png"
+    },
+    {
+      "filename": "ch5_overlay_after_deescalation.png",
+      "type": "overlays",
+      "prompt": "Correct this transparent overlay: LEFT upright banner and its entire upright pole MUST be removed, replaced with a SMALL rolled-down off-white linen banner laid flat alongside one lowered hoe. Keep quiet two people talking FAR RIGHT. No victorious flag or waving fabric, no new backdrop. Same warm drawing, 1525, transparent background, full4:3 registration canvas, lower26% empty.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-8e37c42b-45a5-4ca0-9299-4a695617d767.png"
+    }
+  ]
+}

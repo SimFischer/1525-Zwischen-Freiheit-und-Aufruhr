@@ -4,3 +4,11 @@ exports/chapter4_assets_final/*.md text eol=lf
 exports/chapter4_assets_final/*.txt text eol=lf
 exports/chapter4_assets_final/**/*.png binary
 exports/1525_kapitel4_assets_final.zip binary
+# Keep the chapter-five delivery identical to its ZIP on Windows checkouts.
+exports/chapter5_assets_final/**/*.json text eol=lf
+exports/chapter5_assets_final/**/*.md text eol=lf
+exports/chapter5_assets_final/**/*.html text eol=lf
+exports/chapter5_assets_final/**/*.png binary
+exports/chapter5_assets_final/*.json text eol=lf
+exports/chapter5_assets_final/*.md text eol=lf
+exports/1525_kapitel5_assets_final.zip binary
