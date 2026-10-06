@@ -1,4 +1,5 @@
 import { chapterFourDecisionRules } from './chapter-four-consequences.js';
+import { chapterFiveDecisionRules } from './chapter-five-consequences.js';
 import { chapterThreeDecisionRules } from './chapter-three-consequences.js';
 // For every important decision from chapter 3 onward document: immediate response,
 // later callback, orientation/perception effect, and potential chapter 5/6 recall.
@@ -9,6 +10,7 @@ export const perceptionCharacters=['preacher','envoy','band1','band2','overseer'
 export const perceptionTags=['builds_collective_pressure','accepts_resistance','limits_violence','argues_from_gospel','distinguishes_regiments','questions_religious_certainty','follows_prophetic_reading','values_order','questions_authority','reconsiders_position','community_minded','cautious','legally_argumentative','willing_to_resist','theologically_reflective','reliable','questioned_authority','avoids_conflict','seeks_negotiation','social_tension'];
 const effect=(orientation={},perceptions={})=>({orientation,perceptions});
 export const decisionRules={
+ ...chapterFiveDecisionRules,
  ...chapterFourDecisionRules,
  ...chapterThreeDecisionRules,
  initialFreedomInterpretation:{chapter:1,immediate:'Existing interpretation reactions',later:'ch2Morning',options:{

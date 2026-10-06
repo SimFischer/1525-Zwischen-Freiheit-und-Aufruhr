@@ -1,4 +1,6 @@
 import { fitChapterFourScene } from './chapter-four-view.js';
+import { fitChapterFiveScene } from './chapter-five-view.js';
+import { configureChapterFive,prepareChapterFive,chapterFiveAction } from './chapter-five.js';
 import { configureChapterFour,prepareChapterFour,chapterFourAction } from './chapter-four.js';
 import { fitChapterThreeDialogue } from './chapter-three-view.js';
 import { configureAdmin, installAdminHold, adminAction, testToolbar, ensureAdminSession, openAdmin } from './admin.js';
@@ -54,6 +56,7 @@ function enterScene(id, complete = true) {
   state.scene = id; state.phase = 'active'; state.dialogue = null; state.interaction = null; selectedCard = null;
   const scene = sceneById[id];
   state.chapter=scene.chapter||1;
+  if(scene.chapter===5){playing=true;prepareChapterFive(scene);render();persist();return;}
   if (scene.chapter===4) {playing=true;prepareChapterFour(scene);render();persist();return;}
   if (scene.chapter===3) { playing=true; prepareChapterThree(scene); render(); persist(); return; }
   if (scene.chapter===2) { playing=true; prepareChapterTwo(scene); render(); persist(); return; }
@@ -80,6 +83,11 @@ function render() {
   document.body.dataset.testMode=String(isTestMode());
   if (!playing) return startScreen();
   const scene = sceneById[state.scene], debugWasOpen = app.querySelector('.debug')?.open || false;
+  if(scene.chapter===5){
+    const control=document.activeElement?.closest('.chapter-five-layout button'),selector=control?['action','item','option'].filter(key=>control.dataset[key]).map(key=>`[data-${key}="${CSS.escape(control.dataset[key])}"]`).join(''):null;
+    setMode(state.dialogue?'dialogue':'minigame');app.innerHTML=sceneView()+debugView(debugWasOpen)+testToolbar();fitChapterFiveScene();
+    if(selector){const focus=app.querySelector('.chapter-five-layout '+selector)||app.querySelector('.chapter-five-layout h2');focus?.focus({preventScroll:true});}return;
+  }
   if(scene.chapter===4) {
     const caseControl=document.activeElement?.closest('.ch4-regiments button');
     const caseFocus=caseControl?['action','zone','reason','item'].filter(key=>caseControl.dataset[key]).map(key=>`[data-${key}="${CSS.escape(caseControl.dataset[key])}"]`).join(''):null;
@@ -237,6 +245,7 @@ document.addEventListener('click',event => {
   if (action === 'archive-document') return openDocument(target.dataset.document,null,() => openNotebook('documents'),true);
   if (action === 'scene-document') return openSceneDocument();
   if(action==='debug-ch2-complete' && new URLSearchParams(location.search).get('debug')==='true') { const next=prepareAdminStateForScene('ch2_assembly'); next.scene='ch2_hub'; next.dialogue=null; next.interaction=null; next.chapter2.stage='hub'; showPreparedState(next); return; }
+  if (chapterFiveAction(action,target)) { render(); persist(); return; }
   if (chapterFourAction(action,target)) { render(); persist(); return; }
   if (chapterThreeAction(action,target)) { render(); persist(); return; }
   if (chapterTwoAction(action,target)) { render(); persist(); return; }
@@ -318,6 +327,7 @@ document.addEventListener('change',event => {
   if (event.target.id === 'debug-scene') { ensureAdminSession(); showPreparedState(prepareAdminStateForScene(event.target.value)); }
 });
 configureChapterFour({enterScene,render,persist});
+configureChapterFive({enterScene,render,persist});
 configureChapterThree({enterScene,render,persist,active:()=>playing});
 configureChapterTwo({enterScene,render,persist,clues:forestClues,dialogues:chapterTwoDialogues});
 installDragDrop(app,(id,zone) => { if(state.chapter===4)return; if(state.chapter===3) { chapterThreeDrop(id,zone); render(); persist(); return; } if(state.chapter===2) { chapterTwoDrop(id,zone); render(); persist(); return; } state.minigames.sorting[id] = zone; selectedCard = null; render(); persist(); },id => { if(state.chapter===4)return; if(state.chapter===3) { chapterThreeSelect(id); render(); persist(); return; } if(state.chapter===2) { if(state.scene==='ch2_dues') state.chapter2.selected=id; else selectCard(id); render(); persist(); return; } selectedCard = selectedCard === id ? null : id; render(); });

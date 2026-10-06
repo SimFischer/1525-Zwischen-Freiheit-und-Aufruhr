@@ -472,3 +472,37 @@ dialog:has(.notebook) {
 .ch4-table-object .ch4-work-table {width:100%;margin:0;}
 .ch4-table-object>span {position:absolute;font-size:18px;line-height:1.2;display:flex;align-items:center;justify-content:center;text-align:center;overflow:auto;}
 .ch4-case {aspect-ratio:512/374;min-height:190px;justify-content:center;padding:8% 12%;}
+
+/* Chapter 5 keeps the existing stage, materials and fixed manifest coordinate space. */
+.chapter-five-layout .room-image {object-fit:contain;}
+.ch5-world-overlay {position:absolute;max-width:none;object-fit:contain;pointer-events:none;}
+.chapter-five-layout .ch5-task {max-height:none;}
+.ch5-task-body {font-size:18px;line-height:1.4;}
+.ch5-task h2 {font-size:clamp(20px,2.2vw,26px);margin:.3rem 0 .7rem;}
+.ch5-task .ch4-paper-options {margin:.5rem 0;gap:.5rem;}
+.ch5-task .ch4-paper-options button {font-size:18px;line-height:1.25;min-height:44px;}
+.ch5-submitted {font-style:italic;}
+.ch5-intro {display:grid;place-items:center;background:#130e0b;}
+.ch5-intro .ch4-ending {max-width:720px;text-align:center;}
+.ch5-workspace {height:100%;display:flex;flex-direction:column;align-items:center;overflow:hidden;background:#24180f;}
+.ch5-work-title {flex:none;max-width:98%;padding:8px 10px;text-align:center;}
+.ch5-work-title h1 {font-size:clamp(18px,2vw,23px);line-height:1.2;margin:0;color:#f0ddb5;}
+.ch5-work-sheet {position:relative;flex:none;aspect-ratio:4/3;max-width:calc(100% - 16px);}
+.ch5-work-sheet>img {position:absolute;inset:0;width:100%;height:100%;object-fit:contain;}
+.ch5-write-field {position:absolute;min-height:44px;margin:0;padding:2px;font:18px/1.32 Georgia,serif;overflow:visible;}
+.ch5-write-field strong {display:block;font-size:18px;line-height:1.25;}
+.ch5-write-field p {margin:.5rem 0 0;}
+.ch5-work-controls {flex:none;min-height:54px;margin:0;padding:5px 10px;align-items:center;justify-content:center;color:#f0ddb5;}
+.ch5-work-controls p {margin:0;font-size:18px;}
+.ch5-learning .game-footer {pointer-events:none;}
+@media(max-width:900px){.ch5-task{padding:12px!important;}.ch5-task .panel-actions{margin-top:.4rem;}.ch5-task p{margin:.5rem 0;}.ch5-task .ch4-paper-options button{padding:8px 10px;}.ch5-write-field p{margin:.3rem 0 0;}}
+@media(max-width:600px){.chapter-five-layout .ch5-task{max-height:calc(100svh - 90px);overflow-y:auto;}.ch5-task .ch4-paper-options{grid-template-columns:1fr;}.ch5-workspace{overflow-y:auto;}.ch5-work-sheet{min-width:0;}.ch5-learning{overflow-x:hidden;}}
+
+.chapter-five-layout .stage::before {background:none;}
+
+.chapter-five .ch4-hotspot:hover,.chapter-five .ch4-hotspot:focus-visible,.chapter-five .ch4-hotspot:active {transform:translate(-50%,-50%);}
+
+.ch5-work-sheet .ch5-write-field {display:block;}
+.ch5-work-sheet .ch5-write-field p {font:18px/1.32 Georgia,serif;}
+
+.ch5-source-kind {font-size:14px;}

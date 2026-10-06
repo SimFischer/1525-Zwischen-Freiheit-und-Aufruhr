@@ -1,4 +1,5 @@
 import { sanitizeChapterFour } from '../data/chapter-four-save.js';
+import { sanitizeChapterFive } from '../data/chapter-five-state.js';
 import { syncConsequences } from './consequences.js';
 import { freshState } from './state.js';
 import { canonicalScene, sceneById, scenes } from '../data/scenes.js';
@@ -67,7 +68,7 @@ export function load(normal = false) {
       for (const id of ['serviceBoundary','obedienceBoundary','innerConsolidation','politicalConsolidation']) { delete base.choices[id]; delete base.choiceTexts[id]; }
     }
     if (Object.entries(base.minigames.sorting).some(([id,zone])=>!sortingGames.freedomSorting.cards.some(card=>card.id===id) || !['god','world'].includes(zone))) return null;
-    for (const key of ['chapter2','chapter3','chapter4','forestEvidence','grievances']) if(value[key] && typeof value[key]==='object' && !Array.isArray(value[key])) base[key]={...base[key],...value[key]};
+    for (const key of ['chapter2','chapter3','chapter4','chapter5','forestEvidence','grievances']) if(value[key] && typeof value[key]==='object' && !Array.isArray(value[key])) base[key]={...base[key],...value[key]};
     const isRecord = item => item && typeof item === 'object' && !Array.isArray(item);
     const validList = (items, allowed, max) => Array.isArray(items) && items.length<=max && new Set(items).size===items.length && items.every(item=>allowed.includes(item));
     const c3=base.chapter3;
@@ -93,7 +94,7 @@ export function load(normal = false) {
     if (!validList(base.chapter2.pair,complaintIds,2) || !Array.isArray(base.chapter2.links) || base.chapter2.links.length>28 || base.chapter2.links.some(link=>!isRecord(link)||!complaintIds.includes(link.a)||!complaintIds.includes(link.b)||link.a===link.b||!grievances.find(item=>item.id===link.a).tags.includes(link.reason)||!grievances.find(item=>item.id===link.b).tags.includes(link.reason))) return null;
     if (!isRecord(base.chapter2.demand) || Object.entries(base.chapter2.demand).some(([key,index])=>!demandParts[key]||!Number.isInteger(index)||index<0||index>=demandParts[key].length)) return null;
     if (!Array.isArray(base.chapter2.removed) || base.chapter2.removed.length>3 || base.chapter2.removed.some(item=>!isRecord(item)||!/^sack-[0-9]$/.test(item.id)||!areas.includes(item.from))) return null;
-    const extended=['peterDayPlan','initialFarmPlan','duesFirstSacrifice','duesSecondSacrifice','priorityGrievances','playerDemand'];
+    const extended=['ch5Final','peterDayPlan','initialFarmPlan','duesFirstSacrifice','duesSecondSacrifice','priorityGrievances','playerDemand'];
     if(value.consequences && typeof value.consequences==='object') base.consequences=value.consequences;
     base.chapter = sceneById[canonicalScene(value.scene)].chapter || 1;
     for (const [key, id] of Object.entries(base.choices)) if (!extended.includes(key) && id !== null && (!choices[key] || !choices[key].options.some(option => option.id === id))) delete base.choices[key];
@@ -110,6 +111,8 @@ export function load(normal = false) {
     }
     if(!Object.hasOwn(value.chapter4||{},'regimentsIndex'))delete base.chapter4.regimentsIndex;
     sanitizeChapterFour(base);
+    syncConsequences(base);
+    sanitizeChapterFive(base);
     return syncConsequences(base);
   } catch { return null; }
 }

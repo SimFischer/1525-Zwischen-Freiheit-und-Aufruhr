@@ -544,3 +544,16 @@ dialog:has(.comparison-reading) {width:98vw;height:98svh;max-height:98svh;paddin
 .ch4-comparison-leaf .ch4-comparison-key {border-top:1px solid #b39a70;padding-top:8px;margin:8px 0 0;font-size:18px;font-style:italic;}
 .ch4-reader.enlarged .ch4-comparison-spread .ch4-comparison-leaf {font-size:22px;}
 @media(max-width:600px) {dialog:has(.ch4-reader) {width:98vw;padding:6px;}.ch4-reader .panel-actions {gap:3px;}.ch4-reader .panel-actions button {font-size:.8rem;}.ch4-reader h1 {font-size:1rem;}}
+
+/* The approved blank writing assets supply the material; HTML supplies accessible print. */
+.ch5-work-sheet .ch5-write-field {background:transparent;border:0;border-radius:0;box-shadow:none;color:#2c1b0e;text-shadow:none;}
+.ch5-work-sheet button.ch5-write-field {text-align:left;cursor:pointer;}
+.ch5-work-sheet button.ch5-write-field:hover {background:#9b682712;transform:none;}
+.ch5-work-sheet button.ch5-write-field[aria-pressed="true"] {outline:2px solid #825526;outline-offset:3px;background:#9b682714;}
+.ch5-work-sheet button.ch5-write-field:focus-visible {outline:3px solid #674321;outline-offset:3px;}
+
+/* Quiet the existing binding only underneath letters, preserving the original spread. */
+.ch5-work-sheet[data-work="religion_functions"] .ch5-write-field:nth-of-type(2) strong,
+.ch5-work-sheet[data-work="religion_functions"] .ch5-write-field:nth-of-type(2) p,
+.ch5-work-sheet[data-work="religion_functions"] .ch5-write-field:nth-of-type(5) strong,
+.ch5-work-sheet[data-work="religion_functions"] .ch5-write-field:nth-of-type(5) p {background:var(--source-reading-paper);box-shadow:0 0 5px 3px #f3e4c9e6;}

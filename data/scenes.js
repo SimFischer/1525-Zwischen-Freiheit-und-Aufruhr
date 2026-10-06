@@ -1,4 +1,5 @@
 import { chapterFourScenes } from './chapter-four.js';
+import { chapterFiveScenes } from './chapter-five.js';
 import { chapterThreeScenes } from './chapter-three.js';
 import { chapterTwoScenes } from './chapter-two.js';
 export const scenes = [
@@ -16,7 +17,7 @@ export const scenes = [
   { id: 'ch1_s7_notebook', station: 7, title: 'Dein Notizbuch', kind: 'notebook', entry: 'freedom', instruction: 'Im Notizbuch liegen das Blatt und die Gedanken, die du dir an diesem Abend notiert hast.', next: 'ch1_s8_conclusion' },
   { id: 'ch1_s8_conclusion', station: 8, title: 'Und morgen?', kind: 'dialogue', dialogue: 'conclusion', next: 'ch1_end' },
   { id: 'ch1_end', station: 8, title: 'Wie frei ist dein Leben?', kind: 'ending' },
-  ...chapterTwoScenes, ...chapterThreeScenes, ...chapterFourScenes
+  ...chapterTwoScenes, ...chapterThreeScenes, ...chapterFourScenes, ...chapterFiveScenes
 ];
 export const sceneAliases = { ch1_s1_tavern_intro: 'ch1_s1_intro', ch1_s6_freedom_axis: 'ch1_s6_freedom_sorting' };
 export const sceneById = Object.fromEntries(scenes.map(scene => [scene.id, scene]));

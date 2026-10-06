@@ -1,4 +1,7 @@
 import { chapterFourChoices } from '../data/chapter-four.js';
+import { chapterFiveChoices } from '../data/chapter-five.js';
+import { prepareChapterFiveAdmin,resetChapterFive,applyChapterFiveTestFields } from './chapter-five-admin.js';
+import { prepareChapterFiveState } from './chapter-five.js';
 import { initializeOpening } from '../data/chapter-four-state.js';
 import { prepareChapterFourState } from './chapter-four.js';
 import { prepareChapterFourAdmin,resetChapterFour } from './chapter-four-admin.js';
@@ -112,13 +115,14 @@ function chapterThree(next,scene,target={},complete=false) {
  next.progress.completedScenes.push(...chapterThreeScenes.slice(0,index).map(s=>s.id));syncConsequences(next);
 }
 export const adminChapterRegistry = {
+  5:{prepare:prepareChapterFiveAdmin,complete:next=>prepareChapterFiveAdmin(next,sceneById.ch5_chapter6,true),reset:resetChapterFive,ownedChoices:()=>[...Object.keys(chapterFiveChoices),'ch5Final'],games:[]},
   4:{prepare:(next,scene)=>prepareChapterFourAdmin(next,scene),complete:next=>prepareChapterFourAdmin(next,sceneById.ch4_world_end,true),reset:resetChapterFour,ownedChoices:()=>Object.keys(chapterFourChoices),games:[]},
   3:{prepare:chapterThree,complete:next=>chapterThree(next,sceneById.ch3_end,{},true),reset:next=>{next.chapter3=freshState().chapter3;next.notebook.documents=next.notebook.documents.filter(id=>id!=='articles');delete next.notebook.passages.articles;},ownedChoices:()=>Object.keys(chapterThreeChoices),games:['ch3Print']},
   1:{prepare:chapterOne,complete:next=>chapterOne(next,sceneById.ch1_end,{},true),reset:next=>{
     for(const key of ['flyerUnlocked','peterConversation','annaConversation','jakobConversation','freedomSortingComplete']) next.progress[key]=false;
     next.progress.conversations=[]; next.minigames.sorting={}; next.minigames.puzzle=[];
     next.notebook.entries=next.notebook.entries.filter(id=>id!=='freedom'); next.notebook.documents=next.notebook.documents.filter(id=>id!=='freedom'); delete next.notebook.passages.freedom; next.notebook.unlocked=false;
-  },ownedChoices:()=>Object.keys(choices).filter(id=>!chapterTwoChoices[id]&&!chapterThreeChoices[id]&&!chapterFourChoices[id]),games:['justification','freedomSorting']},
+  },ownedChoices:()=>Object.keys(choices).filter(id=>!chapterTwoChoices[id]&&!chapterThreeChoices[id]&&!chapterFourChoices[id]&&!chapterFiveChoices[id]),games:['justification','freedomSorting']},
   2:{prepare:chapterTwo,complete:next=>chapterTwo(next,sceneById.ch2_end,{checkpoint:'end'},true),reset:next=>{
     const fresh=freshState(); for(const key of ['chapter2','forestEvidence','grievances']) next[key]=fresh[key];
   },ownedChoices:()=>[...Object.keys(chapterTwoChoices),'peterDayPlan','initialFarmPlan','duesFirstSacrifice','duesSecondSacrifice','priorityGrievances','playerDemand'],games:[]}
@@ -134,6 +138,7 @@ export function prepareAdminStateForScene(sceneId,scenario=null) {
     if(!adminChapterRegistry[previous.id]) throw new Error('Für dieses Kapitel fehlen Test-Voraussetzungen.');
     adminChapterRegistry[previous.id].complete(next);
   }
+  if(chapter===5){if(scenario?.chapter4)Object.assign(next.chapter4,structuredClone(scenario.chapter4));if(scenario?.chapter5?.openingPath)next.chapter5.openingPath=scenario.chapter5.openingPath;}
   adminChapterRegistry[chapter]?.prepare(next,scene,target);
   next.chapter=chapter; next.scene=scene.id; next.phase=target.phase||'active'; next.dialogue=null; next.interaction=null;
   if(chapter===2) next.chapter2.stage=target.stage||target.choice||target.checkpoint||({forest:'clues',corvee:'plan',dues:'allocation'}[scene.kind]||scene.kind);
@@ -165,6 +170,7 @@ export function prepareAdminStateForScene(sceneId,scenario=null) {
   }
   if(chapter===4) {syncConsequences(next);initializeOpening(next);if(scenario?.chapter4)Object.assign(next.chapter4,structuredClone(scenario.chapter4));syncConsequences(next);prepareChapterFourState(next,scene);}
   if(chapter===3) { next.dialogue=null;next.interaction=null;prepareChapterThreeState(next,scene); }
+  if(chapter===5){if(scenario?.chapter4)Object.assign(next.chapter4,structuredClone(scenario.chapter4));if(scenario?.chapter5)applyChapterFiveTestFields(next,scenario.chapter5);prepareChapterFiveState(next,scene);}
   if(target.dialogue&&next.dialogue) next.dialogue.lines=getContextualDialogue(target.dialogue,next,next.dialogue.lines);
   return syncConsequences(next);
 }
@@ -183,5 +189,6 @@ export function resetAdminChapter(current,chapter) {
   if(chapter===2) next.chapter2.stage=entry.chapter2.stage;
   if(chapter===4) {next.dialogue=null;next.interaction=null;prepareChapterFourState(next,sceneById[next.scene]);}
   if(chapter===3) next.chapter3.stage=entry.chapter3.stage;
+  if(chapter===5){next.dialogue=null;next.interaction=null;prepareChapterFiveState(next,sceneById[next.scene]);}
   return syncConsequences(next);
 }
