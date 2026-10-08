@@ -22,9 +22,9 @@ export function chapterFiveWorld(g=state){
  if(s==='supply')overlays=['camp_supply'];
  if(s==='limit_violence')overlays=['armed_tension'];
  if(['negotiation_effect','escalation_message'].includes(s)&&room==='negotiation_chamber')overlays=[c.negotiationCondition==='no_persecution'?'negotiation_broken':'delegation_inside'];
- if(s==='escalation_message'&&room==='theological_council_evening')overlays=['wounded_return'];
- // The wounded layer is approved for the council, not arbitrarily stacked on the camp.
- if(s==='escalation_message'&&c.openingPath==='peasant_band'){room='theological_council_evening';overlays=['wounded_return'];}
+ if(s==='escalation_message'&&room==='theological_council_evening')overlays=['wounded_return_council'];
+ // The arriving group is registered to the council room, including the camp path.
+ if(s==='escalation_message'&&c.openingPath==='peasant_band'){room='theological_council_evening';overlays=['wounded_return_council'];}
  if(s==='action_effect'){
   if(['evacuate_civilians','protect_wounded','protect_people','joint_protection','protected_retreat'].includes(c.finalAction))overlays=['people_evacuating'];
   else if(['urge_retreat','separate_faith_and_strategy'].includes(c.finalAction))overlays=['group_retreat'];
@@ -34,12 +34,13 @@ export function chapterFiveWorld(g=state){
  const spec=staging.scenes[room];let figures=spec.figures;
  // The speaking cart messenger is present in the scene; Peter does not speak here.
  if(s==='dues_cart')figures=figures.map(f=>f.id==='peter'?{...f,id:'envoy'}:f);
- if(s==='escalation_message'&&c.openingPath==='peasant_band')figures=[];
+ // Three adults in the arrival layer occupy the foreground; Canon speakers remain in portraits.
+ if(s==='escalation_message'&&room==='theological_council_evening')figures=[];
  if(s==='action_effect')figures=figures.filter(f=>f.id==='matthes');
  if(s==='negotiation_effect'&&c.negotiationCondition==='no_persecution')figures=figures.filter(f=>f.id==='overseer');
  return {room,spec,overlays,figures};
 }
-function worldHTML(w){return `<div class="room"><img class="room-image" src="${w.spec.background}" alt="${esc(w.spec.purpose)}">${w.overlays.map(name=>{const a=staging.assets['overlay_'+name],r=w.spec.overlayRegistration[name];if(!a||!r)throw Error('Unregistered chapter-5 layer '+name);return `<img class="ch5-world-overlay" data-overlay="${name}" src="${a.path}" style="left:${r.left}%;top:${r.top}%;width:${r.scale*100}%;height:${r.scale*100}%" alt="${esc(name.startsWith('after_')?endLabels[state.chapter5.endWorldState]:{order_group:'Gruppe, die Ordnung betont',justice_group:'Gruppe, die Gerechtigkeit betont',camp_supply:'Versorgung im Lager',armed_tension:'Bewaffnete warten auf den Aufbruch',delegation_inside:'Abordnung am Tisch',negotiation_broken:'Abordnung verlässt den Raum',wounded_return:'Ein Verwundeter wird gestützt',people_evacuating:'Menschen verlassen den Gefahrenbereich',group_retreat:'Eine Gruppe zieht sich zurück'}[name])}">`;}).join('')}<div class="ch4-figures">${w.figures.map(f=>chapterFourFigure([f.id,f.x,f.bodyHeight,f.footline],true)).join('')}</div></div>`;}
+function worldHTML(w){return `<div class="room"><img class="room-image" src="${w.spec.background}" alt="${esc(w.spec.purpose)}">${w.overlays.map(name=>{const a=staging.assets['overlay_'+name],r=w.spec.overlayRegistration[name];if(!a||!r)throw Error('Unregistered chapter-5 layer '+name);return `<img class="ch5-world-overlay" data-overlay="${name}" src="${a.path}" style="left:${r.left}%;top:${r.top}%;width:${r.scale*100}%;height:${r.scale*100}%" alt="${esc(name.startsWith('after_')?endLabels[state.chapter5.endWorldState]:{order_group:'Gruppe, die Ordnung betont',justice_group:'Gruppe, die Gerechtigkeit betont',camp_supply:'Versorgung im Lager',armed_tension:'Bewaffnete warten auf den Aufbruch',delegation_inside:'Abordnung am Tisch',negotiation_broken:'Abordnung verlässt den Raum',wounded_return:'Ein Verwundeter wird gestützt',wounded_return_council:'Ein Verwundeter wird von zwei Menschen gestützt',people_evacuating:'Menschen verlassen den Gefahrenbereich',group_retreat:'Eine Gruppe zieht sich zurück'}[name])}">`;}).join('')}<div class="ch4-figures">${w.figures.map(f=>chapterFourFigure([f.id,f.x,f.bodyHeight,f.footline],true)).join('')}</div></div>`;}
 function panel(){const c=state.chapter5,s=c.stage;
  if(state.dialogue)return dialogueView();
  if(c.feedback)return task('Deine Überlegung',`${c.feedback.submitted?`<p class="ch5-submitted">${esc(c.feedback.submitted)}</p>`:''}<p role="status">${esc(c.feedback.text)}</p>`,act(c.feedback.next?'Weiter zur nächsten Szene →':s==='neighbor_love'?'Noch einmal überlegen →':'Weiter →','feedback','class="primary"'));

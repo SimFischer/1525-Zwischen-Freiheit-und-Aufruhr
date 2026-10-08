@@ -29,3 +29,13 @@ with zipfile.ZipFile(root/'exports/1525_kapitel5_assets_final.zip')as z:
  for p in files:assert p.read_bytes()==z.read('chapter5_assets_final/'+p.relative_to(package).as_posix()),p.name
 for a in m['assets']:assert(root/a['path']).read_bytes()==(package/a['path']).read_bytes(),a['filename']
 print('PASS:43 required PNGs, dimensions, hashes, genuine alpha, important-object safe areas, unchanged Canon,160 QA cases and ZIP equality.')
+additions=json.loads((root/'chapter5_assets_additions.json').read_text(encoding='utf-8'))
+for a in additions['assets']:
+ p=root/a['path'];im=Image.open(p)
+ assert im.size==(1024,768) and im.mode=='RGBA'
+ assert hashlib.sha256(p.read_bytes()).hexdigest()==a['sha256']
+ alpha=im.getchannel('A');assert alpha.getextrema()==(0,255)
+ assert list(alpha.point(lambda v:255 if v>16 else 0).getbbox())==a['preferredStaging']['visibleAlphaBounds']
+ assert alpha.crop((0,568,1024,768)).getbbox() is None,'dialogue zone must be completely transparent'
+ assert a['preferredStaging']['scale']==1 and a['preferredStaging']['left']==0 and a['preferredStaging']['top']==0
+print('PASS supplementary wounded group: original hash, alpha, identity registration and dialogue-safe area.')

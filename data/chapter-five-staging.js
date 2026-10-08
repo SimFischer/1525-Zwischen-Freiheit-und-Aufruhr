@@ -3355,3 +3355,40 @@ export const chapterFiveStaging = {
   ]
  ]
 };
+
+// Approved room-registered arrival group; original delivery registrations remain intact.
+chapterFiveStaging.assets.overlay_wounded_return_council = {
+ "filename": "ch5_overlay_wounded_return_council.png",
+ "path": "assets/chapter5/overlays/ch5_overlay_wounded_return_council.png",
+ "type": "overlays",
+ "scene": [
+  "ch5_theological_council_evening"
+ ],
+ "purpose": "Ein verletzter Erwachsener wird im Vordergrund von zwei Menschen gestützt.",
+ "dimensions": {
+  "width": 1024,
+  "height": 768
+ },
+ "transparent": true,
+ "alphaBounds": {
+  "x": 188,
+  "y": 229,
+  "width": 300,
+  "height": 318
+ },
+ "preferredStaging": {
+  "scale": 1,
+  "left": 0,
+  "top": 0,
+  "units": "percent of entire scene; transform-origin top-left",
+  "visibleAlphaBounds": [
+   190,
+   231,
+   486,
+   546
+  ],
+  "required": true
+ },
+ "sha256": "1dfca360a5288ccbcb50e084c78360c6a4a327aac387df151670a0e09f636ed8"
+};
+chapterFiveStaging.scenes.theological_council_evening.overlayRegistration.wounded_return_council = chapterFiveStaging.assets.overlay_wounded_return_council.preferredStaging;

@@ -1,10 +1,18 @@
-# Offener Work-Asset-Auftrag · Kapitel 1–5
+# Work-Asset-Auftrag · Kapitel 1–5 · abgeschlossen
+
+## Einbau und Abnahme · 8. Oktober 2026
+
+A01 ist **RESOLVED**. Das gelieferte `assets/chapter5/overlays/ch5_overlay_wounded_return_council.png` wird unverändert in den beiden vorgesehenen Pfaden verwendet. Originalmaße 1024×768, RGBA, SHA-256 `1dfca360a5288ccbcb50e084c78360c6a4a327aac387df151670a0e09f636ed8`. Sichtbare Alpha-Bounds bei Schwelle 16: `[190, 231, 486, 546]`; die gesamte Dialogzone ab y=568 ist transparent. Registrierung: Skalierung 1, links 0, oben 0.
+
+Während der Ankunft sind die drei illustrierten Erwachsenen die Vordergrundgruppe. Canon-Sprecher erscheinen im bestehenden Dialogportrait; ihre Körper werden in diesem einen Moment nicht zusätzlich darübergelegt. Andere Beratungsszenen behalten ihre Canon-Gruppe. Der ursprüngliche Lieferbestand und sein ZIP bleiben unverändert; `chapter5_assets_additions.json` dokumentiert das neue Runtime-Asset. Die folgende Anforderung bleibt als Produktionshistorie erhalten.
+
+`scripts/check-chapter-five-wounded.cjs` prüft beide tatsächlichen Nachrichtenpfade auf 1024×768, 820×640 und 1440×900, jeweils mit Dialog, Anschlussansicht, Reload und Fortsetzung zu den Berichten. Bildkomposition und freie Bedienbereiche wurden zusätzlich visuell geprüft. Kapitel-5-, Save- und Responsive-Regressionen ergänzen die Abnahme.
 
 Stand: 8. Oktober 2026. Ein komplexes illustriertes Asset benötigt Neuproduktion. Es wurde in diesem Audit ausdrücklich **nicht** mit CSS-Skalierung, Cropping oder weiteren darübergelegten Illustrationen ersetzt. Dieser Auftrag verändert keine Canon-Identität und keine Storyentscheidung.
 
 ## A01 · Verletzte in der Abendberatung
 
-**Schwere:** high. **Status:** `BLOCKED_BY_ASSET`.
+**Ursprüngliche Schwere:** high. **Aktueller Status:** `RESOLVED`.
 
 **Kapitel / Szene:** Kapitel 5, `ch5_escalation_message`, Pfade `peasant_band` und `theological_council`.
 

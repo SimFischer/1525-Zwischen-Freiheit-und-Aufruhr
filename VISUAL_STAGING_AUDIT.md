@@ -2,9 +2,11 @@
 
 Stand: 8. Oktober 2026. 108 registrierte Szenen wurden in ihrer ersten Spielansicht auf 1024×768, 820×640 und 1440×900 aufgenommen. Zusätzlich wurden tatsächliche Dialog-, Aufgaben-, Quellen-, Pfad- und Endphasen in den Kapitelprüfungen und vier echten Neuspielen aufgenommen. Das erste Szenenbild allein belegt nicht sämtliche Folgephasen. Verzeichnisse: `artifacts/game-audit/`, `artifacts/chapter5/`, `artifacts/whole-*.png`.
 
+Aktualisierung: A01 wurde mit dem gelieferten `ch5_overlay_wounded_return_council.png` geschlossen. Neue tatsächliche Pfadaufnahmen mit Dialog und Anschlussansicht liegen unter `artifacts/chapter5/wounded/`. Die identische Vollleinwandregistrierung zeigt drei vollständige Erwachsene mit Fußlinie bei 71%; keine zusätzliche Canon-Körpergruppe während der Ankunft. Originaldatei unverändert, andere Pfade behalten ihre bisherigen Layer.
+
 ## Prüfkriterien und Ergebnis
 
-Perspektive, Körpermaß, Fußlinie, Raumtiefe, Blickfokus, Licht, Möblierung, Wege, Interaktionsanker und Dialogzone wurden gegen die sichtbare Illustration geprüft. Raumplatten werden proportional gezeigt; sichtbare Alpha-Bounds bestimmen das Körpermaß. Die zentrale Fußlinie in Kapitel 5 ist 71%, der Dialog beginnt bei 74%. Ein Schritt kann eine eigene historische Arbeitsfläche zeigen, ohne gleichzeitig alle Körper hinter Text zu pressen. Ein registrierter Layer kann geometrisch korrekt sein und dennoch illustrativ unpassend wirken: A01 bleibt genau deshalb offen.
+Perspektive, Körpermaß, Fußlinie, Raumtiefe, Blickfokus, Licht, Möblierung, Wege, Interaktionsanker und Dialogzone wurden gegen die sichtbare Illustration geprüft. Raumplatten werden proportional gezeigt; sichtbare Alpha-Bounds bestimmen das Körpermaß. Die zentrale Fußlinie in Kapitel 5 ist 71%, der Dialog beginnt bei 74%. Ein Schritt kann eine eigene historische Arbeitsfläche zeigen, ohne gleichzeitig alle Körper hinter Text zu pressen. Ein registrierter Layer kann geometrisch korrekt sein und dennoch illustrativ unpassend wirken: A01 wurde genau deshalb als Produktionsbedarf behandelt und inzwischen mit einem passenden gelieferten Asset geschlossen.
 
 ## Kapitel und Schauplätze
 
@@ -21,7 +23,7 @@ Perspektive, Körpermaß, Fußlinie, Raumtiefe, Blickfokus, Licht, Möblierung, 
 | 5 · Morgenlager / Verhandlung / Beratung / Kirchhof | Vier Räume mit anderem Licht, Gruppierung und Props; keine bloße Umbenennung desselben Raums | Andere Aufgabe und Handlungsmittel; historische Lernflächen für lange Denkhandlungen | Pfade sofort visuell unterscheidbar |
 | 5 · Wagen | Wagen an der Straße, vorhandener Bote auf Fußlinie wie Konrad/Matthes | Keine Nachricht aus einem nur unsichtbaren Amtskörper | V01 behoben |
 | 5 · Gefangener / Truppen / Nachwirkung | Gegner an gemeinsamem Ort; Truppen in Raumtiefe; verändertes vertrautes Dorf | Handlungsbilder behaupten keine Flucht bei Standhalten | V02 behoben |
-| 5 · Verletztennachricht, Haufen/Beratung | Kleine Gruppe links an großer Möblierung, Krisenmoment zu wenig integriert | Funktioniert technisch, aber die Illustration trägt den Moment nicht ausreichend | A01 high / BLOCKED_BY_ASSET |
+| 5 · Verletztennachricht, Haufen/Beratung | Neues raumregistriertes Vordergrundasset, drei vollständige Körper und freie Fuß-/Dialogzone | Fokus auf Hilfe; Canon-Stimmen im Dialogportrait | A01 RESOLVED, beide Pfade auf drei Größen geprüft |
 
 ## Kapitel-5-Raumvertrag
 
@@ -50,4 +52,4 @@ Authentische Papieroptik bleibt am Rand stärker, Leseflächen ruhiger. Keine Ku
 
 ## Offener Produktionsbedarf
 
-A01 wird nicht mit extremer Skalierung, Cropping oder weiteren Kaschierungslayern behandelt. `WORK_ASSET_REQUESTS.md` definiert eine neue vollständige Gruppendarstellung in der vorgegebenen Raumgeometrie. Bis zum Einbau ist die visuelle Freigabe dieses Moments eingeschränkt. Andere geprüfte Hauptkompositionen benötigen nach dieser Durchsicht keinen neuen Hintergrund oder neue Canon-Pose.
+A01 ist nach Lieferung und Einbau geschlossen. `WORK_ASSET_REQUESTS.md` hält den ursprünglichen Auftrag und die aktuelle Abnahme fest. Keine Skalierungs-, Crop- oder Kaschierungslösung wurde eingeführt. Andere geprüfte Hauptkompositionen benötigen nach dieser Durchsicht keinen neuen Hintergrund oder neue Canon-Pose.
