@@ -92,10 +92,20 @@ export function chapterTwoAction(action,target) {
     c().assemblyUnlocked=['forest','corvee','dues'].every(key=>c()[key+'Complete']); hooks.enterScene('ch2_hub'); return true;
   }
   if(action==='ch2-link-card') { selectCard(target.dataset.card); return true; }
-  if(action==='ch2-reason') {
+  if(action==='ch2-reason'||action==='ch2-link-help') {
     const [a,b]=c().pair.map(id=>grievances.find(item=>item.id===id)), reason=target.dataset.reason;
     if(!a || !b) return true;
-    if(!a.tags.includes(reason) || !b.tags.includes(reason)) { c().linkAttempts=(c().linkAttempts||0)+1; c().linkHint=c().linkAttempts>=3 ? 'Beide betreffen '+Object.entries(linkReasons).filter(([id])=>a.tags.includes(id)&&b.tags.includes(id)).map(([,label])=>label).join(' oder ')+'. Worauf beruft ihr euch?' : c().linkAttempts===2 ? linkPrompts[reason] : 'Prüfe die beiden Beschwerden: Welche Entscheidung, Belastung oder Abhängigkeit kommt in beiden vor?'; return true; }
+    if(action==='ch2-link-help'){
+      if((c().linkAttempts||0)<2)return true;
+      const shared=Object.keys(linkReasons).filter(id=>a.tags.includes(id)&&b.tags.includes(id));
+      const chosen=shared[0],key=[a.id,b.id].sort().join(':');
+      if(!chosen)return true;
+      if(!c().links.some(link=>link.key===key))c().links.push({key,a:a.id,b:b.id,reason:chosen});
+      c().linkHint='Gemeinsam prüfen wir '+a.title+' und '+b.title+': '+a.text+' '+b.text+' Beide betreffen '+linkReasons[chosen]+'. '+linkPrompts[chosen];
+      c().pair=[];c().linkAttempts=0;return true;
+    }
+    if((c().linkAttempts||0)>=2)return true;
+    if(!a.tags.includes(reason) || !b.tags.includes(reason)) { c().linkAttempts=(c().linkAttempts||0)+1; c().linkHint=linkPrompts[reason]+' Prüfe, ob dieser Zusammenhang wirklich in beiden Beschwerden vorkommt.'; return true; }
     const key=[a.id,b.id].sort().join(':'); if(!c().links.some(link=>link.key===key)) c().links.push({key,a:a.id,b:b.id,reason});
     c().pair=[]; c().linkHint='Beide Beschwerden betreffen '+linkReasons[reason]+'. Was verbindet die anderen Beschwerden?'; c().linkAttempts=0; return true;
   }
@@ -106,8 +116,8 @@ export function chapterTwoAction(action,target) {
   return false;
 }
 export function demandSentence() { const parts=Object.entries(demandParts).map(([key,options])=>options[c().demand[key]||0]); if((c().demand.rule||0)===0&&c().demand.voice===1) parts[1]='verbindlich festgelegt werden'; return 'Wir fordern, dass '+parts.join(' ')+'.'; }
-export function selectCard(id) { const pair=c().pair; if(pair.includes(id)) pair.splice(pair.indexOf(id),1); else if(pair.length<2) pair.push(id); else c().pair=[id]; }
+export function selectCard(id) { const pair=c().pair; if(pair.includes(id)) pair.splice(pair.indexOf(id),1); else if(pair.length<2) pair.push(id); else c().pair=[id]; c().linkAttempts=0; }
 export function chapterTwoDrop(id,zone) {
   if(station()==='dues') { if(Object.hasOwn(stores,zone)) { c().grain[id]=zone; c().selected=null; } }
-  else if(c().stage==='links' && id!==zone) c().pair=[id,zone];
+  else if(c().stage==='links' && id!==zone) {c().pair=[id,zone];c().linkAttempts=0;}
 }

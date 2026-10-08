@@ -54,6 +54,13 @@ export const theologicalArguments=[
  ['love','Liebe zum Nächsten kann verlangen, sich gegen Unrecht zu stellen.','Widerstand kann Bedrohten helfen.','Auch Gegner und Unbeteiligte brauchen Schutz.'],
  ['certainty','Niemand darf den eigenen politischen Willen einfach zu Gottes Willen erklären.','Selbstkritik begrenzt religiöse Gewaltlegitimation.','Prüfung darf konkrete Hilfe nicht endlos aufschieben.']
 ];
+// Alternative emphases, not incorrect distractors: the council weighs both.
+export const theologicalAlternatives={
+ order:['Verlässliche Regeln geben der Gemeinde einen gemeinsamen Rahmen.','Wenn die Ordnung ihren Schutz verliert, entstehen neue Gefahren.'],
+ god:['Der Verweis auf Gott kann Mut zum Widerspruch geben.','Unterschiedliche Gewissensurteile müssen im Dorf miteinander auskommen.'],
+ love:['Gemeinsame Hilfe kann Streitenden einen geteilten Maßstab geben.','Hilfe an einem Ort kann unter Zeitdruck an einem anderen fehlen.'],
+ certainty:['Widerspruch gegen die eigene Auslegung hält den Gesprächsweg offen.','Offene Fragen nehmen uns die Verantwortung für die nächste Handlung nicht ab.']
+};
 export const religionFunctions=[['hope','Hoffnung geben','Glaube trägt in Ungewissheit.'],['critique','Unrecht kritisieren','Maßstäbe prüfen Herrschaft.'],['community','Gemeinschaft stärken','Überzeugung verbindet Menschen.'],['resistance','Widerstand begründen','Gewissen kann Gehorsam begrenzen.'],['limit','Gewalt begrenzen','Auch Gegner brauchen Schutz.'],['legitimate','Gewalt legitimieren','Der Kampf erscheint als Gottes Wille.']];
 export const lutherThoughts=[['freedom','Freiheit vor Gott','Glaube befreit vom Zwang zur Rechtfertigung durch Werke.'],['service','Dienst am Nächsten','Freiheit dient dem Nächsten – auch dem Gegner.'],['order','Weltliche Ordnung','Ordnung soll schützen; Herrschaft kann Unrecht tun.'],['revolt','Kritik des Aufruhrs','Berechtigte Forderungen rechtfertigen nicht jedes Mittel.']];
 export const debateArguments=[['konrad','Ohne standzuhalten bleibt das Unrecht bestehen.','Wenn kein Rückzug erlaubt ist, wird jedes Opfer zum Preis der Sache.'],['peter','Unbeteiligte dürfen nicht für unsere Entscheidung bezahlen.','Wenn jedes Risiko Widerspruch verbietet, kann auch Unrecht unangefochten bleiben.'],['jakob','Eine gerechte Sache macht nicht jedes Mittel gerecht.','Eine endlose Mittelprüfung kann Hilfe verzögern.'],['band1','Wer wartet, überlässt die Entscheidung anderen.','Bloßes Handeln ersetzt keine Prüfung der Folgen.']];

@@ -2,7 +2,7 @@ import { caseComplete,regimentsFeedback,regimentsSynthesis,regimentsSummary } fr
 import { state } from './state.js';
 import { sceneById } from '../data/scenes.js';
 import { characters } from '../data/characters.js';
-import { ch4Asset,villageBackground,regimentsCases,regimentsZones,preparationThoughts,communityConditions,hermeneuticalCriteria,interpretationCriteria,multiselectTasks } from '../data/chapter-four.js';
+import { ch4Asset,villageBackground,regimentsCases,regimentsZones,preparationThoughts,communityConditions,hermeneuticalCriteria,interpretationCriteria,multiselectTasks,chapterFourChoices } from '../data/chapter-four.js';
 import { documentStagePages } from '../data/chapter-four-documents.js';
 import { chapterFourChoiceId } from './chapter-four.js';
 import { choiceView } from './choice-engine.js';
@@ -25,7 +25,10 @@ export function chapterFourPanel(){
  if(s==='ermahnung')return task('Zuerst die Herren prüfen','<p>Luther richtet seine Mahnung auch an die Herrschaft. Was verlangt er von ihr?</p>',next('An die Herren →','lords'));
  if(s==='harsh')return task('Begründung und Härte unterscheiden','<p>Die neue Schrift verlangt erheblich schärferes Eingreifen. Vergleiche sie mit der Ermahnung, bevor du urteilst.</p>',next('April und Mai vergleichen →','comparison'));
  if(multiselectTasks[s]){const t=multiselectTasks[s];return task(t.title,list(t.items,s),act('Mit dem Text prüfen →','check',`class="primary" ${(c.selections[s]||[]).length?'':'disabled'}`));}
- if(chapterFourChoiceId(s))return task(sceneById[state.scene].title,`<p>${s==='comparison'?'Was hat sich zwischen den beiden Texten verändert?':s==='negotiation'&&c.authorityTone==='pressure'?'Der direkte Zugang zum Herrn bleibt geschlossen. Erst nach einer Begrenzung der Mittel hört der Verwalter die Abordnung an.':'Was willst du aus dem bisherigen Gespräch und der Quelle folgern?'}</p>`,s==='negotiation'&&c.authorityTone==='pressure'&&!c.meansLimited?act('Keine Gewalt gegen Menschen zusagen','limit','class="primary"'):act('Meine Antwort geben →','choice','class="primary"'));
+ if(chapterFourChoiceId(s)){
+  const def=chapterFourChoices[chapterFourChoiceId(s)],limited=s==='negotiation'&&c.authorityTone==='pressure'&&!c.meansLimited;
+  return task(def.prompt,`<p>${limited?'Der direkte Zugang zum Herrn bleibt geschlossen. Erst nach einer Begrenzung der Mittel hört der Verwalter die Abordnung an.':esc(def.contextStatement)}</p>`,limited?act('Keine Gewalt gegen Menschen zusagen','limit','class="primary"'):act(def.reflective?'Meine Position wählen →':'Die Aussage prüfen →','choice','class="primary"'));
+ }
  if(s==='preparation'){
   if(!c.docRead.c4_memory||!c.docRead.c4_authority){
    const first=!c.docRead.c4_memory;

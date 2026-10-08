@@ -70,6 +70,32 @@ async function chapterFour(p,r){
  await photo(p,r.id+'-chapter4-end');
 }
 
+async function chapterFive(p,r){
+ await action(p,'ch5-start');let done=false;const reloads=new Set(),shots=new Set();
+ for(let n=0;n<300;n++){
+  const g=await read(p),c=g.chapter5,s=c.stage;await geometry(p,r.id+' ch5 '+s);
+  if(!shots.has(s)){await photo(p,r.id+'-chapter5-'+s);shots.add(s);}
+  const key=s+':'+c.phase+':'+c.step;
+  if(['intro','theological_arguments','three_reports','prisoner_scene','religion_functions','luther_balance','troops_approach','after_crisis','chapter6'].includes(s)&&!reloads.has(key)){await reload(p);reloads.add(key);}
+  if(s==='chapter6'){assert.equal(c.completed,true);assert.ok(c.handoff.chapter5.endWorldState);assert.equal(c.handoff.initialFreedomInterpretation,r.first);done=true;break;}
+  if(g.dialogue){transcript.push(g.dialogue.lines[g.dialogue.index].text);await action(p,'dialogue-next');continue;}
+  if(c.feedback){await action(p,'ch5-feedback');continue;}
+  const config={A:{ch5Condition:'community_representation',ch5Prisoner:'hand_to_council',ch5Freedom:'responsibility'},B:{ch5Counsel:'protect_people',ch5Prisoner:'protect_detention',ch5Freedom:'complex'},C:{ch5First:'stop_dues',ch5Dues:'block_only',ch5Prisoner:'release',ch5Freedom:'resistance'},D:{ch5Prisoner:'protect_detention',ch5Freedom:'theological_freedom'}}[r.id];
+  if(await p.locator('[data-action="ch5-choose"]').count()){const map={peasant_camp:'ch5First',dues_cart:'ch5Dues',negotiation_room:'ch5Condition',community_counsel:'ch5Counsel',prisoner_scene:'ch5Prisoner',neighbor_love:'ch5Neighbor',freedom_after_action:'ch5Freedom'};await p.locator(`[data-action="ch5-choose"][data-option="${config[map[s]]||'B'}"]`).click();continue;}
+  if(s==='theological_arguments'){if(await p.locator('[data-action="ch5-begin-arguments"]').count())await action(p,'ch5-begin-arguments');else if(c.step===4)await action(p,'ch5-task-next');else await p.locator(`[data-action="ch5-field"][data-item="${c.phase==='limit'?'limit':'help'}"]`).click();continue;}
+  if(s==='polarization_analysis'){if(c.step===2)await action(p,'ch5-task-next');else await p.locator('[data-action="ch5-field"]').first().click();continue;}
+  if(s==='three_reports'){if(!c.phase)await action(p,'ch5-reports-read');else if(c.step===5)await action(p,'ch5-task-next');else await p.locator(`[data-action="ch5-report"][data-item="${c.step<3?'certain':'uncertain'}"]`).click();continue;}
+  if(s==='religion_functions'){if(!c.phase){for(const id of ['critique','limit'])await p.locator(`[data-action="ch5-function"][data-item="${id}"]`).click();}else await p.locator('[data-action="ch5-function"][data-item="legitimate"]').click();await action(p,'ch5-functions-next');continue;}
+  if(s==='luther_balance'){await p.locator(`[data-action="ch5-luther"][data-item="${c.phase==='tension'?'revolt':'service'}"]`).click();await action(p,'ch5-luther-next');continue;}
+  if(s==='internal_debate'){await p.locator(`[data-action="ch5-debate"][data-item="${c.phase==='danger'?'konrad':'peter'}"]`).click();await action(p,'ch5-debate-next');continue;}
+  if(s==='troops_approach'){assert.equal(c.openingPath,{A:'negotiation',B:'theological_council',C:'peasant_band',D:'religious_conflict'}[r.id]);await p.locator(`[data-action="ch5-final"][data-item="${{A:'negotiate_village_protection',B:'protect_people',C:'stay_with_band',D:'reject_divine_certainty'}[r.id]}"]`).click();continue;}
+  if(await p.locator('[data-action="ch5-next"]').count()){await action(p,'ch5-next');continue;}
+  throw Error('No genuine-route continuation '+s);
+ }
+ assert.equal(done,true,'Chapter 5 full route '+r.id);await reload(p);
+ await action(p,'notebook');await p.locator('[data-tab="action"]').click();await photo(p,r.id+'-notebook5');await click(p,'close-overlay');
+}
+
 let current;
 (async()=>{server.listen(4188,'127.0.0.1');const b=await chromium.launch({channel:'msedge',headless:true});try{
  const routes=[
@@ -107,9 +133,11 @@ await click(p,'ch3-start');await drain(p);await click(p,'ch3-go','[data-scene="h
  await photo(p,r.id+'-chapter3-end');await action(p,'notebook');await p.locator('[data-tab="path"]').click();assert.ok((await p.locator('.notebook-content').innerText()).includes((await read(p)).choiceTexts.initialFreedomInterpretation));await p.locator('[data-tab="village"]').click();assert.ok((await p.locator('.notebook-content').innerText()).includes((await read(p)).choices.playerDemand));await photo(p,r.id+'-notebook3');await click(p,'close-overlay');
  assert.equal((await read(p)).chapter3.completed,true);assert.ok((await read(p)).progress.completedScenes.includes('ch1_end'));
  await chapterFour(p,r);
- const exportState=await p.evaluate(async()=>{const {state}=await import('./js/state.js');const {prepareConsequencesForEpilogue}=await import('./js/consequences.js');return prepareConsequencesForEpilogue(state);});assert.equal(exportState.decisions.forestResponse,r.forest);assert.equal(exportState.chapter3.resistanceStrategy,r.resistance);assert.equal(exportState.chapter4.endWorldState,r.end);assert.equal(exportState.chapter5Handoff.priorDemand,exportState.playerDemand);assert.equal(exportState.chapter4.lutherHarshTextJudgment,r.chapter4.ch4HarshJudgment);assert.equal(exportState.decisions.initialFreedomInterpretation,r.first);assert.deepEqual(errors,[]);results.push({route:r.id,viewport:{width:r.width,height:r.height},orientation:exportState.orientation,priorProfile:exportState.chapter3.priorProfile,decisions:exportState.decisions,chapter4:exportState.chapter4,chapter5Handoff:exportState.chapter5Handoff,perceptions:exportState.perceptions,transcript});console.log('PASS real new-game route '+r.id+' Chapters 1–4');await context.close();
+ await chapterFive(p,r);
+ const exportState=await p.evaluate(async()=>{const {state}=await import('./js/state.js');const {prepareConsequencesForEpilogue}=await import('./js/consequences.js');return prepareConsequencesForEpilogue(state);});assert.equal(exportState.decisions.forestResponse,r.forest);assert.equal(exportState.chapter3.resistanceStrategy,r.resistance);assert.equal(exportState.chapter4.endWorldState,r.end);assert.equal(exportState.chapter5Handoff.priorDemand,exportState.playerDemand);assert.equal(exportState.chapter4.lutherHarshTextJudgment,r.chapter4.ch4HarshJudgment);assert.equal(exportState.decisions.initialFreedomInterpretation,r.first);assert.equal(exportState.chapter6Handoff.chapter5.finalAction,exportState.chapter5.finalAction);assert.deepEqual(exportState.chapter6Handoff.chapter3,exportState.chapter3);assert.deepEqual(exportState.chapter6Handoff.chapter4,exportState.chapter4);assert.deepEqual(exportState.chapter6Handoff.perceptions,exportState.perceptions);assert.equal(exportState.chapter6Handoff.chapter5.freedomAfterAction,exportState.chapter5.freedomAfterAction);assert.deepEqual(errors,[]);results.push({route:r.id,viewport:{width:r.width,height:r.height},orientation:exportState.orientation,priorProfile:exportState.chapter3.priorProfile,decisions:exportState.decisions,chapter4:exportState.chapter4,chapter5Handoff:exportState.chapter5Handoff,chapter5:exportState.chapter5,chapter6Handoff:exportState.chapter6Handoff,perceptions:exportState.perceptions,transcript});console.log('PASS real new-game route '+r.id+' Chapters 1–5');await context.close();
  }
  assert.ok(results[0].orientation.legal>results[0].orientation.resistance);assert.ok(results[1].orientation.community>results[1].orientation.resistance);assert.ok(results[2].orientation.resistance>results[2].orientation.legal);assert.ok(results[0].transcript.some(x=>/Anspruch eigentlich beruht/.test(x)));assert.ok(results[1].transcript.some(x=>/Dorf gemeinsam/.test(x)));assert.ok(results[2].transcript.some(x=>/Holz trotzdem genommen/.test(x)));
  assert.equal(new Set(results.map(r=>r.chapter4.endWorldState)).size,4,'routes must have distinct visible endings');assert.equal(results[3].chapter4.theologicalPath,'hermeneutical_caution');
+ assert.equal(new Set(results.map(r=>r.chapter5.openingPath)).size,4,'four distinct chapter 5 spaces from genuine prior decisions');
  fs.writeFileSync('artifacts/whole-game-routes.json',JSON.stringify(results,null,2));
  }finally{await b.close();server.close();}})().catch(e=>{console.error(e);process.exitCode=1;server.close();});

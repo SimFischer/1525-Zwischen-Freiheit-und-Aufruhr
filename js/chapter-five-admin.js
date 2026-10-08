@@ -28,10 +28,13 @@ export function resetChapterFive(g){g.chapter5=freshChapterFive();}
 export function applyChapterFiveTestFields(g,values){
  if(!values||Array.isArray(values)||typeof values!=='object')throw Error('Kapitel 5 benötigt ein JSON-Objekt.');
  for(const key of Object.keys(values))if(!Object.hasOwn(freshChapterFive(),key))throw Error('Unbekanntes Kapitel-5-Feld: '+key);
- Object.assign(g.chapter5,structuredClone(values));
- for(const [field,id] of Object.entries(chapterFiveFields))if(Object.hasOwn(values,field)){g.choices[id]=values[field];const o=chapterFiveChoices[id].options.find(o=>o.id===values[field]);if(values[field]&&!o)throw Error('Unbekannter Wert für '+field);if(o)g.choiceTexts[id]=o.text;}
- if(Object.hasOwn(values,'finalAction'))g.choices.ch5Final=values.finalAction;
- if(['openingPath','firstAction','duesAction','negotiationCondition','communityCounsel','prisonerDecision','limitsViolence','finalAction'].some(key=>Object.hasOwn(values,key)))g.chapter5.outcomeProfile=null;
- syncConsequences(g);
- sanitizeChapterFive(g);
+ // Validate and sanitize on a copy: a rejected edit must leave the test save intact.
+ const draft=structuredClone(g);
+ Object.assign(draft.chapter5,structuredClone(values));
+ for(const [field,id] of Object.entries(chapterFiveFields))if(Object.hasOwn(values,field)){draft.choices[id]=values[field];const o=chapterFiveChoices[id].options.find(o=>o.id===values[field]);if(values[field]&&!o)throw Error('Unbekannter Wert für '+field);if(o)draft.choiceTexts[id]=o.text;else delete draft.choiceTexts[id];}
+ if(Object.hasOwn(values,'finalAction'))draft.choices.ch5Final=values.finalAction;
+ if(['openingPath','firstAction','duesAction','negotiationCondition','communityCounsel','prisonerDecision','limitsViolence','finalAction'].some(key=>Object.hasOwn(values,key)))draft.chapter5.outcomeProfile=null;
+ syncConsequences(draft);
+ sanitizeChapterFive(draft);
+ Object.assign(g,draft);
 }

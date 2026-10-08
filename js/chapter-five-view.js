@@ -1,5 +1,5 @@
 import { state } from './state.js';
-import { chapterFiveChoices,chapterFiveScenes,theologicalArguments,religionFunctions,lutherThoughts,reportTexts,reportFacts,debateArguments,finalActions,availableFinalActions } from '../data/chapter-five.js';
+import { chapterFiveChoices,chapterFiveScenes,theologicalArguments,theologicalAlternatives,religionFunctions,lutherThoughts,reportTexts,reportFacts,debateArguments,finalActions,availableFinalActions } from '../data/chapter-five.js';
 import { chapterFiveStaging as staging } from '../data/chapter-five-staging.js';
 import { chapterFiveChoiceId,chapterFiveNext,pathReflection,endLabels,outcomeTexts } from './chapter-five.js';
 import { dialogueView } from './dialogue-engine.js';
@@ -25,9 +25,15 @@ export function chapterFiveWorld(g=state){
  if(s==='escalation_message'&&room==='theological_council_evening')overlays=['wounded_return'];
  // The wounded layer is approved for the council, not arbitrarily stacked on the camp.
  if(s==='escalation_message'&&c.openingPath==='peasant_band'){room='theological_council_evening';overlays=['wounded_return'];}
- if(s==='action_effect')overlays=[['evacuate_civilians','protect_wounded','protect_people','joint_protection','negotiate_village_protection','protected_retreat'].includes(c.finalAction)?'people_evacuating':'group_retreat'];
+ if(s==='action_effect'){
+  if(['evacuate_civilians','protect_wounded','protect_people','joint_protection','protected_retreat'].includes(c.finalAction))overlays=['people_evacuating'];
+  else if(['urge_retreat','separate_faith_and_strategy'].includes(c.finalAction))overlays=['group_retreat'];
+  // Staying, speaking and sending a delegation do not depict a retreat.
+ }
  if(room==='village_after_crisis'&&c.endWorldState)overlays=[{violent_defeat:'after_defeat',negotiation_collapsed:'after_negotiation_collapse',civilians_protected:'after_protection',community_fragmented:'after_fragmentation',fragile_deescalation:'after_deescalation'}[c.endWorldState]];
  const spec=staging.scenes[room];let figures=spec.figures;
+ // The speaking cart messenger is present in the scene; Peter does not speak here.
+ if(s==='dues_cart')figures=figures.map(f=>f.id==='peter'?{...f,id:'envoy'}:f);
  if(s==='escalation_message'&&c.openingPath==='peasant_band')figures=[];
  if(s==='action_effect')figures=figures.filter(f=>f.id==='matthes');
  if(s==='negotiation_effect'&&c.negotiationCondition==='no_persecution')figures=figures.filter(f=>f.id==='overseer');
@@ -42,7 +48,7 @@ function panel(){const c=state.chapter5,s=c.stage;
  if(s==='supply')return task('Was übernimmst du für die Versorgung?',opts([['food','Nahrung zu den Wartenden bringen.'],['material','Trageholz und Tücher bereitstellen.'],['wounded','Bei den Hilfsbedürftigen bleiben.']],'supply'));
  if(s==='theological_arguments'){
   if(c.step===4)return task('Ein Rat braucht beides','<p>Ordnung, Gewissen, Nächstenliebe und Selbstkritik können Orientierung geben. Keine einzelne Aussage entscheidet ohne Prüfung ihrer Grenzen.</p>',act('Dem Prediger einen Rat geben →','task-next','class="primary"'));
-  const a=theologicalArguments[c.step];return task(a[1],`<p>In heutiger Sprache zusammengefasst · ${c.phase==='limit'?'Welche Grenze muss mitgedacht werden?':'Worin kann die Aussage Orientierung geben?'}</p>`+opts(c.phase==='limit'?[['limit',a[3]],['help','Eine klare Überzeugung kann die Gruppe handlungsfähig halten.']]:[['help',a[2]],['limit','Eine gemeinsame Regel kann Unsicherheit verringern.']],'field'));
+  const a=theologicalArguments[c.step],other=theologicalAlternatives[a[0]];return task(a[1],`<p>In heutiger Sprache zusammengefasst · ${c.phase==='limit'?'Welche Grenze möchtest du besonders mitdenken?':'Welche Orientierung möchtest du besonders betonen?'}</p>`+opts(c.phase==='limit'?[['limit',a[3]],['help',other[1]]]:[['help',a[2]],['limit',other[0]]],'field'));
  }
  if(s==='polarization_analysis'){
   if(c.step===2)return task('Keine Seite sieht alles','<p>Der Schutz vor Gewalt und die Kritik an Unrecht gehören zusammen. Welche religiöse Begründung ihr nutzt, muss auch an ihren blinden Flecken geprüft werden.</p>',act('Die neue Nachricht anhören →','task-next','class="primary"'));

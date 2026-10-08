@@ -27,6 +27,12 @@ async function fixture(p,id){await p.evaluate(async({id,KEY})=>{const {prepareAd
   await fixture(p,'ch4_'+stage);await p.evaluate(({KEY,stage})=>{const s=JSON.parse(localStorage.getItem(KEY));s.chapter4.docRead[stage]=true;s.chapter4.attempts[stage]=0;s.chapter4.selections[stage]=[];delete s.chapter4.resolved[stage];localStorage.setItem(KEY,JSON.stringify(s));},{KEY,stage});await p.reload();await act(p,'resume');
   const wrong={lords:'A',peasants_complement:'C',structure:'C'}[stage];await p.locator(`[data-item="${wrong}"]`).click();await act(p,'ch4-check');assert.ok((await p.locator('.ch4-task').innerText()).length>180);await act(p,'ch4-feedback');await act(p,'ch4-check');assert.match(await p.locator('.ch4-task').innerText(),/Gemeinsam halten/);await act(p,'ch4-feedback');
  }
+ // Each chapter-four decision announces its actual question before answers open.
+ for(const stage of ['authority','community','resistance','early','theology','negotiation','band','weingarten_choice','escalation','risk','judgment','peasants','boundary','comparison']){
+  await fixture(p,'ch4_'+stage);await p.evaluate(async()=>{const {state}=await import('./js/state.js');state.dialogue=null;state.interaction=null;state.chapter4.docRead[state.chapter4.stage]=true;});
+  const {html,question}=await p.evaluate(async()=>{const {state}=await import('./js/state.js'),{chapterFourChoiceId}=await import('./js/chapter-four.js'),{chapterFourChoices}=await import('./data/chapter-four.js'),{esc}=await import('./js/ui.js');return {html:(await import('./js/chapter-four-view.js')).chapterFourPanel(),question:esc(chapterFourChoices[chapterFourChoiceId(state.chapter4.stage)].prompt)};});
+  assert.doesNotMatch(html,/Was willst du aus dem bisherigen/);assert.ok(html.includes(question),'actual question before answers '+stage);
+ }
  await fixture(p,'ch1_s2_document');await p.locator('[data-action="scene-document"]').count();
  await p.evaluate(async()=>{const {openDocument}=await import('./js/document-viewer.js');openDocument('freedom',0);});assert.match(await p.locator('.source-page-number').innerText(),/Heutige Wiedergabe/);await p.locator('[data-source-action="read"]').click();assert.match(await p.locator('.source-kind').innerText(),/In heutiger Sprache zusammengefasst/);await p.keyboard.press('Escape');
  await fixture(p,'ch4_preparation');assert.match(await p.locator('.ch4-task').innerText(),/Lies noch/);
