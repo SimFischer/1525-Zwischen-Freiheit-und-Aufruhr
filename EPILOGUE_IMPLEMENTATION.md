@@ -2,7 +2,7 @@
 
 ## Dramaturgie und Anbindung
 
-Nach `ch6_final_question` erreicht der normale Lernweg `ch6_ending`. Die fachliche Abschlusslogik berechnet `chapter6.completed` wie bisher. Erst danach beginnt der Epilog automatisch; ältere vollständig abgeschlossene Spielstände bieten „Dokumentarischer Epilog“. Die vorherige persönliche Abschlussseite bleibt Voraussetzung des regulären Szenenwegs. Unabgeschlossene Zustände können den Epilog nicht starten.
+Nach `ch6_final_question` erreicht der normale Lernweg `ch6_ending`. Die fachliche Abschlusslogik berechnet `chapter6.completed` wie bisher. Erst danach beginnt der Epilog automatisch; ältere vollständig abgeschlossene Spielstände bieten „Dokumentarischer Epilog“. Die vorherige persönliche Abschlussseite bleibt Voraussetzung des regulären Szenenwegs. Unabgeschlossene Zustände können den Epilog nicht starten. Der zentrale Admin-Präparator behandelt den vollständig vorbereiteten Endcheckpoint als abgeschlossen, damit der direkte Debugzugang sofort funktioniert; normale Lernwege werden dadurch nicht freigeschaltet.
 
 109 Sekunden, 19 Stationen, kein Audio, Video, Quiz oder Urteilsscore. Pause und Originalvergrößerung verlängern nur die selbst gewählte Betrachtungszeit. Der Schluss steht mindestens sieben Sekunden, auch nach Skip, bevor Schlussaktionen sichtbar werden.
 

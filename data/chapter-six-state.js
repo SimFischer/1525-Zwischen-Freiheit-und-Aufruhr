@@ -48,5 +48,5 @@ export function prepareChapterSixAdmin(g,scene,complete=false){const c=initializ
  for(const [stage,key]of [['risk_luther','lutherRisk'],['risk_muentzer','muentzerRisk'],['risk_weight','moreWeightyRisk']])if(reached(stage))c.lutherMuentzerJudgment[key]='both';
  for(const [id]of dimensions)if(reached('dimension_'+id)){c.judgmentDimensions[id]='partly';c.dimensionReasoning[id]=sample;}
  if(reached('final_position'))c.finalPosition='tension';if(reached('evidence'))c.selectedEvidence=['freedom','authority','harsh'];if(reached('counterargument'))c.counterArgument=sample;if(reached('final_judgment'))c.finalJudgmentText=sample+' Die Eskalation von 1525 erklärt die Härte, rechtfertigt sie aber nicht schon.';if(reached('final_question'))c.finalFreedomDefinition=sample;
- c.stage=scene.id.slice(4);c.completed=Boolean(complete&&c.finalJudgmentText&&c.finalFreedomDefinition);return c;
+ c.stage=scene.id.slice(4);c.completed=Boolean((complete||c.stage==='ending')&&c.finalJudgmentText&&c.finalFreedomDefinition);return c;
 }
