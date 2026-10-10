@@ -20,7 +20,7 @@ export function prepareChapterFiveAdmin(g,scene,complete=false){
  if(past('luther_balance'))c.lutherTension={helpful:'service',tension:'revolt'};
  if(past('internal_debate'))c.internalDebate={strongestArgument:'peter',mostDangerousAbsolute:'konrad'};
  if(past('troops_approach')){c.finalAction={peasant_band:'protect_wounded',negotiation:'negotiate_village_protection',theological_council:'public_religious_warning',religious_conflict:'joint_protection'}[c.openingPath];g.choices.ch5Final=c.finalAction;syncConsequences(g);resolveChapterFiveOutcomes(g);}
- if(past('freedom_after_action'))set('ch5Freedom','complex');
+ if(past('freedom_after_action')){c.openTheologicalQuestion='luther_freedom_tension';c.recap.phase='closing';}
  if(complete)c.completed=true;
  g.progress.completedScenes.push(...chapterFiveScenes.slice(0,index).map(s=>s.id));
 }

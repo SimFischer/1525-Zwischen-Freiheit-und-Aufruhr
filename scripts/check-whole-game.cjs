@@ -78,6 +78,10 @@ async function chapterFive(p,r){
   const key=s+':'+c.phase+':'+c.step;
   if(['intro','theological_arguments','three_reports','prisoner_scene','religion_functions','luther_balance','troops_approach','after_crisis','chapter6'].includes(s)&&!reloads.has(key)){await reload(p);reloads.add(key);}
   if(s==='chapter6'){assert.equal(c.completed,true);assert.ok(c.handoff.chapter5.endWorldState);assert.equal(c.handoff.initialFreedomInterpretation,r.first);done=true;break;}
+  if(await p.locator('[data-action="recap-skip"]').count()){await p.locator('[data-action="recap-skip"]').click();continue;}
+  if(await p.locator('[data-action="recap-question"]').count()){await p.locator('[data-action="recap-question"]').click();continue;}
+  if(await p.locator('[data-action="recap-select"]').count()){await p.locator('[data-action="recap-select"][data-item="luther_freedom_tension"]').click();await p.locator('[data-action="recap-finish"]').click();continue;}
+  if(await p.locator('[data-action="recap-transition"]').count()){await p.locator('[data-action="recap-transition"]').click();continue;}
   if(g.dialogue){transcript.push(g.dialogue.lines[g.dialogue.index].text);await action(p,'dialogue-next');continue;}
   if(c.feedback){await action(p,'ch5-feedback');continue;}
   const config={A:{ch5Condition:'community_representation',ch5Prisoner:'hand_to_council',ch5Freedom:'responsibility'},B:{ch5Counsel:'protect_people',ch5Prisoner:'protect_detention',ch5Freedom:'complex'},C:{ch5First:'stop_dues',ch5Dues:'block_only',ch5Prisoner:'release',ch5Freedom:'resistance'},D:{ch5Prisoner:'protect_detention',ch5Freedom:'theological_freedom'}}[r.id];

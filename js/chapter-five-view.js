@@ -6,6 +6,7 @@ import { dialogueView } from './dialogue-engine.js';
 import { chapterFourFigure } from './chapter-four-view.js';
 import { hotspot } from './hotspots.js';
 import { button,esc } from './ui.js';
+import { storyRecapView,storyClosingView,chapterSixTransition } from './story-recap-view.js';
 const act=(text,id,attrs='')=>button(esc(text),'ch5-'+id,attrs);
 const next=(text='Weiter →')=>act(text,'next','class="primary"');
 const opts=(items,action,selected=null)=>`<div class="ch4-paper-options">${items.map(([id,text])=>act(text,action,`data-item="${id}" aria-pressed="${selected===id}"`)).join('')}</div>`;
@@ -61,9 +62,6 @@ function panel(){const c=state.chapter5,s=c.stage;
  }
  if(s==='internal_debate')return task(c.phase==='danger'?'Welches Argument wird gefährlich, wenn man es absolut setzt?':'Welches Argument überzeugt dich im Moment am meisten?',opts(debateArguments.map(([id,text])=>[id,text]),'debate',c.internalDebate[c.phase==='danger'?'mostDangerousAbsolute':'strongestArgument']),c.internalDebate[c.phase==='danger'?'mostDangerousAbsolute':'strongestArgument']?act('Meine Überlegung festhalten →','debate-next','class="primary"'):'<p>Wähle ein Argument; es gibt keine Musterlösung.</p>');
  if(s==='troops_approach')return task('Was wirst du jetzt tun?',`<p>Die Truppen nähern sich. Du kennst nicht alle Absichten. Eine Handlung kann Menschen schützen und zugleich einen anderen Weg erschweren.</p>`+opts(availableFinalActions(c),'final')+(c.limitsViolence?'<p>Deine frühere Grenze bleibt wirksam: Du kannst ausdrücklich zum Rückzug und zum Schutz auffordern.</p>':''));
- if(s==='path_reflection')return task('Dein Weg – ohne Punktwertung',`<ul>${pathReflection(state).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`,next('Was bedeutet Freiheit jetzt? →'));
- if(s==='end')return `<section class="ch4-ending"><p>Freiheit zeigt sich nicht nur darin, was man tun darf.</p><p>Sondern auch darin, wofür man Verantwortung übernimmt.</p>${next('Kapitel 6 – Was bleibt von Freiheit? →').replace('class="primary"','class="primary chapter-continue"')}<div class="ending-actions">${button('Notizbuch öffnen','notebook','class="quiet"')}${button('Zum Titelbild','home','class="quiet"')}</div></section>`;
- if(s==='chapter6')return task('Kapitel 6 – Was bleibt von Freiheit?','<p>Kapitel 5 ist abgeschlossen. Deine Urteile, Begegnungen und die Folgen deines Handelns bleiben für das Gesamturteil gespeichert. Kapitel 6 wird noch vorbereitet.</p>',button('Notizbuch öffnen','notebook')+button('Zum Titelbild','home','class="quiet"'));
  return '';
 }
 function workbench(){const c=state.chapter5,s=c.stage;if(state.dialogue||c.feedback)return '';
@@ -76,6 +74,8 @@ function workbench(){const c=state.chapter5,s=c.stage;if(state.dialogue||c.feedb
  const a=staging.assets['ui_'+name];return `<section class="ch5-workspace" aria-label="${esc(prompt)}"><div class="ch5-work-title"><h1>${esc(prompt)}</h1></div><div class="ch5-work-sheet" data-work="${name}"><img src="${a.path}" alt="Historische Arbeitsfläche">${items.map(([id,title,text],i)=>{const r=a.textSafeArea[i],tag=action?'button':'article';return `<${tag} class="ch5-write-field" ${action?`type="button" data-action="ch5-${action}" data-item="${id}" aria-pressed="${selected(id)}"`:''} style="left:${r.x}%;top:${r.y}%;width:${r.width}%;height:${r.height}%"><strong>${esc(title)}</strong><p>${esc(text)}</p></${tag}>`;}).join('')}</div><div class="panel-actions ch5-work-controls">${footer}</div></section>`;
 }
 export function chapterFiveScene(header){const c=state.chapter5,s=c.stage,w=chapterFiveWorld(),bench=workbench();
+ if(s==='freedom_after_action'||s==='end')return header+`<main class="game-layout chapter-five-layout recap-layout">${s==='end'&&c.recap.phase==='closing'?storyClosingView():storyRecapView()}</main>`;
+ if(s==='chapter6')return header.replace('Kapitel 05','Kapitel 06').replace('Du musst handeln','Was bleibt von Freiheit?')+`<main class="game-layout chapter-five-layout recap-layout">${chapterSixTransition()}</main>`;
  if(s==='chapter6')header=header.replace('Kapitel 05','Kapitel 06').replace('Du musst handeln','Was bleibt von Freiheit?');
  if(s==='intro')return header+`<main class="game-layout chapter-five-layout ch5-intro"><section class="ch4-ending"><p class="eyebrow">Mai 1525</p><p>Was gestern noch eine Forderung war, ist heute eine Entscheidung.</p>${next('Den Weg aufnehmen →').replace('class="primary"','class="primary chapter-continue"')}</section></main>`;
  if(bench)return header+`<main class="game-layout chapter-five-layout ch5-learning">${bench}<footer class="game-footer"><span id="save-status"></span></footer></main>`;

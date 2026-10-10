@@ -1,3 +1,4 @@
+import { openTheologicalQuestions } from '../data/story-recap.js';
 import { chapterFiveChoices,religionFunctions,lutherThoughts,debateArguments } from '../data/chapter-five.js';
 import { pathReflection,outcomeTexts } from './chapter-five.js';
 import { chapterFourChoices,communityConditions,hermeneuticalCriteria } from '../data/chapter-four.js';
@@ -44,6 +45,8 @@ export function openNotebook(tab = 'freedom') {
     for(const [key,field] of [['konrad','konradOutcome'],['negotiation','negotiationOutcome'],['civilian','civilianOutcome']])if(c[field])content+='<h2>'+esc({konrad:'Konrad',negotiation:'Verhandlung',civilian:'Unbeteiligte'}[key])+'</h2><p>'+esc(outcomeTexts[key][c[field]])+'</p>';
 
   }
+  if(tab==='action'&&state.chapter5.openTheologicalQuestion){const q=openTheologicalQuestions.find(([id])=>id===state.chapter5.openTheologicalQuestion);if(q)content+='<h2>Eine Frage bleibt</h2><p>'+esc(q[1])+'</p>';}
+  if(tab==='action'&&state.chapter5.completed)content+=button('Rückblick erneut ansehen','recap-replay','class="quiet"');
   if(tab==='documents'&&state.chapter5.openingPath)content+='<details class="editorial-info"><summary>Zur Einordnung</summary><p>Die Dorfszenen und Berichte sind erfunden. Die Luther-Gedanken sind in heutiger Sprache zusammengefasst. Sie greifen Freiheit und Dienst am Nächsten (1520), weltliche Obrigkeit (1523), Friedensermahnung und Aufruhrkritik (1525) auf. Die Originalauszüge liegen in den freigeschalteten Quellen des Archivs.</p></details>';
   openOverlay(`<article class="notebook"><div class="overlay-top"><span class="eyebrow">Dein Notizbuch</span>${button('Schließen ×','close-overlay','class="quiet"')}</div><h1 id="overlay-title">Notizbuch</h1><nav class="notebook-tabs" aria-label="Notizbuch">${[['freedom','Freiheit'],['documents','Dokumente'],['path','Mein Weg'],...(state.chapter5.openingPath?[['action','Mein Handeln']]:[]),...(state.chapter===3||state.chapter3.entryFocus?[['memmingen','Memmingen']]:[]),...((state.chapter===2||state.chapter2.forestComplete||state.chapter2.corveeComplete||state.chapter2.duesComplete)?[['village','Unser Dorf']]:[])].map(([id,label]) => `<button data-action="notebook-tab" data-tab="${id}" aria-current="${tab === id ? 'page' : 'false'}">${label}</button>`).join('')}</nav><div class="notebook-content">${content}</div></article>`, () => {}, 'notebook');
 }

@@ -506,3 +506,41 @@ dialog:has(.notebook) {
 .ch5-work-sheet .ch5-write-field p {font:18px/1.32 Georgia,serif;}
 
 .ch5-source-kind {font-size:14px;}
+
+/* Quiet historical chronicle: original scene plates and Canon bodies, no video file. */
+.recap-layout{display:flex!important;align-items:center;justify-content:center;overflow:hidden;padding:12px;min-height:0}
+.story-recap-film{position:relative;width:100%;height:100%;background:#160e09;overflow:hidden;isolation:isolate}
+.recap-camera{position:absolute;width:min(100%,calc((100svh - 98px)*4/3));aspect-ratio:4/3;left:50%;top:46%;transform:translate(-50%,-50%);animation:recap-camera var(--recap-duration) linear both;animation-delay:var(--recap-elapsed);transform-origin:center}
+.recap-background,.recap-layer{position:absolute;width:100%;height:100%;object-fit:contain}
+.recap-figures{position:absolute;inset:0}.recap-document{position:absolute;left:62%;top:43%;width:11%;height:16%;object-fit:contain}
+.recap-camera .ch4-person{max-width:none}
+.recap-caption{position:absolute;bottom:76px;left:0;right:0;padding:22px max(5%,calc((100% - 940px)/2));background:linear-gradient(0deg,#160e09f5,#160e09e8 75%,#160e0900);color:#f7e6c4;text-align:center;font:clamp(18px,2.15vw,25px)/1.45 Georgia,serif;animation:recap-crossfade var(--recap-duration) linear both;animation-delay:var(--recap-elapsed)}
+.recap-caption p{margin:.4em 0}.recap-caption .eyebrow{font-size:14px;letter-spacing:.12em}
+.recap-controls{position:absolute;bottom:16px;left:16px;right:16px;display:flex;justify-content:center;gap:12px}
+.recap-paused .recap-camera,.recap-paused .recap-caption{animation-play-state:paused}
+.recap-book,.recap-question{width:min(100%,1100px);height:100%;display:flex;flex-direction:column;padding:24px 36px;background:var(--parchment-surface);color:#302014;box-shadow:var(--paper-edge);border:3px solid #705032;min-height:0}
+.recap-book h1,.recap-question h1{font-size:clamp(24px,3vw,34px);margin:0 0 16px;line-height:1.15}
+.recap-book-body{overflow:auto;min-height:0;flex:1;padding-right:14px}
+.recap-book-body article{padding:12px 0;border-bottom:1px solid #8a683b55}.recap-book-body h2{font:600 19px/1.4 Georgia,serif;margin:0 0 5px}.recap-book-body p{font:18px/1.5 Georgia,serif;margin:0}
+.recap-book .panel-actions,.recap-question .panel-actions{flex-shrink:0;padding-top:14px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.recap-question-options{display:flex;flex-direction:column;gap:10px;overflow:auto;min-height:0;flex:1}
+.recap-question-options button{font-size:18px;line-height:1.35;text-align:left;padding:13px 18px;min-height:52px;flex-shrink:0}
+.recap-question-options [aria-pressed=true]{outline:3px solid #7b532b;outline-offset:-3px}
+.story-closing{background:#090604;color:#f2dfbe;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5%;font:clamp(20px,2.3vw,30px)/1.6 Georgia,serif;animation:recap-darken 2s both}
+.story-closing>div{max-width:900px}.story-closing p{margin:1em 0;animation:recap-darken 1.5s both}.story-closing button{margin-top:20px}
+.recap-perspective{max-width:1000px;max-height:100%;overflow:auto;text-align:center;padding:20px 5%;color:#f2dfbe;font:20px/1.5 Georgia,serif;animation:recap-darken 2s both}
+.recap-perspective h1{font-size:clamp(32px,4vw,48px);margin:.2em 0}.recap-perspective h2{font-size:24px;font-weight:normal}.recap-question-hook{border-top:1px solid #a27d4655;border-bottom:1px solid #a27d4655;margin:22px 0;padding:8px 0}
+#overlay:has(.story-recap-film),#overlay:has(.recap-book){width:min(1200px,96vw);height:90svh;max-height:90svh;padding:0;background:#1f140c;overflow:hidden}
+#overlay>.story-recap-film,#overlay>.recap-book{height:100%;width:100%}
+@keyframes recap-camera{from{transform:translate(-50%,-50%) scale(1)}to{transform:translate(-49.5%,-50%) scale(1.025)}}
+@keyframes recap-crossfade{0%{opacity:0}12%,90%{opacity:1}100%{opacity:0}}
+@keyframes recap-darken{from{opacity:0}to{opacity:1}}
+@media(max-height:700px){.recap-book,.recap-question{padding:16px 24px}.recap-question h1{font-size:25px;margin-bottom:10px}.recap-question-options{gap:8px}.recap-question-options button{padding:10px 14px}.recap-caption{bottom:66px;padding-top:18px;font-size:19px}.recap-book-body article{padding:9px 0}}
+@media(prefers-reduced-motion:reduce){.recap-camera,.recap-caption,.story-closing,.story-closing p,.recap-perspective{animation:none!important}.recap-camera{transform:translate(-50%,-50%)!important}}
+
+.recap-previous{position:absolute;width:min(100%,calc((100svh - 98px)*4/3));aspect-ratio:4/3;left:50%;top:46%;transform:translate(-50%,-50%);animation:recap-previous var(--recap-duration) linear both;animation-delay:var(--recap-elapsed)}
+.recap-camera{animation:recap-camera var(--recap-duration) linear both,recap-image-fade var(--recap-duration) linear both;animation-delay:var(--recap-elapsed),var(--recap-elapsed)}
+.recap-paused .recap-previous{animation-play-state:paused}.recap-paused .recap-caption{animation:none;opacity:1}
+@keyframes recap-image-fade{0%{opacity:0}12%,100%{opacity:1}}
+@keyframes recap-previous{0%{opacity:1}12%,100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.recap-previous{display:none}.recap-camera{animation:none!important;opacity:1}}

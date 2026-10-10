@@ -42,7 +42,7 @@ export function chapterThreePanel(){
  if(stage==='chapter4')return task('Kapitel 4 – Ordnung oder Widerstand?','<p>Die Forderungen sind unterwegs. Wie weit darf man für sie gehen?</p><p>Die Druckbogen sind in unserem Dorf angekommen. Was wird nun aus unseren Forderungen?</p>',button('Ins Dorf →','ch4-start','class="primary chapter-continue"')+button('Notizbuch öffnen','notebook','class="quiet"')+next('Zu den Forderungen zurück','end'));
  return '';
 }
-function figure(id,x,height,bottom,pose='neutral',mirror=false){
+export function figure(id,x,height,bottom,pose='neutral',mirror=false){
  const person=characters[id],active=state.dialogue?.lines[state.dialogue.index]?.speaker===id;
  const emotion=active?(state.dialogue.lines[state.dialogue.index].emotion||'talking'):pose;
  const old={peter:'peter_neutral',anna:'anna_neutral',jakob:'jakob_'+(active&&emotion!=='reading'?'talking':'reading'),konrad:'konrad_arguing'};

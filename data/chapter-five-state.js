@@ -1,5 +1,6 @@
 import { chapterFiveFields,chapterFiveChoices,finalActions,availableFinalActions,reportFacts,religionFunctions,lutherThoughts,debateArguments,theologicalArguments } from './chapter-five.js';
-export function freshChapterFive(){return {openingPath:null,stage:'',firstAction:null,duesAction:null,negotiationCondition:null,theologicalCounsel:{},communityCounsel:null,polarizationAnalysis:{},violenceReportsAssessment:{certain:[],uncertain:[]},prisonerDecision:null,neighborLoveInterpretation:null,religionFunctions:{strongest:[],dangerousWhenAbsolute:null},lutherTension:{helpful:null,tension:null},internalDebate:{strongestArgument:null,mostDangerousAbsolute:null},finalAction:null,outcomeProfile:null,konradOutcome:null,negotiationOutcome:null,civilianOutcome:null,endWorldState:null,freedomAfterAction:null,completed:false,step:0,phase:'',selections:[],attempts:{},resolved:{},feedback:null,supplyAction:null,limitsViolence:false,reportAnswers:{},handoff:null};}
+import { openTheologicalQuestions } from './story-recap.js';
+export function freshChapterFive(){return {openingPath:null,stage:'',firstAction:null,duesAction:null,negotiationCondition:null,theologicalCounsel:{},communityCounsel:null,polarizationAnalysis:{},violenceReportsAssessment:{certain:[],uncertain:[]},prisonerDecision:null,neighborLoveInterpretation:null,religionFunctions:{strongest:[],dangerousWhenAbsolute:null},lutherTension:{helpful:null,tension:null},internalDebate:{strongestArgument:null,mostDangerousAbsolute:null},finalAction:null,outcomeProfile:null,konradOutcome:null,negotiationOutcome:null,civilianOutcome:null,endWorldState:null,freedomAfterAction:null,openTheologicalQuestion:null,recap:{phase:'film',index:0,elapsed:0,paused:false},completed:false,step:0,phase:'',selections:[],attempts:{},resolved:{},feedback:null,supplyAction:null,limitsViolence:false,reportAnswers:{},handoff:null};}
 const c5=g=>g.chapter5||freshChapterFive();
 export function deriveChapter5OpeningPath(g){
  const c=g.chapter4||{},world=c.endWorldState||c.handoff?.endWorldState;
@@ -60,12 +61,14 @@ export function resolveChapterFiveOutcomes(g){
  if(!g.chapter5.outcomeProfile)g.chapter5.outcomeProfile=structuredClone(g.orientation||{});
  Object.assign(g.chapter5,{konradOutcome:deriveKonradOutcome(g),negotiationOutcome:deriveNegotiationOutcome(g),civilianOutcome:deriveCivilianOutcome(g),endWorldState:deriveChapter5EndWorldState(g)});
 }
-export function chapterSixHandoff(g){return {initialFreedomInterpretation:g.choices?.initialFreedomInterpretation,orientation:structuredClone(g.orientation),perceptions:structuredClone(g.perceptions),chapter3:structuredClone(g.chapter3),chapter4:structuredClone(g.chapter4),chapter5:structuredClone({...g.chapter5,handoff:null})};}
+export function chapterSixHandoff(g){return {initialFreedomInterpretation:g.choices?.initialFreedomInterpretation,openTheologicalQuestion:g.chapter5?.openTheologicalQuestion||null,orientation:structuredClone(g.orientation),perceptions:structuredClone(g.perceptions),chapter2:structuredClone(g.chapter2),choices:structuredClone(g.choices),grievances:structuredClone(g.grievances),chapter3:structuredClone(g.chapter3),chapter4:structuredClone(g.chapter4),chapter5:structuredClone({...g.chapter5,handoff:null})};}
 export function sanitizeChapterFive(g){
  const raw=g.chapter5||{},base=freshChapterFive(),record=x=>x&&typeof x==='object'&&!Array.isArray(x);
  if(record(raw.outcomeProfile)&&Object.values(raw.outcomeProfile).every(n=>Number.isFinite(n)&&n>=0&&n<=100))base.outcomeProfile=structuredClone(raw.outcomeProfile);
  const enumValue=(v,a)=>a.includes(v)?v:null;
  base.openingPath=enumValue(raw.openingPath,Object.keys(finalActions));
+ base.openTheologicalQuestion=enumValue(raw.openTheologicalQuestion,openTheologicalQuestions.map(([id])=>id));
+ if(record(raw.recap)){base.recap={phase:['film','chronicle','question','closing'].includes(raw.recap.phase)?raw.recap.phase:'film',index:Number.isInteger(raw.recap.index)?Math.max(0,Math.min(13,raw.recap.index)):0,elapsed:Number.isFinite(raw.recap.elapsed)?Math.max(0,Math.min(12,raw.recap.elapsed)):0,paused:raw.recap.paused===true};}
  for(const [field,id] of Object.entries(chapterFiveFields)){const v=g.choices?.[id]??raw[field];base[field]=enumValue(v,chapterFiveChoices[id].options.map(o=>o.id));if(base[field])g.choices[id]=base[field];}
  base.stage=g.scene?.startsWith('ch5_')?g.scene.slice(4):typeof raw.stage==='string'?raw.stage:'';base.phase=['help','limit','blind','assessment','risk','tension','danger'].includes(raw.phase)?raw.phase:'';
  base.step=Number.isInteger(raw.step)?Math.max(0,Math.min(raw.step,5)):0;
