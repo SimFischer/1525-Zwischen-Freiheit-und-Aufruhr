@@ -1,0 +1,97 @@
+{
+  "mode": "built-in image_gen",
+  "created": "2026-10-10",
+  "records": [
+    {
+      "id": "bg_reflection_room",
+      "prompt": "Use case: historical-scene. Single premium painterly historical point-and-click game background, full1024x768 4:3 image, no transparent background. Reference1 (Chapter5 council room) defines the same warm adult painterly world, materials and believable architecture ONLY. Create a different quiet scholarly reflection room in southern Germany around1525, after events are over, for older students16-18. No people anywhere. No active outdoor conflict. No text, labels or UI.\n\nLOCK CAMERA BEFORE PAINTING: gently elevated seated adventure viewpoint, horizon y27%, single vanishingpoint x52%/y27%; eye slightly above a BIG clear central worktable, not overhead nor horizontal edge-only. Table surface an easily usable shallow trapezoid: far left corner(16%,39%), far right(84%,39%), near right(94%,72%), near left(6%,72%). Tabletop occupies broad middle39%-72%, empty with no fixed papers or books. Show real thick oak table edge and restrained legs below72%; lower band74%-100% quiet and dark enough for future dialog overlays. Large center work area must be uncluttered and readable, small left/right tabletop areas for later notebook, evidence documents and source folders, all at SAME level. No objects permanently placed in working surface.\n\nRoom warm textured lime plaster, heavy plain oak beams, modest book shelf and closed chest tucked along rear walls, subdued dark green cloth on a peripheral chair if desired. Left-back window neutral late afternoon daylight, outside only soft sky and quiet greenery, no action. Warm side light from upper-left, subtle tiny candle on WALL SHELF at upperright only. Familiar brown/ochre/cream/mutedwarm colors, lifelike wood/leather/linen/metals, fine restrained brushwork. Calm intellectual archive/study feeling. Window and shelf architectural detail only, no religiousglow, heroicdrama or museumdisplay. Upperright x75%-94%,y8%-22% remains quiet plain plaster for future existinghotspotmaterial. Preserve large safe worktable plane, no drawers/stacks blocking it. No characters, visible writing, modern screens/cards/whitepanels, scales/gavels, border or collage. One full room.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-68512a16-abca-4ef4-8e00-06b755357d3e.png",
+      "transparent": false
+    },
+    {
+      "id": "bg_final_question",
+      "prompt": "Edit reference1 only in lighting: preserve the SAME reflection room, table perspective and every architectural shape exactly. Full4:3 1024x768 background. Quiet final moment: subdued late-evening softwarmleftlight, ambientillumination reduced, visible table still readable. No theatrical beams, no gloom,fantasy or religioussymbols. Keep tabletop EMPTY: final open book is separate. No people, text or new objects. Same calm brown/ochre adult painterly world. More reduced quieter mood than afternoon, no plot action outside.",
+      "refs": [
+        "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-68512a16-abca-4ef4-8e00-06b755357d3e.png"
+      ],
+      "transparent": false,
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-1ead679f-3192-49aa-9dbb-1e33595329cc.png"
+    },
+    {
+      "id": "ui_freedom_then_now",
+      "prompt": "Use case: historical-scene. ONE full4:3 transparent RGBA PNG1024x768 asset: a large open darkbrown leather-bound personal notebook seen straight on from gently elevated reading angle with nearly RECTANGULAR readable pages. Reference1 gives the existing notebook's dark brown leather, handstitching, simplebrassclasp and pageedges; reference2 gives painterlyworldlightonly. Same designfamily, not a fantasy tome. Complete book fitswithin x3%-97%,y5%-95%, no cropped edges. Two perfectly EQUAL cream warm clean parchment pages: left quiet text rectangle x10%-45%,y15%-84%, right55%-90%,y15%-84%. Pages almost flat and parallel to pictureplane for HTML18px paragraphs. Central narrow bindingcrease, darkleathervisibleunderpages, discrete corners. Sparse papertexture, NO flecks/stains insidewritingareas. Bothpages equalwarmbrightness, no moralcolorcoding. NO drawn text, no lines, headings, icons, props, floor, desk, people orbackground. Genuine transparent background. Premiumadultpainterlymaterial, restraint and cleanreadability. This is blank reusable doublepage sourcework, not moderncards.",
+      "refs": [
+        "C:/Users/simon/OneDrive/Dokumente von mir/1. Unterricht/Unterricht ab Ref/1. Schuljahr 26_27 (Erste Vollzeitstelle)/Q1-Jahrgang/Religion/UE Luther/Webapp 1525/1525 Lernapp/assets/ui/ui_notebook_closed.png",
+        "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-68512a16-abca-4ef4-8e00-06b755357d3e.png"
+      ],
+      "transparent": true,
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-94601ee3-9a05-4e75-b5ac-2c6ab97c6edd.png"
+    },
+    {
+      "id": "prop_personal_notebook_open",
+      "transparent": true,
+      "refs": [
+        "C:/Users/simon/OneDrive/Dokumente von mir/1. Unterricht/Unterricht ab Ref/1. Schuljahr 26_27 (Erste Vollzeitstelle)/Q1-Jahrgang/Religion/UE Luther/Webapp 1525/1525 Lernapp/assets/ui/ui_notebook_closed.png",
+        "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-68512a16-abca-4ef4-8e00-06b755357d3e.png"
+      ],
+      "prompt": "Single transparent RGBA PNG1024x768 full4:3 canvas. OPEN version of EXACT same brown leather personal notebook reference1: same stitching, leatherstraps and brassclasp, plain warm pageedges, adult game painterlyquality. Reference2 supplies upperleft softlight and worktable camera only, DO NOT drawroom/table. Notebook lies horizontally on a table, viewed at mildly elevated adventure angle, open two equal blank creamy pages, spine towardsviewer, far edge higher. Complete object inside15%-85%,25%-75%. No text, marks, ruling or stains in broad pagecenters. Genuine transparent background and tiny soft grounding shadowonly. Samefamiliarbook design, no extraobjects/UI/modernforms.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-9a058e17-1fde-4cb8-aeee-327efe8d156f.png"
+    },
+    {
+      "id": "prop_luther_folder_closed",
+      "transparent": true,
+      "refs": [
+        "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-68512a16-abca-4ef4-8e00-06b755357d3e.png"
+      ],
+      "prompt": "ONE transparent full4:3 PNG1024x768 illustrated prop. A closed early16thcentury southernGerman manuscript wallet, simple folded mediumdarkbrownsoftleather cover with narrow tie, a few cream paperedgesvisible. NO modern officefolder, ringbinder, plastic, sealedletterstyle ortext. Lying horizontal at same mildly elevated adventure tableview as reference1, upperleft softwarmlight. Only ONE object, complete silhouette centered x25%-75%,y28%-70%, tinysoft contactshadow, surroundings truealpha0. Premium warm painterly realism, simpleworkwornqualitynotragged. Neutralunlabelledcover so SAMEwallet can hold eitherLuther orMüntzer sourceswithout visualprejudgment. No room/floor/table, people, graphics orUI.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-b294eb88-f08e-4e0b-9bb5-d1ce56333a81.png"
+    },
+    {
+      "id": "prop_luther_folder_open",
+      "transparent": true,
+      "refs": [
+        "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-68512a16-abca-4ef4-8e00-06b755357d3e.png"
+      ],
+      "prompt": "ONE transparent full4:3 PNG1024x768 illustrated prop. An OPEN early16thcentury southernGerman manuscript wallet, simple folded mediumdarkbrown softleather cover opened horizontally, narrow loosened leather tie atedge, two warm cream blank manuscript leaves inside equalleft/rightwritingspaces. NO modern officefolder, ringbinder,plastic ortext. Lying at same mildly elevated adventure tableview as reference1, upperleft softwarmlight. OnlyONE object, completesilhouette inside12%-88%,y20%-80%, tinysoftcontactshadow, surroundings truealpha0. Premium adultwarm painterlyrealism, restrained patina. Neutralunlabelledcover so SAMEwallet can hold either Luther orMüntzer sourceswithout visualprejudgment. Veryquietunspotted blankpages, no rulings/letters. No room,floor,table,people, graphics orUI.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-63d7a423-b51c-41b2-8df2-c2e132aa1651.png"
+    },
+    {
+      "id": "ui_luther_interpretation_scale",
+      "transparent": true,
+      "prompt": "Single transparent RGBA4:3 PNG1024x768 historical painterly game asset. Three EQUAL tall warmcream parchment manuscriptleaves laid sidebyside on a continuous low darkleather readingmat. Objectinside x3%-97%,y7%-93%. Blankrectangular textcenters left x9%-29%, middle40%-60%,right71%-91%,y19%-79%. Each paper samewarmbrightness,size andtreatment, no moralcolors! THREEfields ONLY, quietlighttexture, calm18pxHTMLparagraphspace, simple handworkedleatheredge. No woodtablelegs, unnecessarydecor, text/rulings/numbers/icons, buttons, raisedmoderncards, gradients orscore. Reference1 givespainterlymaterialqualityonly. Actualtransparentbackground,nobackplate. Usedfor continuity/tension/contradiction and threejudgmentcriteria withHTMLlabels.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-252c8e71-1619-49af-96f8-20d2d7440c36.png"
+    },
+    {
+      "id": "ui_final_position",
+      "transparent": true,
+      "prompt": "Single transparent RGBA4:3 PNG1024x768 historical gameasset. ONE broad darkleather archivalfolio under FIVE long equal blankcream parchment strips arranged vertically. Completeobjectwithin x5%-95%,y5%-95%. Stripquietwritingregions x13%-87%, eachheight11%, startingy14%,29%,44%,59%,74%. Subtleirregularpaperedges, equalwarmbrightness, plentyspacefor18pxHTMLchoice sentence and44pxminimumtouchheight. No text,checkmarks,radio circles, score,icons,decorativenumerals ormodernbuttons. Thisisphysicaldocuments ononecontinuousleathermat, neutraladult historicalpainterlymaterialsfromreference1, softwarmlight, nofontdrawn. Surroundings genuinelytransparent, nofloor/table/background.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-f219baf2-0f5d-4563-8c33-897bcbc6bd6b.png",
+      "previousSource": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-fbcead61-d94a-46fb-94fb-743a5c33ad49.png",
+      "correctionPrompt": "Edit this transparent archivalfolio asset. It currently has FOUR parchment strips, which is incorrect. It MUST have EXACTLY FIVE equally sized blank parchment strips. Keep materialworld, warm light, darkleather handstitched backing, restrainedcornerfittings and transparentbackground. Rearrange five equal strips within same complete4:3 canvas1024x768, evenly spaced vertically: strip1 y13%-25%, strip2y28%-40%, strip3y43%-55%, strip4y58%-70%, strip5y73%-85%,all x12%-88%. Allfive equallylarge and equally bright, generouswritingcenter and44pxminimumtoucharea inTabletreadingview. No letters, labels, symbols, checkboxes, moralcolors orother changes. Five is mandatory: one, two, three, four, FIVE. Fulltransparent PNG, no collage/montage."
+    },
+    {
+      "id": "ui_final_judgment_writing",
+      "transparent": true,
+      "prompt": "Single transparent RGBA4:3 PNG1024x768 premium historicalgame writingunderlay. ONE largewarmcreamhistoricalmanuscriptleaf restingon a verythin darkleatherwritingboard, almoststraight-on readableview. Fullobject x4%-96%,y5%-95%. Hugeuninterrupted quiet textrectangle x12%-88%,y14%-86%, sufficient for8short18pxHTMLparagraphs withclearlineheight. VERYgentlepapertexture,no stainedor darkspots intextcenter, NO lines, sectiongrids, handwritingorprintedtext. Subtlehandmadepaperedgesand restrainedleathercorners, noornamentalframe, waxsealorquillintrudingintotext. Sameadult warmmaterialworldasreference1. Actualtransparentbackground outside singleleaf+board, nofloor/table/UI. Physicalmanuscript notwhitecard.",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-8e11ac2a-be01-4b96-b9da-6aa86e6d8586.png"
+    },
+    {
+      "id": "ui_theological_network_table",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-6cfa3260-7811-4ad4-828f-5bd4c7a48188.png",
+      "transparent": false,
+      "prompt": "Premium adult painterly historical1525 gameasset, full4:3 1024x768. Reference reflectionroom forworld/materialquality only. Close readingview ofoakworktable with ONE largecontinuous warmcream BLANK parchmentworkmat x5%-95%,y6%-94%. Mainworkspace x10%-90%,y10%-90% for8dynamicallyplaced markers and6SVGinkconnections. NO baked nodes,lines,cards,text,glyphs,icons,UIor moralcolors. Tinyinkwellatcorneronly. Quietcleanpapercenters, no stains. Finepainterlywood, gentleleftwarmlight. No modern diagrams."
+    },
+    {
+      "id": "ui_memory_frame",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-743c7e1f-60bb-48ea-ab71-c34e8cb1b7e9.png",
+      "transparent": true,
+      "prompt": "Premium adult painterly historical1525 gameasset, full4:3 transparent1024x768. ONE smallsimple oakillustrationframe, slimlowwoodborder anddiscretecreamparchmentlip, rectangularcenter a TRUE TRANSPARENT HOLE for dynamicmemoryimage. Straighton, complete frame x10%-90%,y15%-85%. No image,paperpanel,whiteorblackfill insidewindow. No modernphotocard/Polaroid,goldluxury,text/UI/icons. Preservecorners, restrainedwear. Reflectionroomreferenceforqualityonly."
+    },
+    {
+      "id": "ui_memory_evidence_table",
+      "source": "C:\\Users\\simon\\.codex\\generated_images\\01a10106-a6ec-7b80-a436-c9627e6da0b0\\exec-b54481e8-c83f-4587-908e-8fdf3045cbd9.png",
+      "transparent": false,
+      "prompt": "Premiumadultpainterly1525gameasset, full4:3 1024x768. One continuous archivalchroniclespreadonoaktable, FOUR equalempty illustrationwindows2x2, largeleatherboundopenchronicleflatcreampages. Upperleft x10%-44%,y16%-43%; upperright56%-90%,y16%-43%; lowerleft10%-44%,y56%-83%; lowerright56%-90%,y56%-83%. Thinwood/parchmentinsetborders. CentersblankcreamforHTMLsceneinserts, narrowblankcaptionstripsbelow. NO screenshotspicturesor fixedtext/icons/UI/rulings,modernphotogallery,glossorPolaroids. Equalneutralbrightness/quality,pages quietandclean. Reflectionroomstyleonly."
+    }
+  ]
+}

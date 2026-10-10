@@ -1,0 +1,653 @@
+{
+  "cases": [
+    {
+      "scene": "entry",
+      "viewport": [
+        1024,
+        768
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 0,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "reflection",
+      "viewport": [
+        1024,
+        768
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 0,
+      "imageCount": 12,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "freedom",
+      "viewport": [
+        1024,
+        768
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 2,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "network",
+      "viewport": [
+        1024,
+        768
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 0,
+      "imageCount": 1,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "luther",
+      "viewport": [
+        1024,
+        768
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 3,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "memory",
+      "viewport": [
+        1024,
+        768
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 4,
+      "imageCount": 5,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "comparison",
+      "viewport": [
+        1024,
+        768
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 2,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "judgment",
+      "viewport": [
+        1024,
+        768
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 0,
+      "imageCount": 7,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "dimensions",
+      "viewport": [
+        1024,
+        768
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 3,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "interpretation",
+      "viewport": [
+        1024,
+        768
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 3,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "position",
+      "viewport": [
+        1024,
+        768
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 5,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "writing",
+      "viewport": [
+        1024,
+        768
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 1,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "personal",
+      "viewport": [
+        1024,
+        768
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 1,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "final",
+      "viewport": [
+        1024,
+        768
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 2,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "evidence",
+      "viewport": [
+        1024,
+        768
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 2,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "notebook",
+      "viewport": [
+        1024,
+        768
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 2,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "folders",
+      "viewport": [
+        1024,
+        768
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 2,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "prop_plane",
+      "viewport": [
+        1024,
+        768
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 0,
+      "imageCount": 4,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "entry",
+      "viewport": [
+        820,
+        640
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 0,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "reflection",
+      "viewport": [
+        820,
+        640
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 0,
+      "imageCount": 12,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "freedom",
+      "viewport": [
+        820,
+        640
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 2,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "network",
+      "viewport": [
+        820,
+        640
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 0,
+      "imageCount": 1,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "luther",
+      "viewport": [
+        820,
+        640
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 3,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "memory",
+      "viewport": [
+        820,
+        640
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 4,
+      "imageCount": 5,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "comparison",
+      "viewport": [
+        820,
+        640
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 2,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "judgment",
+      "viewport": [
+        820,
+        640
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 0,
+      "imageCount": 7,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "dimensions",
+      "viewport": [
+        820,
+        640
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 3,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "interpretation",
+      "viewport": [
+        820,
+        640
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 3,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "position",
+      "viewport": [
+        820,
+        640
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 5,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "writing",
+      "viewport": [
+        820,
+        640
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 1,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "personal",
+      "viewport": [
+        820,
+        640
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 1,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "final",
+      "viewport": [
+        820,
+        640
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 2,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "evidence",
+      "viewport": [
+        820,
+        640
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 2,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "notebook",
+      "viewport": [
+        820,
+        640
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 2,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "folders",
+      "viewport": [
+        820,
+        640
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 2,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "prop_plane",
+      "viewport": [
+        820,
+        640
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 0,
+      "imageCount": 4,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "entry",
+      "viewport": [
+        1440,
+        900
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 0,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "reflection",
+      "viewport": [
+        1440,
+        900
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 0,
+      "imageCount": 12,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "freedom",
+      "viewport": [
+        1440,
+        900
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 2,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "network",
+      "viewport": [
+        1440,
+        900
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 0,
+      "imageCount": 1,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "luther",
+      "viewport": [
+        1440,
+        900
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 3,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "memory",
+      "viewport": [
+        1440,
+        900
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 4,
+      "imageCount": 5,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "comparison",
+      "viewport": [
+        1440,
+        900
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 2,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "judgment",
+      "viewport": [
+        1440,
+        900
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 0,
+      "imageCount": 7,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "dimensions",
+      "viewport": [
+        1440,
+        900
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 3,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "interpretation",
+      "viewport": [
+        1440,
+        900
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 3,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "position",
+      "viewport": [
+        1440,
+        900
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 5,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "writing",
+      "viewport": [
+        1440,
+        900
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 1,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "personal",
+      "viewport": [
+        1440,
+        900
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 1,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "final",
+      "viewport": [
+        1440,
+        900
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 2,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "evidence",
+      "viewport": [
+        1440,
+        900
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 2,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "notebook",
+      "viewport": [
+        1440,
+        900
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 2,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "folders",
+      "viewport": [
+        1440,
+        900
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 2,
+      "imageCount": 2,
+      "fontMinPx": 18
+    },
+    {
+      "scene": "prop_plane",
+      "viewport": [
+        1440,
+        900
+      ],
+      "pass": true,
+      "problems": [],
+      "fieldCount": 0,
+      "imageCount": 4,
+      "fontMinPx": 18
+    }
+  ],
+  "errors": []
+}
