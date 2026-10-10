@@ -1,3 +1,4 @@
+import {configureEpilogue,beginEpilogue,epilogueActive,epilogueView,epilogueAction,syncEpilogue,leaveEpilogue} from './epilogue.js';
 import { configureChapterSix,prepareChapterSix,chapterSixAction,chapterSixInput } from './chapter-six.js';
 import { fitChapterSix } from './chapter-six-view.js';
 import { fitChapterFourScene } from './chapter-four-view.js';
@@ -46,6 +47,7 @@ function startScreen() {
   document.body.dataset.testMode=String(isTestMode());
   resetStaging();
   playing = false;
+  leaveEpilogue();
   setMode('exploration');
   const saved = load();
   app.innerHTML = `<main class="start-screen">${fullscreenButton(true)}<div class="start-copy"><p class="start-year" data-admin-hold>1525<span class="year-dot">.</span></p><h1 data-admin-hold><span class="sr-only">1525 – </span>Zwischen Freiheit<br>und Aufruhr</h1><p class="start-description">Frühjahr 1525.<br>Ein Blatt aus Wittenberg erreicht das Dorf.<br>Am Abend wird darüber in der Taverne gesprochen.</p><div class="start-actions">${button('Neues Spiel',saved ? 'confirm-new' : 'new','class="primary"')}${saved ? button('Spiel fortsetzen','resume','class="secondary"') : ''}</div>${saved ? `<p class="resume-note">Zuletzt: ${esc(sceneById[saved.scene].title)}</p>${button('Spielstand zurücksetzen','confirm-reset','class="text-button"')}` : ''}</div></main>${testToolbar()}${debugView()}`;
@@ -59,7 +61,7 @@ function enterScene(id, complete = true) {
   state.scene = id; state.phase = 'active'; state.dialogue = null; state.interaction = null; selectedCard = null;
   const scene = sceneById[id];
   state.chapter=scene.chapter||1;
-  if(scene.chapter===6){playing=true;prepareChapterSix(scene);render();persist();return;}
+  if(scene.chapter===6){playing=true;prepareChapterSix(scene);if(scene.id==='ch6_ending')beginEpilogue();render();persist();return;}
   if(scene.chapter===5){playing=true;prepareChapterFive(scene);render();persist();return;}
   if (scene.chapter===4) {playing=true;prepareChapterFour(scene);render();persist();return;}
   if (scene.chapter===3) { playing=true; prepareChapterThree(scene); render(); persist(); return; }
@@ -87,6 +89,7 @@ function render() {
   syncStoryRecap();
   document.body.dataset.testMode=String(isTestMode());
   if (!playing) return startScreen();
+  if(epilogueActive()){app.innerHTML=epilogueView();syncEpilogue();return;}
   const scene = sceneById[state.scene], debugWasOpen = app.querySelector('.debug')?.open || false;
   if(scene.chapter===6){setMode('minigame');app.innerHTML=sceneView()+debugView(debugWasOpen)+testToolbar();fitChapterSix();return;}
   if(scene.chapter===5){
@@ -243,7 +246,7 @@ document.addEventListener('click',event => {
     else render();
     return;
   }
-  if (action === 'home') { if (playing) persist(); return startScreen(); }
+  if (action === 'home') { if (playing && !epilogueActive()) persist(); return startScreen(); }
   if (action === 'menu') return openOverlay(`<article class="confirmation"><p class="eyebrow">Kapitel ${state.chapter}</p><h1 id="overlay-title">Eine kurze Pause.</h1><div class="menu-actions">${button('Weiterspielen →','close-overlay','class="primary"')}${button('Zum Startbildschirm','menu-home','class="secondary"')}${button('Spielstand zurücksetzen','confirm-reset','class="quiet"')}</div></article>`,() => {},state.uiMode);
   if (action === 'menu-home') { closeOverlay(); persist(); return startScreen(); }
   if (action === 'notebook') { document.querySelector('#notice').classList.remove('visible'); return openNotebook(); }
@@ -251,6 +254,7 @@ document.addEventListener('click',event => {
   if (action === 'archive-document') return openDocument(target.dataset.document,null,() => openNotebook('documents'),true);
   if (action === 'scene-document') return openSceneDocument();
   if(action==='debug-ch2-complete' && new URLSearchParams(location.search).get('debug')==='true') { const next=prepareAdminStateForScene('ch2_assembly'); next.scene='ch2_hub'; next.dialogue=null; next.interaction=null; next.chapter2.stage='hub'; showPreparedState(next); return; }
+  if (epilogueAction(action,target)) return;
   if (chapterSixAction(action,target)) return;
   if (storyRecapAction(action,target)) return;
   if (chapterFiveAction(action,target)) { render(); persist(); return; }
@@ -334,6 +338,7 @@ document.addEventListener('change',event => {
   if(event.target.dataset.demand) { state.chapter2.demand[event.target.dataset.demand]=Number(event.target.value); render(); persist(); }
   if (event.target.id === 'debug-scene') { ensureAdminSession(); showPreparedState(prepareAdminStateForScene(event.target.value)); }
 });
+configureEpilogue({render,persist,active:()=>playing});
 configureChapterSix({enterScene,render,persist,openNotebook});
 document.addEventListener('input',event=>chapterSixInput(event.target));
 window.addEventListener('resize',fitChapterSix);

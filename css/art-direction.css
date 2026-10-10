@@ -557,3 +557,38 @@ dialog:has(.comparison-reading) {width:98vw;height:98svh;max-height:98svh;paddin
 .ch5-work-sheet[data-work="religion_functions"] .ch5-write-field:nth-of-type(2) p,
 .ch5-work-sheet[data-work="religion_functions"] .ch5-write-field:nth-of-type(5) strong,
 .ch5-work-sheet[data-work="religion_functions"] .ch5-write-field:nth-of-type(5) p {background:var(--source-reading-paper);box-shadow:0 0 5px 3px #f3e4c9e6;}
+
+/* Documentary postlude: originals on a calm dark ground, outside the adventure reconstruction. */
+.epilogue{height:100dvh;display:flex;flex-direction:column;background:#0d0b09;color:#f4e8ce;padding:18px;box-sizing:border-box;font-family:Georgia,serif}
+.ep-content{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;animation:ep-arrive .8s ease-out}
+.ep-text{max-width:48ch;min-height:100%;margin:auto;display:flex;flex-direction:column;justify-content:center;font-size:clamp(22px,2.7vw,34px);line-height:1.5;text-align:center;padding:18px}
+.ep-source{height:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;max-width:1200px;margin:auto}
+.ep-source figure{margin:0;display:flex;flex-direction:column;min-height:0;gap:10px}
+.ep-source figure>img{width:100%;height:0;flex:1;min-height:100px;object-fit:contain}
+.ep-source figcaption{font-size:18px;line-height:1.4;color:#e1ccb0}
+.ep-source figcaption span{font-variant:small-caps;color:#f4e8ce}
+.ep-comment{align-self:center;font-size:clamp(22px,2.3vw,30px);line-height:1.5;max-width:32ch}
+.ep-comment a,.ep-reader a{color:#eed3a1;text-decoration:underline;font-size:18px;display:inline-block;padding:12px 0}
+.ep-source-title{flex:1;display:flex;flex-direction:column;justify-content:center;border-block:1px solid #725b39;padding:20px;font-size:20px;line-height:1.5}
+.ep-source-title h1{font-size:clamp(24px,2.7vw,36px);line-height:1.3}
+.ep-controls{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;flex:none;padding-top:12px}
+.ep-controls button{min-height:44px}.ep-controls span{font-size:18px;align-self:center}
+.ep-room{height:100%;position:relative;display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate;overflow:hidden}
+.ep-room-art.ch6-stage{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;z-index:-2;margin:0}
+.ep-room-art>.ch6-base{object-fit:contain;background:#0d0b09}
+.ep-room-copy{background:linear-gradient(transparent,rgba(13,11,9,.94) 18%);padding:36px 24px 12px;text-align:center;font-size:clamp(22px,2.5vw,32px);line-height:1.5;max-height:70%;overflow-y:auto}
+.ep-room-copy h1{font-size:clamp(28px,3.2vw,44px);line-height:1.3}.ep-room-copy h2{font-size:30px}.ep-room small{font-size:18px;text-align:center;padding:8px;color:#e1ccb0;background:#0d0b09}
+.ep-answer{white-space:pre-wrap;overflow-wrap:anywhere;font-size:22px;line-height:1.6}
+.ep-closing.ch6-stage{height:100%;width:min(100%,calc((100dvh - 110px)*1.333));margin:auto}
+.ep-reader{max-width:900px;max-height:80dvh;overflow-y:auto;color:var(--ink,#2e2116);padding:20px;line-height:1.6}
+.ep-reader>button{position:sticky;top:0;z-index:2}.ep-reader a{color:#594017}.ep-reader section{border-bottom:1px solid #96764c;padding:12px 0}.ep-reader h2{font-size:24px}
+.ep-enlarged{display:block;width:100%;height:auto}
+@keyframes ep-arrive{from{opacity:0}to{opacity:1}}
+@media(max-width:850px){.epilogue{padding:12px}.ep-source{gap:18px}.ep-source figcaption{font-size:18px}.ep-comment{font-size:22px}.ep-room-copy{padding:28px 14px 8px}}
+@media(max-width:600px){.ep-source{height:auto;display:block}.ep-source figure>img{height:50dvh;flex:none}.ep-comment{max-width:none}.ep-source-title{min-height:30dvh}}
+@media(prefers-reduced-motion:reduce){.ep-content{animation:none}}
+
+.ep-content:has(.ep-room){overflow:hidden}
+.ep-room-art.ch6-stage{inset:auto;left:50%;top:50%;transform:translate(-50%,-50%);width:min(100%,calc((100dvh - 100px)*1.333));height:auto;aspect-ratio:4/3}
+
+#overlay:has(.ep-reader){overflow-y:auto}.ep-reader{max-height:none;overflow:visible}

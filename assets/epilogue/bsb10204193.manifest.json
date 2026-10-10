@@ -1,0 +1,1613 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@type": "sc:Manifest",
+  "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/manifest",
+  "label": "Luther, Martin: Ermanunge zum frid, auff die zwölff artickel der Bawrschafft in Schwaben",
+  "navDate": "1525-01-01T00:00:00Z",
+  "sequences": [
+    {
+      "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/sequence/normal",
+      "@type": "sc:Sequence",
+      "canvases": [
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/1",
+          "@type": "sc:Canvas",
+          "label": "(0001)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/1-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00001/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00001",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1739,
+                "height": 2326
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/1"
+            }
+          ],
+          "width": 1739,
+          "height": 2326,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/1",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/2",
+          "@type": "sc:Canvas",
+          "label": "(0002)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/2-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00002/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00002",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1702,
+                "height": 2333
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/2"
+            }
+          ],
+          "width": 1702,
+          "height": 2333,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/2",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/3",
+          "@type": "sc:Canvas",
+          "label": "(0003)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/3-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00003/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00003",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1697,
+                "height": 2293
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/3"
+            }
+          ],
+          "width": 1697,
+          "height": 2293,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/3",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/4",
+          "@type": "sc:Canvas",
+          "label": "(0004)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/4-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00004/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00004",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1692,
+                "height": 2326
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/4"
+            }
+          ],
+          "width": 1692,
+          "height": 2326,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/4",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/5",
+          "@type": "sc:Canvas",
+          "label": "(0005)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/5-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00005/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00005",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1692,
+                "height": 2291
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/5"
+            }
+          ],
+          "width": 1692,
+          "height": 2291,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/5",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/6",
+          "@type": "sc:Canvas",
+          "label": "(0006)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/6-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00006/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00006",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1667,
+                "height": 2303
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/6"
+            }
+          ],
+          "width": 1667,
+          "height": 2303,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/6",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/7",
+          "@type": "sc:Canvas",
+          "label": "(0007)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/7-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00007/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00007",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1692,
+                "height": 2319
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/7"
+            }
+          ],
+          "width": 1692,
+          "height": 2319,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/7",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/8",
+          "@type": "sc:Canvas",
+          "label": "(0008)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/8-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00008/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00008",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1679,
+                "height": 2311
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/8"
+            }
+          ],
+          "width": 1679,
+          "height": 2311,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/8",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/9",
+          "@type": "sc:Canvas",
+          "label": "(0009)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/9-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00009/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00009",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1684,
+                "height": 2300
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/9"
+            }
+          ],
+          "width": 1684,
+          "height": 2300,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/9",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/10",
+          "@type": "sc:Canvas",
+          "label": "(0010)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/10-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00010/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00010",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1686,
+                "height": 2320
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/10"
+            }
+          ],
+          "width": 1686,
+          "height": 2320,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/10",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/11",
+          "@type": "sc:Canvas",
+          "label": "(0011)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/11-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00011/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00011",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1687,
+                "height": 2314
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/11"
+            }
+          ],
+          "width": 1687,
+          "height": 2314,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/11",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/12",
+          "@type": "sc:Canvas",
+          "label": "(0012)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/12-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00012/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00012",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1695,
+                "height": 2310
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/12"
+            }
+          ],
+          "width": 1695,
+          "height": 2310,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/12",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/13",
+          "@type": "sc:Canvas",
+          "label": "(0013)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/13-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00013/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00013",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1664,
+                "height": 2298
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/13"
+            }
+          ],
+          "width": 1664,
+          "height": 2298,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/13",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/14",
+          "@type": "sc:Canvas",
+          "label": "(0014)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/14-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00014/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00014",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1662,
+                "height": 2301
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/14"
+            }
+          ],
+          "width": 1662,
+          "height": 2301,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/14",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/15",
+          "@type": "sc:Canvas",
+          "label": "(0015)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/15-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00015/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00015",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1668,
+                "height": 2317
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/15"
+            }
+          ],
+          "width": 1668,
+          "height": 2317,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/15",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/16",
+          "@type": "sc:Canvas",
+          "label": "(0016)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/16-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00016/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00016",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1660,
+                "height": 2313
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/16"
+            }
+          ],
+          "width": 1660,
+          "height": 2313,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/16",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/17",
+          "@type": "sc:Canvas",
+          "label": "(0017)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/17-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00017/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00017",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1651,
+                "height": 2306
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/17"
+            }
+          ],
+          "width": 1651,
+          "height": 2306,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/17",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/18",
+          "@type": "sc:Canvas",
+          "label": "(0018)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/18-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00018/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00018",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1650,
+                "height": 2297
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/18"
+            }
+          ],
+          "width": 1650,
+          "height": 2297,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/18",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/19",
+          "@type": "sc:Canvas",
+          "label": "(0019)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/19-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00019/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00019",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1635,
+                "height": 2304
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/19"
+            }
+          ],
+          "width": 1635,
+          "height": 2304,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/19",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/20",
+          "@type": "sc:Canvas",
+          "label": "(0020)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/20-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00020/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00020",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1648,
+                "height": 2314
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/20"
+            }
+          ],
+          "width": 1648,
+          "height": 2314,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/20",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/21",
+          "@type": "sc:Canvas",
+          "label": "(0021)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/21-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00021/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00021",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1662,
+                "height": 2322
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/21"
+            }
+          ],
+          "width": 1662,
+          "height": 2322,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/21",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/22",
+          "@type": "sc:Canvas",
+          "label": "(0022)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/22-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00022/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00022",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1692,
+                "height": 2329
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/22"
+            }
+          ],
+          "width": 1692,
+          "height": 2329,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/22",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/23",
+          "@type": "sc:Canvas",
+          "label": "(0023)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/23-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00023/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00023",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1671,
+                "height": 2294
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/23"
+            }
+          ],
+          "width": 1671,
+          "height": 2294,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/23",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/24",
+          "@type": "sc:Canvas",
+          "label": "(0024)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/24-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00024/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00024",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1670,
+                "height": 2296
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/24"
+            }
+          ],
+          "width": 1670,
+          "height": 2296,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/24",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/25",
+          "@type": "sc:Canvas",
+          "label": "(0025)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/25-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00025/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00025",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1680,
+                "height": 2341
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/25"
+            }
+          ],
+          "width": 1680,
+          "height": 2341,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/25",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/26",
+          "@type": "sc:Canvas",
+          "label": "(0026)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/26-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00026/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00026",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1657,
+                "height": 2323
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/26"
+            }
+          ],
+          "width": 1657,
+          "height": 2323,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/26",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/27",
+          "@type": "sc:Canvas",
+          "label": "(0027)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/27-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00027/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00027",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1682,
+                "height": 2308
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/27"
+            }
+          ],
+          "width": 1682,
+          "height": 2308,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/27",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/28",
+          "@type": "sc:Canvas",
+          "label": "(0028)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/28-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00028/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00028",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1677,
+                "height": 2299
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/28"
+            }
+          ],
+          "width": 1677,
+          "height": 2299,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/28",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/29",
+          "@type": "sc:Canvas",
+          "label": "(0029)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/29-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00029/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00029",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1693,
+                "height": 2334
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/29"
+            }
+          ],
+          "width": 1693,
+          "height": 2334,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/29",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/30",
+          "@type": "sc:Canvas",
+          "label": "(0030)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/30-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00030/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00030",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1650,
+                "height": 2304
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/30"
+            }
+          ],
+          "width": 1650,
+          "height": 2304,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/30",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/31",
+          "@type": "sc:Canvas",
+          "label": "(0031)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/31-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00031/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00031",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1717,
+                "height": 2297
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/31"
+            }
+          ],
+          "width": 1717,
+          "height": 2297,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/31",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/32",
+          "@type": "sc:Canvas",
+          "label": "(0032)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/32-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00032/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00032",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1666,
+                "height": 2284
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/32"
+            }
+          ],
+          "width": 1666,
+          "height": 2284,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/32",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/33",
+          "@type": "sc:Canvas",
+          "label": "(0033)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/33-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00033/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00033",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1719,
+                "height": 2292
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/33"
+            }
+          ],
+          "width": 1719,
+          "height": 2292,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/33",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/34",
+          "@type": "sc:Canvas",
+          "label": "(0034)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/34-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00034/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00034",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1711,
+                "height": 2357
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/34"
+            }
+          ],
+          "width": 1711,
+          "height": 2357,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/34",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/35",
+          "@type": "sc:Canvas",
+          "label": "(0035)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/35-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00035/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00035",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1730,
+                "height": 2306
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/35"
+            }
+          ],
+          "width": 1730,
+          "height": 2306,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/35",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        },
+        {
+          "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/36",
+          "@type": "sc:Canvas",
+          "label": "(0036)",
+          "images": [
+            {
+              "@id": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/anno/36-1",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00036/full/full/0/default.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00036",
+                  "profile": "http://iiif.io/api/image/2/level2.json"
+                },
+                "width": 1723,
+                "height": 2348
+              },
+              "on": "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10204193/canvas/36"
+            }
+          ],
+          "width": 1723,
+          "height": 2348,
+          "seeAlso": {
+            "@id": "https://api.digitale-sammlungen.de/ocr/bsb10204193/36",
+            "label": "OCR",
+            "format": "text/vnd.hocr+html",
+            "profile": "http://kba.github.io/hocr-spec/1.2/"
+          }
+        }
+      ]
+    }
+  ],
+  "thumbnail": {
+    "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00001/full/280,/0/default.jpg",
+    "@type": "dctypes:Image",
+    "format": "image/jpeg",
+    "service": {
+      "@context": "http://iiif.io/api/image/2/context.json",
+      "@id": "https://api.digitale-sammlungen.de/iiif/image/v2/bsb10204193_00001",
+      "profile": "http://iiif.io/api/image/2/level2.json"
+    },
+    "width": 1739,
+    "height": 2326
+  },
+  "metadata": [
+    {
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Title"
+        },
+        {
+          "@language": "de",
+          "@value": "Titel"
+        },
+        {
+          "@language": "zh",
+          "@value": "題名"
+        }
+      ],
+      "value": "Ermanunge zum frid, auff die zwölff artickel der Bawrschafft in Schwaben"
+    },
+    {
+      "label": [
+        {
+          "@language": "en",
+          "@value": "By"
+        },
+        {
+          "@language": "de",
+          "@value": "Von"
+        },
+        {
+          "@language": "zh",
+          "@value": "作者"
+        }
+      ],
+      "value": "Mart. Luther"
+    },
+    {
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Creator"
+        },
+        {
+          "@language": "de",
+          "@value": "Urheber"
+        },
+        {
+          "@language": "zh",
+          "@value": "創作者"
+        }
+      ],
+      "value": "Luther, Martin, 1483-1546 -- (GND: <a href=\"https://d-nb.info/gnd/118575449\">118575449</a>)"
+    },
+    {
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Work title"
+        },
+        {
+          "@language": "de",
+          "@value": "Werktitel"
+        },
+        {
+          "@language": "zh",
+          "@value": "作品題名"
+        }
+      ],
+      "value": "Luther, Martin: Ermahnung zum Frieden auf die 12 Artikel der Bauernschaft in Schwaben"
+    },
+    {
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Published"
+        },
+        {
+          "@language": "de",
+          "@value": "Erschienen"
+        },
+        {
+          "@language": "zh",
+          "@value": "出版資訊"
+        }
+      ],
+      "value": "Nüremberg : Hergot"
+    },
+    {
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Date"
+        },
+        {
+          "@language": "de",
+          "@value": "Zeit"
+        },
+        {
+          "@language": "zh",
+          "@value": "時間"
+        }
+      ],
+      "value": "1525"
+    },
+    {
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Extent"
+        },
+        {
+          "@language": "de",
+          "@value": "Umfang"
+        },
+        {
+          "@language": "zh",
+          "@value": "數量"
+        }
+      ],
+      "value": "[14] Bl."
+    },
+    {
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Language"
+        },
+        {
+          "@language": "de",
+          "@value": "Sprache"
+        },
+        {
+          "@language": "zh",
+          "@value": "作品語文"
+        }
+      ],
+      "value": [
+        {
+          "@language": "en",
+          "@value": "German"
+        },
+        {
+          "@language": "de",
+          "@value": "Deutsch"
+        },
+        {
+          "@language": "zh",
+          "@value": "德语"
+        }
+      ]
+    },
+    {
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Note"
+        },
+        {
+          "@language": "de",
+          "@value": "Anmerkung"
+        },
+        {
+          "@language": "zh",
+          "@value": "註記"
+        }
+      ],
+      "value": "Bibliograph. Nachweis: Benzing 2124; VD16 L 4683"
+    },
+    {
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Media type"
+        },
+        {
+          "@language": "de",
+          "@value": "Medienart"
+        },
+        {
+          "@language": "zh",
+          "@value": "媒體類型"
+        }
+      ],
+      "value": [
+        {
+          "@language": "en",
+          "@value": "Book"
+        },
+        {
+          "@language": "de",
+          "@value": "Buch"
+        },
+        {
+          "@language": "zh",
+          "@value": "圖書"
+        }
+      ]
+    },
+    {
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Identifier"
+        },
+        {
+          "@language": "de",
+          "@value": "Identifikator"
+        },
+        {
+          "@language": "zh",
+          "@value": "識別碼"
+        }
+      ],
+      "value": "BSB-ID 991034955639707356"
+    },
+    {
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Identifier"
+        },
+        {
+          "@language": "de",
+          "@value": "Identifikator"
+        },
+        {
+          "@language": "zh",
+          "@value": "識別碼"
+        }
+      ],
+      "value": "BV001437935"
+    },
+    {
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Identifier"
+        },
+        {
+          "@language": "de",
+          "@value": "Identifikator"
+        },
+        {
+          "@language": "zh",
+          "@value": "識別碼"
+        }
+      ],
+      "value": "<span><a href='https://search.worldcat.org/title/165753229'>WorldCat: 165753229</a></span>"
+    },
+    {
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Identifier"
+        },
+        {
+          "@language": "de",
+          "@value": "Identifikator"
+        },
+        {
+          "@language": "zh",
+          "@value": "識別碼"
+        }
+      ],
+      "value": "<span><a href='https://gateway-bayern.de/VD16+L+4683'>VD16 L 4683</a></span>"
+    },
+    {
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Holding institution"
+        },
+        {
+          "@language": "de",
+          "@value": "Besitzende Institution"
+        },
+        {
+          "@language": "zh",
+          "@value": "典藏機構"
+        }
+      ],
+      "value": "München, Bayerische Staatsbibliothek"
+    },
+    {
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Call number"
+        },
+        {
+          "@language": "de",
+          "@value": "Signatur"
+        },
+        {
+          "@language": "zh",
+          "@value": "索書號"
+        }
+      ],
+      "value": "Res/4 Th.u. 103,VII,19"
+    },
+    {
+      "label": [
+        {
+          "@language": "en",
+          "@value": "URN"
+        },
+        {
+          "@language": "de",
+          "@value": "URN"
+        },
+        {
+          "@language": "zh",
+          "@value": "URN (統一資源名稱)"
+        }
+      ],
+      "value": "<a href=\"https://mdz-nbn-resolving.de/urn:nbn:de:bvb:12-bsb10204193-3\">urn:nbn:de:bvb:12-bsb10204193-3</a>"
+    },
+    {
+      "label": [
+        {
+          "@language": "en",
+          "@value": "Digital Object Identifier"
+        },
+        {
+          "@language": "de",
+          "@value": "Identifikator des digitalen Objekts"
+        },
+        {
+          "@language": "zh",
+          "@value": "數位物件識別碼"
+        }
+      ],
+      "value": "bsb10204193"
+    }
+  ],
+  "attribution": [
+    {
+      "@language": "en",
+      "@value": "München, Bayerische Staatsbibliothek"
+    },
+    {
+      "@language": "en",
+      "@value": "Bayerische Staatsbibliothek"
+    },
+    {
+      "@language": "de",
+      "@value": "München, Bayerische Staatsbibliothek"
+    },
+    {
+      "@language": "de",
+      "@value": "Bayerische Staatsbibliothek"
+    },
+    {
+      "@language": "zh",
+      "@value": "München, Bayerische Staatsbibliothek"
+    },
+    {
+      "@language": "zh",
+      "@value": "Bayerische Staatsbibliothek"
+    }
+  ],
+  "license": "https://rightsstatements.org/vocab/NoC-NC/1.0/",
+  "service": {
+    "@context": "http://iiif.io/api/search/1/context.json",
+    "@id": "https://api.digitale-sammlungen.de/iiif/services/search/v1/bsb10204193",
+    "profile": "http://iiif.io/api/search/1/search"
+  },
+  "seeAlso": [
+    {
+      "@id": "https://opacplus.bsb-muenchen.de/title/BV001437935?format=marc",
+      "label": "MARCXML",
+      "format": "application/marcxml+xml",
+      "profile": "http://www.loc.gov/standards/marcxml/"
+    },
+    {
+      "@id": "https://opacplus.bsb-muenchen.de/title/BV001437935?format=rdf",
+      "label": "RDF",
+      "format": "application/rdf+xml",
+      "profile": "https://lod.b3kat.de/doc"
+    }
+  ],
+  "related": [
+    {
+      "@id": "https://mdz-nbn-resolving.de/details:bsb10204193",
+      "label": "Details",
+      "format": "text/html"
+    },
+    {
+      "@id": "https://opacplus.bsb-muenchen.de/title/BV001437935",
+      "label": "OPAC",
+      "format": "text/html"
+    }
+  ],
+  "viewingDirection": "left-to-right",
+  "viewingHint": "paged",
+  "logo": {
+    "@id": "https://api.digitale-sammlungen.de/iiif/images/bsb_logo.png",
+    "format": "image/png"
+  }
+}
