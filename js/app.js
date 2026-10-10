@@ -1,3 +1,5 @@
+import { configureChapterSix,prepareChapterSix,chapterSixAction,chapterSixInput } from './chapter-six.js';
+import { fitChapterSix } from './chapter-six-view.js';
 import { fitChapterFourScene } from './chapter-four-view.js';
 import { fitChapterFiveScene } from './chapter-five-view.js';
 import { configureChapterFive,prepareChapterFive,chapterFiveAction } from './chapter-five.js';
@@ -57,6 +59,7 @@ function enterScene(id, complete = true) {
   state.scene = id; state.phase = 'active'; state.dialogue = null; state.interaction = null; selectedCard = null;
   const scene = sceneById[id];
   state.chapter=scene.chapter||1;
+  if(scene.chapter===6){playing=true;prepareChapterSix(scene);render();persist();return;}
   if(scene.chapter===5){playing=true;prepareChapterFive(scene);render();persist();return;}
   if (scene.chapter===4) {playing=true;prepareChapterFour(scene);render();persist();return;}
   if (scene.chapter===3) { playing=true; prepareChapterThree(scene); render(); persist(); return; }
@@ -85,6 +88,7 @@ function render() {
   document.body.dataset.testMode=String(isTestMode());
   if (!playing) return startScreen();
   const scene = sceneById[state.scene], debugWasOpen = app.querySelector('.debug')?.open || false;
+  if(scene.chapter===6){setMode('minigame');app.innerHTML=sceneView()+debugView(debugWasOpen)+testToolbar();fitChapterSix();return;}
   if(scene.chapter===5){
     const control=document.activeElement?.closest('.chapter-five-layout button'),selector=control?['action','item','option'].filter(key=>control.dataset[key]).map(key=>`[data-${key}="${CSS.escape(control.dataset[key])}"]`).join(''):null;
     setMode(state.dialogue?'dialogue':'minigame');app.innerHTML=sceneView()+debugView(debugWasOpen)+testToolbar();fitChapterFiveScene();syncStoryRecap();
@@ -247,6 +251,7 @@ document.addEventListener('click',event => {
   if (action === 'archive-document') return openDocument(target.dataset.document,null,() => openNotebook('documents'),true);
   if (action === 'scene-document') return openSceneDocument();
   if(action==='debug-ch2-complete' && new URLSearchParams(location.search).get('debug')==='true') { const next=prepareAdminStateForScene('ch2_assembly'); next.scene='ch2_hub'; next.dialogue=null; next.interaction=null; next.chapter2.stage='hub'; showPreparedState(next); return; }
+  if (chapterSixAction(action,target)) return;
   if (storyRecapAction(action,target)) return;
   if (chapterFiveAction(action,target)) { render(); persist(); return; }
   if (chapterFourAction(action,target)) { render(); persist(); return; }
@@ -329,6 +334,9 @@ document.addEventListener('change',event => {
   if(event.target.dataset.demand) { state.chapter2.demand[event.target.dataset.demand]=Number(event.target.value); render(); persist(); }
   if (event.target.id === 'debug-scene') { ensureAdminSession(); showPreparedState(prepareAdminStateForScene(event.target.value)); }
 });
+configureChapterSix({enterScene,render,persist,openNotebook});
+document.addEventListener('input',event=>chapterSixInput(event.target));
+window.addEventListener('resize',fitChapterSix);
 configureChapterFour({enterScene,render,persist});
 configureChapterFive({enterScene,render,persist});
 configureStoryRecap({enterScene,render,persist});

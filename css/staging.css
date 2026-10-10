@@ -507,6 +507,26 @@ dialog:has(.notebook) {
 
 .ch5-source-kind {font-size:14px;}
 
+/* Chapter 6 uses manifest-safe work surfaces, original PNGs and one primary step. */
+.chapter-six-layout{height:calc(100svh - 56px);display:flex;flex-direction:column;align-items:center;overflow:hidden;background:var(--leather-surface);padding:4px 0;color:var(--paper-light)}
+.ch6-title{font:22px/1.2 Georgia,serif;margin:4px 0 8px;text-align:center;flex-shrink:0}.ch6-stage{position:relative;aspect-ratio:4/3;flex-shrink:0;isolation:isolate;color:var(--ink);font:18px/1.35 Georgia,serif;min-height:0}
+.ch6-base,.ch6-underlay{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none}.ch6-prop{position:absolute;object-fit:contain;pointer-events:none}
+.ch6-field{position:absolute;background:none;border:0;box-shadow:none;padding:0;color:var(--ink);font:18px/1.35 Georgia,serif;hyphens:auto;overflow-wrap:break-word;white-space:normal}
+.ch6-field h2{font:22px/1.12 Georgia,serif;margin:0 0 10px}.ch6-field p{margin:0 0 10px;white-space:pre-line}.ch6-field blockquote{font:italic 18px/1.3 Georgia,serif;border-left:2px solid #785638;margin:12px 0;padding-left:10px}
+.ch6-field textarea{display:block;width:100%;height:96px;resize:none;background:#f8ebca85;color:#302116;border:1px solid #81613c;font:18px/1.4 Georgia,serif;padding:8px;box-shadow:none;margin:6px 0 12px}.ch6-text-label{display:block;line-height:1.25}.ch6-field textarea.ch6-long-text{height:calc(100% - 125px);min-height:150px}
+.ch6-writing{display:flex;flex-direction:column;min-height:0}.ch6-writing .ch6-long-text{flex:1}.ch6-controls{display:flex;gap:12px;justify-content:center;align-items:center;margin-top:8px;flex-shrink:0;min-height:48px}.ch6-controls button,.ch6-field button,.ch6-page-nav button{min-height:44px;font:18px/1.2 Georgia,serif}
+.ch6-options,.ch6-evidence-choices,.ch6-memory-choices,.ch6-link-choices{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:6px 0 12px}.ch6-options button,.ch6-evidence-choices button,.ch6-memory-choices button{padding:8px;text-align:left;font-size:18px}
+.ch6-field [aria-pressed=true],.ch6-other[aria-pressed=true]{outline:2px solid #79552f;outline-offset:-3px;filter:brightness(1.04)}
+.ch6-position{display:flex;align-items:center;text-align:left;background:none!important;border:0!important;box-shadow:none!important;padding:0 8px!important;cursor:pointer;font-size:18px!important}
+.ch6-other{position:absolute;left:20%;width:60%;bottom:7%;min-height:44px;font:18px/1.15 Georgia,serif}
+.ch6-room-caption{position:absolute;left:8%;width:84%;top:74%;height:24%;color:#f6e4c4;font:18px/1.25 Georgia,serif;text-align:center;background:linear-gradient(#21160bd9,#21160bf2);padding:8px 12px}.ch6-room-caption p{margin:0 0 7px}
+.ch6-room-marker,.ch6-concept{position:absolute;font:18px/1.15 Georgia,serif;min-height:44px;min-width:44px}.ch6-concept{padding:2px!important}.ch6-links{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.ch6-links path{stroke:#664a30;stroke-width:2;fill:none}.ch6-concept[aria-pressed=true]{outline:2px solid #a87438}
+.ch6-memory-window{position:absolute;overflow:hidden;display:grid;place-items:center}.ch6-memory-window>div{position:relative;width:100%;aspect-ratio:4/3}.ch6-memory-window img{position:absolute;object-fit:contain}.ch6-memory-caption{font:18px/1.1 Georgia,serif;text-align:center}
+.ch6-page-nav{position:absolute;left:10%;width:80%;bottom:2%;display:flex;gap:8px;align-items:center;justify-content:space-between;font-size:18px}.ch6-source-menu{display:flex;flex-direction:column;gap:10px;padding:20px}
+.ch6-final-reader{display:flex;flex-direction:column;align-items:center;gap:8px;height:100%;padding:8px}.ch6-final-reader h1{font-size:22px;margin:0}.ch6-final-reader .ch6-stage{width:min(100%,calc((85svh - 115px)*4/3))}.ch6-final-reader>button{min-height:44px}
+#overlay:has(.ch6-final-reader){height:90svh;max-height:90svh;width:96vw;max-width:1100px;overflow:hidden;padding:0;background:var(--leather-surface)}
+@media(max-height:700px){.ch6-title{font-size:20px}.ch6-field h2{font-size:20px}.ch6-field p{margin-bottom:7px}.ch6-field textarea{height:82px;margin-bottom:8px}.ch6-options,.ch6-evidence-choices,.ch6-memory-choices,.ch6-link-choices{gap:5px;margin-bottom:8px}.ch6-room-caption{font-size:18px;line-height:1.15}.ch6-room-caption p{margin-bottom:4px}}
+
 /* Quiet historical chronicle: original scene plates and Canon bodies, no video file. */
 .recap-layout{display:flex!important;align-items:center;justify-content:center;overflow:hidden;padding:12px;min-height:0}
 .story-recap-film{position:relative;width:100%;height:100%;background:#160e09;overflow:hidden;isolation:isolate}
@@ -544,3 +564,9 @@ dialog:has(.notebook) {
 @keyframes recap-image-fade{0%{opacity:0}12%,100%{opacity:1}}
 @keyframes recap-previous{0%{opacity:1}12%,100%{opacity:0}}
 @media(prefers-reduced-motion:reduce){.recap-previous{display:none}.recap-camera{animation:none!important;opacity:1}}
+
+.ch6-stage .hotspot-sign>.hotspot-label{height:100%;font:18px/1.15 Georgia,serif;padding:3px}.ch6-stage .scene-hotspot{padding:0;border:0}
+
+.ch6-memory-window>div{height:100%;width:auto;max-width:100%;aspect-ratio:4/3}
+
+.ch6-room-memory{position:absolute;transform:rotate(-2deg)}.ch6-room-memory-image{position:absolute;left:12%;top:20%;width:76%;height:63%;overflow:hidden}.ch6-room-memory-frame{position:absolute;inset:0;width:100%;height:100%}

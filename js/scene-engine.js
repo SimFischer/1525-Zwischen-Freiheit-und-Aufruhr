@@ -1,3 +1,4 @@
+import { chapterSixScene } from './chapter-six-view.js';
 import { chapterFourScene } from './chapter-four-view.js';
 import { chapterFiveScene } from './chapter-five-view.js';
 import { chapterThreeScene } from './chapter-three-view.js';
@@ -15,6 +16,7 @@ const dialogueImage = 'assets/chapter1/k1_taverne_dialog_group.png';
 export function sceneView() {
   const scene = sceneById[state.scene];
   const header = `<header class="game-header"><button class="wordmark" data-action="title" aria-label="1525 – Zwischen Freiheit und Aufruhr">1525<span>Zwischen Freiheit und Aufruhr</span></button><div class="chapter-indicator"><span class="eyebrow">Kapitel 01</span><strong>${chapters[0].title}</strong></div><div class="header-actions">${button(`<img src="${assets.notebook}" alt=""> <span>Notizbuch</span>`, 'notebook', `class="book-button" ${!state.notebook.unlocked ? 'disabled title="Wird nach der Abschlusssicherung geöffnet"' : ''}`)}${button('☰ <span class="sr-only">Spielmenü</span>','menu','class="quiet menu-button"')}${fullscreenButton()}</div></header>`;
+  if(scene.chapter===6) return chapterSixScene(header.replace('Kapitel 01','Kapitel 06').replace(chapters[0].title,chapters[5].title));
   if(scene.chapter===5) return chapterFiveScene(header.replace('Kapitel 01','Kapitel 05').replace(chapters[0].title,chapters[4].title));
   if(scene.chapter===4) return chapterFourScene(header.replace('Kapitel 01','Kapitel 04').replace(chapters[0].title,chapters[3].title));
   if(scene.chapter===3) return chapterThreeScene(header.replace('Kapitel 01','Kapitel 03').replace(chapters[0].title,chapters[2].title));

@@ -1,0 +1,2176 @@
+// Manifest-derived staging; images remain unchanged.
+export const chapterSixAssets={
+  "project": "1525 – Zwischen Freiheit und Aufruhr",
+  "chapter": 6,
+  "title": "Was bleibt von Freiheit?",
+  "scope": "Assetproduktion, Staging und QA; keine neue Kapitel-6-Spiellogik",
+  "generator": "built-in image_gen",
+  "date": "2026-10-10",
+  "targetDevices": "iPads und größere Bildschirme",
+  "units": "percent of the complete asset canvas unless marked px",
+  "qaViewports": [
+    [
+      1024,
+      768
+    ],
+    [
+      820,
+      640
+    ],
+    [
+      1440,
+      900
+    ]
+  ],
+  "perspective": {
+    "horizon": -12,
+    "vanishingPoint": [
+      55,
+      -12
+    ],
+    "tablePolygon": [
+      [
+        18,
+        43
+      ],
+      [
+        84,
+        43
+      ],
+      [
+        97,
+        67
+      ],
+      [
+        2,
+        67
+      ]
+    ],
+    "documentPlane": [
+      [
+        20,
+        46
+      ],
+      [
+        80,
+        46
+      ],
+      [
+        88,
+        64
+      ],
+      [
+        10,
+        64
+      ]
+    ],
+    "dialogSafeArea": {
+      "x": 0,
+      "y": 74,
+      "width": 100,
+      "height": 26
+    },
+    "hotspotSafeArea": {
+      "x": 68,
+      "y": 15,
+      "width": 18,
+      "height": 15
+    },
+    "light": "Neutrales spätes Tageslicht von links; zurückhaltendes warmes Kerzenlicht rechts. Finale: gleiche Architektur, gedämpftes Abendlicht.",
+    "plannedCamera": {
+      "horizon": 27,
+      "vanishingPoint": [
+        52,
+        27
+      ]
+    },
+    "measurementNote": "Final painted tabletop depth edges extrapolate approximately to x55%, y-12% (outside canvas). Initial camera target was27%. Actual table polygon and verified prop contacts are authoritative; do not apply the initial horizon to overlays."
+  },
+  "assets": [
+    {
+      "id": "bg_reflection_room",
+      "filename": "ch6_bg_reflection_room.png",
+      "path": "assets/chapter6/backgrounds/ch6_bg_reflection_room.png",
+      "type": "backgrounds",
+      "scene": "reflection_room",
+      "purpose": "Zentraler Quellen- und Reflexionsraum",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "transparent": false,
+      "alphaBounds": {
+        "left": 0,
+        "top": 0,
+        "right": 1024,
+        "bottom": 768
+      },
+      "sha256": "be1e5db05ca9a37bbe556bcad832d5c13b30c6074a34a5742261267a1e4dc343",
+      "preferredStaging": {
+        "mode": "scene",
+        "preserveAspectRatio": true,
+        "crop": false
+      },
+      "safeArea": {
+        "x": 0,
+        "y": 74,
+        "width": 100,
+        "height": 26
+      },
+      "textSafeArea": [],
+      "viewDirection": null,
+      "branchUse": [
+        "all"
+      ],
+      "integrationNotes": "Use path, not logical filename. HTML supplies all text; original images are immutable. Generated with built-in image_gen; entire canvas downscaled without crop.",
+      "aliasOf": null,
+      "reusedFrom": null
+    },
+    {
+      "id": "bg_reflection_room_entry",
+      "filename": "ch6_bg_reflection_room_entry.png",
+      "path": "assets/chapter6/backgrounds/ch6_bg_reflection_room.png",
+      "type": "backgrounds",
+      "scene": "entry",
+      "purpose": "Einstieg als Belegung desselben Raums: nur persönliches Notizbuch",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "transparent": false,
+      "alphaBounds": {
+        "left": 0,
+        "top": 0,
+        "right": 1024,
+        "bottom": 768
+      },
+      "sha256": "be1e5db05ca9a37bbe556bcad832d5c13b30c6074a34a5742261267a1e4dc343",
+      "preferredStaging": {
+        "mode": "scene",
+        "preserveAspectRatio": true,
+        "crop": false
+      },
+      "safeArea": {
+        "x": 0,
+        "y": 74,
+        "width": 100,
+        "height": 26
+      },
+      "textSafeArea": [],
+      "viewDirection": null,
+      "branchUse": [
+        "all"
+      ],
+      "integrationNotes": "Use path, not logical filename. HTML supplies all text; original images are immutable. Intentional reuse alias; no duplicate PNG created.",
+      "aliasOf": "bg_reflection_room",
+      "reusedFrom": null
+    },
+    {
+      "id": "bg_judgment_table",
+      "filename": "ch6_bg_judgment_table.png",
+      "path": "assets/chapter6/backgrounds/ch6_bg_reflection_room.png",
+      "type": "backgrounds",
+      "scene": "judgment",
+      "purpose": "Reduzierte Urteilsbelegung mit sechs relevanten Quellen",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "transparent": false,
+      "alphaBounds": {
+        "left": 0,
+        "top": 0,
+        "right": 1024,
+        "bottom": 768
+      },
+      "sha256": "be1e5db05ca9a37bbe556bcad832d5c13b30c6074a34a5742261267a1e4dc343",
+      "preferredStaging": {
+        "mode": "scene",
+        "preserveAspectRatio": true,
+        "crop": false
+      },
+      "safeArea": {
+        "x": 0,
+        "y": 74,
+        "width": 100,
+        "height": 26
+      },
+      "textSafeArea": [],
+      "viewDirection": null,
+      "branchUse": [
+        "all"
+      ],
+      "integrationNotes": "Use path, not logical filename. HTML supplies all text; original images are immutable. Intentional reuse alias; no duplicate PNG created.",
+      "aliasOf": "bg_reflection_room",
+      "reusedFrom": null
+    },
+    {
+      "id": "bg_final_question",
+      "filename": "ch6_bg_final_question.png",
+      "path": "assets/chapter6/backgrounds/ch6_bg_final_question.png",
+      "type": "backgrounds",
+      "scene": "final_question",
+      "purpose": "Ruhige Abendlichtfassung des identischen Raums; Schlussbuch separat",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "transparent": false,
+      "alphaBounds": {
+        "left": 0,
+        "top": 0,
+        "right": 1024,
+        "bottom": 768
+      },
+      "sha256": "d1c123f0dab6339591239c1a5e2927bafb536aade73d35cc90b3ae22cf3bc325",
+      "preferredStaging": {
+        "mode": "scene",
+        "preserveAspectRatio": true,
+        "crop": false
+      },
+      "safeArea": {
+        "x": 0,
+        "y": 74,
+        "width": 100,
+        "height": 26
+      },
+      "textSafeArea": [],
+      "viewDirection": null,
+      "branchUse": [
+        "all"
+      ],
+      "integrationNotes": "Use path, not logical filename. HTML supplies all text; original images are immutable. Generated with built-in image_gen; entire canvas downscaled without crop.",
+      "aliasOf": null,
+      "reusedFrom": null
+    },
+    {
+      "id": "prop_personal_notebook_closed",
+      "filename": "ch6_prop_personal_notebook_closed.png",
+      "path": "assets/ui/ui_notebook_closed.png",
+      "type": "props",
+      "scene": "prop_personal_notebook_closed",
+      "purpose": "Dasselbe persönliche Spielnotizbuch",
+      "dimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "transparent": true,
+      "alphaBounds": {
+        "left": 0,
+        "top": 44,
+        "right": 1246,
+        "bottom": 1254
+      },
+      "sha256": "4158c25c26c5eb613e739db4ed0e1a0f83f65c8ae3e175c0f51e5049baa0f50a",
+      "preferredStaging": {
+        "mode": "table-prop",
+        "preserveAspectRatio": true,
+        "crop": false
+      },
+      "safeArea": {
+        "x": 4,
+        "y": 5,
+        "width": 92,
+        "height": 90
+      },
+      "textSafeArea": [],
+      "viewDirection": null,
+      "branchUse": [
+        "all"
+      ],
+      "integrationNotes": "Use path, not logical filename. HTML supplies all text; original images are immutable. Intentional reuse alias; no duplicate PNG created.",
+      "aliasOf": null,
+      "reusedFrom": "assets/ui/ui_notebook_closed.png"
+    },
+    {
+      "id": "prop_personal_notebook_open",
+      "filename": "ch6_prop_personal_notebook_open.png",
+      "path": "assets/chapter6/props/ch6_prop_personal_notebook_open.png",
+      "type": "props",
+      "scene": "prop_personal_notebook_open",
+      "purpose": "Offene Variante der vertrauten Notizbuchfamilie",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "transparent": true,
+      "alphaBounds": {
+        "left": 8,
+        "top": 125,
+        "right": 1023,
+        "bottom": 708
+      },
+      "sha256": "e082df656f21c4b723c49fff0c95a3b87fcdff8c4cdcdc6d07cecbbf2297252a",
+      "preferredStaging": {
+        "mode": "table-prop",
+        "preserveAspectRatio": true,
+        "crop": false
+      },
+      "safeArea": {
+        "x": 4,
+        "y": 5,
+        "width": 92,
+        "height": 90
+      },
+      "textSafeArea": [
+        {
+          "id": "left",
+          "x": 23,
+          "y": 30,
+          "width": 25,
+          "height": 31,
+          "fontSizePx": 18,
+          "maxCharacters": 100,
+          "scrollAllowed": false
+        },
+        {
+          "id": "right",
+          "x": 53,
+          "y": 41,
+          "width": 28,
+          "height": 34,
+          "fontSizePx": 18,
+          "maxCharacters": 100,
+          "scrollAllowed": false
+        }
+      ],
+      "viewDirection": null,
+      "branchUse": [
+        "all"
+      ],
+      "integrationNotes": "Use path, not logical filename. HTML supplies all text; original images are immutable. Generated with built-in image_gen; entire canvas downscaled without crop.",
+      "aliasOf": null,
+      "reusedFrom": null
+    },
+    {
+      "id": "prop_luther_folder_closed",
+      "filename": "ch6_prop_luther_folder_closed.png",
+      "path": "assets/chapter6/props/ch6_prop_luther_folder_closed.png",
+      "type": "props",
+      "scene": "prop_luther_folder_closed",
+      "purpose": "Neutrale Quellenmappe; Name per HTML",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "transparent": true,
+      "alphaBounds": {
+        "left": 85,
+        "top": 207,
+        "right": 965,
+        "bottom": 595
+      },
+      "sha256": "13ae0b65fdb32ee5ab88b76d8348cd40b6f3a9ccb553cb69efb1db2a33e6d9d6",
+      "preferredStaging": {
+        "mode": "table-prop",
+        "preserveAspectRatio": true,
+        "crop": false
+      },
+      "safeArea": {
+        "x": 4,
+        "y": 5,
+        "width": 92,
+        "height": 90
+      },
+      "textSafeArea": [],
+      "viewDirection": null,
+      "branchUse": [
+        "all"
+      ],
+      "integrationNotes": "Use path, not logical filename. HTML supplies all text; original images are immutable. Generated with built-in image_gen; entire canvas downscaled without crop.",
+      "aliasOf": null,
+      "reusedFrom": null
+    },
+    {
+      "id": "prop_luther_folder_open",
+      "filename": "ch6_prop_luther_folder_open.png",
+      "path": "assets/chapter6/props/ch6_prop_luther_folder_open.png",
+      "type": "props",
+      "scene": "prop_luther_folder_open",
+      "purpose": "Geöffnete neutrale Quellenmappe; Lesetext erst in Großansicht",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "transparent": true,
+      "alphaBounds": {
+        "left": 25,
+        "top": 183,
+        "right": 1009,
+        "bottom": 634
+      },
+      "sha256": "fc0d6f263136ad1b888826bc3965ba07afd5e418d48b20bcd25afd34ac094d70",
+      "preferredStaging": {
+        "mode": "table-prop",
+        "preserveAspectRatio": true,
+        "crop": false
+      },
+      "safeArea": {
+        "x": 4,
+        "y": 5,
+        "width": 92,
+        "height": 90
+      },
+      "textSafeArea": [
+        {
+          "id": "left",
+          "x": 20,
+          "y": 32,
+          "width": 22,
+          "height": 29,
+          "fontSizePx": 18,
+          "maxCharacters": 100,
+          "scrollAllowed": false
+        },
+        {
+          "id": "right",
+          "x": 53,
+          "y": 32,
+          "width": 24,
+          "height": 29,
+          "fontSizePx": 18,
+          "maxCharacters": 100,
+          "scrollAllowed": false
+        }
+      ],
+      "viewDirection": null,
+      "branchUse": [
+        "all"
+      ],
+      "integrationNotes": "Use path, not logical filename. HTML supplies all text; original images are immutable. Generated with built-in image_gen; entire canvas downscaled without crop.",
+      "aliasOf": null,
+      "reusedFrom": null
+    },
+    {
+      "id": "prop_muentzer_folder_closed",
+      "filename": "ch6_prop_muentzer_folder_closed.png",
+      "path": "assets/chapter6/props/ch6_prop_luther_folder_closed.png",
+      "type": "props",
+      "scene": "prop_muentzer_folder_closed",
+      "purpose": "Gleichwertige Müntzermappe; dieselbe neutrale Bilddatei, eigene HTML-Beschriftung",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "transparent": true,
+      "alphaBounds": {
+        "left": 85,
+        "top": 207,
+        "right": 965,
+        "bottom": 595
+      },
+      "sha256": "13ae0b65fdb32ee5ab88b76d8348cd40b6f3a9ccb553cb69efb1db2a33e6d9d6",
+      "preferredStaging": {
+        "mode": "table-prop",
+        "preserveAspectRatio": true,
+        "crop": false
+      },
+      "safeArea": {
+        "x": 4,
+        "y": 5,
+        "width": 92,
+        "height": 90
+      },
+      "textSafeArea": [],
+      "viewDirection": null,
+      "branchUse": [
+        "all"
+      ],
+      "integrationNotes": "Use path, not logical filename. HTML supplies all text; original images are immutable. Intentional reuse alias; no duplicate PNG created.",
+      "aliasOf": "prop_luther_folder_closed",
+      "reusedFrom": null
+    },
+    {
+      "id": "prop_muentzer_folder_open",
+      "filename": "ch6_prop_muentzer_folder_open.png",
+      "path": "assets/chapter6/props/ch6_prop_luther_folder_open.png",
+      "type": "props",
+      "scene": "prop_muentzer_folder_open",
+      "purpose": "Gleichwertige offene Müntzermappe; dieselbe neutrale Bilddatei",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "transparent": true,
+      "alphaBounds": {
+        "left": 25,
+        "top": 183,
+        "right": 1009,
+        "bottom": 634
+      },
+      "sha256": "fc0d6f263136ad1b888826bc3965ba07afd5e418d48b20bcd25afd34ac094d70",
+      "preferredStaging": {
+        "mode": "table-prop",
+        "preserveAspectRatio": true,
+        "crop": false
+      },
+      "safeArea": {
+        "x": 4,
+        "y": 5,
+        "width": 92,
+        "height": 90
+      },
+      "textSafeArea": [
+        {
+          "id": "left",
+          "x": 20,
+          "y": 32,
+          "width": 22,
+          "height": 29,
+          "fontSizePx": 18,
+          "maxCharacters": 100,
+          "scrollAllowed": false
+        },
+        {
+          "id": "right",
+          "x": 53,
+          "y": 32,
+          "width": 24,
+          "height": 29,
+          "fontSizePx": 18,
+          "maxCharacters": 100,
+          "scrollAllowed": false
+        }
+      ],
+      "viewDirection": null,
+      "branchUse": [
+        "all"
+      ],
+      "integrationNotes": "Use path, not logical filename. HTML supplies all text; original images are immutable. Intentional reuse alias; no duplicate PNG created.",
+      "aliasOf": "prop_luther_folder_open",
+      "reusedFrom": null
+    },
+    {
+      "id": "ui_freedom_then_now",
+      "filename": "ch6_ui_freedom_then_now.png",
+      "path": "assets/chapter6/ui/ch6_ui_freedom_then_now.png",
+      "type": "ui",
+      "scene": "freedom_then_now",
+      "purpose": "Gleichwertige frühe und heutige Freiheitsdeutung",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "transparent": true,
+      "alphaBounds": {
+        "left": 0,
+        "top": 71,
+        "right": 1024,
+        "bottom": 687
+      },
+      "sha256": "696bdccbb1a340562d005a6cda97e4d5b53646b392f9563234f9f27c09efafd2",
+      "preferredStaging": {
+        "mode": "reading-view",
+        "preserveAspectRatio": true,
+        "crop": false,
+        "readingSceneAspect": "4:3",
+        "minimumViewport": [
+          820,
+          640
+        ],
+        "fontNeverScaleBelowPx": 18,
+        "viewportSizing": "min(viewportWidth-16, (viewportHeight-118)*4/3)",
+        "longTextPolicy": "Per reading page and given sample limits. For substantially longer personal texts use consecutive full reading pages, not nested scrollpanels.",
+        "scrollAllowed": false
+      },
+      "safeArea": {
+        "x": 4,
+        "y": 5,
+        "width": 92,
+        "height": 90
+      },
+      "textSafeArea": [
+        {
+          "id": "left",
+          "x": 11,
+          "y": 15,
+          "width": 34,
+          "height": 65,
+          "fontSizePx": 18,
+          "maxCharacters": 450,
+          "scrollAllowed": false
+        },
+        {
+          "id": "right",
+          "x": 55,
+          "y": 15,
+          "width": 34,
+          "height": 65,
+          "fontSizePx": 18,
+          "maxCharacters": 450,
+          "scrollAllowed": false
+        }
+      ],
+      "viewDirection": null,
+      "branchUse": [
+        "all"
+      ],
+      "integrationNotes": "Use path, not logical filename. HTML supplies all text; original images are immutable. Generated with built-in image_gen; entire canvas downscaled without crop.",
+      "aliasOf": null,
+      "reusedFrom": null
+    },
+    {
+      "id": "ui_theological_network_table",
+      "filename": "ch6_ui_theological_network_table.png",
+      "path": "assets/chapter6/ui/ch6_ui_theological_network_table.png",
+      "type": "ui",
+      "scene": "theological_network_table",
+      "purpose": "Kontinuierliche Arbeitsfläche für acht dynamische Begriffsanker und Tintenlinien",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "transparent": false,
+      "alphaBounds": {
+        "left": 0,
+        "top": 0,
+        "right": 1024,
+        "bottom": 768
+      },
+      "sha256": "ceaf808ed0568dcad9e677c2e9570b75c34baf2df395589e4642eedbd6d8b81d",
+      "preferredStaging": {
+        "mode": "reading-view",
+        "preserveAspectRatio": true,
+        "crop": false,
+        "readingSceneAspect": "4:3",
+        "minimumViewport": [
+          820,
+          640
+        ],
+        "fontNeverScaleBelowPx": 18,
+        "viewportSizing": "min(viewportWidth-16, (viewportHeight-118)*4/3)",
+        "longTextPolicy": "Per reading page and given sample limits. For substantially longer personal texts use consecutive full reading pages, not nested scrollpanels.",
+        "scrollAllowed": false
+      },
+      "safeArea": {
+        "x": 4,
+        "y": 5,
+        "width": 92,
+        "height": 90
+      },
+      "textSafeArea": [
+        {
+          "id": "work",
+          "x": 10,
+          "y": 27,
+          "width": 80,
+          "height": 52,
+          "fontSizePx": 18,
+          "maxCharacters": 450,
+          "scrollAllowed": false
+        }
+      ],
+      "viewDirection": null,
+      "branchUse": [
+        "all"
+      ],
+      "integrationNotes": "Use path, not logical filename. HTML supplies all text; original images are immutable. Generated with built-in image_gen; entire canvas downscaled without crop.",
+      "aliasOf": null,
+      "reusedFrom": null
+    },
+    {
+      "id": "ui_concept_marker_blank",
+      "filename": "ch6_ui_concept_marker_blank.png",
+      "path": "assets/ui/hotspots/v2/hotspot-object.png",
+      "type": "ui",
+      "scene": "concept_marker_blank",
+      "purpose": "Vorhandene echte Pergamentmarker als dynamische Begriffsanker",
+      "dimensions": {
+        "width": 1933,
+        "height": 813
+      },
+      "transparent": true,
+      "alphaBounds": {
+        "left": 17,
+        "top": 33,
+        "right": 1917,
+        "bottom": 791
+      },
+      "sha256": "2e106a945a73c1b88540988fb21363d8113cd54a3a43660d6bf10c5df5554ef2",
+      "preferredStaging": {
+        "mode": "reading-view",
+        "preserveAspectRatio": true,
+        "crop": false,
+        "nineSlice": {
+          "source": "existing hotspot-object",
+          "slice": "24% 12% fill",
+          "touchMinPx": 44
+        },
+        "readingSceneAspect": "4:3",
+        "minimumViewport": [
+          820,
+          640
+        ],
+        "fontNeverScaleBelowPx": 18,
+        "viewportSizing": "min(viewportWidth-16, (viewportHeight-118)*4/3)",
+        "longTextPolicy": "Per reading page and given sample limits. For substantially longer personal texts use consecutive full reading pages, not nested scrollpanels.",
+        "scrollAllowed": false
+      },
+      "safeArea": {
+        "x": 4,
+        "y": 5,
+        "width": 92,
+        "height": 90
+      },
+      "textSafeArea": [
+        {
+          "id": "label",
+          "x": 12,
+          "y": 24,
+          "width": 76,
+          "height": 49,
+          "fontSizePx": 18,
+          "maxCharacters": 45,
+          "scrollAllowed": false
+        }
+      ],
+      "viewDirection": null,
+      "branchUse": [
+        "all"
+      ],
+      "integrationNotes": "Use path, not logical filename. HTML supplies all text; original images are immutable. Intentional reuse alias; no duplicate PNG created.",
+      "aliasOf": null,
+      "reusedFrom": "assets/ui/hotspots/v2/hotspot-object.png"
+    },
+    {
+      "id": "ui_luther_1520_1525",
+      "filename": "ch6_ui_luther_1520_1525.png",
+      "path": "assets/chapter6/ui/ch6_ui_freedom_then_now.png",
+      "type": "ui",
+      "scene": "luther_1520_1525",
+      "purpose": "Gleichwertiger Quellenvergleich; Deutungsfrage/Skala als eigene Folgefläche",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "transparent": true,
+      "alphaBounds": {
+        "left": 0,
+        "top": 71,
+        "right": 1024,
+        "bottom": 687
+      },
+      "sha256": "696bdccbb1a340562d005a6cda97e4d5b53646b392f9563234f9f27c09efafd2",
+      "preferredStaging": {
+        "mode": "reading-view",
+        "preserveAspectRatio": true,
+        "crop": false,
+        "readingSceneAspect": "4:3",
+        "minimumViewport": [
+          820,
+          640
+        ],
+        "fontNeverScaleBelowPx": 18,
+        "viewportSizing": "min(viewportWidth-16, (viewportHeight-118)*4/3)",
+        "longTextPolicy": "Per reading page and given sample limits. For substantially longer personal texts use consecutive full reading pages, not nested scrollpanels.",
+        "scrollAllowed": false
+      },
+      "safeArea": {
+        "x": 4,
+        "y": 5,
+        "width": 92,
+        "height": 90
+      },
+      "textSafeArea": [
+        {
+          "id": "left",
+          "x": 11,
+          "y": 15,
+          "width": 34,
+          "height": 65,
+          "fontSizePx": 18,
+          "maxCharacters": 450,
+          "scrollAllowed": false
+        },
+        {
+          "id": "right",
+          "x": 55,
+          "y": 15,
+          "width": 34,
+          "height": 65,
+          "fontSizePx": 18,
+          "maxCharacters": 450,
+          "scrollAllowed": false
+        },
+        {
+          "id": "interpretationQuestion",
+          "x": 5,
+          "y": 89,
+          "width": 90,
+          "height": 7,
+          "fontSizePx": 18,
+          "maxCharacters": 70,
+          "scrollAllowed": false
+        }
+      ],
+      "viewDirection": null,
+      "branchUse": [
+        "all"
+      ],
+      "integrationNotes": "Use path, not logical filename. HTML supplies all text; original images are immutable. Intentional reuse alias; no duplicate PNG created.",
+      "aliasOf": "ui_freedom_then_now",
+      "reusedFrom": null
+    },
+    {
+      "id": "ui_luther_interpretation_scale",
+      "filename": "ch6_ui_luther_interpretation_scale.png",
+      "path": "assets/chapter6/ui/ch6_ui_luther_interpretation_scale.png",
+      "type": "ui",
+      "scene": "luther_interpretation_scale",
+      "purpose": "Drei gleichwertige Interpretationsblätter; optional unentschieden als gemeinsame Nebenaktion",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "transparent": true,
+      "alphaBounds": {
+        "left": 0,
+        "top": 102,
+        "right": 1024,
+        "bottom": 661
+      },
+      "sha256": "9ba204716b49d242aed9127447d29e32f302bff755d51f5dd23c173428b80549",
+      "preferredStaging": {
+        "mode": "reading-view",
+        "preserveAspectRatio": true,
+        "crop": false,
+        "readingSceneAspect": "4:3",
+        "minimumViewport": [
+          820,
+          640
+        ],
+        "fontNeverScaleBelowPx": 18,
+        "viewportSizing": "min(viewportWidth-16, (viewportHeight-118)*4/3)",
+        "longTextPolicy": "Per reading page and given sample limits. For substantially longer personal texts use consecutive full reading pages, not nested scrollpanels.",
+        "scrollAllowed": false
+      },
+      "safeArea": {
+        "x": 4,
+        "y": 5,
+        "width": 92,
+        "height": 90
+      },
+      "textSafeArea": [
+        {
+          "id": "continuity",
+          "x": 7,
+          "y": 20,
+          "width": 24,
+          "height": 57,
+          "fontSizePx": 18,
+          "maxCharacters": 180,
+          "scrollAllowed": false
+        },
+        {
+          "id": "tension",
+          "x": 38,
+          "y": 20,
+          "width": 24,
+          "height": 57,
+          "fontSizePx": 18,
+          "maxCharacters": 180,
+          "scrollAllowed": false
+        },
+        {
+          "id": "contradiction",
+          "x": 69,
+          "y": 20,
+          "width": 24,
+          "height": 57,
+          "fontSizePx": 18,
+          "maxCharacters": 180,
+          "scrollAllowed": false
+        }
+      ],
+      "viewDirection": null,
+      "branchUse": [
+        "all"
+      ],
+      "integrationNotes": "Use path, not logical filename. HTML supplies all text; original images are immutable. Generated with built-in image_gen; entire canvas downscaled without crop.",
+      "aliasOf": null,
+      "reusedFrom": null
+    },
+    {
+      "id": "ui_memory_evidence_table",
+      "filename": "ch6_ui_memory_evidence_table.png",
+      "path": "assets/chapter6/ui/ch6_ui_memory_evidence_table.png",
+      "type": "ui",
+      "scene": "memory_evidence_table",
+      "purpose": "Vier dynamische Erinnerungsausschnitte in einer Chronik",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "transparent": false,
+      "alphaBounds": {
+        "left": 0,
+        "top": 0,
+        "right": 1024,
+        "bottom": 768
+      },
+      "sha256": "79f647f4315058b6082fede8146e134c2cb4c10ddec49ab6c1c7ef24722b9520",
+      "preferredStaging": {
+        "mode": "reading-view",
+        "preserveAspectRatio": true,
+        "crop": false,
+        "readingSceneAspect": "4:3",
+        "minimumViewport": [
+          820,
+          640
+        ],
+        "fontNeverScaleBelowPx": 18,
+        "viewportSizing": "min(viewportWidth-16, (viewportHeight-118)*4/3)",
+        "longTextPolicy": "Per reading page and given sample limits. For substantially longer personal texts use consecutive full reading pages, not nested scrollpanels.",
+        "scrollAllowed": false
+      },
+      "safeArea": {
+        "x": 4,
+        "y": 5,
+        "width": 92,
+        "height": 90
+      },
+      "textSafeArea": [
+        {
+          "id": "caption1",
+          "x": 15,
+          "y": 45,
+          "width": 29,
+          "height": 4,
+          "fontSizePx": 18,
+          "maxCharacters": 35,
+          "scrollAllowed": false
+        },
+        {
+          "id": "caption2",
+          "x": 55,
+          "y": 45,
+          "width": 29,
+          "height": 4,
+          "fontSizePx": 18,
+          "maxCharacters": 35,
+          "scrollAllowed": false
+        },
+        {
+          "id": "caption3",
+          "x": 15,
+          "y": 76,
+          "width": 29,
+          "height": 4,
+          "fontSizePx": 18,
+          "maxCharacters": 35,
+          "scrollAllowed": false
+        },
+        {
+          "id": "caption4",
+          "x": 55,
+          "y": 76,
+          "width": 29,
+          "height": 4,
+          "fontSizePx": 18,
+          "maxCharacters": 35,
+          "scrollAllowed": false
+        }
+      ],
+      "viewDirection": null,
+      "branchUse": [
+        "all"
+      ],
+      "integrationNotes": "Use path, not logical filename. HTML supplies all text; original images are immutable. Generated with built-in image_gen; entire canvas downscaled without crop.",
+      "aliasOf": null,
+      "reusedFrom": null,
+      "imageWindows": [
+        {
+          "x": 15,
+          "y": 24,
+          "width": 29,
+          "height": 19
+        },
+        {
+          "x": 55,
+          "y": 24,
+          "width": 29,
+          "height": 19
+        },
+        {
+          "x": 15,
+          "y": 53,
+          "width": 29,
+          "height": 20
+        },
+        {
+          "x": 55,
+          "y": 53,
+          "width": 29,
+          "height": 20
+        }
+      ]
+    },
+    {
+      "id": "ui_memory_frame",
+      "filename": "ch6_ui_memory_frame.png",
+      "path": "assets/chapter6/ui/ch6_ui_memory_frame.png",
+      "type": "ui",
+      "scene": "memory_frame",
+      "purpose": "Holz-/Pergamentrahmen mit transparentem Bildfenster",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "transparent": true,
+      "alphaBounds": {
+        "left": 10,
+        "top": 47,
+        "right": 1015,
+        "bottom": 718
+      },
+      "sha256": "349a2b37db5c9d71f152ceadd537d0b5f2737fc16fc3628036dc322d1cd6ac8c",
+      "preferredStaging": {
+        "mode": "reading-view",
+        "preserveAspectRatio": true,
+        "crop": false,
+        "readingSceneAspect": "4:3",
+        "minimumViewport": [
+          820,
+          640
+        ],
+        "fontNeverScaleBelowPx": 18,
+        "viewportSizing": "min(viewportWidth-16, (viewportHeight-118)*4/3)",
+        "longTextPolicy": "Per reading page and given sample limits. For substantially longer personal texts use consecutive full reading pages, not nested scrollpanels.",
+        "scrollAllowed": false
+      },
+      "safeArea": {
+        "x": 4,
+        "y": 5,
+        "width": 92,
+        "height": 90
+      },
+      "textSafeArea": [],
+      "viewDirection": null,
+      "branchUse": [
+        "all"
+      ],
+      "integrationNotes": "Use path, not logical filename. HTML supplies all text; original images are immutable. Generated with built-in image_gen; entire canvas downscaled without crop. The frame has no text surface. Add any caption outside it using shared parchment material. The frame has no text surface. Add any caption outside it using shared parchment material.",
+      "aliasOf": null,
+      "reusedFrom": null,
+      "imageWindows": [
+        {
+          "x": 12,
+          "y": 20,
+          "width": 76,
+          "height": 63
+        }
+      ]
+    },
+    {
+      "id": "ui_evidence_pro_contra",
+      "filename": "ch6_ui_evidence_pro_contra.png",
+      "path": "assets/chapter6/ui/ch6_ui_freedom_then_now.png",
+      "type": "ui",
+      "scene": "evidence_pro_contra",
+      "purpose": "Zwei gleichwertige Argumentationsseiten: stützt / stellt infrage",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "transparent": true,
+      "alphaBounds": {
+        "left": 0,
+        "top": 71,
+        "right": 1024,
+        "bottom": 687
+      },
+      "sha256": "696bdccbb1a340562d005a6cda97e4d5b53646b392f9563234f9f27c09efafd2",
+      "preferredStaging": {
+        "mode": "reading-view",
+        "preserveAspectRatio": true,
+        "crop": false,
+        "readingSceneAspect": "4:3",
+        "minimumViewport": [
+          820,
+          640
+        ],
+        "fontNeverScaleBelowPx": 18,
+        "viewportSizing": "min(viewportWidth-16, (viewportHeight-118)*4/3)",
+        "longTextPolicy": "Per reading page and given sample limits. For substantially longer personal texts use consecutive full reading pages, not nested scrollpanels.",
+        "scrollAllowed": false
+      },
+      "safeArea": {
+        "x": 4,
+        "y": 5,
+        "width": 92,
+        "height": 90
+      },
+      "textSafeArea": [
+        {
+          "id": "left",
+          "x": 11,
+          "y": 15,
+          "width": 34,
+          "height": 65,
+          "fontSizePx": 18,
+          "maxCharacters": 450,
+          "scrollAllowed": false
+        },
+        {
+          "id": "right",
+          "x": 55,
+          "y": 15,
+          "width": 34,
+          "height": 65,
+          "fontSizePx": 18,
+          "maxCharacters": 450,
+          "scrollAllowed": false
+        }
+      ],
+      "viewDirection": null,
+      "branchUse": [
+        "all"
+      ],
+      "integrationNotes": "Use path, not logical filename. HTML supplies all text; original images are immutable. Intentional reuse alias; no duplicate PNG created.",
+      "aliasOf": "ui_freedom_then_now",
+      "reusedFrom": null
+    },
+    {
+      "id": "ui_luther_muentzer_comparison",
+      "filename": "ch6_ui_luther_muentzer_comparison.png",
+      "path": "assets/chapter6/ui/ch6_ui_freedom_then_now.png",
+      "type": "ui",
+      "scene": "luther_muentzer_comparison",
+      "purpose": "Gleichwertiger seriöser Positionsvergleich",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "transparent": true,
+      "alphaBounds": {
+        "left": 0,
+        "top": 71,
+        "right": 1024,
+        "bottom": 687
+      },
+      "sha256": "696bdccbb1a340562d005a6cda97e4d5b53646b392f9563234f9f27c09efafd2",
+      "preferredStaging": {
+        "mode": "reading-view",
+        "preserveAspectRatio": true,
+        "crop": false,
+        "readingSceneAspect": "4:3",
+        "minimumViewport": [
+          820,
+          640
+        ],
+        "fontNeverScaleBelowPx": 18,
+        "viewportSizing": "min(viewportWidth-16, (viewportHeight-118)*4/3)",
+        "longTextPolicy": "Per reading page and given sample limits. For substantially longer personal texts use consecutive full reading pages, not nested scrollpanels.",
+        "scrollAllowed": false
+      },
+      "safeArea": {
+        "x": 4,
+        "y": 5,
+        "width": 92,
+        "height": 90
+      },
+      "textSafeArea": [
+        {
+          "id": "left",
+          "x": 11,
+          "y": 15,
+          "width": 34,
+          "height": 65,
+          "fontSizePx": 18,
+          "maxCharacters": 450,
+          "scrollAllowed": false
+        },
+        {
+          "id": "right",
+          "x": 55,
+          "y": 15,
+          "width": 34,
+          "height": 65,
+          "fontSizePx": 18,
+          "maxCharacters": 450,
+          "scrollAllowed": false
+        }
+      ],
+      "viewDirection": null,
+      "branchUse": [
+        "all"
+      ],
+      "integrationNotes": "Use path, not logical filename. HTML supplies all text; original images are immutable. Intentional reuse alias; no duplicate PNG created.",
+      "aliasOf": "ui_freedom_then_now",
+      "reusedFrom": null
+    },
+    {
+      "id": "ui_judgment_dimensions",
+      "filename": "ch6_ui_judgment_dimensions.png",
+      "path": "assets/chapter6/ui/ch6_ui_luther_interpretation_scale.png",
+      "type": "ui",
+      "scene": "judgment_dimensions",
+      "purpose": "Theologische Folgerichtigkeit / historische Einordnung / ethische Verantwortbarkeit",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "transparent": true,
+      "alphaBounds": {
+        "left": 0,
+        "top": 102,
+        "right": 1024,
+        "bottom": 661
+      },
+      "sha256": "9ba204716b49d242aed9127447d29e32f302bff755d51f5dd23c173428b80549",
+      "preferredStaging": {
+        "mode": "reading-view",
+        "preserveAspectRatio": true,
+        "crop": false,
+        "readingSceneAspect": "4:3",
+        "minimumViewport": [
+          820,
+          640
+        ],
+        "fontNeverScaleBelowPx": 18,
+        "viewportSizing": "min(viewportWidth-16, (viewportHeight-118)*4/3)",
+        "longTextPolicy": "Per reading page and given sample limits. For substantially longer personal texts use consecutive full reading pages, not nested scrollpanels.",
+        "scrollAllowed": false
+      },
+      "safeArea": {
+        "x": 4,
+        "y": 5,
+        "width": 92,
+        "height": 90
+      },
+      "textSafeArea": [
+        {
+          "id": "continuity",
+          "x": 7,
+          "y": 20,
+          "width": 24,
+          "height": 57,
+          "fontSizePx": 18,
+          "maxCharacters": 180,
+          "scrollAllowed": false
+        },
+        {
+          "id": "tension",
+          "x": 38,
+          "y": 20,
+          "width": 24,
+          "height": 57,
+          "fontSizePx": 18,
+          "maxCharacters": 180,
+          "scrollAllowed": false
+        },
+        {
+          "id": "contradiction",
+          "x": 69,
+          "y": 20,
+          "width": 24,
+          "height": 57,
+          "fontSizePx": 18,
+          "maxCharacters": 180,
+          "scrollAllowed": false
+        }
+      ],
+      "viewDirection": null,
+      "branchUse": [
+        "all"
+      ],
+      "integrationNotes": "Use path, not logical filename. HTML supplies all text; original images are immutable. Intentional reuse alias; no duplicate PNG created.",
+      "aliasOf": "ui_luther_interpretation_scale",
+      "reusedFrom": null
+    },
+    {
+      "id": "ui_final_position",
+      "filename": "ch6_ui_final_position.png",
+      "path": "assets/chapter6/ui/ch6_ui_final_position.png",
+      "type": "ui",
+      "scene": "final_position",
+      "purpose": "Fünf gleichwertige historische Auswahlstreifen",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "transparent": true,
+      "alphaBounds": {
+        "left": 36,
+        "top": 43,
+        "right": 999,
+        "bottom": 691
+      },
+      "sha256": "24a0a9a2f4fe8664df0014f72af1d5b4e03e252f66812fc16462c80eb2f52e3f",
+      "preferredStaging": {
+        "mode": "reading-view",
+        "preserveAspectRatio": true,
+        "crop": false,
+        "readingSceneAspect": "4:3",
+        "minimumViewport": [
+          820,
+          640
+        ],
+        "fontNeverScaleBelowPx": 18,
+        "viewportSizing": "min(viewportWidth-16, (viewportHeight-118)*4/3)",
+        "longTextPolicy": "Per reading page and given sample limits. For substantially longer personal texts use consecutive full reading pages, not nested scrollpanels.",
+        "scrollAllowed": false
+      },
+      "safeArea": {
+        "x": 4,
+        "y": 5,
+        "width": 92,
+        "height": 90
+      },
+      "textSafeArea": [
+        {
+          "id": "position1",
+          "x": 13,
+          "y": 14,
+          "width": 74,
+          "height": 11,
+          "fontSizePx": 18,
+          "maxCharacters": 95,
+          "scrollAllowed": false
+        },
+        {
+          "id": "position2",
+          "x": 13,
+          "y": 29,
+          "width": 74,
+          "height": 11,
+          "fontSizePx": 18,
+          "maxCharacters": 95,
+          "scrollAllowed": false
+        },
+        {
+          "id": "position3",
+          "x": 13,
+          "y": 44,
+          "width": 74,
+          "height": 11,
+          "fontSizePx": 18,
+          "maxCharacters": 95,
+          "scrollAllowed": false
+        },
+        {
+          "id": "position4",
+          "x": 13,
+          "y": 59,
+          "width": 74,
+          "height": 11,
+          "fontSizePx": 18,
+          "maxCharacters": 95,
+          "scrollAllowed": false
+        },
+        {
+          "id": "position5",
+          "x": 13,
+          "y": 74,
+          "width": 74,
+          "height": 11,
+          "fontSizePx": 18,
+          "maxCharacters": 95,
+          "scrollAllowed": false
+        }
+      ],
+      "viewDirection": null,
+      "branchUse": [
+        "all"
+      ],
+      "integrationNotes": "Use path, not logical filename. HTML supplies all text; original images are immutable. Generated with built-in image_gen; entire canvas downscaled without crop.",
+      "aliasOf": null,
+      "reusedFrom": null
+    },
+    {
+      "id": "ui_final_judgment_writing",
+      "filename": "ch6_ui_final_judgment_writing.png",
+      "path": "assets/chapter6/ui/ch6_ui_final_judgment_writing.png",
+      "type": "ui",
+      "scene": "final_judgment_writing",
+      "purpose": "Große ruhige Schreibfläche für fünf bis acht Absätze",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "transparent": true,
+      "alphaBounds": {
+        "left": 13,
+        "top": 37,
+        "right": 1012,
+        "bottom": 726
+      },
+      "sha256": "7e370af1cfc0875c26ecc6a1f6b6e2d36ea59c29e32a9571dba1685db1a833b5",
+      "preferredStaging": {
+        "mode": "reading-view",
+        "preserveAspectRatio": true,
+        "crop": false,
+        "readingSceneAspect": "4:3",
+        "minimumViewport": [
+          820,
+          640
+        ],
+        "fontNeverScaleBelowPx": 18,
+        "viewportSizing": "min(viewportWidth-16, (viewportHeight-118)*4/3)",
+        "longTextPolicy": "Per reading page and given sample limits. For substantially longer personal texts use consecutive full reading pages, not nested scrollpanels.",
+        "scrollAllowed": false
+      },
+      "safeArea": {
+        "x": 4,
+        "y": 5,
+        "width": 92,
+        "height": 90
+      },
+      "textSafeArea": [
+        {
+          "id": "writing",
+          "x": 10,
+          "y": 12,
+          "width": 80,
+          "height": 76,
+          "fontSizePx": 18,
+          "maxCharacters": 700,
+          "scrollAllowed": false
+        }
+      ],
+      "viewDirection": null,
+      "branchUse": [
+        "all"
+      ],
+      "integrationNotes": "Use path, not logical filename. HTML supplies all text; original images are immutable. Generated with built-in image_gen; entire canvas downscaled without crop.",
+      "aliasOf": null,
+      "reusedFrom": null
+    },
+    {
+      "id": "ui_personal_final_page",
+      "filename": "ch6_ui_personal_final_page.png",
+      "path": "assets/chapter6/ui/ch6_ui_final_judgment_writing.png",
+      "type": "ui",
+      "scene": "personal_final_page",
+      "purpose": "Persönliche Abschlussseite mit acht semantischen Abschnitten; HTML ohne moderne Teilkarten",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "transparent": true,
+      "alphaBounds": {
+        "left": 13,
+        "top": 37,
+        "right": 1012,
+        "bottom": 726
+      },
+      "sha256": "7e370af1cfc0875c26ecc6a1f6b6e2d36ea59c29e32a9571dba1685db1a833b5",
+      "preferredStaging": {
+        "mode": "reading-view",
+        "preserveAspectRatio": true,
+        "crop": false,
+        "readingSceneAspect": "4:3",
+        "minimumViewport": [
+          820,
+          640
+        ],
+        "fontNeverScaleBelowPx": 18,
+        "viewportSizing": "min(viewportWidth-16, (viewportHeight-118)*4/3)",
+        "longTextPolicy": "Per reading page and given sample limits. For substantially longer personal texts use consecutive full reading pages, not nested scrollpanels.",
+        "scrollAllowed": false
+      },
+      "safeArea": {
+        "x": 4,
+        "y": 5,
+        "width": 92,
+        "height": 90
+      },
+      "textSafeArea": [
+        {
+          "id": "writing",
+          "x": 10,
+          "y": 12,
+          "width": 80,
+          "height": 76,
+          "fontSizePx": 18,
+          "maxCharacters": 700,
+          "scrollAllowed": false
+        }
+      ],
+      "viewDirection": null,
+      "branchUse": [
+        "all"
+      ],
+      "integrationNotes": "Use path, not logical filename. HTML supplies all text; original images are immutable. Intentional reuse alias; no duplicate PNG created.",
+      "aliasOf": "ui_final_judgment_writing",
+      "reusedFrom": null
+    },
+    {
+      "id": "ui_final_book",
+      "filename": "ch6_ui_final_book.png",
+      "path": "assets/chapter6/ui/ch6_ui_freedom_then_now.png",
+      "type": "ui",
+      "scene": "final_book",
+      "purpose": "Schlussbuch mit gleichwertigen frühen und späteren Freiheitsdeutungen",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "transparent": true,
+      "alphaBounds": {
+        "left": 0,
+        "top": 71,
+        "right": 1024,
+        "bottom": 687
+      },
+      "sha256": "696bdccbb1a340562d005a6cda97e4d5b53646b392f9563234f9f27c09efafd2",
+      "preferredStaging": {
+        "mode": "reading-view",
+        "preserveAspectRatio": true,
+        "crop": false,
+        "readingSceneAspect": "4:3",
+        "minimumViewport": [
+          820,
+          640
+        ],
+        "fontNeverScaleBelowPx": 18,
+        "viewportSizing": "min(viewportWidth-16, (viewportHeight-118)*4/3)",
+        "longTextPolicy": "Per reading page and given sample limits. For substantially longer personal texts use consecutive full reading pages, not nested scrollpanels.",
+        "scrollAllowed": false
+      },
+      "safeArea": {
+        "x": 4,
+        "y": 5,
+        "width": 92,
+        "height": 90
+      },
+      "textSafeArea": [
+        {
+          "id": "left",
+          "x": 11,
+          "y": 15,
+          "width": 34,
+          "height": 65,
+          "fontSizePx": 18,
+          "maxCharacters": 450,
+          "scrollAllowed": false
+        },
+        {
+          "id": "right",
+          "x": 55,
+          "y": 15,
+          "width": 34,
+          "height": 65,
+          "fontSizePx": 18,
+          "maxCharacters": 450,
+          "scrollAllowed": false
+        }
+      ],
+      "viewDirection": null,
+      "branchUse": [
+        "all"
+      ],
+      "integrationNotes": "Use path, not logical filename. HTML supplies all text; original images are immutable. Intentional reuse alias; no duplicate PNG created.",
+      "aliasOf": "ui_freedom_then_now",
+      "reusedFrom": null
+    }
+  ],
+  "reusedAssets": [
+    {
+      "path": "assets/chapter4/documents/ch4_doc_luther_freedom_small.png",
+      "purpose": "Freiheitsschrift; vorhandener HTML-Quellentext",
+      "dimensions": {
+        "width": 839,
+        "height": 1024
+      },
+      "transparent": true,
+      "alphaBounds": {
+        "left": 25,
+        "top": 36,
+        "right": 814,
+        "bottom": 999
+      },
+      "sha256": "b4755abfabde9e6143b384470f31ecc0c699f15d2bed6f7c55491bef8aa018eb"
+    },
+    {
+      "path": "assets/chapter4/documents/ch4_doc_worldly_authority_small.png",
+      "purpose": "Obrigkeit 1523; vorhandener HTML-Quellentext",
+      "dimensions": {
+        "width": 844,
+        "height": 1024
+      },
+      "transparent": true,
+      "alphaBounds": {
+        "left": 25,
+        "top": 35,
+        "right": 819,
+        "bottom": 999
+      },
+      "sha256": "d9d8fdde9143591044420f8ffde305ab5c21f3df108d0e00348fcd9a710de92b"
+    },
+    {
+      "path": "assets/chapter4/documents/ch4_doc_ermahnung_closed.png",
+      "purpose": "Ermahnung zum Frieden; vorhandener Quellenrenderer",
+      "dimensions": {
+        "width": 783,
+        "height": 1024
+      },
+      "transparent": true,
+      "alphaBounds": {
+        "left": 23,
+        "top": 37,
+        "right": 760,
+        "bottom": 1001
+      },
+      "sha256": "bf34d04a52d2fabb46cdf296baedaa412232ffde2f651db827d3010b72fb3b80"
+    },
+    {
+      "path": "assets/chapter4/documents/ch4_doc_harsh_text_closed.png",
+      "purpose": "Schärfere Bauernkriegsschrift; vorhandener Quellenrenderer",
+      "dimensions": {
+        "width": 779,
+        "height": 1024
+      },
+      "transparent": true,
+      "alphaBounds": {
+        "left": 23,
+        "top": 37,
+        "right": 756,
+        "bottom": 1001
+      },
+      "sha256": "2e660b821b5bd5fa524c335240f7146ed203cbdfeb1f13d91dbd09a12249ea02"
+    },
+    {
+      "path": "assets/chapter4/documents/ch4_doc_muentzer_context_closed.png",
+      "purpose": "Müntzer-Kontext; vorhandener Quellenrenderer",
+      "dimensions": {
+        "width": 845,
+        "height": 1024
+      },
+      "transparent": true,
+      "alphaBounds": {
+        "left": 25,
+        "top": 35,
+        "right": 820,
+        "bottom": 999
+      },
+      "sha256": "a5c73af691a6b82501ae3d5ea64b3c5780f8a24bf087d6675d2c50f2f5111ff7"
+    },
+    {
+      "path": "assets/chapter5/props/ch5_prop_bible_council.png",
+      "purpose": "Bibel als stilles Quellenobjekt",
+      "dimensions": {
+        "width": 768,
+        "height": 768
+      },
+      "transparent": true,
+      "alphaBounds": {
+        "left": 0,
+        "top": 12,
+        "right": 768,
+        "bottom": 768
+      },
+      "sha256": "97f3162db4bfa116a2771d621b6aafcb5363eea19454ce421dff007ad43f3985"
+    },
+    {
+      "path": "assets/chapter2/backgrounds/ch2_bg_forest_edge_path.png",
+      "purpose": "Erinnerung: Wald und Nutzungsrechte",
+      "dimensions": {
+        "width": 1672,
+        "height": 941
+      },
+      "transparent": false,
+      "alphaBounds": {
+        "left": 0,
+        "top": 0,
+        "right": 1672,
+        "bottom": 941
+      },
+      "sha256": "deed4d651c4ac5adab4c74d409b30d6972513b8ff15be88052326c3cd7f9adcf"
+    },
+    {
+      "path": "assets/chapter3/backgrounds/ch3_bg_memmingen_assembly.png",
+      "purpose": "Erinnerung: Zwölf Artikel; spätere Runtime aus Rückschau komponieren",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "transparent": false,
+      "alphaBounds": {
+        "left": 0,
+        "top": 0,
+        "right": 1024,
+        "bottom": 768
+      },
+      "sha256": "e86b656b76195e5d9e56a435dd28d2ec701ce72b0db18a37f83eef15e0a95756"
+    },
+    {
+      "path": "assets/chapter4/backgrounds/ch4_bg_village_consequence_hub.png",
+      "purpose": "Erinnerung: eigener Kapitel-4-Pfad",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "transparent": false,
+      "alphaBounds": {
+        "left": 0,
+        "top": 0,
+        "right": 1024,
+        "bottom": 768
+      },
+      "sha256": "7395f70913c6b47a09e736f507ee1836999c24a77ea4b44bd88e4541027d84e1"
+    },
+    {
+      "path": "assets/chapter5/backgrounds/ch5_bg_theological_council_evening.png",
+      "purpose": "Erinnerung: Kapitel-5-Entscheidung und Stilvergleich",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "transparent": false,
+      "alphaBounds": {
+        "left": 0,
+        "top": 0,
+        "right": 1024,
+        "bottom": 768
+      },
+      "sha256": "9600c20116502cb8cfdaee437289c66f5908d0ca7eb69399288cf09e52c34d09"
+    },
+    {
+      "path": "assets/chapter5/backgrounds/ch5_bg_village_after_crisis.png",
+      "purpose": "Erinnerung: Folgen; spätere Runtime mit tatsächlicher Rückschau kombinieren",
+      "dimensions": {
+        "width": 1024,
+        "height": 768
+      },
+      "transparent": false,
+      "alphaBounds": {
+        "left": 0,
+        "top": 0,
+        "right": 1024,
+        "bottom": 768
+      },
+      "sha256": "9fc31e43bd7b37030c311af0e23d2253db1901f52923a6d24b07ce2bc065f173"
+    }
+  ],
+  "canonReferences": {
+    "peter": {
+      "asset": "assets/chapter2/characters/ch2_char_peter_neutral.png",
+      "width": 284,
+      "height": 783,
+      "bounds": [
+        0,
+        0,
+        284,
+        783
+      ],
+      "facing": "right",
+      "sha256": "ae216d280f7a23eaf3c41d802c43a288bed4c2729347047a735ac2cbe7ce1d95"
+    },
+    "anna": {
+      "asset": "assets/chapter3/characters/ch3_char_anna_repaired.png",
+      "width": 789,
+      "height": 1994,
+      "bounds": [
+        1,
+        0,
+        789,
+        1994
+      ],
+      "facing": "left",
+      "sha256": "ee4b759dd9763157bc4f1ab4613400dffc06f582f1f682ce3a44d5b158da24d4"
+    },
+    "jakob": {
+      "asset": "assets/chapter3/characters/ch3_char_jakob_repaired.png",
+      "width": 752,
+      "height": 2092,
+      "bounds": [
+        0,
+        0,
+        752,
+        2074
+      ],
+      "facing": "left",
+      "sha256": "dfa512a4975dc01e172d84c8b242f969dedd467e159b87f4613ffa1cd10e0d46"
+    },
+    "konrad": {
+      "asset": "assets/chapter3/characters/ch3_char_konrad_repaired.png",
+      "width": 820,
+      "height": 1918,
+      "bounds": [
+        0,
+        0,
+        803,
+        1892
+      ],
+      "facing": "left",
+      "sha256": "9c5f0993802e97234ee55a858cfa90ee2064b598ab1de56a84901767938bef55"
+    },
+    "matthes": {
+      "asset": "assets/chapter3/characters/ch3_char_matthes_talking.png",
+      "width": 512,
+      "height": 896,
+      "bounds": [
+        94,
+        59,
+        452,
+        792
+      ],
+      "facing": "left",
+      "sha256": "276340c554f59b6d62d28959dc837a1c6d06dde38d66f789b4413cfdc2fd0604"
+    },
+    "preacher": {
+      "asset": "assets/chapter4/characters/ch4_char_local_preacher_talking.png",
+      "width": 512,
+      "height": 896,
+      "bounds": [
+        43,
+        15,
+        469,
+        881
+      ],
+      "facing": "right",
+      "sha256": "8fc1510a141530e8adfb792c8a745f7608125a11a9f0e37725e75af069be4d91"
+    },
+    "envoy": {
+      "asset": "assets/chapter4/characters/ch4_char_authority_envoy_talking.png",
+      "width": 512,
+      "height": 896,
+      "bounds": [
+        53,
+        15,
+        458,
+        881
+      ],
+      "facing": "left",
+      "sha256": "8aa1327cbe3e3ec425ef970aa5948cd48792ca6d14c316261be196989db6d0aa"
+    },
+    "band1": {
+      "asset": "assets/chapter4/characters/ch4_char_peasant_band_member_1.png",
+      "width": 512,
+      "height": 896,
+      "bounds": [
+        27,
+        15,
+        485,
+        881
+      ],
+      "facing": "right",
+      "sha256": "c9c83364bff43919a42be96c34aaf24ef58dd0c80da54711dc51293460aa1353"
+    },
+    "band2": {
+      "asset": "assets/chapter4/characters/ch4_char_peasant_band_member_2.png",
+      "width": 512,
+      "height": 896,
+      "bounds": [
+        73,
+        15,
+        439,
+        881
+      ],
+      "facing": "left",
+      "sha256": "17a563f604d4e31c8c8b5123303d573653bf348460302516db87b689b1221d56"
+    },
+    "overseer": {
+      "asset": "assets/chapter2/characters/ch2_char_overseer_neutral.png",
+      "width": 311,
+      "height": 864,
+      "bounds": [
+        0,
+        0,
+        311,
+        864
+      ],
+      "facing": "left",
+      "sha256": "c3e7e03d5f2085c4d2f2b94e43260157aa1cad72aa201f7155c4f15bfbdf735a"
+    }
+  },
+  "newPngCount": 12,
+  "logicalAssetCount": 24,
+  "reusePolicy": "24 requested roles resolve to12 new PNGs plus existing notebook and original hotspot-object; aliases intentionally avoid redundant files. Read path for every role.",
+  "sourceChecks": {
+    "freedom": "https://editions.mml.ox.ac.uk/editions/freiheit-1520/",
+    "harsh": "https://www.luthermuseen.de/en/node/889"
+  },
+  "integration": {
+    "recapModule": "data/story-recap.js",
+    "openQuestionField": "chapter5.openTheologicalQuestion",
+    "initialFreedomField": "choices.initialFreedomInterpretation",
+    "laterFreedomField": "chapter5.freedomAfterAction",
+    "hotspots": "js/hotspots.js",
+    "materials": "css/art-direction.css",
+    "noNewStateOrSaveLogic": true
+  },
+  "networkNodes": [
+    {
+      "label": "Christliche Freiheit",
+      "x": 40,
+      "y": 46,
+      "width": 20,
+      "height": 14
+    },
+    {
+      "label": "Rechtfertigung",
+      "x": 20,
+      "y": 29,
+      "width": 26,
+      "height": 12
+    },
+    {
+      "label": "Nächstenliebe",
+      "x": 57,
+      "y": 29,
+      "width": 26,
+      "height": 12
+    },
+    {
+      "label": "Gewissen",
+      "x": 9,
+      "y": 46,
+      "width": 23,
+      "height": 12
+    },
+    {
+      "label": "Obrigkeit",
+      "x": 69,
+      "y": 46,
+      "width": 23,
+      "height": 12
+    },
+    {
+      "label": "Widerstand",
+      "x": 15,
+      "y": 65,
+      "width": 23,
+      "height": 12
+    },
+    {
+      "label": "Gewalt",
+      "x": 42,
+      "y": 67,
+      "width": 16,
+      "height": 12
+    },
+    {
+      "label": "Verantwortung",
+      "x": 63,
+      "y": 65,
+      "width": 25,
+      "height": 12
+    }
+  ],
+  "compositions": {
+    "entry": {
+      "background": "bg_reflection_room_entry",
+      "props": [
+        {
+          "id": "prop_personal_notebook_closed",
+          "x": 22,
+          "y": 55,
+          "visibleWidth": 16,
+          "scaleY": 0.6
+        }
+      ],
+      "hotspots": [
+        {
+          "label": "Mein Notizbuch",
+          "x": 13,
+          "y": 34,
+          "width": 19,
+          "height": 9
+        }
+      ]
+    },
+    "reflection": {
+      "background": "bg_reflection_room",
+      "props": [
+        {
+          "id": "prop_personal_notebook_closed",
+          "x": 17,
+          "y": 55,
+          "visibleWidth": 13,
+          "scaleY": 0.6
+        },
+        {
+          "path": "assets/chapter4/documents/ch4_doc_luther_freedom_small.png",
+          "x": 37,
+          "y": 50,
+          "visibleWidth": 10,
+          "scaleY": 0.38
+        },
+        {
+          "path": "assets/chapter4/documents/ch4_doc_harsh_text_closed.png",
+          "x": 51,
+          "y": 50,
+          "visibleWidth": 10,
+          "scaleY": 0.38
+        },
+        {
+          "path": "assets/chapter5/props/ch5_prop_bible_council.png",
+          "x": 65,
+          "y": 49,
+          "visibleWidth": 13,
+          "scaleY": 1
+        },
+        {
+          "id": "prop_muentzer_folder_closed",
+          "x": 79,
+          "y": 55,
+          "visibleWidth": 12,
+          "scaleY": 1
+        }
+      ],
+      "memoryFrames": [
+        {
+          "x": 32,
+          "y": 60,
+          "width": 9
+        },
+        {
+          "x": 46,
+          "y": 60,
+          "width": 9
+        },
+        {
+          "x": 60,
+          "y": 60,
+          "width": 9
+        }
+      ],
+      "hotspots": [
+        {
+          "label": "Mein Weg",
+          "x": 9,
+          "y": 33,
+          "width": 18,
+          "height": 9
+        },
+        {
+          "label": "Luthers Schriften",
+          "x": 36,
+          "y": 33,
+          "width": 25,
+          "height": 9
+        },
+        {
+          "label": "Gegenpositionen",
+          "x": 69,
+          "y": 33,
+          "width": 23,
+          "height": 9
+        }
+      ]
+    },
+    "judgment": {
+      "background": "bg_judgment_table",
+      "props": [
+        {
+          "id": "prop_personal_notebook_closed",
+          "x": 17,
+          "y": 57,
+          "visibleWidth": 13,
+          "scaleY": 0.6
+        },
+        {
+          "path": "assets/chapter4/documents/ch4_doc_luther_freedom_small.png",
+          "x": 34,
+          "y": 54,
+          "visibleWidth": 9,
+          "scaleY": 0.4
+        },
+        {
+          "path": "assets/chapter4/documents/ch4_doc_worldly_authority_small.png",
+          "x": 46,
+          "y": 54,
+          "visibleWidth": 9,
+          "scaleY": 0.4
+        },
+        {
+          "path": "assets/chapter4/documents/ch4_doc_ermahnung_closed.png",
+          "x": 58,
+          "y": 54,
+          "visibleWidth": 9,
+          "scaleY": 0.4
+        },
+        {
+          "path": "assets/chapter4/documents/ch4_doc_harsh_text_closed.png",
+          "x": 70,
+          "y": 54,
+          "visibleWidth": 9,
+          "scaleY": 0.4
+        },
+        {
+          "path": "assets/chapter4/documents/ch4_doc_muentzer_context_closed.png",
+          "x": 82,
+          "y": 54,
+          "visibleWidth": 9,
+          "scaleY": 0.4
+        }
+      ],
+      "hotspots": [
+        {
+          "label": "Quellen prüfen",
+          "x": 35,
+          "y": 34,
+          "width": 26,
+          "height": 9
+        }
+      ]
+    },
+    "prop_plane": {
+      "background": "bg_reflection_room",
+      "props": [
+        {
+          "id": "prop_personal_notebook_open",
+          "x": 26,
+          "y": 55,
+          "visibleWidth": 20,
+          "scaleY": 1
+        },
+        {
+          "id": "prop_luther_folder_open",
+          "x": 56,
+          "y": 55,
+          "visibleWidth": 24,
+          "scaleY": 1
+        },
+        {
+          "path": "assets/chapter5/props/ch5_prop_bible_council.png",
+          "x": 79,
+          "y": 56,
+          "visibleWidth": 13,
+          "scaleY": 1
+        }
+      ]
+    },
+    "final": {
+      "background": "bg_final_question",
+      "ui": "ui_final_book",
+      "text": "HTML only: early freedom / later freedom / Was heißt frei?"
+    }
+  },
+  "additionalCanonReferences": [
+    {
+      "path": "assets/chapter2/characters/ch2_char_overseer_neutral.png",
+      "sha256": "c3e7e03d5f2085c4d2f2b94e43260157aa1cad72aa201f7155c4f15bfbdf735a"
+    },
+    {
+      "path": "assets/chapter2/characters/ch2_char_margarethe_repaired.png",
+      "sha256": "68e3ba38c2d8c71d3e7771437fe9f09e0ffca86f122a5e1055d70406a2efde65"
+    },
+    {
+      "path": "assets/chapter2/characters/ch2_char_older_peasant_woman_worried.png",
+      "sha256": "d758c3da2815759da37c62746d92efc552f30547255e8e76a62c7446eb8e4515"
+    },
+    {
+      "path": "assets/chapter3/characters/ch3_char_lotzer_neutral.png",
+      "sha256": "caf0a078ae4eedcee16bc98be0f07ee45fe40ffecd4e40da934210186271ab21"
+    },
+    {
+      "path": "assets/chapter3/characters/ch3_char_georg_neutral.png",
+      "sha256": "24a1cdf7bc10a3ddf108069aee134d8545e88a0c362ca9e3160a75a91cb17fa5"
+    },
+    {
+      "path": "assets/chapter3/characters/ch3_char_katharina_neutral.png",
+      "sha256": "28af00580dd39c3b9d98dbb7487380dbb545e5025762fc5ecb21ec62b2e82891"
+    },
+    {
+      "path": "assets/chapter3/characters/ch3_char_hans_neutral.png",
+      "sha256": "1aeb79c08a1e787ce7254b2507239e5a0b0e709d5c28b505c7f81267de5c7cd8"
+    },
+    {
+      "path": "assets/chapter3/characters/ch3_char_printer_working.png",
+      "sha256": "a46d2fdccb3cbe1949cef6bf6d2a3ecde593b69931747d68d270a0e4993ea083"
+    }
+  ]
+};

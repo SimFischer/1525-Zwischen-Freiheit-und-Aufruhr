@@ -1,3 +1,4 @@
+import { prepareChapterSixAdmin,freshChapterSix,initializeChapterSix } from '../data/chapter-six-state.js';
 import { chapterFourChoices } from '../data/chapter-four.js';
 import { chapterFiveChoices } from '../data/chapter-five.js';
 import { prepareChapterFiveAdmin,resetChapterFive,applyChapterFiveTestFields } from './chapter-five-admin.js';
@@ -115,6 +116,7 @@ function chapterThree(next,scene,target={},complete=false) {
  next.progress.completedScenes.push(...chapterThreeScenes.slice(0,index).map(s=>s.id));syncConsequences(next);
 }
 export const adminChapterRegistry = {
+  6:{prepare:(next,scene)=>prepareChapterSixAdmin(next,scene),complete:next=>prepareChapterSixAdmin(next,sceneById.ch6_ending,true),reset:next=>{next.chapter6=freshChapterSix();initializeChapterSix(next);},ownedChoices:()=>[],games:[]},
   5:{prepare:prepareChapterFiveAdmin,complete:next=>prepareChapterFiveAdmin(next,sceneById.ch5_chapter6,true),reset:resetChapterFive,ownedChoices:()=>[...Object.keys(chapterFiveChoices),'ch5Final'],games:[]},
   4:{prepare:(next,scene)=>prepareChapterFourAdmin(next,scene),complete:next=>prepareChapterFourAdmin(next,sceneById.ch4_world_end,true),reset:resetChapterFour,ownedChoices:()=>Object.keys(chapterFourChoices),games:[]},
   3:{prepare:chapterThree,complete:next=>chapterThree(next,sceneById.ch3_end,{},true),reset:next=>{next.chapter3=freshState().chapter3;next.notebook.documents=next.notebook.documents.filter(id=>id!=='articles');delete next.notebook.passages.articles;},ownedChoices:()=>Object.keys(chapterThreeChoices),games:['ch3Print']},

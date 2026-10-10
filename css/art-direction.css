@@ -332,10 +332,10 @@ body[data-mode="admin"] .admin-console { width:100%; height:min(850px,calc(94svh
 .admin-orientation { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:.5rem; }
 /* Shared world markers: original painted assets, HTML labels above them.
    Nine-slice scaling keeps the handmade edges while the writing area adapts. */
-.room .scene-hotspot,.room .scene-hotspot:hover,.room .scene-hotspot:focus-visible,.room .scene-hotspot.touched {
+:is(.room,.ch6-stage) .scene-hotspot,:is(.room,.ch6-stage) .scene-hotspot:hover,:is(.room,.ch6-stage) .scene-hotspot:focus-visible,:is(.room,.ch6-stage) .scene-hotspot.touched {
   background:transparent; border-color:transparent; box-shadow:none; outline:0; filter:none;
 }
-.room .scene-hotspot > .hotspot-label {
+:is(.room,.ch6-stage) .scene-hotspot > .hotspot-label {
   display:flex; align-items:center; justify-content:center; gap:.35rem;
   min-width:44px; min-height:44px; padding:.5rem .9rem; margin:0;
   opacity:1; pointer-events:auto; white-space:nowrap; isolation:isolate;
@@ -343,44 +343,44 @@ body[data-mode="admin"] .admin-console { width:100%; height:min(850px,calc(94svh
   background:none; border:0; border-radius:0; box-shadow:none; clip-path:none;
   transition:filter 140ms ease;
 }
-.room .scene-hotspot > .hotspot-label::before {
+:is(.room,.ch6-stage) .scene-hotspot > .hotspot-label::before {
   content:''; position:absolute; inset:0; z-index:-1; pointer-events:none;
   border:12px solid transparent;
   border-image:var(--hotspot-art) var(--hotspot-slice) fill / 12px 18px / 3px 3px stretch;
 }
-.room .hotspot-object {
+:is(.room,.ch6-stage) .hotspot-object {
   --hotspot-art:url('../assets/ui/hotspots/v2/hotspot-object.png');
   --hotspot-slice:270 300 230 300;
 }
-.room .hotspot-object > .hotspot-label { color:#392719; }
-.room .hotspot-action {
+:is(.room,.ch6-stage) .hotspot-object > .hotspot-label { color:#392719; }
+:is(.room,.ch6-stage) .hotspot-action {
   --hotspot-art:url('../assets/ui/hotspots/v2/hotspot-action.png');
   --hotspot-slice:300 320 280 320;
 }
-.room .hotspot-action > .hotspot-label { color:#fff0d0; text-shadow:0 1px 2px #241108; }
-.room .hotspot-path {
+:is(.room,.ch6-stage) .hotspot-action > .hotspot-label { color:#fff0d0; text-shadow:0 1px 2px #241108; }
+:is(.room,.ch6-stage) .hotspot-path {
   --hotspot-art:url('../assets/ui/hotspots/v2/hotspot-path-right.png');
   --hotspot-slice:260 490 230 300;
 }
-.room .hotspot-path > .hotspot-label { color:#fff0cf; padding:.5rem 1.4rem .5rem .9rem; text-shadow:0 1px 2px #241108; }
-.room .hotspot-path > .hotspot-label::before { border-image-width:12px 30px 12px 18px; }
-.room .hotspot-path-left > .hotspot-label { padding-left:1.4rem; padding-right:.9rem; }
-.room .hotspot-path-left > .hotspot-label::before { transform:scaleX(-1); }
-.room .scene-hotspot:hover > .hotspot-label,.room .scene-hotspot:focus-visible > .hotspot-label,
-.room .scene-hotspot:active > .hotspot-label,.room .scene-hotspot.touched > .hotspot-label { filter:brightness(1.12); }
-.room .scene-hotspot:focus-visible > .hotspot-label { text-decoration:underline; text-underline-offset:.22em; text-decoration-thickness:2px; }
-.room .scene-hotspot:disabled > .hotspot-label { opacity:0 !important; visibility:hidden; pointer-events:none; }
-.room .scene-hotspot.hotspot-sign { padding:0; border:0; }
-.room .hotspot-sign > .hotspot-label { position:static; transform:none; width:100%; white-space:normal; }
-.room .door-hotspot > .hotspot-label { position:relative; transform:none; width:100%; }
+:is(.room,.ch6-stage) .hotspot-path > .hotspot-label { color:#fff0cf; padding:.5rem 1.4rem .5rem .9rem; text-shadow:0 1px 2px #241108; }
+:is(.room,.ch6-stage) .hotspot-path > .hotspot-label::before { border-image-width:12px 30px 12px 18px; }
+:is(.room,.ch6-stage) .hotspot-path-left > .hotspot-label { padding-left:1.4rem; padding-right:.9rem; }
+:is(.room,.ch6-stage) .hotspot-path-left > .hotspot-label::before { transform:scaleX(-1); }
+:is(.room,.ch6-stage) .scene-hotspot:hover > .hotspot-label,:is(.room,.ch6-stage) .scene-hotspot:focus-visible > .hotspot-label,
+:is(.room,.ch6-stage) .scene-hotspot:active > .hotspot-label,:is(.room,.ch6-stage) .scene-hotspot.touched > .hotspot-label { filter:brightness(1.12); }
+:is(.room,.ch6-stage) .scene-hotspot:focus-visible > .hotspot-label { text-decoration:underline; text-underline-offset:.22em; text-decoration-thickness:2px; }
+:is(.room,.ch6-stage) .scene-hotspot:disabled > .hotspot-label { opacity:0 !important; visibility:hidden; pointer-events:none; }
+:is(.room,.ch6-stage) .scene-hotspot.hotspot-sign { padding:0; border:0; }
+:is(.room,.ch6-stage) .hotspot-sign > .hotspot-label { position:static; transform:none; width:100%; white-space:normal; }
+:is(.room,.ch6-stage) .door-hotspot > .hotspot-label { position:relative; transform:none; width:100%; }
 .door-hotspot .door-copy { display:flex; flex-direction:column; }
 .door-hotspot .door-copy strong { font-size:.8rem; }
 .door-hotspot .door-copy small { color:#ead4ab; font-size:.65rem; }
 .door-hotspot .door-arrow { color:#e6bc75; font-size:1.2rem; }
 @media(max-width:600px) {
-  .room .scene-hotspot > .hotspot-label { font-size:.7rem; padding:.4rem .6rem; }
-  .room .hotspot-path > .hotspot-label { padding-right:1rem; }
-  .room .hotspot-path-left > .hotspot-label { padding-left:1rem; padding-right:.6rem; }
+  :is(.room,.ch6-stage) .scene-hotspot > .hotspot-label { font-size:.7rem; padding:.4rem .6rem; }
+  :is(.room,.ch6-stage) .hotspot-path > .hotspot-label { padding-right:1rem; }
+  :is(.room,.ch6-stage) .hotspot-path-left > .hotspot-label { padding-left:1rem; padding-right:.6rem; }
 }
 
 /* One narrative continuation; utility actions remain a compact secondary group.
