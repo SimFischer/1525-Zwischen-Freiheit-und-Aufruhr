@@ -1,3 +1,4 @@
+import {openDossierExport} from './dossier-export.js';
 import {state} from './state.js';
 import {epilogueSources,epilogueBeats,sanitizeEpilogue} from '../data/epilogue.js';
 import {esc,button} from './ui.js';
@@ -19,12 +20,13 @@ export function epilogueView(){const e=model(),b=epilogueBeats[e.index],room=b.i
  else if(b.source)body=sourceView(b);
  else if(room)body=`<section class="ep-room"><div class="ep-room-art ch6-stage">${epilogueRoom()}</div><div class="ep-room-copy">${b.id==='personal'?'<p>Deine Antwort auf die Frage:</p><h1>Was heißt frei?</h1><p class="ep-answer">'+esc(state.chapter6.finalFreedomDefinition)+'</p>':b.id==='final'?'<h1>1525 – Zwischen Freiheit und Aufruhr</h1><h2>Was heißt frei?</h2><p>Eine Frage, die 1525 nicht endete.</p>':lines(b.text)}</div><small>Spielrekonstruktion · Reflexionsraum</small></section>`;
  else body='<section class="ep-text">'+lines(b.text)+'</section>';
- return `<main class="epilogue" data-beat="${b.id}" aria-label="Dokumentarischer Epilog"><div class="ep-content" data-ep-key="${b.id}">${body}</div><footer class="ep-controls">${e.finished?button('Zum Hauptmenü','home','class="quiet"')+button('Mein Urteil ansehen','ep-judgment','class="quiet"')+button('Epilog erneut ansehen','ep-replay','class="quiet"')+button('Quellen des Epilogs','ep-sources','class="quiet"'):button(e.paused?'Weiter ansehen':'Pause','ep-pause','class="quiet"')+button('Überspringen','ep-skip','class="quiet"')}${replay?'<span>Erneute Ansicht · unveränderter Spielstand</span>':''}</footer></main>`;
+ return `<main class="epilogue" data-beat="${b.id}" aria-label="Dokumentarischer Epilog"><div class="ep-content" data-ep-key="${b.id}">${body}</div>${e.finished?'<section class="ep-export" aria-label="Ergebnisse sichern"><h2>Ergebnisse sichern</h2>'+button('Theologisches Dossier herunterladen','ep-export-full')+button('Fachliche Zusammenfassung herunterladen','ep-export-summary')+'</section>':''}<footer class="ep-controls">${e.finished?button('Zum Hauptmenü','home','class="quiet"')+button('Mein Urteil ansehen','ep-judgment','class="quiet"')+button('Epilog erneut ansehen','ep-replay','class="quiet"')+button('Quellen des Epilogs','ep-sources','class="quiet"'):button(e.paused?'Weiter ansehen':'Pause','ep-pause','class="quiet"')+button('Überspringen','ep-skip','class="quiet"')}${replay?'<span>Erneute Ansicht · unveränderter Spielstand</span>':''}</footer></main>`;
 }
 function modal(html){const d=document.querySelector('#overlay');d.onclose=()=>syncEpilogue();d.innerHTML='<article class="ep-reader">'+button('Zurück zum Epilog','ep-close','class="quiet"')+html+'</article>';d.showModal();d.querySelector('button').focus();syncEpilogue();}
 export function epilogueAction(action,target){if(!action.startsWith('ep-'))return false;
  if(action==='ep-start'){if(beginEpilogue()){hooks.render();persist();}return true;}
  if(!epilogueActive())return true;const e=model();
+ if(action.startsWith('ep-export-')){if(e.finished)openDossierExport(action==='ep-export-summary'?'summary':'full',syncEpilogue);return true;}
  if(action==='ep-pause'){e.paused=!e.paused;persist();hooks.render();}
  if(action==='ep-skip'){e.index=epilogueBeats.length-1;e.elapsed=0;e.finished=false;e.paused=false;persist();hooks.render();}
  if(action==='ep-replay'){replay=sanitizeEpilogue(null);hooks.render();}

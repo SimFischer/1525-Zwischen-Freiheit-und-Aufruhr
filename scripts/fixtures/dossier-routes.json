@@ -1,0 +1,3396 @@
+[
+  {
+    "route": "A",
+    "decisions": {
+      "ch5First": null,
+      "ch5Dues": null,
+      "ch5Condition": "community_representation",
+      "ch5Counsel": null,
+      "ch5Prisoner": "hand_to_council",
+      "ch5Freedom": null,
+      "ch5Final": "negotiate_village_protection",
+      "ch4Authority": "legal",
+      "ch4Community": null,
+      "ch4Resistance": null,
+      "ch4Early": "tension",
+      "ch4Theology": "luther_order",
+      "ch4Condition": "services",
+      "ch4Band": null,
+      "ch4Weingarten": "support_negotiation",
+      "ch4Escalation": "protect",
+      "ch4Risk": "both",
+      "ch4HarshJudgment": "excessive",
+      "ch3Demand_labor": null,
+      "ch3Demand_rights": "B",
+      "ch3Demand_church": null,
+      "ch3EntryFocus": "rights",
+      "ch3Religion": "hermeneutical_caution",
+      "ch3Print": "full",
+      "ch3Resistance": "negotiate",
+      "ch3Reason": "burdens",
+      "initialFreedomInterpretation": "freedom_different_kind",
+      "freedomSocialFirstThought": "peter_god_first",
+      "freedomAndOuterLife": "D",
+      "forestResponse": "legal_basis",
+      "corveeSacrifice": "grain",
+      "corveeResponse": "delay",
+      "duesResponse": "question_basis",
+      "duesSecondSacrifice": "reserve",
+      "priorityGrievances": [
+        "forest"
+      ],
+      "playerDemand": "Wir fordern, dass die Regeln für bisherige Nutzungsrechte der Gemeinde verbindlich festgelegt werden und Änderungen vor der Gemeinde begründet werden müssen."
+    },
+    "chapter4": {
+      "openingWorldState": "nuanced",
+      "openingRoute": "A",
+      "authorityEncounter": "negotiation",
+      "authorityTone": "legal",
+      "communityAction": null,
+      "resistanceAction": null,
+      "theologicalPreparation": false,
+      "lutherLordsUnderstood": true,
+      "lutherFreedomJudgmentEarly": "tension",
+      "twoRegimentsCases": {
+        "preacher": {
+          "classification": "boundary",
+          "reasoning": "sphere"
+        },
+        "tax": {
+          "classification": "worldly",
+          "reasoning": "sphere"
+        },
+        "corvee": {
+          "classification": "both",
+          "reasoning": "sphere"
+        },
+        "command": {
+          "classification": "boundary",
+          "reasoning": "sphere"
+        },
+        "arrest": {
+          "classification": "both",
+          "reasoning": "sphere"
+        }
+      },
+      "regimentsIndex": 5,
+      "theologicalPath": "luther_order",
+      "branchOutcome": "negotiation_partial",
+      "unattendedMobilization": false,
+      "weingartenResponse": "support_negotiation",
+      "escalationResponse": "protect",
+      "centralRisk": "both",
+      "lutherHarshTextJudgment": "excessive",
+      "endWorldState": "negotiation_open",
+      "completed": true,
+      "stage": "chapter5",
+      "meansLimited": false,
+      "comparisonIndex": 4,
+      "selected": null,
+      "selections": {
+        "lords": [
+          "B",
+          "C"
+        ],
+        "peasants_complement": [
+          "B",
+          "D"
+        ],
+        "regiments_synthesis": [
+          "A",
+          "B",
+          "D"
+        ],
+        "structure": [
+          "A",
+          "B",
+          "D",
+          "E"
+        ]
+      },
+      "resolved": {
+        "lords": true,
+        "ch4Peasants": true,
+        "peasants_complement": true,
+        "regiments": true,
+        "ch4Boundary": true,
+        "ch4Comparison": true,
+        "structure": true
+      },
+      "attempts": {
+        "lords": 1,
+        "ch4Peasants": 1,
+        "peasants_complement": 1,
+        "regiments_synthesis": 1,
+        "ch4Boundary": 1,
+        "ch4Comparison": 1,
+        "structure": 1
+      },
+      "docRead": {
+        "ermahnung": true,
+        "lords": true,
+        "peasants": true,
+        "muentzer": true,
+        "weingarten": true,
+        "harsh": true,
+        "comparison": true
+      },
+      "seenDocuments": [
+        "ermahnung_closed",
+        "ermahnung_open",
+        "ermahnung_lords",
+        "ermahnung_peasants",
+        "muentzer_context_closed",
+        "muentzer_context_open",
+        "weingarten_report",
+        "harsh_text_closed",
+        "harsh_text_open",
+        "luther_comparison_frame"
+      ],
+      "communityConditions": [],
+      "hermeneuticalCriteria": [],
+      "preparationPairs": [],
+      "comparisonCriteria": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "caseReasons": {},
+      "caseFeedback": "",
+      "feedback": null,
+      "memoryRead": true,
+      "analysisRead": true,
+      "negotiationCondition": "services",
+      "bandAction": null,
+      "handoff": {
+        "endWorldState": "negotiation_open",
+        "theologicalPath": "luther_order",
+        "weingartenResponse": "support_negotiation",
+        "lutherHarshTextJudgment": "excessive",
+        "centralRisk": "both",
+        "branchOutcome": "negotiation_partial",
+        "orientation": {
+          "community": 2.5,
+          "legal": 9.5,
+          "resistance": 0,
+          "prudence": 4.5,
+          "theological": 4.5
+        },
+        "perceptions": {
+          "preacher": [],
+          "envoy": [],
+          "band1": [],
+          "band2": [],
+          "overseer": [
+            "seeks_negotiation"
+          ],
+          "lotzer": [
+            "theologically_reflective",
+            "reliable"
+          ],
+          "matthes": [],
+          "georg": [],
+          "katharina": [
+            "legally_argumentative"
+          ],
+          "hans": [],
+          "printer": [],
+          "peter": [
+            "values_order",
+            "distinguishes_regiments",
+            "seeks_negotiation",
+            "reconsiders_position",
+            "limits_violence",
+            "cautious",
+            "theologically_reflective"
+          ],
+          "anna": [
+            "theologically_reflective",
+            "community_minded"
+          ],
+          "jakob": [
+            "theologically_reflective"
+          ],
+          "margarethe": [
+            "legally_argumentative"
+          ],
+          "konrad": [],
+          "ulrich": [
+            "legally_argumentative",
+            "seeks_negotiation"
+          ]
+        },
+        "negotiationOpen": true,
+        "proximityToPeasantBand": false,
+        "unattendedMobilization": false,
+        "conditions": [],
+        "limitsViolence": false,
+        "priorDemand": "Wir fordern, dass die Regeln für bisherige Nutzungsrechte der Gemeinde verbindlich festgelegt werden und Änderungen vor der Gemeinde begründet werden müssen."
+      }
+    },
+    "chapter5": {
+      "openingPath": "negotiation",
+      "stage": "chapter6",
+      "firstAction": null,
+      "duesAction": null,
+      "negotiationCondition": "community_representation",
+      "theologicalCounsel": {},
+      "communityCounsel": null,
+      "polarizationAnalysis": {},
+      "violenceReportsAssessment": {
+        "certain": [
+          "groups",
+          "escalated",
+          "injured"
+        ],
+        "uncertain": [
+          "first",
+          "intent"
+        ]
+      },
+      "prisonerDecision": "hand_to_council",
+      "neighborLoveInterpretation": "B",
+      "religionFunctions": {
+        "strongest": [
+          "critique",
+          "limit"
+        ],
+        "dangerousWhenAbsolute": "legitimate"
+      },
+      "lutherTension": {
+        "helpful": "service",
+        "tension": "revolt"
+      },
+      "internalDebate": {
+        "strongestArgument": "peter",
+        "mostDangerousAbsolute": "konrad"
+      },
+      "finalAction": "negotiate_village_protection",
+      "outcomeProfile": {
+        "community": 5.5,
+        "legal": 11.5,
+        "resistance": 0,
+        "prudence": 4.5,
+        "theological": 4.5
+      },
+      "konradOutcome": "missing",
+      "negotiationOutcome": "partial_agreement",
+      "civilianOutcome": "many_protected",
+      "endWorldState": "civilians_protected",
+      "freedomAfterAction": null,
+      "openTheologicalQuestion": "luther_freedom_tension",
+      "recap": {
+        "phase": "closing",
+        "index": 0,
+        "elapsed": 0,
+        "paused": false
+      },
+      "completed": true,
+      "step": 0,
+      "phase": "",
+      "selections": [],
+      "attempts": {
+        "ch5Neighbor": 1
+      },
+      "resolved": {
+        "ch5Neighbor": true
+      },
+      "feedback": null,
+      "supplyAction": null,
+      "limitsViolence": false,
+      "reportAnswers": {
+        "groups": "certain",
+        "escalated": "certain",
+        "injured": "certain",
+        "first": "uncertain",
+        "intent": "uncertain"
+      },
+      "handoff": {
+        "initialFreedomInterpretation": "freedom_different_kind",
+        "openTheologicalQuestion": "luther_freedom_tension",
+        "orientation": {
+          "community": 5.5,
+          "legal": 11.5,
+          "resistance": 0,
+          "prudence": 4.5,
+          "theological": 4.5
+        },
+        "perceptions": {
+          "preacher": [],
+          "envoy": [],
+          "band1": [],
+          "band2": [],
+          "overseer": [
+            "seeks_negotiation"
+          ],
+          "lotzer": [
+            "theologically_reflective",
+            "reliable"
+          ],
+          "matthes": [],
+          "georg": [],
+          "katharina": [
+            "legally_argumentative"
+          ],
+          "hans": [],
+          "printer": [],
+          "peter": [
+            "legally_argumentative",
+            "seeks_negotiation",
+            "values_order",
+            "distinguishes_regiments",
+            "reconsiders_position",
+            "limits_violence",
+            "cautious",
+            "theologically_reflective"
+          ],
+          "anna": [
+            "community_minded",
+            "theologically_reflective"
+          ],
+          "jakob": [
+            "theologically_reflective"
+          ],
+          "margarethe": [
+            "legally_argumentative"
+          ],
+          "konrad": [],
+          "ulrich": [
+            "legally_argumentative",
+            "seeks_negotiation"
+          ]
+        },
+        "chapter2": {
+          "forestComplete": true,
+          "corveeComplete": true,
+          "duesComplete": true,
+          "assemblyUnlocked": true,
+          "assemblyComplete": true,
+          "stage": "chapter-ending",
+          "grain": {
+            "sack-0": "dues",
+            "sack-1": "dues",
+            "sack-2": "dues",
+            "sack-3": "food",
+            "sack-4": "food",
+            "sack-5": "seed",
+            "sack-6": "seed",
+            "sack-7": "seed",
+            "sack-8": "dues",
+            "sack-9": "reserve"
+          },
+          "links": [
+            {
+              "key": "dues:forest",
+              "a": "forest",
+              "b": "dues",
+              "reason": "voice"
+            },
+            {
+              "key": "corvee:dues",
+              "a": "corvee",
+              "b": "dues",
+              "reason": "voice"
+            },
+            {
+              "key": "bondage:movement",
+              "a": "bondage",
+              "b": "movement",
+              "reason": "voice"
+            }
+          ],
+          "pair": [],
+          "selections": [],
+          "demand": {
+            "subject": 0,
+            "rule": 0,
+            "voice": 1
+          },
+          "removed": [
+            {
+              "id": "sack-0",
+              "from": "food"
+            },
+            {
+              "id": "sack-1",
+              "from": "food"
+            },
+            {
+              "id": "sack-2",
+              "from": "food"
+            }
+          ],
+          "selected": null,
+          "linkAttempts": 0,
+          "linkHint": "Beide Beschwerden betreffen Herrschaft / Mitsprache. Was verbindet die anderen Beschwerden?"
+        },
+        "choices": {
+          "initialFreedomInterpretation": "freedom_different_kind",
+          "freedomSocialFirstThought": "peter_god_first",
+          "freedomAndOuterLife": "D",
+          "forestArgument": "A",
+          "forestResponse": "legal_basis",
+          "peterDayPlan": [
+            "grain",
+            "fence",
+            "feed"
+          ],
+          "corveeSacrifice": "grain",
+          "corveeResponse": "delay",
+          "initialFarmPlan": {
+            "food": 5,
+            "seed": 3,
+            "reserve": 2
+          },
+          "duesFirstSacrifice": [
+            "food",
+            "food",
+            "food"
+          ],
+          "duesResponse": "question_basis",
+          "duesSecondSacrifice": "reserve",
+          "priorityGrievances": [
+            "forest"
+          ],
+          "lutherPoliticalInference": "B",
+          "playerDemand": "Wir fordern, dass die Regeln für bisherige Nutzungsrechte der Gemeinde verbindlich festgelegt werden und Änderungen vor der Gemeinde begründet werden müssen.",
+          "serviceBoundary": "B",
+          "obedienceBoundary": "B",
+          "freedomComparison": "D",
+          "innerConsolidation": "A",
+          "politicalConsolidation": "A",
+          "forestConflict": "B",
+          "corveeDefinition": "B",
+          "assemblyConnection": "B",
+          "forestDemand": "B",
+          "corveeDemand": "A",
+          "duesDemand": "A",
+          "ch3EntryFocus": "rights",
+          "ch3Demand_rights": "B",
+          "ch3Religion": "hermeneutical_caution",
+          "ch3Print": "full",
+          "ch3Resistance": "negotiate",
+          "ch3Reason": "burdens",
+          "ch4Authority": "legal",
+          "ch4Peasants": "A",
+          "ch4Early": "tension",
+          "ch4Boundary": "A",
+          "ch4Theology": "luther_order",
+          "ch4Condition": "services",
+          "ch4Weingarten": "support_negotiation",
+          "ch4Escalation": "protect",
+          "ch4Comparison": "B",
+          "ch4Risk": "both",
+          "ch4HarshJudgment": "excessive",
+          "ch5Condition": "community_representation",
+          "ch5Prisoner": "hand_to_council",
+          "ch5Neighbor": "B",
+          "ch5Final": "negotiate_village_protection"
+        },
+        "grievances": {
+          "forest": [
+            "rights"
+          ],
+          "corvee": [
+            "time"
+          ],
+          "dues": [
+            "supply"
+          ]
+        },
+        "chapter3": {
+          "entryFocus": "rights",
+          "complaintClusters": [
+            {
+              "cards": [
+                "0",
+                "6"
+              ],
+              "reason": "dependence"
+            },
+            {
+              "cards": [
+                "1",
+                "4",
+                "5"
+              ],
+              "reason": "rights"
+            }
+          ],
+          "demandChoice": "B",
+          "articleComparison": {
+            "common": "Zugang zu gemeinschaftlichen Nutzungen sichern",
+            "differences": "Die Artikel begründen ihr gemeinsames Programm ausdrücklich mit dem Evangelium."
+          },
+          "religiousInterpretation": "hermeneutical_caution",
+          "printStrategy": "full",
+          "publicTone": "nuanced",
+          "resistanceStrategy": "negotiate",
+          "mainReason": "burdens",
+          "completed": true,
+          "pair": [],
+          "interpretations": [
+            "B",
+            "C"
+          ],
+          "printPhase": "done",
+          "printSequenceVersion": 2,
+          "printed": 4,
+          "selected": null,
+          "seenArticles": [
+            5,
+            3,
+            12
+          ],
+          "priorProfile": {
+            "community": 0,
+            "legal": 2.5,
+            "resistance": 0,
+            "prudence": 0.5,
+            "theological": 2
+          },
+          "stage": "chapter4",
+          "clusterFeedback": "Diese Verbindung lässt sich begründen: Überlieferte Nutzungsrechte. Prüfe jetzt, welche konkrete Forderung mehrere Gemeinden darin wiedererkennen könnten.",
+          "pressed": false
+        },
+        "chapter4": {
+          "openingWorldState": "nuanced",
+          "openingRoute": "A",
+          "authorityEncounter": "negotiation",
+          "authorityTone": "legal",
+          "communityAction": null,
+          "resistanceAction": null,
+          "theologicalPreparation": false,
+          "lutherLordsUnderstood": true,
+          "lutherFreedomJudgmentEarly": "tension",
+          "twoRegimentsCases": {
+            "preacher": {
+              "classification": "boundary",
+              "reasoning": "sphere"
+            },
+            "tax": {
+              "classification": "worldly",
+              "reasoning": "sphere"
+            },
+            "corvee": {
+              "classification": "both",
+              "reasoning": "sphere"
+            },
+            "command": {
+              "classification": "boundary",
+              "reasoning": "sphere"
+            },
+            "arrest": {
+              "classification": "both",
+              "reasoning": "sphere"
+            }
+          },
+          "regimentsIndex": 5,
+          "theologicalPath": "luther_order",
+          "branchOutcome": "negotiation_partial",
+          "unattendedMobilization": false,
+          "weingartenResponse": "support_negotiation",
+          "escalationResponse": "protect",
+          "centralRisk": "both",
+          "lutherHarshTextJudgment": "excessive",
+          "endWorldState": "negotiation_open",
+          "completed": true,
+          "stage": "chapter5",
+          "meansLimited": false,
+          "comparisonIndex": 4,
+          "selected": null,
+          "selections": {
+            "lords": [
+              "B",
+              "C"
+            ],
+            "peasants_complement": [
+              "B",
+              "D"
+            ],
+            "regiments_synthesis": [
+              "A",
+              "B",
+              "D"
+            ],
+            "structure": [
+              "A",
+              "B",
+              "D",
+              "E"
+            ]
+          },
+          "resolved": {
+            "lords": true,
+            "ch4Peasants": true,
+            "peasants_complement": true,
+            "regiments": true,
+            "ch4Boundary": true,
+            "ch4Comparison": true,
+            "structure": true
+          },
+          "attempts": {
+            "lords": 1,
+            "ch4Peasants": 1,
+            "peasants_complement": 1,
+            "regiments_synthesis": 1,
+            "ch4Boundary": 1,
+            "ch4Comparison": 1,
+            "structure": 1
+          },
+          "docRead": {
+            "ermahnung": true,
+            "lords": true,
+            "peasants": true,
+            "muentzer": true,
+            "weingarten": true,
+            "harsh": true,
+            "comparison": true
+          },
+          "seenDocuments": [
+            "ermahnung_closed",
+            "ermahnung_open",
+            "ermahnung_lords",
+            "ermahnung_peasants",
+            "muentzer_context_closed",
+            "muentzer_context_open",
+            "weingarten_report",
+            "harsh_text_closed",
+            "harsh_text_open",
+            "luther_comparison_frame"
+          ],
+          "communityConditions": [],
+          "hermeneuticalCriteria": [],
+          "preparationPairs": [],
+          "comparisonCriteria": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "caseReasons": {},
+          "caseFeedback": "",
+          "feedback": null,
+          "memoryRead": true,
+          "analysisRead": true,
+          "negotiationCondition": "services",
+          "bandAction": null,
+          "handoff": {
+            "endWorldState": "negotiation_open",
+            "theologicalPath": "luther_order",
+            "weingartenResponse": "support_negotiation",
+            "lutherHarshTextJudgment": "excessive",
+            "centralRisk": "both",
+            "branchOutcome": "negotiation_partial",
+            "orientation": {
+              "community": 2.5,
+              "legal": 9.5,
+              "resistance": 0,
+              "prudence": 4.5,
+              "theological": 4.5
+            },
+            "perceptions": {
+              "preacher": [],
+              "envoy": [],
+              "band1": [],
+              "band2": [],
+              "overseer": [
+                "seeks_negotiation"
+              ],
+              "lotzer": [
+                "theologically_reflective",
+                "reliable"
+              ],
+              "matthes": [],
+              "georg": [],
+              "katharina": [
+                "legally_argumentative"
+              ],
+              "hans": [],
+              "printer": [],
+              "peter": [
+                "values_order",
+                "distinguishes_regiments",
+                "seeks_negotiation",
+                "reconsiders_position",
+                "limits_violence",
+                "cautious",
+                "theologically_reflective"
+              ],
+              "anna": [
+                "theologically_reflective",
+                "community_minded"
+              ],
+              "jakob": [
+                "theologically_reflective"
+              ],
+              "margarethe": [
+                "legally_argumentative"
+              ],
+              "konrad": [],
+              "ulrich": [
+                "legally_argumentative",
+                "seeks_negotiation"
+              ]
+            },
+            "negotiationOpen": true,
+            "proximityToPeasantBand": false,
+            "unattendedMobilization": false,
+            "conditions": [],
+            "limitsViolence": false,
+            "priorDemand": "Wir fordern, dass die Regeln für bisherige Nutzungsrechte der Gemeinde verbindlich festgelegt werden und Änderungen vor der Gemeinde begründet werden müssen."
+          }
+        },
+        "chapter5": {
+          "openingPath": "negotiation",
+          "stage": "chapter6",
+          "firstAction": null,
+          "duesAction": null,
+          "negotiationCondition": "community_representation",
+          "theologicalCounsel": {},
+          "communityCounsel": null,
+          "polarizationAnalysis": {},
+          "violenceReportsAssessment": {
+            "certain": [
+              "groups",
+              "escalated",
+              "injured"
+            ],
+            "uncertain": [
+              "first",
+              "intent"
+            ]
+          },
+          "prisonerDecision": "hand_to_council",
+          "neighborLoveInterpretation": "B",
+          "religionFunctions": {
+            "strongest": [
+              "critique",
+              "limit"
+            ],
+            "dangerousWhenAbsolute": "legitimate"
+          },
+          "lutherTension": {
+            "helpful": "service",
+            "tension": "revolt"
+          },
+          "internalDebate": {
+            "strongestArgument": "peter",
+            "mostDangerousAbsolute": "konrad"
+          },
+          "finalAction": "negotiate_village_protection",
+          "outcomeProfile": {
+            "community": 5.5,
+            "legal": 11.5,
+            "resistance": 0,
+            "prudence": 4.5,
+            "theological": 4.5
+          },
+          "konradOutcome": "missing",
+          "negotiationOutcome": "partial_agreement",
+          "civilianOutcome": "many_protected",
+          "endWorldState": "civilians_protected",
+          "freedomAfterAction": null,
+          "openTheologicalQuestion": "luther_freedom_tension",
+          "recap": {
+            "phase": "closing",
+            "index": 0,
+            "elapsed": 0,
+            "paused": false
+          },
+          "completed": true,
+          "step": 0,
+          "phase": "",
+          "selections": [],
+          "attempts": {
+            "ch5Neighbor": 1
+          },
+          "resolved": {
+            "ch5Neighbor": true
+          },
+          "feedback": null,
+          "supplyAction": null,
+          "limitsViolence": false,
+          "reportAnswers": {
+            "groups": "certain",
+            "escalated": "certain",
+            "injured": "certain",
+            "first": "uncertain",
+            "intent": "uncertain"
+          },
+          "handoff": null
+        }
+      }
+    },
+    "chapter3": {
+      "religiousInterpretation": "hermeneutical_caution",
+      "printStrategy": "full",
+      "resistanceStrategy": "negotiate"
+    }
+  },
+  {
+    "route": "B",
+    "decisions": {
+      "ch5First": null,
+      "ch5Dues": null,
+      "ch5Condition": null,
+      "ch5Counsel": "protect_people",
+      "ch5Prisoner": "protect_detention",
+      "ch5Freedom": null,
+      "ch5Final": "protect_people",
+      "ch4Authority": null,
+      "ch4Community": "withhold_dues",
+      "ch4Resistance": null,
+      "ch4Early": "tension",
+      "ch4Theology": "gospel_critique",
+      "ch4Condition": null,
+      "ch4Band": null,
+      "ch4Weingarten": "conditional_negotiation",
+      "ch4Escalation": "warn",
+      "ch4Risk": "unjust_order",
+      "ch4HarshJudgment": "contradictory",
+      "ch3Demand_labor": null,
+      "ch3Demand_rights": null,
+      "ch3Demand_church": "A",
+      "ch3EntryFocus": "church",
+      "ch3Religion": "critical_gospel",
+      "ch3Print": "summary",
+      "ch3Resistance": "collective_pressure",
+      "ch3Reason": "burdens",
+      "initialFreedomInterpretation": "freedom_responsibility",
+      "freedomSocialFirstThought": "peter_uncertain",
+      "freedomAndOuterLife": "D",
+      "forestResponse": "community",
+      "corveeSacrifice": "grain",
+      "corveeResponse": "substitute",
+      "duesResponse": "delay",
+      "duesSecondSacrifice": "food",
+      "priorityGrievances": [
+        "dues"
+      ],
+      "playerDemand": "Wir fordern, dass die Regeln für Höhe und Änderungen der Abgaben an den Bedürfnissen und Rechten der Betroffenen gemessen werden und die Gemeinde dabei mitentscheiden kann."
+    },
+    "chapter4": {
+      "openingWorldState": "simplified",
+      "openingRoute": "B",
+      "authorityEncounter": null,
+      "authorityTone": null,
+      "communityAction": "withhold_dues",
+      "resistanceAction": null,
+      "theologicalPreparation": false,
+      "lutherLordsUnderstood": true,
+      "lutherFreedomJudgmentEarly": "tension",
+      "twoRegimentsCases": {
+        "preacher": {
+          "classification": "boundary",
+          "reasoning": "sphere"
+        },
+        "tax": {
+          "classification": "worldly",
+          "reasoning": "sphere"
+        },
+        "corvee": {
+          "classification": "both",
+          "reasoning": "sphere"
+        },
+        "command": {
+          "classification": "boundary",
+          "reasoning": "sphere"
+        },
+        "arrest": {
+          "classification": "both",
+          "reasoning": "sphere"
+        }
+      },
+      "regimentsIndex": 5,
+      "theologicalPath": "gospel_critique",
+      "branchOutcome": "community_conditions",
+      "unattendedMobilization": false,
+      "weingartenResponse": "conditional_negotiation",
+      "escalationResponse": "warn",
+      "centralRisk": "unjust_order",
+      "lutherHarshTextJudgment": "contradictory",
+      "endWorldState": "mobilized_community",
+      "completed": true,
+      "stage": "chapter5",
+      "meansLimited": false,
+      "comparisonIndex": 4,
+      "selected": null,
+      "selections": {
+        "lords": [
+          "B",
+          "C"
+        ],
+        "peasants_complement": [
+          "B",
+          "D"
+        ],
+        "regiments_synthesis": [
+          "A",
+          "B",
+          "D"
+        ],
+        "conditions": [
+          "services",
+          "voice"
+        ],
+        "structure": [
+          "A",
+          "B",
+          "D",
+          "E"
+        ]
+      },
+      "resolved": {
+        "lords": true,
+        "ch4Peasants": true,
+        "peasants_complement": true,
+        "regiments": true,
+        "ch4Boundary": true,
+        "ch4Comparison": true,
+        "structure": true
+      },
+      "attempts": {
+        "lords": 1,
+        "ch4Peasants": 1,
+        "peasants_complement": 1,
+        "regiments_synthesis": 1,
+        "ch4Boundary": 1,
+        "ch4Comparison": 1,
+        "structure": 1
+      },
+      "docRead": {
+        "ermahnung": true,
+        "lords": true,
+        "peasants": true,
+        "muentzer": true,
+        "weingarten": true,
+        "harsh": true,
+        "comparison": true
+      },
+      "seenDocuments": [
+        "ermahnung_closed",
+        "ermahnung_open",
+        "ermahnung_lords",
+        "ermahnung_peasants",
+        "muentzer_context_closed",
+        "muentzer_context_open",
+        "weingarten_report",
+        "harsh_text_closed",
+        "harsh_text_open",
+        "luther_comparison_frame"
+      ],
+      "communityConditions": [
+        "services",
+        "voice"
+      ],
+      "hermeneuticalCriteria": [],
+      "preparationPairs": [],
+      "comparisonCriteria": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "caseReasons": {},
+      "caseFeedback": "",
+      "feedback": null,
+      "memoryRead": true,
+      "analysisRead": false,
+      "negotiationCondition": null,
+      "bandAction": null,
+      "handoff": {
+        "endWorldState": "mobilized_community",
+        "theologicalPath": "gospel_critique",
+        "weingartenResponse": "conditional_negotiation",
+        "lutherHarshTextJudgment": "contradictory",
+        "centralRisk": "unjust_order",
+        "branchOutcome": "community_conditions",
+        "orientation": {
+          "community": 7,
+          "legal": 2.5,
+          "resistance": 2,
+          "prudence": 3.5,
+          "theological": 4.5
+        },
+        "perceptions": {
+          "preacher": [],
+          "envoy": [],
+          "band1": [],
+          "band2": [],
+          "overseer": [],
+          "lotzer": [
+            "legally_argumentative"
+          ],
+          "matthes": [
+            "community_minded"
+          ],
+          "georg": [],
+          "katharina": [],
+          "hans": [
+            "theologically_reflective"
+          ],
+          "printer": [],
+          "peter": [
+            "builds_collective_pressure",
+            "theologically_reflective",
+            "cautious",
+            "community_minded"
+          ],
+          "anna": [
+            "theologically_reflective",
+            "argues_from_gospel",
+            "questions_authority",
+            "builds_collective_pressure",
+            "community_minded"
+          ],
+          "jakob": [],
+          "margarethe": [
+            "seeks_negotiation"
+          ],
+          "konrad": [
+            "theologically_reflective"
+          ],
+          "ulrich": []
+        },
+        "negotiationOpen": false,
+        "proximityToPeasantBand": false,
+        "unattendedMobilization": false,
+        "conditions": [
+          "services",
+          "voice"
+        ],
+        "limitsViolence": false,
+        "priorDemand": "Wir fordern, dass die Regeln für Höhe und Änderungen der Abgaben an den Bedürfnissen und Rechten der Betroffenen gemessen werden und die Gemeinde dabei mitentscheiden kann."
+      }
+    },
+    "chapter5": {
+      "openingPath": "theological_council",
+      "stage": "chapter6",
+      "firstAction": null,
+      "duesAction": null,
+      "negotiationCondition": null,
+      "theologicalCounsel": {
+        "order": {
+          "help": "help",
+          "limit": "limit"
+        },
+        "god": {
+          "help": "help",
+          "limit": "limit"
+        },
+        "love": {
+          "help": "help",
+          "limit": "limit"
+        },
+        "certainty": {
+          "help": "help",
+          "limit": "limit"
+        }
+      },
+      "communityCounsel": "protect_people",
+      "polarizationAnalysis": {},
+      "violenceReportsAssessment": {
+        "certain": [
+          "groups",
+          "escalated",
+          "injured"
+        ],
+        "uncertain": [
+          "first",
+          "intent"
+        ]
+      },
+      "prisonerDecision": "protect_detention",
+      "neighborLoveInterpretation": "B",
+      "religionFunctions": {
+        "strongest": [
+          "critique",
+          "limit"
+        ],
+        "dangerousWhenAbsolute": "legitimate"
+      },
+      "lutherTension": {
+        "helpful": "service",
+        "tension": "revolt"
+      },
+      "internalDebate": {
+        "strongestArgument": "peter",
+        "mostDangerousAbsolute": "konrad"
+      },
+      "finalAction": "protect_people",
+      "outcomeProfile": {
+        "community": 11,
+        "legal": 2.5,
+        "resistance": 2,
+        "prudence": 4.5,
+        "theological": 4.5
+      },
+      "konradOutcome": "safe",
+      "negotiationOutcome": "open",
+      "civilianOutcome": "many_protected",
+      "endWorldState": "civilians_protected",
+      "freedomAfterAction": null,
+      "openTheologicalQuestion": "luther_freedom_tension",
+      "recap": {
+        "phase": "closing",
+        "index": 0,
+        "elapsed": 0,
+        "paused": false
+      },
+      "completed": true,
+      "step": 0,
+      "phase": "",
+      "selections": [],
+      "attempts": {
+        "ch5Neighbor": 1
+      },
+      "resolved": {
+        "ch5Neighbor": true
+      },
+      "feedback": null,
+      "supplyAction": null,
+      "limitsViolence": false,
+      "reportAnswers": {
+        "groups": "certain",
+        "escalated": "certain",
+        "injured": "certain",
+        "first": "uncertain",
+        "intent": "uncertain"
+      },
+      "handoff": {
+        "initialFreedomInterpretation": "freedom_responsibility",
+        "openTheologicalQuestion": "luther_freedom_tension",
+        "orientation": {
+          "community": 11,
+          "legal": 2.5,
+          "resistance": 2,
+          "prudence": 4.5,
+          "theological": 4.5
+        },
+        "perceptions": {
+          "preacher": [],
+          "envoy": [],
+          "band1": [],
+          "band2": [],
+          "overseer": [],
+          "lotzer": [
+            "legally_argumentative"
+          ],
+          "matthes": [
+            "community_minded"
+          ],
+          "georg": [],
+          "katharina": [],
+          "hans": [
+            "theologically_reflective"
+          ],
+          "printer": [],
+          "peter": [
+            "builds_collective_pressure",
+            "theologically_reflective",
+            "cautious",
+            "community_minded"
+          ],
+          "anna": [
+            "community_minded",
+            "reliable",
+            "theologically_reflective",
+            "argues_from_gospel",
+            "questions_authority",
+            "builds_collective_pressure"
+          ],
+          "jakob": [],
+          "margarethe": [
+            "seeks_negotiation"
+          ],
+          "konrad": [
+            "theologically_reflective"
+          ],
+          "ulrich": []
+        },
+        "chapter2": {
+          "forestComplete": true,
+          "corveeComplete": true,
+          "duesComplete": true,
+          "assemblyUnlocked": true,
+          "assemblyComplete": true,
+          "stage": "chapter-ending",
+          "grain": {
+            "sack-0": "dues",
+            "sack-1": "dues",
+            "sack-2": "dues",
+            "sack-3": "dues",
+            "sack-4": "food",
+            "sack-5": "seed",
+            "sack-6": "seed",
+            "sack-7": "seed",
+            "sack-8": "reserve",
+            "sack-9": "reserve"
+          },
+          "links": [
+            {
+              "key": "dues:forest",
+              "a": "forest",
+              "b": "dues",
+              "reason": "voice"
+            },
+            {
+              "key": "corvee:dues",
+              "a": "corvee",
+              "b": "dues",
+              "reason": "voice"
+            },
+            {
+              "key": "bondage:movement",
+              "a": "bondage",
+              "b": "movement",
+              "reason": "voice"
+            }
+          ],
+          "pair": [],
+          "selections": [],
+          "demand": {
+            "subject": 2,
+            "rule": 1,
+            "voice": 0
+          },
+          "removed": [
+            {
+              "id": "sack-0",
+              "from": "food"
+            },
+            {
+              "id": "sack-1",
+              "from": "food"
+            },
+            {
+              "id": "sack-2",
+              "from": "food"
+            }
+          ],
+          "selected": null,
+          "linkAttempts": 0,
+          "linkHint": "Beide Beschwerden betreffen Herrschaft / Mitsprache. Was verbindet die anderen Beschwerden?"
+        },
+        "choices": {
+          "initialFreedomInterpretation": "freedom_responsibility",
+          "freedomSocialFirstThought": "peter_uncertain",
+          "freedomAndOuterLife": "D",
+          "forestArgument": "A",
+          "forestResponse": "community",
+          "peterDayPlan": [
+            "grain",
+            "fence",
+            "feed"
+          ],
+          "corveeSacrifice": "grain",
+          "corveeResponse": "substitute",
+          "initialFarmPlan": {
+            "food": 5,
+            "seed": 3,
+            "reserve": 2
+          },
+          "duesFirstSacrifice": [
+            "food",
+            "food",
+            "food"
+          ],
+          "duesResponse": "delay",
+          "duesSecondSacrifice": "food",
+          "priorityGrievances": [
+            "dues"
+          ],
+          "lutherPoliticalInference": "B",
+          "playerDemand": "Wir fordern, dass die Regeln für Höhe und Änderungen der Abgaben an den Bedürfnissen und Rechten der Betroffenen gemessen werden und die Gemeinde dabei mitentscheiden kann.",
+          "serviceBoundary": "B",
+          "obedienceBoundary": "B",
+          "freedomComparison": "D",
+          "innerConsolidation": "A",
+          "politicalConsolidation": "A",
+          "corveeDefinition": "B",
+          "forestConflict": "B",
+          "assemblyConnection": "B",
+          "forestDemand": "B",
+          "corveeDemand": "A",
+          "duesDemand": "A",
+          "ch3EntryFocus": "church",
+          "ch3Demand_church": "A",
+          "ch3Religion": "critical_gospel",
+          "ch3Print": "summary",
+          "ch3Resistance": "collective_pressure",
+          "ch3Reason": "burdens",
+          "ch4Community": "withhold_dues",
+          "ch4Peasants": "A",
+          "ch4Early": "tension",
+          "ch4Boundary": "A",
+          "ch4Theology": "gospel_critique",
+          "ch4Weingarten": "conditional_negotiation",
+          "ch4Escalation": "warn",
+          "ch4Comparison": "B",
+          "ch4Risk": "unjust_order",
+          "ch4HarshJudgment": "contradictory",
+          "ch5Counsel": "protect_people",
+          "ch5Prisoner": "protect_detention",
+          "ch5Neighbor": "B",
+          "ch5Final": "protect_people"
+        },
+        "grievances": {
+          "forest": [
+            "rights"
+          ],
+          "corvee": [
+            "time"
+          ],
+          "dues": [
+            "supply"
+          ]
+        },
+        "chapter3": {
+          "entryFocus": "church",
+          "complaintClusters": [
+            {
+              "cards": [
+                "0",
+                "6"
+              ],
+              "reason": "dependence"
+            },
+            {
+              "cards": [
+                "1",
+                "4",
+                "5"
+              ],
+              "reason": "rights"
+            }
+          ],
+          "demandChoice": "A",
+          "articleComparison": {
+            "common": "Einfluss der Gemeinde auf die Predigt stärken",
+            "differences": "Die Artikel begründen ihr gemeinsames Programm ausdrücklich mit dem Evangelium."
+          },
+          "religiousInterpretation": "critical_gospel",
+          "printStrategy": "summary",
+          "publicTone": "simplified",
+          "resistanceStrategy": "collective_pressure",
+          "mainReason": "burdens",
+          "completed": true,
+          "pair": [],
+          "interpretations": [
+            "B",
+            "C"
+          ],
+          "printPhase": "done",
+          "printSequenceVersion": 2,
+          "printed": 4,
+          "selected": null,
+          "seenArticles": [
+            1,
+            3,
+            12
+          ],
+          "priorProfile": {
+            "community": 2.5,
+            "legal": 0.5,
+            "resistance": 0,
+            "prudence": 1.5,
+            "theological": 1
+          },
+          "stage": "chapter4",
+          "clusterFeedback": "Diese Verbindung lässt sich begründen: Überlieferte Nutzungsrechte. Prüfe jetzt, welche konkrete Forderung mehrere Gemeinden darin wiedererkennen könnten.",
+          "pressed": false
+        },
+        "chapter4": {
+          "openingWorldState": "simplified",
+          "openingRoute": "B",
+          "authorityEncounter": null,
+          "authorityTone": null,
+          "communityAction": "withhold_dues",
+          "resistanceAction": null,
+          "theologicalPreparation": false,
+          "lutherLordsUnderstood": true,
+          "lutherFreedomJudgmentEarly": "tension",
+          "twoRegimentsCases": {
+            "preacher": {
+              "classification": "boundary",
+              "reasoning": "sphere"
+            },
+            "tax": {
+              "classification": "worldly",
+              "reasoning": "sphere"
+            },
+            "corvee": {
+              "classification": "both",
+              "reasoning": "sphere"
+            },
+            "command": {
+              "classification": "boundary",
+              "reasoning": "sphere"
+            },
+            "arrest": {
+              "classification": "both",
+              "reasoning": "sphere"
+            }
+          },
+          "regimentsIndex": 5,
+          "theologicalPath": "gospel_critique",
+          "branchOutcome": "community_conditions",
+          "unattendedMobilization": false,
+          "weingartenResponse": "conditional_negotiation",
+          "escalationResponse": "warn",
+          "centralRisk": "unjust_order",
+          "lutherHarshTextJudgment": "contradictory",
+          "endWorldState": "mobilized_community",
+          "completed": true,
+          "stage": "chapter5",
+          "meansLimited": false,
+          "comparisonIndex": 4,
+          "selected": null,
+          "selections": {
+            "lords": [
+              "B",
+              "C"
+            ],
+            "peasants_complement": [
+              "B",
+              "D"
+            ],
+            "regiments_synthesis": [
+              "A",
+              "B",
+              "D"
+            ],
+            "conditions": [
+              "services",
+              "voice"
+            ],
+            "structure": [
+              "A",
+              "B",
+              "D",
+              "E"
+            ]
+          },
+          "resolved": {
+            "lords": true,
+            "ch4Peasants": true,
+            "peasants_complement": true,
+            "regiments": true,
+            "ch4Boundary": true,
+            "ch4Comparison": true,
+            "structure": true
+          },
+          "attempts": {
+            "lords": 1,
+            "ch4Peasants": 1,
+            "peasants_complement": 1,
+            "regiments_synthesis": 1,
+            "ch4Boundary": 1,
+            "ch4Comparison": 1,
+            "structure": 1
+          },
+          "docRead": {
+            "ermahnung": true,
+            "lords": true,
+            "peasants": true,
+            "muentzer": true,
+            "weingarten": true,
+            "harsh": true,
+            "comparison": true
+          },
+          "seenDocuments": [
+            "ermahnung_closed",
+            "ermahnung_open",
+            "ermahnung_lords",
+            "ermahnung_peasants",
+            "muentzer_context_closed",
+            "muentzer_context_open",
+            "weingarten_report",
+            "harsh_text_closed",
+            "harsh_text_open",
+            "luther_comparison_frame"
+          ],
+          "communityConditions": [
+            "services",
+            "voice"
+          ],
+          "hermeneuticalCriteria": [],
+          "preparationPairs": [],
+          "comparisonCriteria": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "caseReasons": {},
+          "caseFeedback": "",
+          "feedback": null,
+          "memoryRead": true,
+          "analysisRead": false,
+          "negotiationCondition": null,
+          "bandAction": null,
+          "handoff": {
+            "endWorldState": "mobilized_community",
+            "theologicalPath": "gospel_critique",
+            "weingartenResponse": "conditional_negotiation",
+            "lutherHarshTextJudgment": "contradictory",
+            "centralRisk": "unjust_order",
+            "branchOutcome": "community_conditions",
+            "orientation": {
+              "community": 7,
+              "legal": 2.5,
+              "resistance": 2,
+              "prudence": 3.5,
+              "theological": 4.5
+            },
+            "perceptions": {
+              "preacher": [],
+              "envoy": [],
+              "band1": [],
+              "band2": [],
+              "overseer": [],
+              "lotzer": [
+                "legally_argumentative"
+              ],
+              "matthes": [
+                "community_minded"
+              ],
+              "georg": [],
+              "katharina": [],
+              "hans": [
+                "theologically_reflective"
+              ],
+              "printer": [],
+              "peter": [
+                "builds_collective_pressure",
+                "theologically_reflective",
+                "cautious",
+                "community_minded"
+              ],
+              "anna": [
+                "theologically_reflective",
+                "argues_from_gospel",
+                "questions_authority",
+                "builds_collective_pressure",
+                "community_minded"
+              ],
+              "jakob": [],
+              "margarethe": [
+                "seeks_negotiation"
+              ],
+              "konrad": [
+                "theologically_reflective"
+              ],
+              "ulrich": []
+            },
+            "negotiationOpen": false,
+            "proximityToPeasantBand": false,
+            "unattendedMobilization": false,
+            "conditions": [
+              "services",
+              "voice"
+            ],
+            "limitsViolence": false,
+            "priorDemand": "Wir fordern, dass die Regeln für Höhe und Änderungen der Abgaben an den Bedürfnissen und Rechten der Betroffenen gemessen werden und die Gemeinde dabei mitentscheiden kann."
+          }
+        },
+        "chapter5": {
+          "openingPath": "theological_council",
+          "stage": "chapter6",
+          "firstAction": null,
+          "duesAction": null,
+          "negotiationCondition": null,
+          "theologicalCounsel": {
+            "order": {
+              "help": "help",
+              "limit": "limit"
+            },
+            "god": {
+              "help": "help",
+              "limit": "limit"
+            },
+            "love": {
+              "help": "help",
+              "limit": "limit"
+            },
+            "certainty": {
+              "help": "help",
+              "limit": "limit"
+            }
+          },
+          "communityCounsel": "protect_people",
+          "polarizationAnalysis": {},
+          "violenceReportsAssessment": {
+            "certain": [
+              "groups",
+              "escalated",
+              "injured"
+            ],
+            "uncertain": [
+              "first",
+              "intent"
+            ]
+          },
+          "prisonerDecision": "protect_detention",
+          "neighborLoveInterpretation": "B",
+          "religionFunctions": {
+            "strongest": [
+              "critique",
+              "limit"
+            ],
+            "dangerousWhenAbsolute": "legitimate"
+          },
+          "lutherTension": {
+            "helpful": "service",
+            "tension": "revolt"
+          },
+          "internalDebate": {
+            "strongestArgument": "peter",
+            "mostDangerousAbsolute": "konrad"
+          },
+          "finalAction": "protect_people",
+          "outcomeProfile": {
+            "community": 11,
+            "legal": 2.5,
+            "resistance": 2,
+            "prudence": 4.5,
+            "theological": 4.5
+          },
+          "konradOutcome": "safe",
+          "negotiationOutcome": "open",
+          "civilianOutcome": "many_protected",
+          "endWorldState": "civilians_protected",
+          "freedomAfterAction": null,
+          "openTheologicalQuestion": "luther_freedom_tension",
+          "recap": {
+            "phase": "closing",
+            "index": 0,
+            "elapsed": 0,
+            "paused": false
+          },
+          "completed": true,
+          "step": 0,
+          "phase": "",
+          "selections": [],
+          "attempts": {
+            "ch5Neighbor": 1
+          },
+          "resolved": {
+            "ch5Neighbor": true
+          },
+          "feedback": null,
+          "supplyAction": null,
+          "limitsViolence": false,
+          "reportAnswers": {
+            "groups": "certain",
+            "escalated": "certain",
+            "injured": "certain",
+            "first": "uncertain",
+            "intent": "uncertain"
+          },
+          "handoff": null
+        }
+      }
+    },
+    "chapter3": {
+      "religiousInterpretation": "critical_gospel",
+      "printStrategy": "summary",
+      "resistanceStrategy": "collective_pressure"
+    }
+  },
+  {
+    "route": "C",
+    "decisions": {
+      "ch5First": "stop_dues",
+      "ch5Dues": "block_only",
+      "ch5Condition": null,
+      "ch5Counsel": null,
+      "ch5Prisoner": "release",
+      "ch5Freedom": null,
+      "ch5Final": "stay_with_band",
+      "ch4Authority": null,
+      "ch4Community": null,
+      "ch4Resistance": "block_storehouse",
+      "ch4Early": "tension",
+      "ch4Theology": "prophetic_resistance",
+      "ch4Condition": null,
+      "ch4Band": "resistance_occupation",
+      "ch4Weingarten": "reject_retreat",
+      "ch4Escalation": "join",
+      "ch4Risk": "disorder",
+      "ch4HarshJudgment": "consistent",
+      "ch3Demand_labor": "D",
+      "ch3Demand_rights": null,
+      "ch3Demand_church": null,
+      "ch3EntryFocus": "labor",
+      "ch3Religion": "worldly_transformation",
+      "ch3Print": "accusation",
+      "ch3Resistance": "open_resistance_possible",
+      "ch3Reason": "burdens",
+      "initialFreedomInterpretation": "freedom_no_obedience",
+      "freedomSocialFirstThought": "peter_social_consequence",
+      "freedomAndOuterLife": "D",
+      "forestResponse": "take",
+      "corveeSacrifice": "grain",
+      "corveeResponse": "refuse",
+      "duesResponse": "withhold",
+      "duesSecondSacrifice": "refuse",
+      "priorityGrievances": [
+        "corvee"
+      ],
+      "playerDemand": "Wir fordern, dass die Regeln für Umfang und Zeitpunkt der Frondienste nur nach einem nachvollziehbaren Verfahren verändert werden und die Gemeinde dabei mitentscheiden kann."
+    },
+    "chapter4": {
+      "openingWorldState": "confrontational",
+      "openingRoute": "C",
+      "authorityEncounter": null,
+      "authorityTone": null,
+      "communityAction": null,
+      "resistanceAction": "block_storehouse",
+      "theologicalPreparation": false,
+      "lutherLordsUnderstood": true,
+      "lutherFreedomJudgmentEarly": "tension",
+      "twoRegimentsCases": {
+        "preacher": {
+          "classification": "boundary",
+          "reasoning": "sphere"
+        },
+        "tax": {
+          "classification": "worldly",
+          "reasoning": "sphere"
+        },
+        "corvee": {
+          "classification": "both",
+          "reasoning": "sphere"
+        },
+        "command": {
+          "classification": "boundary",
+          "reasoning": "sphere"
+        },
+        "arrest": {
+          "classification": "both",
+          "reasoning": "sphere"
+        }
+      },
+      "regimentsIndex": 5,
+      "theologicalPath": "prophetic_resistance",
+      "branchOutcome": "resistance_occupation",
+      "unattendedMobilization": false,
+      "weingartenResponse": "reject_retreat",
+      "escalationResponse": "join",
+      "centralRisk": "disorder",
+      "lutherHarshTextJudgment": "consistent",
+      "endWorldState": "joining_peasant_band",
+      "completed": true,
+      "stage": "chapter5",
+      "meansLimited": false,
+      "comparisonIndex": 4,
+      "selected": null,
+      "selections": {
+        "lords": [
+          "B",
+          "C"
+        ],
+        "peasants_complement": [
+          "B",
+          "D"
+        ],
+        "regiments_synthesis": [
+          "A",
+          "B",
+          "D"
+        ],
+        "structure": [
+          "A",
+          "B",
+          "D",
+          "E"
+        ]
+      },
+      "resolved": {
+        "lords": true,
+        "ch4Peasants": true,
+        "peasants_complement": true,
+        "regiments": true,
+        "ch4Boundary": true,
+        "ch4Comparison": true,
+        "structure": true
+      },
+      "attempts": {
+        "lords": 1,
+        "ch4Peasants": 1,
+        "peasants_complement": 1,
+        "regiments_synthesis": 1,
+        "ch4Boundary": 1,
+        "ch4Comparison": 1,
+        "structure": 1
+      },
+      "docRead": {
+        "ermahnung": true,
+        "lords": true,
+        "peasants": true,
+        "muentzer": true,
+        "weingarten": true,
+        "harsh": true,
+        "comparison": true
+      },
+      "seenDocuments": [
+        "ermahnung_closed",
+        "ermahnung_open",
+        "ermahnung_lords",
+        "ermahnung_peasants",
+        "muentzer_context_closed",
+        "muentzer_context_open",
+        "weingarten_report",
+        "harsh_text_closed",
+        "harsh_text_open",
+        "luther_comparison_frame"
+      ],
+      "communityConditions": [],
+      "hermeneuticalCriteria": [],
+      "preparationPairs": [],
+      "comparisonCriteria": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "caseReasons": {},
+      "caseFeedback": "",
+      "feedback": null,
+      "memoryRead": true,
+      "analysisRead": false,
+      "negotiationCondition": null,
+      "bandAction": "resistance_occupation",
+      "handoff": {
+        "endWorldState": "joining_peasant_band",
+        "theologicalPath": "prophetic_resistance",
+        "weingartenResponse": "reject_retreat",
+        "lutherHarshTextJudgment": "consistent",
+        "centralRisk": "disorder",
+        "branchOutcome": "resistance_occupation",
+        "orientation": {
+          "community": 1,
+          "legal": 0,
+          "resistance": 14,
+          "prudence": 2.5,
+          "theological": 3
+        },
+        "perceptions": {
+          "preacher": [],
+          "envoy": [],
+          "band1": [
+            "follows_prophetic_reading"
+          ],
+          "band2": [
+            "accepts_resistance",
+            "limits_violence"
+          ],
+          "overseer": [],
+          "lotzer": [],
+          "matthes": [],
+          "georg": [
+            "community_minded"
+          ],
+          "katharina": [],
+          "hans": [],
+          "printer": [],
+          "peter": [
+            "values_order",
+            "cautious",
+            "social_tension"
+          ],
+          "anna": [
+            "theologically_reflective",
+            "willing_to_resist"
+          ],
+          "jakob": [
+            "theologically_reflective",
+            "willing_to_resist"
+          ],
+          "margarethe": [],
+          "konrad": [
+            "theologically_reflective",
+            "willing_to_resist"
+          ],
+          "ulrich": [
+            "questioned_authority",
+            "willing_to_resist"
+          ]
+        },
+        "negotiationOpen": false,
+        "proximityToPeasantBand": true,
+        "unattendedMobilization": false,
+        "conditions": [],
+        "limitsViolence": true,
+        "priorDemand": "Wir fordern, dass die Regeln für Umfang und Zeitpunkt der Frondienste nur nach einem nachvollziehbaren Verfahren verändert werden und die Gemeinde dabei mitentscheiden kann."
+      }
+    },
+    "chapter5": {
+      "openingPath": "peasant_band",
+      "stage": "chapter6",
+      "firstAction": "stop_dues",
+      "duesAction": "block_only",
+      "negotiationCondition": null,
+      "theologicalCounsel": {},
+      "communityCounsel": null,
+      "polarizationAnalysis": {},
+      "violenceReportsAssessment": {
+        "certain": [
+          "groups",
+          "escalated",
+          "injured"
+        ],
+        "uncertain": [
+          "first",
+          "intent"
+        ]
+      },
+      "prisonerDecision": "release",
+      "neighborLoveInterpretation": "B",
+      "religionFunctions": {
+        "strongest": [
+          "critique",
+          "limit"
+        ],
+        "dangerousWhenAbsolute": "legitimate"
+      },
+      "lutherTension": {
+        "helpful": "service",
+        "tension": "revolt"
+      },
+      "internalDebate": {
+        "strongestArgument": "peter",
+        "mostDangerousAbsolute": "konrad"
+      },
+      "finalAction": "stay_with_band",
+      "outcomeProfile": {
+        "community": 1,
+        "legal": 0,
+        "resistance": 18,
+        "prudence": 4.5,
+        "theological": 3
+      },
+      "konradOutcome": "injured",
+      "negotiationOutcome": "collapsed",
+      "civilianOutcome": "high_exposure",
+      "endWorldState": "violent_defeat",
+      "freedomAfterAction": null,
+      "openTheologicalQuestion": "luther_freedom_tension",
+      "recap": {
+        "phase": "closing",
+        "index": 0,
+        "elapsed": 0,
+        "paused": false
+      },
+      "completed": true,
+      "step": 0,
+      "phase": "",
+      "selections": [],
+      "attempts": {
+        "ch5Neighbor": 1
+      },
+      "resolved": {
+        "ch5Neighbor": true
+      },
+      "feedback": null,
+      "supplyAction": null,
+      "limitsViolence": true,
+      "reportAnswers": {
+        "groups": "certain",
+        "escalated": "certain",
+        "injured": "certain",
+        "first": "uncertain",
+        "intent": "uncertain"
+      },
+      "handoff": {
+        "initialFreedomInterpretation": "freedom_no_obedience",
+        "openTheologicalQuestion": "luther_freedom_tension",
+        "orientation": {
+          "community": 1,
+          "legal": 0,
+          "resistance": 18,
+          "prudence": 4.5,
+          "theological": 3
+        },
+        "perceptions": {
+          "preacher": [],
+          "envoy": [],
+          "band1": [
+            "follows_prophetic_reading"
+          ],
+          "band2": [
+            "accepts_resistance",
+            "limits_violence"
+          ],
+          "overseer": [],
+          "lotzer": [],
+          "matthes": [],
+          "georg": [
+            "community_minded"
+          ],
+          "katharina": [],
+          "hans": [],
+          "printer": [],
+          "peter": [
+            "values_order",
+            "cautious",
+            "social_tension"
+          ],
+          "anna": [
+            "limits_violence",
+            "theologically_reflective",
+            "willing_to_resist"
+          ],
+          "jakob": [
+            "theologically_reflective",
+            "willing_to_resist"
+          ],
+          "margarethe": [],
+          "konrad": [
+            "willing_to_resist",
+            "limits_violence",
+            "theologically_reflective"
+          ],
+          "ulrich": [
+            "questioned_authority",
+            "willing_to_resist"
+          ]
+        },
+        "chapter2": {
+          "forestComplete": true,
+          "corveeComplete": true,
+          "duesComplete": true,
+          "assemblyUnlocked": true,
+          "assemblyComplete": true,
+          "stage": "chapter-ending",
+          "grain": {
+            "sack-0": "dues",
+            "sack-1": "dues",
+            "sack-2": "food",
+            "sack-3": "food",
+            "sack-4": "food",
+            "sack-5": "seed",
+            "sack-6": "seed",
+            "sack-7": "seed",
+            "sack-8": "reserve",
+            "sack-9": "reserve"
+          },
+          "links": [
+            {
+              "key": "dues:forest",
+              "a": "forest",
+              "b": "dues",
+              "reason": "voice"
+            },
+            {
+              "key": "corvee:dues",
+              "a": "corvee",
+              "b": "dues",
+              "reason": "voice"
+            },
+            {
+              "key": "bondage:movement",
+              "a": "bondage",
+              "b": "movement",
+              "reason": "voice"
+            }
+          ],
+          "pair": [],
+          "selections": [],
+          "demand": {
+            "subject": 1,
+            "rule": 2,
+            "voice": 0
+          },
+          "removed": [
+            {
+              "id": "sack-0",
+              "from": "food"
+            },
+            {
+              "id": "sack-1",
+              "from": "food"
+            },
+            {
+              "id": "sack-2",
+              "from": "food"
+            }
+          ],
+          "selected": null,
+          "linkAttempts": 0,
+          "linkHint": "Beide Beschwerden betreffen Herrschaft / Mitsprache. Was verbindet die anderen Beschwerden?"
+        },
+        "choices": {
+          "initialFreedomInterpretation": "freedom_no_obedience",
+          "freedomSocialFirstThought": "peter_social_consequence",
+          "freedomAndOuterLife": "D",
+          "forestArgument": "A",
+          "forestResponse": "take",
+          "peterDayPlan": [
+            "grain",
+            "fence",
+            "feed"
+          ],
+          "corveeSacrifice": "grain",
+          "corveeResponse": "refuse",
+          "initialFarmPlan": {
+            "food": 5,
+            "seed": 3,
+            "reserve": 2
+          },
+          "duesFirstSacrifice": [
+            "food",
+            "food",
+            "food"
+          ],
+          "duesResponse": "withhold",
+          "duesSecondSacrifice": "refuse",
+          "priorityGrievances": [
+            "corvee"
+          ],
+          "lutherPoliticalInference": "B",
+          "playerDemand": "Wir fordern, dass die Regeln für Umfang und Zeitpunkt der Frondienste nur nach einem nachvollziehbaren Verfahren verändert werden und die Gemeinde dabei mitentscheiden kann.",
+          "serviceBoundary": "B",
+          "obedienceBoundary": "B",
+          "freedomComparison": "D",
+          "innerConsolidation": "A",
+          "politicalConsolidation": "A",
+          "forestConflict": "B",
+          "corveeDefinition": "B",
+          "assemblyConnection": "B",
+          "forestDemand": "B",
+          "corveeDemand": "A",
+          "duesDemand": "A",
+          "ch3EntryFocus": "labor",
+          "ch3Demand_labor": "D",
+          "ch3Religion": "worldly_transformation",
+          "ch3Print": "accusation",
+          "ch3Resistance": "open_resistance_possible",
+          "ch3Reason": "burdens",
+          "ch4Resistance": "block_storehouse",
+          "ch4Peasants": "A",
+          "ch4Early": "tension",
+          "ch4Boundary": "A",
+          "ch4Theology": "prophetic_resistance",
+          "ch4Band": "resistance_occupation",
+          "ch4Weingarten": "reject_retreat",
+          "ch4Escalation": "join",
+          "ch4Comparison": "B",
+          "ch4Risk": "disorder",
+          "ch4HarshJudgment": "consistent",
+          "ch5First": "stop_dues",
+          "ch5Dues": "block_only",
+          "ch5Prisoner": "release",
+          "ch5Neighbor": "B",
+          "ch5Final": "stay_with_band"
+        },
+        "grievances": {
+          "forest": [
+            "rights"
+          ],
+          "corvee": [
+            "time"
+          ],
+          "dues": [
+            "supply"
+          ]
+        },
+        "chapter3": {
+          "entryFocus": "labor",
+          "complaintClusters": [
+            {
+              "cards": [
+                "0",
+                "6"
+              ],
+              "reason": "dependence"
+            },
+            {
+              "cards": [
+                "1",
+                "4",
+                "5"
+              ],
+              "reason": "rights"
+            }
+          ],
+          "demandChoice": "D",
+          "articleComparison": {
+            "common": "Verfügung über die eigene Arbeitszeit begrenzen",
+            "differences": "Die Artikel begründen ihr gemeinsames Programm ausdrücklich mit dem Evangelium."
+          },
+          "religiousInterpretation": "worldly_transformation",
+          "printStrategy": "accusation",
+          "publicTone": "confrontational",
+          "resistanceStrategy": "open_resistance_possible",
+          "mainReason": "burdens",
+          "completed": true,
+          "pair": [],
+          "interpretations": [
+            "A",
+            "D"
+          ],
+          "printPhase": "done",
+          "printSequenceVersion": 2,
+          "printed": 4,
+          "selected": null,
+          "seenArticles": [
+            6,
+            7,
+            3,
+            12
+          ],
+          "priorProfile": {
+            "community": 0,
+            "legal": 0,
+            "resistance": 5.5,
+            "prudence": 0,
+            "theological": 0.5
+          },
+          "stage": "chapter4",
+          "clusterFeedback": "Diese Verbindung lässt sich begründen: Überlieferte Nutzungsrechte. Prüfe jetzt, welche konkrete Forderung mehrere Gemeinden darin wiedererkennen könnten.",
+          "pressed": false
+        },
+        "chapter4": {
+          "openingWorldState": "confrontational",
+          "openingRoute": "C",
+          "authorityEncounter": null,
+          "authorityTone": null,
+          "communityAction": null,
+          "resistanceAction": "block_storehouse",
+          "theologicalPreparation": false,
+          "lutherLordsUnderstood": true,
+          "lutherFreedomJudgmentEarly": "tension",
+          "twoRegimentsCases": {
+            "preacher": {
+              "classification": "boundary",
+              "reasoning": "sphere"
+            },
+            "tax": {
+              "classification": "worldly",
+              "reasoning": "sphere"
+            },
+            "corvee": {
+              "classification": "both",
+              "reasoning": "sphere"
+            },
+            "command": {
+              "classification": "boundary",
+              "reasoning": "sphere"
+            },
+            "arrest": {
+              "classification": "both",
+              "reasoning": "sphere"
+            }
+          },
+          "regimentsIndex": 5,
+          "theologicalPath": "prophetic_resistance",
+          "branchOutcome": "resistance_occupation",
+          "unattendedMobilization": false,
+          "weingartenResponse": "reject_retreat",
+          "escalationResponse": "join",
+          "centralRisk": "disorder",
+          "lutherHarshTextJudgment": "consistent",
+          "endWorldState": "joining_peasant_band",
+          "completed": true,
+          "stage": "chapter5",
+          "meansLimited": false,
+          "comparisonIndex": 4,
+          "selected": null,
+          "selections": {
+            "lords": [
+              "B",
+              "C"
+            ],
+            "peasants_complement": [
+              "B",
+              "D"
+            ],
+            "regiments_synthesis": [
+              "A",
+              "B",
+              "D"
+            ],
+            "structure": [
+              "A",
+              "B",
+              "D",
+              "E"
+            ]
+          },
+          "resolved": {
+            "lords": true,
+            "ch4Peasants": true,
+            "peasants_complement": true,
+            "regiments": true,
+            "ch4Boundary": true,
+            "ch4Comparison": true,
+            "structure": true
+          },
+          "attempts": {
+            "lords": 1,
+            "ch4Peasants": 1,
+            "peasants_complement": 1,
+            "regiments_synthesis": 1,
+            "ch4Boundary": 1,
+            "ch4Comparison": 1,
+            "structure": 1
+          },
+          "docRead": {
+            "ermahnung": true,
+            "lords": true,
+            "peasants": true,
+            "muentzer": true,
+            "weingarten": true,
+            "harsh": true,
+            "comparison": true
+          },
+          "seenDocuments": [
+            "ermahnung_closed",
+            "ermahnung_open",
+            "ermahnung_lords",
+            "ermahnung_peasants",
+            "muentzer_context_closed",
+            "muentzer_context_open",
+            "weingarten_report",
+            "harsh_text_closed",
+            "harsh_text_open",
+            "luther_comparison_frame"
+          ],
+          "communityConditions": [],
+          "hermeneuticalCriteria": [],
+          "preparationPairs": [],
+          "comparisonCriteria": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "caseReasons": {},
+          "caseFeedback": "",
+          "feedback": null,
+          "memoryRead": true,
+          "analysisRead": false,
+          "negotiationCondition": null,
+          "bandAction": "resistance_occupation",
+          "handoff": {
+            "endWorldState": "joining_peasant_band",
+            "theologicalPath": "prophetic_resistance",
+            "weingartenResponse": "reject_retreat",
+            "lutherHarshTextJudgment": "consistent",
+            "centralRisk": "disorder",
+            "branchOutcome": "resistance_occupation",
+            "orientation": {
+              "community": 1,
+              "legal": 0,
+              "resistance": 14,
+              "prudence": 2.5,
+              "theological": 3
+            },
+            "perceptions": {
+              "preacher": [],
+              "envoy": [],
+              "band1": [
+                "follows_prophetic_reading"
+              ],
+              "band2": [
+                "accepts_resistance",
+                "limits_violence"
+              ],
+              "overseer": [],
+              "lotzer": [],
+              "matthes": [],
+              "georg": [
+                "community_minded"
+              ],
+              "katharina": [],
+              "hans": [],
+              "printer": [],
+              "peter": [
+                "values_order",
+                "cautious",
+                "social_tension"
+              ],
+              "anna": [
+                "theologically_reflective",
+                "willing_to_resist"
+              ],
+              "jakob": [
+                "theologically_reflective",
+                "willing_to_resist"
+              ],
+              "margarethe": [],
+              "konrad": [
+                "theologically_reflective",
+                "willing_to_resist"
+              ],
+              "ulrich": [
+                "questioned_authority",
+                "willing_to_resist"
+              ]
+            },
+            "negotiationOpen": false,
+            "proximityToPeasantBand": true,
+            "unattendedMobilization": false,
+            "conditions": [],
+            "limitsViolence": true,
+            "priorDemand": "Wir fordern, dass die Regeln für Umfang und Zeitpunkt der Frondienste nur nach einem nachvollziehbaren Verfahren verändert werden und die Gemeinde dabei mitentscheiden kann."
+          }
+        },
+        "chapter5": {
+          "openingPath": "peasant_band",
+          "stage": "chapter6",
+          "firstAction": "stop_dues",
+          "duesAction": "block_only",
+          "negotiationCondition": null,
+          "theologicalCounsel": {},
+          "communityCounsel": null,
+          "polarizationAnalysis": {},
+          "violenceReportsAssessment": {
+            "certain": [
+              "groups",
+              "escalated",
+              "injured"
+            ],
+            "uncertain": [
+              "first",
+              "intent"
+            ]
+          },
+          "prisonerDecision": "release",
+          "neighborLoveInterpretation": "B",
+          "religionFunctions": {
+            "strongest": [
+              "critique",
+              "limit"
+            ],
+            "dangerousWhenAbsolute": "legitimate"
+          },
+          "lutherTension": {
+            "helpful": "service",
+            "tension": "revolt"
+          },
+          "internalDebate": {
+            "strongestArgument": "peter",
+            "mostDangerousAbsolute": "konrad"
+          },
+          "finalAction": "stay_with_band",
+          "outcomeProfile": {
+            "community": 1,
+            "legal": 0,
+            "resistance": 18,
+            "prudence": 4.5,
+            "theological": 3
+          },
+          "konradOutcome": "injured",
+          "negotiationOutcome": "collapsed",
+          "civilianOutcome": "high_exposure",
+          "endWorldState": "violent_defeat",
+          "freedomAfterAction": null,
+          "openTheologicalQuestion": "luther_freedom_tension",
+          "recap": {
+            "phase": "closing",
+            "index": 0,
+            "elapsed": 0,
+            "paused": false
+          },
+          "completed": true,
+          "step": 0,
+          "phase": "",
+          "selections": [],
+          "attempts": {
+            "ch5Neighbor": 1
+          },
+          "resolved": {
+            "ch5Neighbor": true
+          },
+          "feedback": null,
+          "supplyAction": null,
+          "limitsViolence": true,
+          "reportAnswers": {
+            "groups": "certain",
+            "escalated": "certain",
+            "injured": "certain",
+            "first": "uncertain",
+            "intent": "uncertain"
+          },
+          "handoff": null
+        }
+      }
+    },
+    "chapter3": {
+      "religiousInterpretation": "worldly_transformation",
+      "printStrategy": "accusation",
+      "resistanceStrategy": "open_resistance_possible"
+    }
+  },
+  {
+    "route": "D",
+    "decisions": {
+      "ch5First": null,
+      "ch5Dues": null,
+      "ch5Condition": null,
+      "ch5Counsel": null,
+      "ch5Prisoner": "protect_detention",
+      "ch5Freedom": null,
+      "ch5Final": "reject_divine_certainty",
+      "ch4Authority": null,
+      "ch4Community": null,
+      "ch4Resistance": null,
+      "ch4Early": "tension",
+      "ch4Theology": "hermeneutical_caution",
+      "ch4Condition": null,
+      "ch4Band": null,
+      "ch4Weingarten": "not_transferable",
+      "ch4Escalation": "verify",
+      "ch4Risk": "religious_certainty",
+      "ch4HarshJudgment": "defer_judgment",
+      "ch3Demand_labor": null,
+      "ch3Demand_rights": null,
+      "ch3Demand_church": "C",
+      "ch3EntryFocus": "church",
+      "ch3Religion": "hermeneutical_caution",
+      "ch3Print": "religious",
+      "ch3Resistance": "theological_clarification",
+      "ch3Reason": "burdens",
+      "initialFreedomInterpretation": "freedom_different_kind",
+      "freedomSocialFirstThought": "peter_god_first",
+      "freedomAndOuterLife": "D",
+      "forestResponse": "leave",
+      "corveeSacrifice": "grain",
+      "corveeResponse": "go",
+      "duesResponse": "pay",
+      "duesSecondSacrifice": "seed",
+      "priorityGrievances": [
+        "forest"
+      ],
+      "playerDemand": "Wir fordern, dass die Regeln für bisherige Nutzungsrechte der Gemeinde an den Bedürfnissen und Rechten der Betroffenen gemessen werden und Änderungen vor der Gemeinde begründet werden müssen."
+    },
+    "chapter4": {
+      "openingWorldState": "religious",
+      "openingRoute": "D",
+      "authorityEncounter": null,
+      "authorityTone": null,
+      "communityAction": null,
+      "resistanceAction": null,
+      "theologicalPreparation": true,
+      "lutherLordsUnderstood": true,
+      "lutherFreedomJudgmentEarly": "tension",
+      "twoRegimentsCases": {
+        "preacher": {
+          "classification": "boundary",
+          "reasoning": "sphere"
+        },
+        "tax": {
+          "classification": "worldly",
+          "reasoning": "sphere"
+        },
+        "corvee": {
+          "classification": "both",
+          "reasoning": "sphere"
+        },
+        "command": {
+          "classification": "boundary",
+          "reasoning": "sphere"
+        },
+        "arrest": {
+          "classification": "both",
+          "reasoning": "sphere"
+        }
+      },
+      "regimentsIndex": 5,
+      "theologicalPath": "hermeneutical_caution",
+      "branchOutcome": "interpretive_depth",
+      "unattendedMobilization": true,
+      "weingartenResponse": "not_transferable",
+      "escalationResponse": "verify",
+      "centralRisk": "religious_certainty",
+      "lutherHarshTextJudgment": "defer_judgment",
+      "endWorldState": "religious_polarization",
+      "completed": true,
+      "stage": "chapter5",
+      "meansLimited": false,
+      "comparisonIndex": 4,
+      "selected": null,
+      "selections": {
+        "preparation": [],
+        "lords": [
+          "B",
+          "C"
+        ],
+        "peasants_complement": [
+          "B",
+          "D"
+        ],
+        "regiments_synthesis": [
+          "A",
+          "B",
+          "D"
+        ],
+        "hermeneutics": [
+          "context",
+          "contradiction"
+        ],
+        "structure": [
+          "A",
+          "B",
+          "D",
+          "E"
+        ]
+      },
+      "resolved": {
+        "lords": true,
+        "ch4Peasants": true,
+        "peasants_complement": true,
+        "regiments": true,
+        "ch4Boundary": true,
+        "ch4Comparison": true,
+        "structure": true
+      },
+      "attempts": {
+        "lords": 1,
+        "ch4Peasants": 1,
+        "peasants_complement": 1,
+        "regiments_synthesis": 1,
+        "ch4Boundary": 1,
+        "ch4Comparison": 1,
+        "structure": 1
+      },
+      "docRead": {
+        "c4_memory": true,
+        "c4_authority": true,
+        "ermahnung": true,
+        "lords": true,
+        "peasants": true,
+        "muentzer": true,
+        "weingarten": true,
+        "harsh": true,
+        "comparison": true
+      },
+      "seenDocuments": [
+        "luther_freedom_small",
+        "worldly_authority_small",
+        "ermahnung_closed",
+        "ermahnung_open",
+        "ermahnung_lords",
+        "ermahnung_peasants",
+        "muentzer_context_closed",
+        "muentzer_context_open",
+        "weingarten_report",
+        "harsh_text_closed",
+        "harsh_text_open",
+        "luther_comparison_frame"
+      ],
+      "communityConditions": [],
+      "hermeneuticalCriteria": [
+        "context",
+        "contradiction"
+      ],
+      "preparationPairs": [
+        "Freiheit vor Gott hebt äußere Ordnung nicht automatisch auf; wie verändert sie deren Maßstäbe?"
+      ],
+      "comparisonCriteria": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "caseReasons": {},
+      "caseFeedback": "",
+      "feedback": null,
+      "memoryRead": true,
+      "analysisRead": true,
+      "negotiationCondition": null,
+      "bandAction": null,
+      "handoff": {
+        "endWorldState": "religious_polarization",
+        "theologicalPath": "hermeneutical_caution",
+        "weingartenResponse": "not_transferable",
+        "lutherHarshTextJudgment": "defer_judgment",
+        "centralRisk": "religious_certainty",
+        "branchOutcome": "interpretive_depth",
+        "orientation": {
+          "community": 0,
+          "legal": 3,
+          "resistance": 0,
+          "prudence": 6.5,
+          "theological": 8.5
+        },
+        "perceptions": {
+          "preacher": [],
+          "envoy": [],
+          "band1": [],
+          "band2": [],
+          "overseer": [],
+          "lotzer": [
+            "cautious",
+            "theologically_reflective"
+          ],
+          "matthes": [
+            "theologically_reflective"
+          ],
+          "georg": [],
+          "katharina": [],
+          "hans": [
+            "theologically_reflective"
+          ],
+          "printer": [],
+          "peter": [
+            "cautious",
+            "theologically_reflective",
+            "reliable"
+          ],
+          "anna": [
+            "theologically_reflective",
+            "cautious",
+            "avoids_conflict"
+          ],
+          "jakob": [
+            "questions_religious_certainty",
+            "theologically_reflective"
+          ],
+          "margarethe": [
+            "cautious"
+          ],
+          "konrad": [],
+          "ulrich": []
+        },
+        "negotiationOpen": false,
+        "proximityToPeasantBand": false,
+        "unattendedMobilization": true,
+        "conditions": [],
+        "limitsViolence": false,
+        "priorDemand": "Wir fordern, dass die Regeln für bisherige Nutzungsrechte der Gemeinde an den Bedürfnissen und Rechten der Betroffenen gemessen werden und Änderungen vor der Gemeinde begründet werden müssen."
+      }
+    },
+    "chapter5": {
+      "openingPath": "religious_conflict",
+      "stage": "chapter6",
+      "firstAction": null,
+      "duesAction": null,
+      "negotiationCondition": null,
+      "theologicalCounsel": {},
+      "communityCounsel": null,
+      "polarizationAnalysis": {
+        "order": {
+          "danger": "violence",
+          "overlooked": "injustice"
+        },
+        "justice": {
+          "danger": "oppression",
+          "overlooked": "certainty"
+        }
+      },
+      "violenceReportsAssessment": {
+        "certain": [
+          "groups",
+          "escalated",
+          "injured"
+        ],
+        "uncertain": [
+          "first",
+          "intent"
+        ]
+      },
+      "prisonerDecision": "protect_detention",
+      "neighborLoveInterpretation": "B",
+      "religionFunctions": {
+        "strongest": [
+          "critique",
+          "limit"
+        ],
+        "dangerousWhenAbsolute": "legitimate"
+      },
+      "lutherTension": {
+        "helpful": "service",
+        "tension": "revolt"
+      },
+      "internalDebate": {
+        "strongestArgument": "peter",
+        "mostDangerousAbsolute": "konrad"
+      },
+      "finalAction": "reject_divine_certainty",
+      "outcomeProfile": {
+        "community": 1,
+        "legal": 3,
+        "resistance": 0,
+        "prudence": 8.5,
+        "theological": 9.5
+      },
+      "konradOutcome": "safe",
+      "negotiationOutcome": "open",
+      "civilianOutcome": "some_protected",
+      "endWorldState": "fragile_deescalation",
+      "freedomAfterAction": null,
+      "openTheologicalQuestion": "luther_freedom_tension",
+      "recap": {
+        "phase": "closing",
+        "index": 0,
+        "elapsed": 0,
+        "paused": false
+      },
+      "completed": true,
+      "step": 0,
+      "phase": "",
+      "selections": [],
+      "attempts": {
+        "ch5Neighbor": 1
+      },
+      "resolved": {
+        "ch5Neighbor": true
+      },
+      "feedback": null,
+      "supplyAction": null,
+      "limitsViolence": false,
+      "reportAnswers": {
+        "groups": "certain",
+        "escalated": "certain",
+        "injured": "certain",
+        "first": "uncertain",
+        "intent": "uncertain"
+      },
+      "handoff": {
+        "initialFreedomInterpretation": "freedom_different_kind",
+        "openTheologicalQuestion": "luther_freedom_tension",
+        "orientation": {
+          "community": 1,
+          "legal": 3,
+          "resistance": 0,
+          "prudence": 8.5,
+          "theological": 9.5
+        },
+        "perceptions": {
+          "preacher": [],
+          "envoy": [],
+          "band1": [],
+          "band2": [],
+          "overseer": [],
+          "lotzer": [
+            "cautious",
+            "theologically_reflective"
+          ],
+          "matthes": [
+            "theologically_reflective"
+          ],
+          "georg": [],
+          "katharina": [],
+          "hans": [
+            "theologically_reflective"
+          ],
+          "printer": [],
+          "peter": [
+            "cautious",
+            "theologically_reflective",
+            "reliable"
+          ],
+          "anna": [
+            "reliable",
+            "theologically_reflective",
+            "cautious",
+            "avoids_conflict"
+          ],
+          "jakob": [
+            "theologically_reflective",
+            "questions_religious_certainty"
+          ],
+          "margarethe": [
+            "cautious"
+          ],
+          "konrad": [],
+          "ulrich": []
+        },
+        "chapter2": {
+          "forestComplete": true,
+          "corveeComplete": true,
+          "duesComplete": true,
+          "assemblyUnlocked": true,
+          "assemblyComplete": true,
+          "stage": "chapter-ending",
+          "grain": {
+            "sack-0": "dues",
+            "sack-1": "dues",
+            "sack-2": "dues",
+            "sack-3": "food",
+            "sack-4": "food",
+            "sack-5": "dues",
+            "sack-6": "seed",
+            "sack-7": "seed",
+            "sack-8": "reserve",
+            "sack-9": "reserve"
+          },
+          "links": [
+            {
+              "key": "dues:forest",
+              "a": "forest",
+              "b": "dues",
+              "reason": "voice"
+            },
+            {
+              "key": "corvee:dues",
+              "a": "corvee",
+              "b": "dues",
+              "reason": "voice"
+            },
+            {
+              "key": "bondage:movement",
+              "a": "bondage",
+              "b": "movement",
+              "reason": "voice"
+            }
+          ],
+          "pair": [],
+          "selections": [],
+          "demand": {
+            "subject": 0,
+            "rule": 1,
+            "voice": 1
+          },
+          "removed": [
+            {
+              "id": "sack-0",
+              "from": "food"
+            },
+            {
+              "id": "sack-1",
+              "from": "food"
+            },
+            {
+              "id": "sack-2",
+              "from": "food"
+            }
+          ],
+          "selected": null,
+          "linkAttempts": 0,
+          "linkHint": "Beide Beschwerden betreffen Herrschaft / Mitsprache. Was verbindet die anderen Beschwerden?"
+        },
+        "choices": {
+          "initialFreedomInterpretation": "freedom_different_kind",
+          "freedomSocialFirstThought": "peter_god_first",
+          "freedomAndOuterLife": "D",
+          "forestArgument": "A",
+          "forestResponse": "leave",
+          "peterDayPlan": [
+            "grain",
+            "fence",
+            "feed"
+          ],
+          "corveeSacrifice": "grain",
+          "corveeResponse": "go",
+          "initialFarmPlan": {
+            "food": 5,
+            "seed": 3,
+            "reserve": 2
+          },
+          "duesFirstSacrifice": [
+            "food",
+            "food",
+            "food"
+          ],
+          "duesResponse": "pay",
+          "duesSecondSacrifice": "seed",
+          "priorityGrievances": [
+            "forest"
+          ],
+          "lutherPoliticalInference": "B",
+          "playerDemand": "Wir fordern, dass die Regeln für bisherige Nutzungsrechte der Gemeinde an den Bedürfnissen und Rechten der Betroffenen gemessen werden und Änderungen vor der Gemeinde begründet werden müssen.",
+          "serviceBoundary": "B",
+          "obedienceBoundary": "B",
+          "freedomComparison": "D",
+          "innerConsolidation": "A",
+          "politicalConsolidation": "A",
+          "forestConflict": "B",
+          "corveeDefinition": "B",
+          "assemblyConnection": "B",
+          "forestDemand": "B",
+          "corveeDemand": "A",
+          "duesDemand": "A",
+          "ch3EntryFocus": "church",
+          "ch3Demand_church": "C",
+          "ch3Religion": "hermeneutical_caution",
+          "ch3Print": "religious",
+          "ch3Resistance": "theological_clarification",
+          "ch3Reason": "burdens",
+          "ch4Peasants": "A",
+          "ch4Early": "tension",
+          "ch4Boundary": "A",
+          "ch4Theology": "hermeneutical_caution",
+          "ch4Weingarten": "not_transferable",
+          "ch4Escalation": "verify",
+          "ch4Comparison": "B",
+          "ch4Risk": "religious_certainty",
+          "ch4HarshJudgment": "defer_judgment",
+          "ch5Prisoner": "protect_detention",
+          "ch5Neighbor": "B",
+          "ch5Final": "reject_divine_certainty"
+        },
+        "grievances": {
+          "forest": [
+            "rights"
+          ],
+          "corvee": [
+            "time"
+          ],
+          "dues": [
+            "supply"
+          ]
+        },
+        "chapter3": {
+          "entryFocus": "church",
+          "complaintClusters": [
+            {
+              "cards": [
+                "0",
+                "6"
+              ],
+              "reason": "dependence"
+            },
+            {
+              "cards": [
+                "1",
+                "4",
+                "5"
+              ],
+              "reason": "rights"
+            }
+          ],
+          "demandChoice": "C",
+          "articleComparison": {
+            "common": "Einfluss der Gemeinde auf die Predigt stärken",
+            "differences": "Die Artikel begründen ihr gemeinsames Programm ausdrücklich mit dem Evangelium."
+          },
+          "religiousInterpretation": "hermeneutical_caution",
+          "printStrategy": "religious",
+          "publicTone": "religious",
+          "resistanceStrategy": "theological_clarification",
+          "mainReason": "burdens",
+          "completed": true,
+          "pair": [],
+          "interpretations": [
+            "B",
+            "C"
+          ],
+          "printPhase": "done",
+          "printSequenceVersion": 2,
+          "printed": 4,
+          "selected": null,
+          "seenArticles": [
+            1,
+            3,
+            12
+          ],
+          "priorProfile": {
+            "community": 0,
+            "legal": 0,
+            "resistance": 0,
+            "prudence": 3,
+            "theological": 2
+          },
+          "stage": "chapter4",
+          "clusterFeedback": "Diese Verbindung lässt sich begründen: Überlieferte Nutzungsrechte. Prüfe jetzt, welche konkrete Forderung mehrere Gemeinden darin wiedererkennen könnten.",
+          "pressed": false
+        },
+        "chapter4": {
+          "openingWorldState": "religious",
+          "openingRoute": "D",
+          "authorityEncounter": null,
+          "authorityTone": null,
+          "communityAction": null,
+          "resistanceAction": null,
+          "theologicalPreparation": true,
+          "lutherLordsUnderstood": true,
+          "lutherFreedomJudgmentEarly": "tension",
+          "twoRegimentsCases": {
+            "preacher": {
+              "classification": "boundary",
+              "reasoning": "sphere"
+            },
+            "tax": {
+              "classification": "worldly",
+              "reasoning": "sphere"
+            },
+            "corvee": {
+              "classification": "both",
+              "reasoning": "sphere"
+            },
+            "command": {
+              "classification": "boundary",
+              "reasoning": "sphere"
+            },
+            "arrest": {
+              "classification": "both",
+              "reasoning": "sphere"
+            }
+          },
+          "regimentsIndex": 5,
+          "theologicalPath": "hermeneutical_caution",
+          "branchOutcome": "interpretive_depth",
+          "unattendedMobilization": true,
+          "weingartenResponse": "not_transferable",
+          "escalationResponse": "verify",
+          "centralRisk": "religious_certainty",
+          "lutherHarshTextJudgment": "defer_judgment",
+          "endWorldState": "religious_polarization",
+          "completed": true,
+          "stage": "chapter5",
+          "meansLimited": false,
+          "comparisonIndex": 4,
+          "selected": null,
+          "selections": {
+            "preparation": [],
+            "lords": [
+              "B",
+              "C"
+            ],
+            "peasants_complement": [
+              "B",
+              "D"
+            ],
+            "regiments_synthesis": [
+              "A",
+              "B",
+              "D"
+            ],
+            "hermeneutics": [
+              "context",
+              "contradiction"
+            ],
+            "structure": [
+              "A",
+              "B",
+              "D",
+              "E"
+            ]
+          },
+          "resolved": {
+            "lords": true,
+            "ch4Peasants": true,
+            "peasants_complement": true,
+            "regiments": true,
+            "ch4Boundary": true,
+            "ch4Comparison": true,
+            "structure": true
+          },
+          "attempts": {
+            "lords": 1,
+            "ch4Peasants": 1,
+            "peasants_complement": 1,
+            "regiments_synthesis": 1,
+            "ch4Boundary": 1,
+            "ch4Comparison": 1,
+            "structure": 1
+          },
+          "docRead": {
+            "c4_memory": true,
+            "c4_authority": true,
+            "ermahnung": true,
+            "lords": true,
+            "peasants": true,
+            "muentzer": true,
+            "weingarten": true,
+            "harsh": true,
+            "comparison": true
+          },
+          "seenDocuments": [
+            "luther_freedom_small",
+            "worldly_authority_small",
+            "ermahnung_closed",
+            "ermahnung_open",
+            "ermahnung_lords",
+            "ermahnung_peasants",
+            "muentzer_context_closed",
+            "muentzer_context_open",
+            "weingarten_report",
+            "harsh_text_closed",
+            "harsh_text_open",
+            "luther_comparison_frame"
+          ],
+          "communityConditions": [],
+          "hermeneuticalCriteria": [
+            "context",
+            "contradiction"
+          ],
+          "preparationPairs": [
+            "Freiheit vor Gott hebt äußere Ordnung nicht automatisch auf; wie verändert sie deren Maßstäbe?"
+          ],
+          "comparisonCriteria": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "caseReasons": {},
+          "caseFeedback": "",
+          "feedback": null,
+          "memoryRead": true,
+          "analysisRead": true,
+          "negotiationCondition": null,
+          "bandAction": null,
+          "handoff": {
+            "endWorldState": "religious_polarization",
+            "theologicalPath": "hermeneutical_caution",
+            "weingartenResponse": "not_transferable",
+            "lutherHarshTextJudgment": "defer_judgment",
+            "centralRisk": "religious_certainty",
+            "branchOutcome": "interpretive_depth",
+            "orientation": {
+              "community": 0,
+              "legal": 3,
+              "resistance": 0,
+              "prudence": 6.5,
+              "theological": 8.5
+            },
+            "perceptions": {
+              "preacher": [],
+              "envoy": [],
+              "band1": [],
+              "band2": [],
+              "overseer": [],
+              "lotzer": [
+                "cautious",
+                "theologically_reflective"
+              ],
+              "matthes": [
+                "theologically_reflective"
+              ],
+              "georg": [],
+              "katharina": [],
+              "hans": [
+                "theologically_reflective"
+              ],
+              "printer": [],
+              "peter": [
+                "cautious",
+                "theologically_reflective",
+                "reliable"
+              ],
+              "anna": [
+                "theologically_reflective",
+                "cautious",
+                "avoids_conflict"
+              ],
+              "jakob": [
+                "questions_religious_certainty",
+                "theologically_reflective"
+              ],
+              "margarethe": [
+                "cautious"
+              ],
+              "konrad": [],
+              "ulrich": []
+            },
+            "negotiationOpen": false,
+            "proximityToPeasantBand": false,
+            "unattendedMobilization": true,
+            "conditions": [],
+            "limitsViolence": false,
+            "priorDemand": "Wir fordern, dass die Regeln für bisherige Nutzungsrechte der Gemeinde an den Bedürfnissen und Rechten der Betroffenen gemessen werden und Änderungen vor der Gemeinde begründet werden müssen."
+          }
+        },
+        "chapter5": {
+          "openingPath": "religious_conflict",
+          "stage": "chapter6",
+          "firstAction": null,
+          "duesAction": null,
+          "negotiationCondition": null,
+          "theologicalCounsel": {},
+          "communityCounsel": null,
+          "polarizationAnalysis": {
+            "order": {
+              "danger": "violence",
+              "overlooked": "injustice"
+            },
+            "justice": {
+              "danger": "oppression",
+              "overlooked": "certainty"
+            }
+          },
+          "violenceReportsAssessment": {
+            "certain": [
+              "groups",
+              "escalated",
+              "injured"
+            ],
+            "uncertain": [
+              "first",
+              "intent"
+            ]
+          },
+          "prisonerDecision": "protect_detention",
+          "neighborLoveInterpretation": "B",
+          "religionFunctions": {
+            "strongest": [
+              "critique",
+              "limit"
+            ],
+            "dangerousWhenAbsolute": "legitimate"
+          },
+          "lutherTension": {
+            "helpful": "service",
+            "tension": "revolt"
+          },
+          "internalDebate": {
+            "strongestArgument": "peter",
+            "mostDangerousAbsolute": "konrad"
+          },
+          "finalAction": "reject_divine_certainty",
+          "outcomeProfile": {
+            "community": 1,
+            "legal": 3,
+            "resistance": 0,
+            "prudence": 8.5,
+            "theological": 9.5
+          },
+          "konradOutcome": "safe",
+          "negotiationOutcome": "open",
+          "civilianOutcome": "some_protected",
+          "endWorldState": "fragile_deescalation",
+          "freedomAfterAction": null,
+          "openTheologicalQuestion": "luther_freedom_tension",
+          "recap": {
+            "phase": "closing",
+            "index": 0,
+            "elapsed": 0,
+            "paused": false
+          },
+          "completed": true,
+          "step": 0,
+          "phase": "",
+          "selections": [],
+          "attempts": {
+            "ch5Neighbor": 1
+          },
+          "resolved": {
+            "ch5Neighbor": true
+          },
+          "feedback": null,
+          "supplyAction": null,
+          "limitsViolence": false,
+          "reportAnswers": {
+            "groups": "certain",
+            "escalated": "certain",
+            "injured": "certain",
+            "first": "uncertain",
+            "intent": "uncertain"
+          },
+          "handoff": null
+        }
+      }
+    },
+    "chapter3": {
+      "religiousInterpretation": "hermeneutical_caution",
+      "printStrategy": "religious",
+      "resistanceStrategy": "theological_clarification"
+    }
+  }
+]

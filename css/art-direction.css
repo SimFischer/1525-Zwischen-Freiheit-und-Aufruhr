@@ -592,3 +592,14 @@ dialog:has(.comparison-reading) {width:98vw;height:98svh;max-height:98svh;paddin
 .ep-room-art.ch6-stage{inset:auto;left:50%;top:50%;transform:translate(-50%,-50%);width:min(100%,calc((100dvh - 100px)*1.333));height:auto;aspect-ratio:4/3}
 
 #overlay:has(.ep-reader){overflow-y:auto}.ep-reader{max-height:none;overflow:visible}
+
+/* Local end-of-game result export; shared historical controls. */
+.ep-export {flex:none;text-align:center;padding:8px 14px;background:var(--wood-dark,#28190f);border-top:1px solid #816340;}
+.ep-export h2 {font-size:1rem;margin:0 0 7px;color:#ead3a7;}
+.ep-export button {margin:3px 5px;min-height:44px;}
+.dossier-export {max-width:760px;box-sizing:border-box;padding:20px;background:var(--source-reading-paper);color:var(--ink);box-shadow:var(--paper-edge);border-radius:3px 5px 3px 4px;}
+.dossier-export label {display:block;margin:14px 0;}
+.dossier-export input {display:block;width:100%;box-sizing:border-box;min-height:44px;font:inherit;padding:8px;background:#f5e7ca;color:#28190f;border:1px solid #816340;}
+.dossier-actions {display:flex;gap:10px;flex-wrap:wrap;}
+.dossier-download {display:inline-flex;align-items:center;min-height:44px;padding:0 14px;color:#28190f;background:#ecd5a9;border:1px solid #816340;}
+@media(max-width:850px){.ep-export{padding:5px 8px;}.ep-export button{font-size:.85rem;margin:2px;}.ep-controls{gap:5px;}}
