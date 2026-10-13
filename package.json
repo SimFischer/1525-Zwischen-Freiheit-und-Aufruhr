@@ -1,0 +1,9 @@
+{
+ "name":"1525-zwischen-freiheit-und-aufruhr",
+ "private":true,
+ "version":"1.0.0",
+ "type":"module",
+ "engines":{"node":"22.x"},
+ "scripts":{"build":"node scripts/check-continuation.cjs","test:continuation":"node scripts/check-continuation.cjs"},
+ "dependencies":{"@vercel/blob":"2.8.1"}
+}

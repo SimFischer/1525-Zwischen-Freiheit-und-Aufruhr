@@ -5,7 +5,7 @@ import { syncConsequences } from './consequences.js';
 import { freshState } from './state.js';
 import { canonicalScene, sceneById, scenes } from '../data/scenes.js';
 import { choices } from '../data/choices.js';
-import { sortingGames } from '../data/minigames.js';
+import { sortingGames, puzzles } from '../data/minigames.js';
 import { grievances, reflections, demandParts } from '../data/chapter-two.js';
 const KEY = '1525.freedom.save.v1';
 export const TEST_KEY = '1525.freedom.test.v1';
@@ -44,17 +44,38 @@ function migrate(value) {
   base.resumeSetup = true;
   return syncConsequences(base);
 }
-export function load(normal = false) {
-  try {
-    const value = JSON.parse(testMode&&!normal ? testMemory : localStorage.getItem(KEY));
+// Shared by local storage and encrypted continuation snapshots. No storage writes.
+export function safeSavedStructure(value) {
+ let nodes=0;
+ const visit=(item,depth=0)=>{if(++nodes>100000||depth>24)throw Error('Invalid structure');
+  if(item===null||typeof item==='boolean')return;
+  if(typeof item==='number'){if(!Number.isFinite(item))throw Error('Invalid number');return;}
+  if(typeof item==='string'){if(item.length>120000)throw Error('Invalid text');return;}
+  if(typeof item!=='object')throw Error('Invalid value');
+  if(!Array.isArray(item)&&Object.getPrototypeOf(item)!==Object.prototype&&Object.getPrototypeOf(item)!==null)throw Error('Invalid object');
+  if(Array.isArray(item)&&item.length>5000)throw Error('Invalid array');
+  for(const key of Object.keys(item)){if(['__proto__','prototype','constructor','toString','valueOf'].includes(key))throw Error('Invalid key');visit(item[key],depth+1);}
+ };visit(value);return true;
+}
+export function normalizeSavedState(input) {
+ try {
+    safeSavedStructure(input);
+    const value=structuredClone(input);
     if (!value || ![1,2,3,4].includes(value.version) || !sceneById[canonicalScene(value.scene)]) return null;
     if (value.version === 1) return migrate(value);
+    for(const key of ['chapter2','chapter3','chapter4','chapter5','chapter6','forestEvidence','grievances','consequences','orientation','perceptions'])if(value[key]!==undefined&&(!value[key]||typeof value[key]!=='object'||Array.isArray(value[key])))return null;
+    if(value.phase!==undefined&&typeof value.phase!=='string')return null;
+    if(value.interaction!==undefined&&value.interaction!==null&&(typeof value.interaction!=='object'||Array.isArray(value.interaction)))return null;
     const base = freshState();
+    for(const key of ['dimensions','relationships'])if(Object.values(value[key]||{}).some(n=>!Number.isFinite(n)))return null;
+    if(Object.values(value.world||{}).some(v=>typeof v!=='string')||Object.values(value.choiceTexts||{}).some(v=>typeof v!=='string'))return null;
     for (const key of ['dimensions','relationships','world','notebook','progress','minigames','choices','choiceTexts']) {
       if (!value[key] || typeof value[key] !== 'object' || Array.isArray(value[key])) return null;
       base[key] = { ...base[key], ...value[key] };
     }
     for (const list of [base.notebook.entries, base.notebook.documents, base.progress.completedScenes, base.progress.visitedHotspots, base.progress.conversations, base.minigames.completed, base.minigames.puzzle]) if (!Array.isArray(list)) return null;
+    for(const list of [base.notebook.entries,base.notebook.documents,base.progress.completedScenes,base.progress.visitedHotspots,base.progress.conversations,base.minigames.completed,base.minigames.puzzle])if(list.some(item=>typeof item!=='string'||item.length>200))return null;
+    if(!base.notebook.passages||typeof base.notebook.passages!=='object'||Array.isArray(base.notebook.passages)||Object.values(base.notebook.passages).some(items=>!Array.isArray(items)||items.some(item=>typeof item!=='string'&&!Number.isInteger(item))))return null;
     for (const key of ['sorting','attempts','resolved','assisted','history']) if (!base.minigames[key] || typeof base.minigames[key] !== 'object' || Array.isArray(base.minigames[key])) return null;
     if (value.version === 2) {
       const oldAxis = base.minigames.axis;
@@ -102,6 +123,7 @@ export function load(normal = false) {
     base.scene = canonicalScene(value.scene); base.phase = value.phase || 'active';
     base.interaction = value.interaction || null;
     if (base.interaction && !['choice','puzzle','feedback'].includes(base.interaction.kind)) return null;
+    if(base.interaction?.kind==='puzzle'&&!puzzles[base.interaction.id])return null;
     if (base.interaction?.kind === 'choice' && !choices[base.interaction.id]) return null;
     base.dialogue = value.dialogue && Array.isArray(value.dialogue.lines) && value.dialogue.lines.every(line => typeof line.text === 'string') && Number.isInteger(value.dialogue.index) && value.dialogue.index >= 0 && value.dialogue.index < value.dialogue.lines.length ? value.dialogue : null;
     if (value.version === 2 && scenes.findIndex(scene=>scene.id===base.scene)>=scenes.findIndex(scene=>scene.kind==='sorting') && scenes.findIndex(scene=>scene.id===base.scene)<scenes.findIndex(scene=>scene.kind==='notebook')) {
@@ -117,6 +139,10 @@ export function load(normal = false) {
     sanitizeChapterSix(base);
     return syncConsequences(base);
   } catch { return null; }
+}
+export function load(normal = false) {
+ try { return normalizeSavedState(JSON.parse(testMode&&!normal ? testMemory : localStorage.getItem(KEY))); }
+ catch { return null; }
 }
 export function clearSave() {
   if(testMode) { testMemory=null; try {sessionStorage.removeItem(TEST_KEY);} catch {} return true; }

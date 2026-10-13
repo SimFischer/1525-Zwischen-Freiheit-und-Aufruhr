@@ -603,3 +603,16 @@ dialog:has(.comparison-reading) {width:98vw;height:98svh;max-height:98svh;paddin
 .dossier-actions {display:flex;gap:10px;flex-wrap:wrap;}
 .dossier-download {display:inline-flex;align-items:center;min-height:44px;padding:0 14px;color:#28190f;background:#ecd5a9;border:1px solid #816340;}
 @media(max-width:850px){.ep-export{padding:5px 8px;}.ep-export button{font-size:.85rem;margin:2px;}.ep-controls{gap:5px;}}
+
+/* Encrypted manual continuation uses the shared paper/wood surfaces. */
+.continuation-panel {background:var(--source-reading-paper);color:var(--ink);box-shadow:var(--paper-edge);padding:clamp(16px,3vw,28px);border-radius:3px 5px 3px 4px;max-width:760px;box-sizing:border-box;}
+.continuation-heading {display:flex;align-items:start;justify-content:space-between;gap:15px;}
+.continuation-heading h1 {margin:0 0 15px;}
+.continuation-panel label {display:block;margin:15px 0 6px;}
+.continuation-panel input {display:block;width:100%;box-sizing:border-box;min-height:48px;background:var(--paper-light);border:1px solid var(--line);color:var(--ink);font:1.3rem/1.4 Georgia,serif;padding:10px;}
+.continuation-result input {font:clamp(1.5rem,4vw,2.2rem)/1.4 monospace;text-align:center;letter-spacing:.12em;}
+.continuation-panel .panel-actions {display:flex;gap:10px;flex-wrap:wrap;}
+.continuation-panel button {min-height:44px;}
+#overlay:has(.continuation-panel) {overflow-y:auto;}
+#local-save-feedback {position:fixed;right:12px;bottom:8px;z-index:90;background:var(--leather-surface);color:#f6e4c0;border:1px solid #8b6b41;padding:5px 9px;font:.75rem/1.4 Georgia,serif;pointer-events:none;opacity:0;transition:opacity .2s;}
+#local-save-feedback.visible {opacity:1;}

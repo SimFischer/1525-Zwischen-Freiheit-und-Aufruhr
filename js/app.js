@@ -1,3 +1,4 @@
+import {configureContinuation,openContinuationSave,openContinuationLoad,localSaveFeedback} from './continuation-ui.js';
 import {configureEpilogue,beginEpilogue,epilogueActive,epilogueView,epilogueAction,syncEpilogue,leaveEpilogue} from './epilogue.js';
 import { configureChapterSix,prepareChapterSix,chapterSixAction,chapterSixInput } from './chapter-six.js';
 import { fitChapterSix } from './chapter-six-view.js';
@@ -40,7 +41,8 @@ function showPreparedState(next,active=true) {
 function persist() {
   const ok = save(state), label = document.querySelector('#save-status');
   if (label && isTestMode()) { label.textContent='Testzustand · getrennt vom normalen Spielstand'; return; }
-  if (label) label.textContent = ok ? '' : 'Speicherung nicht verfügbar';
+  if (label) label.textContent = ok ? '' : 'Lokale Speicherung nicht verfügbar.';
+  localSaveFeedback(ok);
 }
 document.addEventListener('storage-error', () => notify('Der Browser erlaubt gerade keine lokale Speicherung. Dein Fortschritt bleibt für diese Sitzung erhalten.'));
 function startScreen() {
@@ -50,7 +52,7 @@ function startScreen() {
   leaveEpilogue();
   setMode('exploration');
   const saved = load();
-  app.innerHTML = `<main class="start-screen">${fullscreenButton(true)}<div class="start-copy"><p class="start-year" data-admin-hold>1525<span class="year-dot">.</span></p><h1 data-admin-hold><span class="sr-only">1525 – </span>Zwischen Freiheit<br>und Aufruhr</h1><p class="start-description">Frühjahr 1525.<br>Ein Blatt aus Wittenberg erreicht das Dorf.<br>Am Abend wird darüber in der Taverne gesprochen.</p><div class="start-actions">${button('Neues Spiel',saved ? 'confirm-new' : 'new','class="primary"')}${saved ? button('Spiel fortsetzen','resume','class="secondary"') : ''}</div>${saved ? `<p class="resume-note">Zuletzt: ${esc(sceneById[saved.scene].title)}</p>${button('Spielstand zurücksetzen','confirm-reset','class="text-button"')}` : ''}</div></main>${testToolbar()}${debugView()}`;
+  app.innerHTML = `<main class="start-screen">${fullscreenButton(true)}<div class="start-copy"><p class="start-year" data-admin-hold>1525<span class="year-dot">.</span></p><h1 data-admin-hold><span class="sr-only">1525 – </span>Zwischen Freiheit<br>und Aufruhr</h1><p class="start-description">Frühjahr 1525.<br>Ein Blatt aus Wittenberg erreicht das Dorf.<br>Am Abend wird darüber in der Taverne gesprochen.</p><div class="start-actions">${saved ? button('Auf diesem Gerät fortsetzen','resume','class="primary"') : ''}${button('Neues Spiel',saved ? 'confirm-new' : 'new',saved?'class="secondary"':'class="primary"')}${button('Mit Code fortsetzen','continuation-load','class="secondary"')}</div>${saved ? `<p class="resume-note">Zuletzt: ${esc(sceneById[saved.scene].title)}</p>${button('Spielstand zurücksetzen','confirm-reset','class="text-button"')}` : ''}</div></main>${testToolbar()}${debugView()}`;
 }
 function enterScene(id, complete = true) {
   id = canonicalScene(id);
@@ -232,6 +234,8 @@ document.addEventListener('click',event => {
   if(action==='title') return;
   if(adminAction(action,target)) return;
   if(action.startsWith('debug-') || target.closest('.debug')) ensureAdminSession();
+  if(action==='continuation-save')return openContinuationSave();
+  if(action==='continuation-load')return openContinuationLoad();
   if (action === 'fullscreen') return void toggleFullscreen();
   if (action === 'close-overlay') return closeOverlay();
   if (action === 'new') return newGame();
@@ -247,7 +251,7 @@ document.addEventListener('click',event => {
     return;
   }
   if (action === 'home') { if (playing && !epilogueActive()) persist(); return startScreen(); }
-  if (action === 'menu') return openOverlay(`<article class="confirmation"><p class="eyebrow">Kapitel ${state.chapter}</p><h1 id="overlay-title">Eine kurze Pause.</h1><div class="menu-actions">${button('Weiterspielen →','close-overlay','class="primary"')}${button('Zum Startbildschirm','menu-home','class="secondary"')}${button('Spielstand zurücksetzen','confirm-reset','class="quiet"')}</div></article>`,() => {},state.uiMode);
+  if (action === 'menu') return openOverlay(`<article class="confirmation"><p class="eyebrow">Kapitel ${state.chapter}</p><h1 id="overlay-title">Eine kurze Pause.</h1><div class="menu-actions">${button('Weiterspielen →','close-overlay','class="primary"')}${button('Spielstand sichern','continuation-save','class="secondary"')}${button('Zum Startbildschirm','menu-home','class="secondary"')}${button('Spielstand zurücksetzen','confirm-reset','class="quiet"')}</div></article>`,() => {},state.uiMode);
   if (action === 'menu-home') { closeOverlay(); persist(); return startScreen(); }
   if (action === 'notebook') { document.querySelector('#notice').classList.remove('visible'); return openNotebook(); }
   if (action === 'notebook-tab') return openNotebook(target.dataset.tab);
@@ -348,6 +352,7 @@ configureStoryRecap({enterScene,render,persist});
 configureChapterThree({enterScene,render,persist,active:()=>playing});
 configureChapterTwo({enterScene,render,persist,clues:forestClues,dialogues:chapterTwoDialogues});
 installDragDrop(app,(id,zone) => { if(state.chapter===4)return; if(state.chapter===3) { chapterThreeDrop(id,zone); render(); persist(); return; } if(state.chapter===2) { chapterTwoDrop(id,zone); render(); persist(); return; } state.minigames.sorting[id] = zone; selectedCard = null; render(); persist(); },id => { if(state.chapter===4)return; if(state.chapter===3) { chapterThreeSelect(id); render(); persist(); return; } if(state.chapter===2) { if(state.scene==='ch2_dues') state.chapter2.selected=id; else selectCard(id); render(); persist(); return; } selectedCard = selectedCard === id ? null : id; render(); });
+configureContinuation({restore:next=>{resetStaging();replaceState(next);playing=true;selectedCard=null;preloadCharacters();if(state.resumeSetup){delete state.resumeSetup;enterScene(state.scene,false);}else{persist();render();}notify('Spielstand geladen.');}});
 configureAdmin({isPlaying:()=>playing,render,showState:showPreparedState});
 installAdminHold();
 const start = canonicalScene(new URLSearchParams(location.search).get('start'));
