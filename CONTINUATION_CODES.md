@@ -100,22 +100,20 @@ Bestehende Admin-/Save-, Kapitel-6-, Kapitel-5-State-, Story-Recap- und Epilog-T
 Production-End-to-End-Abnahme erfolgt nach Push: GitHub Pages → neue API → neue isolierte Browsersitzung mit leerem localStorage → exakt derselbe normalisierte Save und derselbe Dossier-Report; anschließend Autosave/Reload/PDF. Deploymentstatus und konkrete etwaige Vercel-Blockaden im Abschlussbericht nennen. Physisches iPad nicht automatisiert verfügbar; WebKit/Touch ist eine Engine-/Layoutprüfung.
 
 
-## Production-Konfiguration und Abnahme
+## Production-Konfiguration und bestandene Live-Abnahme
 
-Implementierung `92cffd9`: GitHub Pages und Vercel Production wurden erfolgreich deployed. Die öffentliche API liefert korrekte CORS-Header für `https://simfischer.github.io`, ist aber derzeit **BLOCKED_BY_VERCEL_CONFIG**: POST antwortet mit 503 und `{"error":"Storage not configured"}`. Zu diesem Zeitpunkt war `BLOB_READ_WRITE_TOKEN` in der laufenden Production-Funktion nicht verfügbar. Dies wurde ausschließlich über die API festgestellt, ohne Umgebungsvariablen oder Geheimnisse auszulesen.
+Die anfängliche Production-Blockade ist **aufgehoben**. Die erste Bereitstellung antwortete mit 503 „Storage not configured“, weil Vercels neue OIDC-Verbindung allein nur `BLOB_STORE_ID` und `BLOB_WEBHOOK_PUBLIC_KEY` gesetzt hatte, nicht die von der API erwartete Variable `BLOB_READ_WRITE_TOKEN`.
 
-Erforderliche Einstellung im Projekt `herr-fischer/luther-und-die-bauernkriege`:
+Am 13. Oktober 2026 wurde nach ausdrücklicher Freigabe des Nutzers der vorhandene eigene **private** Store `luther-und-die-bauernkriege-save` für **Production** mit „Add a read-write token env var to this connection“ verbunden. Vercel setzte den Token automatisch, „Sensitive“ blieb aktiviert. Tokenwerte wurden weder ausgelesen noch kopiert oder angezeigt. Die Verbindung ist auf die freigegebene Production-Umgebung beschränkt; das alte Spiel und sein Store blieben unverändert. Die neue Production-Bereitstellung übernahm die Variable.
 
-1. Einen eigenen **privaten** Blob-Store über Storage mit diesem Projekt verbinden. Keinen Store des alten Spiels verwenden.
-2. Die Verbindung ausdrücklich für **Production** aktivieren. Bei einem abweichenden Variablenpräfix muss für diese Funktion die Standardvariable **`BLOB_READ_WRITE_TOKEN`** gesetzt werden. Wert niemals ins Repository oder in den Chat kopieren.
-3. Nach dem Aktivieren die Production-Bereitstellung erneut deployen; eine neue Variable verändert bereits laufende Deployments nicht rückwirkend.
-4. Danach die beauftragte Production-E2E-Abnahme wiederholen: Code in GitHub Pages erzeugen, in separater Sitzung laden, Chapter-6-Felder/Notizbuch und Dossier prüfen.
+Die reale Abnahme wurde danach in **Edge und WebKit** bestanden:
 
-Lokale Unit-/API-/Kryptografie- sowie getrennte Edge-/WebKit-Sitzungstests mit simulierter API sind vollständig bestanden. Der reale Store-Roundtrip ist wegen dieser fehlenden Konfiguration noch **nicht** bestanden. Keine Behauptung eines funktionierenden produktiven Gerätewechsels, solange diese Blockade besteht.
+- GitHub Pages als einzige sichtbare Spielseite, echte Vercel-API und eigener privater Blob-Store; keine simulierte API in dieser Abnahme.
+- Normales neues Spiel: Code erzeugt und in einer zweiten, vollständig leeren Browsersitzung geladen; derselbe normalisierte State.
+- Absichtlich synthetischer Kapitel-6-QA-Stand in einer normalen Sitzung, ohne Admin-/Debugmodus: lange Texte mit Absätzen, Netzwerk und Begründungen, alle Urteilsfelder, Notebook/Quellen, Abschluss und epilogueSeen unverändert übertragen.
+- Lokales Speichern und erneutes Reload/Fortsetzen nach dem Gerätewechsel erhalten den Stand.
+- Dossier-Report vor und nach dem Transfer identisch; tatsächlicher PDF-Download nach dem Transfer erfolgreich. Die Prüfung bezieht sich auf Inhalte, nicht zufällige PDF-Metadaten/Datei-IDs.
+- Production-CORS: GitHub-Pages-Origin erlaubt, OPTIONS 204; fremde Origin 403. Regulärer Load eines unbekannten Codes 200/null. Erfolgreiches Save/Load bestätigt die verfügbare Production-Speicheranbindung, ohne Geheimnisse zu lesen.
+- Touchansichten 1024×768 und 820×640; kein physisches iPad. Automatische lokale Browser-/API-/Krypto-/Fehlerfall-Tests und bestehende Kapitel-/Save-/Epilog-Prüfungen weiterhin bestanden.
 
-
-### Production-Verbindung nach Freigabe aktiviert
-
-Am 13. Oktober 2026 wurde nach ausdrücklicher Freigabe des Nutzers der vorhandene eigene private Store `luther-und-die-bauernkriege-save` für **Production** mit der zusätzlichen Option „Add a read-write token env var to this connection“ verbunden. Vercel erzeugt dabei `BLOB_READ_WRITE_TOKEN` selbst; „Sensitive“ bleibt aktiviert. Es wurden weder Tokenwerte ausgelesen noch kopiert oder angezeigt. Die zuvor vorhandene OIDC-Verbindung alleine setzte nur `BLOB_STORE_ID` und `BLOB_WEBHOOK_PUBLIC_KEY` und erklärte daher die anfängliche API-Blockade.
-
-Die aktivierte Verbindung ist auf Production beschränkt. Das alte Spiel und sein Store bleiben unverändert. Das neue Deployment übernimmt die Variable; die anschließende reale API-/Gerätewechsel-Abnahme steht danach an.
+Es besteht keine verbleibende `BLOCKED_BY_VERCEL_CONFIG`-Blockade. Prüfartefakte liegen unter dem ignorierten `artifacts/continuation/` (Screenshots der Production-Verbindung, Live-Ladeansicht und erzeugtes Dossier). Synthetische QA-Snapshots enthalten keine tatsächlichen Schülerdaten und unterliegen derselben 90-Tage-Frist.
