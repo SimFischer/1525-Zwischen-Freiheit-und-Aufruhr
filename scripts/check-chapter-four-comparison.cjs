@@ -22,7 +22,7 @@ const base='http://127.0.0.1:4195/',KEY='1525.freedom.save.v1';
     const geometry=await page.evaluate(()=>{
      const reader=document.querySelector('.ch4-reader-scroll'),r=reader.getBoundingClientRect();
      return {horizontal:document.documentElement.scrollWidth>innerWidth,outerScroll:reader.scrollHeight-reader.clientHeight,
-      leaves:[...document.querySelectorAll('.ch4-comparison-leaf')].map(n=>{const b=n.getBoundingClientRect(),last=n.lastElementChild.getBoundingClientRect();return {scroll:n.scrollHeight-n.clientHeight,font:parseFloat(getComputedStyle(n).fontSize),bottom:last.bottom,limit:b.bottom,visible:last.bottom<=r.bottom};}),
+      leaves:[...document.querySelectorAll('.ch4-comparison-leaf')].map(n=>{const b=n.getBoundingClientRect(),last=n.lastElementChild.getBoundingClientRect();return {scroll:getComputedStyle(n).overflowY==='visible'?0:n.scrollHeight-n.clientHeight,font:parseFloat(getComputedStyle(n).fontSize),bottom:last.bottom,limit:b.bottom,visible:last.bottom<=r.bottom};}),
       controls:[...document.querySelectorAll('.ch4-reader button')].map(n=>n.getBoundingClientRect().toJSON())};
     });
     assert.equal(geometry.horizontal,false);
@@ -32,7 +32,7 @@ const base='http://127.0.0.1:4195/',KEY='1525.freedom.save.v1';
     await page.screenshot({path:`artifacts/ch4-comparison/${mode}-${width}.png`});
    }
    await inspect('story');await page.locator('.ch4-reader [data-action="close-overlay"]').first().click();
-   assert.ok((await page.locator('.task-scroll').textContent()).includes('Was hat sich zwischen den beiden Texten verändert?'));
+   assert.equal(await page.locator('[data-action="ch4-choice"]').isEnabled(),true);
    await page.locator('[data-action="notebook"]').click();await page.locator('[data-tab="documents"]').click();
    await page.locator('[data-action="archive-document"][data-document="c4_harsh"]').click();
    while(await page.locator('.ch4-source-canvas').getAttribute('data-page')!=='luther_comparison_frame')await page.locator('[data-ch4-source="next"]').click();

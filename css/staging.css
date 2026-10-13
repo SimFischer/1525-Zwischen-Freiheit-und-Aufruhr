@@ -487,7 +487,8 @@ dialog:has(.notebook) {
 .ch5-workspace {height:100%;display:flex;flex-direction:column;align-items:center;overflow:hidden;background:#24180f;}
 .ch5-work-title {flex:none;max-width:98%;padding:8px 10px;text-align:center;}
 .ch5-work-title h1 {font-size:clamp(18px,2vw,23px);line-height:1.2;margin:0;color:#f0ddb5;}
-.ch5-work-sheet {position:relative;flex:none;aspect-ratio:4/3;max-width:calc(100% - 16px);}
+.ch5-work-scroll {flex:1;min-height:0;width:100%;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;}
+.ch5-work-sheet {margin-inline:auto;position:relative;flex:none;aspect-ratio:4/3;max-width:calc(100% - 16px);}
 .ch5-work-sheet>img {position:absolute;inset:0;width:100%;height:100%;object-fit:contain;}
 .ch5-write-field {position:absolute;min-height:44px;margin:0;padding:2px;font:18px/1.32 Georgia,serif;overflow:visible;}
 .ch5-write-field strong {display:block;font-size:18px;line-height:1.25;}
@@ -496,7 +497,7 @@ dialog:has(.notebook) {
 .ch5-work-controls p {margin:0;font-size:18px;}
 .ch5-learning .game-footer {pointer-events:none;}
 @media(max-width:900px){.ch5-task{padding:12px!important;}.ch5-task .panel-actions{margin-top:.4rem;}.ch5-task p{margin:.5rem 0;}.ch5-task .ch4-paper-options button{padding:8px 10px;}.ch5-write-field p{margin:.3rem 0 0;}}
-@media(max-width:600px){.chapter-five-layout .ch5-task{max-height:calc(100svh - 90px);overflow-y:auto;}.ch5-task .ch4-paper-options{grid-template-columns:1fr;}.ch5-workspace{overflow-y:auto;}.ch5-work-sheet{min-width:0;}.ch5-learning{overflow-x:hidden;}}
+@media(max-width:600px){.chapter-five-layout .ch5-task{max-height:calc(100svh - 90px);overflow-y:auto;}.ch5-task .ch4-paper-options{grid-template-columns:1fr;}.ch5-workspace{overflow:hidden;}.ch5-work-sheet{min-width:0;}.ch5-learning{overflow-x:hidden;}}
 
 .chapter-five-layout .stage::before {background:none;}
 
