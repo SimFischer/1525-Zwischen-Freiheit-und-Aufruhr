@@ -98,3 +98,17 @@ Ungültiger, fehlender/abgelaufener, manipulierter und netzwerkbedingt nicht abr
 Bestehende Admin-/Save-, Kapitel-6-, Kapitel-5-State-, Story-Recap- und Epilog-Tests verwenden weiterhin die gemeinsame lokale Save-Architektur. Prüfartefakte und Referenzdateien liegen ausschließlich unter dem ignorierten `artifacts/continuation/`.
 
 Production-End-to-End-Abnahme erfolgt nach Push: GitHub Pages → neue API → neue isolierte Browsersitzung mit leerem localStorage → exakt derselbe normalisierte Save und derselbe Dossier-Report; anschließend Autosave/Reload/PDF. Deploymentstatus und konkrete etwaige Vercel-Blockaden im Abschlussbericht nennen. Physisches iPad nicht automatisiert verfügbar; WebKit/Touch ist eine Engine-/Layoutprüfung.
+
+
+## Ergebnis der Production-Abnahme
+
+Implementierung `92cffd9`: GitHub Pages und Vercel Production wurden erfolgreich deployed. Die öffentliche API liefert korrekte CORS-Header für `https://simfischer.github.io`, ist aber derzeit **BLOCKED_BY_VERCEL_CONFIG**: POST antwortet mit 503 und `{"error":"Storage not configured"}`. Damit ist `BLOB_READ_WRITE_TOKEN` in der laufenden Production-Funktion nicht verfügbar. Dies wurde ausschließlich über die API festgestellt, ohne Umgebungsvariablen oder Geheimnisse auszulesen.
+
+Erforderliche Einstellung im Projekt `herr-fischer/luther-und-die-bauernkriege`:
+
+1. Einen eigenen **privaten** Blob-Store über Storage mit diesem Projekt verbinden. Keinen Store des alten Spiels verwenden.
+2. Die Verbindung ausdrücklich für **Production** aktivieren. Bei einem abweichenden Variablenpräfix muss für diese Funktion die Standardvariable **`BLOB_READ_WRITE_TOKEN`** gesetzt werden. Wert niemals ins Repository oder in den Chat kopieren.
+3. Nach dem Aktivieren die Production-Bereitstellung erneut deployen; eine neue Variable verändert bereits laufende Deployments nicht rückwirkend.
+4. Danach die beauftragte Production-E2E-Abnahme wiederholen: Code in GitHub Pages erzeugen, in separater Sitzung laden, Chapter-6-Felder/Notizbuch und Dossier prüfen.
+
+Lokale Unit-/API-/Kryptografie- sowie getrennte Edge-/WebKit-Sitzungstests mit simulierter API sind vollständig bestanden. Der reale Store-Roundtrip ist wegen dieser fehlenden Konfiguration noch **nicht** bestanden. Keine Behauptung eines funktionierenden produktiven Gerätewechsels, solange diese Blockade besteht.
