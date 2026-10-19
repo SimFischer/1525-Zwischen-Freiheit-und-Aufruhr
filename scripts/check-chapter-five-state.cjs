@@ -41,5 +41,6 @@ const assert=require('node:assert/strict');global.window={addEventListener(){}};
  ];
  for(const mixed of cross){resolve(mixed);const before=structuredClone(mixed);sanitize(mixed);assert.equal(mixed.chapter5.endWorldState,before.chapter5.endWorldState);assert.deepEqual(mixed.chapter4,before.chapter4);}
  assert.equal(cross[3].chapter5.negotiationOutcome,'collapsed');assert.equal(cross[4].chapter5.civilianOutcome,'many_protected');
+ const recapEntry=prepareAdminStateForScene('ch5_freedom_after_action');assert.equal(recapEntry.chapter5.recap.phase,'ending');assert.equal(recapEntry.chapter5.openTheologicalQuestion,null);const campEntry=prepareAdminStateForScene('ch5_peasant_camp');assert.equal(campEntry.chapter5.finalAction,null);assert.equal(campEntry.chapter5.completed,false);
  console.log('PASS Chapter 5 deterministic outcomes: 4 Konrad, 3 negotiation, 3 civilian, 5 world outcomes; contradictory saves, idempotence and 12 admin prerequisites');
 })().catch(e=>{console.error(e);process.exitCode=1;});
