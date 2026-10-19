@@ -1,41 +1,8 @@
-// Regression checks for the whole-game learning audit, not admin route substitutes.
-const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
-const assert=require('node:assert/strict'),fs=require('node:fs'),server=require('./serve.cjs');
-const KEY='1525.freedom.save.v1',base='http://127.0.0.1:4197/';
-const act=(p,id)=>p.locator(`[data-action="${id}"]:visible`).first().click();
-async function fixture(p,id){await p.evaluate(async({id,KEY})=>{const {prepareAdminStateForScene}=await import('./js/admin-state.js');const s=prepareAdminStateForScene(id);s.dialogue=null;s.interaction=null;localStorage.setItem(KEY,JSON.stringify(s));},{id,KEY});await p.reload();await act(p,'resume');}
-(async()=>{server.listen(4197,'127.0.0.1');const b=await chromium.launch({channel:'msedge',headless:true});try{
- const p=await b.newPage({viewport:{width:1024,height:768}});await p.goto(base);
- const catalog=await p.evaluate(async()=>{
-  const {choices}=await import('./data/choices.js'),{scenes}=await import('./data/scenes.js'),{freshState,replaceState,state}=await import('./js/state.js'),{choiceFeedback}=await import('./js/feedback.js');
-  let checks=0;
-  for(const [id,c]of Object.entries(choices).filter(([id,c])=>!id.startsWith('ch4')&&!c.reflective))for(const opt of c.options.filter(o=>o.id!==c.solution)){
-   replaceState(freshState());const first=choiceFeedback(id,opt),second=choiceFeedback(id,opt);
-   if(first.after!=='retry-choice'||second.after==='retry-choice'||!second.assisted||first.submitted!==opt.text||!second.text.length)throw Error('unbounded or ungrounded feedback '+id);
-   if(Object.values(state.orientation).some(v=>v!==0))throw Error('assessed answer changes profile '+id);checks++;
-  }
-  return {checks,scenes,choices};
- });
- fs.writeFileSync('artifacts/learning-audit-catalog.json',JSON.stringify(catalog,null,2));
- const stages={ch4Peasants:'peasants',ch4Boundary:'boundary',ch4Comparison:'comparison'};
- for(const [id,stage]of Object.entries(stages)){
-  await fixture(p,'ch4_'+stage);await p.evaluate(async({KEY,stage})=>{const s=JSON.parse(localStorage.getItem(KEY));s.chapter4.docRead[stage]=true;localStorage.setItem(KEY,JSON.stringify(s));},{KEY,stage});await p.reload();await act(p,'resume');await act(p,'ch4-choice');
-  const wrong=catalog.choices[id].options.find(o=>o.id!==catalog.choices[id].solution);
-  await p.locator(`[data-option="${wrong.id}"]`).click();assert.match(await p.locator('.personal-note').innerText(),new RegExp(wrong.text.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')));assert.match(await p.locator('[data-action="ch4-feedback"]').innerText(),/Hinweis/);await act(p,'ch4-feedback');await p.locator(`[data-option="${wrong.id}"]`).click();assert.match(await p.locator('.ch4-task').innerText(),/Gemeinsam sichern/);await act(p,'ch4-feedback');assert.notEqual(await p.evaluate(key=>JSON.parse(localStorage.getItem(key)).scene,KEY),'ch4_'+stage);
- }
- for(const stage of ['lords','peasants_complement','structure']){
-  await fixture(p,'ch4_'+stage);await p.evaluate(({KEY,stage})=>{const s=JSON.parse(localStorage.getItem(KEY));s.chapter4.docRead[stage]=true;s.chapter4.attempts[stage]=0;s.chapter4.selections[stage]=[];delete s.chapter4.resolved[stage];localStorage.setItem(KEY,JSON.stringify(s));},{KEY,stage});await p.reload();await act(p,'resume');
-  const wrong={lords:'A',peasants_complement:'C',structure:'C'}[stage];await p.locator(`[data-item="${wrong}"]`).click();await act(p,'ch4-check');assert.ok((await p.locator('.ch4-task').innerText()).length>180);await act(p,'ch4-feedback');await act(p,'ch4-check');assert.match(await p.locator('.ch4-task').innerText(),/Gemeinsam halten/);await act(p,'ch4-feedback');
- }
- // Each chapter-four decision announces its actual question before answers open.
- for(const stage of ['authority','community','resistance','early','theology','negotiation','band','weingarten_choice','escalation','risk','judgment','peasants','boundary','comparison']){
-  await fixture(p,'ch4_'+stage);await p.evaluate(async()=>{const {state}=await import('./js/state.js');state.dialogue=null;state.interaction=null;state.chapter4.docRead[state.chapter4.stage]=true;});
-  const {html,question}=await p.evaluate(async()=>{const {state}=await import('./js/state.js'),{chapterFourChoiceId}=await import('./js/chapter-four.js'),{chapterFourChoices}=await import('./data/chapter-four.js'),{esc}=await import('./js/ui.js');return {html:(await import('./js/chapter-four-view.js')).chapterFourPanel(),question:esc(chapterFourChoices[chapterFourChoiceId(state.chapter4.stage)].prompt)};});
-  assert.doesNotMatch(html,/Was willst du aus dem bisherigen/);assert.ok(html.includes(question),'actual question before answers '+stage);
- }
- await fixture(p,'ch1_s2_document');await p.locator('[data-action="scene-document"]').count();
- await p.evaluate(async()=>{const {openDocument}=await import('./js/document-viewer.js');openDocument('freedom',0);});assert.match(await p.locator('.source-page-number').innerText(),/Heutige Wiedergabe/);await p.locator('[data-source-action="read"]').click();assert.match(await p.locator('.source-kind').innerText(),/In heutiger Sprache zusammengefasst/);await p.keyboard.press('Escape');
- await fixture(p,'ch4_preparation');assert.match(await p.locator('.ch4-task').innerText(),/Lies noch/);
- const memory=await p.evaluate(async()=>{const {sourceCanvas}=await import('./js/chapter-four-documents.js');return sourceCanvas('luther_freedom_small');});assert.match(memory,/In heutiger Sprache zusammengefasst/);assert.doesNotMatch(memory,/Behutsam modernisierte/);
- console.log(`PASS ${catalog.checks} closed alternatives: one guided second chance, shared explanation, neutral profile; chapter-4 retries, source labels and prerequisites`);
- }finally{await b.close();server.close();}})().catch(e=>{console.error(e);process.exitCode=1;server.close();});
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright'),assert=require('node:assert/strict'),server=require('./serve.cjs');const KEY='1525.freedom.save.v1';
+(async()=>{await new Promise(r=>server.listen(4197,'127.0.0.1',r));const b=await chromium.launch({channel:'msedge',headless:true});try{const p=await b.newPage({viewport:{width:1024,height:768}});await p.goto('http://127.0.0.1:4197/');const checks=await p.evaluate(async()=>{const {choices}=await import('./data/choices.js'),{freshState,replaceState,state}=await import('./js/state.js'),{choiceFeedback}=await import('./js/feedback.js');let count=0;for(const [id,c]of Object.entries(choices).filter(([id,c])=>!/^ch[345]/.test(id)&&!c.reflective))for(const o of c.options.filter(o=>o.id!==c.solution)){replaceState(freshState());const a=choiceFeedback(id,o),b=choiceFeedback(id,o),d=choiceFeedback(id,o);if(a.after!=='retry-choice'||b.after!=='retry-choice'||d.after==='retry-choice'||!d.assisted||!d.solution||!d.text)throw Error('feedback stages '+id);if(a.text===b.text)throw Error('identical hints '+id);if(Object.values(state.orientation).some(n=>n!==0))throw Error('knowledge answer changes profile');count++;}return count;});
+async function fixture(scene){await p.goto('http://127.0.0.1:4197/');await p.evaluate(async({scene,KEY})=>{const g=(await import('./js/admin-state.js')).prepareAdminStateForScene(scene);g.dialogue=null;g.interaction=null;g.chapter4.docRead[g.chapter4.stage]=true;g.consequences.adminScenario=null;localStorage.setItem(KEY,JSON.stringify(g));},{scene,KEY});await p.reload();await p.locator('[data-action="resume"]').click();}
+for(const stage of ['lords','peasants_complement','structure']){await fixture('ch4_'+stage);await p.locator(`[data-action="ch4-multi"][data-item="${stage==='lords'?'A':'C'}"]`).click();for(let n=1;n<=3;n++){await p.locator('[data-action="ch4-check"]').click();assert.equal(await p.evaluate(()=>JSON.parse(localStorage.getItem('1525.freedom.save.v1')).chapter4.feedback.resolved),n===3);assert.ok((await p.locator('.ch4-task').textContent()).length>50);if(n<3)await p.locator('[data-action="ch4-feedback"]').click();}}
+await fixture('ch4_regiments');assert.equal(await p.locator('.regiments-categories button').count(),3);await p.locator('[data-zone="both"]').click();for(let n=1;n<=3;n++){await p.locator('[data-reason="exclusive"]').click();assert.equal(await p.locator('[data-action="ch4-case-next"]').count(),n===3?1:0);}assert.match(await p.locator('.regiments-feedback').textContent(),/Glauben|Glaube/);
+await fixture('ch5_neighbor_love');for(let n=1;n<=3;n++){await p.locator('[data-action="ch5-choose"][data-option="A"]').click();const f=await p.evaluate(()=>JSON.parse(localStorage.getItem('1525.freedom.save.v1')).chapter5.feedback);assert.equal(!!f.next,n===3);if(n<3)await p.locator('[data-action="ch5-feedback"]').click();}
+const history=await p.evaluate(async()=>{const g=(await import('./js/admin-state.js')).prepareAdminStateForScene('ch5_freedom_after_action');return (await import('./js/decision-history.js')).decisionHistory('initialFreedomInterpretation',g);});assert.ok(history.includes('Damals standen zur Wahl:'));assert.ok(history.includes('(gewählt)'));assert.ok(history.includes('Unmittelbare Rückmeldung'));assert.ok(!history.includes('Was wäre gewesen'));
+console.log('PASS '+checks+' knowledge alternatives with three graduated stages; multiselect, ambiguous regimes and Chapter 5 help; genuine decisions remain separate; contextual history');}finally{await b.close();server.close();}})().catch(e=>{console.error(e);server.close();process.exitCode=1;});

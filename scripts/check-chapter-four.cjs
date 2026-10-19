@@ -34,7 +34,7 @@ const routes=[
    }
    if(s==='memory'){if(!c.memoryRead){await act(p,'ch4-memory');assert.ok((await p.locator('.notebook-content').textContent()).includes(game.choiceTexts.initialFreedomInterpretation));await p.locator('#overlay [data-action="close-overlay"]').click();}await p.locator('[data-scene="early"]').click();continue;}
    if(s==='regiments'){
-    for(const zone of ['boundary','worldly','both','boundary','both']){
+    for(const zone of ['both','worldly','both','both','both']){
      await p.locator(`[data-action="ch4-classify"][data-zone="${zone}"]`).click();await p.locator('[data-action="ch4-case-reason"][data-reason="sphere"]').click();await act(p,'ch4-case-next');
     }
     for(const id of ['A','B','D'])await p.locator(`[data-action="ch4-multi"][data-item="${id}"]`).click();await act(p,'ch4-synthesis');await p.locator('[data-scene="boundary"]').click();continue;

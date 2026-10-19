@@ -51,7 +51,7 @@ async function chapterFour(p,r){
    }
    if(s==='memory'){if(!c.memoryRead){await action(p,'ch4-memory');assert.ok((await p.locator('.notebook-content').textContent()).includes(game.choiceTexts.initialFreedomInterpretation));await p.locator('#overlay [data-action="close-overlay"]').click();}await p.locator('[data-scene="early"]').click();continue;}
    if(s==='regiments'){
-    for(const zone of ['boundary','worldly','both','boundary','both']){
+    for(const zone of ['both','worldly','both','both','both']){
      await p.locator(`[data-action="ch4-classify"][data-zone="${zone}"]`).click();await p.locator('[data-action="ch4-case-reason"][data-reason="sphere"]').click();await action(p,'ch4-case-next');
     }
     for(const id of ['A','B','D'])await p.locator(`[data-action="ch4-multi"][data-item="${id}"]`).click();await action(p,'ch4-synthesis');await p.locator('[data-scene="boundary"]').click();continue;
@@ -78,7 +78,8 @@ async function chapterFive(p,r){
   const key=s+':'+c.phase+':'+c.step;
   if(['intro','theological_arguments','three_reports','prisoner_scene','religion_functions','luther_balance','troops_approach','after_crisis','chapter6'].includes(s)&&!reloads.has(key)){await reload(p);reloads.add(key);}
   if(s==='chapter6'){assert.equal(c.completed,true);assert.ok(c.handoff.chapter5.endWorldState);assert.equal(c.handoff.initialFreedomInterpretation,r.first);done=true;break;}
-  if(await p.locator('[data-action="recap-skip"]').count()){await p.locator('[data-action="recap-skip"]').click();continue;}
+  if(await p.locator('[data-action="recap-begin"]').count()){await p.locator('[data-action="recap-begin"]').click();continue;}
+  if(await p.locator('[data-action="recap-next"]').count()){await p.locator('[data-action="recap-next"]').click();continue;}
   if(await p.locator('[data-action="recap-question"]').count()){await p.locator('[data-action="recap-question"]').click();continue;}
   if(await p.locator('[data-action="recap-select"]').count()){await p.locator('[data-action="recap-select"][data-item="luther_freedom_tension"]').click();await p.locator('[data-action="recap-finish"]').click();continue;}
   if(await p.locator('[data-action="recap-transition"]').count()){await p.locator('[data-action="recap-transition"]').click();continue;}

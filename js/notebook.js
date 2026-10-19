@@ -1,3 +1,4 @@
+import {decisionHistory} from './decision-history.js';
 import {risks} from '../data/chapter-six.js';
 import {personalPages} from './chapter-six-view.js';
 import { openTheologicalQuestions } from '../data/story-recap.js';
@@ -51,5 +52,7 @@ export function openNotebook(tab = 'freedom') {
   if(tab==='action'&&state.chapter5.openTheologicalQuestion){const q=openTheologicalQuestions.find(([id])=>id===state.chapter5.openTheologicalQuestion);if(q)content+='<h2>Eine Frage bleibt</h2><p>'+esc(q[1])+'</p>';}
   if(tab==='action'&&state.chapter5.completed)content+=button('Rückblick erneut ansehen','recap-replay','class="quiet"');
   if(tab==='documents'&&state.chapter5.openingPath)content+='<details class="editorial-info"><summary>Zur Einordnung</summary><p>Die Dorfszenen und Berichte sind erfunden. Die Luther-Gedanken sind in heutiger Sprache zusammengefasst. Sie greifen Freiheit und Dienst am Nächsten (1520), weltliche Obrigkeit (1523), Friedensermahnung und Aufruhrkritik (1525) auf. Die Originalauszüge liegen in den freigeschalteten Quellen des Archivs.</p></details>';
+  const remembered={freedom:['initialFreedomInterpretation','ch4Early','ch4HarshJudgment'],village:['forestResponse','corveeResponse','duesResponse'],memmingen:['ch3Religion','ch3Print'],path:['initialFreedomInterpretation','ch4Theology','ch4Risk'],action:['ch5Final','ch5Prisoner','ch5First','ch5Condition','ch5Counsel']};
+  content+=(remembered[tab]||[]).map(id=>decisionHistory(id,state)).join('');
   openOverlay(`<article class="notebook"><div class="overlay-top"><span class="eyebrow">Dein Notizbuch</span>${button('Schließen ×','close-overlay','class="quiet"')}</div><h1 id="overlay-title">Notizbuch</h1><nav class="notebook-tabs" aria-label="Notizbuch">${[...(state.chapter6.openingQuestion||state.chapter===6||state.chapter6.completed?[['theology','Meine Rückschau']]:[]),['freedom','Freiheit'],['documents','Dokumente'],['path','Mein Weg'],...(state.chapter5.openingPath?[['action','Mein Handeln']]:[]),...(state.chapter===3||state.chapter3.entryFocus?[['memmingen','Memmingen']]:[]),...((state.chapter===2||state.chapter2.forestComplete||state.chapter2.corveeComplete||state.chapter2.duesComplete)?[['village','Unser Dorf']]:[])].map(([id,label]) => `<button data-action="notebook-tab" data-tab="${id}" aria-current="${tab === id ? 'page' : 'false'}">${label}</button>`).join('')}</nav><div class="notebook-content">${content}</div></article>`, () => {}, 'notebook');
 }

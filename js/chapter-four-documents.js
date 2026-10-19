@@ -1,5 +1,5 @@
+import {decisionHistory} from './decision-history.js';
 import { chapterFourDocuments,chapterFourPageText,chapterFourComparisonKey } from '../data/chapter-four-documents.js';
-import { documentRegions } from '../data/chapter-four-document-regions.js';
 import { state,addUnique } from './state.js';
 import { save } from './save-system.js';
 import { esc,button,openOverlay } from './ui.js';
@@ -18,19 +18,12 @@ function sourceLine(page,text,index){
  return paragraph(text);
 }
 export function sourceCanvas(page,game=state,leaf=null){
- // Blank materials are decorative. Text flows intrinsically on their paper;
- // native image height and delivery coordinates must not create text scroll boxes.
- const supplied=documentRegions[page];
- // Single-page excerpts use the existing flat sheet; portrait booklet covers
- // remain covers. The angled Weingarten prop stays in the scene, not the reader.
- const folio=leaf!==null&&supplied?.regions.length>1;
- const meta=folio?supplied:leaf!==null||page.endsWith('_small')?documentRegions.ermahnung_lords:supplied||documentRegions.ermahnung_lords;
  const groups=leaf===null?chapterFourPageText[page]:[chapterFourPageText[page][leaf]];
- const comparison=page==='luther_comparison_frame',cover=meta.size[1]>meta.size[0];
+ const comparison=page==='luther_comparison_frame';
  const parts=groups.map((content,i)=>{
-  return `<section class="ch4-source-text${comparison?' ch4-comparison-leaf':''}" tabindex="0" aria-label="${esc(content[0])}">${content.map((text,n)=>sourceLine(page,text,n)+(page==='luther_freedom_small'&&n===0?'<p class="ch4-source-kind">Originalausschnitt · behutsam modernisiert</p>':'')).join('')}${page==='luther_freedom_small'?`<p class="ch4-source-personal">${esc('Dein damaliger Gedanke: '+(game.choiceTexts.initialFreedomInterpretation||'Noch keine Notiz.'))}</p>`:''}${comparison?`<p class="ch4-comparison-key">${esc(chapterFourComparisonKey[i])}</p>`:''}</section>`;
+  return `<section class="ch4-source-text${comparison?' ch4-comparison-leaf':''}" tabindex="0" aria-label="${esc(content[0])}">${content.map((text,n)=>sourceLine(page,text,n)+(page==='luther_freedom_small'&&n===0?'<p class="ch4-source-kind">Originalausschnitt · behutsam modernisiert</p>':'')).join('')}${page==='luther_freedom_small'?`<p class="ch4-source-personal">${esc('Dein damaliger Gedanke: '+(game.choiceTexts.initialFreedomInterpretation||'Noch keine Notiz.'))}</p>`:''}${page==='luther_freedom_small'?decisionHistory('initialFreedomInterpretation',game):''}${comparison?`<p class="ch4-comparison-key">${esc(chapterFourComparisonKey[i])}</p>`:''}</section>`;
  }).join('');
- return `<div class="ch4-source-canvas historical-document ${cover?'document-cover':groups.length>1?'document-spread':'document-sheet'}${comparison?' ch4-comparison-spread':''}${folio?' document-folio':''}" data-page="${page}" style="--folio:${leaf||0}"><img src="assets/chapter4/${meta.file}" alt="" draggable="false">${parts}</div>`;
+ return `<div class="ch4-source-canvas historical-document ${groups.length>1?'document-spread':'document-sheet'}${comparison?' ch4-comparison-spread':''}" data-page="${page}">${parts}</div>`;
 }
 export function openChapterFourDocument(id,pages=null,onClose=()=>{},archive=false,onRead=()=>{}){
  const doc=chapterFourDocuments[id];if(!doc)return;

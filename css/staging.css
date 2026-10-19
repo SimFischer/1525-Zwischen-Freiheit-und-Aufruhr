@@ -530,6 +530,52 @@ dialog:has(.notebook) {
 
 /* Quiet historical chronicle: original scene plates and Canon bodies, no video file. */
 .recap-layout{display:flex!important;align-items:center;justify-content:center;overflow:hidden;padding:12px;min-height:0}
+.self-recap{height:100%;width:min(100%,1200px);display:flex;flex-direction:column;min-height:0;color:#f2dfbb;background:#25190f;border:1px solid #927043;padding:16px}
+.self-recap header{display:flex;gap:16px;align-items:center;justify-content:space-between;flex:none;margin-bottom:14px}
+.self-recap h1{font:28px/1.2 Georgia,serif;margin:0}
+.self-recap header>span{white-space:nowrap;font:16px Georgia,serif}
+.self-recap-body{display:grid;grid-template-columns:40% minmax(0,1fr);gap:20px;flex:1;min-height:0}
+.self-recap-image{position:relative;align-self:center;width:100%;aspect-ratio:4/3;overflow:hidden}
+.self-recap-image>img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.self-recap-reading{overflow-y:auto;overflow-x:hidden;background:#f4e8cf;color:#2d2117;padding:20px;font:20px/1.55 Georgia,serif;min-height:0}
+.self-recap-reading p{line-height:inherit;margin:0 0 16px}
+.self-recap nav{display:flex;gap:12px;justify-content:space-between;flex:none;padding-top:14px}
+.self-recap nav button{min-height:44px}
+.ch6-stage:has(.academic-reading){width:100%;max-width:1100px;aspect-ratio:auto;flex:1;min-height:0;overflow-y:auto;overflow-x:hidden}
+.academic-reading{padding:24px;min-height:100%;font:20px/1.55 Georgia,serif}
+.academic-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;align-content:start}
+.ch6-reading-text{min-width:0;max-width:66ch;margin-inline:auto;width:100%;transform:none}
+.ch6-reading-text h2{font:700 26px/1.25 Georgia,serif;margin:0 0 16px}
+.ch6-reading-text p{line-height:1.55}
+.ch6-reading-text textarea{width:100%;min-height:150px;font:20px/1.5 Georgia,serif;padding:12px;resize:vertical;display:block;margin:12px 0;color:#2d2117;background:#fcf5e6;border:1px solid #9b8055}
+.ch6-reading-text button{min-height:44px}
+.ch6-stage:has(.ch6-page-nav){display:flex;flex-direction:column;overflow:hidden}
+.ch6-stage:has(.ch6-page-nav)>.academic-reading{flex:1;min-height:0;overflow-y:auto}
+.ch6-stage>.ch6-page-nav{position:static;width:100%;flex:none;padding:8px 0;color:#f2dfbb}
+.ch5-reading-sheet{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;width:calc(100% - 32px);max-width:1000px;margin:0 auto;padding:20px;background:#f4e8cf;color:#2d2117;border:1px solid #ad9165}
+.ch5-reading-sheet .ch5-write-field{position:static;padding:14px;min-width:0;width:auto;height:auto;font:20px/1.5 Georgia,serif;color:#2d2117;background:transparent;border:0;border-bottom:1px solid #b99d70;border-radius:0;box-shadow:none;text-align:left;overflow-wrap:break-word}
+.ch5-reading-sheet .ch5-write-field strong{font-size:20px;line-height:1.4}
+.ch5-reading-sheet .ch5-write-field p{font:20px/1.5 Georgia,serif}
+.ch5-reading-sheet [aria-pressed=true]{outline:2px solid #79552f;outline-offset:-2px}
+@media(max-width:600px){.self-recap-body,.academic-pair{grid-template-columns:1fr}.self-recap-image{display:none}}
+/* A quiet outcome before memory: original aftermath art, no task or card. */
+.chapter-five-ending{position:relative;isolation:isolate;width:100%;height:100%;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:clamp(16px,3vh,32px);color:#f4e6cb;background:#110d09;text-shadow:0 2px 5px #000;animation:recap-darken 1.2s both}
+.ending-world{position:absolute;z-index:-2;height:100%;aspect-ratio:4/3;left:50%;top:0;transform:translateX(-50%);pointer-events:none}
+.ending-world img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover}
+.chapter-five-ending::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#110d09e6,#110d09c9 25%,#110d09c9 75%,#110d09e6)}
+.ending-copy{width:min(100%,64ch);font:20px/1.55 Georgia,serif}
+.ending-copy h1{font-size:clamp(28px,3vw,40px);line-height:1.18;margin:0 0 .65em;text-wrap:balance}
+.ending-copy p{margin:0 0 .8em;line-height:inherit}
+.ending-copy .ending-personal{font-size:18px;margin:0;color:#ead4af}
+.ending-navigation{flex:none;display:flex;flex-direction:column;align-items:center;gap:6px;margin-top:20px;min-height:100px;text-shadow:none}
+.ending-navigation .ending-actions{display:flex;justify-content:center}
+.ending-navigation button{min-height:44px}
+.ending-navigation .ending-actions button{font-size:16px;padding:8px 14px}
+.recap-intro{width:100%;height:100%;display:grid;place-items:center;background:#050403;color:#f1dfc0}
+.recap-intro p{opacity:0;font:clamp(24px,3vw,38px)/1.4 Georgia,serif;text-align:center;margin:0;padding:24px;transition:opacity .5s}
+.recap-intro p.visible{opacity:1}
+@media(max-height:700px){.chapter-five-ending{padding:16px 24px}.ending-copy{font-size:20px;line-height:1.5}.ending-copy h1{font-size:28px}.ending-navigation{margin-top:12px}}
+@media(prefers-reduced-motion:reduce){.chapter-five-ending{animation:none}.recap-intro p{transition:none}}
 .story-recap-film{position:relative;width:100%;height:100%;background:#160e09;overflow:hidden;isolation:isolate}
 .recap-camera{position:absolute;width:min(100%,calc((100svh - 98px)*4/3));aspect-ratio:4/3;left:50%;top:46%;transform:translate(-50%,-50%);animation:recap-camera var(--recap-duration) linear both;animation-delay:var(--recap-elapsed);transform-origin:center}
 .recap-background,.recap-layer{position:absolute;width:100%;height:100%;object-fit:contain}

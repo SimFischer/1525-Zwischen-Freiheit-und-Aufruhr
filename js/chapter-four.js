@@ -1,3 +1,4 @@
+import {learningFeedback} from './learning-feedback.js';
 import { caseComplete,regimentsComplete,regimentsSummary } from '../data/chapter-four-regiments.js';
 import { state,addUnique } from './state.js';
 import { chapterFourChoices,chapterFourDialogues,multiselectTasks,preparationPairs,regimentsCases,regimentsZones,communityConditions,hermeneuticalCriteria } from '../data/chapter-four.js';
@@ -88,8 +89,8 @@ export function chapterFourAction(action,target){
    talk(option.reaction,nextAfterChoice(id));state.interaction=null;
   }else {
    const n=(c().attempts[id]||0)+1;c().attempts[id]=n;
-   const correct=option.id===def.solution,assisted=!correct&&n>=2;
-   c().feedback={submitted:option.text,text:correct?option.feedback:assisted?option.feedback+' Gemeinsam sichern wir den Kern: '+def.options.find(x=>x.id===def.solution).feedback:option.feedback+' '+def.hints[0],resolved:correct||assisted,next:nextAfterChoice(id)};
+   const correct=option.id===def.solution,assisted=!correct&&n>=3;
+   const solution=def.options.find(x=>x.id===def.solution);c().feedback={submitted:option.text,text:learningFeedback({count:n,correct,solution:solution.text,explanation:solution.feedback,hints:def.hints,response:option.feedback}).text,resolved:correct||assisted,next:nextAfterChoice(id)};
    if(correct||assisted){c().resolved[id]=true;state.minigames.resolved[id]=true;if(assisted)state.minigames.assisted[id]=true;}
   }return true;
  }
@@ -118,8 +119,8 @@ export function chapterFourAction(action,target){
   const missing=(task.solution||task.alternatives[0]).filter(id=>!a.includes(id));
   const excess=a.filter(id=>!(task.alternatives||[task.solution]).some(ids=>ids.includes(id)));
   const guidance=[...excess.map(id=>task.review[id]),...(missing.length?[task.review.missing]:[])].filter(Boolean).join(' ');
-  if(valid||n>=2){c().resolved[stage]=true;if(!valid)c().selections[stage]=[...(task.solution||task.alternatives[0])];if(stage==='lords')c().lutherLordsUnderstood=true;}
-  c().feedback={submitted:selected||'Noch keine Aussage ausgewählt.',text:valid?task.feedback:guidance+(n>=2?' Gemeinsam halten wir fest: '+task.feedback:''),resolved:valid||n>=2,next:{lords:'peasants',peasants_complement:'memory',structure:c().theologicalPreparation||c().branchOutcome==='interpretive_depth'||state.chapter3.religiousInterpretation==='hermeneutical_caution'?'analysis':'risk'}[stage]};return true;
+  if(valid||n>=3){c().resolved[stage]=true;if(!valid)c().selections[stage]=[...(task.solution||task.alternatives[0])];if(stage==='lords')c().lutherLordsUnderstood=true;}
+  c().feedback={submitted:selected||'Noch keine Aussage ausgewählt.',text:valid?task.feedback:guidance+(n===2?' Prüfe konkret: '+task.feedback+' Vergleiche damit jede ausgewählte Aussage.':n>=3?' Die tragfähige Auswahl lautet: '+(task.solution||task.alternatives[0]).map(id=>task.items.find(item=>item[0]===id)[1]).join(' ')+' '+task.feedback:''),resolved:valid||n>=3,next:{lords:'peasants',peasants_complement:'memory',structure:c().theologicalPreparation||c().branchOutcome==='interpretive_depth'||state.chapter3.religiousInterpretation==='hermeneutical_caution'?'analysis':'risk'}[stage]};return true;
  }
  if(action==='ch4-thought'){
   const list=c().selections.preparation||=[],id=target.dataset.item;if(list.includes(id))list.splice(list.indexOf(id),1);else if(list.length<2)list.push(id);return true;
@@ -131,12 +132,12 @@ export function chapterFourAction(action,target){
  if(action==='ch4-classify'){
   const cas=regimentsCases[c().regimentsIndex],classification=target.dataset.zone;
   if(stage!=='regiments'||!cas||!regimentsZones.some(([id])=>id===classification))return true;
-  if(c().twoRegimentsCases[cas.id]?.classification!==classification)c().twoRegimentsCases[cas.id]={classification,reasoning:null};return true;
+  if(c().twoRegimentsCases[cas.id]?.classification!==classification)c().twoRegimentsCases[cas.id]={classification,reasoning:null};c().caseFeedback=null;return true;
  }
  if(action==='ch4-case-reason'){
   const cas=regimentsCases[c().regimentsIndex],entry=cas&&c().twoRegimentsCases[cas.id];
   if(stage!=='regiments'||!entry?.classification||!cas.reasons.some(([id])=>id===target.dataset.reason))return true;
-  entry.reasoning=target.dataset.reason;return true;
+  const correct=target.dataset.reason!=='exclusive'&&cas.preferred.includes(entry.classification),key='case_'+cas.id,n=(c().attempts[key]||0)+(correct?0:1);c().attempts[key]=n;if(correct||n>=3){if(!correct)entry.classification=cas.preferred[0];entry.reasoning=correct?target.dataset.reason:'limit';c().caseFeedback=null;}else c().caseFeedback=learningFeedback({count:n,correct:false,solution:cas.reasons.find(([id])=>id==='limit')[1],explanation:cas.feedback,response:cas.correction}).text;return true;
  }
  if(action==='ch4-case-next'){
   const cas=regimentsCases[c().regimentsIndex];
@@ -148,8 +149,8 @@ export function chapterFourAction(action,target){
   if(!selected.length)return true;
   const valid=JSON.stringify(selected)===JSON.stringify(['A','B','D']);
   const attempt=(c().attempts.regiments_synthesis||0)+1;c().attempts.regiments_synthesis=attempt;
-  if(valid||attempt>=2){c().resolved.regiments=true;c().selections.regiments_synthesis=['A','B','D'];c().caseFeedback=regimentsSummary;}
-  else c().caseFeedback='Die Unterscheidung hilft bei der Prüfung, entscheidet aber nicht jeden Konflikt automatisch. Prüfe auch, wo beide Bereiche berührt sind und ihre Grenzen überschritten werden können.';
+  if(valid||attempt>=3){c().resolved.regiments=true;c().selections.regiments_synthesis=['A','B','D'];c().caseFeedback=regimentsSummary;}
+  else c().caseFeedback=(attempt===2?'Prüfe konkret die Aussage über den Schutzauftrag: Er ersetzt keine Prüfung der Mittel und ihrer Grenzen. ':'')+'Die Unterscheidung hilft bei der Prüfung, entscheidet aber nicht jeden Konflikt automatisch. Prüfe auch, wo beide Bereiche berührt sind und ihre Grenzen überschritten werden können.';
   return true;
  }
  if(action==='ch4-criterion'){const i=Number(target.dataset.index);if(i>=0&&i<5)addUnique(c().comparisonCriteria,i);c().comparisonIndex=i;return true;}

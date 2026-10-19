@@ -2793,7 +2793,16 @@
     "ui/ch4_case_cards_set.png",
     "props/ch4_prop_weingarten_report.png",
     "documents/ch4_doc_luther_freedom_small.png",
-    "documents/ch4_doc_worldly_authority_small.png"
+    "documents/ch4_doc_worldly_authority_small.png",
+    "documents/ch4_doc_ermahnung_closed.png",
+    "documents/ch4_doc_ermahnung_open.png",
+    "documents/ch4_doc_ermahnung_lords.png",
+    "documents/ch4_doc_ermahnung_peasants.png",
+    "documents/ch4_doc_muentzer_context_closed.png",
+    "documents/ch4_doc_muentzer_context_open.png",
+    "documents/ch4_doc_harsh_text_closed.png",
+    "documents/ch4_doc_harsh_text_open.png",
+    "documents/ch4_doc_luther_comparison_frame.png"
   ],
   "revision_baseline_commit": "42ab89a",
   "revision_qa": "docs/kapitel4-dorfrevision-qa.md",

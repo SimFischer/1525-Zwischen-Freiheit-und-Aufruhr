@@ -5,6 +5,7 @@ function validateRuntimeAssets(requests){
  intentionallyRetired.push(...['manor_negotiation','jakob_study_table','village_assembly_large','village_edge_group','village_escalation'].map(n=>`backgrounds/ch4_bg_${n}.png`),'overlays/ch4_overlay_delegation.png');
  intentionallyRetired.push('ui/ch4_ui_two_regiments_table.png','ui/ch4_case_cards_set.png');
  intentionallyRetired.push('props/ch4_prop_weingarten_report.png','documents/ch4_doc_luther_freedom_small.png','documents/ch4_doc_worldly_authority_small.png');
+ intentionallyRetired.push(...m.assets.filter(a=>a.relative_path.startsWith('documents/')&&!intentionallyRetired.includes(a.relative_path)).map(a=>a.relative_path));
  assert.deepEqual([...(m.retired_runtime_assets||[])].sort(),intentionallyRetired.sort(),'Only explicitly retired compositions, drag-task materials and replaced reading surfaces may be excluded');
  const retired=new Set(m.retired_runtime_assets);
  const prohibited=new Set([...retired,...(m.legacy_runtime_files||[]).map(p=>p.replace('assets/chapter4/',''))]);

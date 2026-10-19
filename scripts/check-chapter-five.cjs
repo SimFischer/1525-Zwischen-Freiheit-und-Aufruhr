@@ -19,7 +19,8 @@ async function reload(p){const before=await saved(p);await p.reload();await act(
    if(width===1024&&!shots.has(s)){await p.waitForFunction(()=>[...document.querySelectorAll('.chapter-five-layout img')].every(i=>i.complete&&i.naturalWidth));await p.screenshot({path:`artifacts/chapter5/${r.id}-${s}.png`});shots.add(s);}
    const rk=s+':'+c.phase;if(['intro','negotiation_effect','prisoner_scene','three_reports','theological_arguments','religion_functions','luther_balance','troops_approach','action_effect','after_crisis','chapter6'].includes(s)&&!reloads.has(rk)){await reload(p);reloads.add(rk);}
    if(s==='chapter6'){assert.equal(c.completed,true);assert.equal(c.endWorldState,r.end);assert.equal(c.handoff.chapter5.endWorldState,r.end);assert.ok(c.handoff.initialFreedomInterpretation);done=true;break;}
-  if(await p.locator('[data-action="recap-skip"]').count()){await p.locator('[data-action="recap-skip"]').click();continue;}
+  if(await p.locator('[data-action="recap-begin"]').count()){await p.locator('[data-action="recap-begin"]').click();continue;}
+  if(await p.locator('[data-action="recap-next"]').count()){await p.locator('[data-action="recap-next"]').click();continue;}
   if(await p.locator('[data-action="recap-question"]').count()){await p.locator('[data-action="recap-question"]').click();continue;}
   if(await p.locator('[data-action="recap-select"]').count()){await p.locator('[data-action="recap-select"][data-item="luther_freedom_tension"]').click();await p.locator('[data-action="recap-finish"]').click();continue;}
   if(await p.locator('[data-action="recap-transition"]').count()){await p.locator('[data-action="recap-transition"]').click();continue;}
