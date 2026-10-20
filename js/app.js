@@ -1,3 +1,5 @@
+import {teacherAction} from './teachers.js';
+import {rememberAdminTask} from './admin-teacher.js';
 import {configureContinuation,openContinuationSave,openContinuationLoad,localSaveFeedback} from './continuation-ui.js';
 import {configureEpilogue,beginEpilogue,epilogueActive,epilogueView,epilogueAction,syncEpilogue,leaveEpilogue} from './epilogue.js';
 import { configureChapterSix,prepareChapterSix,chapterSixAction,chapterSixInput } from './chapter-six.js';
@@ -52,7 +54,7 @@ function startScreen() {
   leaveEpilogue();
   setMode('exploration');
   const saved = load();
-  app.innerHTML = `<main class="start-screen">${fullscreenButton(true)}<div class="start-copy"><p class="start-year" data-admin-hold>1525<span class="year-dot">.</span></p><h1 data-admin-hold><span class="sr-only">1525 – </span>Zwischen Freiheit<br>und Aufruhr</h1><p class="start-description">Frühjahr 1525.<br>Ein Blatt aus Wittenberg erreicht das Dorf.<br>Am Abend wird darüber in der Taverne gesprochen.</p><div class="start-actions">${saved ? button('Auf diesem Gerät fortsetzen','resume','class="primary"') : ''}${button('Neues Spiel',saved ? 'confirm-new' : 'new',saved?'class="secondary"':'class="primary"')}${button('Mit Code fortsetzen','continuation-load','class="secondary"')}</div>${saved ? `<p class="resume-note">Zuletzt: ${esc(sceneById[saved.scene].title)}</p>${button('Spielstand zurücksetzen','confirm-reset','class="text-button"')}` : ''}</div></main>${testToolbar()}${debugView()}`;
+  app.innerHTML = `<main class="start-screen">${fullscreenButton(true)}<div class="start-copy"><p class="start-year" data-admin-hold>1525<span class="year-dot">.</span></p><h1 data-admin-hold><span class="sr-only">1525 – </span>Zwischen Freiheit<br>und Aufruhr</h1><p class="start-description">Frühjahr 1525.<br>Ein Blatt aus Wittenberg erreicht das Dorf.<br>Am Abend wird darüber in der Taverne gesprochen.</p><div class="start-actions">${saved ? button('Auf diesem Gerät fortsetzen','resume','class="primary"') : ''}${button('Neues Spiel',saved ? 'confirm-new' : 'new',saved?'class="secondary"':'class="primary"')}${button('Mit Code fortsetzen','continuation-load','class="secondary"')}</div>${saved ? `<p class="resume-note">Zuletzt: ${esc(sceneById[saved.scene].title)}</p>${button('Spielstand zurücksetzen','confirm-reset','class="text-button"')}` : ''}${button('Für Lehrkräfte','teacher-open','class="text-button teacher-entry"')}</div></main>${testToolbar()}${debugView()}`;
 }
 function enterScene(id, complete = true) {
   id = canonicalScene(id);
@@ -88,10 +90,11 @@ function completeConversation(id) {
 }
 function showFeedback(data) { state.interaction = { kind:'feedback',...data }; }
 function render() {
+  rememberAdminTask(state);
   syncStoryRecap();
   document.body.dataset.testMode=String(isTestMode());
   if (!playing) return startScreen();
-  if(epilogueActive()){app.innerHTML=epilogueView();syncEpilogue();return;}
+  if(epilogueActive()){app.innerHTML=epilogueView()+testToolbar();syncEpilogue();return;}
   const scene = sceneById[state.scene], debugWasOpen = app.querySelector('.debug')?.open || false;
   if(scene.chapter===6){setMode('minigame');app.innerHTML=sceneView()+debugView(debugWasOpen)+testToolbar();fitChapterSix();return;}
   if(scene.chapter===5){
@@ -232,6 +235,7 @@ document.addEventListener('click',event => {
   if (!target || target.disabled) return;
   const action = target.dataset.action || (target.dataset.dropZone ? 'sort-target' : null), scene = sceneById[state.scene];
   if(action==='title') return;
+  if(teacherAction(action)) return;
   if(adminAction(action,target)) return;
   if(action.startsWith('debug-') || target.closest('.debug')) ensureAdminSession();
   if(action==='continuation-save')return openContinuationSave();

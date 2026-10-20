@@ -291,6 +291,7 @@ dialog:has(.document-table) {
 .wordmark,[data-admin-hold] { user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; touch-action:none; }
 body[data-test-mode="true"] { --test-bar-height:54px; }
 body[data-test-mode="true"] .game-layout, body[data-test-mode="true"] .chapter-six-layout { height:calc(100svh - 56px - var(--test-bar-height)); }
+body[data-test-mode="true"] .epilogue {height:calc(100svh - var(--test-bar-height));}
 body[data-test-mode="true"] .stage { --room-height:min(calc(100vw * .5628),calc(100svh - 56px - var(--test-bar-height))); }
 body[data-test-mode="true"] .task-panel { max-height:calc(100svh - 104px - var(--test-bar-height)); }
 body[data-test-mode="true"] .chapter-two-layout:has(.day-plan) .task-panel { max-height:calc(100svh - 180px - var(--test-bar-height)); }
@@ -614,4 +615,39 @@ dialog:has(.ch4-reader) {width:96vw;max-width:1260px;height:98svh;max-height:98s
 .decision-history summary span {display:block;margin-top:6px;font-size:18px;}
 .decision-history li {margin:8px 0;line-height:1.5;}
 .decision-history .chosen {font-weight:700;}
+.teacher-entry {display:block;margin-top:12px;color:#ebd8b4;min-height:44px;}
+body[data-mode="teacher"] #overlay {width:min(1000px,96vw);max-width:96vw;max-height:94svh;padding:0;background:#f3e8d1;color:#302719;border:2px solid #947148;}
+.teacher-guide {height:90svh;display:flex;flex-direction:column;padding:20px;min-height:0;}
+.teacher-guide>header {flex:none;border-bottom:1px solid #b29a73;}
+.teacher-guide h1 {font-size:28px;margin-bottom:8px;}
+.teacher-guide h2 {font-size:23px;color:#38503b;margin-top:20px;}
+.teacher-guide p,.teacher-guide li {font-size:18px;line-height:1.55;}
+.teacher-guide li {margin-bottom:12px;}
+.teacher-scroll {overflow:auto;min-height:0;padding:0 16px 16px 0;overscroll-behavior:contain;}
+.teacher-guide>footer {padding-top:12px;flex:none;border-top:1px solid #b29a73;}
+.teacher-cheatsheet {display:none;}
+.teacher-state,.teacher-solutions,.teacher-demonstration {border-top:1px solid #af956b;padding:14px 0;margin-top:10px;}
+.admin-console details>summary {cursor:pointer;min-height:44px;padding:10px 0;line-height:1.4;}
+.admin-console .teacher-state p,.admin-console .teacher-solutions p {font-size:17px;line-height:1.5;}
+.admin-console .teacher-solutions details {margin:8px 0;padding:0 8px;border-left:2px solid #9b7e4a;}
+.admin-console .admin-targets button {overflow-wrap:anywhere;}
+@media(max-width:600px) {.teacher-guide {padding:12px;}.teacher-guide>footer {gap:6px;}.teacher-guide>footer button {flex:1 1 130px;}}
+@page {size:A4 portrait;margin:12mm;}
+@media print {
+ html:has(body.printing-teacher) {background:white!important;}
+ body.printing-teacher {background:white!important;color:#171717!important;overflow:visible!important;}
+ body.printing-teacher>*:not(#overlay) {display:none!important;}
+ body.printing-teacher #overlay {display:block!important;position:static!important;inset:auto!important;width:auto!important;max-width:none!important;height:auto!important;max-height:none!important;overflow:visible!important;border:0!important;padding:0!important;margin:0!important;background:white!important;color:#171717!important;box-shadow:none!important;}
+ body.printing-teacher #overlay::backdrop {display:none;}
+ body.printing-teacher .teacher-guide,body.printing-teacher .teacher-scroll {display:block;height:auto;max-height:none;overflow:visible;padding:0;}
+ body.printing-teacher .teacher-guide>header,body.printing-teacher .teacher-guide>footer,body.printing-teacher .teacher-scroll>section:not(.teacher-cheatsheet) {display:none!important;}
+ body.printing-teacher .teacher-cheatsheet {display:block;}
+ body.printing-teacher .teacher-cheatsheet h1 {font:bold 18pt Georgia,serif;margin:0 0 3mm;}
+ body.printing-teacher .teacher-cheatsheet h2 {font:bold 11pt Georgia,serif;color:#171717;margin:3mm 0 1mm;}
+ body.printing-teacher .teacher-cheatsheet p,body.printing-teacher .teacher-cheatsheet li {font:10pt/1.28 Georgia,serif;margin:0 0 2mm;}
+ body.printing-teacher .teacher-cheatsheet ol {padding-left:5mm;margin:0;}
+ body.printing-teacher .teacher-print-columns {display:grid;grid-template-columns:1fr 1fr;gap:7mm;}
+ body.printing-teacher .teacher-print-columns section {min-width:0;}
+ body.printing-teacher .teacher-cheatsheet li {break-inside:avoid;}
+}
 @media(max-width:600px){.source-viewport:not(.reading){grid-template-columns:1fr;}}

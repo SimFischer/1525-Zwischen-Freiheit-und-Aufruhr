@@ -49,18 +49,10 @@ export const adminChapterTargets = {
 // Curated dramatic entry points for the regular admin overlay. Detailed targets
 // above remain the canonical fixtures; later chapters add 3-5 nodes here.
 export const adminMainTargets = {
-  6:[{id:'ch6_reflection_entry',label:'Einstieg / Freiheitsverständnis'},{id:'ch6_comparison_0',label:'Luther und Müntzer'},{id:'ch6_final_position',label:'Finales Urteil / Freiheitsfrage'}],
-  5:[{id:'ch5_intro',label:'Kapitelstart / vorbereiteter Weg'},{id:'ch5_prisoner_scene',label:'Krise / Gefangenenentscheidung'},{id:'ch5_troops_approach',label:'Finale Handlung / Nachwirkung'}],
-  4:[{id:'ch4_opening',label:'Dorf / vorbereiteter Weg'},{id:'ch4_ermahnung',label:'Luther / Ordnung und Auslegung'},{id:'ch4_escalation',label:'Eskalation / Urteil und Kapitelende'}],
-  3:[{id:'ch3_hub',label:'Memmingen / Beschwerden'},{id:'ch3_articles',label:'Zwölf Artikel / Auslegung'},{id:'ch3_printshop',label:'Druckerei / Kapitelende'}],
-  1: [
-    {id:'ch1_s1_intro',label:'Kapitelstart / Taverne'},
-    {id:'ch1_s6_freedom_sorting',label:'Luther-Freiheit / zentrale Aufgaben'},
-    {id:'ch1_end',label:'Kapitelabschluss'}
-  ],
-  2: [
-    {id:'ch2_hub',label:'Dorf-Hub'},
-    {id:'ch2_corvee',label:'Alltag / Pflichtstationen'},
-    {id:'ch2_assembly',label:'Dorfversammlung / Kapitelabschluss'}
-  ]
+  1:[{id:'ch1_s1_intro',label:'Einstieg / Taverne'},{id:'ch1_s2_document',label:'Freiheit eines Christenmenschen'},{id:'ch1_s6_freedom_sorting',label:'Zentrale Freiheitsaufgabe'},{id:'ch1_end',label:'Kapitelabschluss'}],
+  2:[{id:'ch2_hub',label:'Soziale Belastungen / Dorf'},{id:'ch2_dues',label:'Getreide und Abgaben'},{id:'ch2_corvee',label:'Frondienste'},{id:'ch2_demands',label:'Beschwerden → Forderungen'}],
+  3:[{id:'ch3_hub',label:'Memmingen'},{id:'ch3_articles',label:'Zwölf Artikel'},{id:'ch3_religion',label:'Religiöse Begründung'},{id:'ch3_printshop',label:'Öffentlichkeit / Druck'}],
+  4:[{id:'ch4_regiments',label:'Zwei Regimente'},{id:'ch4_ermahnung',label:'Ermahnung zum Frieden'},{id:'ch4_muentzer',label:'Luther / Müntzer'},{id:'ch4_weingarten',label:'Weingarten'},{id:'ch4_resistance',label:'Widerstand / Gewalt'}],
+  5:[{id:'ch5_intro',label:'Vorbereiteter Startpfad'},{id:'ch5_prisoner_scene',label:'Gefangenenentscheidung'},{id:'ch5_troops_approach',label:'Letzte Entscheidung'},{id:'ch5_freedom_after_action',label:'Persönlicher Endzustand'}],
+  6:[{id:'ch6_reflection_entry',label:'Einstieg'},{id:'ch6_luther_originals',label:'Luther 1520 ↔ 1525'},{id:'ch6_comparison_0',label:'Luther / Müntzer'},{id:'ch6_final_judgment',label:'Schlussurteil'},{id:'ch6_ending',label:'Dossier / Abschluss'}]
 };
