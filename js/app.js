@@ -235,7 +235,7 @@ document.addEventListener('click',event => {
   if (!target || target.disabled) return;
   const action = target.dataset.action || (target.dataset.dropZone ? 'sort-target' : null), scene = sceneById[state.scene];
   if(action==='title') return;
-  if(teacherAction(action)) return;
+  if(teacherAction(action,target)) return;
   if(adminAction(action,target)) return;
   if(action.startsWith('debug-') || target.closest('.debug')) ensureAdminSession();
   if(action==='continuation-save')return openContinuationSave();
