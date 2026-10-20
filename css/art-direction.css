@@ -618,23 +618,32 @@ dialog:has(.ch4-reader) {width:96vw;max-width:1260px;height:98svh;max-height:98s
 body[data-mode="teacher"] #overlay {width:min(1000px,96vw);max-width:96vw;max-height:94svh;padding:0;background:#f3e8d1;color:#302719;border:2px solid #947148;}
 .teacher-guide {height:90svh;display:flex;flex-direction:column;padding:20px;min-height:0;}
 .teacher-guide>header {flex:none;border-bottom:1px solid #b29a73;}
-.teacher-guide h1 {font-size:28px;margin-bottom:8px;}
-.teacher-guide h2 {font-size:23px;color:#38503b;margin-top:20px;}
-.teacher-guide p,.teacher-guide li {font-size:18px;line-height:1.55;}
-.teacher-guide li {margin-bottom:12px;}
+.teacher-guide h1 {font-size:30px;font-weight:bold;color:#583b25;margin-bottom:6px;}
+.teacher-guide h2 {font-size:21px;font-weight:bold;color:#38503b;margin:16px 0 6px;}
+.teacher-guide p,.teacher-guide li {font-size:17px;line-height:1.4;}
+.teacher-guide li {margin-bottom:5px;}
+.teacher-guide ul,.teacher-guide ol {margin:4px 0 8px;padding-left:21px;}
+.teacher-guide .teacher-subtitle {font-size:16px;color:#66533e;margin-bottom:8px;}
+.teacher-chapters {list-style:none;padding-left:0!important;}
+.teacher-chapters span {display:block;color:#66533e;}
+.teacher-stops {list-style:none;padding-left:0!important;}
+.teacher-inline-list {columns:2;column-gap:18px;}
+.teacher-inline-list li {break-inside:avoid;}
 .teacher-scroll {overflow:auto;min-height:0;padding:0 16px 16px 0;overscroll-behavior:contain;}
 .teacher-guide>footer {padding-top:12px;flex:none;border-top:1px solid #b29a73;}
 .teacher-cheatsheet {display:block;}
 .teacher-print-columns {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;}
 .teacher-print-columns>section {min-width:0;}
-.teacher-key {border-left:3px solid #526345;background:#e7dcc4;padding:12px;margin:12px 0;}
+.teacher-key {border:1px solid #af956b;border-radius:3px;background:#efe4cc;padding:10px 12px;margin:10px 0;}
+.teacher-key-green {border-color:#9aab88;background:#e4e8d6;}
+.teacher-key-ochre {border-color:#b99554;background:#f1e3bf;}
 .teacher-key h2 {margin-top:0;}
 .teacher-key p:last-child {margin-bottom:0;}
 .teacher-learning-path {margin:8px 0 0;color:#38503b;font-weight:bold;}
 .teacher-problems {width:100%;border-collapse:collapse;}
 .teacher-problems th,.teacher-problems td {border:1px solid #b29a73;padding:8px;vertical-align:top;text-align:left;font-size:17px;line-height:1.45;overflow-wrap:anywhere;}
 .teacher-problems thead th {background:#ded0b4;}
-.teacher-problems tbody th {width:32%;font-weight:normal;}
+.teacher-problems tbody th {width:29%;font-weight:normal;}
 .admin-guide-actions {display:flex;gap:8px;flex-wrap:wrap;}
 @media(max-width:900px) {.teacher-print-columns {grid-template-columns:minmax(0,1fr);}}
 .teacher-state,.teacher-solutions,.teacher-demonstration {border-top:1px solid #af956b;padding:14px 0;margin-top:10px;}
@@ -652,17 +661,22 @@ body[data-mode="teacher"] #overlay {width:min(1000px,96vw);max-width:96vw;max-he
  body.printing-teacher #overlay::backdrop {display:none;}
  body.printing-teacher .teacher-guide,body.printing-teacher .teacher-scroll {display:block;height:auto;max-height:none;overflow:visible;padding:0;}
  body.printing-teacher .teacher-guide>header,body.printing-teacher .teacher-guide>footer,body.printing-teacher .teacher-scroll>section:not(.teacher-cheatsheet) {display:none!important;}
- body.printing-teacher .teacher-cheatsheet {display:block;font:9pt/1.2 Georgia,serif;}
+ body.printing-teacher .teacher-cheatsheet {display:block;font:10.5pt/1.2 Georgia,serif;}
  body.printing-teacher .teacher-cheatsheet h1 {font:bold 18pt Georgia,serif;margin:0 0 3mm;}
- body.printing-teacher .teacher-cheatsheet h2 {break-after:avoid;font:bold 10.5pt Georgia,serif;color:#171717;margin:2mm 0 1mm;}
- body.printing-teacher .teacher-cheatsheet p,body.printing-teacher .teacher-cheatsheet li {font:9pt/1.2 Georgia,serif;margin:0 0 1mm;}
+ body.printing-teacher .teacher-cheatsheet h2 {break-after:avoid;font:bold 11.5pt Georgia,serif;color:#302719;margin:2mm 0 1mm;}
+ body.printing-teacher .teacher-cheatsheet p,body.printing-teacher .teacher-cheatsheet li {font:10.5pt/1.2 Georgia,serif;margin:0 0 1mm;}
  body.printing-teacher .teacher-cheatsheet ol {padding-left:5mm;margin:0;}
  body.printing-teacher .teacher-print-columns {display:grid;grid-template-columns:1fr 1fr;gap:7mm;}
  body.printing-teacher .teacher-print-columns section {min-width:0;}
  body.printing-teacher .teacher-cheatsheet li {break-inside:avoid;}
- body.printing-teacher .teacher-key {background:none;border:1px solid #aaa;padding:2mm;margin:2mm 0;break-inside:avoid;}
+ body.printing-teacher .teacher-key {background:#f4f0e5;border:1px solid #aaa;padding:2mm;margin:2mm 0;break-inside:avoid;}
+ body.printing-teacher .teacher-key-green {background:#f0f2eb;}
+ body.printing-teacher .teacher-key-ochre {background:#f7f0df;}
+ body.printing-teacher .teacher-guide ul {padding-left:4mm;margin:0 0 1mm;}
+ body.printing-teacher .teacher-subtitle {font-size:10.5pt;}
+ body.printing-teacher .teacher-chapters span {color:#473c30;}
  body.printing-teacher .teacher-key p:last-child {margin-bottom:0;}
- body.printing-teacher .teacher-problems th,body.printing-teacher .teacher-problems td {font:9pt/1.2 Georgia,serif;padding:1mm;border-color:#aaa;}
+ body.printing-teacher .teacher-problems th,body.printing-teacher .teacher-problems td {font:10.5pt/1.2 Georgia,serif;padding:1.2mm;border-color:#aaa;}
  body.printing-teacher .teacher-problems tr {break-inside:avoid;}
  body.printing-teacher .teacher-problems thead th {font-weight:bold;background:none;}
 }
