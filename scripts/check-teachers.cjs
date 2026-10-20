@@ -10,13 +10,19 @@ const title=p.locator('[data-admin-hold]').first(),r=await title.boundingBox();a
 await title.hover();await p.mouse.down();await p.waitForTimeout(5200);await p.mouse.up();await p.locator('.admin-console').waitFor();
 for(const [width,height]of [[1024,768],[1440,900],[820,640]]){
  await p.setViewportSize({width,height});await act('teacher-open');assert.equal(await p.locator('.teacher-guide-header h1').innerText(),'Spickzettel fürs Lehrerpult');
- assert.equal(await p.locator('.teacher-chapters li').count(),6);assert.equal(await p.locator('.teacher-stops li').count(),5);assert.equal(await p.locator('.teacher-problems tbody tr').count(),8);
+ assert.equal(await p.locator('.teacher-chapters li').count(),6);assert.equal(await p.locator('.teacher-stops tbody tr').count(),5);assert.equal(await p.locator('.teacher-problems tbody tr').count(),12);
  for(let i=0;i<3;i++){
   await act('teacher-page',`[data-page="${i}"]`);assert.equal(await p.locator('.teacher-page:visible').count(),1);assert.equal(await p.locator(`[data-teacher-page="${i}"]`).isVisible(),true);
-  if(i===2)assert.match(await p.locator('.teacher-scroll').innerText(),/Originalausschnitt/);
+  if(i===0){assert.equal(await p.locator('.teacher-stops tbody td').count(),15);assert.match(await p.locator('.teacher-pace-note').innerText(),/Nicht auf exakt gleiche Spielstände warten/);}
+  if(i===2){assert.equal(await p.locator('.teacher-term-clusters .teacher-box').count(),4);assert.equal(await p.locator('.teacher-terms dt').count(),10);assert.deepEqual(await p.locator('.teacher-terms dd').evaluateAll(ns=>ns.map(n=>n.querySelectorAll('p').length)),Array(10).fill(2));}
+  assert.doesNotMatch(await p.locator('.teacher-cheatsheet').textContent(),/Technik-Kurzinfo|Quellen im Spiel|Hinweise für die Begleitung|5 Sekunden|fünf Sekunden|gedrückt halten/);
   assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
   const bad=await p.locator('.teacher-guide-footer button,.teacher-page-nav button').evaluateAll(ns=>ns.filter(n=>{const r=n.getBoundingClientRect();return r.height<44||r.bottom>innerHeight||r.right>innerWidth;}).map(n=>n.textContent));assert.deepEqual(bad,[]);
+  assert.equal(await p.locator('.teacher-scroll').evaluate(n=>n.scrollWidth>n.clientWidth),false,'no horizontal scrolling within the guide');
   await p.screenshot({path:`artifacts/teachers/guide-${width}-page${i+1}.png`});
+  await p.locator('.teacher-scroll').evaluate(n=>{n.scrollTop=n.scrollHeight;});
+  await p.screenshot({path:`artifacts/teachers/guide-${width}-page${i+1}-bottom.png`});
+  assert.equal(await p.locator('.teacher-page:visible .teacher-page-foot').evaluate(n=>{const r=n.getBoundingClientRect(),v=n.closest('.teacher-scroll').getBoundingClientRect();return r.bottom<=v.bottom+1&&r.top>=v.top;}),true,'page end remains reachable');
  }
  await act('teacher-back');await p.locator('#overlay[open] .admin-console').waitFor();assert.equal(await normal(),original);
 }

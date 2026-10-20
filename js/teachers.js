@@ -3,49 +3,55 @@ import {isTestMode} from './save-system.js';
 let backToAdmin=()=>{},currentPage=0;
 export function configureTeachers(back){backToAdmin=back;}
 const pageTitles=['Schnellstart und Unterrichtsüberblick','Wenn etwas hakt','Fachliche Orientierung'];
-const chapters=[
- ['Was heißt frei?','Rechtfertigung, Freiheit, Nächstenliebe.'],
- ['Wie frei ist dein Leben?','Waldrechte, Frondienst, Abgaben.'],
- ['Aus Beschwerden werden Forderungen','Zwölf Artikel und Öffentlichkeit.'],
- ['Ordnung oder Widerstand?','Obrigkeit, Gewissen, Luther/Müntzer.'],
- ['Du musst handeln','Handlungsdruck und lokale Folgen.'],
- ['Was bleibt von Freiheit?','Belege und theologisches Urteil.']
-];
+const chapters=['Freiheit','Belastungen','Forderungen','Widerstand','Handeln','Urteil'];
 const stops=[
- ['Nach Kapitel 1','Was bedeutet Freiheit bei Luther – und was gerade nicht?'],
- ['Nach den sozialen Belastungen','Wann wird aus einer Beschwerde eine politische Forderung?'],
- ['Nach den Zwölf Artikeln','Was verändert sich, wenn Forderungen religiös begründet werden?'],
- ['Nach Luther und Müntzer','Wo unterscheiden sich ihre Vorstellungen von Widerstand?'],
- ['Vor dem Schlussurteil','Ist Luther konsequent, widersprüchlich oder beides? Welcher Beleg trägt dein Urteil?']
+ ['Freiheit verstehen','Nach Kapitel 1, wenn die meisten die Freiheitsaufgabe bearbeitet haben.','Was bedeutet Freiheit bei Luther – und was gerade nicht?','Aktuelle Aufgabe beenden lassen; Schnellere pausieren am Kapitelübergang.'],
+ ['Belastungen bündeln','Nach Wald, Frondienst und Abgaben, vor den gemeinsamen Forderungen.','Wann wird aus einer Beschwerde eine politische Forderung?','Offene Stationen später fortsetzen; Fertige bringen ein Beispiel ins Plenum ein.'],
+ ['Forderungen begründen','Wenn die meisten zentrale Artikel mit Beschwerden verglichen haben.','Was verändert sich, wenn Forderungen religiös begründet werden?','Abschnitt fertig lesen lassen; Schnellere wählen einen Beleg für die Diskussion.'],
+ ['Widerstand prüfen','Nach Luther/Müntzer oder der Widerstandsfrage.','Wo unterscheiden sich ihre Vorstellungen von Widerstand?','An der nächsten Entscheidung pausieren oder am Stundenende gemeinsam sichern.'],
+ ['Zum Urteil kommen','Vor dem Schlussurteil in Kapitel 6.','Ist Luther konsequent oder widersprüchlich – und welcher Beleg trägt dein Urteil?','Vorläufige Standpunkte und fertige Urteile gemeinsam diskutieren.']
 ];
 const problems=[
- ['Eine Fachaufgabe blockiert.','Die gestuften Hinweise nutzen. Nach mehreren Versuchen erklärt das Spiel die Lösung. Entscheidungen bleiben offen.'],
- ['Auf einem anderen Gerät weiterspielen.','„Spielstand sichern“ wählen und den Code aufbewahren. Am Zielgerät „Mit Code fortsetzen“ wählen.'],
- ['Der Code fehlt oder funktioniert nicht.','Eingabe und Verbindung prüfen. Ist der lokale Stand vorhanden, dort einen neuen Code erzeugen.'],
- ['Eine Quelle oder Aufgabe im Plenum zeigen.','Lehrkraftmodus → Kapitel → „Szene zeigen“. Die nötigen Voraussetzungen werden automatisch vorbereitet.'],
- ['Eine Aufgabe oder ein Kapitel erneut testen.','„Aktuelle Aufgabe zurücksetzen“ oder „Aktuelles Kapitel zurücksetzen“ wählen. Beides ändert nur den Teststand.'],
- ['Einen Testpfad oder Endzustand vorführen.','„Pfade, Endtafeln und Rückblick zeigen“ öffnen. Einen Startpfad oder Ausgang wählen.'],
- ['Rückblick oder Schluss zeigen.','„Rückblick ab …“ im Vorführbereich wählen. Die Urteilsphase ist über Kapitel 6 direkt erreichbar.'],
- ['Dossier oder PDF finden.','Am Spielende das Dossier exportieren. „Dossier / PDF vorführen“ im Lehrkraftmodus zeigt Beispielantworten.']
+ ['Eine Fachaufgabe blockiert.','Nutzen Sie die gestuften Hinweise. Nach mehreren Versuchen erklärt das Spiel die Lösung. Entscheidungen bleiben offen.'],
+ ['Auf einem anderen Gerät fortsetzen.','Wählen Sie im Spielmenü „Spielstand sichern“. Bewahren Sie den Code auf und laden Sie ihn am Zielgerät mit „Mit Code fortsetzen“.'],
+ ['Code vergessen oder ungültig.','Prüfen Sie Eingabe und Verbindung. Ist der lokale Stand noch vorhanden, erzeugen Sie dort einen neuen Code.'],
+ ['Eine Szene im Plenum zeigen.','Öffnen Sie im Lehrkraftmodus das Kapitel und wählen Sie „Szene zeigen“. Nötige Voraussetzungen werden vorbereitet.'],
+ ['Aktuelle Aufgabe erneut testen.','Wählen Sie „Aktuelle Aufgabe zurücksetzen“. Das setzt nur die Aufgabe im getrennten Teststand zurück.'],
+ ['Aktuelles Kapitel erneut testen.','Wählen Sie „Aktuelles Kapitel zurücksetzen“. Der normale Schülerstand bleibt erhalten.'],
+ ['Testpfad oder Endzustand öffnen.','Öffnen Sie „Pfade, Endtafeln und Rückblick zeigen“. Wählen Sie einen vorbereiteten Pfad oder Ausgang.'],
+ ['Rückblick öffnen.','Wählen Sie im Vorführbereich „Rückblick ab …“ und das gewünschte Kapitel.'],
+ ['Kapitel 6 öffnen.','Wechseln Sie zum Register Kapitel 6 und springen Sie zum Einstieg oder Schlussurteil.'],
+ ['Dossier / PDF öffnen.','Exportieren Sie das Dossier am Spielende. Im Lehrkraftmodus öffnet „Dossier / PDF vorführen“ einen Stand mit Beispielantworten.'],
+ ['Gesamten Spielstand zurücksetzen.','Wählen Sie für Tests „Gesamten Test-Spielstand zurücksetzen“. Für den Schülerstand erst den Testmodus verlassen, dann auf der Startseite zurücksetzen. Beide vollständigen Resets fragen nach.'],
+ ['Seite hängt / Browserproblem.','Verlassen Sie Vollbild oder laden Sie neu. Nutzen Sie denselben Browser; löschen Sie keine Browserdaten. Bei Code-Problemen auch die Internetverbindung prüfen.']
 ];
-const terms=[
- ['Rechtfertigung','Gottes Annahme aus Gnade; gute Werke verdienen sie nicht.'],
- ['Christliche Freiheit','Freiheit vor Gott und äußere Abhängigkeiten unterscheiden.'],
- ['Nächstenliebe','Die Freiheit wird im Dienst am anderen konkret.'],
- ['Gewissen','Glaubensgewissheit lässt sich nicht durch Herrschaft erzwingen.'],
- ['Obrigkeit','Aufgabe und Grenzen weltlicher Ordnung prüfen.'],
- ['Widerstand','Begründung, Ziel und Mittel getrennt beurteilen.'],
- ['Gewalt','Ein berechtigtes Anliegen rechtfertigt nicht jedes Mittel.'],
- ['Verantwortung','Absichten und Folgen für andere berücksichtigen.'],
- ['Zwei-Regimente-Lehre','Geistliches und weltliches Regieren unterscheiden; Grenzfälle prüfen.'],
- ['Luther / Müntzer','Unterschiedliche theologische Begründungen des Handelns vergleichen.']
+const termClusters=[
+ ['Freiheit','teacher-tone-subject',[
+  ['Rechtfertigung',['Der Mensch wird vor Gott aus Gnade gerecht, nicht durch eigene Leistung oder Werke.','Gute Werke folgen aus dem Glauben; sie verdienen Gottes Annahme nicht. Diese Entlastung trägt Luthers Freiheitsverständnis.']],
+  ['Christliche Freiheit',['Sie bezeichnet zuerst Freiheit vor Gott, keine bloße politische Unabhängigkeit.','Wer Gottes Annahme nicht verdienen muss, wird frei zum Dienst am Nächsten. Äußere Pflichten sind damit nicht automatisch aufgehoben.']],
+  ['Nächstenliebe',['Der Dienst am Nächsten ist eine Konsequenz christlicher Freiheit.','Er begrenzt eigenes Handeln: Auch Gegner und die von Gewalt Betroffenen dürfen nicht aus dem Blick geraten.']]
+ ]],
+ ['Ordnung','teacher-tone-organisation',[
+  ['Gewissen',['Bei Luther ist das Gewissen an Glaubensgewissheit und Gottes Wort gebunden, nicht an ein bloßes Bauchgefühl.','Gegenüber der Obrigkeit verlangt dieser Anspruch Begründung und Prüfung.']],
+  ['Obrigkeit',['Weltliche Ordnung soll äußeren Frieden schützen und hat dabei Grenzen.','Ihre Zuständigkeit ist keine geistliche Herrschaft: Glaubensgewissheit lässt sich nicht erzwingen.']],
+  ['Zwei-Regimente-Lehre',['Geistliches und weltliches Regieren unterscheiden sich: Glaube und Gewissen stehen neben der äußeren Ordnung.','Die Lebenswelten sind nicht vollständig getrennt; Grenzfälle müssen theologisch geprüft werden.']]
+ ]],
+ ['Konflikt','teacher-tone-stops',[
+  ['Widerstand',['Widerstand ist nicht pauschal legitim oder illegitim; zu prüfen sind Begründung, Ziel und Mittel.','Im Bauernkrieg sind religiöse Ansprüche und politische Forderungen zu unterscheiden.']],
+  ['Gewalt',['Ein berechtigtes Anliegen rechtfertigt nicht automatisch Gewalt.','Prüfen Sie Folgen, Verhältnismäßigkeit und Schutz anderer – auch bei obrigkeitlichem Eingreifen.']],
+  ['Verantwortung',['Absichten und tatsächliche Folgen sind gemeinsam zu betrachten.','Verantwortung gilt dem Nächsten und der Gemeinschaft; gute Absichten allein genügen nicht.']]
+ ]],
+ ['Positionen','teacher-tone-technical',[
+  ['Luther und Müntzer',['Beide begründen Ordnung, Widerstand und Gottes Willen theologisch, ziehen aber unterschiedliche Folgerungen.','Luthers Unterscheidung der Regimente und Müntzers stärker auf Veränderung gottwidriger Herrschaft bezogener Anspruch sind zu vergleichen. Keinen von beiden auf ein einfaches Schlagwort reduzieren.']]
+ ]]
 ];
 const box=(title,body,tone='')=>`<section class="teacher-box ${tone}"><h3>${title}</h3>${body}</section>`;
 const list=items=>`<ul>${items.map(t=>`<li>${t}</li>`).join('')}</ul>`;
 function pages(){
- const first=box('Worum geht es?',`<p>Ein Lernspiel für Evangelische Religion in der Q1. Die Lernenden erleben historische Konflikte, entscheiden und prüfen ihre Deutungen an Quellen.</p><p><strong>Leitfrage:</strong> Hat Luther seine eigenen Ideen verraten – oder folgt sein Verhalten aus seiner Theologie?</p>`,'teacher-tone-subject')+`<section class="teacher-process"><h3>Der Lernweg</h3><ol>${['erleben','entscheiden','Konsequenz sehen','Quelle prüfen','urteilen'].map(t=>`<li>${t}</li>`).join('')}</ol></section>`+`<div class="teacher-columns"><div>${box('So starten Sie',list(['<strong>Vorbereiten:</strong> Link im Browser öffnen und auf den iPads prüfen. Eine Anmeldung ist nicht nötig.','<strong>Starten:</strong> Die Lernenden spielen individuell. Für die Fortsetzung denselben Browser oder einen Code nutzen.','<strong>Begleiten:</strong> Spielphasen mit kurzen Plenumsstopps verbinden. Nicht jede Aufgabe gemeinsam lösen.']),'teacher-tone-organisation')}${box('Die sechs Kapitel',`<ol class="teacher-chapters">${chapters.map(([title,focus],i)=>`<li><strong>${i+1} · ${title}</strong><span>${focus}</span></li>`).join('')}</ol>`)}</div><div>${box('Gute Stopps fürs Plenum',`<ol class="teacher-stops">${stops.map(([where,q])=>`<li><strong>${where}</strong><span>„${q}“</span></li>`).join('')}</ol>`,'teacher-tone-stops')}</div></div>`;
- const second=`<table class="teacher-problems"><caption>Praktische Hilfe im Unterricht</caption><thead><tr><th scope="col">Problem</th><th scope="col">Lösung / nächster Schritt</th></tr></thead><tbody>${problems.map(([p,s])=>`<tr><th scope="row">${p}</th><td>${s}</td></tr>`).join('')}</tbody></table><div class="teacher-columns"><div>${box('Lehrkraftmodus',`<p>Den Titel <strong>„1525 – Zwischen Freiheit und Aufruhr“ fünf Sekunden gedrückt halten</strong> – mit Maus oder Finger.</p>${list(['Szenen öffnen und Testpfade setzen.','Lösungen ansehen; Aufgaben/Kapitel zurücksetzen.','Enden, Rückblick und Dossier vorführen.'])}<p><strong>Getrennter Teststand:</strong> „Zum normalen Spiel zurück“ stellt den unveränderten Schülerstand wieder her.</p>`,'teacher-tone-organisation')}</div><div>${box('Spielstand / Fortsetzungscode',`<ol><li><strong>Lokal:</strong> Das Spiel speichert automatisch auf diesem Gerät.</li><li><strong>Sichern:</strong> Spielmenü → „Spielstand sichern“ → Code kopieren oder notieren.</li><li><strong>Laden:</strong> Auf dem anderen Gerät „Mit Code fortsetzen“ wählen.</li></ol><p>Nach weiterer Arbeit neu sichern. Alte Codes aktualisieren sich nicht. Sie sind 90 Tage gültig.</p>`,'teacher-tone-technical')}${box('Technik-Kurzinfo',list(['<strong>Browser / iPad:</strong> denselben Browser und dasselbe Geräteprofil nutzen.','<strong>Internet:</strong> zum Sichern und Laden von Codes nötig.','<strong>Wenn es hängt:</strong> Vollbild verlassen oder neu laden. Keine Browserdaten löschen.']),'teacher-tone-technical')}</div></div>`;
- const third=`<div class="teacher-columns"><div>${box('Zentrale Begriffe – als Erinnerung',`<dl class="teacher-terms">${terms.map(([term,note])=>`<div><dt>${term}</dt><dd>${note}</dd></div>`).join('')}</dl>`,'teacher-tone-subject')}</div><div>${box('Was die Lernenden üben',list(['Historische Situationen erschließen und Perspektiven vergleichen.','Theologische Deutungen an Quellen prüfen.','Luther und Müntzer unterscheiden.','Entscheidungen begründen und ihre Folgen reflektieren.','Ein eigenes theologisches Urteil mit Belegen und Gegenargument formulieren.']),'teacher-tone-subject')}${box('Quellen im Spiel',`<dl class="teacher-sources"><dt>Originalausschnitt</dt><dd>Authentischer historischer Quellentext.</dd><dt>In heutiger Sprache zusammengefasst</dt><dd>Didaktische Übertragung, kein wörtliches Zitat.</dd><dt>Rekonstruierte Spielsituation</dt><dd>Für das Spiel entworfene Begegnung, keine historische Quelle.</dd></dl>`,'teacher-tone-technical')}${box('Hinweise für die Begleitung',list(['Nicht jede Aufgabe gemeinsam lösen. Die Hinweise im Spiel zuerst nutzen lassen.','Nach Belastungen und Quellenarbeit Erfahrungen im Plenum vergleichen.','Vor dem Schlussurteil einen Beleg und ein Gegenargument sammeln lassen.','Historische Erklärung und ethische Rechtfertigung auseinanderhalten.']),'teacher-tone-stops')}${box('Didaktischer Kern',`<p>Spielhandlung trägt das Lernen: historische Erfahrung, Entscheidungen, Folgen und Quellenarbeit führen zur theologischen Urteilsbildung.</p><p>Das Schlussurteil bleibt offen. Entscheidend sind nachvollziehbare Gründe und tragfähige Belege.</p>`)}</div></div>`;
+ const first=`<div class="teacher-columns">${box('Worum geht es?',`<p>Historisch-theologisches Lernspiel für Religion Q1: Konflikte erleben, entscheiden, Quellen prüfen und urteilen.</p><p><strong>Leitfrage:</strong> Hat Luther seine eigenen Ideen verraten – oder folgt sein Verhalten aus seiner Theologie?</p><p class="teacher-learning-line"><strong>Lernweg:</strong> erleben → entscheiden → Konsequenz sehen → Quelle prüfen → urteilen</p>`,'teacher-tone-subject')}${box('So starten Sie',list(['<strong>Vorbereiten:</strong> Link öffnen, iPads/Browser prüfen, Fortsetzungscode erklären.','<strong>Starten:</strong> individuell und ohne Anmeldung. Eigenes Tempo ist normal.','<strong>Begleiten:</strong> Plenumsstopps bewusst setzen; nicht jede Aufgabe gemeinsam lösen.'])+`<ol class="teacher-chapters" aria-label="Kapitel zur Orientierung">${chapters.map((title,i)=>`<li><strong>${i+1}</strong> ${title}</li>`).join('')}</ol>`,'teacher-tone-organisation')}</div><section class="teacher-plenum"><h3>Gute Stopps fürs Plenum</h3><p class="teacher-pace-note">Nicht auf exakt gleiche Spielstände warten: Stoppen Sie, wenn die meisten den Bezug kennen. Noch offene Arbeit wird danach fortgesetzt.</p><table class="teacher-stops"><thead><tr><th scope="col">Stopp</th><th scope="col">Wann?</th><th scope="col">Leitfrage</th><th scope="col">Bei unterschiedlichem Tempo</th></tr></thead><tbody>${stops.map(([title,when,question,pace],i)=>`<tr><th scope="row"><span>Stopp ${i+1}</span>${title}</th><td data-label="Wann?">${when}</td><td data-label="Leitfrage">„${question}“</td><td data-label="Bei unterschiedlichem Tempo">${pace}</td></tr>`).join('')}</tbody></table></section>`;
+ const second=`<table class="teacher-problems"><caption>Problem finden → nächsten Schritt wählen</caption><thead><tr><th scope="col">Problem</th><th scope="col">Lösung / nächster Schritt</th></tr></thead><tbody>${problems.map(([p,s])=>`<tr><th scope="row">${p}</th><td>${s}</td></tr>`).join('')}</tbody></table>${box('Im Lehrkraftmodus verfügbar',list(['Szenen direkt öffnen und Aufgaben oder Kapitel zurücksetzen.','Testpfade und Endzustände öffnen; Lösungen anzeigen.','Rückblick, Kapitel 6 und Dossier vorführen.']),'teacher-tone-organisation teacher-functions')}`;
+ const cluster=([title,tone,terms])=>box(title,`<dl class="teacher-terms">${terms.map(([term,notes])=>`<div><dt>${term}</dt><dd>${notes.map(note=>`<p>${note}</p>`).join('')}</dd></div>`).join('')}</dl>`,tone);
+ const third=`<p class="teacher-subject-intro">Begriffe für die fachliche Einordnung – als Hilfe beim Nachfragen, Vergleichen und Sichern.</p><div class="teacher-term-clusters">${termClusters.map(cluster).join('')}</div>`;
  return [first,second,third];
 }
 function draw(){
