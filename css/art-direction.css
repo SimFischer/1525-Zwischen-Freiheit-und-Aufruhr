@@ -615,7 +615,6 @@ dialog:has(.ch4-reader) {width:96vw;max-width:1260px;height:98svh;max-height:98s
 .decision-history summary span {display:block;margin-top:6px;font-size:18px;}
 .decision-history li {margin:8px 0;line-height:1.5;}
 .decision-history .chosen {font-weight:700;}
-.teacher-entry {display:block;margin-top:12px;color:#ebd8b4;min-height:44px;}
 body[data-mode="teacher"] #overlay {width:min(1000px,96vw);max-width:96vw;max-height:94svh;padding:0;background:#f3e8d1;color:#302719;border:2px solid #947148;}
 .teacher-guide {height:90svh;display:flex;flex-direction:column;padding:20px;min-height:0;}
 .teacher-guide>header {flex:none;border-bottom:1px solid #b29a73;}
@@ -625,14 +624,26 @@ body[data-mode="teacher"] #overlay {width:min(1000px,96vw);max-width:96vw;max-he
 .teacher-guide li {margin-bottom:12px;}
 .teacher-scroll {overflow:auto;min-height:0;padding:0 16px 16px 0;overscroll-behavior:contain;}
 .teacher-guide>footer {padding-top:12px;flex:none;border-top:1px solid #b29a73;}
-.teacher-cheatsheet {display:none;}
+.teacher-cheatsheet {display:block;}
+.teacher-print-columns {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;}
+.teacher-print-columns>section {min-width:0;}
+.teacher-key {border-left:3px solid #526345;background:#e7dcc4;padding:12px;margin:12px 0;}
+.teacher-key h2 {margin-top:0;}
+.teacher-key p:last-child {margin-bottom:0;}
+.teacher-learning-path {margin:8px 0 0;color:#38503b;font-weight:bold;}
+.teacher-problems {width:100%;border-collapse:collapse;}
+.teacher-problems th,.teacher-problems td {border:1px solid #b29a73;padding:8px;vertical-align:top;text-align:left;font-size:17px;line-height:1.45;overflow-wrap:anywhere;}
+.teacher-problems thead th {background:#ded0b4;}
+.teacher-problems tbody th {width:32%;font-weight:normal;}
+.admin-guide-actions {display:flex;gap:8px;flex-wrap:wrap;}
+@media(max-width:900px) {.teacher-print-columns {grid-template-columns:minmax(0,1fr);}}
 .teacher-state,.teacher-solutions,.teacher-demonstration {border-top:1px solid #af956b;padding:14px 0;margin-top:10px;}
 .admin-console details>summary {cursor:pointer;min-height:44px;padding:10px 0;line-height:1.4;}
 .admin-console .teacher-state p,.admin-console .teacher-solutions p {font-size:17px;line-height:1.5;}
 .admin-console .teacher-solutions details {margin:8px 0;padding:0 8px;border-left:2px solid #9b7e4a;}
 .admin-console .admin-targets button {overflow-wrap:anywhere;}
 @media(max-width:600px) {.teacher-guide {padding:12px;}.teacher-guide>footer {gap:6px;}.teacher-guide>footer button {flex:1 1 130px;}}
-@page {size:A4 portrait;margin:12mm;}
+@page {size:A4 portrait;margin:10mm;}
 @media print {
  html:has(body.printing-teacher) {background:white!important;}
  body.printing-teacher {background:white!important;color:#171717!important;overflow:visible!important;}
@@ -641,13 +652,18 @@ body[data-mode="teacher"] #overlay {width:min(1000px,96vw);max-width:96vw;max-he
  body.printing-teacher #overlay::backdrop {display:none;}
  body.printing-teacher .teacher-guide,body.printing-teacher .teacher-scroll {display:block;height:auto;max-height:none;overflow:visible;padding:0;}
  body.printing-teacher .teacher-guide>header,body.printing-teacher .teacher-guide>footer,body.printing-teacher .teacher-scroll>section:not(.teacher-cheatsheet) {display:none!important;}
- body.printing-teacher .teacher-cheatsheet {display:block;}
+ body.printing-teacher .teacher-cheatsheet {display:block;font:9pt/1.2 Georgia,serif;}
  body.printing-teacher .teacher-cheatsheet h1 {font:bold 18pt Georgia,serif;margin:0 0 3mm;}
- body.printing-teacher .teacher-cheatsheet h2 {font:bold 11pt Georgia,serif;color:#171717;margin:3mm 0 1mm;}
- body.printing-teacher .teacher-cheatsheet p,body.printing-teacher .teacher-cheatsheet li {font:10pt/1.28 Georgia,serif;margin:0 0 2mm;}
+ body.printing-teacher .teacher-cheatsheet h2 {break-after:avoid;font:bold 10.5pt Georgia,serif;color:#171717;margin:2mm 0 1mm;}
+ body.printing-teacher .teacher-cheatsheet p,body.printing-teacher .teacher-cheatsheet li {font:9pt/1.2 Georgia,serif;margin:0 0 1mm;}
  body.printing-teacher .teacher-cheatsheet ol {padding-left:5mm;margin:0;}
  body.printing-teacher .teacher-print-columns {display:grid;grid-template-columns:1fr 1fr;gap:7mm;}
  body.printing-teacher .teacher-print-columns section {min-width:0;}
  body.printing-teacher .teacher-cheatsheet li {break-inside:avoid;}
+ body.printing-teacher .teacher-key {background:none;border:1px solid #aaa;padding:2mm;margin:2mm 0;break-inside:avoid;}
+ body.printing-teacher .teacher-key p:last-child {margin-bottom:0;}
+ body.printing-teacher .teacher-problems th,body.printing-teacher .teacher-problems td {font:9pt/1.2 Georgia,serif;padding:1mm;border-color:#aaa;}
+ body.printing-teacher .teacher-problems tr {break-inside:avoid;}
+ body.printing-teacher .teacher-problems thead th {font-weight:bold;background:none;}
 }
 @media(max-width:600px){.source-viewport:not(.reading){grid-template-columns:1fr;}}
