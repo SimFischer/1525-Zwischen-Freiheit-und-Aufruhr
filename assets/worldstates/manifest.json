@@ -1,0 +1,219 @@
+{
+  "date": "2026-10-22",
+  "scope": "Only two missing additive world-state image assets; no runtime/save/story/UI changes",
+  "generator": "built-in image_gen",
+  "export": "Entire generated4:3 canvas downsampled to1024x768; no crop or object rearrangement. Only alpha<=1 quantization dust removed.",
+  "newAssets": [
+    {
+      "filename": "negotiation-collapsed-overlay.png",
+      "path": "assets/worldstates/negotiation-collapsed-overlay.png",
+      "gameState": "negotiation_collapsed",
+      "type": "transparent-overlay",
+      "dimensions": [
+        1024,
+        768
+      ],
+      "mode": "RGBA",
+      "baseScene": "assets/chapter5/backgrounds/ch5_bg_negotiation_chamber.png",
+      "baseSha256": "b239140c31f2d250fdcab42691d3c324f1d7b10a2ade7e8bd374ce0dc3abdce4",
+      "registration": {
+        "left": 0,
+        "top": 0,
+        "scale": 1,
+        "preserveFullCanvas": true
+      },
+      "alphaBounds": [
+        182,
+        288,
+        733,
+        479
+      ],
+      "visibleAlphaBounds": [
+        184,
+        290,
+        731,
+        476
+      ],
+      "dialogAlphaMax": 0,
+      "coverage": 0.0304,
+      "bytes": 72234,
+      "sha256": "5b9f0fe91467869dc8b570885acacea967b4889b4c08b37d47b965560185cf90",
+      "prompt": "Use case: historical-scene. Produce ONE registered transparent RGBA PNG overlay on a complete1024x768 4:3 canvas. The reference image is the EXACT existing negotiation room: match its original camera, tabletop position, floor perspective, warm daylight from LEFT window and painterly style. DO NOT repaint room, walls, table, three existing chairs, door, cabinet or any background. Only ADD the following small abandoned-meeting objects at their precise room-relative positions; all else actual transparent alpha0.\n\n1. At existing tabletop x38%-64%,y38%-41% (roughly x390-655,y292-315): three or four SMALL blank cream manuscript leaves carelessly spread in a shallow horizontal plane, one slightly hanging just over front table edge. They must lie ON the visible table, not in front of or below it, not float. No new table.\n2. On FLOOR LEFT of existingtable frontleg, x18%-31%,y51%-61% (x184-317,y392-468): ONE plain low oak stool tipped onto its side, fully shown, convincing joinedlegs and humble16thcenturyconstruction, seat and legs intact, no smashed spectacle. Its floorcontact matches existingfloorboards; tinysoftgroundingshadow cast subtlytowardright. Thisis an extra stool left by departing delegates, not a replacement for the fixed rear chairs.\n3. On floor near x57%-66%,y54%-59%: TWO small loose blank leaves and a loosened thin leather documenttie. Calm abandonedroom, failedunderstanding, not a ransacked office.\n\nObjects must remain SMALLrelative to huge room; stool visiblewidth13% andheight10%, sheets hand-sized not hugecarpets. All paintedpixels y<=64%; lower dialog band y74%-100% entirely alpha0. No people, faces, hands, soldiers, namedcanon, text, seals withletters, marks, labels, UI,glow, giantpapers, floorpatches orbackgroundplate. Genuine transparent gaps aroundallobjects. Preserve fullregistrationcanvas and relationship of three smallclusters. Quiet, adult, historicallycredible1525 adventure illustration. Existing room shown for reference ONLY, neverinresult.",
+      "correctionPrompt": "Edit image1 only: REMOVE the unwanted brown wooden tabletop strip beneath the upper cluster of papers. The upper cluster must consist ONLY of three/four small blankpaperleaves floating in the TRANSPARENT output to be later laid onto the EXISTING table in reference2. NO drawn woodstrip, tableedge, woodpatch or rectangularbackground beneathpapers. Their current pixelpositions match existingtable and must stayunchanged. Keep the tippedstool and twofloorleaves/leathertie completely unchanged atsamepositions. Full4:3 transparentRGBA1024x768 canvas, do notcrop,recenter orenlarge. Reference2 is onlyspatial/lightcontext, doNOTincludeanyroompixels. Allothercanvasalpha0 especiallyy74%-100%; softtiny contactshadows only beneathfloorobjects. No textorUI.",
+      "qa": {
+        "sizes": [
+          [
+            1024,
+            768
+          ],
+          [
+            820,
+            640
+          ]
+        ],
+        "nativeRegistration": true,
+        "dialogueY74To100Transparent": true,
+        "noBackgroundPlate": true,
+        "reviewedOverOriginalBase": true
+      },
+      "integrationNotes": "Render full1024x768 scene canvas at left0/top0/scale1. Overlay above base, below any original Canon figures. No per-object transforms. For the abandoned-room state omit delegates/speakers; furniture already belongs to the base. Do not combine with the old negotiation_broken book-and-letter prop. Existing village aftermath remains available for the village ending."
+    },
+    {
+      "filename": "village-escalation-overlay.png",
+      "path": "assets/worldstates/village-escalation-overlay.png",
+      "gameState": "escalation",
+      "type": "transparent-overlay",
+      "dimensions": [
+        1024,
+        768
+      ],
+      "mode": "RGBA",
+      "baseScene": "assets/chapter5/backgrounds/ch5_bg_village_after_crisis.png",
+      "baseSha256": "9fc31e43bd7b37030c311af0e23d2253db1901f52923a6d24b07ce2bc065f173",
+      "registration": {
+        "left": 0,
+        "top": 0,
+        "scale": 1,
+        "preserveFullCanvas": true
+      },
+      "alphaBounds": [
+        54,
+        333,
+        963,
+        519
+      ],
+      "visibleAlphaBounds": [
+        64,
+        335,
+        955,
+        516
+      ],
+      "dialogAlphaMax": 0,
+      "coverage": 0.0512,
+      "bytes": 117585,
+      "sha256": "0ac6a6885827ae47d84e7a2ce3441b5ef128a4a1e2532db642162d16bb18803c",
+      "prompt": "Use case: historical-scene. ONE transparent RGBA PNG ADDITIVE world-state overlay, full1024x768 4:3 canvas. Reference1 is the EXACT existing village square, preserve its camera, architecture and neutralwarmdaylight. DO NOT draw village/background, well, bench, buildings, trees, groundorpeople. Produce only TWO modest room-registered clusters that visibly suggest mounting tension BEFORE defeat, neverwar spectacle.\n\nLEFTcluster beside EXISTING well/bench, x8%-23%,y46%-62% (x82-236,y353-476): a modest provision sack and a short practical bundle of two hayfork/pole shafts and one simple agriculturaltool resting diagonally against sack, held by coarse rope, weatheredwood and dulliron. Maximumlength130px at1024canvas, NOT giganticweapons or uprightmilitarytrophy. Two low rough oakplanks placed as a small improvised obstacle at margin of square, NOT a giantfortification. Keep the central path x28%-72% open. Match reference floorplane and correct perspectivalforeshortening. Tinysoftcontactshadows only, warmsoftdaylightfromupperleft.\n\nRIGHTcluster immediately next to the existing tavernwall and bench, x82%-92%,y47%-61% (x840-942,y361-468): two small ragged blank off-white scraps of a torn publicnotice on a modest loose short wooden noticeboard propped by a plaincratestand, plus a narrow loosened rope end. No lettering, no pictograms. Board is a PHYSICAL small ruralobject, NOT a UIlabel. Keep it below the tavern's existing windows; do notpaintover/rebuildwall. It mustlooklike an interruptedpublicgathering, not a shopdisplay. Leave the original large tan sheet on the existingbench unchanged; new scraps are a different small tatterednotice nearitsbase.\n\nTwo small clusters, nonewpeople, nofloorplate, building, shadows outsideclusters, fire, smoke, dramaticdamage, blood, conflict, heraldry orfantasy. Existinggoodsceneisnotredrawn. Genuinealpha0 throughoutothercanvas, especially entire dialogbandy74%-100% and upper40%. Calm restrained mature painterlymaterials sameasreference. Objects small andgrounded, notoversizeddecal. PreserveWHOLEcanvas.",
+      "correctionPrompt": "Use case: background-extraction. Edit image1. It incorrectly includes the village scene. REMOVE ALL of the village, buildings, trees,sky,well,bench,originaltancloth,ground and foreground. Retain ONLY the newly added TWO objectclusters, preserving their EXACT positions and scale on the SAME4:3 fullcanvas: LEFT provision sack with tied wooden shafts/hayfork and two low woodplanks, and RIGHT small noticeboard with two blank tatteredpaper scraps, smallcrate and hangingrope. Nothingelse. Tinysoftcontactshadows immediately undertheseobjects only, no groundpatch. Do not crop/recenter/enlarge. Image2 is ORIGINAL EMPTY BASE to identify whatmustberemoved, notcontentto reproduce. Output genuineTRANSPARENT RGBA PNG1024x768. Everypixel outside those2clusters alpha0, including allupper40%, entirecenterx28%-72%, allbottomy74%-100%. Transparent spaces betweenforktines andwoodenlegs. No walls, scenery, floor, largefade, blackmask, lettersorUI. Keep painterlyobjecttextures and illuminationunchanged. Objects stayleftx8%-25%,y44%-61%,rightx82%-92%,y44%-61% exactly asimage1.",
+      "qa": {
+        "sizes": [
+          [
+            1024,
+            768
+          ],
+          [
+            820,
+            640
+          ]
+        ],
+        "nativeRegistration": true,
+        "dialogueY74To100Transparent": true,
+        "noBackgroundPlate": true,
+        "reviewedOverOriginalBase": true
+      },
+      "integrationNotes": "Render full1024x768 scene canvas at left0/top0/scale1. Overlay above base, below any original Canon figures. No per-object transforms. For mounting escalation before defeat. Central corridor remains open; no extra people. Do not stack on another aftermath layer or a differently registered Chapter4 backdrop."
+    }
+  ],
+  "existingCoverage": [
+    {
+      "gameState": "calm",
+      "base": "assets/chapter5/backgrounds/ch5_bg_village_after_crisis.png",
+      "reuse": [],
+      "newNeeded": false
+    },
+    {
+      "gameState": "negotiation",
+      "base": "assets/chapter5/backgrounds/ch5_bg_negotiation_chamber.png",
+      "reuse": [
+        "Existing Peter/Anna/envoy figures from data/chapter-five-staging.js"
+      ],
+      "newNeeded": false
+    },
+    {
+      "gameState": "peasant_band",
+      "base": "assets/chapter5/backgrounds/ch5_bg_peasant_camp_morning.png",
+      "reuse": [
+        "assets/chapter5/overlays/ch5_overlay_armed_tension.png",
+        "assets/chapter5/overlays/ch5_overlay_camp_supply.png"
+      ],
+      "registration": "Use existing scene overlayRegistration, never native0/0 for old layers",
+      "newNeeded": false
+    },
+    {
+      "gameState": "religious_conflict",
+      "base": "assets/chapter5/backgrounds/ch5_bg_churchyard_dispute.png",
+      "reuse": [
+        "assets/chapter5/overlays/ch5_overlay_order_group.png",
+        "assets/chapter5/overlays/ch5_overlay_justice_group.png"
+      ],
+      "registration": "Use existing scene overlayRegistration",
+      "newNeeded": false
+    },
+    {
+      "gameState": "theological_council",
+      "base": "assets/chapter5/backgrounds/ch5_bg_theological_council_evening.png",
+      "reuse": [
+        "Existing Jakob/Anna/preacher and Bible/table already in base; current Canon registration"
+      ],
+      "newNeeded": false
+    },
+    {
+      "gameState": "escalation",
+      "base": "assets/chapter5/backgrounds/ch5_bg_village_after_crisis.png",
+      "newAsset": "assets/worldstates/village-escalation-overlay.png",
+      "reason": "Additive equipment, small obstacle and torn notices on exactly the unchanged neutral village; no repaint or change of daylight"
+    },
+    {
+      "gameState": "violent_defeat",
+      "base": "assets/chapter5/backgrounds/ch5_bg_village_after_crisis.png",
+      "reuse": [
+        "assets/chapter5/overlays/ch5_overlay_after_defeat.png"
+      ],
+      "registration": "Use existing scene overlayRegistration from data/chapter-five-staging.js",
+      "newNeeded": false,
+      "additionalInteriorView": null
+    },
+    {
+      "gameState": "negotiation_collapsed",
+      "base": "assets/chapter5/backgrounds/ch5_bg_village_after_crisis.png",
+      "reuse": [
+        "assets/chapter5/overlays/ch5_overlay_after_negotiation_collapse.png"
+      ],
+      "registration": "Use existing scene overlayRegistration from data/chapter-five-staging.js",
+      "newNeeded": false,
+      "additionalInteriorView": "assets/worldstates/negotiation-collapsed-overlay.png"
+    },
+    {
+      "gameState": "civilians_protected",
+      "base": "assets/chapter5/backgrounds/ch5_bg_village_after_crisis.png",
+      "reuse": [
+        "assets/chapter5/overlays/ch5_overlay_after_protection.png"
+      ],
+      "registration": "Use existing scene overlayRegistration from data/chapter-five-staging.js",
+      "newNeeded": false,
+      "additionalInteriorView": null
+    },
+    {
+      "gameState": "community_fragmented",
+      "base": "assets/chapter5/backgrounds/ch5_bg_village_after_crisis.png",
+      "reuse": [
+        "assets/chapter5/overlays/ch5_overlay_after_fragmentation.png"
+      ],
+      "registration": "Use existing scene overlayRegistration from data/chapter-five-staging.js",
+      "newNeeded": false,
+      "additionalInteriorView": null
+    },
+    {
+      "gameState": "fragile_deescalation",
+      "base": "assets/chapter5/backgrounds/ch5_bg_village_after_crisis.png",
+      "reuse": [
+        "assets/chapter5/overlays/ch5_overlay_after_deescalation.png"
+      ],
+      "registration": "Use existing scene overlayRegistration from data/chapter-five-staging.js",
+      "newNeeded": false,
+      "additionalInteriorView": null
+    }
+  ],
+  "canonIntegrity": "All existing Chapter5 Canon SHA256 hashes verified; no new humans or Canon versions.",
+  "qa": "Original base compositions inspected at1024x768 and820x640; village also composed with original Canon figures. Original scenes, camera and light unchanged.",
+  "legacyPolicy": "Do not load retired Chapter4 backgrounds/overlays listed in assets/chapter4/LEGACY_ASSETS.md."
+}
