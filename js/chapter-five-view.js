@@ -6,6 +6,7 @@ import { dialogueView } from './dialogue-engine.js';
 import { chapterFourFigure } from './chapter-four-view.js';
 import { hotspot } from './hotspots.js';
 import { button,esc } from './ui.js';
+import { chapterFiveVisualState,endWorldLayers } from '../data/chapter-five-world.js';
 import { storyRecapView,chapterSixTransition,chapterFiveEndingView } from './story-recap-view.js';
 const act=(text,id,attrs='')=>button(esc(text),'ch5-'+id,attrs);
 const next=(text='Weiter →')=>act(text,'next','class="primary"');
@@ -31,17 +32,26 @@ export function chapterFiveWorld(g=state){
   else if(['urge_retreat','separate_faith_and_strategy'].includes(c.finalAction))overlays=['group_retreat'];
   // Staying, speaking and sending a delegation do not depict a retreat.
  }
- if(room==='village_after_crisis'&&c.endWorldState)overlays=[{violent_defeat:'after_defeat',negotiation_collapsed:'after_negotiation_collapse',civilians_protected:'after_protection',community_fragmented:'after_fragmentation',fragile_deescalation:'after_deescalation'}[c.endWorldState]];
- const spec=staging.scenes[room];let figures=spec.figures;
+ const visual=chapterFiveVisualState(g);
+ // The village at the start of May shows whether earlier decisions have already led to preparations.
+ if(s==='intro'){room='village_after_crisis';overlays=visual==='escalation'?['village_escalation']:[];}
+ if(room==='village_after_crisis'&&c.endWorldState)overlays=[endWorldLayers[c.endWorldState]];
+ // First look after the crisis: the abandoned negotiation room; the village keeps its own aftermath layer.
+ if(s==='after_crisis'&&visual==='negotiation_collapsed'){room='negotiation_chamber';overlays=['negotiation_collapsed'];}
+ const spec=staging.scenes[room];let figures=spec.figures,sign=spec.hotspot;
+ let caption=null;
+ if(overlays.includes('negotiation_collapsed')){figures=[];sign={x:58,y:22,kind:'action'};caption='Der verlassene Verhandlungsraum';}
  // The speaking cart messenger is present in the scene; Peter does not speak here.
  if(s==='dues_cart')figures=figures.map(f=>f.id==='peter'?{...f,id:'envoy'}:f);
  // Three adults in the arrival layer occupy the foreground; Canon speakers remain in portraits.
  if(s==='escalation_message'&&room==='theological_council_evening')figures=[];
  if(s==='action_effect')figures=figures.filter(f=>f.id==='matthes');
  if(s==='negotiation_effect'&&c.negotiationCondition==='no_persecution')figures=figures.filter(f=>f.id==='overseer');
- return {room,spec,overlays,figures};
+ return {room,spec,overlays,figures,visual,sign,caption};
 }
-function worldHTML(w){return `<div class="room"><img class="room-image" src="${w.spec.background}" alt="${esc(w.spec.purpose)}">${w.overlays.map(name=>{const a=staging.assets['overlay_'+name],r=w.spec.overlayRegistration[name];if(!a||!r)throw Error('Unregistered chapter-5 layer '+name);return `<img class="ch5-world-overlay" data-overlay="${name}" src="${a.path}" style="left:${r.left}%;top:${r.top}%;width:${r.scale*100}%;height:${r.scale*100}%" alt="${esc(name.startsWith('after_')?endLabels[state.chapter5.endWorldState]:{order_group:'Gruppe, die Ordnung betont',justice_group:'Gruppe, die Gerechtigkeit betont',camp_supply:'Versorgung im Lager',armed_tension:'Bewaffnete warten auf den Aufbruch',delegation_inside:'Abordnung am Tisch',negotiation_broken:'Abordnung verlässt den Raum',wounded_return:'Ein Verwundeter wird gestützt',wounded_return_council:'Ein Verwundeter wird von zwei Menschen gestützt',people_evacuating:'Menschen verlassen den Gefahrenbereich',group_retreat:'Eine Gruppe zieht sich zurück'}[name])}">`;}).join('')}<div class="ch4-figures">${w.figures.map(f=>chapterFourFigure([f.id,f.x,f.bodyHeight,f.footline],true)).join('')}</div></div>`;}
+// Fade a layer in only when the visible world changes; re-renders continue the same fade.
+let shownWorld='',shownAt=0;
+function worldHTML(w){const key=w.room+'|'+w.overlays.join(),now=Date.now();if(key!==shownWorld){shownWorld=key;shownAt=now;}const elapsed=now-shownAt,fade=elapsed<900;return `<div class="room"><img class="room-image" src="${w.spec.background}" alt="${esc(w.spec.purpose)}">${w.overlays.map(name=>{const a=staging.assets['overlay_'+name],r=w.spec.overlayRegistration[name];if(!a||!r)throw Error('Unregistered chapter-5 layer '+name);return `<img class="ch5-world-overlay${fade?' ch5-overlay-enter':''}" data-overlay="${name}" src="${a.path}" style="${fade?'animation-delay:-'+elapsed+'ms;':''}left:${r.left}%;top:${r.top}%;width:${r.scale*100}%;height:${r.scale*100}%" alt="${esc(name.startsWith('after_')?endLabels[state.chapter5.endWorldState]:{order_group:'Gruppe, die Ordnung betont',justice_group:'Gruppe, die Gerechtigkeit betont',camp_supply:'Versorgung im Lager',armed_tension:'Bewaffnete warten auf den Aufbruch',delegation_inside:'Abordnung am Tisch',negotiation_broken:'Abordnung verlässt den Raum',wounded_return:'Ein Verwundeter wird gestützt',wounded_return_council:'Ein Verwundeter wird von zwei Menschen gestützt',people_evacuating:'Menschen verlassen den Gefahrenbereich',group_retreat:'Eine Gruppe zieht sich zurück',village_escalation:'Vorräte, Gerät und ein abgerissener Anschlag auf dem Dorfplatz',negotiation_collapsed:'Verstreute Blätter und ein umgestürzter Hocker im verlassenen Verhandlungsraum'}[name])}">`;}).join('')}<div class="ch4-figures">${w.figures.map(f=>chapterFourFigure([f.id,f.x,f.bodyHeight,f.footline],true)).join('')}</div></div>`;}
 function panel(){const c=state.chapter5,s=c.stage;
  if(state.dialogue)return dialogueView();
  if(c.feedback)return task('Deine Überlegung',`${c.feedback.submitted?`<p class="ch5-submitted">${esc(c.feedback.submitted)}</p>`:''}<p role="status">${esc(c.feedback.text)}</p>`,act(c.feedback.next?'Weiter zur nächsten Szene →':s==='neighbor_love'?'Noch einmal überlegen →':'Weiter →','feedback','class="primary"'));
@@ -77,10 +87,9 @@ export function chapterFiveScene(header){const c=state.chapter5,s=c.stage,w=chap
  if(s==='freedom_after_action'||s==='end')return header+`<main class="game-layout chapter-five-layout recap-layout">${c.recap.phase==='ending'?chapterFiveEndingView():storyRecapView()}</main>`;
  if(s==='chapter6')return header.replace('Kapitel 05','Kapitel 06').replace('Du musst handeln','Was bleibt von Freiheit?')+`<main class="game-layout chapter-five-layout recap-layout">${chapterSixTransition()}</main>`;
  if(s==='chapter6')header=header.replace('Kapitel 05','Kapitel 06').replace('Du musst handeln','Was bleibt von Freiheit?');
- if(s==='intro')return header+`<main class="game-layout chapter-five-layout ch5-intro"><section class="ch4-ending"><p class="eyebrow">Mai 1525</p><p>Was gestern noch eine Forderung war, ist heute eine Entscheidung.</p>${next('Den Weg aufnehmen →').replace('class="primary"','class="primary chapter-continue"')}</section></main>`;
  if(bench)return header+`<main class="game-layout chapter-five-layout ch5-learning">${bench}<footer class="game-footer"><span id="save-status"></span></footer></main>`;
- const p=panel(),n=chapterFiveNext(s),sign=!p&&n?hotspot('Weiter →','ch5-next',{kind:w.spec.hotspot.kind,classes:'ch4-hotspot',attrs:`style="left:${w.spec.hotspot.x}%;top:${w.spec.hotspot.y}%"`}):'';
- return header+`<main class="game-layout chapter-four-layout chapter-five-layout ${['end','chapter6'].includes(s)?'ch4-fade':''}"><section class="stage chapter-five" data-scene="${state.scene}" data-world="${w.room}">${worldHTML(w).replace('</div></div>','</div>'+sign+'</div>')}<div class="stage-caption"><h1>${esc(chapterFiveScenes.find(x=>x.id===state.scene).title)}</h1></div></section><div id="interaction" class="interaction" data-stage="${s}">${p}</div><footer class="game-footer"><span id="save-status"></span></footer></main>`;
+ const p=s==='intro'?task('Was gestern noch eine Forderung war, ist heute eine Entscheidung.',`<p>${w.visual==='escalation'?'Auf dem Dorfplatz liegen Vorräte und Gerät bereit, ein Anschlag ist abgerissen. Nach den letzten Wochen rechnen hier viele mit einem Aufbruch.':'Der Dorfplatz ist noch ruhig. Was in den letzten Wochen besprochen wurde, ist nicht vergessen; entschieden ist noch nichts.'}</p>`,next('Den Weg aufnehmen →').replace('class="primary"','class="primary chapter-continue"')):panel(),n=chapterFiveNext(s),sign=!p&&n?hotspot('Weiter →','ch5-next',{kind:w.sign.kind,classes:'ch4-hotspot',attrs:`style="left:${w.sign.x}%;top:${w.sign.y}%"`}):'';
+ return header+`<main class="game-layout chapter-four-layout chapter-five-layout ${['end','chapter6'].includes(s)?'ch4-fade':''}"><section class="stage chapter-five" data-scene="${state.scene}" data-world="${w.room}" data-visual="${w.visual}">${worldHTML(w).replace('</div></div>','</div>'+sign+'</div>')}<div class="stage-caption"><h1>${esc(w.caption||chapterFiveScenes.find(x=>x.id===state.scene).title)}</h1></div></section><div id="interaction" class="interaction" data-stage="${s}">${p}</div><footer class="game-footer"><span id="save-status"></span></footer></main>`;
 }
 export function fitChapterFiveScene(){
  const layout=document.querySelector('.chapter-five-layout');if(!layout)return;

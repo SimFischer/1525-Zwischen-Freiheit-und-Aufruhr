@@ -1,5 +1,6 @@
 import { choices } from './choices.js';
 import { chapterFiveStaging } from './chapter-five-staging.js';
+import { endWorldLayers } from './chapter-five-world.js';
 import { ch4Asset } from './chapter-four.js';
 export const openTheologicalQuestions=[
  ['limits_of_resistance','Unter welchen Bedingungen kann Widerstand gegen ungerechte Herrschaft legitim sein?'],
@@ -40,7 +41,7 @@ export const recapOutcomes={
  world:{violent_defeat:'Der Haufen wurde zurückgedrängt.',negotiation_collapsed:'Die Gemeinde stand vor einem abgebrochenen Gesprächsweg.',civilians_protected:'Die Gemeinde musste nun Menschen aufnehmen und ihre Versorgung sichern.',community_fragmented:'Die Gemeinde blieb gespalten.',fragile_deescalation:'Eine unsichere Ruhe blieb.'}
 };
 export function deriveChapter5Recap(g){const c=g.chapter5||{},roomName={peasant_band:'peasant_camp_morning',negotiation:'negotiation_chamber',theological_council:'theological_council_evening',religious_conflict:'churchyard_dispute'}[c.openingPath],room=roomName?v5(roomName):visual('assets/chapter2/backgrounds/ch2_bg_village_hub_morning.png'),prisoner=chosen(g,'ch5Prisoner',c.prisonerDecision);
- const action=finalActionText(c),out=[recapOutcomes.konrad[c.konradOutcome],recapOutcomes.negotiation[c.negotiationOutcome],recapOutcomes.civilian[c.civilianOutcome],recapOutcomes.world[c.endWorldState]].filter(Boolean),endLayer={violent_defeat:'after_defeat',negotiation_collapsed:'after_negotiation_collapse',civilians_protected:'after_protection',community_fragmented:'after_fragmentation',fragile_deescalation:'after_deescalation'}[c.endWorldState],end=v5('village_after_crisis',endLayer);
+ const action=finalActionText(c),out=[recapOutcomes.konrad[c.konradOutcome],recapOutcomes.negotiation[c.negotiationOutcome],recapOutcomes.civilian[c.civilianOutcome],recapOutcomes.world[c.endWorldState]].filter(Boolean),endLayer=endWorldLayers[c.endWorldState],end=v5('village_after_crisis',endLayer);
  return {beats:[
  beat(5,'Handeln',['Schließlich reichte es nicht mehr, nur zu urteilen.','Du musstest handeln.'],5,room),
  beat(5,'Menschen und Mittel',[prisoner&&'Deine Entscheidung über den Gefangenen: „'+prisoner+'“',action&&'Als sich die Lage zuspitzte: „'+action+'“'],8,room),

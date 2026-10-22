@@ -476,6 +476,8 @@ dialog:has(.notebook) {
 /* Chapter 5 keeps the existing stage, materials and fixed manifest coordinate space. */
 .chapter-five-layout .room-image {object-fit:contain;}
 .ch5-world-overlay {position:absolute;max-width:none;object-fit:contain;pointer-events:none;}
+.ch5-overlay-enter {animation:ch3-ending 900ms ease-out both;}
+@media(prefers-reduced-motion:reduce) {.ch5-overlay-enter {animation:none;}}
 .chapter-five-layout .ch5-task {max-height:none;}
 .ch5-task-body {font-size:18px;line-height:1.4;}
 .ch5-task h2 {font-size:clamp(20px,2.2vw,26px);margin:.3rem 0 .7rem;}

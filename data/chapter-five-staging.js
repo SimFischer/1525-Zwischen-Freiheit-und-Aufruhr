@@ -3392,3 +3392,10 @@ chapterFiveStaging.assets.overlay_wounded_return_council = {
  "sha256": "1dfca360a5288ccbcb50e084c78360c6a4a327aac387df151670a0e09f636ed8"
 };
 chapterFiveStaging.scenes.theological_council_evening.overlayRegistration.wounded_return_council = chapterFiveStaging.assets.overlay_wounded_return_council.preferredStaging;
+// World-state layers (assets/worldstates/manifest.json): full registered canvas at left 0, top 0, scale 1.
+for(const [name,file,scene,purpose] of [['village_escalation','village-escalation-overlay.png','village_after_crisis','Vorrat, Gerät, niedriges Hindernis und abgerissener Anschlag vor dem Aufbruch'],['negotiation_collapsed','negotiation-collapsed-overlay.png','negotiation_chamber','Verlassener Verhandlungsraum nach dem Abbruch']]){
+ const registration={scale:1,left:0,top:0,units:'percent of entire scene; transform-origin top-left',required:true};
+ chapterFiveStaging.assets['overlay_'+name]={filename:file,path:'assets/worldstates/'+file,type:'overlays',scene:['ch5_'+scene],purpose,dimensions:{width:1024,height:768},transparent:true,preferredStaging:registration};
+ chapterFiveStaging.scenes[scene].overlayRegistration[name]=registration;
+}
+chapterFiveStaging.nonCombinable.push(['village_escalation','after_defeat','after_negotiation_collapse','after_protection','after_fragmentation','after_deescalation'],['negotiation_collapsed','negotiation_broken','delegation_inside']);
